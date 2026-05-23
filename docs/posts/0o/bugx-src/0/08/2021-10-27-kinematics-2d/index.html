@@ -1,0 +1,189 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>kinematics 2d | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>kinematics 2d</h1><time datetime=2021-10-29T07:57:00+07:00>October 29, 2021</time><p>Gerak dalam 2d melibatkan besaran-besaran vektor seperti perpindahan $x$ dan $y$, kecepatan $v_x$ dan $v_y$, serta percepatan $a_x$ dan $a_y$, di mana pada keadaan umum komponen gerak 2d dapat saling dipisahkan sehingga menghasilkan dua gerak 1d yang tak saling bergantung, yang selanjutnya dipecahkan dengan pengetahuan mengenai kinematika 1d [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Yang termasuk dalam kinematika 2d adalah rangkaian beberapa gerak lurus pada arah tegak lurus yang membentuk gerak zigzag, superposisi dua gerak lurus pada arah saling tegak lurus, dan gerak parabola [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], serta ada pula yang menambahkan gerak pada bidang miring dan gerak melingkar [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Mungkin pula dapat ditambahkan gerak yang membentuk kurva Lissajous [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Secara umum persamaan untuk posisi yang dapat digunakan adalah sebagai berikut</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-x}
+x = x_0 + v_{0x} t + \tfrac12 a_x t^2,
+\end{equation}</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-y}
+y = y_0 + v_{0y} t + \tfrac12 a_y t^2,
+\end{equation}</p><p>untuk gerak lurus berubah beraturan (GLBB), di mana untuk gerak lurus beraturan (GLB) dapat diperoleh dengan membuat $a_x$ atau $a_y$ bernilai nol.</p><p>Selanjutnya perlu persamaan gerak harmonik sederhana (GHS)</p><p>\begin{equation}\label{eqn-simple-harmonic-motion-x}
+x = x_c + A_x \sin (\omega_x t + \delta_x),
+\end{equation}</p><p>\begin{equation}\label{eqn-simple-harmonic-motion-y}
+y = y_c + A_y \sin (\omega_y t + \delta_y),
+\end{equation}</p><p>bila gerak melingkar dan pola Lissajous ikut dipertimbangkan.</p><p>Untuk nilai-nilai kecepatan $v_x$ dan $v_y$, serta percepatan $a_x$ dan $a_y$ dapat dicari dengan menggunakan hubungan</p><p>\begin{equation}\label{eqn-v-drdt}
+v = \frac{dr}{dt}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-a-dvdt}
+a = \frac{dv}{dt},
+\end{equation}</p><p>di mana $r$ dapat berupa $x$ atau $y$.</p><h2 id=zigzag-motion-through-the-city>zigzag motion through the city</h2><p>Dalam kota untuk mencapai suatu tempat, umumnya tidak dapat dilakukan dengan bergerak lurus, akan tetapi perlu berbelok-belok. Penyederhaan berpindah dari satu tempat ke tempat lain, misalnya tempat tinggal (apartment) ($\rm A$), taman (park) $\rm P$, pertokoan (mall) $\rm M$, ataupun kantor (office) $\rm O$, diilustrasikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0080-a.png)<br>Gambar <a name=fig1>1</a>. Tiga contoh lintasan zigzag dalam suatu kota, dengan ukuran grid $1 \ {\rm cb} \times 1 \ {\rm cb}$.</p><p>Satuan blok dalam kota atau city block ($\rm cb$) yang berukuran kira-kira $100,584 \ \rm m$ untuk Midwest U.S. [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang dapat dibulatkan untuk penyederhaan di sini, misalnya mendekati $100 \ \rm m$.</p><p>Dengan kecepatan yang diperbolehkan di dalam hampir banyak kota [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], kendaraan diasumsikan selalu ber-GLB dari satu titik ke titik lainnya dengan laju $10 \ \rm m/s$ dalam area pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Dengan demikian jarak satu blok akan ditempuhnya dalam waktu $10 \ \rm s$. Seseorang yang berada pada perumahan $\rm A_1$ ingin berpiknik di taman tengah kota dengan masuk lewat pintu taman $\rm P_1$. Waktu yang dibutuhkankannya untuk sampai ke tempat tujuan dan fungsi posisinya $x$ dan $y$ setiap saat pun dapat diperoleh.</p><p>Dari dapat diperoleh jarak yang ditempuhnya $d$ yaitu $4.5 \ \rm bc$ yang akan menjadi $450 \ \rm m$. Dengan kecepatan yang diasumsikan akan diperoleh</p><p>$$
+\Delta t = \frac{d}{v} = \frac{450 \ \rm m}{10 \ \rm m/s} = 45 \ \rm s,
+$$</p><p>yang merupakan waktu dari titik $\rm A_1$ ke titik $\rm P_1$. Selanjutnya</p><p>$$
+x = \left{
+\begin{array}{ll}
+900, & 0 \le t \lt 15, \newline
+900 - 10 (t - 15), & 15 \le t \lt 45,
+\end{array}
+\right.
+$$</p><p>dan</p><p>$$
+y = \left{
+\begin{array}{ll}
+150 + 10 t, & 0 \le t \lt 15, \newline
+300, & 15 \le t \lt 45,
+\end{array}
+\right.
+$$</p><p>merupakan fungsi posisinya setiap saat yang berlaku mulai $t = 0 \ \rm s$ sampai $t = 45 \ \rm s$. Dengan Persamaan \eqref{eqn-v-drdt} dapat diperoleh</p><p>$$
+v_x = \left{
+\begin{array}{ll}
+0, & 0 \le t \lt 15, \newline
+-10, & 15 \le t \lt 45,
+\end{array}
+\right.
+$$</p><p>dan</p><p>$$
+v_y = \left{
+\begin{array}{ll}
+10, & 0 \le t \lt 15, \newline
+0, & 15 \le t \lt 45,
+\end{array}
+\right.
+$$</p><p>yang merupakan fungsi kecepatan setiap saatnya. Untuk fungsi percepatannya akan diperoleh nilai nol untuk $0 \le t \lt 45$.</p><h2 id=crossing-a-river>crossing a river</h2><p>Menyeberangi sungai menggunakan kapal merupakan salah satu permasalah yang menarik, yang secara prinsip fisika mirip dengan mendaratkan pesawat saat terdapat angin dengan arah tegak lurus arah pendaratan atau crosswind landing [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat perahu (boat) $\rm B$ yang memiliki kecepatan $\vec{v} _{\rm BR}$ relatif terhadap sungai $\rm R$ dan sungai sungai (river) $\rm R$ memiliki kecepatan alirannya $v _{\rm RO}$ relatif terhadap pingir sungai $\rm O$.</p><p>![]({{ site.baseurl }}/assets/img/0/07/0070-a.png)<br>Gambar <a name=fig2>2</a>. Sebuah perahu $\rm B$ menyeberang tegak lurus arah aliran sungai $\rm R$.</p><p>Untuk permasalahan dengan nilai-nilai kecepatan seperti pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dituliskan</p><p>\begin{equation}\label{eqn-river-crossing-x}
+x = 3t,
+\end{equation}</p><p>\begin{equation}\label{eqn-river-crossing-y}
+y = 4t,
+\end{equation}</p><p>sebagai fungsi posisi kapal setiap saat dengan mengambil titik $(0, 0)$ pada titik keberangkatan kapal. Atau</p><p>\begin{equation}\label{eqn-river-crossing-r}
+\vec{r} = 3t \ \hat{x} + 4t \ \hat{y},
+\end{equation}</p><p>bila ingin dituliskan dalam bentuk vektor.</p><h2 id=parabolic-motion>parabolic motion</h2><p>Terdapat 10 [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] sampai 20 [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] contoh penerapan gerak parabola dalam kehidupan sehari-hari. Fungsi posisi setiap saatnya adalah</p><p>\begin{equation}\label{eqn-parabolic-motion-x}
+x = x_0 + v_0 \cos \theta,
+\end{equation}</p><p>\begin{equation}\label{eqn-parabolic-motion-y}
+y = y_0 + v_0 \sin \theta - \tfrac12 gt^2,
+\end{equation}</p><p>dengan posisi awal $x_0$, $y_0$,besar kecepatan awal $v_0$, sudut tembak terhadap arah horizontal $\theta$, dan besar percepatan gravitasi $g$. Persamaan \eqref{eqn-parabolic-motion-x} merupakan suatu GLB sedangkan Persamaan \eqref{eqn-parabolic-motion-y} merupakan suatu GLBB.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0080-c1.png) | ![]({{ site.baseurl }}/assets/img/0/08/0080-c2.png) | ![]({{ site.baseurl }}/assets/img/0/08/0080-c3.png)</p><p>Gambar <a name=fig3>3</a>. Kurva gerak parabola dengan variasi: posisi awal $x_0$, $y_0$ (kiri), sudut tembak (tengah), dan besar kecepatan (kanan), dengan waktu dibatasi $0 \le t \lt 10$.</p><p>Kurva suatu gerak parabola dapat berubah dengan melakukan variasi posisi awal $x_0$ dan atau $y_0$, sudut tembaknya $\theta$, atau besarnya kecepatan tembak $v_0$. Beberapa contoh telah diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=motion-on-an-incline>motion on an incline</h2><p>Gerak benda pada bidang miring umumnya diselesaikan dengan gerak 1d karena merupakan suatu GLBB dengan percepatannya sebanding dengan percepatan gravitasi [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], bila sumbu $x$ diambil sejajar permukaan bidang miring dan $y$ tegak lurus permukaan bidang miring. Pada eksperimen juga telah umum besaran kinematika yang diamati adalah pada arah sejajar permukaan bidang miring [
+<a href=#r11><span>11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>![]({{ site.baseurl }}/assets/img/0/08/0080-d.png)<br>Gambar <a name=fig4>4</a>. Benda bergerak turun tanpa kecepatan awal di atas bidang miring licin: kerangka acuan dipilih agar benda hanya bergerak 1d (kiri), kerangka acuan membuat gerak benda menjadi 2d (kanan).</p><p>Kerangka acuan yang terletak pada bidang miring, $x$ sejajar dan $y$ tegak lurus permukaan, lebih akrab digunakan karena membuat gerak benda menjadi gerak 1-d, sebagaimana disajikan pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(kiri). Gerak hanya terjadi pada arah $x&rsquo;$ dan benda diam pada arah $y&rsquo;$. Tanda &rsquo; digunakan untuk membedakannya dengan kerangka acuan pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(kanan), yang kerangka acuannya membuat benda bergerak dalam 2d dengan pada masing-masing arah, $x$ dan $y$, terdapat percepatan.</p><p>Untuk kerangka acuan $x&rsquo;y&rsquo;$ dapat diperoleh bahwa</p><p>\begin{equation}\label{eqn-incline-xy-prime-x}
+x = \tfrac12 g\sin\theta \ t^2,
+\end{equation}</p><p>\begin{equation}\label{eqn-incline-xy-prime-y}
+y = 0,
+\end{equation}</p><p>sedangkan untuk kerangka acuan $xy$</p><p>\begin{equation}\label{eqn-incline-xy-x}
+x = \tfrac12 g\sin\theta \cos\theta \ t^2,
+\end{equation}</p><p>\begin{equation}\label{eqn-incline-xy-y}
+y = 9 - \tfrac12 g\sin\theta \sin\theta \ t^2.
+\end{equation}</p><p>Dengan memasukkan nilai-nilainya dapat diperoleh tabel berikut.</p><p>Tabel <a name=tab1>1</a>. Variabel kinematika untuk kerangka acuan $x&rsquo;y&rsquo;$ dan $xy$ bagi benda turun di atas bidang miring licin.</p><table><thead><tr><th style=text-align:center>$t$</th><th style=text-align:center>$x'$</th><th style=text-align:center>$y'$</th><th style=text-align:center>$x$</th><th style=text-align:center>$y$</th></tr></thead><tbody><tr><td style=text-align:center>$0$</td><td style=text-align:center>$0$</td><td style=text-align:center>$0$</td><td style=text-align:center>$0$</td><td style=text-align:center>$9$</td></tr><tr><td style=text-align:center>$1$</td><td style=text-align:center>$3$</td><td style=text-align:center>$0$</td><td style=text-align:center>$2.4$</td><td style=text-align:center>$7.2$</td></tr><tr><td style=text-align:center>$2$</td><td style=text-align:center>$12$</td><td style=text-align:center>$0$</td><td style=text-align:center>$9.6$</td><td style=text-align:center>$1.8$</td></tr></tbody></table><p>{% comment %}
+0.5 10 0.6 0.8 t^2
+2.4 t^2
+2.4 0 = 0
+2.4 1 = 2.4
+2.4 4 = 9.6</p><p>9 - 0.5 10 0.6 0.6 t^2
+9 - 1.8 t^2
+9 - 1.8 0 = 9
+9 - 1.8 1 = 7.2
+9 - 1.8 4 = 1.8
+{% endcomment %}</p><p>Pengambaran yang kurang presisi membuat penggambarannya pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>kurang cocok dengan nilai-nilai pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0080-e.png)<br>Gambar <a name=fig5>5</a>. Dengan kerangka acuan membuat gerak benda menjadi 2d, benda bergerak turun tanpa kecepatan awal di atas bidang miring licin.</p><p>Dengan menggunakan aplikasi spreadsheet penggambaran pada Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dilakukan dengan lebih teliti yang merupakan konfirmasi untuk Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=circular-motion>circular motion</h2><p>Fungsi posisi gerak melingkar dapat dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn-circular-motion-x}
+x = x_c + A \sin \omega t,
+\end{equation}</p><p>\begin{equation}\label{eqn-circular-motion-y}
+y = y_c + A \sin \omega t,
+\end{equation}</p><p>yang merupakan gerak 2d. Dengan berpindah dari koordinat kartesian $xy$ ke koordinat polar $r\theta$ fungsi posisinya setiap saatnya menjadi</p><p>\begin{equation}\label{eqn-circular-motion-r}
+r = A
+\end{equation}</p><p>sebagai posisi radial yang bernilai konstan dan</p><p>\begin{equation}\label{eqn-circular-motion-theta}
+\theta = \theta_0 + \omega_0 t + \tfrac12 \alpha^2
+\end{equation}</p><p>sebagai posisi angularnya, dengan sudut awal $\theta_0$, frekuensi angular awal $\omega_0$, dan percepatan angular $\alpha$. Bila $\alpha = 0$ maka $\omega = \omega_0$ untuk setiap saat $t$.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0080-f1.png) | ![]({{ site.baseurl }}/assets/img/0/08/0080-f2.png)</p><p>Gambar <a name=fig6>6</a>. Gerak melingkar beraturan: dalam sistem koordinat kartesian menjadi gerak 2d (kiri) dan dalam sistem koordinat polar menjadi gerak 1d (kanan).</p><p>Parameter-parameter $x_c = y_c = 1$, $A = 1$, $T = 20$, $\omega_0 = 0$, $\theta_0 = 0$, $\alpha = 0$ digunakan untuk membuat grafik pada Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Bila tidak benar-benar diperlukan, disarankan untuk menyederhanakan sistem gerak 2d menjadi sistem gerak 1d sehingga memudahkan pemecahan permasalahan.</p><h2 id=pola-lissajous>pola lissajous</h2><p>Lingkaran merupakan salah satu pola Lissajous, yang pola umumnya dapat dibentuk dengan persamaan</p><p>\begin{equation}\label{eqn-lissaous-x}
+x = A_x \sin (\omega_x t + \phi_x),
+\end{equation}</p><p>\begin{equation}\label{eqn-lissajous-y}
+y = A_y \sin (\omega_y t + \phi_y),
+\end{equation}</p><p>yang agak mirip dengan Persamaan \eqref{eqn-circular-motion-x} dan {eqn-circular-motion-y}. Nilai $A_x$ dan $A_y$ akan menentukan jarak terjauh pada arah $x$ dan $y$ yang bisa digambarkan, $\omega_x$ dan $\omega_y$ keberulangan terhadap waktu, serta $\phi_x$ dan $\phi_y$ fasa awal atau pergeseran osilasi antar kedua arah, $x$ dan $y$.</p><table><thead><tr><th style=text-align:center>$\begin{array}{cc} & \phi_{y-x} \newline \omega_{y/x} & \end{array}$</th><th style=text-align:center>$0$</th><th style=text-align:center>$\frac14 \pi$</th><th style=text-align:center>$\frac12 \pi$</th><th style=text-align:center>$\frac34 \pi$</th><th style=text-align:center>$\pi$</th></tr></thead><tbody><tr><td style=text-align:center>1.0</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.0-0.00.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.0-0.25.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.0-0.50.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.0-0.75.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.0-1.00.png)</td></tr><tr><td style=text-align:center>1.5</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.5-0.00.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.5-0.25.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.5-0.50.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.5-0.75.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-1.5-1.00.png)</td></tr><tr><td style=text-align:center>2.0</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.0-0.00.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.0-0.25.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.0-0.50.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.0-0.75.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.0-1.00.png)</td></tr><tr><td style=text-align:center>2.5</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.5-0.00.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.5-0.25.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.5-0.50.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.5-0.75.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-2.5-1.00.png)</td></tr><tr><td style=text-align:center>3.0</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-3.0-0.00.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-3.0-0.25.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-3.0-0.50.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-3.0-0.75.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/08/0080-g-3.0-1.00.png)</td></tr></tbody></table><p>Gambar <a name=fig7>7</a>. Beberapa contoh pola Lissajous dengan variasi nilai $\phi_{y-x}$ dan $\omega_{y/x}$.</p><p>Pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terdapat dua parameter yang divariasikan, yaitu</p><p>\begin{equation}\label{eqn-lissaous-phi-yx}
+\phi_{y-x} = \phi_y - \phi_x, \ \ \ \ \phi_x = 0
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-lissaous-omega-yx}
+\omega_{y/x} = \frac{\omega_y}{\omega_x}.
+\end{equation}</p><p>Untuk Persamaan \eqref{eqn-lissaous-phi-yx} diperlukan referensi nilai $\phi_x$ sedangkan untuk Persamaan \eqref{eqn-lissaous-omega-yx} tidak diperlukan referensi nilai $\omega_x$.</p><h2 id=exer>exer</h2><ol><li>Bila $y = y_c + A_y \sin (\omega_y t + \delta_y)$, carilah persamaan untuk $v_y$ dan $a_y$.</li><li>Carilah fungsi posisi setiap saatnya $x$ dan $y$ untuk seseorang yang berangkat dari titik $\rm A_2$ yang merupakan rumahnya ke titik $\rm M_1$ yang merupakan pertokoan.</li><li>Terdapat kapal yang ingin menyeberang sungai tegak lurus seperti pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>akan tetapi dengan kecepatan kapal relatif terhadap sungai adalah $12 \ \rm m/s$ dan kecepatan aliran sungai $5 \ \rm m/s$. Tentukan besar kecepatan kapal terhadap pinggir sungai.</li><li>Pada suatu gerak parabola diketahui $v_{0x} = 30 \ \rm m/s$, $v_{0y} = 40 \ \rm m/s$, $g = 10 \ \rm m/s^2$. Tentukan posisi horisontal titik tertinggi yang dapat dicapai benda dan waktunya.</li><li>Kerangka acuan mana yang memudahkan pemecahan masalah pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>?</li><li>Tuliskan hubungan antara $r$ dan $x$, $y$ dalam Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Tuliskan nilai $\phi_{y-x}$ dan $\omega_{y/x}$ untuk pola Lissajous yang membentuk lingkaran. Gunakan Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bila dapat membantu.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Michael Richmond, &ldquo;Kinematics in Two Dimensions&rdquo;, Physics 311 University Physics I, Winter 2001, url
+<a href=http://spiff.rit.edu/classes/phys311.old/lectures/kine2d/kine2d.html target=_blank rel="nofollow noopener noreferrer"><span>http://spiff.rit.edu/classes/phys311.old/lectures/kine2d/kine2d.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211027].</li><li><a name=r02></a>Paul Peter Urone, Roger Hinrichs, Kim Dirks, Manjula Sharma, &ldquo;Two-Dimensional Kinematics&rdquo; in College Physics, OpenStax CNX, 6 Jul 2021, url
+<a href=https://phys.libretexts.org/@go/page/1423 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/1423 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211027].</li><li><a name=r03></a>David Morin, &ldquo;Kinematics in 2-D (and 3-D)&rdquo;, Problems and Solutions in Introductory Mechanics, Draft version, August 2014, url
+<a href=https://scholar.harvard.edu/files/david-morin/files/problemschap3.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://scholar.harvard.edu/files/david-morin/files/problemschap3.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211027].</li><li><a name=r04></a>Wikipedia contributors, &ldquo;Lissajous curve&rdquo;, Wikipedia, The Free Encyclopedia, 10 June 2021, 12:10 UTC, url &lt;https://en.wikipedia.org/w/index.php?oldid=1027858127 [20211027].</li><li><a name=r05></a>&ldquo;Convert city block [Midwest U.S.] to meters -
+Conversion of Measurement Units&rdquo;, ConvertUnits.com, url
+<a href=https://www.convertunits.com/from/city+block+[Midwest+U.S.]/to/meters target=_blank rel="nofollow noopener noreferrer"><span>https://www.convertunits.com/from/city+block+[Midwest+U.S.]/to/meters <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r06></a>Wikipedia contributors, &ldquo;Speed limits by country&rdquo;, Wikipedia, The Free Encyclopedia, 27 October 2021, 16:38 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1052142752" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1052142752 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r07></a>Rhett Allain, &ldquo;In Physics, Crossing a River Is Just Like Landing a Plane&rdquo;, Wired, 19.09.2017 09:00, url
+<a href=https://www.wired.com/story/in-physics-crossing-a-river-is-just-like-landing-a-plane/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.wired.com/story/in-physics-crossing-a-river-is-just-like-landing-a-plane/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r08></a>&ldquo;10 Projectile Motion Examples in Real Life&rdquo;, StudiosGuy, url
+<a href=https://studiousguy.com/projectile-motion-examples/ target=_blank rel="nofollow noopener noreferrer"><span>https://studiousguy.com/projectile-motion-examples/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r09></a>&ldquo;20 Examples of projectile motion&rdquo;, DewWool, 16 Mar 2021, url
+<a href=https://dewwool.com/20-examples-of-projectile-motion/ target=_blank rel="nofollow noopener noreferrer"><span>https://dewwool.com/20-examples-of-projectile-motion/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r10></a>Wolfgang Christian, &ldquo;Illustration 3.2: Motion on an Incline&rdquo;, Open Source Physics, 2014, url
+<a href=https://www.compadre.org/osp/EJSS/3921/model3/91.htm target=_blank rel="nofollow noopener noreferrer"><span>https://www.compadre.org/osp/EJSS/3921/model3/91.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li><li><a name=r11></a>&ldquo;Motion on an Incline&rdquo;, Vernier, 7 Dec 2019, url
+<a href=https://www.vernier.com/experiment/phys-am-1_motion-on-an-incline/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.vernier.com/experiment/phys-am-1_motion-on-an-incline/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211028].</li></ol><h2 id=heading> </h2><p><a><span>uniform linear motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>nonuniform linear motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>superposition principle <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $v_y = \omega_y A_y \cos (\omega_y t + \delta_y)$, $a_y = -\omega_y^2 A_y \sin (\omega_y t + \delta_y)$; &nbsp; 2) $
+x = \left\{
+\begin{array}{ll}
+150 + 10t, & 0 \le t \lt 5, \newline
+200, & 5 \le t \lt 15, \newline
+200 + 10(t-15), & 15 \le t \lt 40,
+\end{array}
+\right.
+$, $
+y = \left\{
+\begin{array}{ll}
+0, & 0 \le t \lt 5, \newline
+600 - 10(t-5), & 5 \le t \lt 15, \newline
+0, & 15 \le t \lt 40,
+\end{array}
+\right.
+$; &nbsp; 3) $13 \ \rm m/s$; &nbsp; 4) $120 \ \rm m$ dan $4 \ \rm s$; &nbsp; 5) kiri; &nbsp; 6) $r = \sqrt{(x - x_c)^2 + (y - y_c)^2}$; &nbsp; 7) $\phi_{y-x} = \frac12 \pi$ dan $\omega_{y/x} = 2$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,102 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>mod sc card calendar | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>mod sc card calendar</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-10-13T07:40:51 07:00">13 Oct 2025</time>
+&#183;
+2 mins read</div></div><div class=note-content><h2 id=info>info</h2><ul><li><p>Date</p><ul><li>Created 07-sep-2025</li><li>Edited 13-oct-2025</li></ul></li><li><p>Location</p><ul><li>Folder <code>layouts/shortcodes</code></li><li>File <code>card/calendar.html</code></li></ul></li><li><p>Usage</p><pre tabindex=0><code>{{&lt; card/calendar &#34;mon-13.10.25&#34; &#34;25j27&#34; &#34;#fafd79&#34; &gt;}}
+</code></pre></li><li><p>Example</p><div class=calendar-card><a href=/25j27/><div class=calendar-card-content style="border:0.5px solid#fafd79"><div class=calendar-day>MON</div><div class=calendar-date>13</div><div class=calendar-monthyear>Oct 2025</div></div></a></div><style>.calendar-card,a{display:inline-block;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease;margin-top:2px;margin-right:2px}.calendar-card-content{border-radius:8px;box-shadow:0 2px 4px var(--muted-border);width:40px;height:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:.5rem;background:0 0}.calendar-card:hover{transform:translateY(-4px);box-shadow:0 6px 12px var(--muted-border)}.calendar-day{font-size:.6rem;font-weight:700;text-transform:uppercase;color:#555}.calendar-date{font-size:1.3rem;font-weight:700;line-height:1.2}.calendar-monthyear{font-size:.55rem;color:#777}</style></li></ul><h2 id=notes>notes</h2><ul><li><code>13-oct-2025</code> Add <code>margin-right: 2px;</code> in <code>.calendar-card, a</code>.</li></ul><h2 id=shortcode>shortcode</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{/* 
+</span></span><span style=display:flex><span>Usage:
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>card</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>calendar</span> <span style=color:#960050;background-color:#1e0010>&#34;</span><span style=color:#a6e22e>sun-07</span><span style=color:#960050;background-color:#1e0010>.</span><span style=color:#a6e22e>09</span><span style=color:#960050;background-color:#1e0010>.</span><span style=color:#a6e22e>25</span><span style=color:#960050;background-color:#1e0010>&#34;</span> <span style=color:#960050;background-color:#1e0010>&#34;/</span><span style=color:#a6e22e>my-post</span><span style=color:#960050;background-color:#1e0010>/&#34;</span> &gt;}}
+</span></span><span style=display:flex><span>*/}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ $input := .Get 0 }}
+</span></span><span style=display:flex><span>{{ $link := .Get 1 }}
+</span></span><span style=display:flex><span>{{ $bgcolor := .Get 2 | default &#34;#ffffff&#34; }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{/* split dayname and date part */}}
+</span></span><span style=display:flex><span>{{ $parts := split $input &#34;-&#34; }}
+</span></span><span style=display:flex><span>{{ $dayname := upper (index $parts 0) }}
+</span></span><span style=display:flex><span>{{ $datepart := index $parts 1 }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{/* split dd.mm.yy */}}
+</span></span><span style=display:flex><span>{{ $dparts := split $datepart &#34;.&#34; }}
+</span></span><span style=display:flex><span>{{ $day := index $dparts 0 }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{/* month string, strip leading zeros safely */}}
+</span></span><span style=display:flex><span>{{ $monthNumStr := index $dparts 1 }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{/* strip all leading zeros safely */}}
+</span></span><span style=display:flex><span>{{ $monthNumClean := replaceRE &#34;^0+&#34; &#34;&#34; $monthNumStr }}
+</span></span><span style=display:flex><span>{{ if eq $monthNumClean &#34;&#34; }}
+</span></span><span style=display:flex><span>  {{ $monthNumClean = &#34;0&#34; }}
+</span></span><span style=display:flex><span>{{ end }}
+</span></span><span style=display:flex><span>{{ $monthNum := int $monthNumClean }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ $yearShort := index $dparts 2 }}
+</span></span><span style=display:flex><span>{{ $year := printf &#34;20%s&#34; $yearShort }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{/* month abbreviation (index is zero-based, monthNum is 1-based) */}}
+</span></span><span style=display:flex><span>{{ $months := slice &#34;Jan&#34; &#34;Feb&#34; &#34;Mar&#34; &#34;Apr&#34; &#34;May&#34; &#34;Jun&#34; &#34;Jul&#34; &#34;Aug&#34; &#34;Sep&#34; &#34;Oct&#34; &#34;Nov&#34; &#34;Dec&#34; }}
+</span></span><span style=display:flex><span>{{ $monthName := &#34;&#34; }}
+</span></span><span style=display:flex><span>{{ if and (ge $monthNum 1) (le $monthNum 12) }}
+</span></span><span style=display:flex><span>  {{ $monthName = index $months (sub $monthNum 1) }}
+</span></span><span style=display:flex><span>{{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;calendar-card&#34;</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/butiran/{{- $link -}}/&#34;</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;calendar-card-content&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;background: {{- $bgcolor -}};&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;calendar-day&#34;</span>&gt;{{ $dayname }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;calendar-date&#34;</span>&gt;{{ $day }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;calendar-monthyear&#34;</span>&gt;{{ $monthName }} {{ $year }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>style</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-card</span><span style=color:#f92672>,</span> <span style=color:#f92672>a</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline-block</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-decoration</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transition</span>: <span style=color:#66d9ef>transform</span> <span style=color:#ae81ff>0.2</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>, <span style=color:#66d9ef>box-shadow</span> <span style=color:#ae81ff>0.2</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin-top</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin-right</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-card-content</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>4</span><span style=color:#66d9ef>px</span> rgba(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0.15</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>40</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>40</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>align-items</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0.5</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-card</span>:<span style=color:#a6e22e>hover</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transform</span>: translateY(<span style=color:#ae81ff>-4</span><span style=color:#66d9ef>px</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>6</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>12</span><span style=color:#66d9ef>px</span> rgba(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0.25</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-day</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.6</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#66d9ef>bold</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-transform</span>: <span style=color:#66d9ef>uppercase</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#ae81ff>#555</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-date</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>1.3</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#66d9ef>bold</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>line-height</span>: <span style=color:#ae81ff>1.2</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>calendar-monthyear</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.6</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#ae81ff>#777</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span></code></pre></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,141 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>matrix intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>matrix intro</h1><time datetime=2023-09-01T05:15:00+07:00>September 1, 2023</time><p>Matrix is set of numbers arranged in rows and columns as to form a rectangular array, where the numbers are called elements or entries of the matrix (
+<a href=https://www.britannica.com/science/matrix-mathematics target=_blank rel="nofollow noopener noreferrer"><span>Britannica, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>). It can also considered as a compact but general way to represent any linear transforms, such as rotations, scallings, projections that map points / lines / planes to point / lines / planes (
+<a href=https://math.stackexchange.com/a/2782730/645927 target=_blank rel="nofollow noopener noreferrer"><span>user65203, 2018 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>). The concept of matrix overlaps in the fields of mathematics and computer science, where elements represent data or mathematical equations, which are used as a way of providing quick approximations of more complicated calculations since they can offer accurate and quick calculations used to better control an operation regarding as a mechanical device or a computer (
+<a href=https://techmonitor.ai/what-is/what-is-a-matrix target=_blank rel="nofollow noopener noreferrer"><span>Monitor, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>). Here how to define matrix and apply some simple operations to them in Python are presented.</p><h2 id=define-a-matrix>define a matrix</h2><p>A matrix with dimension $(2 \times 4)$ in the form of</p><p>$$\tag{1}
+\mathbf{M} = \left[
+\begin{matrix}
+1 & 2 & 3 & 4\newline
+5 & 6 & 7 & 8
+\end{matrix}
+\right]
+$$</p><p>can be defined in Python as follow</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>  [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>],
+</span></span><span style=display:flex><span>  [<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;1st way of displaying:&#34;</span>)
+</span></span><span style=display:flex><span>print(x)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;2nd way of displaying:&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x:
+</span></span><span style=display:flex><span>  print(i)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;3rd way of displaying:&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> i:
+</span></span><span style=display:flex><span>    print(j, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>  print()
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>which produces</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>1st way of displaying:
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>1, 2, 3, 4<span style=color:#f92672>]</span>, <span style=color:#f92672>[</span>5, 6, 7, 8<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>2nd way of displaying:
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>1, 2, 3, 4<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>5, 6, 7, 8<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>3rd way of displaying:
+</span></span><span style=display:flex><span>1	2	3	4	
+</span></span><span style=display:flex><span>5	6	7	<span style=color:#ae81ff>8</span>
+</span></span></code></pre></div><p>and the code is available at
+<a href=https://onecompiler.com/python/3zk8dnf33 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zk8dnf33 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=access-elements>access elements</h2><p>In mathematics previous element of matrix $\mathbf{M}$ at row $i$ and column $j$ is defined as $m_{ij}$, which will give</p><p>$$
+\begin{array}{rcl}
+m_{11} & = & 1, \newline
+& \dots & \newline
+m_{13} & = & 3, \newline
+& \dots & \newline
+m_{22} & = & 6, \newline
+& \dots & \newline
+m_{24} & = & 8,
+\end{array}
+$$</p><p>where the indices $i = 1, 2$ and $j = 1, 2, 3, 4$. But it is a little bit different in the implementation, since some programming languages use 0-based indexing, while the others use 1-based indexing (
+<a href=https://medium.com/analytics-vidhya/indexing-of-arrays-0-vs-1-83c080cde374 target=_blank rel="nofollow noopener noreferrer"><span>Shewale, 2019 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</p><p>Python uses 0-based indexing, which means its array start at index 0. See following lines of code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>  [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>],
+</span></span><span style=display:flex><span>  [<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;element(&#34;</span>, i, <span style=color:#e6db74>&#34;,&#34;</span>, j, <span style=color:#e6db74>&#34;) is &#34;</span>, x[i][j], sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;element(&#34;</span>, i, <span style=color:#e6db74>&#34;,&#34;</span>, j, <span style=color:#e6db74>&#34;) is &#34;</span>, x[i][j], sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;element(&#34;</span>, i, <span style=color:#e6db74>&#34;,&#34;</span>, j, <span style=color:#e6db74>&#34;) is &#34;</span>, x[i][j], sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;element(&#34;</span>, i, <span style=color:#e6db74>&#34;,&#34;</span>, j, <span style=color:#e6db74>&#34;) is &#34;</span>, x[i][j], sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>and analyze the result</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>element<span style=color:#f92672>(</span>0,0<span style=color:#f92672>)</span> is <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>element<span style=color:#f92672>(</span>1,0<span style=color:#f92672>)</span> is <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>element<span style=color:#f92672>(</span>1,0<span style=color:#f92672>)</span> is <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Traceback <span style=color:#f92672>(</span>most recent call last<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;main.py&#34;</span>, line 16, in &lt;module&gt;
+</span></span><span style=display:flex><span>    print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;element(&#34;</span>, i, <span style=color:#e6db74>&#34;,&#34;</span>, j, <span style=color:#e6db74>&#34;) is &#34;</span>, x<span style=color:#f92672>[</span>i<span style=color:#f92672>][</span>j<span style=color:#f92672>]</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>IndexError: list index out of range
+</span></span></code></pre></div><p>which introduces an error. Notice that the index 4 for column is out of range since 4th column should have index 3 instead of 4. Unfortunately, the Error message does not precisely indicate the error position but only the line, where there is an error.</p><h2 id=add-and-substract-matrices>add and substract matrices</h2><p>A matrix can be added to other one, as well one can be substracted from the other. To shorten the fomulation, since they are similar, both addition and subtraction will be explained at the same time. Suppose there is matrix $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$ in the relation of</p><p>$$\tag{2}
+\mathbf{A} = \mathbf{B} \pm \mathbf{C},
+$$</p><p>which can also written as their elements</p><p>$$\tag{3}
+\left[
+\begin{matrix}
+a_{11} & \dots & a_{1n} \newline
+a_{21} & \dots & a_{2n} \newline
+a_{31} & \dots & a_{3n} \newline
+\vdots & \ddots & \vdots \newline
+a_{m1} & \dots & a_{mn}
+\end{matrix}
+\right] =
+\left[
+\begin{matrix}
+b_{11} & \dots & b_{1n} \newline
+b_{21} & \dots & b_{2n} \newline
+b_{31} & \dots & b_{3n} \newline
+\vdots & \ddots & \vdots \newline
+b_{m1} & \dots & b_{mn}
+\end{matrix}
+\right] \pm
+\left[
+\begin{matrix}
+c_{11} & \dots & c_{1n} \newline
+c_{21} & \dots & c_{2n} \newline
+c_{31} & \dots & c_{3n} \newline
+\vdots & \ddots & \vdots \newline
+c_{m1} & \dots & c_{mn}
+\end{matrix}
+\right]
+$$</p><p>For each elements of the matrices, following relation</p><p>$$\tag{4}
+a_{ij} = b_{ij} \pm c_{ij}
+$$</p><p>can be obtained with $i = 1, .., m$ and $j = 1, .., n$.</p><h2 id=multiply-scalar-and-matrix>multiply scalar and matrix</h2><p>Multiplication between a scalar and a matric is commutative, which means that</p><p>$$\tag{5}
+b \mathbf{C} = \mathbf{C} b.
+$$</p><p>Suppose the Multiplication result is stored in matrix $\mathbf{B}$, then</p><p>$$\tag{6}
+\mathbf{A} = b \mathbf{C}
+$$</p><p>and with their elements</p><p>$$\tag{7}
+\left[
+\begin{matrix}
+a_{11} & a_{12} & \dots & a_{1n} \newline
+a_{21} & a_{22} & \dots & a_{2n} \newline
+a_{31} & a_{32} & \dots & a_{3n} \newline
+\vdots & \vdots & \ddots & \vdots \newline
+a_{m1} & a_{m2} & \dots & a_{mn}
+\end{matrix}
+\right] = b
+\left[
+\begin{matrix}
+c_{11} & c_{12} & \dots & c_{1n} \newline
+c_{21} & c_{22} & \dots & c_{2n} \newline
+c_{31} & c_{32} & \dots & c_{3n} \newline
+\vdots & \vdots & \ddots & \vdots \newline
+c_{m1} & c_{m2} & \dots & c_{mn}
+\end{matrix}
+\right],
+$$</p><p>which gives</p><p>$$\tag{5}
+a_{ij} = b \ c_{ij}
+$$</p><p>for each elements for the matrices.</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

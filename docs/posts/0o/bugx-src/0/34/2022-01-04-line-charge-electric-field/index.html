@@ -1,0 +1,154 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>line charge electric field | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>line charge electric field</h1><time datetime=2022-01-06T12:57:00+07:00>January 6, 2022</time><p>Untuk mendapatkan medan listrik akibat muatan garis diperlukan rapat muatan linier yang disimbolkan dengan $\lambda$ [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan kadang juga dengan $\mu$ [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Medan listrik di sekitar kawat lurus dapat dihitung pada posisi tengah-tengah panjang kawat sehingga dapat memanfaatkan simetri untuk memudahkan perhitungan [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau menghitungnya pada sembarang posisi di sekitar kawat lurus sehingga memberikan hasil yang lebih umum [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Salah satu kasus yang menarik adalah bila panjang kawat dapat dianggap tak-hingga atau jauh lebih besar dari jarak titik yang ingin diobservasi terhadap kawat [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat pula kasus di mana medan listrik dihitung pada jarak tertentu dari salah satu ujung kawat lurus, yang kadang dapat cukup membingungkan [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=electric-field>electric field</h2><p>Medan listrik yang disebabkan oleh distribusi muatan yang terdapat pada posisi $\vec{r}_q$ akan menyebabkan elemen medan listrik $d\vec{E}$ pada posisi $\vec{r}$ dalam bentuk</p><p>\begin{equation}\label{eqn:efield-charge-distribution}
+d\vec{E}_q = k \ \frac{dq}{| \vec{r} - \vec{r}_q |^3} \ (\vec{r} - \vec{r}_q),
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:coulomb-constant}
+\begin{array}{rcl}
+k & = & \displaystyle \frac{1}{4\pi\epsilon_0} \newline
+& = & 8.9875517923(14)\times 10^9 \newline
+&& {\rm kg \cdot m^3 \cdot s^{-2} \cdot C^{-2}}
+\end{array}
+\end{equation}</p><p>adalah konstanta Coulomb, yang untuk praktisnya diingat dengan nilai $9\times10^9$ sebagaimana diajarkan di universitas [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk muatan garis elemen muatan $dq$ pada Persamaan \eqref{eqn:efield-charge-distribution} digantikan oleh</p><p>\begin{equation}\label{eqn:charge-element}
+dq = \lambda dl
+\end{equation}</p><p>dengan $\lambda$ adalah rapat muatan linier dan $dl$ adalah elemen panjang yang dapat berupa $dx$, $dy$, atau $dz$ dalam koordinat kartesian. Secara umum $\lambda = \lambda(l)$, sedangkan untuk kasus rapat muatan seragam $\lambda \ne \lambda(l)$ atau bernilai konstan. Pembahasan saat ini dibatasi untuk kasus $\lambda \ne \lambda(l)$.</p><h2 id=at-perpendicular-distance>at perpendicular distance</h2><p>Terdapat suatu muatan garis berbentuk kawat bermuatan total $Q$ yang terletak pada sumbu $x$ dengan membentang dari $x = -L_1$ sampai $x = +L_2$ seperti ditunjukkan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Titik pengamatan $\rm P$ tempat medan listrik ingin dihitung berjarak tegak lurus $R$ dari kawat dan terletak pada sumbu $y$.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-a.png)<br>Gambar <a name=fig1>1</a>. Elemen medan listrik $d\vec{E}$ disebabkan oleh elemen muatan $dq$ yang merupakan bagian dari muatan garis dengan panjang total $L_1 + L_2$.</p><p>Dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:perp-dist-case-rel-dist}
+\begin{array}{rcl}
+\vec{r} - \vec{r}_q & = & R\hat{y} - x\hat{x}, \newline
+|\vec{r} - \vec{r}_q| & = & \sqrt{R^2 + x^2}.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:charge-element}, dengan $dl \equiv dx$, dan \eqref{eqn:perp-dist-case-rel-dist} ke Persamaan \eqref{eqn:efield-charge-distribution} akan menghasilkan</p><p>\begin{equation}\label{eqn:dE-line-charge-perp}
+\begin{array}{rcl}
+d\vec{E}_q & = & \displaystyle k \ \frac{dq}{| \vec{r} - \vec{r}_q |^3} \ (\vec{r} - \vec{r}_q) \newline
+& = & \displaystyle k \ \frac{\lambda dx}{(R^2 + x^2)^{3/2}} \ (R\hat{y} - x\hat{x}) \newline
+& = & dE _{qx} \ \hat{x} + dE _{qy} \ \hat{y} \newline
+\vec{E}_q & = & E _{qx} \ \hat{x} + E _{qy} \ \hat{y}
+\end{array}
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:dEx-line-charge-perp}
+E _{qx} = \int dE _{qx} = -k\lambda \int \frac{x \ dx}{(R^2 + x^2)^{3/2}}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:dEy-line-charge-perp}
+E _{qy} = \int dE _{qy} = kR\lambda \int \frac{dx}{(R^2 + x^2)^{3/2}}.
+\end{equation}</p><p>Bagian integral pada suku paling kanan di kedua Persamaan \eqref{eqn:dEx-line-charge-perp} dan \eqref{eqn:dEy-line-charge-perp} perlu dipecahkan untuk mendapatkan medan listrik di titik $\rm P$.</p><p>Untuk arah $x$ diperoleh</p><p>\begin{equation}\label{eqn:dEx-line-charge-perp-result}
+\begin{array}{rcl}
+E _{qx} & = & \displaystyle -k\lambda \int \frac{x \ dx}{(R^2 + x^2)^{3/2}} \newline
+& = & \displaystyle (-k\lambda) \left(-\frac{1}{(R^2 + x^2)^{1/2}} \right) + C \newline
+& = & \displaystyle \frac{k\lambda}{(R^2 + x^2)^{1/2}} + C \end{array}
+\end{equation}</p><p>dan untuk aray $y$ didapatkan</p><p>\begin{equation}\label{eqn:dEy-line-charge-perp-result}
+\begin{array}{rcl}
+E _{qy} & = & \displaystyle kR\lambda \int \frac{dx}{(R^2 + x^2)^{3/2}} \newline
+& = & \displaystyle (kR\lambda) \left( \frac{1}{R^2} \ \frac{x}{\sqrt{R^2 + x^2}} \right) + C \newline
+& = & \displaystyle \frac{k\lambda}{R} \ \frac{x}{\sqrt{R^2 + x^2}} + C.
+\end{array}
+\end{equation}</p><p>Persamaan \eqref{eqn:dEx-line-charge-perp-result} dan \eqref{eqn:dEy-line-charge-perp-result} masih merupakan hasil integral tak-tentu. Untuk mendapatkan nilai medan listrik pada arah $x$ dan $y$ pada titik $\rm P$ seperti dalam Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>perlu dimasukkan batas-batas integral yang diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-b.png)<br>Gambar <a name=fig1>2</a>. Batas-batas integral untuk mencari medan listrik di titik $\rm P$, yang dapat berupa $x$ atau $\theta$ bergantung pada bentuk akhir antiderivatif yang diperoleh apakah dalam fungsi $x$ atau $\theta$.</p><p>Dengan memanfaatkan informasi yang diberikan dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>Persamaan \eqref{eqn:dEx-line-charge-perp-result} dan \eqref{eqn:dEy-line-charge-perp-result} akan menjadi</p><p>\begin{equation}\label{eqn:dEx-line-charge-perp-result-at-P}
+\begin{array}{rcl}
+E _{qx}({\rm P}) & = & \displaystyle -k\lambda \int _{-L_1}^{L_2} \frac{x \ dx}{(R^2 + x^2)^{3/2}} \newline
+& = & \displaystyle k\lambda \left[ \frac{1}{\sqrt{R^2 + x^2}} \right] _{x = -L_1}^{L_2} \newline
+& = & \displaystyle k\lambda \left( \frac{1}{\sqrt{R^2 + (L_2)^2}} - \frac{1}{\sqrt{R^2 + (-L_1)^2}} \right) \newline
+& = & \displaystyle k\lambda \left( \frac{1}{\sqrt{R^2 + L_2^2}} - \frac{1}{\sqrt{R^2 + L_1^2}} \right)
+\end{array}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:dEy-line-charge-perp-result-at-P}
+\begin{array}{rcl}
+E _{qy}({\rm P}) & = & \displaystyle kR\lambda \int _{-L_1}^{L_2} \frac{dx}{(R^2 + x^2)^{3/2}} \newline
+& = & \displaystyle \frac{k\lambda}{R} \left[ \frac{x}{\sqrt{R^2 + x^2}} \right] _{x = -L_1}^{L_2} \newline
+& = & \displaystyle \frac{k\lambda}{R} \left[ \frac{(L_2)}{\sqrt{R^2 + (L_2)^2}} - \frac{(-L_1)}{\sqrt{R^2 + (-L_1)^2}} \right] \newline
+& = & \displaystyle \frac{k\lambda}{R} \left( \frac{L_2}{\sqrt{R^2 + L_2^2}} + \frac{L_1}{\sqrt{R^2 + L_1^2}} \right).
+\end{array}
+\end{equation}</p><p>Dengan demikian dapat dituliskan</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution}
+\begin{array}{rcl}
+\vec{E}_q({\rm P}) & = & E _{qx} \ \hat{x} + dE _{qy} \ \hat{y} \newline
+& = & \displaystyle k\lambda \left( \frac{1}{\sqrt{R^2 + L_2^2}} - \frac{1}{\sqrt{R^2 + L_1^2}} \right) \ \hat{x} \newline
+&& + \displaystyle \frac{k\lambda}{R} \left( \frac{L_2}{\sqrt{R^2 + L_2^2}} + \frac{L_1}{\sqrt{R^2 + L_1^2}} \right) \ \hat{y},
+\end{array}
+\end{equation}</p><p>yang merupakan solusi dari medan listrik di titik $\rm P$ pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-c.png)<br>Gambar <a name=fig3>3</a>. Sebuah kawat muatan garis dengan panjang $L = L_L + L_R$ berorientasi sembarang deengan medan listrik $\vec{E}$ di titik $\rm P$ yang disebabkannya, di mana total muatannya adalah $+Q$ dan rapat muatan liniernya bersifat seragam $\lambda \ne \lambda(l)$.</p><p>Persamaan \eqref{eqn:E-line-charge-perp-solution} dapat dibuat menjadi lebih umum sehingga dapat menggambarkan medan listrik pada titik $\rm P$ pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>yang memiliki orientasi sembarang.</p><h3 id=finite-length-general>finite length general</h3><p>Persamaan \eqref{eqn:E-line-charge-perp-solution} merupakan solusi dari Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-d.png)<br>Gambar <a name=fig4>4</a>. Medan listrik oleh suatu muatan garis berbentuk kawat berhingga dengan panjang sebelah kiri $L_1$ dan sebelah kanan $L_2$ dari titik pengamatan $\rm P$ yang berjarak $R$ dari kawat.</p><p>Perbedaan panjang $L_1$ dan $L_2$ akan menentukan arah medan listrik yang diperoleh dari</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-1}
+\begin{array}{rcl}
+\vec{E}_q({\rm P}) & = & \displaystyle k\lambda \left( \frac{1}{\sqrt{R^2 + L_2^2}} - \frac{1}{\sqrt{R^2 + L_1^2}} \right) \ \hat{x} \newline
+&& + \displaystyle \frac{k\lambda}{R} \left( \frac{L_2}{\sqrt{R^2 + L_2^2}} + \frac{L_1}{\sqrt{R^2 + L_1^2}} \right) \ \hat{y},
+\end{array}
+\end{equation}</p><p>yang merupakan penulisan kembali dari Persamaan \eqref{eqn:E-line-charge-perp-solution}. Perhatikan bahwa komponen pada arah $y$ selalu positif, sedangkan komponen pada arah $x$ ditentukan oleh nilai $L_1$ dan $L_2$. Bila $L_1 > L_2$ maka $E_x > 0$ dan bila $L_1 &lt; L_2$ maka $E_x &lt; 0$. Selanjutnya</p><h3 id=finite-length-at-the-center>finite length at the center</h3><p>Terdapat kasus titik $\rm P$ terletak di tengah-tengah kawat atau $L_1 = L_2$ sebagaimana disajikan pada Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-e.png)<br>Gambar <a name=fig5>5</a>. Medan listrik oleh suatu muatan garis berbentuk kawat berhingga dengan panjang sebelah kiri $L_1$ dan sebelah kanan $L_2$ dari titik pengamatan $\rm P$ yang berjarak $R$ dari kawat, untuk kasus $L_1 = L_2$.</p><p>Kasus pada Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>akan membuat Persamaan \eqref{eqn:E-line-charge-perp-solution} menjadi</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-2}
+\begin{array}{rcl}
+\vec{E}_q({\rm P}) & = & \displaystyle \frac{k\lambda}{R} \left( \frac{L_2}{\sqrt{R^2 + L_2^2}} + \frac{L_1}{\sqrt{R^2 + L_1^2}} \right) \ \hat{y},
+\end{array}
+\end{equation}</p><p>yang tidak lagi memiliki komponen pada arah $x$ karena kontribusi dari bagian dengan panjang $L_1$ di sebelah kiri saling meniadakan dengan kontribusi dari bagian dengan panjang $L_2$ di sebelah kanan.</p><h3 id=finite-length-at-the-one-end>finite length at the one end</h3><p>Persamaan \eqref{eqn:E-line-charge-perp-solution} dapat pula digunakan untuk jarak tegak lurus terhadap muatan garis di sisi salah satu ujung kawat yang diberikan ilustrasinya pada Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di bawah ini,</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-f.png)<br>Gambar <a name=fig6>6</a>. Medan listrik oleh suatu muatan garis berbentuk kawat berhingga dengan panjang sebelah kiri $L_1$ dan sebelah kanan $L_2$ dari titik pengamatan $\rm P$ yang berjarak $R$ dari kawat, untuk kasus $L_1 = L$, $L_2 = 0$ (atas) dan $L_1 = 0$, $L_2 = L$ (bawah).</p><p>Solusi dari kedua kasus pada Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk $L_1 = L$, $L_2 = 0$ adalah</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-3-L2=0}
+\begin{array}{rcl}
+\vec{E}_q({\rm P}) & = & \displaystyle k\lambda \left( \frac{1}{R} - \frac{1}{\sqrt{R^2 + L^2}} \right) \ \hat{x} \newline
+&& + \displaystyle \frac{k\lambda}{R} \left( \frac{L}{\sqrt{R^2 + L^2}} \right) \ \hat{y}
+\end{array}
+\end{equation}</p><p>dan untuk $L_1 = 0$, $L_2 = L$ adalah</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-3-L1=0}
+\begin{array}{rcl}
+\vec{E}_q({\rm P}) & = & \displaystyle k\lambda \left( \frac{1}{\sqrt{R^2 + L^2}} - \frac{1}{R} \right) \ \hat{x} \newline
+&& + \displaystyle \frac{k\lambda}{R} \left( \frac{L}{\sqrt{R^2 + L^2}} \right) \ \hat{y}.
+\end{array}
+\end{equation}</p><p>Perhatikan bahwa komponen medan listrik pada arah $y$ adalah sama dan pada arah $x$ berbeda tanda pada Persamaan \eqref{eqn:E-line-charge-perp-solution-case-3-L2=0} dan \eqref{eqn:E-line-charge-perp-solution-case-3-L1=0}.</p><h3 id=semi-infinite-length>semi infinite length</h3><p>Selanjutnya bila kawat dapat dianggap amat panjang dan ingin dicari medan listrik pada jarak tegak lurus di sisi salah satu ujungnya seperti diberikan pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-g.png)<br>Gambar <a name=fig7>7</a>. Medan listrik oleh suatu muatan garis berbentuk kawat tak-berhingga dengan panjang sebelah kiri $L_1$ dan sebelah kanan $L_2$ dari titik pengamatan $\rm P$ yang berjarak $R$ dari kawat, untuk kasus $L_1 = \infty$, $L_2 = 0$ (atas) dan $L_1 = 0$, $L_2 = \infty$ (bawah).</p><p>Solusi dari Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh kembali dari Persamaan \eqref{eqn:E-line-charge-perp-solution} atau lebih cepat dari Persamaan \eqref{eqn:E-line-charge-perp-solution-case-3-L2=0} dan \eqref{eqn:E-line-charge-perp-solution-case-3-L1=0} dengan menerapkan $L = \infty$, yang akan memberikan</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-3-L2-very-long}
+\vec{E}_q({\rm P}) = \frac{k\lambda}{R} \ \hat{x} + \frac{k\lambda}{R} \ \hat{y}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-3-L1-very-long}
+\vec{E}_q({\rm P}) = - \frac{k\lambda}{R} \ \hat{x} + \frac{k\lambda}{R} \ \hat{y}.
+\end{equation}</p><p>Kembali perhatikan bahwa komponen medan listrik pada arah $y$ adalah sama dan pada arah $x$ berbeda tanda pada Persamaan \eqref{eqn:E-line-charge-perp-solution-case-3-L2-very-long} dan \eqref{eqn:E-line-charge-perp-solution-case-3-L1-very-long}.</p><h3 id=infinite-length>infinite length</h3><p>Kasus terakhir adalah untuk muatan garis berbentuk kawat lurus dengan panjang tak-hingga yang medan listrik di sisinya ingin dicari seperti disajikan pada Gambar
+<a href=#fig8><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Dikarenakan panjang tak-hingga pada kedua sisinya, dapat dianggap posisi titik pengamatan $\rm P$ berada di tengah-tengah panjang kawat.</p><p>![]({{ site.baseurl }}/assets/img/0/34/0340-h.png)<br>Gambar <a name=fig8>8</a>. Medan listrik oleh suatu muatan garis berbentuk kawat tak-berhingga dengan panjang sebelah kiri dan sebelah kanan, dari titik pengamatan $\rm P$ yang berjarak $R$ dari kawat, bernilai $\infty$.</p><p>Ketimbang menggunakan Persamaan \eqref{eqn:E-line-charge-perp-solution} untuk kasus ini, lebih cepat bila menggunakan Persamaan \eqref{eqn:E-line-charge-perp-solution-case-2} dan menerapkan $L_1 = L_2 = \infty$ yang akan memberikan</p><p>\begin{equation}\label{eqn:E-line-charge-perp-solution-case-4}
+\vec{E}_q({\rm P}) = \frac{2k\lambda}{R} \ \hat{y}.
+\end{equation}</p><p>Untuk kasus pada sisi di tengah-tengah kawat, seperti diberikan oleh Persamaan Persamaan \eqref{eqn:E-line-charge-perp-solution-case-2} dan \eqref{eqn:E-line-charge-perp-solution-case-4}, komponen pada arah $x$, atau pada arah sejajar panjang kawat, akan bernilai nol karena bagian di sebelah kiri dan kanan titik pengamatan akan saling meniadakan.</p><h2 id=exer>exer</h2><ol><li>Apakah formulasi medan listrik pada jarak $R$ di sisi salah satu ujung kawat tak-hingga pada Persamaan \eqref{eqn:E-line-charge-perp-solution-case-3-L1-very-long} dan \eqref{eqn:E-line-charge-perp-solution-case-3-L2-very-long} dapat digunakan untuk mendapatkan formulasi medan listrik pada sisi di tengah-tengah kawat panjang tak-hingga pada Persamaan \eqref{eqn:E-line-charge-perp-solution-case-4}? Bila ya, bagaimana caranya?</li><li>Terkait dengan pertanyaan sebelumnya, apakah dapat berlaku sebaliknya? Mengapa?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>physicscatalyst, &ldquo;Electric field due to Line Charge&rdquo;, Physics Catalyst, 2019, url
+<a href=https://physicscatalyst.com/elec/electric-field-line-charge.php target=_blank rel="nofollow noopener noreferrer"><span>https://physicscatalyst.com/elec/electric-field-line-charge.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220104].</li><li><a name=r02></a>Willy McAllister, &ldquo;Line of charge&rdquo;, Khan Academy, 2022, url
+<a href=https://www.khanacademy.org/science/electrical-engineering/ee-electrostatics/ee-fields-potential-voltage/a/ee-electric-field-near-a-line-of-charge target=_blank rel="nofollow noopener noreferrer"><span>https://www.khanacademy.org/science/electrical-engineering/ee-electrostatics/ee-fields-potential-voltage/a/ee-electric-field-near-a-line-of-charge <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220104].</li><li><a name=r03></a>OpenStax, &ldquo;Calculating Electric Fields of Charge Distributions&rdquo;, University Physics, Physics LibreText, 6 Nov 2020, url
+<a href=https://phys.libretexts.org/@go/page/4376 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/4376 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220104].</li><li><a name=r04></a>Carl R. Nave, &ldquo;Electric Field of Line Charge&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elelin.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elelin.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220104].</li><li><a name=r05></a>Sen-ben Liao, Peter Dourmashkin, John W. Belcher, &ldquo;Coulomb&rsquo;s Law&rdquo;, Physics 8.02 Electricity & Magnetism, Massachusetts Institute of Technology, 2004, url
+<a href=http://web.mit.edu/8.02t/www/802TEAL3D/visualizations/coursenotes/modules/guide02.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://web.mit.edu/8.02t/www/802TEAL3D/visualizations/coursenotes/modules/guide02.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220105].</li><li><a name=r06></a>bhdmia, &ldquo;Field at End of Line of Charge 2&rdquo;, Physics Forums, 21 Jan 2017, url
+<a href=https://www.physicsforums.com/threads/electric-field-at-the-end-of-a-line-of-charge.901069 target=_blank rel="nofollow noopener noreferrer"><span>https://www.physicsforums.com/threads/electric-field-at-the-end-of-a-line-of-charge.901069 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220105].</li><li><a name=r07></a>ParalynxEngineering.com, “Coulomb’s Constant Explained”, Paralynx Engineering Inc., 1 Nov 2016, url
+<a href=https://www.paralynxengineering.com/coulombs-constant-explained.shtml target=_blank rel="nofollow noopener noreferrer"><span>https://www.paralynxengineering.com/coulombs-constant-explained.shtml <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220105].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0340?src=hash&amp;ref_src=twsrc%5Etfw">#bug0340</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1480396038972182528?ref_src=twsrc%5Etfw">January 10, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p><a><span>electric charge <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>electric field <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>charge distribution <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) ya, jumlahkan kedua persamaan pertama untuk mendapatkan persamaan kedua; &nbsp;
+2) tidak, informasi komponen pada arah $x$ tidak ada; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

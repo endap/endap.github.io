@@ -1,0 +1,141 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>bisection method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>bisection method</h1><time datetime=2023-12-12T09:07:00+08:00>December 12, 2023</time><h2 id=intro>intro</h2><p>Bisection method pops up quite often when we talk about root finding methods due its very easy and simple algorithm to implement (Luna, 2020). This method uses the intermediate value theorem iteratively to find roots (Kong et al., 2020). It is also known as the interval halving method, where it provides a systematic approach to finding the root of a function within a given interval (Collimator, 2023). A brief about this method and JavaScript code are given here.</p><h2 id=root>root</h2><ul><li>Root $x = r_n$ of a function $f(x)$ is when it makes
+$$\tag{1}
+f(r_n) = 0.
+$$</li><li>It can also be a root when
+$$\tag{2}
+g(r_n) = h(r_n),
+$$
+since it can be defined that
+$$\tag{3}
+f(x) = g(x) - h(x).
+$$</li></ul><h2 id=range>range</h2><ul><li>A single root $x = r_n$ exists for $x \in [x_1, x_2]$ if
+$$\tag{4}
+f(x_1) f(x_2) &lt; 0.
+$$</li><li>It also holds for odd number of roots.</li><li>If the requirement is not satisfied there might be even number of roots or there is not any root.</li><li>From now on only case with one root is considered here.</li><li>Even that $x_1 &lt; r_n &lt; x_2$, but the value of $r_n$ is still unknown.</li></ul><h2 id=method>method</h2><ul><li>Find the midpoint between $x_1$ and $x_2$ is a way to approach the $r_n$
+$$\tag{5}
+x_3 = \tfrac12 (x_1 + x_2),
+$$
+where the name comes from, bisection, divide the range into two equal parts.</li><li>Next step is to find where the root exists with two possibilities, which are $x_1 &lt; r_n &lt; x_3$ or $x_3 &lt; r_n &lt; x_2$ by calculating which one from $f(x_1)f(x_3)$ and $f(x_2)f(x_3)$ is negative.</li><li>If $x_1 &lt; r_n &lt; x_3$ then swap $x_2$ and $x_1$.</li><li>Then calculate next midpoint using equation similar to the last one
+$$\tag{6}
+x_4 = \tfrac12 (x_2 + x_3).
+$$</li><li>Repeat the step until $|f(x_n)| > \varepsilon$, where $\varepsilon$ is small value regarding as zero.</li></ul><h2 id=flowchart>flowchart</h2><ul><li>The method can be represented in a flowchart as follow.<div class=mermaid>flowchart TD
+B --> I --> P1 --> O1a --> P2 --> O2a
+O2b ---> P3 --> C1
+C1 --"N"---> O3a
+C1 --"Y"--> P4 --> O4a
+C2 --"N"--> P6 ---> O1b
+O3b & O4b --> P5 --> C2 --"Y"----> E
+C2{"y < &#949;"}
+C1{"s < 0"}
+P6["n = n + 1"]
+P5["y = f(x[n])"]
+P4["x[n-2] &harr; x[n-1]"]
+P3["s = f(x[n]) f(x[n-2])"]
+P2["x[n] = &half; ( x[n-1] + x[n-2] )"]
+P1["n = 3"]
+I[/"f(x), &#949;, x[1], x[2]"/]
+O4a(("4")); O4b(("4"));
+O3a(("3")); O3b(("3"));
+O2a(("2")); O2b(("2"));
+O1a(("1")); O1b(("1"));
+B(["Begin"])
+E(["End"])
+classDef style1 fill:none, color:inherit
+classDef style2 fill:#888, color:#fff
+class P1,P2,P3,P4,P5,P6 style1
+class C1,C2,B,E,I style1
+class O1a,O1b,O2a,O2b,O3a,O3b,O4a,O4b style2
+linkStyle default stroke:#8a8</div></li><li>The symbol a ↔ b means swapping a and b values.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// define a and b
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// swap a and b via c
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>c</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>b</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>c</span>;
+</span></span></code></pre></div></li></ul><h2 id=example>example</h2><ul><li><p>Suppose that there is a function
+$$\tag{7}
+f(x) = x - 3.45,
+$$
+whose root is to be find with $\varepsilon = 10^{-5}$, and initial values are $0$ and $20$.</p></li><li><p>Following code is in JavaScript</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>3.45</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>eps</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-5</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fxn</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;n&#39;</span>, <span style=color:#e6db74>&#39;xn&#39;</span>, <span style=color:#e6db74>&#39;f(xn)&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span>(Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>fxn</span>) <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>eps</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]) 
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fxn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]) <span style=color:#f92672>*</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]] <span style=color:#f92672>=</span> [<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>], <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]];
+</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]] <span style=color:#f92672>=</span> [<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]];
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>url
+<a href=https://onecompiler.com/javascript/3zw6fwzav target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zw6fwzav <i class="fa fa-external-link" style=font-size:14px></i></span></a></p></li><li><p>Result</p><pre tabindex=0><code>n xn f(xn)
+0 0 -3.45
+1 20 16.55
+2 10 6.55
+3 5 1.5499999999999998
+4 2.5 -0.9500000000000002
+5 3.75 0.2999999999999998
+6 3.125 -0.3250000000000002
+7 3.4375 -0.012500000000000178
+8 3.59375 0.14374999999999982
+9 3.515625 0.06562499999999982
+10 3.4765625 0.026562499999999822
+11 3.45703125 0.007031249999999822
+12 3.447265625 -0.0027343750000001776
+13 3.4521484375 0.0021484374999998224
+14 3.44970703125 -0.00029296875000017764
+15 3.450927734375 0.0009277343749998224
+16 3.4503173828125 0.00031738281249982236
+17 3.45001220703125 0.000012207031249822364
+18 3.449859619140625 -0.00014038085937517764
+19 3.4499359130859375 -0.00006408691406267764
+20 3.4499740600585938 -0.000025939941406427636
+21 3.449993133544922 -0.000006866455078302636
+</code></pre></li><li><p>Discussion</p><ul><li>It finds $r_1 \approx 3.44999$ where $f(r_1) \approx -6.866\times10^{-6}$, whose absolute value is already smaller than $\varepsilon$.</li><li>Further exploration with $\varepsilon = 10^{-20}$ requires more steps, $n = 56$, to obtain $r_1 = 3.45$.</li></ul></li></ul><h2 id=graphics>graphics</h2><ul><li>Previous data can be visualized for $r_1$ as follow.</li><li>It can also visualized for $f(r_1)$ as follow.</li><li>You may hover your mouse on a point to see its pair values.</li><li>JS code to produce the data for Chart.js embeded here is available
+<a href=https://onecompiler.com/javascript/3zw6zv4x9 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zw6zv4x9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul><h2 id=challenges>challenges</h2><ul><li>Modify above given code to find the root with $\varepsilon = 10^{-20}$, display the last three lines, and show that it requires $n = 56$.</li><li>Modify the code to calculate a root of
+$$\tag{8}
+f(x) = (x - 3.45)(x + 1).
+$$
+Explain whether the initial values $0$ and $20$ can be used or they must be changed.</li><li>What if the function is
+$$\tag{9}
+f(x) = (x - 3.45)(x - 1),
+$$
+can the initial values still be used? If they must be changed, what are your suggestion?</li></ul><h2 id=refs>refs</h2><ul><li>Collimator (2023) &ldquo;Understanding the Basics of the Bisection Method&rdquo;, url
+<a href=https://www.collimator.ai/reference-guides/what-is-the-bisection-method target=_blank rel="nofollow noopener noreferrer"><span>https://www.collimator.ai/reference-guides/what-is-the-bisection-method <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Kong Q, Siauw T, Bayen A (2020) &ldquo;Python Programming and Numerical Methods&rdquo;, Academic Press, 1st edition, isbn
+<a href=https://isbnsearch.org/isbn/9780128195499 target=_blank rel="nofollow noopener noreferrer"><span>9780128195499 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, ch
+<a href=https://pythonnumericalmethods.berkeley.edu/notebooks/chapter19.03-Bisection-Method.html target=_blank rel="nofollow noopener noreferrer"><span>19.03 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Luna C M (2020) &ldquo;Bisection Method&rdquo;, Medium,
+<a href=https://medium.com/@cmluna2913/32c8fb2e76a0 target=_blank rel="nofollow noopener noreferrer"><span>@cmluna2913/32c8fb2e76a0 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

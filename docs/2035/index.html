@@ -1,0 +1,234 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>learn tf with pattern | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>learn tf with pattern</h1><time datetime=2024-05-10T05:13:00+07:00>May 10, 2024</time><p>Learning machine learning using tensor flow with intuition</p><h2 id=intro>intro</h2><p>With prior knowledge of ANN architectures TensofFlow functions are learned intuitively by observing the pattern on Python syntaxes from previous code in a story <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. But, unfortunately it does not work well.</p><h2 id=template>template</h2><p>Previous code is used as template</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># Step 1: Import Required Libraries</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> tensorflow <span style=color:#66d9ef>as</span> tf
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> tensorflow.keras <span style=color:#f92672>import</span> layers
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 2: Prepare the Dataset</span>
+</span></span><span style=display:flex><span>(x_train, y_train), (x_test, y_test)
+</span></span><span style=display:flex><span>  <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>datasets<span style=color:#f92672>.</span>mnist<span style=color:#f92672>.</span>load_data()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Normalize the data</span>
+</span></span><span style=display:flex><span>x_train <span style=color:#f92672>=</span> x_train <span style=color:#f92672>/</span> <span style=color:#ae81ff>255.0</span>
+</span></span><span style=display:flex><span>x_test <span style=color:#f92672>=</span> x_test <span style=color:#f92672>/</span> <span style=color:#ae81ff>255.0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 3: Create the Neural Network Model</span>
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Flatten(input_shape<span style=color:#f92672>=</span>(<span style=color:#ae81ff>28</span>, <span style=color:#ae81ff>28</span>)),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>128</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>128</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>10</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;softmax&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 4: Compile the Model</span>
+</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>compile(
+</span></span><span style=display:flex><span>    optimizer<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;adam&#34;</span>,
+</span></span><span style=display:flex><span>    loss<span style=color:#f92672>=</span>tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>losses<span style=color:#f92672>.</span>
+</span></span><span style=display:flex><span>      SparseCategoricalCrossentropy(from_logits<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>),
+</span></span><span style=display:flex><span>    metrics<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;accuracy&#34;</span>]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 6: Train the Model</span>
+</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>fit(x_train, y_train, epochs<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 7: Evaluate the Model</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>test_loss, test_acc <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>evaluate(x_test, y_test,
+</span></span><span style=display:flex><span>  verbose<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Test accuracy: </span><span style=color:#e6db74>{</span>test_acc<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h2 id=models>models</h2><p>As first model a perceptron with two input node and one output nodes, without hidden layer(s) is as follow.</p><div class=mermaid>flowchart LR
+I1 --"w11"--> O1
+I2 --"w12"--> O1
+subgraph "L1"
+I1
+I2
+end
+subgraph "L2"
+O1
+end
+I1(("I1"))
+I2(("I2"))
+O1(("O1"))</div><p>The model should be something like</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>2</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>1</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;softmax&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span></code></pre></div><p>Then, as second model, it has nodes of 2-3-1 in input, hidden, and output layers.</p><div class=mermaid>flowchart LR
+I1 --"w11"--> H1
+I2 --"w12"--> H1
+I1 --"w21"--> H2
+I2 --"w22"--> H2
+I1 --"w31"--> H3
+I2 --"w32"--> H3
+H1 --"v11"--> O1
+H2 --"v12"--> O1
+H3 --"v13"--> O1
+subgraph "L1"
+I1
+I2
+end
+subgraph "L2"
+H1
+H2
+H3
+end
+subgraph "L3"
+O1
+end
+I1(("I1"))
+I2(("I2"))
+H1(("H1"))
+H2(("H2"))
+H3(("H3"))
+O1(("O1"))</div><p>It should be something like</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>2</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>3</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>1</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;softmax&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span></code></pre></div><p>And for the final model, or the third, it has 2-3-2-1 nodes configuration within four layers.</p><div class=mermaid>flowchart LR
+I1 --"w11"--> H1
+I2 --"w12"--> H1
+I1 --"w21"--> H2
+I2 --"w22"--> H2
+I1 --"w31"--> H3
+I2 --"w32"--> H3
+H1 --"v11"--> G1
+H2 --"v12"--> G1
+H3 --"v13"--> G1
+H1 --"v21"--> G2
+H2 --"v22"--> G2
+H3 --"v23"--> G2
+G1 --"u11"--> O1
+G2 --"u12"--> O1
+subgraph "L1"
+I1
+I2
+end
+subgraph "L2"
+H1
+H2
+H3
+end
+subgraph "L3"
+G1
+G2
+end
+subgraph "L4"
+O1
+end
+I1(("I1"))
+I2(("I2"))
+H1(("H1"))
+H2(("H2"))
+H3(("H3"))
+G1(("G1"))
+G2(("G2"))
+O1(("O1"))</div><p>This model should have lines of codes similar to</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>2</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>3</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>2</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>  layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>1</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;softmax&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span></code></pre></div><p>The activation functions are not describes in the models. Types of them in above figures are only for illustration.</p><h2 id=code--attempt-1>code &ndash; attempt 1</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># Step 1: Import Required Libraries</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.model_selection <span style=color:#f92672>import</span> train_test_split
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> tensorflow <span style=color:#66d9ef>as</span> tf
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> tensorflow.keras <span style=color:#f92672>import</span> layers
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 2: Create the Neural Network Model</span>
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>2</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>1</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sigmoid&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 3: Compile the Model</span>
+</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>compile(
+</span></span><span style=display:flex><span>    optimizer<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;adam&#34;</span>,
+</span></span><span style=display:flex><span>    loss<span style=color:#f92672>=</span>tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>losses<span style=color:#f92672>.</span>SparseCategoricalCrossentropy(from_logits<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>),
+</span></span><span style=display:flex><span>    metrics<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;accuracy&#34;</span>]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 4: Create Dataset</span>
+</span></span><span style=display:flex><span>dataset <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 5: Get Input and Output, Scale Output from Dataset</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> dataset[:, :<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.1</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.8</span> <span style=color:#f92672>*</span> dataset[:, <span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 6: Split Input and Output</span>
+</span></span><span style=display:flex><span>x_train, x_test, y_train, y_test <span style=color:#f92672>=</span> train_test_split(
+</span></span><span style=display:flex><span>    x, y, test_size<span style=color:#f92672>=</span><span style=color:#ae81ff>0.30</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 7: Train the Model</span>
+</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>fit(x_train, y_train, epochs<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Step 8: Evaluate the Model</span>
+</span></span><span style=display:flex><span>test_loss, test_acc <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>evaluate(x_test, y_test, verbose<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Test accuracy: </span><span style=color:#e6db74>{</span>test_acc<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Test loss: </span><span style=color:#e6db74>{</span>test_loss<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><p>It does not produce any error messages, but the results seem wrong.</p><h2 id=learn-first>learn first</h2><p>Read
+<a href=https://keras.io/guides/sequential_model/ target=_blank rel="nofollow noopener noreferrer"><span>https://keras.io/guides/sequential_model/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>since I do not understand. So this post does not work, since my prior knowledge is not adequate to create the model.</p><h2 id=draw-model>draw Model</h2><p>Then I learn to draw the model. But, it requires that two Python packages must be installed first</p><pre tabindex=0><code>(tf) M:\py-jupyter-nb&gt;pip install pydot
+Collecting pydot
+  Downloading pydot-2.0.0-py3-none-any.whl.metadata (9.6 kB)
+Requirement already satisfied: pyparsing&gt;=3 in v:\tf\lib\site-packages (from pydot) (3.1.2)
+Downloading pydot-2.0.0-py3-none-any.whl (22 kB)
+Installing collected packages: pydot
+Successfully installed pydot-2.0.0
+
+(tf) M:\py-jupyter-nb&gt;
+</code></pre><pre tabindex=0><code>(tf) M:\py-jupyter-nb&gt;pip install graphviz
+Collecting graphviz
+  Downloading graphviz-0.20.3-py3-none-any.whl.metadata (12 kB)
+Downloading graphviz-0.20.3-py3-none-any.whl (47 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.1/47.1 kB 1.2 MB/s eta 0:00:00
+Installing collected packages: graphviz
+Successfully installed graphviz-0.20.3
+
+(tf) M:\py-jupyter-nb&gt;
+</code></pre><p>then also Graphviz software. How to install it is on Medium
+<a href=https://medium.com/p/26a3c4446178 target=_blank rel="nofollow noopener noreferrer"><span>Install Graphviz on Windows 11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. The code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> tensorflow <span style=color:#66d9ef>as</span> tf
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> tensorflow.keras <span style=color:#f92672>import</span> layers
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> keras
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> keras <span style=color:#f92672>import</span> ops
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create input, two features, four rows</span>
+</span></span><span style=display:flex><span>l <span style=color:#f92672>=</span> [ [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>] ]
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> ops<span style=color:#f92672>.</span>array(l)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> tf<span style=color:#f92672>.</span>keras<span style=color:#f92672>.</span>Sequential([
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>128</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sigmoid&#34;</span>, name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Layer 1&#34;</span>),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>128</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;relu&#34;</span>, name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Layer 2&#34;</span>),
+</span></span><span style=display:flex><span>    layers<span style=color:#f92672>.</span>Dense(<span style=color:#ae81ff>10</span>, activation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;softmax&#34;</span>, name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Layer 3&#34;</span>)
+</span></span><span style=display:flex><span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> model(x)
+</span></span><span style=display:flex><span>print(x)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>dot_img_file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;model_1.png&#39;</span>
+</span></span><span style=display:flex><span>keras<span style=color:#f92672>.</span>utils<span style=color:#f92672>.</span>plot_model(
+</span></span><span style=display:flex><span>    model,
+</span></span><span style=display:flex><span>    to_file<span style=color:#f92672>=</span>dot_img_file,
+</span></span><span style=display:flex><span>    show_shapes<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    show_dtype<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    show_layer_names<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    rankdir<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;TB&#34;</span>,
+</span></span><span style=display:flex><span>    show_layer_activations<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    expand_nested<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    show_trainable<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>will produce
+<a href=https://raw.githubusercontent.com/dudung/py-jupyter-nb/main/src/apply/misc/nou/model_1.png target=_blank rel="nofollow noopener noreferrer"><span>model_1.png <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>as the result.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Sparisoma Viridi, &ldquo;A Python Virtual Environment for TensofFlow&rdquo;, Mr Plant B Publication &ndash; Medium, 9 May 2024, url
+<a href=https://medium.com/p/3056789ab7a2 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/3056789ab7a2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240510].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

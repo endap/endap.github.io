@@ -1,0 +1,66 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>scatter chart.js | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>scatter chart.js</h1><time datetime=2024-10-15T08:22:11+07:00>October 15, 2024</time><p>Scatter chart support on a Hugo post using
+<a href=https://www.chartjs.org/ target=_blank rel="nofollow noopener noreferrer"><span>Chart.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>library.</p><p>Scatter plot can be displayed in a note (or Hugo post) as in Figure 1.</p><p>Figure 1. Scatter plot of x against y for Data-1.</p><p>Following shortcodes is for Figure 1.</p><pre tabindex=0><code>{{&lt; scatter 80 320 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-1
+B_PCOLOR #fcc
+B_PRADII 10
+B_LVISIB true
+B_LCOLOR #f00
+
+1,1
+2,2
+3,3
+4,2
+5,2
+{{&lt; /scatter &gt;}}
+</code></pre><p>Meaning of each paremeters in first block from previous code are given in Table 1.</p><p>Tabel 1. Parameters, values, meaning, and other features.</p><table><thead><tr><th style=text-align:center>No</th><th style=text-align:center>Parameters</th><th style=text-align:center>Meaning</th><th style=text-align:center>Value</th><th style=text-align:center>Multiple</th><th style=text-align:center>Separator</th></tr></thead><tbody><tr><td style=text-align:center>1</td><td style=text-align:center><code>B_XLABEL</code></td><td style=text-align:center>x-axis label</td><td style=text-align:center>string</td><td style=text-align:center>no</td><td style=text-align:center>-</td></tr><tr><td style=text-align:center>2</td><td style=text-align:center><code>B_YLABEL</code></td><td style=text-align:center>y-axis label</td><td style=text-align:center>string</td><td style=text-align:center>no</td><td style=text-align:center>-</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center><code>B_SLABEL</code></td><td style=text-align:center>series label</td><td style=text-align:center>string</td><td style=text-align:center>yes</td><td style=text-align:center>comma</td></tr><tr><td style=text-align:center>4</td><td style=text-align:center><code>B_PCOLOR</code></td><td style=text-align:center>point color</td><td style=text-align:center>hexadecimal</td><td style=text-align:center>yes</td><td style=text-align:center>comma</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center><code>B_PRADII</code></td><td style=text-align:center>point radius</td><td style=text-align:center>integer</td><td style=text-align:center>yes</td><td style=text-align:center>comma</td></tr><tr><td style=text-align:center>6</td><td style=text-align:center><code>B_LVISIB</code></td><td style=text-align:center>line visibility</td><td style=text-align:center>boolean</td><td style=text-align:center>yes</td><td style=text-align:center>comma</td></tr><tr><td style=text-align:center>7</td><td style=text-align:center><code>B_LCOLOR</code></td><td style=text-align:center>line color</td><td style=text-align:center>hexadecimal</td><td style=text-align:center>yes</td><td style=text-align:center>comma</td></tr></tbody></table><p>Second block and other succeeding blocks are for data. One block for one series.</p><p>Let us have another scatter chart as follow.</p><p>Figure 2. Scatter plot of x against y for Data-2.</p><p>Following shortcodes is for Figure 2.</p><pre tabindex=0><code>{{&lt; scatter 80 320 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-2
+B_PCOLOR #ccf
+B_PRADII 5
+B_LVISIB true
+B_LCOLOR #00f
+
+5,1
+6,1
+7,3
+8,5
+9,5
+{{&lt; /scatter &gt;}}
+</code></pre><p>Both figures can be merge into one figure as follow.</p><p>Figure 3. Scatter plot of x against y for Data-2.</p><p>Notice in Figure 3 that Data-1 series and Data-2 series have different range. The first is from1 to 5, whlie the second is from 5 to 9.</p><pre tabindex=0><code>{{&lt; scatter 80 200 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-1,Data-2
+B_PCOLOR #ccf,#fcc
+B_PRADII 10,5
+B_LVISIB true
+B_LCOLOR #00f,#f00
+
+1,1
+2,2
+3,3
+4,2
+5,2
+
+5,1
+6,1
+7,3
+8,5
+9,5
+{{&lt; /scatter &gt;}}
+</code></pre><p>Above is shortcodes for Figure 3, where it shows two blocks of data. The first</p><pre tabindex=0><code>1,1
+2,2
+3,3
+4,2
+5,2
+</code></pre><p>is for Data-1 series and</p><pre tabindex=0><code>5,1
+6,1
+7,3
+8,5
+9,5
+</code></pre><p>is for Data-2 series.</p><p><strong>Challenge 1</strong>. Generate three data blocks and create a scatter plot with main color red, green, blue for each series.</p><p><strong>Challenge 2</strong>. Draw series only with marker but without lines connecting two adjacent markes.</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

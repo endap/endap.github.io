@@ -1,0 +1,111 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>secant method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>secant method</h1><time datetime=2024-01-08T19:16:00+08:00>January 8, 2024</time><h2 id=intro>intro</h2><p>If the derivative of function, whose root is to be found, does not exist or hard to find, secant method can be used instead of Newton raphson method, since it does not required the derivative but it requires two initial guesses for the roots (Mohan, 2021). Since this method retains only the most recent estimate, the root does not necessary bracketed (Weisstein). Because of that secant method may not converge (Han, 2017). There is a report explaining origin and evolution of secont method in 1-d (Papakonstantinou & Tapia, 2013).</p><h2 id=formula>formula</h2><ul><li>The Newton-Raphson method has a iterative formula in finding root of $f(x)$ as follow
+$$\tag{1}
+x_{n+2} = x_{n+1} - \frac{(x_{n+1} - x_n) f(x_{n+1})}{f(x_{n+1}) - f(x_n)}
+$$
+with $n = 0, 1, 2, 3, \dots$, $x_0$ and $x_1$ are the initial guesses for the root.</li><li>As $n$ increases, the value of $f(x_n)$ is nearer to $0$.</li></ul><h2 id=flowchart>flowchart</h2><ul><li>The Newton-Raphson method can be represented in following flowchart.<div class=mermaid>flowchart TD
+B --> I --> P1 --> O1a
+O1b --> P2 --> C --"N"--> P3 --> O1c
+C --"Y"--> O --> E
+O[/"x[n+2]"/]
+C{"|f(x[n+2])| < &#1013;"}
+P2["x[n+2] = x[n+1]<br>&mdash; ( x[n+1] &mdash; x[n] ) f(x[n])<br>/ ( f(x[n+1]) &mdash; f(x[n]) )"]
+P1["n = 0"]
+P3["n = n + 1"]
+I[/"f(x), &#949;, x[0], x[1]"/]
+O1a(("1")); O1b(("1")); O1c(("1"));
+B(["Begin"])
+E(["End"])
+classDef style1 fill:none, color:inherit
+classDef style2 fill:#888, color:#fff
+class P1,P2,P3,P4 style1
+class I,C,O,B,E style1
+class O1a,O1b,O1c, style2
+linkStyle default stroke:#8a8</div></li><li>Parameter $\varepsilon$ is small value that is acceptable representing $0$, since it might require a lot of iterations to find $f(x) = 0$, where $f(x) \approx 0$ is easier.</li></ul><h2 id=algorithm>algorithm</h2><ol><li>Start.</li><li>Input $f(x)$, $\varepsilon$, $x_0$, $x_1$.</li><li>Set $n = 0$.</li><li>Calculate $x_{n+2} = x_{n+1} - (x_{n+1} - x_n) f(x_{n+1}) / [ f(x_{n+1}) - f(x_n) ]$.</li><li>If $f(x_{n+2}) &lt; \varepsilon$, go to Step 8.</li><li>Increase $n$ using $n = n + 1$.</li><li>Go to Step 4.</li><li>Print $x_{n+2}$.</li><li>End.</li></ol><h2 id=problem>problem</h2><ul><li>Equation to be solved is
+$$\tag{2}
+f(x) = x^2 - 102.345x + 234.5.
+$$</li></ul><h2 id=code>code</h2><ul><li>An example of code in JS is as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span><span style=color:#f92672>**</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>102.345</span><span style=color:#f92672>*</span><span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>234.5</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>eps</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-5</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;n   x[n]           f(x[n])     eps&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>n</span>, <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>].<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>7</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fx</span>.<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>4</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>eps</span>
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>7</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fx</span>.<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>4</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>eps</span>
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span>(Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>fx</span>) <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>eps</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> <span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]) <span style=color:#f92672>*</span> (<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]) <span style=color:#f92672>/</span> (<span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]) <span style=color:#f92672>-</span> <span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>])); 
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>xx</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>f0</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>2</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>2</span>].<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>7</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fx</span>.<span style=color:#a6e22e>toExponential</span>(<span style=color:#ae81ff>4</span>), <span style=color:#e6db74>&#39; &#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>eps</span>
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;root = &#34;</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>5</span>));
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/javascript/3zytsa2wj target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zytsa2wj <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Previous code produces following results.<pre tabindex=0><code>n   x[n]           f(x[n])     eps
+0   5.0000000e+0   -2.5223e+2   0.00001
+1   1.0000000e+1   -2.5223e+2   0.00001
+2   2.1123132e+0   2.2777e+1   0.00001
+3   2.3647403e+0   -1.9273e+0   0.00001
+4   2.3450469e+0   -4.5833e-3   0.00001
+5   2.3450000e+0   9.2667e-7   0.00001
+
+root =  2.34500
+</code></pre></li></ul><h2 id=graphics>graphics</h2><ul><li>Previous data can be visualized for $r_1$, the root, as follow.</li><li>It can also visualized for $f(r_1)$ as follow.</li><li>You may hover your mouse on a point to see its pair values.</li></ul><h2 id=challenges>challenges</h2><ul><li>Explain in brief the background of Newton-Raphson method and how it is formulated until the iterative formula in Equation (1) is obtained. If necessary draw also some graphs to make the exlplanation clearer.</li><li>Find resources explaining that convergence of Newton-Raphson method is quadratic, while convergence of secant method is linear. And read it.</li><li>Try to find the root of
+$$\tag{3}
+f(x) = x - 3.45,
+$$
+and show which part of the given code should be modified.</li><li>Compare the flowchart for scanning method in
+<a><span>000s <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, bisection method in
+<a><span>0004 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>and Newton-Raphson method in
+<a><span>0014 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Which one is easier to understand? Why?</li><li>Find roots of
+$$\tag{4}
+f(x) = (x - 1.23456)(x - 9.87654)(x - 23.45678),
+$$
+with different initial guesses, e.g. 0, 5, 11, 40. Create table to show the relation between initial guess and root found.</li><li>Compare the result obtained previously using Newton-Raphson method in
+<a><span>0014 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Which one is more efficient?</li><li>What will happen if $x_0 = 5 \pm \delta$ in finding root of
+$$\tag{5}
+f(x) = (x - 2)(x - 8)
+$$
+by varying value of $\delta$ to assure that both roots are found.</li><li>Until now all examples are in the form of polynomial, will this method also work for non-polynomial function? Test it for at least such functions. Report the results.</li><li>What would be the advantages and the disadvantages from this method compared to Newton-Raphson method?</li><li>Can this method apply to a constant function, e.g. $f(x) = c$, where $c$ is a constant value. Explain in brief.</li></ul><h1 id=refs>refs</h1><ul><li>Han W (2017), &ldquo;The Secant Method&rdquo;, Elementary Numerical Analysis, Fall, url
+<a href=https://homepage.math.uiowa.edu/~whan/3800.d/S3-3.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://homepage.math.uiowa.edu/~whan/3800.d/S3-3.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240108].</li><li>Mohan M (2021) &ldquo;Secant Method of Numerical analysis&rdquo;, GeeksforGeeks, 18 Oct, url
+<a href=https://www.geeksforgeeks.org/secant-method-of-numerical-analysis/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/secant-method-of-numerical-analysis/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240108].</li><li>Papakonstantinou J M, Tapia R A (2013) &ldquo;Origin and Evolution of the Secant Method in One Dimension&rdquo;, The American Mathematical Monthly, vol 120, no 6, June–July 2013), pp 500-518 (19 pages), url
+<a href=https://doi.org/10.4169/amer.math.monthly.120.06.500 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.4169/amer.math.monthly.120.06.500 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Weisstein E W (2023) &ldquo;Secant Method&rdquo; from MathWorld&ndash;A Wolfram Web Resource, 12 Dec, url
+<a href=https://mathworld.wolfram.com/SecantMethod.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/SecantMethod.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240108].</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

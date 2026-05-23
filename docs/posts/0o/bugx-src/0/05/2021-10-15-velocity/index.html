@@ -1,0 +1,62 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>velocity | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>velocity</h1><time datetime=2021-10-16T11:58:00+07:00>October 16, 2021</time><p>Velocity adalah turunan dari posisi terhadap waktu [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang merupakan besaran vektor [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dan memiliki satuan panjang dibagi dengan waktu [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang dapat pula dirujuk sebagai kecepatan sesaat [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=unit>unit</h2><p>Dalam satuan SI (Système International) kecepatan dinyatakan dengan satuan panjang dibagi satu waktu, yaitu $\rm m/s$ atau meter per detik [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Sebaiknya suatu vektor kecepatan dituliskan dalam bentuk</p><p>$$
+\vec{v} = 1.25 \times 10^{-1} \cdot \left( \frac23 \hat{x} + \frac13 \hat{y} - \frac23 \hat{z} \right) \cdot {\rm m \ s^{-1}},
+$$</p><p>dengan bagian pertama menunjukkan besar dalam notasi ilmiah, bagian kedua merupakan vektor satuan, dan bagian terakhir merupakan satuan dalam SI.</p><h2 id=position>position</h2><p>Kecepatan merupakan laju perubahan posisi pada selang waktu tertentu</p><p>\begin{equation}\label{eqn-1a}
+\vec{v} = \lim_{\Delta t \to 0} \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t} = \frac{d\vec{r}}{dt},
+\end{equation}</p><p>dengan ilustrasinya diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0050-a.png)<br>Gambar <a name=fig1>1</a>. Penjumlahan vektor dari $\vec{r}(t)$ dan $\vec{v}(t) \Delta t$ yang menghasilkan $\vec{r}(t + \Delta t)$.</p><p>Dengan menggunakan penjumlahan vektor dapat diperoleh dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bahwa</p><p>\begin{equation}\label{eqn-1b}
+\vec{r}(t + \Delta t) = \vec{r}(t) + \vec{v}(t) \Delta t,
+\end{equation}</p><p>yang akan dapat dituliskan menjadi</p><p>\begin{equation}\label{eqn-1c}
+\vec{v}(t) \Delta t = \vec{r}(t + \Delta t) - \vec{r}(t)
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-1d}
+\vec{v}(t) = \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t},
+\end{equation}</p><p>dengan $\vec{v}(t)$ belum merupakan kecepatan melainkan kecepatan rata-rata. Untuk menjadi kecepatan atau kecepatan sesaat Persamaan \eqref{eqn-1d} perlu dicari limitnya untuk $\Delta t \to 0$ seperti pada Persamaan \eqref{eqn-1a}.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0050-b.png)<br>Gambar <a name=fig2>1</a>. Arah vektor kecepatan $\vec{v}$ yang selalu tegak lurus dengan vektor posisinya $\vec{r}$ pada gerak melingkar beraturan.</p><p>Arah vektor kecepatan $\vec{v}$ terhadap vektor posisi $\vec{r}$ tidak keterkaitan yang pasti kecuali untuk beberapa kasus, yang salah satunya adalah gerak melingkar beraturan (GMB), di mana arah vektor kecepatannya $\vec{v}$ selalu tegak lurus dengan vektor posisinya $\vec{r}$ pada setiap saat $t$. Ilustasi mengenai hal ini diberikan dalam Gambar Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sebelumnya, dengan pusat koordinat diambil pada pusat lintasan. Simulasi mengenai sistem ini dapat dilihat menggunakan simulasi PhET [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=acceleration>acceleration</h2><p>Fungsi kecepatan $v$ dapat diperoleh dari fungsi percepatan $a$ melalui</p><p>\begin{equation}\label{eqn-2}
+v = \int a \ dt
+\end{equation}</p><p>dengan menggunakan integral. Persamaan \eqref{eqn-2} menggambarkan hubungan untuk kasus 1-d, sedangkan untuk 2-d dan 3-d dapat dituliskan</p><p>\begin{equation}\label{eqn-3}
+\vec{v} = \int \vec{a} \ dt
+\end{equation}</p><p>dengan menggunakan notasi vektor, yang akan menjadi</p><p>\begin{equation}\label{eqn-4}
+\vec{v} - \vec{v}_0 = \int _{t_0}^t \vec{a} \ dt
+\end{equation}</p><p>bila terdapat syarat awal $\vec{v}_0 = \vec{v}(t_0)$. Perhatikan bahwa $\vec{v} = \vec{v}(t)$ adalah fungsi kecepatan.</p><h2 id=note>note</h2><ol><li><a name=r01></a>&ldquo;Velocity&rdquo;, Merriam-Webster, 2021, url
+<a href=https://www.merriam-webster.com/dictionary/velocity target=_blank rel="nofollow noopener noreferrer"><span>https://www.merriam-webster.com/dictionary/velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[202 11015].</a></li><li><a name=r02></a>Carl. R. Nave, &ldquo;Velocity&rdquo;, HyperPhysics, Georgia State University, USA, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/vel2.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/vel2.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211015].</a></li><li><a name=r03></a>-, &ldquo;What is velocity?&rdquo;, Khan Academy, 2021, url
+<a href=https://www.khanacademy.org/science/physics/one-dimensional-motion/displacement-velocity-time/a/what-is-velocity target=_blank rel="nofollow noopener noreferrer"><span>https://www.khanacademy.org/science/physics/one-dimensional-motion/displacement-velocity-time/a/what-is-velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211015].</a></li><li><a name=r04></a>Wikipedia contributors, &ldquo;Velocity&rdquo;, Wikipedia, The Free Encyclopedia, 5 May 2021, 18:14 UTC,
+<a href="https://en.wikipedia.org/w/index.php?oldid=1021616706" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1021616706 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211015].</li><li><a name=r05></a>-, &ldquo;SI base units&rdquo;, National Institute of Standards and Technology, U.S. Department of Commerce, url
+<a href=https://physics.nist.gov/cuu/Units/units.html target=_blank rel="nofollow noopener noreferrer"><span>https://physics.nist.gov/cuu/Units/units.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211015].</li><li><a name=r06></a>Michael Dubson, Sam Reid, and PhET Development Team, &ldquo;Motion in 2D&rdquo;, PhET Interactive Simulations, University of Colorado, version 1.07.00 (52263), 21 May 2011, url
+<a href="https://phet.colorado.edu/sims/cheerpj/motion-2d/latest/motion-2d.html?simulation=motion-2d" target=_blank rel="nofollow noopener noreferrer"><span>https://phet.colorado.edu/sims/cheerpj/motion-2d/latest/motion-2d.html?simulation=motion-2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211016].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity acceleration <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>kinematics graphs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>vector 2d add <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

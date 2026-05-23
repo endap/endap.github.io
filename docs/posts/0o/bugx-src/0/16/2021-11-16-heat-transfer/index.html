@@ -1,0 +1,136 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>heat transfer | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>heat transfer</h1><time datetime=2021-11-20T22:02:00+07:00>November 20, 2021</time><p>Transfer panas adalah gerakan atau aliran energi panas, yang sering digunakan dalam mendeskripsikan disipasi energi panas dari suatu lokasi ke lingkungan di sekitarnya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Panas dapat ditransfer dari satu bagian sistem ke bagian lain melalui peristiwa konduksi, konveksi, radiasi, dan vaporisasi [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Masing-masing peristiwa memiliki mekanisme yang berbeda, seperti ada yang hanya melibatkan agitasi molekul, perpindahan partikel dalam sistem, keluarnya partikel dari sistem, atau tidak melibatkan partikel bahan.</p><h2 id=heat-conduction>heat conduction</h2><p>Dalam peristiwa konduksi panas ditransfer dari satu tempat ke tempat lain dalam sistem melalui agitasi molekul dalam bahan tanpa ada gerakan bahan secara keseluruhan. Panas akan dirambatkan dari bagian dengan temperatur lebih tinggi ke bagian lain dengan temperatur lebih rendah. Pada bagian bertemperatur lebih tinggi molekul-molekul memiliki laju lebih tinggi yang akan dibagikan ke molekul-molekul dengan laju lebih rendah pada bagian bertemperatur lebih rendah melalui tumbukan. Ilustrasi perambatan panas melalui peristiwa konduksi di dalam bahan secara jumlah besar (bulk) secara 1d diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/16/0161-a1.png)<br>Gambar <a name=fig1>1</a>. Rapat fluks energi lokal $q$ memiliki arah dari tempat bertemperatur lebih tinggi ke tempat dengan temperatur lebih rendah.</p><p>Hukum Fourier dalam bentuk 1d, yang banyak digunakan bagi berbagai aplikasi [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn-heat-conduction-fouries-law}
+q_x = -\kappa \frac{dT}{dx} \approx -\kappa \frac{\Delta T}{\Delta x},
+\end{equation}</p><p>dengan $q$ energi panas per satuan luas per satuan waktu atau rapat fluks energi lokal, $\kappa$ konduktivitas bahan, dan $T$ adalah temperatur. Selisih temperatur $\Delta T$ diperoleh dari $T(x + \Delta x) - T(x)$. Selanjutnya, dari warna pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terlihat bahwa bagian sebelah kanan bertemperatur lebih tinggi dari bagian sebelah kiri atau $T(x + \Delta x) > T(x)$ dan diperoleh bahwa $q_x &lt; 0$, yang berarti bahwa kalor mengalir dari kanan (posisi $x + \Delta x$) ke kiri (posisi $x$).</p><h2 id=heat-convection>heat convection</h2><p>Pada peristiwa ini terdapat asumsi, untuk memudahkan, seperti pada gas ideal, bahwa fluida akan bertambah volumenya $V$ dengan bertambahnya temperatur $T$ dan dengan massa molekul $m$ yang tetap, maka pada bagian yang terpanasi rapat massanya $\rho$ akan berkurang sehingga pada bagian tersebut molekul-molekul akan bergerak ke atas sambil membawa panas atau energi termal.</p><p>![]({{ site.baseurl }}/assets/img/0/16/0161-b.png)<br>Gambar <a name=fig2>2</a>. Perbedaan temperatur dua tempat $T_H > T_C$ membuat terjadinya konveksi.</p><p>Panas dari pemanas $H$ membuat massa jenis fluida berkurang yang menyebabkan fluida bergerak naik, setelah dingin karena lingkungannya $T_C$ massa jenisnya kembali seperti semula dan bergerak turun karena ada bagian yang perlu diisi. Peristiwa konveksi ini digambarkan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Secara sederhana dapat diungkapkan dengan [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn-heat-convection-0}
+\frac{V}{T} = \frac{nR}{p} = c_{\rm conv},
+\end{equation}</p><p>dengan $c_{\rm conv}$ adalah suatu konstanta, sehingga dapat dituliskan kembali</p><p>\begin{equation}\label{eqn-heat-convection-1}
+V = c_{\rm conv} T.
+\end{equation}</p><p>Bagian fluida yang berwarna biru memiliki temperatur $T_C$ dan volume molekul pada bagian tersebut adalah $V_C$ yang mengikuti Persamaan \eqref{eqn-heat-convection-1} dan massa jenis bagian tersebut adalah</p><p>\begin{equation}\label{eqn-heat-convection-2}
+\rho_C = \frac{m}{V_C} = \frac{m}{c_{\rm conv} T_C}.
+\end{equation}</p><p>Pada bagian yang terpanasi massa jenis fluida menjadi</p><p>\begin{equation}\label{eqn-heat-convection-3}
+\rho_H = \frac{m}{V_H} = \frac{m}{c_{\rm conv} T_H}.
+\end{equation}</p><p>Dengan $m$ bernilai tetap maka</p><p>\begin{equation}\label{eqn-heat-convection-4}
+\rho_H &lt; \rho_C
+\end{equation}</p><p>karena $T_H > T_C$, yang sebagai akibatnya molekul-molekul fluida dengan rapat massa $\rho_C$ akan bergerak ke atas membawa energi termal karena lebih &ldquo;ringan&rdquo; dari molekul-molekul fluida dengan rapat massa $\rho_C$, yang menyebakan terjadi sirkulasi seperti pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Detil proses bagaimana bagian-bagian yang berbeda densitas akan bergerak sehingga tercapai kesetimbangan baru, bagian yang lebih rapat di bawah dan bagian yang lebih rengggang di atas, bukan bahasan pada materi ini.</p><p>Selain itu terdapat pula konveksi terpaksa, yang disebabkan oleh sumber luar seperti pompa, kipas, penyedot dan sebagainya, dan yang terjadi dengan sendirinya, yang dibedakan istilahnya menjadi konveksi alami.</p><h2 id=heat-radiation>heat radiation</h2><p>Radiasi panas, yang berbeda dengan radiasi partikel, adalah transfer energi internal dalam bentuk gelombang elektromagnetik, di mana untuk banyak benda di bumi radiasi ini berada pada daerah inframerad dalam spektrum gelombang elektromagnetik [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Hukum Stefan-Botlzmann menghubungkan antara laju aliran panas yang dipancarkan atau diserap obyek dan temperaturnya, dalam bentuk</p><p>\begin{equation}\label{eqn-stefan-boltzmann-law}
+P = \epsilon \sigma A \left( T^4 - T_0^4 \right),
+\end{equation}</p><p>dengan $P$ jumlah laju aliran panas dalam energi per satuan waktu, $\epsilon$ merupakan emisitivtas bernilai $0 - 1$, $\sigma$ konstanta Stefan yang bernilai $5.670 \times 10^{-8} \ {\rm W/m^2K^4}$, luas daerah pada obyek yang memancarkan atau menyerap radiasi termal, $T$ temperatur benda, dan $T_0$ temperatur lingkungan.</p><p>![]({{ site.baseurl }}/assets/img/0/16/0161-c.png)<br>Gambar <a name=fig3>3</a>. Radiasi dipancarkan dari benda $1$ di sebelah kiri dan diserap oleh benda $2$ di sebelah kanan, dengan $T_1 > T_2 > T_0$</p><p>Ilustrasi bagaimana radiasi dapat dipancarkan oleh suatu benda dan diserap oleh bendan lain diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Umumnya digunakan asumsi bahwa pemancaran radiasi bersifat isotropik dengan perambatan berbentuk kulit bola. Permukaan sebuah bola berukuran $4 \pi \ \rm sr$, dengan $\rm sr$ adalah satuan steradian atau sudut padat (solid angle) [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Radiasi termal yang dipancarkan oleh sebagian permukaan benda $1$ berbentuk persegi dengan sisi angular $\theta$ adalah</p><p>\begin{equation}\label{eqn-heat-radiation-p-theta}
+P_{\theta} = \frac{R_1^2 \theta^2}{A_1} P_{10},
+\end{equation}</p><p>dengan radiasi total benda $1$ diberikan oleh Persamaan \eqref{eqn-stefan-boltzmann-law} dalam bentuk</p><p>\begin{equation}\label{eqn-heat-radiation-p-10}
+P_{10} = \epsilon \sigma A_1 \left( T^4 - T_0^4 \right),
+\end{equation}</p><p>di mana $A_1 = 4\pi R_1^2$ luas seluruh permukaan benda $1$. Luas permukaan benda $2$ yang menyerap radiasi dapat disederhanakan menjadi</p><p>\begin{equation}\label{eqn-heat-radiation-received-area-2}
+A_{2, \rm recv} = 2\pi R_2^2,
+\end{equation}</p><p>yang merupakan luas setengah bola berjari-jari $R_2$. Fraksi luas antara luas permukaan bola pada jarak $r$ dari benda $1$ dengan luas penyerap pada benda $2$ adalah</p><p>\begin{equation}\label{eqn-heat-radiation-received-area-2-fraction}
+\frac{2\pi R_2^2}{r^2\theta^2},
+\end{equation}</p><p>sehingga daya yang terserap oleh benda $2$ akibat radiasi benda $1$ adalah</p><p>\begin{equation}\label{eqn-heat-radiation-p-21}
+\begin{array}{rcl}
+P_{21}& = & \displaystyle \frac{2\pi R_2^2}{r^2 \theta^2} P_\theta \newline
+& = & \displaystyle \left( \frac{2\pi R_2^2}{r^2 \theta^2} \right) \left( \frac{R_1^2 \theta^2}{2\pi R_1^2} \right) P_{10} \newline
+& = & \displaystyle \left( \frac{2\pi R_2^2}{r^2 \theta^2} \right) \left( \frac{R_1^2 \theta^2}{4\pi R_1^2} \right) \cdot \newline
+&& \epsilon \sigma (4\pi R_1^2) \left( T_1^4 - T_0^4 \right) \newline
+& = & \displaystyle \epsilon \sigma \left( \frac{2\pi R_2^2}{r^2 \theta^2} \right) R_1^2 \theta^2 \left( T_1^4 - T_0^4 \right) \newline
+P_{21}(r_{21}) & = & \displaystyle \epsilon \sigma \left( \frac{2\pi R_2^2 R_1^2}{r_{21}^2} \right) \left( T_1^4 - T_0^4 \right).
+\end{array}
+\end{equation}</p><p>Pada saat yang bersaamaan benda $2$ juga meradiasikan panas ke lingkungannya</p><p>\begin{equation}\label{eqn-heat-radiation-p-20}
+P_{20} = \epsilon \sigma \left( 4\pi R_2^2 \right) \left( T_2^4 - T_0^4 \right).
+\end{equation}</p><p>Dengan demikian total daya pada benda $2$ adalah</p><p>\begin{equation}\label{eqn-heat-radiation-p-2}
+\begin{array}{rcl}
+P_2 & = & \epsilon_2 \sigma \left( 4\pi R_2^2 \right) \left( T_2^4 - T_0^4 \right) \newline
+&& \displaystyle -\epsilon_1 \sigma \left( \frac{2\pi R_2^2 R_1^2}{r_{21}^2} \right) \left( T_1^4 - T_0^4 \right).
+\end{array}
+\end{equation}</p><p>Persamaan \eqref{eqn-heat-radiation-p-2} menggambarkan panas yang diradiasikan oleh benda $2$, di mana suku pertama adalah emisi radiasi oleh benda ke lingkugannya dan suku kedua, yang bertanda negatif, adalah absorbsi oleh benda dari lingkungannya, termasuk benda $1$. Daya pada lingkungan akibat kedua benda adalah</p><p>\begin{equation}\label{eqn-heat-radiation-p-0}
+P_0 = -\epsilon_1 \sigma \left( 4\pi R_1^2 \right) \left( T_1^4 - T_0^4 \right) - \epsilon_2 \sigma \left( 4\pi R_2^2 \right) \left( T_2^4 - T_0^4 \right),
+\end{equation}</p><p>yang menggambarkan kontribusi benda $1$ dan $2$. Tanda negatif karena konvensi untuk positif dalah daya yang diemisikan, sedangkan lingkungan $T_0 &lt; T_1 &lt; T_2$ selalu menerima radiasi panas dari kedua benda.</p><h2 id=heat-loss-through-vaporization>heat loss through vaporization</h2><p>Transfer energi termal yang terkait dengan suatu perubahan fase merupakan suatu fenomena yang bernilai bagi perekayasa dalam merancang sistem untuk pendinginan elektronika, yang lebih umum digunakan melalui sistem tertutup, di mana penghilangan panas pada suatu bagian teraugmentasi oleh sifat vaporisasi dan kemudian panas ini dilepaskan pada bagian lain dalam sistem, saat uap yang berpindah ini mengembun [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Luas permukaan juga berpengaruh pada proses pendinginan melalui fenomena ini. Pada manusia, bila luas permukaan tubuh lebih besar, kehilangan massa tubuh tak-terasa dapat semakin besar, yang akan menginduksi lebih besar kehilangan panas akibat evaporasi melalui kulit [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Selain itu temperatur lingkungan juga berpengaruh, sebagaimana teramati pada sapi yang diberi perlakukan pembatasan air, yang menghasilkan bahwa penggunaan air untuk digunakan untuk kehilangan panas melalui vaporisasi yang mengurangi kehilangan air lewat urin dan feses lebih teramati pada temperatur $32 \ \rm^\circ C$ dibandingkan pada $18 \ \rm^\circ C$ [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Kehilangan panas tubuh lewat proses-proses &ldquo;kering&rdquo; seperti konduksi, konveksi, dan radiasi, disebut sebagai terasa (sensibel) atau Newtonian, dan selain itu panas dapat pula hilang lewat mekanisme evaporatif &ldquo;basah&rdquo; atau tak-terasa (insensibel) [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=advection>advection</h2><p>Umumnya dapat dibedakan ketiga mekanisme transfer panas sebelumnya yaitu konduksi, conveksi, dan radiasi, yang telah dibahas secara populer [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dengan adveksi kadang dinyatakan cukup dengan sebagai suatu mekanisme lain transfer panas, di mana bahan yang panas bergerak bersama dengan fluida dengan kecepatan fluidanya [
+<a href=#r11><span>11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Penjelasan lain bahwa adveksi akan terjadi bila terdapat bahan lain yang terlarut, jadi pada air yang dipanaskan hanya akan terjadi peristiwa konveksi, akan tetapi bila terlarut di dalamnya lanau (butiran yang berukuran antara pasir dan lempung) maka akan terjadi adveksi lanau dengan konveksi air [
+<a href=#r12><span>12 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Ada juga yang mengatakan bahwa adveksi merupakan bagian dari konveksi, yang lebih lugasnya bahwa bahwa konveksi merupakan efek gabungan dari konduksi dan adveksi [
+<a href=#r13><span>13 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat pula pernyataan bahwa adveksi adalah perpindahan suatu bahan melalui pergerakan secara keseluruhan (bulk motion), yang kadang disalahartikan dengan proses konveksi yang lebih meyelimuti, sehingga lebih dapat dikatakan bahwa adveksi membutuhkan arus dalam fluida, seperti di sungai atau dalam pipa, dan tak dapat terjadi dalam padatan, yang tidak melingkupi pergerakan bahan akibat difusi molekuler [
+<a href=#r14><span>14 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam penerapannya, terkadang peristiwa perambatan panas, terutama di berbagai lokasi geologi dapat amat kompleks sehingga sulit untuk dimengerti, apakah adveksi atau konduksi misalnya [
+<a href=#r15><span>15 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>![]({{ site.baseurl }}/assets/img/0/16/0161-d.png)<br>Gambar <a name=fig4>4</a>. Sirkulasi alami yang terjadi karena dua mekanisme transfer panas, yaitu konveksi yang geraknya disebabkan perbedaan temperatur (kiri dan kanan) dan adveksi yang geraknya disebabkan gerak fluida karena perbedaan tekanan (atas dan bawah).</p><p>Walaupun tidak terlalu tepat, ilustrasi pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bisa sedikit menggambarkan perbedaan konveksi dan adveksi. Pada bagian kiri dan kanan fluida naik dan turun karena perbedaan densitas yang disebabkan oleh temperatur, dan pada bagian atas dan bawah fluida mengalir ke kanan dan kiri karena perbedaan tekanan. Pada bagian aliran horizontal ini panas mengikuti aliran fluida yang disebut sebagai peristiwa adveksi, sedangkan pada bagian aliran vertikal merupakan peristiwa konveksi karena disebabkan oleh perbedaan temperatur [
+<a href=#r16><span>16 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Yang perlu diingat adalah bukan arah aliran fluida horizontal dan vertikalnya, akan tetapi penyebab alirannya.</p><p>{% comment %}</p><div style="background-image:linear-gradient(to right top,#c00000,#dc2d5c,#dc63a3,#cb93d4,#c0bbec,#b7bee7,#b2c1e0,#b1c2d8,#92a8c6,#748fb4,#5677a3,#365f91);width:300px;height:200px">&nbsp;</div>{% endcomment %}<h2 id=exer>exer</h2><ol><li><p>Perhatikan Persamaan \eqref{eqn-heat-conduction-fouries-law} dan Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/16/0161-a2.png)<br>Gambar <a name=fig6>6</a>. Energi panas mengalir dari tempat bertemperatur lebih tinggi ($\color{#c00}{\blacksquare}$) ke tempat bertemperatur lebih rendah ($\color{#369}{\blacksquare}$).</p><p>Apakah Persamaan \eqref{eqn-heat-conduction-fouries-law} tetap berlaku? Jelaskan dengan arah $q_x$.</p></li><li><p>Apakah ada sebutan lain besaran dengan satuan seperti $q_x$ pada Persamaan \eqref{eqn-heat-conduction-fouries-law}?</p></li><li><p>Apa yang terjadi bila pemanash $H$ pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>diletakkan di tengah-tengah alas wadah? Kemanakah arus konveksi berputar?</p></li><li><p>Dengan memperhatikan Persaamaan \eqref{eqn-stefan-boltzmann-law}, apa arti bila nilai $P$ positif dan negatif?</p></li><li><p>Dengan melihat Persamaan \eqref{eqn-heat-radiation-p-2} dan \eqref{eqn-heat-radiation-p-0}, apakah untuk benda $1$ cukup dengan Persamaan \eqref{eqn-heat-radiation-p-10} atau akan juga menerima radiasi panas dari benda $2$?</p></li><li><p>Pada aktivitas saat berolahraga terdapat peristiwa kehilangan panas melalui mekanisme vaporasi. Apakah peristiwa tersebut?</p></li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Anas Al-Homsi, Irene Ao, Jordan Hanania, James Jenden, Ashley Sheardown, Kailyn Stenhouse, Jason Donev, &ldquo;Heat transfer&rdquo;, Energy Education, 15 Oct 2021, url
+<a href=https://energyeducation.ca/encyclopedia/Heat_transfer target=_blank rel="nofollow noopener noreferrer"><span>https://energyeducation.ca/encyclopedia/Heat_transfer <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211116].</li><li><a name=r02></a>Carl R. Nave, &ldquo;Heat Transfer&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatra.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/heatra.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211116].</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Thermal conduction&rdquo;, Wikipedia, The Free Encyclopedia, 4 November 2021, 04:07 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1053477806" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1053477806 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211116].</li><li><a name=r04></a>Glenn Elert, &ldquo;Radiation&rdquo;, The Physics Hypertextbook, 2021, url
+<a href=https://physics.info/radiation/ target=_blank rel="nofollow noopener noreferrer"><span>https://physics.info/radiation/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211118].</li><li><a name=r05></a>&ldquo;Steradian&rdquo;, MathIsFun, 2017, url
+<a href=https://www.mathsisfun.com/geometry/steradian.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.mathsisfun.com/geometry/steradian.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211119].</li><li><a name=r06></a>Jim Wilson, &ldquo;Heat of Vaporization&rdquo;, Electronics Cooling, 1 Aug 2008, url
+<a href=https://www.electronics-cooling.com/2008/08/heat-of-vaporization/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.electronics-cooling.com/2008/08/heat-of-vaporization/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211119].</li><li><a name=r07></a>Dahee Jung, Dami Kim, Joonhee Park, Joo Young Lee, &ldquo;Greater body mass index is related to greater self-identified cold tolerance and greater insensible body mass loss&rdquo;, Journal of Physiological Anthropology, vol. 35, no. 1, p. 16, Aug 2016, url
+<a href=https://dx.doi.org/10.1186/s40101-016-0105-7 target=_blank rel="nofollow noopener noreferrer"><span>https://dx.doi.org/10.1186/s40101-016-0105-7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r08></a>S. M. Seif, H. D. Johnson, L. Hahn, &ldquo;Environmental Heat and Partial Water Restriction Effects on Body Fluid Spaces, Water Loss, Body Temperature, and Metabolism of Holstein Cows&rdquo;, Journal of Dairy Science, vol. 56, no. 5, pp. 581-586, May 1973, url
+<a href=https://doi.org/10.3168/jds.S0022-0302%2873%2985222-1 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.3168/jds.S0022-0302(73)85222-1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r09></a>Andrej A. Romanovsky, &ldquo;Thermoregulation: From Basic Neuroscience to Clinical Neurology Part I&rdquo;, Handbook of Clinical Neurology, vol. 156, 2018, pp. 3-43, url
+<a href=https://doi.org/10.1016/B978-0-444-63912-7.00001-1 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1016/B978-0-444-63912-7.00001-1 <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a name=r10></a>&ldquo;What’s the Difference Between Conduction, Convection, and Radiation?&rdquo;, Machine Design, 31 Oct 2015, url
+<a href=https://www.machinedesign.com/learning-resources/whats-the-difference-between/document/21834474/x target=_blank rel="nofollow noopener noreferrer"><span>https://www.machinedesign.com/learning-resources/whats-the-difference-between/document/21834474/x <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li><li><a name=r11></a>&ldquo;Modes of Heat Transfer Conduction, Convection, Advection and Radiation&rdquo;, Mecholic, url
+<a href=https://www.mecholic.com/2021/05/modes-of-heat-transfer.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.mecholic.com/2021/05/modes-of-heat-transfer.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li><li><a name=r12></a>John Reenie, &ldquo;Answer to &lsquo;What exactly is the difference between advection and convection?&rsquo;&rdquo;, Physics Stack Exchange, 27 Apr 2012, edited by Ooker at 6 Dec 2015, url
+<a href=https://physics.stackexchange.com/q/24494 target=_blank rel="nofollow noopener noreferrer"><span>https://physics.stackexchange.com/q/24494 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li><li><a name=r13></a>Arnab Lahiri, &ldquo;What is the difference between convection and advection?&rdquo;, Quora, 13 May 2018, url
+<a href=https://www.quora.com/What-is-the-difference-between-convection-and-advection target=_blank rel="nofollow noopener noreferrer"><span>https://www.quora.com/What-is-the-difference-between-convection-and-advection <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li><li><a name=r14></a>Nick Connor, &ldquo;What is Advection – Heat Transport – Definition&rdquo;, Thermal Engineering, 22 May 2019, url
+<a href=https://www.thermal-engineering.org/what-is-advection-heat-transport-definition/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.thermal-engineering.org/what-is-advection-heat-transport-definition/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li><li><a name=r15></a>Michael Jobmann, Christoph Clauser, &ldquo;Head advection versus conduction at the KTB: possible reasons for vertical variations in heat-flow density&rdquo;, Geophysical Journal International, vol. 119, no. 1, pp. 44-68, Oct 1994, url
+<a href=https://doi.org/10.1111/j.1365-246X.1994.tb00912.x target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1111/j.1365-246X.1994.tb00912.x <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r16></a>&ldquo;Advection and Convection&rdquo;, Science Pickle, 2021, url
+<a href=https://sciencepickle.com/earth-systems/energy/advection-and-convection/ target=_blank rel="nofollow noopener noreferrer"><span>https://sciencepickle.com/earth-systems/energy/advection-and-convection/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211120].</li></ol><h2 id=heading> </h2><p><a><span>heat <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>heat capacity of gas <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $\displaystyle q_x = -\kappa \frac{\Delta T}{\Delta x} = -\kappa \frac{T(x + \Delta x) - T(x)}{\Delta x}$ $\displaystyle = -\kappa \frac{ - \|\Delta T\|}{\Delta t} = \kappa \frac{\|\Delta T\|}{\Delta t} > 0$; &nbsp;
+2) intensitas; &nbsp;
+3) dimungkinakan terjadi dua arus ke kiri dan kanan dengan pola yang sama ke atas lalu berputar ke bawah; &nbsp;
+4) $P > 0$ benda meradiasikan panas karena $T > T_0$ dan sebaliknya $P < 0$ benda menyerap panas karena $T < T_0$; &nbsp;
+5) cukup karena radiasi benda $1$ ke $2$ dapat dianggap kecil; &nbsp;
+6) berkeringat, panas badan terambil saat menguapkan keringat; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

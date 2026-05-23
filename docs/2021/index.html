@@ -1,0 +1,110 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>old posts migration | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>old posts migration</h1><time datetime=2024-04-25T09:02:00+07:00>April 25, 2024</time><p>Incomplete documentation for manual migration of old posts</p><h2 id=intro>intro</h2><p>Some of my old posts were still for Jekyll post, while this and the newer ones are already for Hugo post. I need to tune something in order to make it works for all old posts, e.g. images, mathematical expression support, comment, etc. One of the reasons while people switching from Jekyll to Hugo is to obtain stability and robustness <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> and also additional feature like the ability to create, modify, build, and preview the site all within R, using the blogdown package <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Assuring that folder structure, e.g. for images, from Jekyll recognized by Hugo is one thing that must be settled.</p><p>One of the problems in migration from jekyll to Hugo is number of posts that could be hundreds of them, even most of them are just ramblings and brain dumps <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>, where in my case there are about 740 posts to migrate. I have already encountered some problems like folder for images, Liquid templating language to Hugo shortcodes translation, and math support, since Jekyll is using MathJax, while Hugo is using KaTeX. I think I can manage it, since there is a report that the migration was mostly painless <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, but for tha math support it was easier said than done <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p><h2 id=problems>problems</h2><ul><li>Support for mathematical expression: MathJax to KaTeX.</li><li>Data conversion: Manually edited.</li><li>Post URL: Collision prevention between new posts and being migrated posts.</li><li>Images: Fix link or just use the image there or just text.</li><li>JS apps: Shortcodes or code in post.</li><li>Tags: Accept all old ones or transform it to suit current tags, or even tagged as their repo.</li><li>Category: Folders or just in post front matter.</li></ul><h2 id=math>math</h2><p>There are two JS libraries used for supporting math expression in a Hugo post, MathJax and KaTeX.</p><p>For MathJax, the file is <code>layouts\partials\posts\mathjax.html</code> with content as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{- if or (.Params.mathjax) -}}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>MathJax</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>tex</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>inlineMath</span><span style=color:#f92672>:</span> [[<span style=color:#e6db74>&#39;$&#39;</span>, <span style=color:#e6db74>&#39;$&#39;</span>], [<span style=color:#e6db74>&#39;\\(&#39;</span>, <span style=color:#e6db74>&#39;\\)&#39;</span>]],
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>displayMath</span><span style=color:#f92672>:</span> [[<span style=color:#e6db74>&#39;$$&#39;</span>,<span style=color:#e6db74>&#39;$$&#39;</span>], [<span style=color:#e6db74>&#39;\\[&#39;</span>, <span style=color:#e6db74>&#39;\\]&#39;</span>]],
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>processEscapes</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>processEnvironments</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>tags</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;ams&#39;</span>,
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>options</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>skipHtmlTags</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#39;script&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#39;noscript&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#39;style&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#39;textarea&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#39;pre&#39;</span>
+</span></span><span style=display:flex><span>			]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;MathJax-script&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>async</span> 
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/\
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>	mathjax@3/es5/tex-mml-chtml.js&#34;</span>
+</span></span><span style=display:flex><span>	&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>{{- end -}}
+</span></span></code></pre></div><p>For KaTeX, the file is <code>layouts\partials\posts\math.html</code> with content as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{- if or (.Params.math) (.Site.Params.math) (.Params.katex) (.Site.Params.katex) -}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0&#34;</span> <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>&gt;
+</span></span><span style=display:flex><span>  {{/* The loading of KaTeX is deferred to speed up page rendering */}}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>defer</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4&#34;</span> <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!--
+</span></span></span><span style=display:flex><span><span style=color:#75715e>url https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem [20240412]
+</span></span></span><span style=display:flex><span><span style=color:#75715e>--&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>defer</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js&#34;</span> <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0&#34;</span>  <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- --&gt;</span>    
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>defer</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05&#34;</span> <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>onload</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;renderMathInElement(document.body,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        delimiters: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {left: &#39;$$&#39;, right: &#39;$$&#39;, display:true},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {left: &#39;$&#39;, right: &#39;$&#39;, display:false},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {left: &#39;\\(&#39;, right: &#39;\\)&#39;, display: false},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {left: &#39;\\[&#39;, right: &#39;\\]&#39;, display: true}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    );&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>{{- end -}}
+</span></span></code></pre></div><p>And for usage, the file is <code>layouts\posts\single.html</code> with content as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ define &#34;main&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>h1</span>&gt;{{ .Title }}&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {{ $dateMachine := .Date | time.Format &#34;2006-01-02T15:04:05-07:00&#34; }}
+</span></span><span style=display:flex><span>  {{ $dateHuman := .Date | time.Format &#34;:date_long&#34; }}
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>&lt;!--div class=&#39;author&#39;&gt;{{- .Params.author -}}&lt;/div--&gt;</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>&lt;!--ul class=&#34;authors&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  {{ range .Params.authors }}
+</span></span></span><span style=display:flex><span><span style=color:#75715e>    &lt;li&gt;{{ . }}&lt;/li&gt;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  {{ end }}
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  &lt;/ul--&gt;</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  {{- range .Params.authors }}
+</span></span><span style=display:flex><span>    {{- with $.Site.GetPage &#34;taxonomyTerm&#34; (printf &#34;authors/%s&#34; (urlize .)) }}
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>figure</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;authors&#39;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>img</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .Params.photo }}&#34;</span> <span style=color:#a6e22e>alt</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>/&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>figcaption</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Params.name }}&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>figcaption</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>figure</span>&gt;
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>  {{ end }}
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;readingtimedate&#39;</span>&gt;
+</span></span><span style=display:flex><span>    {{ partial &#34;reading-time.html&#34; . }} &amp;middot;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>time</span> <span style=color:#a6e22e>datetime</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $dateMachine }}&#34;</span>&gt;{{ $dateHuman }}&lt;/<span style=color:#f92672>time</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  {{ .Content }}
+</span></span><span style=display:flex><span>  {{ partial &#34;terms.html&#34; (dict &#34;taxonomy&#34; &#34;tags&#34; &#34;page&#34; .) }}
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  {{ partial &#34;posts/math.html&#34; . }}
+</span></span><span style=display:flex><span>  {{ partial &#34;posts/mathjax.html&#34; . }}
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div><p>Notice the last third and second lines.</p><h2 id=date>date</h2><p>Jekyll is using <code>date: 2021-09-29 09:57:00 +07</code> in its post front matter, while Hugo is using <code>date = 2024-04-25T09:02:00+07:00</code>. The problem is not just YAML vs TOML but the date information stored as string in post parameters, since the first has two spaces and the second only a long single word. And also the minutes in the UTS offsets.</p><p>Withour writing a program, the hundreds of posts must be edited manually.</p><h2 id=categories>categories</h2><p>Based on current the 760 posts, neglecting the <code>01-Jan-0001</code> wrong date,</p><p>following categories are considered and proposed.</p><ul><li>articles,</li><li>codes,</li><li>equations,</li><li>fiction,</li><li>manuscript,</li><li>slides,</li></ul><div class=instagram-butiran-container><div class="instagram-embed-wrapper md"><blockquote class=instagram-media data-instgrm-permalink=https://www.instagram.com/p/C6I_chwPXoO/ data-instgrm-version=14></blockquote></div></div><script async src=https://www.instagram.com/embed.js></script><p><img src=https://i.ibb.co/G5mLg4d/interference-pattern-slit-2.png alt>
+<img src=https://i.ibb.co/d5Zqnwf/interference-pattern-slit-2.png alt></p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Ben Congdon, &ldquo;Switching from Jekyll to Hugo&rdquo;, 6 Jun 2018, url
+<a href=https://benjamincongdon.me/blog/2018/06/06/Switching-from-Jekyll-to-Hugo/ target=_blank rel="nofollow noopener noreferrer"><span>https://benjamincongdon.me/blog/2018/06/06/Switching-from-Jekyll-to-Hugo/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240425].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Clark Richards, &ldquo;Migrating this site from Github+Jekyll to Netlify+Hugo (with the amazing blogdown package)&rdquo;, 30 Aug 2024, url
+<a href=https://www.clarkrichards.org/2020/08/30/migrating-to-hugo-with-blogdown/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.clarkrichards.org/2020/08/30/migrating-to-hugo-with-blogdown/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240425].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Chen Hui Jing, &ldquo;Migrating from Jekyll to Hugo&rdquo;, 29 Apr 2020, url
+<a href=https://chenhuijing.com/blog/migrating-from-jekyll-to-hugo/ target=_blank rel="nofollow noopener noreferrer"><span>https://chenhuijing.com/blog/migrating-from-jekyll-to-hugo/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240425].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Danny Guo, &ldquo;Migrating from Jekyll to Hugo&rdquo;, 24 Jun 2018, url
+<a href=https://www.dannyguo.com/blog/migrating-from-jekyll-to-hugo target=_blank rel="nofollow noopener noreferrer"><span>https://www.dannyguo.com/blog/migrating-from-jekyll-to-hugo <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240425].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>Marcus R.A. Newman, &ldquo;Adventures in making this website:
+rendering LaTeX maths&rdquo;, 28 Nov 2022, url
+<a href=https://prefetch.eu/blog/2022/website-adventures-maths/ target=_blank rel="nofollow noopener noreferrer"><span>https://prefetch.eu/blog/2022/website-adventures-maths/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240425].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

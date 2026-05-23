@@ -1,0 +1,30 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>rem git submodule | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>rem git submodule</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-01-03T21:51:35 07:00">3 Jan 2026</time>
+&#183;
+1 min read
+&#183;
+<a class=link href=npprel:///26/a/13-rem-git-submodule.md>edit</a></div></div><div class=note-content><h2 id=notes>notes</h2><ul><li>The steps are suggested from a dicussion <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</li></ul><h2 id=steps>steps</h2><pre tabindex=0><code>% ls static 
+css	images	js	py
+% cat .gitmodules 
+[submodule &#34;static/js&#34;]
+	path = static/js
+	url = https://github.com/dudung/butiran-frontend.git
+[submodule &#34;static/py&#34;]
+	path = static/py
+	url = https://github.com/dudung/butiran-backend
+</code></pre><pre tabindex=0><code>% git submodule deinit -f static/js
+Cleared directory &#39;static/js&#39;
+Submodule &#39;static/js&#39; (https://github.com/dudung/butiran-frontend.git) unregistered for path &#39;static/js&#39;
+</code></pre><pre tabindex=0><code>% git rm -f static/js
+rm &#39;static/js&#39;
+% ls static 
+css	images	py
+</code></pre><pre tabindex=0><code>% rm -rf .git/modules/static/js
+% cat .gitmodules              
+[submodule &#34;static/py&#34;]
+	path = static/py
+	url = https://github.com/dudung/butiran-backend
+</code></pre><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT-5.2, &ldquo;Remove Git Submodules&rdquo;, ChatGPT, 3 Jan 2026, 21:37, url
+<a href=https://chatgpt.com/share/69592a84-f934-800a-af6c-9d98f3137959 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/69592a84-f934-800a-af6c-9d98f3137959 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260103].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

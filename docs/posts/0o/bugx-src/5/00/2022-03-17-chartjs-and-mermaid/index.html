@@ -1,0 +1,139 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>chart.js and mermaid | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>chart.js and mermaid</h1><time datetime=2022-03-17T17:29:00+07:00>March 17, 2022</time><p>Kembali meninjau
+<a href=https://www.chartjs.org/ target=_blank rel="nofollow noopener noreferrer"><span>Chart.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan baru terinformasikan mengenai
+<a href=https://mermaid-js.github.io/mermaid/#/ target=_blank rel="nofollow noopener noreferrer"><span>Mermaid <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. CDN untuk Chart.js diperbarui [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan untuk Mermaid disisipkan [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Catatan ini bersifat singkat dan untuk tanda dalam waktu pengembangan saja.</p><h2 id=cdn>cdn</h2><p>Untuk Chart.js digunakan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js&#34;</span> <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==&#34;</span> <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span> <span style=color:#a6e22e>referrerpolicy</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;no-referrer&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div><p>dan untuk mermaid</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.14.0/mermaid.min.js&#34;</span> <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sha512-vLumCjg7NKEQKGM+xAgBYTvQ90DVu6Eo7vS1T/iPf2feNLcrpGxvumuUUmE3CPiCUPgviyKbtpWGDbhnVnmJxg==&#34;</span> <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span> <span style=color:#a6e22e>referrerpolicy</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;no-referrer&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div><p>yang akan diletakkan pada berkas <code>chartjs.html</code> dan<code>mermaid.html</code> dalam folder <code>_includes</code> pada
+<a href=https://jekyllrb.com/ target=_blank rel="nofollow noopener noreferrer"><span>Jekyll <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=test-1>test 1</h2><p>Sebuah grafik xy dibuat sebagai ilustrasi untuk memeriksa apakah Chart.js telah berhasil disisipkan.</p><p><canvas id=myChart style=width:100%;max-width:390px></canvas></p><script>var xyValues1=[{x:50,y:7},{x:60,y:8},{x:70,y:8},{x:80,y:9},{x:90,y:9},{x:100,y:9},{x:110,y:10},{x:120,y:11},{x:130,y:14},{x:140,y:14},{x:150,y:15}],xyValues2=[{x:50,y:17},{x:60,y:18},{x:70,y:18},{x:80,y:19},{x:90,y:19},{x:100,y:19},{x:110,y:20},{x:120,y:21},{x:130,y:24},{x:140,y:24},{x:150,y:25}];new Chart("myChart",{type:"scatter",data:{datasets:[{pointStyle:"triangle",pointRadius:4,pointBackgroundColor:"rgb(0,0,255)",backgroundColor:"rgba(255,99,132,0.4)",data:xyValues1,label:"T1",showLine:!0},{pointRadius:4,pointBackgroundColor:"rgb(255, 0, 0)",backgroundColor:"rgba(132,99,255,0.4)",data:xyValues2,label:"T2"}]},options:{scales:{x:{min:10,max:200,type:"linear",position:"top",title:{color:"blue",display:!0,text:"x"}},y:{min:2,max:26,title:{color:"blue",display:!0,text:"y"}}},plugins:{legend:{display:!0,position:"chartArea",textAlign:"right"}}}})</script><p>Gambar <a name=fig1>1</a>. Contoh penggunaan Chart.js untuk menampilkan data.</p><p>Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>diperoleh dengan kode HTML</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>canvas</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;myChart&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width:100%;max-width:390px&#34;</span>&gt;&lt;/<span style=color:#f92672>canvas</span>&gt;
+</span></span></code></pre></div><p>dan JavaScript</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>xyValues1</span> <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>50</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>7</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>60</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>8</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>70</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>8</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>80</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>9</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>90</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>9</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>100</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>9</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>110</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>10</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>120</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>11</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>130</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>14</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>140</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>14</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>150</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>15</span>}
+</span></span><span style=display:flex><span>];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>xyValues2</span> <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>50</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>17</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>60</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>18</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>70</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>18</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>80</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>19</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>90</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>19</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>100</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>19</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>110</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>20</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>120</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>21</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>130</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>24</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>140</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>24</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>x</span><span style=color:#f92672>:</span><span style=color:#ae81ff>150</span>, <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span><span style=color:#ae81ff>25</span>}
+</span></span><span style=display:flex><span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Chart</span>(<span style=color:#e6db74>&#34;myChart&#34;</span>, {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;scatter&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>data</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>datasets</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>		{
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>pointStyle</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;triangle&#39;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pointRadius</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pointBackgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;rgb(0,0,255)&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;rgba(255,99,132,0.4)&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>data</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>xyValues1</span>,
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;T1&#39;</span>,
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>showLine</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>		{
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pointRadius</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pointBackgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;rgb(255, 0, 0)&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;rgba(132,99,255,0.4)&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>data</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>xyValues2</span>,
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;T2&#39;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>		]
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>options</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>scales</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>min</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>max</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span>, <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;linear&#39;</span>, <span style=color:#a6e22e>position</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;top&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blue&#39;</span>, <span style=color:#a6e22e>display</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;x&#39;</span>}
+</span></span><span style=display:flex><span>			},
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>min</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>max</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>26</span>,
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blue&#39;</span>, <span style=color:#a6e22e>display</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;y&#39;</span>}
+</span></span><span style=display:flex><span>			},
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>plugins</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>legend</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>display</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>position</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;chartArea&#39;</span>,
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>textAlign</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;right&#39;</span>,
+</span></span><span style=display:flex><span>			},
+</span></span><span style=display:flex><span>		},
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/script&gt;</span>
+</span></span></code></pre></div><p>yang diletakkan dalam suatu post Jekyll.</p><h2 id=test-2>test 2</h2><p>Sebuah diagram alir sederhana disajikan berikut ini untuk memeriksa penyisipan Mermaid.</p><div class=mermaid>flowchart TD
+A([Mulai])
+B[/a, b, c/]
+C[D = bxb - 4ac]
+D{D >= 0}
+E[x1]
+F[x2]
+G[/x1, x2/]
+H([Selesai])<pre><code>		A --&gt; B --&gt; C --&gt; D
+		D -- Ya --&gt; E --&gt; F --&gt; G --&gt; H
+		D -- Tidak --&gt; H
+		
+		style A fill:#f9f,stroke:#333,stroke-width:4px
+		
+		classDef decision stroke:#f88
+		
+		class D decision
+</code></pre></div><p>Gambar <a name=fig2>2</a>. Contoh penggunaan Mermaid untuk menampilkan diagram alir.</p><p>Kode Mermaid berikut ini, yang diletakkan dalam suatu HTML</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>div</span> <span style=color:#66d9ef>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;mermaid&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>flowchart</span> <span style=color:#a6e22e>TD</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>A</span>([<span style=color:#a6e22e>Mulai</span>])
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>B</span>[<span style=color:#e6db74>/a, b, c/</span>]
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>C</span>[<span style=color:#a6e22e>D</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>bxb</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span><span style=color:#a6e22e>ac</span>]
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>D</span>{<span style=color:#a6e22e>D</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>}
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>E</span>[<span style=color:#a6e22e>x1</span>]
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>F</span>[<span style=color:#a6e22e>x2</span>]
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>G</span>[<span style=color:#e6db74>/x1, x2/</span>]
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>H</span>([<span style=color:#a6e22e>Selesai</span>])
+</span></span><span style=display:flex><span>			
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>A</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>B</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>C</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>D</span>
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>D</span> <span style=color:#f92672>--</span> <span style=color:#a6e22e>Ya</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>E</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>F</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>G</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H</span>
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>D</span> <span style=color:#f92672>--</span> <span style=color:#a6e22e>Tidak</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H</span>
+</span></span><span style=display:flex><span>			
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>style</span> <span style=color:#a6e22e>A</span> <span style=color:#a6e22e>fill</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>f9f</span>,<span style=color:#a6e22e>stroke</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#ae81ff>333</span>,<span style=color:#a6e22e>stroke</span><span style=color:#f92672>-</span><span style=color:#a6e22e>width</span><span style=color:#f92672>:</span><span style=color:#ae81ff>4</span><span style=color:#a6e22e>px</span>
+</span></span><span style=display:flex><span>			
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>classDef</span> <span style=color:#a6e22e>decision</span> <span style=color:#a6e22e>stroke</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>f88</span>
+</span></span><span style=display:flex><span>			
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>D</span> <span style=color:#a6e22e>decision</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/div&gt;</span>
+</span></span></code></pre></div><p>akan menghasilkan Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dalam suatu post Jekyll</p><h2 id=note>note</h2><ol><li><p><a name=r01></a>url
+<a href=https://cdnjs.com/libraries/Chart.js target=_blank rel="nofollow noopener noreferrer"><span>https://cdnjs.com/libraries/Chart.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220317].</p></li><li><p><a name=r02></a>url
+<a href=https://cdnjs.com/libraries/mermaid target=_blank rel="nofollow noopener noreferrer"><span>https://cdnjs.com/libraries/mermaid <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220317].</p></li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

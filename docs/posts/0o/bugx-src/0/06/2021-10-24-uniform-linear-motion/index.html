@@ -1,0 +1,92 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>uniform linear motion | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>uniform linear motion</h1><time datetime=2021-10-24T18:44:00+07:00>October 24, 2021</time><p>Gerak lurus merupakan gerak dari obyek yang mengikuti suatu garis lurus dan beraturan, dalam hal ini, berarti percepatan bernilai nol selama benda bergerak. Dengan demikian gerak lurus beraturan atau GLB merupakan gerak benda mengikuti lintasan lurus dengan kecepatan tetap atau beraturan atau seragam [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. GLB ini merupakan salah satu bagian dari gerak lurus, di mana bagian lainnya adalah gerak lurus dengan percepatan berubah [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=equations>equations</h2><p>Terdapat beberapa persamaan untuk GLB, yaitu</p><p>\begin{equation}\label{eqn-uniform-linear-motion-1}
+a = 0,
+\end{equation}</p><p>\begin{equation}\label{eqn-uniform-linear-motion-2}
+v = v_0,
+\end{equation}</p><p>\begin{equation}\label{eqn-uniform-linear-motion-3}
+x = x_0 + v_0 t,
+\end{equation}</p><p>dengan $a$ percepatan, $v_0$ kecepatan awal, $v$ kecepatan setiap saat, $x_0$ posisi awal, $x_0$ posisi setiap saat, dan $t$ waktu. Persamaan \eqref{eqn-uniform-linear-motion-1} dan \eqref{eqn-uniform-linear-motion-2} umumnya tidak dituliskan karena dianggap sudah dipahami dan Persamaan \eqref{eqn-uniform-linear-motion-3} lebih sering dituliskan sebagai</p><p>\begin{equation}\label{eqn-uniform-linear-motion-3b}
+x = v t,
+\end{equation}</p><p>dengan $\Delta x = x - x_0 \equiv x$ perpindahan, $v$ kecepatan, dan $t$ waktu. Semua $t$ di atas sebenarnya lebih tepat bila dituliskan sebagai $\Delta t = t - t_0$ yang menggambarkan selang waktu, akan tetapi penulisan dengan $t$ sudah menjadi umum dan terlihat lebih sederhana [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Jadi, penyederhanaan penulisan pada Persamaan \eqref{eqn-uniform-linear-motion-3b} telah terdapat asumsi bahwa gerak dimulai pada posisi $x_0 = 0$ dan saat $t_0 = 0$. Hal ini menjadi penting saat akan merangkai beberapa GLB dalam suatu gerak konsekutif.</p><h2 id=graphics>graphics</h2><p>Untuk variabel kinematika $x$, $v$, $a$ dapat digambarkan grafiknya sebagai fungsi waktu $t$ sebagai berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0061-a1.png) | ![]({{ site.baseurl }}/assets/img/0/06/0061-a2.png) | ![]({{ site.baseurl }}/assets/img/0/06/0061-a3.png)</p><p>Gambar <a name=fig1>1</a>. Grafik $a-t$ (kiri), $v-t$ (tengah), dan $x-t$ (kanan).</p><p>Ilustrasi grafik suatu GLB diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk $x = 4 + 2t$, $v = 2$, dan $a = 0$. Untuk kasus GLB ini percepatan akan selalu bernilai nol, sedangkan posisi $x$ dan $v$ terhubung melalui Persamaan \eqref{eqn-uniform-linear-motion-3b} atau yang lebih umum</p><p>\begin{equation}\label{eqn-uniform-linear-motion-3c}
+x = \int v \ dt,
+\end{equation}</p><p>yang akan menjadi</p><p>\begin{equation}\label{eqn-uniform-linear-motion-3d}
+\Delta x = x - x_0 = \int_{t_0}^t v \ dt,
+\end{equation}</p><p>bila diberi batas bawah dan atas integral, dengan syarat awal $x_0 = x(t_0)$. Persaamaan \eqref{eqn-uniform-linear-motion-3c} dan \eqref{eqn-uniform-linear-motion-3d} menghitung luas di bawah kurva, yang untuk suatu GLB menjadi sederhana karena kurva $v$ merupakan garis mendatar.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0061-b1.png)<br>![]({{ site.baseurl }}/assets/img/0/06/0061-b2.png)<br>Gambar <a name=fig2>2</a>. Luas di bawah kurva kecepatan $v$: $t_0 = 0$, $t = 4$ memberikan luas $4$ (atas) dan $t_0 = 0$, $t = 8$ memberikan luas $8$ (bawah).</p><p>Sebagai ilustrasi batas bawah integral adalah $t_0 = 0$ dan batas atasnya adalah $t = 4$ yang memberikan luas $A \equiv \Delta x = 4$ dan nilai ini setelah ditambahkan pada posisi awal $x_0 = 4$ akan menghasilkan posisi $x = 8$ sebagaimana ditunjukkan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(atas). Kemudian dengan mengubah batas atasnya menjadi $t = 8$ akan diperoleh luas di bawah kurva luas $A \equiv \Delta x = 4$ dan dengan menambahkan nilai ini pada posisi awal $x_0 = 4$ akan menghasilkan posisi akhir $x = 12$ seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(bawah).</p><p>![]({{ site.baseurl }}/assets/img/0/06/0061-c1.png)<br>![]({{ site.baseurl }}/assets/img/0/06/0061-c2.png)<br>Gambar <a name=fig3>3</a>. Luas di bawah kurva kecepatan $v$: $t_0 = 2$, $t = 8$ memberikan luas $6$ (atas) dan $t_0 = 4$, $t = 8$ memberikan luas $4$ (bawah).</p><p>Integral dengan batas bawah dan atas yang diberikan oleh Persaamaan \eqref{eqn-uniform-linear-motion-3d} merupakan luas di bawah kurva $A$ berupa perpindahan $\Delta x$. Dengan demikian, perpindahan $\Delta x$ tidak bergantung posisi awal $x_0$, akan tetapi sebaliknya</p><p>\begin{equation}\label{eqn-uniform-linear-motion-4}
+x = x_0 + \Delta x
+\end{equation}</p><p>posisi akhir $x$ yang bergantung posisi awal $x_0$ ini dan perpindahannya $\Delta x$.</p><h2 id=1d-motion>1d motion</h2><p>Gerak lurus merupakan gerak 1d, yang belum tentu harus dalam arah $x$. Bisa saja dalam arah $y$, $z$, atau arah lainnya asalkan berupa garis lurus.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0061-d.png)<br>Gambar <a name=fig4>4</a>. Beberapa lintasan benda yang ber-GLB dalam ruang 3d, di mana masing-masing lintasan berupa garis lurus.</p><p>Pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terdapat lima lintasan benda ber-GLB, yaitu $f_1$, $f_2$, $f_3$, $f_4$, dan $f_5$. Semuanya merupakan garis lurus akan tetapi tidak hanya $x$ fungsi dari $t$, melainkan dapat pula berupa $y$, $z$, atau lainnya. Lintasan pertama $f_1$ dapat direpresentasikan dengan</p><p>\begin{equation}\label{eqn-line-3d-f1}
+f_1 = \left\{
+\begin{array}{l}
+x = 4 + 2t, \newline
+y = 0, \newline
+z = 0, \newline
+0 \le t \le 3,
+\end{array}
+\right.
+\end{equation}</p><p>di mana untuk kasus pada ruang 1d hanya baris pertama (dan terakhir) yang dibutuhkan. Untuk $f_2$, $f_3$, dan $f_4$ berlaku cara yang sama.</p><h2 id=exer>exer</h2><ol><li>Sebuah benda bergerak di sepanjang sumbu $x$ dengan kecepatan tetap $2 \ \rm m/s$ ke arah kanan menuju $+x$. Saat $t = 0 \ \rm s$ benda berada posisi $x = 4$. Tentukan posisi benda saat $t = 3 \ \rm s$ dan $t = 5 \ \rm s$.</li><li>Saat $t = 4 \ \rm s$ benda yang ber-GLB berada pada posisi $x = 6 \ \rm m$ dan $t = 8 \ \rm s$ berada pada posisi $x = 2 \ \rm m$. Hitunglah kecepatan benda.</li><li>Dengan menggunakan Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tuliskanlah lintasan kedua $f_2$.</li><li>Carilah lintasan ketiga $f_3$ pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Tuliskan lintasan keempat $f_4$ yang terdapat pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>-, &ldquo;Uniform Linear Motion&rdquo; in College Physics, Physics, LibreText, 31 Dec 2020, url
+<a href=https://phys.libretexts.org/@go/page/31883 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/31883 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211024].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Linear motion&rdquo;, Wikipedia, The Free Encyclopedia, 31 August 2021, 01:12 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1041524488" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1041524488 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211024].</li><li><a name=r03></a>-, &ldquo;What are the kinematic formulas?&rdquo;, Khan Academy, url
+<a href=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas target=_blank rel="nofollow noopener noreferrer"><span>https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211024].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity acceleration <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>kinematics equations 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $10 \ \rm m$ dan $14 \ \rm m$; &nbsp; 2) $-1 \ \rm m/s$; &nbsp; 3) $
+f_2 = \left\{
+\begin{array}{l}
+x = 0, \newline
+y = 3 + t, \newline
+z = 0, \newline
+0 \le t \le 6,
+\end{array}
+\right.
+$; &nbsp; 4) $
+f_3 = \left\{
+\begin{array}{l}
+x = 0, \newline
+y = 0, \newline
+z = 9 - 3t, \newline
+0 \le t \le 3,
+\end{array}
+\right.
+$; &nbsp; 5) $
+f_4 = \left\{
+\begin{array}{l}
+x = 10, \newline
+y = 0, \newline
+z = 1 + 4t, \newline
+0 \le t \le 3,
+\end{array}
+\right.
+$</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

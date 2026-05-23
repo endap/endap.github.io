@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>nonuniform linear motion | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>nonuniform linear motion</h1><time datetime=2021-10-26T11:40:00+07:00>October 26, 2021</time><p>Gerak lurus berubah beraturan atau GLBB adalah gerak dengan percepatan konstan, baik besar maupun arahnya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang besarnya percepatan dapat bernilai positif ataupun negatif (bukan nol) [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], di mana gerak ini merupakan salah satu dari dua jenis gerak linier [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat pula nama lainnya yaitu gerak lurus dengan percepatan [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Kecepatan benda yang ber-GLBB akan berubah dari kecepatan awal $v_0$ menjadi kecepatan akhir $v_t$ pada saat waktu $t$ mengikuti</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-v}
+v_t = v_0 + at,
+\end{equation}</p><p>dengan $a$ merupakan percepatan konstan.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0063-a.png)<br>Gambar <a name=fig1>1</a>. Hubungan antara kecepatan awal $v_0$, kecepatan akhir $v_t$, selang waktu $\Delta t$, dan percepatan $a$.</p><p>Untuk gerak dengan percepatan konstan sebagaimana suatu GLBB, percepatan $a$ dapat diperoleh dengan cara menghitung percepatan rata-rata</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-a}
+a \equiv a_{\rm avg} = \frac{\Delta v}{\Delta t},
+\end{equation}</p><p>yang dalam Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>merupakan kemiringan garis atau $\tan \alpha$. Dengan demikian</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-a-v}
+\begin{array}{rcl}
+\displaystyle \frac{v_t - v_0}{\Delta t} & = & a \newline
+v_t - v_0 & = & a \Delta t, \newline
+v_t & = & v_0 + a \Delta t,
+\end{array}
+\end{equation}</p><p>yang tak lain merupakan Persamaan \eqref{eqn-nonuniform-linear-motion-v} karena di sini $\Delta t \equiv t$ memang menggambarkan selang waktu, suatu kebiasaan yang telah umum [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Selanjutnya selain Persamaan \eqref{eqn-nonuniform-linear-motion-v} terdapat pula hubungan</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-x}
+\Delta x = v_0 t + \tfrac12 at^2,
+\end{equation}</p><p>yang merupakan luas di bawah kurva fungsi $v = v(t)$ seperti pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>melalui hubungan $x$ dan $v$ melalui integral. Luas di bawah kurva pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh dari luas daerah segiempat berwarna hijau dan segitiga berwarna merah</p><p>$$
+\begin{array}{rcl}
+A & = & A_\color{green}{\square} + A_\color{red}{\triangle} \newline
+& = & v_0 \Delta t + \frac12 \Delta t (v_t - v_0) \newline
+& = & v_0 \Delta t + \frac12 \Delta t (v_0 + a\Delta t - v_0) \newline
+& = & v_0 \Delta t + \frac12 \Delta t \ a \ \Delta t \newline
+& = & v_0 \Delta t + \frac12 a (\Delta t)^2,
+\end{array}
+$$</p><p>dengan $A = \Delta x$ dan kembali $\Delta t \equiv t$ maka akan diperoleh Persamaan \eqref{eqn-nonuniform-linear-motion-x}.</p><p>Selain Persamaan \eqref{eqn-nonuniform-linear-motion-v} dan \eqref{eqn-nonuniform-linear-motion-x} terdapat pula hubungan</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-v-x-a}
+v_t^2 = v_0^2 + 2 a \Delta x.
+\end{equation}</p><p>Substitusi $t$ pada Persamaan \eqref{eqn-nonuniform-linear-motion-x} dengan $t$ dari Persamaan \eqref{eqn-nonuniform-linear-motion-v}</p><p>$$
+\require{cancel}
+\begin{array}{rcl}
+\Delta x & = & v_0 t + \frac12 a t^2 \newline
+& = & \displaystyle v_0 \left( \frac{v_t - v_0}{a} \right) + \frac12 a \left( \frac{v_t - v_0}{a} \right)^2 \newline
+& = & \displaystyle \frac{v_0 v_t - v_0^2}{a} + \frac{v_t^2 - 2v_0v_t + v_0^2}{2a} \newline
+& = & \displaystyle \frac{2v_0 v_t - 2v_0^2}{2a} + \frac{v_t^2 - 2v_0v_t + v_0^2}{2a} \newline
+2a\Delta x & = & (2v_0 v_t - 2v_0^2) + (v_t^2 - 2v_0v_t + v_0^2) \newline
+2a\Delta x & = & \cancel{2v_0 v_t} - 2v_0^2 + v_t^2 - \cancel{2v_0v_t} + v_0^2 \newline
+2a\Delta x & = & - 2v_0^2 + v_t^2 + v_0^2 \newline
+2a\Delta x & = & - v_0^2 + v_t^2 \newline
+v_0^2 + 2a\Delta x & = & v_t^2 \newline
+\end{array}
+$$</p><p>akan memberikan Persamaan \eqref{eqn-nonuniform-linear-motion-v-x-a}. Selanjutnya adalah substitusi Persamaan \eqref{eqn-nonuniform-linear-motion-v} ke Persaamaan \eqref{eqn-nonuniform-linear-motion-x} hanya untuk suku $v_0$</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-v&ndash;at}
+\require{cancel}
+\begin{array}{rcl}
+\Delta x & = & v_0 t + \frac12 a t^2 \newline
+& = & (v_t - at) \ t + \frac12 a t^2 \newline
+& = & v_t t - at^2 + \frac12 a t^2 \newline
+& = & v_t t - \frac12 a t^2,
+\end{array}
+\end{equation}</p><p>yang merupakan persamaan kinematika lagi untuk GLBB yang dapat digunakan. Persamaan \eqref{eqn-nonuniform-linear-motion-x} dan \eqref{eqn-nonuniform-linear-motion-v&ndash;at} dapat dijumlahkan sehingga menghasilkan</p><p>\begin{equation}\label{eqn-nonuniform-linear-motion-x-v0-vt}
+\require{cancel}
+\begin{array}{rcl}
+2 \Delta x & = & \Delta x + \Delta x \newline
+& = & (v_0 t + \frac12 a t^2) + (v_t t - \frac12 a t^2) \newline
+& = & v_0 t + \cancel{\frac12 a t^2} + v_t t - \cancel{\frac12 a t^2} \newline
+& = & (v_0 + v_t) t \newline
+\Delta x & = & \frac12 (v_0 + v_t) t,
+\end{array}
+\end{equation}</p><p>yang merupakan persamaan kinematika GLBB kelima yang juga dapat digunakan.</p><p>Tabel <a name=tab1>1</a>. Lima persaamaan kinematika untuk GLBB dengan variabel yang tidak perlu diketahuinya $\cancel{U}$.</p><table><thead><tr><th style=text-align:left>No</th><th style=text-align:left>Persamaan</th><th style=text-align:left>$\cancel{U}$</th></tr></thead><tbody><tr><td style=text-align:left>\eqref{eqn-nonuniform-linear-motion-v}</td><td style=text-align:left>$v_t = v_0 + at$</td><td style=text-align:left>$\Delta x$</td></tr><tr><td style=text-align:left>\eqref{eqn-nonuniform-linear-motion-x}</td><td style=text-align:left>$\Delta x = v_0 t + \frac12 a t^2$</td><td style=text-align:left>$v_t$</td></tr><tr><td style=text-align:left>\eqref{eqn-nonuniform-linear-motion-v-x-a}</td><td style=text-align:left>$v_t^2 = v_0^2 + 2a\Delta x$</td><td style=text-align:left>$t$</td></tr><tr><td style=text-align:left>\eqref{eqn-nonuniform-linear-motion-v&ndash;at}</td><td style=text-align:left>$\Delta x = v_t t - \frac12 a t^2$</td><td style=text-align:left>$v_0$</td></tr><tr><td style=text-align:left>\eqref{eqn-nonuniform-linear-motion-x-v0-vt}</td><td style=text-align:left>$\Delta x = \frac12 (v_0 + v_t) t$</td><td style=text-align:left>$a$</td></tr></tbody></table><p>Saat memecahkan suatu permasalan kinematika dapat digunakan kelima persamaan dalam Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang masing-masing memiliki satu variabel kinematika yang tidak perlu diketahui $\cancel{U}$. Sebagai contoh bila tidak diketahui percepatan $a$ dan juga tidak ditanyakan, maka Persamaan \eqref{eqn-nonuniform-linear-motion-x-v0-vt} yang digunakan.</p><p>Sebuah benda yang memiliki percepatan konstan $1 \ \rm m/s^2$ bergerak lurus dengan kecepatan awal $3 \ \rm m/s$. Bila saat ini kecepatannya adalah $5 \ \rm m/s$ berapakah perpindahan yang telah ditempuhnya?</p><p>Pada permasalahan di atas telah diketahui percepatan $a$, kecepatan awal $v_0$, kecepatan akhir $v_t$, dan ditanya perpindahan yang ditempuh $\Delta x$. Waktu $t$ sama sekali tidak disinggung, sehingga akan digunakan Persamaan \eqref{eqn-nonuniform-linear-motion-v-x-a} untuk menyelesaikannya.</p><h2 id=examples-5-equations>examples 5 equations</h2><p>Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>memberikan lima persamaan yang dapat digunakan untuk memecahkan permasalahan GLBB bila salah satu variabel kinematika tidak diketahui. Untuk sebuah contoh saja dapat dibuat variasi permasalahan sehingga harus dipecahkan oleh salah satu dari lima persamaan tersebut.</p><p>{% comment %}
+v0 = 5
+vt = 13
+a = 2
+t = 4
+dx = 36
+{% endcomment %}</p><h3 id=unnecessary-dx>unnecessary dx</h3><p>Sebuah benda ber-GLBB dengan percepatan $2 \ \rm m/s^2$ dan kecepatan awal $5 \ \rm m/s$. Tentukan kecepatan benda setelah $4 \ \rm s$.</p><h3 id=unnecessary-vt>unnecessary vt</h3><p>Hitunglah perpindahan benda setelah $4 \ \rm s$ bila benda mulai bergerak dengan kecepatan awal $5 \ \rm m/s$ dan selama geraknya percepatannya bernilai konstan $2 \ \rm m/s^2$.</p><h3 id=unnecessary-t>unnecessary t</h3><p>Sebuah benda yang bergerak lurus dengan percepatan tetap $2 \ \rm m/s^2$ berpindah sejauh $36 \ \rm m$. Berapakah kecepatan akhir benda bila kecepatan awalnya adalah $5 \ \rm m/s$?</p><h3 id=unnecessary-v0>unnecessary v0</h3><p>Sebuah benda begerak lurus dengan percepatan tetap $2 \ \rm m/s^2$ bergerak dengan kecepatan awal tertentu selama $4 \ \rm s$ untuk menempuh jarak tertentu. Bila pada saat akhir diketahui kecepatannya adalah $13 \ \rm m/s$, tentukan jarak yang ditempuh benda.</p><h3 id=unnecessary-a>unnecessary a</h3><p>Sebuah benda bergerak lurus dengan percepatan tetap menempuh suatu jarak tertentu selama $4 \ \rm s$. Bila saat awal dan akhir kecepatan benda diukur dengan menggunakan radar kecepatan portabel dan memberikan hasil $5 \ \rm m/s$ dan $13 \ \rm m/s$, berapakah jarak yang telah ditempuh benda?</p><p>Tabel <a name=tab2>2</a>. Lima persamaan kinematika dan lima variabel terkaitnya, serta variasi pertanyaan yang dapat dibuat. $\newcommand{\rlx}{\large\color{#c00}\times}$</p><table><thead><tr><th style=text-align:left>Persamaan</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$v_t$</th><th style=text-align:center>$a$</th><th style=text-align:center>$t$</th><th style=text-align:center>$\Delta x$</th><th style=text-align:center>Variasi</th></tr></thead><tbody><tr><td style=text-align:left>$v_t = v_0 + at$</td><td style=text-align:center>$5$</td><td style=text-align:center>$13$</td><td style=text-align:center>$2$</td><td style=text-align:center>$4$</td><td style=text-align:center>$\rlx$</td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:left>$\Delta x = v_0 t + \frac12 a t^2$</td><td style=text-align:center>$5$</td><td style=text-align:center>$\rlx$</td><td style=text-align:center>$2$</td><td style=text-align:center>$4$</td><td style=text-align:center>$36$</td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:left>$v_t^2 = v_0^2 + 2a\Delta x$</td><td style=text-align:center>$5$</td><td style=text-align:center>$13$</td><td style=text-align:center>$2$</td><td style=text-align:center>$\rlx$</td><td style=text-align:center>$36$</td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:left>$\Delta x = v_t t - \frac12 a t^2$</td><td style=text-align:center>$\rlx$</td><td style=text-align:center>$13$</td><td style=text-align:center>$2$</td><td style=text-align:center>$4$</td><td style=text-align:center>$36$</td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:left>$\Delta x = \frac12 (v_0 + v_t) t$</td><td style=text-align:center>$5$</td><td style=text-align:center>$13$</td><td style=text-align:center>$\rlx$</td><td style=text-align:center>$4$</td><td style=text-align:center>$36$</td><td style=text-align:center>$4$</td></tr></tbody></table><p>{% comment %}
+v0 = 5
+vt = 13
+a = 2
+t = 4
+dx = 36
+{% endcomment %}</p><p>Dengan demikian dengan hanya menggunakan lima variabel kinematika $v_0$, $v_t$, $a$, $t$, dan $\Delta x$ dapat dibuat sekitar</p><p>$$
+4 + 4 + 4 + 4 + 4 = 20
+$$</p><p>variasi permasalahan. Sebagai contoh untuk baris pertama pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>empat variasi yang dimaksud adalah dapat ditanyakan $v_0$, $v_t$, $a$, dan $t$.</p><h2 id=graphics>graphics</h2><p>Dengan hubungan melalui integral dan diferensial antara $a$ dan $v$, serta $v$ dan $x$, dapat diberikan ilustrasi kurva antara ketiga variabel tersebut.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0063-b1.png)<br>![]({{ site.baseurl }}/assets/img/0/06/0063-b2.png)<br>Gambar <a name=fig2>2</a>. Kurva percepatan $a$, kecepatan $v$, dan posisi $x$ untuk $a > 0$ (atas) dan $a &lt; 0$ (bawah).</p><p>Pengaruh dari tanda percepatan $a$ bagi kecepatan $v$ dan posisi $x$ diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Perhatikan bahwa paling mudah melihat pengaruhnya adalah pada kurva $v$ karena $a$ adalah kemiringan kurva atau gradiennya kurva $v$.</p><p>Tabel <a name=tab3>3</a>. Variasi tanda percepatan $a$, kecepatan awal $v$, dan posisi awal $x_0$ untuk suatu GLBB.</p><table><thead><tr><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th></tr></thead><tbody><tr><td style=text-align:center><code>0A</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$-$</td><td style=text-align:center>$-$</td><td style=text-align:center><code>0D</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$0$</td><td style=text-align:center>$-$</td><td style=text-align:center><code>0G</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$+$</td><td style=text-align:center>$-$</td></tr><tr><td style=text-align:center><code>0B</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$-$</td><td style=text-align:center>$0$</td><td style=text-align:center><code>0E</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$0$</td><td style=text-align:center>$0$</td><td style=text-align:center><code>0H</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$+$</td><td style=text-align:center>$0$</td></tr><tr><td style=text-align:center><code>0C</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$-$</td><td style=text-align:center>$+$</td><td style=text-align:center><code>0F</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$0$</td><td style=text-align:center>$+$</td><td style=text-align:center><code>0I</code></td><td style=text-align:center>$-$</td><td style=text-align:center>$+$</td><td style=text-align:center>$+$</td></tr></tbody></table><table><thead><tr><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th><th style=text-align:center>ID</th><th style=text-align:center>$a$</th><th style=text-align:center>$v_0$</th><th style=text-align:center>$x_0$</th></tr></thead><tbody><tr><td style=text-align:center><code>0K</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$-$</td><td style=text-align:center>$-$</td><td style=text-align:center><code>0N</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$0$</td><td style=text-align:center>$-$</td><td style=text-align:center><code>0Q</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$+$</td><td style=text-align:center>$-$</td></tr><tr><td style=text-align:center><code>0L</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$-$</td><td style=text-align:center>$0$</td><td style=text-align:center><code>0O</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$0$</td><td style=text-align:center>$0$</td><td style=text-align:center><code>0R</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$+$</td><td style=text-align:center>$0$</td></tr><tr><td style=text-align:center><code>0M</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$-$</td><td style=text-align:center>$+$</td><td style=text-align:center><code>0P</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$0$</td><td style=text-align:center>$+$</td><td style=text-align:center><code>0S</code></td><td style=text-align:center>$+$</td><td style=text-align:center>$+$</td><td style=text-align:center>$+$</td></tr></tbody></table><p>Untuk suatu GLBB, di mana $a \ne 0$, saat dilakukan integral untuk untuk mendapatkan nilai $v$ dan $x$, dibutuhkan syarat awal berupa kecepatan awal $v_0$ dan posisi awal $x_0$. Tanda dari percepatan $a$, kecepatan awal $v$, dan posisi awal $x_0$ akan menentukan grafik-grafiknya, dengan variasi tanda yang mungkin telah diberikan pada Tabel
+<a href=#tab3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0063-c1.png)<br>Gambar <a name=fig3>3</a>. Kurva percepatan $a$, kecepatan $v$, dan posisi $x$ untuk tanda [$a$, $v$, $x$, ID]: [$-$, $-$, $+$, <code>0C</code>] (atas), [$-$, $0$, $+$, <code>0F</code>] (atas), dan [$-$, $+$, $+$, <code>0I</code>] (bawah).</p><p>{% comment %}
+a v x ID</p><ul><li><ul><li><ul><li>0C</li></ul></li></ul></li><li>0 + 0F</li><li><ul><li><ul><li>0I
+{% endcomment %}</li></ul></li></ul></li></ul><p>Dengan $a &lt; 0$ maka kurva $v$ akan berupa garis lurus miring ke bawah (gradien negatif) dan $v_0$ hanya menentukan titik potongnya pada sumbu vertikal. Untuk kurva $x$ terdapat peran $x_0$ yang juga menentukan titik potong dengan sumbu vertikal, sedang puncak kurva parabola ditentukan terdapat pada $t = - v_0 / a$.</p><p>![]({{ site.baseurl }}/assets/img/0/06/0063-c2.png)<br>Gambar <a name=fig4>4</a>. Kurva percepatan $a$, kecepatan $v$, dan posisi $x$ untuk tanda [$a$, $v$, $x$, ID]: [$+$, $-$, $+$, <code>0M</code>] (atas), [$+$, $0$, $+$, <code>0P</code>] (atas), dan [$+$, $+$, $+$, <code>0S</code>] (bawah).</p><p>{% comment %}
+a v x ID</p><ul><li><ul><li><ul><li>0M</li></ul></li></ul></li><li>0 + 0P</li><li><ul><li><ul><li>0S
+{% endcomment %}</li></ul></li></ul></li></ul><p>Kurva $v$ akan berupa garis lurus miring ke atas (gradien positif) bila $a > 0$ dan $v_0$ hanya menentukan titik potongnya pada sumbu vertikal. Peran $x_0$ pada kurva $x$ adalah menentukan titik potong dengan sumbu vertikal, sedang puncak kurva parabola, seperti sebelumnya, ditentukan terdapat pada $t = - v_0 / a$.</p><p>Sebenarnya terdapat kurva-kurva lain dengan nilai $x_0$ yang berbeda, akan tetapi tidak ditampilkan karena dianggap cukup jelas bahwa nilai $x_0$ ini hanya menentukan titik potong pada sumbu vertikal atau menggeser kurva secara vertikal (ke atas untuk $x_0 > 0$ dan ke bawah untuk $x_0 &lt; 0$).</p><h2 id=exer>exer</h2><ol><li>Gunakan daerah yang telah diberi warna pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk mencari posisi akhir benda bila posisi awalnya $x_0 = 36$</li><li>Apa yang terkait dengan teorema energi kinetik dan usaha?</li><li>Tentukanlah syarat awal kecepatan $v_0$ dan posisi $x_0$ pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Sebuah benda ber-GLBB berpercepatan konstan $1 \ \rm m/s^2$ memulai geraknya dengan kecepatan awal $3 \ \rm m/s$. Setelah beberapa saat kecepatannya adalah $5 \ \rm m/s$ berapakah perpindahan yang telah ditempuhnya selama ini?</li><li>Bila diketahui posisi awal $x_0$ dan ingin dicari posisi akhir $x_t$, bagaimana cara melakukannya terkait dengan Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Alexsander San Lohat, &ldquo;Nonuniform linear motion&rdquo;, Physics.Gurumuda.Net, url
+<a href=https://physics.gurumuda.net/nonuniform-linear-motion.htm target=_blank rel="nofollow noopener noreferrer"><span>https://physics.gurumuda.net/nonuniform-linear-motion.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211025].</li><li><a name=r02></a>Emilija Angelovska, &ldquo;Difference Between Uniform and Nonuniform Motion&rdquo;, Difference Between Similar Terms and Objects, 15 June 2018, url
+<a href=http://www.differencebetween.net/science/difference-between-uniform-and-nonuniform-motion/ target=_blank rel="nofollow noopener noreferrer"><span>http://www.differencebetween.net/science/difference-between-uniform-and-nonuniform-motion/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211025].</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Linear motion&rdquo;, Wikipedia, The Free Encyclopedia, 31 August 2021, 01:12 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1041524488" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1041524488 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211025].</li><li><a name=r04></a>-, &ldquo;Accelerated Linear Motion and Generalization&rdquo; in College Physics, Physics, LibreText, 5 Jan 2021, url
+<a href=https://phys.libretexts.org/@go/page/31884 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/31884 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211025].</li><li><a name=r05></a>-, &ldquo;What are the kinematic formulas?&rdquo;, Khan Academy, url
+<a href=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas target=_blank rel="nofollow noopener noreferrer"><span>https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211025].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity acceleration <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>kinematics equations 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>uniform linear motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $x = 100$; &nbsp; 2) Persamaan (5); &nbsp; 3) $v_0 = 1$ dan $x_0 = 15$; &nbsp; 4) $8 \ \rm m$; &nbsp; 5) $\Delta x = x_t - x_0$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,103 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>biot-savart law straight wire | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>biot-savart law straight wire</h1><time datetime=2022-02-27T19:13:00+07:00>February 27, 2022</time><p>Medan magnetik oleh kawat lurus berarus dapat diperoleh dengan menggunakan hukum Biot-Savart [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan bila kawatnya amat panjang dapat menggunakan hukum Ampere [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Perihal medan magnetik oleh kawat lurus berarus dengan panjang berhingga masih menjadi pembahasan yang menarik, seperti bila ingin menerapkan hukum Ampere dengan perumusan yang lebih umum [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan pemanfaatannya untuk menghitung berbagai bentuk simpul arus [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=the-law>the law</h2><p>Elemen arus listrik yang mengalir pada sebuah kawat $Id\vec{l}$ akan memberikan elemen medan magnetik $d\vec{B}$ pada posisi $\vec{r}$ dari kawat yang diberikan oleh hukum Biot-Savart</p><p>\begin{equation}\label{eqn:biot-savart-law}
+d\vec{B} = \frac{\mu_0}{4\pi} \frac{Id\vec{l} \times \vec{r}}{r^3},
+\end{equation}</p><p>seperti digambarkan berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/51/0511-a.png)<br>Gambar <a name=fig1>1</a>. Elemen medan magnetik $d\vec{B}$ yang disebabkan oleh elemen arus $Id\vec{l}$ terlihat dengan perspektif dan tampak atas, depan, bawah.</p><p>Pusat koordinat dipilih berada pada kawat dan sumbu $z$ sejajar pada kawat sehingga dapat digunakan sistem koordinat silinder $(r, \theta, z)$ sebagaimana disajikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=application>application</h2><p>Di sini akan diterapkan hukum Biot-Savart untuk kawat lurus dengan panjang berhingga, salah satu ujung tak-hingga, dan kedua ujung tak-hingga.</p><h3 id=straight-wire>straight wire</h3><p>Agar hukum Biot-Savart dapat diterapkan dengan mudah Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>perlu diperjelas dengan menambahkan batas-batas integral untuk $dl$ seperti pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/51/0511-b.png)<br>Gambar <a name=fig2>2</a>. Elemen medan magnetik $d\vec{B}$ pada posisi $\vec{r}$ dari kawat yang disebabkan oleh elemen arus $Id\vec{l}$ tampak depan dan batas-batas integralnya.</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:tan-theta-1}
+\tan \theta_1 = \frac{h}{-z_1}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:tan-theta-2}
+\tan \theta_2 = \frac{h}{-z_2}
+\end{equation}</p><p>dengan batas bawah integral adalah $z = -z_1$ dan batas atas integral adalah $z = -z_2$. Dapat pula dituliskan</p><p>\begin{equation}\label{eqn:cot-theta}
+\cot \theta = \frac{z}{h}
+\end{equation}</p><p>sehingga</p><p>\begin{equation}\label{eqn:cot-theta-z}
+z = h \cot \theta
+\end{equation}</p><p>dan diferensialnya</p><p>\begin{equation}\label{eqn:ctg-theta-dz}
+dz = -h \csc^2 \theta d\theta.
+\end{equation}</p><p>Vektor posisi relatif titik pengamatan terhadap elemen arus diperoleh dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i></span></a></p><p>\begin{equation}\label{eqn:r-rel}
+\vec{r} = h \vec{r} + z \hat{z},
+\end{equation}</p><p>sehingga besarnya adalah</p><p>\begin{equation}\label{eqn:r-rel-mag}
+r = \sqrt{h^2 + z^2}.
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:cot-theta-z} ke Persamaan \eqref{eqn:r-rel-mag} akan memberikan</p><p>\begin{equation}\label{eqn:r-rel-mag-csc}
+r = h\csc \theta.
+\end{equation}</p><p>Dan</p><p>\begin{equation}\label{eqn:idl}
+Id\vec{l} = Idz\hat{z}
+\end{equation}</p><p>adalah elemen arus pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Substitusi Persamaan \eqref{eqn:r-rel}, \eqref{eqn:r-rel-mag-csc}, dan \eqref{eqn:idl} ke Persamaan \eqref{eqn:biot-savart-law} akan menghasilkan</p><p>\begin{equation}\label{eqn:biot-savart-law-straight-wire}
+\begin{array}{rcl}
+d\vec{B} & = & \displaystyle \frac{\mu_0}{4\pi} \frac{Idz\hat{z} \times (h \vec{r} + z \hat{z})}{(h\csc \theta)^3} \newline
+& = & \displaystyle \hat{\theta} \frac{\mu_0}{4\pi} \frac{h I}{h^3\csc^3 \theta} \ dz \newline
+& = & \displaystyle \hat{\theta} \frac{\mu_0}{4\pi} \frac{h I}{h^3\csc^3 \theta} \ (-h \csc^2 \theta d\theta) \newline
+& = & \displaystyle -\hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} \frac{d\theta}{\csc\theta} \newline
+& = & \displaystyle -\hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} \sin\theta d\theta.
+\end{array}
+\end{equation}</p><p>Integral Persamaan \eqref{eqn:biot-savart-law-straight-wire} akan memberikan</p><p>\begin{equation}\label{eqn:biot-savart-law-straight-wire-b}
+\begin{array}{rcl}
+\vec{B} & = & \int d\vec{B} \newline
+& = & \displaystyle -\hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} \int \sin\theta d\theta \newline
+& = & \displaystyle -\hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} (-\cos\theta) \newline
+& = & \displaystyle \hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} \cos\theta.
+\end{array}
+\end{equation}</p><p>Dari Persamaan \eqref{eqn:cot-theta-z} dapat diperoleh</p><p>\begin{equation}\label{eqn:cos-theta-z}
+\cos \theta = \frac{z}{\sqrt{z^2 + h^2}}.
+\end{equation}</p><p>Dengan bantuan Persamaan \eqref{eqn:cos-theta-z} maka Persamaan \eqref{eqn:biot-savart-law-straight-wire-b} dapat menjadi</p><p>\begin{equation}\label{eqn:biot-savart-law-straight-wire-b-with-bounds}
+\vec{B} = \hat{\theta} \frac{\mu_0}{4\pi} \frac{I}{h} \left( \frac{z_2}{\sqrt{z_2^2 + h^2}} - \frac{z_1}{\sqrt{z_1^2 + h^2}} \right),
+\end{equation}</p><p>yang perlu memperhatikan nilai batas bawah dan batas atas $z$ pada kawat berarus $I$ penyebab medan magnetik $\vec{B}$. Tanda positif dan negatif perlu dimasukkan. Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>menunjukkan batas bawah integral adalah $z = -z_1$ dan batas atasnya adalah $z = -z_2$.</p><p>Dengan menggunakan Persamaan \eqref{eqn:biot-savart-law-straight-wire-b-with-bounds} dapat diperoleh untuk kawat berhingga, semi tak-hingga, dan tak hingga pada kedua ujungnya.</p><h2 id=cases>cases</h2><p>Terdapat beberapa kasus yang dapat disinggung terkait dengan pemanfaatan Persamaan \eqref{eqn:biot-savart-law-straight-wire-b-with-bounds} seperti diberikan pada tabel di bawah ini.</p><p>Tabel <a name=tab1>1</a>. Beberapa sistem kawat lurus berarus dan medan magnetik yang disebabkannya.</p><p>No | Kasus | $B$
+:-: | :-:
+1 | ![]({{ site.baseurl }}/assets/img/0/51/0511-c1.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ \frac{-l}{\sqrt{l^2 + h^2}} - \frac{-(l+L)}{\sqrt{(l+L)^2 + h^2}} \right]$
+2 | ![]({{ site.baseurl }}/assets/img/0/51/0511-c2.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left( \frac{L+l}{\sqrt{(L+l)^2 + h^2}} - \frac{l}{\sqrt{l^2 + h^2}} \right)$
+3 | ![]({{ site.baseurl }}/assets/img/0/51/0511-c3.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ \frac{l}{\sqrt{l^2 + h^2}} - \frac{-(L-l)}{\sqrt{(L-l)^2 + h^2}} \right]$
+4 | ![]({{ site.baseurl }}/assets/img/0/51/0511-c4.png) |$\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ \frac{L-l}{\sqrt{(L-l)^2 + h^2}} - \frac{(-l)}{\sqrt{l^2 + h^2}} \right]$
+5 | ![]({{ site.baseurl }}/assets/img/0/51/0511-d1.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ \frac{-l}{\sqrt{l^2 + h^2}} - (-1) \right]$
+6 | ![]({{ site.baseurl }}/assets/img/0/51/0511-d2.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left( 1 - \frac{l}{\sqrt{l^2 + h^2}} \right)$
+7 | ![]({{ site.baseurl }}/assets/img/0/51/0511-d3.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ \frac{l}{\sqrt{l^2 + h^2}} - (-1) \right]$
+8 | ![]({{ site.baseurl }}/assets/img/0/51/0511-d4.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ 1 - \frac{(-l)}{\sqrt{l^2 + h^2}} \right]$
+9 | ![]({{ site.baseurl }}/assets/img/0/51/0511-e.png) | $\displaystyle\frac{\mu_0}{4\pi} \frac{I}{h} \left[ 1 - (-1) \right]$</p><p>Salah satu kasus yang amat dikenal adalah untuk kawat lurus panjang dengan medan magnetik diamati pada daerah di tengah-tengah kawat, yang pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tercantum pada baris terakhir (kasus nomor 9) berupa</p><p>\begin{equation}\label{eqn:biot-savart-law-straight-wire-long-both-end}
+B = \frac{\mu_0 I}{2\pi h}
+\end{equation}</p><p>dan untuk kawat lurus panjang dengan medan magnetik diamati pada daerah di ujung kawat</p><p>\begin{equation}\label{eqn:biot-savart-law-straight-wire-long-one-end}
+B = \frac{\mu_0 I}{4\pi h}
+\end{equation}</p><p>yang tercantum pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di dua baris terakhir (kasus bernomor 7 dan 8) dengan $l = 0$.</p><p>![]({{ site.baseurl }}/assets/img/0/51/0511-f.png)<br>Gambar <a name=fig3>3</a>. Medan magnetik yang disebabkan oleh
+kawat lurus panjang semi tak-hingga (kiri) dan kawat lurus panjang tak-hingga (kanan).</p><p>Dua buah kawat lurus panjang semi tak-hingga digabungkan, medan magnetik yang disebabkan keduanya akan menjadi seperti medan magnetik yang disebabkan oleh sebuah kawat lurus panjang tak-hingga. Ilustrasi mengenai kedua kasus ini diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=exer>exer</h2><ol><li>Terdapat sebuah simpul (loop) kawat berarus $I$ berbentuk segiempat dan ingin ingin dicari medan magnetik pada sembarang titik di dalam simpul. Kasus nomor berapa pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>yang dapat dimanfaatkan?</li><li>Menlanjutkan pertanyaan sebelumnya, bagaimana bila untuk sembarang titik di luar simpul? Kasus nomor berapa pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>yang dapat dimanfaatkan?</li><li>Kasus nomor berapa pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>yang besar medan magnetiknya hanya merupakan fungsi dari jarak tegak lurus titik amat terhadap kawat atau $h$?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Sunil Kumar Singh, &ldquo;Magnetic field due to current in straight wire&rdquo;, Electricity and Magnetism, OpenStax CNS, Rice University, 8 Aug 2009, url
+<a href=https://cnx.org/contents/UBPo-xuY@13.2:QW8ntuAW@10/Magnetic-field-due-to-current-in-straight-wire target=_blank rel="nofollow noopener noreferrer"><span>https://cnx.org/contents/UBPo-xuY@13.2:QW8ntuAW@10/Magnetic-field-due-to-current-in-straight-wire <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220227].</li><li><a name=r02></a>Carl Rod Nave, &ldquo;Magnetic Field of Current&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magcur.html#c3 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magcur.html#c3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220227].</li><li><a name=r03></a>T. Charitat, F. Graner, &ldquo;About the magnetic field of a finite wire&rdquo;, European Journal of Physics [Eur J Phys], vol 24, no 3, p 267-270, May 2003, url
+<a href=https://doi.org/10.1088/0143-0807/24/3/306 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1088/0143-0807/24/3/306 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r04></a>Jorge Enrique García-Farieta, Alejandro Hurtado Márquez, &ldquo;Beyond the Magnetic Field of a Finite Wire: A Teaching Approach Using the Superposition Principle&rdquo;, The Physics Teacher [], vol 59, no 5, p 348-350, May 2021, url
+<a href=https://doi.org/10.1119/10.0004885 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1119/10.0004885 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0511?src=hash&amp;ref_src=twsrc%5Etfw">#bug0511</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1497907628793798659?ref_src=twsrc%5Etfw">February 27, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) kasus 3 dan 4; &nbsp;
+2) kasus 1 dan 2; &nbsp;
+3) kasus 9; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,72 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py simple sort | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py simple sort</h1><time datetime=2021-12-18T22:06:00+07:00>December 18, 2021</time><p>Bagi kebanyakan orang, bubble sort sepertinya merupakan algoritma mengurutkan pertama yang didengar dalam kuliah sains komputer mereka [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dengan visualisasi prosesnya disertai diagram alir terkait telah tersedia [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Algoritma sederhana ini bekerja buruk dalam penggunaan sebenarnya dan pemanfaatan utama algoritma ini adalah untuk alat edukasi [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam Python telah terdapat metode dan fungsi bawaaan untuk mengurutkan larik berjenis list, yaitu sort() [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan sorted() [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=buble-sort-code>buble sort code</h2><p>Dengan membandingkan dua bilangan berurutan dan menukar tempatnya bila suatu kondisi terpenuhi, biasanya bilangan pertama lebih kecil dari bilangan kedua, dapat dihasilkan kode berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Sort using bubble sort</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x: bubble sort&#34;</span>)
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>print(x)
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> len(x)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, N):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> x[i] <span style=color:#f92672>&gt;</span> x[j]:
+</span></span><span style=display:flex><span>            x[i], x[j] <span style=color:#f92672>=</span> x[j], x[i]
+</span></span><span style=display:flex><span>print(x)
+</span></span></code></pre></div><p>dengan hasilnya adalah</p><pre tabindex=0><code>x: bubble sort
+[9, 2, 5, 8, 4, 3, 6, 7, 1, 0]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><p>yang dapat dicoba secara daring pada
+<a href=https://onecompiler.com/python/3xmqnd8zw target=_blank rel="nofollow noopener noreferrer"><span>3xmqnd8zw <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=built-in-method-and-function>built-in method and function</h2><p>Sebuah list memiliki metode bawaan sort() yang berfungsi untuk mengurutkan nilai-nilai yang disimpannya. Selain itu Python juga menyediakan fungsi bawaan sorted() yang menerima argumen sebuah list dan mengembalikan nilai fungsi list yang sudah diurutkan nilai-nilai yang disimpannya.</p><h3 id=sort>sort()</h3><p>Kode berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Sort using sort() built-in method</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y: sort() method&#34;</span>)
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [<span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>print(y)
+</span></span><span style=display:flex><span>y<span style=color:#f92672>.</span>sort()
+</span></span><span style=display:flex><span>print(y)
+</span></span></code></pre></div><p>akan menghasilkan</p><pre tabindex=0><code>y: sort() method
+[9, 2, 5, 8, 4, 3, 6, 7, 1, 0]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><p>yang dapat dicoba di
+<a href=https://onecompiler.com/python/3xmqnr4d2 target=_blank rel="nofollow noopener noreferrer"><span>3xmqnr4d2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=sorted>sorted()</h3><p>Dengan kode di
+<a href=https://onecompiler.com/python/3xmqnwacn target=_blank rel="nofollow noopener noreferrer"><span>3xmqnwacn <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berupa</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Sort using sorted() built-in function</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;z: sorted() function&#34;</span>)
+</span></span><span style=display:flex><span>z <span style=color:#f92672>=</span> [<span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>print(z)
+</span></span><span style=display:flex><span>z <span style=color:#f92672>=</span> sorted(z)
+</span></span><span style=display:flex><span>print(z)
+</span></span></code></pre></div><p>akan diperoleh</p><pre tabindex=0><code>z: sorted() function
+[9, 2, 5, 8, 4, 3, 6, 7, 1, 0]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><p>sebagai hasilnya.</p><h2 id=exer>exer</h2><ol><li>Perhatikan kode berikut<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>nums1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>]
+</span></span><span style=display:flex><span>nums2 <span style=color:#f92672>=</span> sorted(nums1)
+</span></span><span style=display:flex><span>print(nums1)
+</span></span><span style=display:flex><span>print(nums2)
+</span></span></code></pre></div>yang terdapat di
+<a href=https://onecompiler.com/python/3xmqp7j6a target=_blank rel="nofollow noopener noreferrer"><span>3xmqp7j6a <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Bagaimana hasilnya?</li><li>Mengacu pada soal sebelumnya mengapa berbeda hasil pada list pertama dan kedua?</li><li>Kapan digunakan sort() dan kapan digunakan sorted()?</li><li>Apakah metode sort() dan funsi sorted() dapat mengurutkan dari besar ke kecil?</li><li>Pada contoh kode bubble sort yang diberikan modifikasi apa yang diperlukan agar hasilnya adalah mengurutkan bilangan dari besar ke kecil? Perhatikan kode di
+<a href=https://onecompiler.com/python/3xmqppuhu target=_blank rel="nofollow noopener noreferrer"><span>3xmqppuhu <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, bila diperlukan.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Olivera Popović, &ldquo;Bubble Sort in Python&rdquo;, Stack Abuse, 10 Feb 2020, url
+<a href=https://stackabuse.com/bubble-sort-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://stackabuse.com/bubble-sort-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r02></a>DataSoft, &ldquo;Python Data Structures and Algorithms: Bubble sort&rdquo;, W3Resource, 4 Jan 2021, url
+<a href=https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-4.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-4.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Bubble sort&rdquo;, Wikipedia, The Free Encyclopedia, 23 November 2021, 22:16 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1056844603" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1056844603 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r04></a>kartik, shubham_singh, AmiyaRanjanRout, &ldquo;Python List sort() method&rdquo;, GeeksforGeeks, 3 Aug 2021, url
+<a href=https://www.geeksforgeeks.org/python-list-sort-method/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/python-list-sort-method/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r05></a>Parewa Labs, &ldquo;Python sorted()&rdquo;, Programiz, url
+<a href=https://www.programiz.com/python-programming/methods/built-in/sorted target=_blank rel="nofollow noopener noreferrer"><span>https://www.programiz.com/python-programming/methods/built-in/sorted <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0291?src=hash&amp;ref_src=twsrc%5Etfw">#bug0291</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1472220899931656197?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) `[5, 6, 7, 8, 9, 0, 1, 2, 3, 4]` dan `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`; &nbsp; 2) list pertama tidak diurutkan, karena list kedua yang merupakan hasil mengurutkan list pertama, tidak mengubah isi list pertama; &nbsp; 3) saat list ingin diubah isinya, saat ingin mendapatkan isi list yang telah diurutkan tetapi tidak mengubah isi list awal; &nbsp; 4) ya, dapat; &nbsp; 5) mengubah bagian `if x[i] > x[j]:` menjadi `if x[i] < x[j]:`; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

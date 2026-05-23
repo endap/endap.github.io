@@ -1,0 +1,173 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>template customization 3 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>template customization 3</h1><time datetime=2024-10-15T07:19:55+07:00>October 15, 2024</time><p>Third theme customization of a new Hugo site following initial setting.</p><p>It is an advancement of previous customizations, e.g.
+<a><span>template customization 2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>and
+<a><span>template customization 1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><ol><li>Modify <code>layouts/_default/baseof.html</code> by adding following lines at the end in the <code>&lt;header> .. &lt;/header></code> block.<pre tabindex=0><code>{{ if .HasShortcode &#34;blank/scatter&#34; }}
+  {{ partial &#34;script/inner.html&#34; . }}
+  {{ partial &#34;script/chartjs.html&#34; . }}
+{{ end }}
+</code></pre></li><li>Create <code>layouts/partials/script/chart.js</code> with following content.<pre tabindex=0><code>&lt;script&gt;
+function datasets4Scatter(series) {
+  var datasets = [];
+  var N = series.length;
+  for(let i = 0; i &lt; N; i++) {
+    var ds = {
+      data: B_SERIES[i],
+      label: B_SLABEL[i],
+      backgroundColor: B_PCOLOR[i],
+      showLine: B_LVISIB[i],
+      borderColor: B_LCOLOR[i],
+      pointRadius: B_PRADII[i]
+    };
+    datasets.push(ds);
+  }
+  return datasets;
+}
+&lt;/script&gt;
+</code></pre></li><li>Create <code>layouts/partials/script/inner.js</code> with following content.<pre tabindex=0><code>&lt;script&gt;
+function getEOL(text) {
+  let eol = &#39;\r\n&#39;;
+  if(text.indexOf(eol) == -1) eol = &#39;\r&#39;;
+  if(text.indexOf(eol) == -1) eol = &#39;\n&#39;;
+  return eol
+}
+
+function block2lists(b, eol) {
+  let x = [];
+  let y = [];
+
+  let lines = b.split(eol);
+  for(let row of lines) {
+    let col = row.split(&#39;,&#39;);
+    x.push(col[0]);
+    y.push(col[1]);
+  }
+  return [x, y];
+}
+
+function block2data(b, eol) {
+  let d = [];
+
+  let lines = b.split(eol);
+  for(let row of lines) {
+    let col = row.split(&#39;,&#39;);
+    let obj = {
+      x: col[0],
+      y: col[1]
+    };
+    d.push(obj);
+  }
+  return d;
+}
+
+function getBlocks(text, eol) { 
+  let lines = text.split(eol);
+  lines.shift();
+  lines = lines.join(eol);
+  blocks = lines.split(eol + eol);
+  return blocks;
+}
+
+function cleanPrePostBlankLines(text) {
+  let inner = text;
+  let eol = getEOL(inner);
+  let lines = inner.split(eol);
+
+  if(lines[0].length == 0) lines.shift();
+  let N = lines.length;
+  if(lines[N-1].length == 0) lines.pop();
+
+  return lines;
+}
+
+function getParams(t) {
+  let eol = getEOL(t);
+  let lines = t.split(eol);
+
+  for(let l of lines) {
+    let cols = l.split(&#39; &#39;);
+    if(cols[0] == &#39;B_LVISIB&#39;) {
+      let temp1 = cols[1].split(&#39;,&#39;);
+      let temp2 = []
+      for(let i = 0; i &lt; temp1.length; i++) {
+        if(temp1[i] == &#39;true&#39;) {
+          temp2.push(true);
+        } else {
+          temp2.push(false);
+        }
+        temp2.push(Boolean(temp1[i]));
+      }
+      window[cols[0]] = temp2;
+    } else {
+      window[cols[0]] = cols[1].split(&#39;,&#39;);
+    }
+  }
+}
+
+&lt;/script&gt;
+</code></pre></li><li>Create <code>layouts/shortcodes/scatter.html</code> with following content.<pre tabindex=0><code>{{ $w := default &#34;80&#34; (.Get 0) }}
+{{ $h := default &#34;300&#34; (.Get 1) }}
+{{ $r := ( .Inner | chomp) }}
+{{ $seed := &#34;foo&#34; }}
+{{ $id := delimit (shuffle (split (md5 $seed) &#34;&#34; )) &#34;&#34; }}
+
+&lt;div style=&#34;width: {{ $w }}%; height: {{ $h }}px; margin: 0 auto&#34;&gt;
+    &lt;canvas id=&#34;{{ $id }}&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
+var r = &#34;{{ ( .Inner | chomp) }}&#34;;
+var eol = getEOL(r);
+var blocks = getBlocks(r, eol);
+var params = getParams(blocks.shift());
+var B_SERIES = [];
+for(b of blocks) {
+  var d = block2data(b, eol);
+  B_SERIES.push(d);
+}
+&lt;/script&gt;
+
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+    var ctx = document.getElementById(&#39;{{ $id }}&#39;)
+      .getContext(&#39;2d&#39;);
+
+    var config = {
+      type: &#39;scatter&#39;,
+      data: { datasets: datasets4Scatter(B_SERIES) },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            type: &#39;linear&#39;,
+            position: &#39;bottom&#39;,
+            title: {
+              display: true,
+              text: B_XLABEL
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: B_YLABEL
+            }
+          }
+        }
+      }
+    };
+
+    new Chart(ctx, config);
+&lt;/script&gt;
+</code></pre></li></ol><p>Partials named <code>inner.html</code> and <code>chartjs.html</code> is included explicitly in <code>baseof.html</code>, which is template for <code>a-post.md</code>. Shortcodes named <code>scatter</code> (in <code>scatter.html</code>) is called inside <code>a-post.md</code>, where it requires <code>inner.html</code> and <code>chartjs.html</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>LR</span></span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P1</span> <span style=color:#f92672>&amp;</span> <span style=color:#a6e22e>P2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>B</span> <span style=color:#f92672>-</span>.<span style=color:#f92672>-&gt;</span> <span style=color:#a6e22e>P</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>S</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P1</span> <span style=color:#f92672>&amp;</span> <span style=color:#a6e22e>P2</span> <span style=color:#f92672>-</span>.<span style=color:#f92672>-&gt;</span> <span style=color:#a6e22e>S</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span>([<span style=color:#e6db74>&#34;baseof.html&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P</span>([<span style=color:#e6db74>&#34;a-post.md&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>S</span>([<span style=color:#e6db74>&#34;scatter.html&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P1</span>([<span style=color:#e6db74>&#34;inner.html&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P2</span>([<span style=color:#e6db74>&#34;chartjs.html&#34;</span>])</span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style><p>In above figure explicit inclusion uses solid line arrow (→) while implicit inclussion uses dashed line arrow (⇢).</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

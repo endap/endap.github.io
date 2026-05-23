@@ -1,0 +1,192 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>flowchart and mermaid | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>flowchart and mermaid</h1><time datetime=2024-04-06T01:15:00+07:00>April 6, 2024</time><p>Short intro about fowchart and the use of Mermaid</p><h2 id=intro>intro</h2><p>The activity of using flowchart, or flowcharting, is a means of graphically stating ways of solving information handling problems, as people use the terms in working with computers<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. It is a graphical representation of a process, where each process step is represented by a different symbol that contains a brief description of the process step <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. In process industry, flowcharts are used to indicate flow of the product during various stages or the process, where it is a combination of an outline process chart and the flow diagram, where each operation is represented by the appropriate shape of the equipment <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</p><p>Flowchars are used in a wide variety of disciplines and fields, from software development to education to business and beyond, that might be used for document a process, identify potential breakdowns and bottlenecks in a process, visualize dependencies in a process, automate a manual process, visualize the flow of data, plan a project, identify the right person to own a task or project, troubleshoot technical issues, and make a decision that involves multiple variables <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p><p>Remember the purpose when begin to use flow chart, since readability is probably the most important aspect of a flowchart, where as the diagrammatic representation of a process, the flowchart aims to offer a visual description of a process to help us understand what is going on, but flowcharts can get a bit out of control and you can end up with something so complicated that it defeats the purpose of having one <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p><p>Then how to create a flowchart? There are at least about 15 best software that can help you in creating flowcharts online and offline <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>. Not included on the list, there is also Mermaid. Mermaid is a powerful JavaScript library that can build a variety of charts and diagrams from a specialized flavor of Markdown, where one of them is flowchart <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>. With Mermaid you have to code for creating flocharts. Rather than using traditional method to manually create flowcharts, there are several advantages in generating flowcharts as code, e.g. dynamic, editable, efficient, and quick to create <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup>.</p><h2 id=types>types</h2><p>Type of process flowcharts represent and their purpose determine their types as follow <sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup>, where the first four are the main types, while the last six are additional sepecific purposes types.</p><ul><li><strong>Document flowchart</strong>. These type is designed to show the existing controls over the document flow through the components of the system, e.g. various business units, and it is read from left to right.</li><li><strong>Data flowchart</strong>. The controls governing data flows within the system and is used primarily to show the channels through which data is transmitted throughout the system, which focuses on channels of data transmission, rather than how control flow is represented as in previous type, are represented using this type of flowchart.</li><li><strong>System flowchart</strong>. This type represent the flow of data to and through the main components of the system such as programs, storage media, data entry, processors, and communication networks.</li><li><strong>Program flowchart</strong>. The controls placed internally in a program within a system are represented using this type of flowchart.</li><li><strong>Swimlane flowchart</strong>. This type segments different functionalities into separate lanes, e.g. a swimlane diagram may be created with routes for the work processes performed by other organizational areas like human resources, operations, and accounting.</li><li><strong>Workflow flowchart</strong>. In order to to document workflows that involve tasks, documents, and information in offices this type is used.</li><li><strong>Cross-functional flowcharts</strong>. This type of flowchart is usually used to delineate who does what in a cross-functional team, since it represents who is responsible for ensuring that different functions are executed and when they are executed.</li><li><strong>Event-driven process chain flowchart</strong>. To document or plan a business process, which is driven by event, this type of flowchart is used.</li><li><strong>Specification and description language flowchart</strong>. This type is used to brainstorm computer algorithms based on three basic components – system definition, block, and process, which illustrates the modeling language used to show how event-driven applications work in real-time, e.g. used in aviation, automotive, communication, and medical industries.</li><li><strong>Influence diagram</strong>. It is a visual representations of decision problems, where the main purpose is to outline critical elements like roadblocks or objectives to achieve at different points.</li></ul><p>Only program flowchart is discussed further here.</p><h2 id=symbols>symbols</h2><p>There are at least about 24 symbols used in flowchart <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup>, but only the first six are discussed here.</p><ul><li>Oval, ellipse, rounded rectangle are for start and finish.<div class=mermaid>flowchart TD
+A(["Begin"])
+B(["End"])</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  A([&#34;Begin&#34;])
+  B([&#34;End&#34;])
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>Rectangle is for process.<div class=mermaid>flowchart TD
+P1["Calculate"]
+P2["Sort"]</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  P1[&#34;Calculate&#34;]
+  P2[&#34;Sort&#34;]
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>Trapezium is for input and output.<div class=mermaid>flowchart TD
+I[/"Read"/]
+O[/"Display"/]</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  I[/&#34;Read&#34;/]
+  O[/&#34;Display&#34;/]
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>Diamond is for decision.<div class=mermaid>flowchart TD
+\{"If x > 0"}</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  {&#34;If x &gt; 0&#34;}
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>Circle is for connector.<div class=mermaid>flowchart TD
+\(("1"))</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  ((&#34;1&#34;))
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>Arrow is for flow direction.<div class=mermaid>flowchart LR
+A ---> B
+A["&nbsp;"]
+B["&nbsp;"]
+style A fill:none, stroke-width:0;
+style B fill:none, stroke-width:0;</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart TD
+  A ---&gt; B
+  A[&#34;&amp;nbsp;&#34;]
+  B[&#34;&amp;nbsp;&#34;]
+  style A fill:none, stroke-width:0;
+  style B fill:none, stroke-width:0;
+{{&lt; /mermaid &gt;}}
+</code></pre>The arrow actually can not be drawn without origin and destination symbols. In order to show only the arrow, CSS is used to hide the symbols, and space is used as string to display.</li></ul><h2 id=directions>directions</h2><p>Flowchart normally has top-bottom direction, but with current Mermaid version it can has top-bottom (TB), left-right (LR), bottom-top (BT) directions, and right-left (RL).</p><ul><li>TB direction<div class=mermaid>flowchart TB
+A --> B</div><pre tabindex=0><code>  {{&lt; mermaid &gt;}}
+  flowchart TB
+    A --&gt; B
+  {{&lt; /mermaid &gt;}}
+</code></pre></li><li>LR direction<div class=mermaid>flowchart LR
+A --> B</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  A --&gt; B
+{{&lt; /mermaid &gt;}}
+</code></pre></li><li>BT direction<div class=mermaid>flowchart BT
+A --> B</div><pre tabindex=0><code>  {{&lt; mermaid /*&gt;}}
+flowchart BT
+  A --&gt; B
+{{&lt;/* /mermaid &gt;}}
+</code></pre></li><li>RL direction<div class=mermaid>flowchart RL
+A --> B</div><pre tabindex=0><code>  {{&lt; mermaid &gt;}}
+flowchart RL
+  A --&gt; B
+{{&lt; /mermaid &gt;}}
+</code></pre></li></ul><p>Using this direction feature, you can change direction of the flowchart without changing the whole code but only the option.</p><h2 id=nodes-id>nodes id</h2><p>Following are some flowchart examples without and with the use of nodes id</p><ul><li>Without nodes ide<div class=mermaid>flowchart LR
+First --> Second --> Third</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  First --&gt; Second --&gt; Third
+{{&lt; /mermaid &gt;}}
+</code></pre>This approach does not accomodate when the text containing spaces.</li><li>With nodes id<div class=mermaid>flowchart LR
+A(("First step"))
+B["Second step"]
+C[/"Third step"/]
+A --> B --> C</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  A --&gt; B --&gt; C
+  A((&#34;First step&#34;))
+  B[&#34;Second step&#34;]
+  C[/&#34;Third step&#34;/]
+{{&lt; /mermaid &gt;}}
+</code></pre>Nodes id are A, B, and C. While declaring a node, a node id can be defined. Later, to create flow direction between two node, simple use nodes id of related nodes and an arrow connecting them.</li><li>Use style on node id<div class=mermaid>flowchart LR
+A(("Rot"))
+B["Blau"]
+A --> B
+style A color: white, fill: red, stroke: blue, stroke-width: 4px;
+style B color: white, fill: blue, stroke: red, stroke-width: 4px;</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  A((&#34;Rot&#34;))
+  B[&#34;Blau&#34;]
+  A --&gt; B
+  style A color: white, fill: red, stroke: blue, stroke-width: 4px;
+  style B color: white, fill: blue, stroke: red, stroke-width: 4px;
+{{&lt; /mermaid &gt;}}
+</code></pre>It can be seen that fill color, stroke color and widhth, and also text color can be customized using CSS-like format. Notice that <code>color</code> keyword must be put before others or it will not work.</li></ul><h2 id=example>example</h2><p>Following is a flowchart example in sorting numbers using bubble sort algorithm <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup>.</p><div class=mermaid>flowchart TB
+B --> I --> Init1 --> o1 --> Init2 --> o2 --> C1
+C1 --"N"--> Incj
+C1 --"Y"--> Swap --> Incj --> Cj --"Y"--> o2
+Cj --"N"--> Inci --> Ci --"Y"--> o1
+Ci --"N"--> O --> E
+Ci{"i &lt; n"}
+Cj{"j &le; n"}
+Swap["Swap x<sub>i</sub>, x<sub>j</sub>"]
+Inci["i = i+1"]
+Incj["j = j+1"]
+C1{"x<sub>i</sub> > x<sub>j</sub>"}
+o1(("1"))
+o2(("2"))
+Init1["i = 1"]
+Init2["j = i + 1"]
+O[/"x<sub>1</sub>, x<sub>2</sub>, &mldr;, x<sub>n</sub>"/]
+I[/"x<sub>1</sub>, x<sub>2</sub>, &mldr;, x<sub>n</sub>"/]
+B(["Begin"])
+E(["End"])</div><p>Above flowchart is produced using following Mermaid code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>{{<span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>mermaid</span> <span style=color:#f92672>&gt;</span>}}
+</span></span><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>TB</span></span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>I</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Init1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Init2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>C1</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>C1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;N&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Incj</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>C1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;Y&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Swap</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Incj</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Cj</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;Y&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o2</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Cj</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;N&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Inci</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>Ci</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;Y&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o1</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Ci</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;N&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>E</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Ci</span>{<span style=color:#e6db74>&#34;i &amp;lt; n&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Cj</span>{<span style=color:#e6db74>&#34;j &amp;le; n&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Swap</span>[<span style=color:#e6db74>&#34;Swap x&lt;sub&gt;i&lt;/sub&gt;, x&lt;sub&gt;j&lt;/sub&gt;&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Inci</span>[<span style=color:#e6db74>&#34;i = i+1&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Incj</span>[<span style=color:#e6db74>&#34;j = j+1&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>C1</span>{<span style=color:#e6db74>&#34;x&lt;sub&gt;i&lt;/sub&gt; &amp;gt; x&lt;sub&gt;j&lt;/sub&gt;&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o1</span>((<span style=color:#e6db74>&#34;1&#34;</span>))
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o2</span>((<span style=color:#e6db74>&#34;2&#34;</span>))
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Init1</span>[<span style=color:#e6db74>&#34;i = 1&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Init2</span>[<span style=color:#e6db74>&#34;j = i + 1&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>O</span>[<span style=color:#960050;background-color:#1e0010>/&#34;x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, &amp;hellip;, x&lt;sub&gt;n&lt;/sub&gt;&#34;/]</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>I</span>[<span style=color:#960050;background-color:#1e0010>/&#34;x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, &amp;hellip;, x&lt;sub&gt;n&lt;/sub&gt;&#34;/]</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span>([<span style=color:#e6db74>&#34;Begin&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>E</span>([<span style=color:#e6db74>&#34;End&#34;</span>])
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>&lt;</span> <span style=color:#960050;background-color:#1e0010>/mermaid &gt;}}</span></span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style><p>Let us see what it would be when use LR option for flowchart direction.</p><div class=mermaid>flowchart LR
+B --> I --> Init1 --> o1 --> Init2 --> o2 --> C1
+C1 --"N"--> Incj
+C1 --"Y"--> Swap --> Incj --> Cj --"Y"--> o2
+Cj --"N"--> Inci --> Ci --"Y"--> o1
+Ci --"N"--> O --> E
+Ci{"i &lt; n"}
+Cj{"j &le; n"}
+Swap["Swap x<sub>i</sub>, x<sub>j</sub>"]
+Inci["i = i+1"]
+Incj["j = j+1"]
+C1{"x<sub>i</sub> > x<sub>j</sub>"}
+o1(("1"))
+o2(("2"))
+Init1["i = 1"]
+Init2["j = i + 1"]
+O[/"x<sub>1</sub>, x<sub>2</sub>, &mldr;, x<sub>n</sub>"/]
+I[/"x<sub>1</sub>, x<sub>2</sub>, &mldr;, x<sub>n</sub>"/]
+B(["Begin"])
+E(["End"])</div><p>It seems that flowchart with TB direction is better than with LR direction, even for the first user still requires to scroll the browser while reading it.</p><p>Previous flowchart is used to create Python code, where one of its implementation is as follow</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>y <span style=color:#f92672>=</span> [<span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> y<span style=color:#f92672>.</span>copy()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> len(y)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, n<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(i, n):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x[i] <span style=color:#f92672>&gt;</span> x[j]:
+</span></span><span style=display:flex><span>      x[i], x[j] <span style=color:#f92672>=</span> x[j], x[i]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;original:&#39;</span>, y)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;sorted-a:&#39;</span>, x)
+</span></span></code></pre></div><p>with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>original: [9, 1, 3, 8, 2, 5, 4, 7, 6, 8, 0]
+</span></span><span style=display:flex><span>sorted-a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 9]
+</span></span></code></pre></div><p>as the result. The code is available on OneCompiler
+<a href=https://onecompiler.com/python/429gbrbse target=_blank rel="nofollow noopener noreferrer"><span>429gbrbse <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. The term <code>sorted-a</code> means sorted in ascending order.</p><p>Notice that the code is simpler compared to the flowchart. For simple example as bubble sort algorithm, it can be understood without the help of flowchart, but for complex example, it is advisable to use flowchart before writing the code.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Ned Chapin, &ldquo;Flowcharting With the ANSI Standard: A Tutorial&rdquo;, Computer Surveys, vol 2, no 2, p 119-146, url
+<a href=https://doi.org/10.1145/356566.356570 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1145/356566.356570 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Rashmi Karan, &ldquo;What is a Flowchart? (With Examples)&rdquo;, Shiksha Online, 28 Sep 2023, url
+<a href=https://www.shiksha.com/online-courses/articles/flowcharts-with-examples/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.shiksha.com/online-courses/articles/flowcharts-with-examples/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>D. R. Kiran, &ldquo;Product and process development&rdquo;, in Production Planning and Control, ch 16, p 223–246, 2019, url
+<a href=https://doi.org/10.1016/b978-0-12-818364-9.00016-0 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1016/b978-0-12-818364-9.00016-0 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Shauna Ward, &ldquo;What is a flowchart? — tips, examples, and templates&rdquo;, Mural, 19 Mar 2021, url
+<a href=https://www.mural.co/blog/flowcharts target=_blank rel="nofollow noopener noreferrer"><span>https://www.mural.co/blog/flowcharts <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>Luciano Rila, &ldquo;What is the significance of a flowchart?&rdquo;, University College London, 2 Jun 2021, url
+<a href=https://www.ucl.ac.uk/culture-online/case-studies/2021/jun/what-significance-flowchart target=_blank rel="nofollow noopener noreferrer"><span>https://www.ucl.ac.uk/culture-online/case-studies/2021/jun/what-significance-flowchart <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Alex York, &ldquo;15 Best Flowchart Software Tools in 2024&rdquo;, ClickUp, 6 Mar 2024, url
+<a href=https://clickup.com/blog/flowchart-software/ target=_blank rel="nofollow noopener noreferrer"><span>https://clickup.com/blog/flowchart-software/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7><p>Matt Eland, &ldquo;How to Make Flowcharts with Mermaid.js&rdquo;, The New Dev&rsquo;s Guide &ndash; Medium, 16 Apr 2023, url
+<a href=https://medium.com/p/799c1d07ec6a target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/799c1d07ec6a <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:8><p>Zira Hira, &ldquo;How to Create Diagrams as Code with Mermaid, GitHub, and Visual Studio Code&rdquo;, freeCodeCamp, 6 Sep 2023, url
+<a href=https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:9><p>Web Developer, &ldquo;A Comprehensive Guide to Flowchart Symbols and Notations for Process Workflows&rdquo;, Cavintek, 22 Nov 2023, url
+<a href=https://www.cflowapps.com/flowchart-symbols/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.cflowapps.com/flowchart-symbols/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:10><p>Danesh Ramuthi, &ldquo;Flowchart Symbols and Meaning: A Complete Guide (2024)&rdquo;, Venngage, 29 Feb 2024, url
+<a href=https://venngage.com/blog/flowchart-symbols/ target=_blank rel="nofollow noopener noreferrer"><span>https://venngage.com/blog/flowchart-symbols/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:11><p>GfG, &ldquo;Bubble Sort – Data Structure and Algorithm Tutorials&rdquo;, GeeksforGeeks, 21 Nov 2023, url
+<a href=https://www.geeksforgeeks.org/bubble-sort/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/bubble-sort/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240406].&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

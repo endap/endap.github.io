@@ -1,0 +1,419 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>new note again | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>new note again</h1><time datetime=2024-12-01T06:43:06+07:00>December 1, 2024</time><p>Create a new note again in a new static blog with Hugo.</p><p>Today, I am aged oficially and get uncomfortable again, which triggers me to create a new blog for my future notes.</p><h2 id=lessons-learned>lessons learned</h2><p>Following are the lessons learned from
+<a href=https://dudung.github.io/pasir target=_blank rel="nofollow noopener noreferrer"><span>pasir <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><ol><li>Filename naming convention is <code>yy/m/nn-note-abbrv-name.md</code> and link to this note is <code>24k00</code>, where <code>yy=24</code> for <code>2024</code>, <code>m=k</code> for <code>Dec</code>, and <code>00</code> for the first note.<br><code>a=Jan</code>, <code>b=Feb</code>, <code>c=Mar</code>, <code>d=Apr</code>, <code>e=May</code>, <code>f=Jun</code>, <code>g=Jul</code>, <code>h=Aug</code>, <code>i=Sep</code>, <code>j=Oct</code>, <code>k=Nov</code>, <code>l=Dec</code>.</li><li>Previous notes to move to new note or blog is listed in
+<a href=https://github.com/dudung/pasir/issues/1 target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/pasir/issues/1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Copy content from
+<a href=https://dudung.github.io/pasir target=_blank rel="nofollow noopener noreferrer"><span>pasir <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to
+<a href=https://dudung.github.io/rust target=_blank rel="nofollow noopener noreferrer"><span>rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Transfer issue to
+<a href=https://github.com/dudung/rust/issues/1 target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/issues/1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Change landing page CSS with help of GPT-4o
+<a href=https://chatgpt.com/share/674c42d8-7298-800a-9d2f-57af4c77c925 target=_blank rel="nofollow noopener noreferrer"><span><code>674c42d8-7298-800a-9d2f-57af4c77c925</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Consider for
+<a href=https://dudung.github.io/bug target=_blank rel="nofollow noopener noreferrer"><span>bug <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, wheter change note filename or preserve the original, before new convention. Not yet decided.</li></ol><h2 id=create-new-hugo-site>create new hugo site</h2><p>Following steps are performed.</p><h3 id=create-repository>create repository</h3><ol><li>Visit
+<a href=https://github.com/new target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/new <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Fill Repository name, e.g. rust.</li><li>Fill Descrition, e.g. raw, unstructured, spontaneous thoughts.</li><li>Choose Public.</li><li>Check Add a README file.</li><li>Add .gitignore, .gitignore template: None.</li><li>Choose a license, License: MIT License.</li><li>Finalize with click green button on the lower right Create repository.</li></ol><h3 id=clone-repository>clone repository</h3><ol><li>Use Git Bash as follow.</li></ol><pre tabindex=0><code>$ git clone https://github.com/dudung/rust
+Cloning into &#39;rust&#39;...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (4/4), done.
+
+$ cd rust
+
+$ ls
+LICENSE  README.md
+</code></pre><ol start=2><li>Create a .gitinore file with following content.</li></ol><pre tabindex=0><code># Shortcuts
+cmd.lnk
+
+# Folders
+public
+</code></pre><ol start=3><li>Synchronize changes with the remote repository</li></ol><pre tabindex=0><code>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+Untracked files:
+  (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use &#34;git add&#34; to track)
+
+$ git add .gitignore
+
+$ git commit -a -m &#34;new&#34;
+[main a1a90fa] new
+ 1 file changed, 5 insertions(+)
+ create mode 100644 .gitignore
+
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 345 bytes | 345.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/dudung/rust
+   5827f43..a1a90fa  main -&gt; main
+</code></pre><ol start=4><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the change.</li></ol><h3 id=create-site>create site</h3><ol><li>Assure the <code>rust</code> folder exists.</li></ol><pre tabindex=0><code>$ ls rust
+LICENSE    archetypes/  content/  hugo.toml  layouts/  themes/
+README.md  assets/      data/     i18n/      static/
+</code></pre><ol start=2><li>Create Hugo new site.</li></ol><pre tabindex=0><code>$ hugo new site rust --force
+Congratulations! Your new Hugo site was created in M:\rust.
+
+Just a few more steps...
+
+1. Change the current directory to M:\rust.
+2. Create or install a theme:
+   - Create a new theme with the command &#34;hugo new theme &lt;THEMENAME&gt;&#34;
+   - Or, install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the &#34;theme&#34; property to the theme name.
+4. Create new content with the command &#34;hugo new content &lt;SECTIONNAME&gt;\&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+5. Start the embedded web server with the command &#34;hugo server --buildDrafts&#34;.
+
+See documentation at https://gohugo.io/.
+</code></pre><ol start=3><li>Create template.</li></ol><pre tabindex=0><code>$ cd rust
+
+$ hugo new theme default
+Creating new theme in M:\rust\themes\default
+</code></pre><ol start=4><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git add
+archetypes/ hugo.toml   themes/
+
+$ git add .
+warning: in the working copy of &#39;archetypes/default.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;hugo.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/LICENSE&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/README.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/archetypes/default.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/assets/css/main.css&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/assets/js/main.js&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/content/_index.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/content/posts/_index.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/content/posts/post-1.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/content/posts/post-2.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/content/posts/post-3/index.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/hugo.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/baseof.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/home.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/list.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/single.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/footer.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head/css.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head/js.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/header.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/menu.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/terms.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/theme.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+
+$ git commit -a -m &#34;new hugo site&#34;
+[main 8b51e6f] new hugo site
+ 27 files changed, 311 insertions(+)
+ create mode 100644 archetypes/default.md
+ create mode 100644 hugo.toml
+ create mode 100644 themes/default/LICENSE
+ create mode 100644 themes/default/README.md
+ create mode 100644 themes/default/archetypes/default.md
+ create mode 100644 themes/default/assets/css/main.css
+ create mode 100644 themes/default/assets/js/main.js
+ create mode 100644 themes/default/content/_index.md
+ create mode 100644 themes/default/content/posts/_index.md
+ create mode 100644 themes/default/content/posts/post-1.md
+ create mode 100644 themes/default/content/posts/post-2.md
+ create mode 100644 themes/default/content/posts/post-3/bryce-canyon.jpg
+ create mode 100644 themes/default/content/posts/post-3/index.md
+ create mode 100644 themes/default/hugo.toml
+ create mode 100644 themes/default/layouts/_default/baseof.html
+ create mode 100644 themes/default/layouts/_default/home.html
+ create mode 100644 themes/default/layouts/_default/list.html
+ create mode 100644 themes/default/layouts/_default/single.html
+ create mode 100644 themes/default/layouts/partials/footer.html
+ create mode 100644 themes/default/layouts/partials/head.html
+ create mode 100644 themes/default/layouts/partials/head/css.html
+ create mode 100644 themes/default/layouts/partials/head/js.html
+ create mode 100644 themes/default/layouts/partials/header.html
+ create mode 100644 themes/default/layouts/partials/menu.html
+ create mode 100644 themes/default/layouts/partials/terms.html
+ create mode 100644 themes/default/static/favicon.ico
+ create mode 100644 themes/default/theme.toml
+
+$ git push
+Enumerating objects: 45, done.
+Counting objects: 100% (45/45), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (37/37), done.
+Writing objects: 100% (44/44), 27.31 KiB | 2.73 MiB/s, done.
+Total 44 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/dudung/rust
+   a1a90fa..8b51e6f  main -&gt; main
+</code></pre><ol start=5><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the changes.</li></ol><h3 id=copy-layouts>copy layouts</h3><ol><li>Open
+<a href=https://github.com/dudung/pasir/tree/main/blog/layouts target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/pasir/tree/main/blog/layouts <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Create <code>layouts</code> folder in <code>rust</code> folder.</li><li>Copy all files and folder from pasir to rust.</li><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git add layouts
+
+$ git commit -a -m &#34;copy layouts from pasir&#34;
+[main 2d1feb8] copy layouts from pasir
+ 12 files changed, 326 insertions(+)
+ create mode 100644 layouts/_default/_markup/render-blockquote.html
+ create mode 100644 layouts/_default/_markup/render-codeblock-mermaid.html
+ create mode 100644 layouts/_default/_markup/render-link.html
+ create mode 100644 layouts/_default/baseof.html
+ create mode 100644 layouts/index.html
+ create mode 100644 layouts/partials/footer.html
+ create mode 100644 layouts/partials/posts/math.html
+ create mode 100644 layouts/partials/reading-time.html
+ create mode 100644 layouts/partials/script/chartjs.html
+ create mode 100644 layouts/partials/script/inner.html
+ create mode 100644 layouts/posts/single.html
+ create mode 100644 layouts/shortcodes/scatter.html
+
+$ git push
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (22/22), 5.02 KiB | 856.00 KiB/s, done.
+Total 22 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dudung/rust
+   8b51e6f..2d1feb8  main -&gt; main
+</code></pre><ol start=5><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the changes.</li></ol><h3 id=edit-setting>edit setting</h3><ol><li>Open <code>hugo.toml</code>.</li><li>Edit the content to have following lines.</li></ol><pre tabindex=0><code>baseURL = &#39;https://dudung.github.io/rust&#39;
+languageCode = &#39;en-us&#39;
+title = &#39;rust&#39;
+theme = &#39;default&#39;
+
+ignoreErrors = [&#39;error-missing-instagram-accesstoken&#39;]
+
+[taxonomies]
+  author = &#34;authors&#34;
+  tag = &#34;tags&#34;
+  category = &#34;categories&#34;
+
+[[menu.main]]
+  name = &#39;Home&#39;
+  weight = 2
+  identifier = &#39;home&#39;
+  url = &#39;/&#39;
+
+[[menu.main]]
+  name = &#39;Tags&#39;
+  weight = 1
+  identifier = &#39;tags&#39;
+  url = &#39;/tags&#39;
+</code></pre><ol start=3><li>Save and close tht file.</li><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git restore &lt;file&gt;...&#34; to discard changes in working directory)
+        modified:   hugo.toml
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+
+$ git commit -a -m &#34;edit toml&#34;
+warning: in the working copy of &#39;hugo.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+[main 70294bd] edit toml
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 481 bytes | 481.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dudung/rust
+   791196c..70294bd  main -&gt; main
+</code></pre><ol start=5><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the changes.</li></ol><h3 id=copy-content>copy content</h3><ol><li>Create folder <code>content/posts/24/l</code>.</li><li>Open
+<a href=https://github.com/dudung/pasir/tree/main/blog/content/posts/24/l target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/pasir/tree/main/blog/content/posts/24/l <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Copy <code>00-new-note-again.md</code> to <code>content/posts/24/l</code>.</li><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+Untracked files:
+  (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+        content/
+
+nothing added to commit but untracked files present (use &#34;git add&#34; to track)
+
+$ git add content/posts/24/l/00-new-note-again.md
+
+$ git commit -a -m &#34;new note&#34;
+[main 11fcf71] new note
+ 1 file changed, 304 insertions(+)
+ create mode 100644 content/posts/24/l/00-new-note-again.md
+
+$ git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 3.29 KiB | 1.64 MiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dudung/rust
+   70294bd..11fcf71  main -&gt; main
+</code></pre><ol start=5><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the changes.</li></ol><h3 id=copy-others>copy others</h3><ol><li>Copy also from <code>content</code> folder, <code>authors</code> folder, and <code>_index.md</code>.</li><li>Change content of <code>_index.md</code> as follow.</li></ol><pre tabindex=0><code>raw, unstructured, spontaneous thoughts
+</code></pre><ol start=3><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git add content/authors content/_index.md
+
+$ git commit -a -m &#34;update authors and others&#34;
+[main a575dfe] update authors and others
+ 3 files changed, 20 insertions(+)
+ create mode 100644 content/_index.md
+ create mode 100644 content/authors/viridi/_index.md
+
+$ git push
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (11/11), 940 bytes | 470.00 KiB/s, done.
+Total 11 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/dudung/rust
+   ca5d1b1..a575dfe  main -&gt; main
+</code></pre><ol start=4><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to see the changes.</li></ol><h3 id=copy-assets>copy assets</h3><ol><li>Open
+<a href=https://github.com/dudung/pasir/tree/main/blog/assets/ target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/pasir/tree/main/blog/assets/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Copy all files and folders to <code>assets</code> folder.</li><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git add assets/css/main.css
+
+$ git commit -a -m &#34;copy css&#34;
+[main ccf7891] copy css
+ 1 file changed, 187 insertions(+)
+ create mode 100644 assets/css/main.css
+
+$ git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 1.32 KiB | 1.32 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dudung/rust
+   85490f2..ccf7891  main -&gt; main
+</code></pre><h3 id=delete-content-examples>delete content examples</h3><ol><li>Open <code>themes\default\content</code>.</li><li>Delete files and folder.</li><li>Synchronize changes with remote repository.</li></ol><pre tabindex=0><code>$ git commit -a -m &#34;detele content examples&#34;
+[main 92c9587] detele content examples
+ 6 files changed, 48 deletions(-)
+ delete mode 100644 themes/default/content/_index.md
+ delete mode 100644 themes/default/content/posts/_index.md
+ delete mode 100644 themes/default/content/posts/post-1.md
+ delete mode 100644 themes/default/content/posts/post-2.md
+ delete mode 100644 themes/default/content/posts/post-3/bryce-canyon.jpg
+ delete mode 100644 themes/default/content/posts/post-3/index.md
+
+$ git commit -a -m &#34;detele content examples&#34;
+On branch main
+Your branch is ahead of &#39;origin/main&#39; by 1 commit.
+  (use &#34;git push&#34; to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 336 bytes | 336.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/dudung/rust
+   c104bf8..92c9587  main -&gt; main
+</code></pre><h3 id=start-server>start server</h3><ol><li>Open cmd or console.</li></ol><pre tabindex=0><code>Microsoft Windows [Version 10.0.22631.4460]
+(c) Microsoft Corporation. All rights reserved.
+
+M:\rust&gt;hugo server
+Watching for changes in M:\rust\{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in M:\rust\hugo.toml, M:\rust\themes\default\hugo.toml
+Start building sites …
+hugo v0.139.3-2f6864387cd31b975914e8373d4bf38bddbd47bc+extended windows/amd64 BuildDate=2024-11-29T15:36:56Z VendorInfo=gohugoio
+
+
+                   | EN
+-------------------+-----
+  Pages            | 25
+  Paginator pages  |  0
+  Non-page files   |  1
+  Static files     |  1
+  Processed images |  0
+  Aliases          |  0
+  Cleaned          |  0
+
+Built in 128 ms
+Environment: &#34;development&#34;
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/rust/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><ol start=2><li>Open http://localhost:1313/rust/ to see the result.</li><li>Stop the server or continue working.</li></ol><h3 id=copy-from-pasir>copy from pasir</h3><pre tabindex=0><code>$ git add content/posts/24/k
+
+$ git commit -a -m &#34;copy content from pasir&#34;
+[main 0c7a844] copy content from pasir
+ 19 files changed, 1036 insertions(+), 15 deletions(-)
+ create mode 100644 content/posts/24/k/00-intro-to-pasir.md
+ create mode 100644 content/posts/24/k/01-random-walk-intro.md
+ create mode 100644 content/posts/24/k/02-md-pa6-cf-compos.md
+ create mode 100644 content/posts/24/k/03-rbl-refine-sk5010-2024-1.md
+ create mode 100644 content/posts/24/k/04-short-intro-to-ml.md
+ create mode 100644 content/posts/24/k/05-perceptron-intro.md
+ create mode 100644 content/posts/24/k/06-rbl-progress-sk5010-2024-1.md
+ create mode 100644 content/posts/24/k/07-model-short-intro.md
+ create mode 100644 content/posts/24/k/08-sk5010-rbl-w-report-1.md
+ create mode 100644 content/posts/24/k/09-reasons-to-write.md
+ create mode 100644 content/posts/24/k/10-rand-walk-msd-prob.md
+ create mode 100644 content/posts/24/k/11-futher-intro-perceptron.md
+ create mode 100644 content/posts/24/k/12-stat-mech-complex-sys.md
+ create mode 100644 content/posts/24/k/13-fi2151-2024-1.md
+ create mode 100644 content/posts/24/k/14-binary-and-plot2-pasir.md
+ create mode 100644 content/posts/24/k/15-list-of-slides.md
+ create mode 100644 content/posts/24/k/16-stu-sem-24-1.md
+ create mode 100644 content/posts/24/k/17-grit-ikigai-etc.md
+
+$ git push
+Enumerating objects: 32, done.
+Counting objects: 100% (32/32), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (26/26), 24.50 KiB | 2.45 MiB/s, done.
+Total 26 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/dudung/rust
+   92c9587..0c7a844  main -&gt; main
+</code></pre><h3 id=set-github-action>set github action</h3><ol><li>Go to
+<a href=https://github.com/dudung/rust/settings/pages target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/settings/pages <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Under Build and deployment, change Source to GitHub Actions.</li><li>Click browser all workflows.1. Visit
+<a href=https://github.com/dudung/rust/actions/new target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/actions/new <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Type hugo and press enter.</li><li>Choose Hugo By GitHub Actions, Package a Hugo site.</li><li>Click Configure.</li><li>Click Commit changes&mldr;, the green button on upper right.</li><li>Click Commit changes.</li><li>Visit
+<a href=https://dudung.github.io/rust/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/rust/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Update local files.</li></ol><pre tabindex=0><code>$ git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 1.91 KiB | 102.00 KiB/s, done.
+From https://github.com/dudung/rust
+   c64dccb..6f05888  main       -&gt; origin/main
+Merge made by the &#39;ort&#39; strategy.
+ .github/workflows/hugo.yml | 74 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 74 insertions(+)
+ create mode 100644 .github/workflows/hugo.yml
+</code></pre><h3 id=add-website-to-repository-page>add website to repository page</h3><ol><li>Visit
+<a href=https://github.com/dudung/rust target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Click icon on the far right on About.</li><li>Check Use your GitHub Pages website.</li><li>Add topics, e.g. thoughts, ideas, blogs, or other related topics.</li><li>Uncheck Releases, Packages, Deployments, or keep them checked.</li><li>Click Save changes, green button on the lower right.</li></ol></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

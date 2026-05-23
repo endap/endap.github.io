@@ -1,0 +1,120 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>m pollutant data | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>m pollutant data</h1><time datetime=2023-09-27T22:33:00+07:00>September 27, 2023</time><h2 id=direction>direction</h2><ul><li>You are tasked to analyze air pollution data collected from a monitoring station in Jakarta. You want to create line plots to visualize how the concentrations of two different pollutants (PM2.5 and NO2) vary over time.</li><li>Allow users to input data.</li><li>Provide an option to either generate two line plots (one for each parameter) in one graph or in two subplots within the same figure.</li><li>To terminate data entry, user can enter “-1“ for PM2.5 concentration or you may set some other value.</li><li>Output</li></ul><pre tabindex=0><code>&gt;&gt; plot1
+Choose the plot style:
+1. Two Plots in One Graph
+2. Two Subplots in One Figure
+Enter you choice (1 or 2): 2
+Input data for Time Point 1 (Enter -1 to finish):
+Enter PM2.5 concentration (ug/m3): 23
+Enter N02 concentration (ppb): 20
+Input data for Time Point 2 (Enter -1 to finish):
+Enter PM2.5 concentration (ug/m3): 32
+Enter N02 concentration (ppb): 15
+Input data for Time Point 3 (Enter -1 to finish):
+Enter PM2.5 concentration (ug/m3): -1
+</code></pre><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% menu for plotting graphs</span>
+</span></span><span style=display:flex><span>disp(&#34;Choose the plot style:&#34;);
+</span></span><span style=display:flex><span>disp(&#34;<span style=color:#ae81ff>1.</span> Two Plots in One Graph&#34;);
+</span></span><span style=display:flex><span>disp(&#34;<span style=color:#ae81ff>2.</span> Two Subplots in One Figure&#34;);
+</span></span><span style=display:flex><span>choice = input(&#34;Enter you choice (<span style=color:#ae81ff>1</span> or <span style=color:#ae81ff>2</span>): &#34;);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% data time point</span>
+</span></span><span style=display:flex><span>time = [];
+</span></span><span style=display:flex><span><span style=color:#75715e>% data PM2.5 = 23, 32</span>
+</span></span><span style=display:flex><span>pm2_5 = [];
+</span></span><span style=display:flex><span><span style=color:#75715e>% data for N02 concentration = 20, 15</span>
+</span></span><span style=display:flex><span>NO2 = [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% start inputting</span>
+</span></span><span style=display:flex><span>i = <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>x = <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> true
+</span></span><span style=display:flex><span>    fprintf(&#34;Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#75715e>%i (Enter -1 to finish):\n&#34;, i);</span>
+</span></span><span style=display:flex><span>    x = input(&#34;Enter PM2.<span style=color:#ae81ff>5</span> concentration (ug<span style=color:#f92672>/</span>m3):&#34;);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>        pm2_5 = [pm2_5 x];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>    x = input(&#34;Enter N02 concentration (ppb):&#34;);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>        NO2 = [NO2 x];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    time = [time i];
+</span></span><span style=display:flex><span>    i = i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% display time, pm2_5, NO2 for checking</span>
+</span></span><span style=display:flex><span>disp(time);
+</span></span><span style=display:flex><span>disp(pm2_5);
+</span></span><span style=display:flex><span>disp(NO2);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% plot graphs with condition</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> choice <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  subplot(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  plot(time, pm2_5, <span style=color:#e6db74>&#39;ob&#39;</span>, time, NO2, <span style=color:#e6db74>&#39;dr&#39;</span>);
+</span></span><span style=display:flex><span>  grid on;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>  subplot(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  plot(time, pm2_5, <span style=color:#e6db74>&#39;ob&#39;</span>);
+</span></span><span style=display:flex><span>  grid on;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  subplot(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>  plot(time, NO2, <span style=color:#e6db74>&#39;dr&#39;</span>);
+</span></span><span style=display:flex><span>  grid on;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div><h2 id=result-1>result 1</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Choose the plot style:
+</span></span><span style=display:flex><span>1. Two Plots in One Graph
+</span></span><span style=display:flex><span>2. Two Subplots in One Figure
+</span></span><span style=display:flex><span>Enter you choice <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> or 2<span style=color:#f92672>)</span>: 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>1</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>23</span>
+</span></span><span style=display:flex><span>Enter N02 concentration <span style=color:#f92672>(</span>ppb<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>2</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>Enter N02 concentration <span style=color:#f92672>(</span>ppb<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>3</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>-1
+</span></span><span style=display:flex><span>     <span style=color:#ae81ff>1</span>     <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>23</span>    <span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>20</span>    <span style=color:#ae81ff>15</span>
+</span></span></code></pre></div><h2 id=result-2>result 2</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Choose the plot style:
+</span></span><span style=display:flex><span>1. Two Plots in One Graph
+</span></span><span style=display:flex><span>2. Two Subplots in One Figure
+</span></span><span style=display:flex><span>Enter you choice <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> or 2<span style=color:#f92672>)</span>: 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>1</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>23</span>
+</span></span><span style=display:flex><span>Enter N02 concentration <span style=color:#f92672>(</span>ppb<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>2</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>Enter N02 concentration <span style=color:#f92672>(</span>ppb<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span>Input data <span style=color:#66d9ef>for</span> Time Point <span style=color:#ae81ff>3</span> <span style=color:#f92672>(</span>Enter -1 to finish<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>Enter PM2.5 concentration <span style=color:#f92672>(</span>ug/m3<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>-1
+</span></span><span style=display:flex><span>     <span style=color:#ae81ff>1</span>     <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>23</span>    <span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>20</span>    <span style=color:#ae81ff>15</span>
+</span></span></code></pre></div><p></p><h2 id=notes>notes</h2><ul><li>Matlab plot and save as PDF using
+<a href=https://matlab.mathworks.com/ target=_blank rel="nofollow noopener noreferrer"><span>https://matlab.mathworks.com/ <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>PDF to SVG using
+<a href=https://cloudconvert.com/pdf-to-svg target=_blank rel="nofollow noopener noreferrer"><span>https://cloudconvert.com/pdf-to-svg <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

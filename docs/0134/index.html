@@ -1,0 +1,249 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>wave eqn 1d stationary | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>wave eqn 1d stationary</h1><time datetime=2023-11-02T19:31:00+07:00>November 2, 2023</time><h2 id=assignment>assignment</h2><ul><li><a href=https://github.com/dudung/lecture-notes/issues/22 target=_blank rel="nofollow noopener noreferrer"><span>Solving wave equation with FDM for stationary wave case <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><h2 id=theory>theory</h2><ul><li>The 1-d wave equation is
+$$\tag{1}
+\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
+$$
+with displacement $u$, time $t$, velocity $c$, dan position $x$ (
+<a href=https://tutorial.math.lamar.edu/classes/de/TheWaveEquation.aspx target=_blank rel="nofollow noopener noreferrer"><span>Dawkins, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>A function of two variables $u(x, y)$ can be represented
+as product of two functions with single variables
+$$\tag{2}
+u(x, t) = a(x) \ b(t),
+$$
+which is known as separation of variables (
+<a href=https://tutorial.math.lamar.edu/classes/de/SeparationofVariables.aspx target=_blank rel="nofollow noopener noreferrer"><span>Dawkins, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>Eigen value problem
+$$\tag{3}
+\mathbf{M}\mathbf{X} = \lambda \mathbf{X},
+$$
+that will be applied to second order differential equation (
+<a href=https://www.iist.ac.in/sites/default/files/people/IN08026/Eigenvalue.pdf target=_blank rel="nofollow noopener noreferrer"><span>Salih, 2016 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li></ul><h2 id=substitution>substitution</h2><ul><li>Substitute (2) to (1) will give
+$$
+\begin{array}{rcl}
+\displaystyle a \frac{d^2 b}{dt^2} & = & \displaystyle c^2 b \frac{d^2 a}{dx^2} \newline \newline
+\displaystyle \frac1b \frac{d^2 b}{dt^2} & = & \displaystyle c^2 \frac1a \frac{d^2 a}{dx^2},
+\end{array}
+$$
+and choose both side is $-\omega^2$.</li></ul><h2 id=left-side>left side</h2><p>$$\tag{4}
+\begin{array}{rcl}
+\displaystyle \frac1b \frac{d^2 b}{dt^2} & = & -\omega^2 \newline \newline
+\displaystyle \frac{d^2 b}{dt^2} & = & -\omega^2 b.
+\end{array}
+$$</p><h2 id=right-side>right side</h2><p>$$\tag{5}
+\begin{array}{rcl}
+\displaystyle c^2 \frac1a \frac{d^2 a}{dx^2} & = & -\omega^2 \newline \newline
+\displaystyle \frac{d^2 a}{dx^2} & = & \displaystyle -\frac{\omega^2}{c^2} a \newline \newline
+\displaystyle \frac{d^2 a}{dx^2} & = & \displaystyle -k^2 a.
+\end{array}
+$$</p><h2 id=fdm-x>fdm x</h2><p>$$\tag{6}
+\begin{array}{rcl}
+\displaystyle \frac{ a_{i-1,j} - 2a_{i,j} + a_{i+1,j} }{h^2} & = & - k^2 a_{i,j} \newline \newline
+a_{i-1,j} - 2a_{i,j} + a_{i+1,j} & = & - h^2 k^2 a_{i,j} \newline \newline
+a_{i-1,j} - 2a_{i,j} + a_{i+1,j} & = & - l^2 a_{i,j}
+\end{array}
+$$</p><p>With boundary condition $a_1 = 0$ and $a_n = 0$ where $n$ is number of data.</p><h2 id=bvp>bvp</h2><ul><li>(5) will be
+$$\tag{7}
+\left[
+\begin{matrix}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \newline
+1 & -2 & 1 & 0 & 0 & 0 & 0 & 0 \newline
+0 & 1 & -2 & 1 & 0 & 0 & 0 & 0 \newline
+0 & 0 & 1 & -2 & 1 & 0 & 0 & 0 \newline
+0 & 0 & 0 & 1 & -2 & 1 & 0 & 0 \newline
+0 & 0 & 0 & 0 & 1 & -2 & 1 & 0 \newline
+0 & 0 & 0 & 0 & 0 & 1 & -2 & 1 \newline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \newline
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+a_1 \newline
+a_2 \newline
+a_3 \newline
+a_4 \newline
+a_5 \newline
+a_6 \newline
+a_7 \newline
+a_8 \newline
+\end{matrix}
+\right]
+=
+-l^2
+\left[
+\begin{matrix}
+a_1 \newline
+a_2 \newline
+a_3 \newline
+a_4 \newline
+a_5 \newline
+a_6 \newline
+a_7 \newline
+a_8 \newline
+\end{matrix}
+\right]
+$$
+for $n = 8$.</li><li>It turns into an eigen value problem.</li></ul><h2 id=code>code</h2><ul><li>url
+<a href=https://onecompiler.com/python/3zsbrukaf target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zsbrukaf <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> numpy.linalg <span style=color:#f92672>import</span> eig
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>xmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>h <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.01</span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> int((xmax <span style=color:#f92672>-</span> xmin) <span style=color:#f92672>/</span> h <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [round(xmin <span style=color:#f92672>+</span> i<span style=color:#f92672>*</span>h, <span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N)]
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;h =&#34;</span>, h)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;N =&#34;</span>, N)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x =&#34;</span>, x)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>M <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros((N, N))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>  M[i][i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  M[i][i] <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  M[i][i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>M[<span style=color:#ae81ff>0</span>][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>M[N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;M =&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> M:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> i:
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#print(j.round(2), end=&#39;\t&#39;)</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pass</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>#print()</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>pass</span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>w, v <span style=color:#f92672>=</span> eig(M)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;E=val&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> w:
+</span></span><span style=display:flex><span>    print(round(i, <span style=color:#ae81ff>4</span>))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ii <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;label: </span><span style=color:#ae81ff>\&#34;</span><span style=color:#e6db74>E-val = &#34;</span>, round(w[ii], <span style=color:#ae81ff>3</span>), <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\&#34;</span><span style=color:#e6db74>,&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;data: [&#34;</span>)
+</span></span><span style=display:flex><span>  vj <span style=color:#f92672>=</span> v[:, i]
+</span></span><span style=display:flex><span>  jj <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> vj:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>{x: &#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>    print(x[jj], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;, &#39;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;y:&#34;</span>, j<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>), end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;},&#34;</span>)
+</span></span><span style=display:flex><span>    jj <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;],&#34;</span>)
+</span></span><span style=display:flex><span>  print()
+</span></span><span style=display:flex><span>  ii <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span></code></pre></div><ul><li>Result</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>h <span style=color:#f92672>=</span> 0.01
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>101</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>0.0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.0<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>M <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>E<span style=color:#f92672>=</span>val
+</span></span><span style=display:flex><span>-3.999
+</span></span><span style=display:flex><span>-3.9961
+</span></span><span style=display:flex><span>-3.9911
+</span></span><span style=display:flex><span>-3.9842
+</span></span><span style=display:flex><span>-3.9754
+</span></span><span style=display:flex><span>-3.9646
+</span></span><span style=display:flex><span>-3.9518
+</span></span><span style=display:flex><span>-3.9372
+</span></span><span style=display:flex><span>-3.8355
+</span></span><span style=display:flex><span>-3.8596
+</span></span><span style=display:flex><span>-3.8818
+</span></span><span style=display:flex><span>-3.8097
+</span></span><span style=display:flex><span>-3.782
+</span></span><span style=display:flex><span>-3.7526
+</span></span><span style=display:flex><span>-3.9021
+</span></span><span style=display:flex><span>-3.7215
+</span></span><span style=display:flex><span>-3.5803
+</span></span><span style=display:flex><span>-3.618
+</span></span><span style=display:flex><span>-3.541
+</span></span><span style=display:flex><span>-3.5002
+</span></span><span style=display:flex><span>-3.6542
+</span></span><span style=display:flex><span>-3.4579
+</span></span><span style=display:flex><span>-3.4142
+</span></span><span style=display:flex><span>-3.3691
+</span></span><span style=display:flex><span>-3.9206
+</span></span><span style=display:flex><span>-3.2258
+</span></span><span style=display:flex><span>-3.1756
+</span></span><span style=display:flex><span>-3.1242
+</span></span><span style=display:flex><span>-3.0717
+</span></span><span style=display:flex><span>-3.2748
+</span></span><span style=display:flex><span>-3.0181
+</span></span><span style=display:flex><span>-2.9635
+</span></span><span style=display:flex><span>-2.908
+</span></span><span style=display:flex><span>-2.6775
+</span></span><span style=display:flex><span>-2.7362
+</span></span><span style=display:flex><span>-2.7943
+</span></span><span style=display:flex><span>-2.618
+</span></span><span style=display:flex><span>-2.558
+</span></span><span style=display:flex><span>-2.4974
+</span></span><span style=display:flex><span>-0.001
+</span></span><span style=display:flex><span>-0.0039
+</span></span><span style=display:flex><span>-0.0089
+</span></span><span style=display:flex><span>-0.0158
+</span></span><span style=display:flex><span>-0.0246
+</span></span><span style=display:flex><span>-2.4363
+</span></span><span style=display:flex><span>-0.0354
+</span></span><span style=display:flex><span>-0.0482
+</span></span><span style=display:flex><span>-2.3748
+</span></span><span style=display:flex><span>-0.0628
+</span></span><span style=display:flex><span>-0.0979
+</span></span><span style=display:flex><span>-0.1182
+</span></span><span style=display:flex><span>-0.1404
+</span></span><span style=display:flex><span>-0.1645
+</span></span><span style=display:flex><span>-2.1256
+</span></span><span style=display:flex><span>-2.1882
+</span></span><span style=display:flex><span>-2.2507
+</span></span><span style=display:flex><span>-2.0628
+</span></span><span style=display:flex><span>-0.1903
+</span></span><span style=display:flex><span>-2.0
+</span></span><span style=display:flex><span>-1.9372
+</span></span><span style=display:flex><span>-0.218
+</span></span><span style=display:flex><span>-0.2474
+</span></span><span style=display:flex><span>-1.8744
+</span></span><span style=display:flex><span>-0.2785
+</span></span><span style=display:flex><span>-1.442
+</span></span><span style=display:flex><span>-1.5026
+</span></span><span style=display:flex><span>-1.5637
+</span></span><span style=display:flex><span>-1.382
+</span></span><span style=display:flex><span>-0.4197
+</span></span><span style=display:flex><span>-0.459
+</span></span><span style=display:flex><span>-0.4998
+</span></span><span style=display:flex><span>-0.9283
+</span></span><span style=display:flex><span>-0.8758
+</span></span><span style=display:flex><span>-1.3225
+</span></span><span style=display:flex><span>-0.8244
+</span></span><span style=display:flex><span>-2.3129
+</span></span><span style=display:flex><span>-0.9819
+</span></span><span style=display:flex><span>-0.5858
+</span></span><span style=display:flex><span>-0.5421
+</span></span><span style=display:flex><span>-1.0365
+</span></span><span style=display:flex><span>-0.7742
+</span></span><span style=display:flex><span>-0.3458
+</span></span><span style=display:flex><span>-0.6309
+</span></span><span style=display:flex><span>-1.8118
+</span></span><span style=display:flex><span>-1.6252
+</span></span><span style=display:flex><span>-1.2638
+</span></span><span style=display:flex><span>-1.092
+</span></span><span style=display:flex><span>-2.8516
+</span></span><span style=display:flex><span>-0.382
+</span></span><span style=display:flex><span>-3.3226
+</span></span><span style=display:flex><span>-3.6887
+</span></span><span style=display:flex><span>-0.7252
+</span></span><span style=display:flex><span>-1.2057
+</span></span><span style=display:flex><span>-1.7493
+</span></span><span style=display:flex><span>-1.6871
+</span></span><span style=display:flex><span>-1.1484
+</span></span><span style=display:flex><span>-0.6774
+</span></span><span style=display:flex><span>-0.0794
+</span></span><span style=display:flex><span>-0.3113
+</span></span><span style=display:flex><span>0.0
+</span></span><span style=display:flex><span>0.0
+</span></span></code></pre></div><h2 id=charts-1>charts 1</h2><h2 id=charts-2>charts 2</h2><h2 id=charts-3>charts 3</h2><h2 id=charts-4>charts 4</h2><h2 id=charts-5>charts 5</h2></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

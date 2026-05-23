@@ -1,0 +1,83 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>slr ls line | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>slr ls line</h1><time datetime=2021-12-04T13:22:00+07:00>December 4, 2021</time><p>Garis atau kurva yang diperoleh untuk regresi linier sederhana dapat digambarkan dengan menggunakan kedua koefisien yang diperoleh dari metode least square, yang dikenal juga sebagai formula kemiringan kurva atau slope formula [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau dapat pula menggunakan lima parameter statistik [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Di sini hanya akan diilustrasikan kurva tersebut dan kurva lainnya yang kurang tepat.</p><h2 id=simple-linear-regression>simple linear regression</h2><p>Bentuk persamaan</p><p>\begin{equation}\label{eqn:simple-linear-regression}
+y = a + bx + \varepsilon
+\end{equation}</p><p>dikenal sebagai formula regresi linier sederhana [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dengan $\hat{y} = a + bx$ adalah nilai prediksi dari variabel terikat $y$ untuk setiap nilai dari variabel bebas $x$, $a$ adalah titik potong pada sumbu tegak, $b$ adalah koefisien regresi yang menggambarkan perkiraan seberapa besar $y$ berubah saat $x$ bertambah, $x$ adalah variabel bebas yang merupakan variabel yang diduga mempengaruhi $y$, dan $\varepsilon$ adalah kesalahan estimasi atau seberapa besar variasi dalam melakukan estimasi koefisien regresi.</p><h2 id=sst-sse-r2>sst, sse, r2</h2><p>$\rm SST$ (sum of squares total) dan $\rm SSE$ (sum of squares error) adalah sebagai berikut [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:sst}
+{\rm SST} = \sum_{i = 1}^n (y_i - \overline{y}_i)^2
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:sse}
+{\rm SSE} = \sum_{i = 1}^n (y_i - \hat{y}_i)^2
+\end{equation}</p><p>dengan $n$ adalah jumlah pasangan data $\{(x_i, y_i), i = 1, \dots, n\}$. Dengan Persamaan \eqref{eqn:sse} dan \eqref{eqn:sst} dapat diperoleh coeffient of determination</p><p>\begin{equation}\label{eqn:r2}
+R^2 = 1 - \frac{ {\rm SSE} }{ {\rm SST} },
+\end{equation}</p><p>di mana untuk pembilang, yang dalam hal ini adalah $\rm SSE$, kadang digunakan juga istilah $\rm SSR$ (sum squared regression) [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau $\rm SS_{res}$ (residual sum of squares) [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang merujuk ke hal yang sama. Akan tetapi kedua istilah tersebut berbeda dengan $\rm SSR$ (sum of squared regression) [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=slope-formula>slope formula</h2><p>Nilai $a$ dan $b$ pada Persamaan \eqref{eqn:simple-linear-regression} dapat diperoleh dengan formula kemiringan kurva [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:slope-formula-a}
+a = \frac{ (\sum y)(\sum x^2) - (\sum x)(\sum xy) }{ n(\sum x^2) - (\sum x)^2 }
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:slope-formula-b}
+b = \frac{ n(\sum xy) - (\sum x)(\sum y) }{ n(\sum x^2) - (\sum x)^2 }.
+\end{equation}</p><p>Setelah kedua nilai $a$ dan $b$ diperoleh garis dapat digambarkan pada data menggunakan persamaan</p><p>\begin{equation}\label{eqn:simple-linear-regression-line}
+y = a + bx,
+\end{equation}</p><p>tanpa suku kesalahan estimasi $\varepsilon$ bila dibandingkan dengan Persamaan \eqref{eqn:simple-linear-regression}.</p><h2 id=curves>curves</h2><p>Dua buah kurva yang mengkuti Persamaan \eqref{eqn:simple-linear-regression-line} dengan nilai-nilai $a$ dan $b$ ditentukan secara intuitif diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/21/0211-a.png)<br>Gambar <a name=fig1>1</a>. Dua buah kurva yang mengapit data dari atas ($\color{#c00}{\mathbf{&ndash;}}$) dan bawah ($\color{#07c}{\mathbf{&ndash;}}$).</p><p>Garis berwarna merah ($\color{#c00}{\mathbf{&ndash;}}$) dengan persamaan $y = 1.8 + 1.5x$ merupakan perkiraan batas atas sebaran data dan garis berwarna biru ($\color{#07c}{\mathbf{&ndash;}}$) dengan persamaan $y = 1.5 - 1.2x$ merupakan perkiraan batas bawah sebaran data, dengan berturut-turut keduanya memberikan koefisien determinasi masing masing $0.900899$ dan $0.852965$.</p><p>![]({{ site.baseurl }}/assets/img/0/21/0211-b.png)<br>Gambar <a name=fig2>2</a>. Kurva hasil regresi linier dengan kuadrat terkecil atau nilai $a$ dan $b$ diperoleh menggunakan formula kemiringan kurva.</p><p>Dengan menggunakan Persamaan \eqref{eqn:slope-formula-a} dan \eqref{eqn:slope-formula-b} dapat diperoleh persamaan $y = 0.05 + 1.591x$ yang lebih baik dengan $R^2 = 0.971$ seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=data>data</h3><p>Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dibuat dibuat dengan menggunakan data berikut yang semula dihasilkan dari persamaan $y = 0.5 + 1.5 x$</p><pre tabindex=0><code>x	y	err	y(1+err)
+0	0.5	0.2	0.6
+0.5	1.25	-0.1	1.125
+1	2	0	2.000
+1.5	2.75	-0.1	2.475
+2	3.5	0	3.500
+2.5	4.25	0.1	4.675
+3	5	-0.2	4.000
+3.5	5.75	-0.1	5.175
+4	6.5	0.01	6.565
+4.5	7.25	0	7.250
+5	8	0	8.000
+5.5	8.75	-0.2	7.000
+6	9.5	-0.1	8.550
+6.5	10.25	0.01	10.353
+7	11	-0.05	10.450
+7.5	11.75	-0.01	11.633
+8	12.5	0.05	13.125
+8.5	13.25	0.1	14.575
+9	14	0.2	16.800
+9.5	14.75	-0.01	14.603
+10	15.5	0.01	15.655
+</code></pre><p>dan kemudian diberikan kesalahan <code>err</code> pada komponen vertikal dengan mengubahnya dari <code>y</code> menjadi <code>y(1+err)</code>.</p><h2 id=exer>exer</h2><ol><li>Apakah kaitan antara Persamaan \eqref{eqn:simple-linear-regression} dan \eqref{eqn:sse}?</li><li>Apakah ada cara lain dalam menggambarkan garis selain pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Stephanie Glen, &ldquo;Linear Regression: Simple Steps, Video. Find Equation, Coefficient, Slope&rdquo; from StatisticsHowTo.com: Elementary Statistics for the rest of us!, 1 Jun 2018, url
+<a href=https://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203].</li><li><a name=r02></a>Deborah J. Rumsey, &ldquo;How to Calculate a Regression Line&rdquo;, For Dummies, John Wiley & Sons, Inc., 26 Mar 2016, url
+<a href=https://www.dummies.com/education/math/statistics/how-to-calculate-a-regression-line/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.dummies.com/education/math/statistics/how-to-calculate-a-regression-line/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203].</li><li><a name=r03></a>Rebecca Bevans, &ldquo;An introduction to simple linear regression&rdquo;, Scribbr, 26 Oct 2020, url
+<a href=https://www.scribbr.com/statistics/simple-linear-regression/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.scribbr.com/statistics/simple-linear-regression/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203].</li><li><a name=r04></a>Iliya Valchanov, &ldquo;Sum of Squares Total, Sum of Squares Regression and Sum of Squares Error&rdquo;, 365 Data Science, 5 Nov 2018, url
+<a href=https://365datascience.com/tutorials/statistics-tutorials/sum-squares/ target=_blank rel="nofollow noopener noreferrer"><span>https://365datascience.com/tutorials/statistics-tutorials/sum-squares/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203].</li><li><a name=r05></a>&ldquo;Coefficient of Determination, R-squared&rdquo;, url
+<a href=https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203]</li><li><a name=r06></a>Wikipedia contributors, &ldquo;Coefficient of determination&rdquo;, Wikipedia, The Free Encyclopedia, 1 December 2021, 11:28 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1058089444" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1058089444 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211203].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-lang=en data-theme=light data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0211?src=hash&amp;ref_src=twsrc%5Etfw">#bug0211</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1466991917640478723?ref_src=twsrc%5Etfw">December 4, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><h2 id=heading> </h2><p><a><span>simple linear regression least square <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>slr ls gradient descent <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $\displaystyle {\rm SSE} = \sum_{i = 1}^n \varepsilon_i^2$ karena $\hat{y}_i = a + bx_i$; &nbsp;
+2) dapat dilakukan dengan menentukan titik tengah data $(\overline{x}, \overline{y})$ dan dibuat garis yang melewati titik tersebut dengan berbagai kemiringan; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

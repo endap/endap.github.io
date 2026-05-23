@@ -1,0 +1,143 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>m plot color marker line | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>m plot color marker line</h1><time datetime=2023-09-28T05:54:00+07:00>September 28, 2023</time><h2 id=direction>direction</h2><ul><li>Sign in to MathWorks at
+<a href=https://matlab.mathworks.com/ target=_blank rel="nofollow noopener noreferrer"><span>https://matlab.mathworks.com/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Notice available hours for MATLAB Online (basic).</li><li>Open MATLAB Online (basic).</li><li>Create New Script.</li><li>Press CTRL+S to save.</li><li>Give a name for the empty file about to be saved, e.g. <code>plot_color_marker_line.m</code>.</li><li>Click Save button.</li><li>Start to write the code.</li><li>Run the code.</li><li>Save figure as PDF.</li><li>Download it to local folder.</li><li>Upload it to
+<a href=https://cloudconvert.com/pdf-to-svg target=_blank rel="nofollow noopener noreferrer"><span>https://cloudconvert.com/pdf-to-svg <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Convert it to PDF.</li><li>Download SVG file.</li></ul><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% create empty arrays</span>
+</span></span><span style=display:flex><span>x1 = []; y1 = [];
+</span></span><span style=display:flex><span>x2 = []; y2 = [];
+</span></span><span style=display:flex><span>x3 = []; y3 = [];
+</span></span><span style=display:flex><span>x4 = []; y4 = [];
+</span></span><span style=display:flex><span>x5 = []; y5 = [];
+</span></span><span style=display:flex><span>x6 = []; y6 = [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% initial and incremental values</span>
+</span></span><span style=display:flex><span>x = <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>dx = <span style=color:#ae81ff>0.25</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% generate data</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>        x1 = [x1 x];
+</span></span><span style=display:flex><span>        f1 = x^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        y1 = [y1 f1];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>        x2 = [x2 x];
+</span></span><span style=display:flex><span>        f2 = <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span>;
+</span></span><span style=display:flex><span>        y2 = [y2 f2];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 3</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>3</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>        x3 = [x3 x];
+</span></span><span style=display:flex><span>        f3 = <span style=color:#ae81ff>12</span> <span style=color:#f92672>-</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>5</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        y3 = [y3 f3];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 4</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>5</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>        x4 = [x4 x];
+</span></span><span style=display:flex><span>        f4 = <span style=color:#ae81ff>12</span>;
+</span></span><span style=display:flex><span>        y4 = [y4 f4];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 5</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>6</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>        x5 = [x5 x];
+</span></span><span style=display:flex><span>        f5 = <span style=color:#ae81ff>12</span> <span style=color:#f92672>-</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>6</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        y5 = [y5 f5];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>% data 6</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#ae81ff>8</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>        x6 = [x6 x];
+</span></span><span style=display:flex><span>        f6 = <span style=color:#ae81ff>6</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>(x <span style=color:#f92672>-</span> <span style=color:#ae81ff>9</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        y6 = [y6 f6];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    x = x <span style=color:#f92672>+</span> dx;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% plot results</span>
+</span></span><span style=display:flex><span>plot( <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x1, y1, <span style=color:#e6db74>&#39;-or&#39;</span>, <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x2, y2, <span style=color:#e6db74>&#39;-*g&#39;</span>, <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x3, y3, <span style=color:#e6db74>&#39;-sb&#39;</span>, <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x4, y4, <span style=color:#e6db74>&#39;-+m&#39;</span>, <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x5, y5, <span style=color:#e6db74>&#39;-dk&#39;</span>, <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>    x6, y6, <span style=color:#e6db74>&#39;-xc&#39;</span> <span style=color:#75715e>...</span>
+</span></span><span style=display:flex><span>);
+</span></span><span style=display:flex><span>grid on;
+</span></span><span style=display:flex><span>xlabel(&#34;x&#34;);
+</span></span><span style=display:flex><span>ylabel(&#34;y&#34;);
+</span></span></code></pre></div><p> </p><h2 id=linespec>linespec</h2><table><thead><tr><th style=text-align:center>LineSpec</th><th style=text-align:center>Line</th><th style=text-align:center>Marker</th><th style=text-align:center>Color</th></tr></thead><tbody><tr><td style=text-align:center><code>-or</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>o</code> ○</td><td style=text-align:center><code>r</code> red</td></tr><tr><td style=text-align:center><code>-*g</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>*</code> *</td><td style=text-align:center><code>g</code> green</td></tr><tr><td style=text-align:center><code>-sb</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>s</code> □</td><td style=text-align:center><code>b</code> blue</td></tr><tr><td style=text-align:center><code>-+m</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>+</code> +</td><td style=text-align:center><code>m</code> magenta</td></tr><tr><td style=text-align:center><code>-dk</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>d</code> ◇</td><td style=text-align:center><code>k</code> black</td></tr><tr><td style=text-align:center><code>-xc</code></td><td style=text-align:center><code>-</code></td><td style=text-align:center><code>x</code> ×</td><td style=text-align:center><code>c</code> cyan</td></tr></tbody></table><h2 id=equations>equations</h2><ul><li><p>For $0 \le x \le 2$
+$$\tag{1}
+y = x^2.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    x1 = [x1 x];
+</span></span><span style=display:flex><span>    f1 = x^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    y1 = [y1 f1];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>For $2 \le x \le 3$
+$$\tag{2}
+y = 4(x-2) + 4.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 2</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>    x2 = [x2 x];
+</span></span><span style=display:flex><span>    f2 = <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span>;
+</span></span><span style=display:flex><span>    y2 = [y2 f2];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>For $3 \le x \le 5$
+$$\tag{3}
+y = 12 - (x - 5)^2.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 3</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>3</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>    x3 = [x3 x];
+</span></span><span style=display:flex><span>    f3 = <span style=color:#ae81ff>12</span> <span style=color:#f92672>-</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>5</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    y3 = [y3 f3];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>For $5 \le x \le 6$
+$$\tag{4}
+y = 12.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 4</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>5</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>    x4 = [x4 x];
+</span></span><span style=display:flex><span>    f4 = <span style=color:#ae81ff>12</span>;
+</span></span><span style=display:flex><span>    y4 = [y4 f4];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>For $6 \le x \le 8$
+$$\tag{5}
+y = 12 - (x - 6)^2.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 5</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>6</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>    x5 = [x5 x];
+</span></span><span style=display:flex><span>    f5 = <span style=color:#ae81ff>12</span> <span style=color:#f92672>-</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>6</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    y5 = [y5 f5];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>For $8 \le x \le 10$
+$$\tag{6}
+y = 6 + 2(x - 9)^2.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% data 6</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#ae81ff>8</span> <span style=color:#f92672>&lt;</span>= x <span style=color:#f92672>&amp;</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>    x6 = [x6 x];
+</span></span><span style=display:flex><span>    f6 = <span style=color:#ae81ff>6</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>(x <span style=color:#f92672>-</span> <span style=color:#ae81ff>9</span>)^<span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    y6 = [y6 f6];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div></li><li><p>And for all ranges</p></li></ul><p>$$\tag{7}
+y = \left\{
+\begin{array}{cc}
+x^2, & 0 \le x \le 2, \newline
+4(x-2) + 4, & 2 \le x \le 3, \newline
+12 - (x - 5)^2, & 3 \le x \le 5, \newline
+12, & 5 \le x \le 6, \newline
+12 - (x - 6)^2, & 6 \le x \le 8, \newline
+6 + 2(x - 9)^2, & 8 \le x \le 10.
+\end{array}
+\right.
+$$</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

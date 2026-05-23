@@ -1,0 +1,191 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>simple linear regression least square | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>simple linear regression least square</h1><time datetime=2021-12-02T21:20:00+07:00>December 2, 2021</time><p>Model simple linear regression (SLR) dikatakan sederhana karena hanya memiliki satu prediktor, linier karena menggunakan fungsi linier dengan dua parameter, dan regresi karena model menghasilkan satu variabel respons sebagai fungsi dari satu variabel prediktor [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Model ini terkait dengan titik sampel dua-dimensi dengan satu variabel bebas dan satu variabel terikat, yang secara konvensional menggunakan $x$ dan $y$ [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Kedua parameter dalam SLR dapat diestimasi menggunakan least square (LR), yang penurunannya perlu meggunakan kalkulus ataupun tidak [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. LR yang merupakan prosedur matematika untuk mendapatkan kurva terbaik yang cocok untuk data yang diberikan, yang dilakukan dengan meminimumkan kuadrat dari offset atau residual dari titik data ke kurva, umumnya dicontohkan dengan model linier [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam proses penentuan kedua parameter fungsi linier, bila digunakan kalkulus, langkah meminimumkan dilakukan dengan menggunakan turunan terhadap kedua parameter tersebut [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. LS atau lebih tepatnya yang dimaksud adalah OLS, suatu ordinary LS [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], tak diragukan merupakan salah satu algoritma pembelajaran mesin yang fundamental [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Perlu ditekankan bahwa LR (SLR dalam hal ini dan LS merupakan dua hal yang berbeda akan tetapi sering disampaikan secara terkait sehingga kadang membingungkan [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=slr-model>slr model</h2><p>Model regresi linier sederhana atau SLR memiliki bentuk [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:slr-model}
+y_i = b_0 + b_1 x_i + e_i,
+\end{equation}</p><p>untuk $i \in \{1, \dots, n \}$, dengan $y_i \in \mathbb{R}$ nilai riil respons observasi ke-$i$, $b_0 \in \mathbb{R}$ intersep regresi atau titik potong pada sumbu $y$, $b_1 \in \mathbb{R}$ kemiringan regresi, $x_i \in \mathbb{R}$ prediktor untuk oberservasi ke-$i$, dan $e_i \stackrel{\rm iid}{\sim} N(0, \sigma^2)$ suatu suku kesalahan Gaussian.</p><p>Terdapat ssumsi mendasar dari model SLR pada Persamaan \eqref{eqn:slr-model}, yaitu</p><ul><li>hubungan antara $X$ dan $Y$ linier,</li><li>$x_i$ dan $y_i$ merupakan variabel acak terobservasi (suatu nilai konstan yang diketahui),</li><li>$e_i \stackrel{\rm iid}{\sim} N(0, \sigma^2)$ adalah variabel acak tak-teramati,</li><li>$b_0$ dan $b_1$ merupakan konstanta yang tidak diketahui,</li><li>$(y_i | x_i) \stackrel{\rm ind}{\sim} N(b_0 + b_1 x_i, \sigma^2)$, homogenitas variansi.</li></ul><p>Perlu dicatat bahwaa $b_1$ diharapkan bertambah dalam $Y$ sebesar satu satuan saat bertambahnya $X$.</p><h3 id=terms>terms</h3><p>Simbol $\rm iid$ merupakan kependekan dari independent and identically distributed, dengan terdistribusi identik (identically distributed) berarti tidak terdapat tren secara keseluruhan atau distribusi tidak berfluktuasi dan semua bagian sampel diambil dari distribusi probabilitas yang sama, dan terdistribusi bebas (independent distributed) berarti semua bagian sampel merupakan kejadian bebas, yang tidak terkait satu sama lain [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>Simbol $\rm ind$, dengan mengambil pola yang sama dengan $\rm iid$, mungkin berarti independent but not identically distributed, yang istilahnya tidak terlalu mudah dicari, akan tetapi ada [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r11><span>11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>Homogenitas variansi, yang merupakan asumsi penting yang dimiliki bersama oleh berbagai metode statistik parametrik, membutuhkan bahwa variansi dalam tiap populasi sama bagi semua populasi [
+<a href=#r12><span>12 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau berarti bahwa rata-rata kuadrat jarak suatu nilai terhadap mean adalah sama meliputi semua kelompok dalam suatu studi [
+<a href=#r13><span>13 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Atau secara sederhana memiliki sebaran yang sama, yang saat digambarkan terlihat lebih jelas [
+<a href=#r14><span>14 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=statistics-of-fit>statistics of fit</h2><p>Terdapat beberapa statistik kecocokan yang dapat digunakan dengan $n$ jumlah pengamatan yang tak-hilang dan $k$ jumlah parameter dalam model [
+<a href=#r15><span>15 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dengan model $y = f(x)$ maka $\hat{y}_i$ adalah nilai prediksi satu-langkah dari data $x_i$ mengunakan model, sedangkan $y_i$ adalah data respons yang teramati bersama-sama dengan $x_i$.</p><h3 id=mean>mean</h3><p>\begin{equation}\label{eqn:mean}
+\overline{y} = \frac{1}{n} \sum_{i = 1}^n y_i.
+\end{equation}</p><h3 id=total-sum-of-squares-uncorrected>total sum of squares (uncorrected)</h3><p>\begin{equation}\label{eqn:sst0}
+{\rm SST} = \sum_{i = 1}^n y_i^2.
+\end{equation}</p><h3 id=total-sum-of-squares-corrected>total sum of squares (corrected)</h3><p>\begin{equation}\label{eqn:sst1}
+{\rm SST} = \sum_{i = 1}^n (y_i - \overline{y})^2.
+\end{equation}</p><h3 id=sum-of-square-errors>sum of square errors</h3><p>\begin{equation}\label{eqn:sse}
+{\rm SSE} = \sum_{i = 1}^n (y_i - \hat{y}_i)^2.
+\end{equation}</p><h3 id=mean-square-error>mean square error</h3><p>\begin{equation}\label{eqn:mse}
+{\rm MSE} = \frac{1}{n} \sum_{i = 1}^n (y_i - \hat{y}_i)^2.
+\end{equation}</p><h3 id=root-mean-square-error>root mean square error</h3><p>\begin{equation}\label{eqn:rmse}
+{\rm RMSE} = \sqrt{\frac{1}{n} \sum_{i = 1}^n (y_i - \hat{y}_i)^2}.
+\end{equation}</p><h3 id=mean-absolute-percent-error>mean absolute percent error</h3><p>\begin{equation}\label{eqn:mape}
+{\rm MAPE} = \frac{100}{n} \sum_{i = 1}^n \left| \frac{(y_i - \hat{y}_i)}{y_i} \right|.
+\end{equation}</p><h3 id=mean-absolute-error>mean absolute error</h3><p>\begin{equation}\label{eqn:mae}
+{\rm MAE} = \frac{1}{n} \sum_{i = 1}^n \left| y_i - \hat{y}_i \right|.
+\end{equation}</p><h3 id=r-square>r-square</h3><p>\begin{equation}\label{eqn:r2}
+R^2 = 1 - \frac{\rm SSE}{\rm SST}.
+\end{equation}</p><h3 id=adjusted-r-square>adjusted r-square</h3><p>\begin{equation}\label{eqn:r2-adjusted}
+R_{\rm adj}^2 = 1 - \left( \frac{n - 1}{n - k} \right) (1 - R^2).
+\end{equation}</p><h3 id=mean-percent-error>mean percent error</h3><p>\begin{equation}\label{eqn:mpe}
+{\rm MPE} = \frac{100}{n} \sum_{i = 1}^n \frac{(y_i - \hat{y}_i)}{y_i}.
+\end{equation}</p><h3 id=mean-error>mean error</h3><p>\begin{equation}\label{eqn:me}
+{\rm MAE} = \frac{1}{n} \sum_{i = 1}^n (y_i - \hat{y}_i).
+\end{equation}</p><h3 id=adjusted-r-squared-other-version>adjusted r-squared (other version)</h3><p>Untuk adjusted $R^2$ terdapat formula yang sedikit berbeda [
+<a href=#r16><span>16 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:r2-adjusted-other-version}
+\begin{array}{rcl}
+R _{\rm adj}^2 & = & \displaystyle 1 - \frac{ {\rm SSE} / (n - k - 1) }{ {\rm SST} / (n - 1) } \newline
+& = & \displaystyle 1 - \left( \frac{n - 1}{n - k - 1} \right) (1 - R^2),
+\end{array}
+\end{equation}</p><p>pada bagian penyebut suku kedua ruas paling kanan.</p><h2 id=least-square>least square</h2><p>Kuadrat terkecil digunanakan untuk terjemahan LR, di mana kuadrat yang dimasuka adalah kuadrat dari selisih antara prediksi model dengan pengamatan [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:lr}
+R^2 = \sum_{i = 1}^n [y_i - f(x_i, {\rm coeffs})]^2,
+\end{equation}</p><p>dengan $\rm coeffs$ adalah koefisien dari model, misalnya $b_0$ dan $b_1$ pada Persamaan \eqref{eqn:slr-model}. Arti dari $R^2$ ini adalah deviasi pada arah vertikal. Selanjutnya adalah mencari nilai terkecil atau minimum dari $R^2$ yang diperoleh dengan menurunkan mencari turunan dari $R^2$ terhadap semua koefisien model yang sama dengan nol, seperti</p><p>$$
+\frac{\partial R^2}{\partial b_0} = 0
+$$</p><p>dan</p><p>$$
+\frac{\partial R^2}{\partial b_1} = 0
+$$</p><p>untuk Persamaan \eqref{eqn:slr-model}.</p><h2 id=derivation>derivation</h2><p>Suatu model linier, mirip dengan Persamaan \eqref{eqn:slr-model}, dengan hanya satu variabel bebas dapat dituliskan sebagai</p><p>\begin{equation}\label{eqn:linear-model-1-ind-var}
+y = c_0 + c_1 x,
+\end{equation}</p><p>yang dapat dituliskan untuk $p$ variabel bebas dalam bentuk vektor $c = (c_1, \dots, c_p)$ dengan $c_0$ ada titik potong$ [
+<a href=#r17><span>17 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], akan tetapi untuk saat ini hanya akan digunakan skalar karena $c = (c_1)$. Penerapan Persamaan \eqref{eqn:sse} pada Persamaan \eqref{eqn:linear-model-1-ind-var} akan memberikan</p><p>\begin{equation}\label{eqn:sse-linear-model-1-ind-var}
+{\rm SSE} = \sum_{i = 1}^n (y_i - c_0 - c_1 x_i)^2
+\end{equation}</p><p>untuk data $\{(x_i, y_i), i = 1, \dots, n\}$ dengan $n$ adalah jumlah pasangan data yang teramati [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Selanjutnya LS diterapkan untuk mencari $c_0$ dan $c_1$ yang membuat $\rm SSE$ minimum melalui</p><p>\begin{equation}\label{eqn:sse-lin-mod-min-c0}
+\frac{\partial {\rm SSE}}{\partial c_0} = 0
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:sse-lin-mod-min-c1}
+\frac{\partial {\rm SSE}}{\partial c_1} = 0.
+\end{equation}</p><p>Penerapan Persamaan \eqref{eqn:sse-lin-mod-min-c0} pada Persamaan \eqref{eqn:sse-linear-model-1-ind-var} akan memberikan</p><p>\begin{equation}\label{eqn:sse-min-c0=0}
+\begin{array}{rcl}
+\displaystyle \sum_{i = 1}^n 2 \cdot (y_i - c_0 - c_1 x_i) \cdot -1 & = & 0 \newline
+\displaystyle \sum_{i = 1}^n (y_i - c_0 - c_1 x_i) & = & 0 \newline
+\displaystyle \sum_{i = 1}^n y_i - c_0 \sum_{i = 1}^n 1 - c_1 \sum_{i = 1}^n x_i & = & 0,
+\end{array}
+\end{equation}</p><p>sedang penerapan Persamaan \eqref{eqn:sse-lin-mod-min-c1} pada Persamaan \eqref{eqn:sse-linear-model-1-ind-var} akan menghasilkan</p><p>\begin{equation}\label{eqn:sse-min-c1=0}
+\begin{array}{rcl}
+\displaystyle \sum_{i = 1}^n 2 \cdot (y_i - c_0 - c_1 x_i) \cdot -x_i & = & 0 \newline
+\displaystyle \sum_{i = 1}^n (y_i - c_0 - c_1 x_i) \cdot x_i & = & 0 \newline
+\displaystyle \sum_{i = 1}^n (x_i y_i - c_0 x_i - c_1 x_i^2) & = & 0 \newline
+\displaystyle \sum_{i = 1}^n x_i y_i - c_0 \sum_{i = 1}^n x_i - c_1 \sum_{i = 1}^n x_i^2 & = & 0.
+\end{array}
+\end{equation}</p><p>Kalikan Persamaan \eqref{eqn:sse-min-c0=0} dengan $\sum_{i = 1}^n x_i^2$ dan kurangi dengan Persamaan \eqref{eqn:sse-min-c1=0} yang telah dikalikan dengan $\sum_{i = 1}^n x_i$ akan menghasilkan</p><p>\begin{equation}\label{eqn:sse-min-find-c0}
+\begin{array}{rcl}
+\displaystyle \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n y_i - c_0 \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n 1 && \newline
+\displaystyle - \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i y_i + c_0 \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i & = & 0 \newline
+\displaystyle c_0 \left( \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i - \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n 1 \right) & = & \newline
+\displaystyle \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i y_i - \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n y_i \newline
+c_0 = \frac{\displaystyle \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i y_i - \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n y_i}{\displaystyle \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i - \sum_{i = 1}^n x_i^2 \sum_{i = 1}^n 1}. &&
+\end{array}
+\end{equation}</p><p>Selanjutnya, kalikan Persamaan \eqref{eqn:sse-min-c0=0} dengan $\sum_{i = 1}^n x_i$ dan kurangi dengan Persamaan \eqref{eqn:sse-min-c1=0} yang telah dikalikan dengan $\sum_{i = 1}^n 1$ akan menghasilkan</p><p>\begin{equation}\label{eqn:sse-min-find-c1}
+\begin{array}{rcl}
+\displaystyle \sum_{i = 1}^n x_i \sum_{i = 1}^n y_i - c_1 \sum_{i = 1}^n x_i \sum_{i = 1}^n x_1 && \newline
+\displaystyle - \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i y_i + c_1 \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i^2 & = & 0 \newline
+\displaystyle c_1 \left( \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i^2 - \sum_{i = 1}^n x_i \sum_{i = 1}^n x_i \right) & = & \newline
+\displaystyle \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i y_i - \sum_{i = 1}^n x_i \sum_{i = 1}^n y_i \newline
+c_1 = \frac{\displaystyle \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i y_i - \sum_{i = 1}^n x_i \sum_{i = 1}^n y_i}{\displaystyle \sum_{i = 1}^n 1 \sum_{i = 1}^n x_i^2 - \sum_{i = 1}^n x_i \sum_{i = 1}^n x_1}. &&
+\end{array}
+\end{equation}</p><p>Dari Persamaan \eqref{eqn:sse-min-find-c0} dan \eqref{eqn:sse-min-find-c1} telah diperoleh nilai $c_0$ dan $c_1$.</p><p>Kemudian, dapat didefinisikan beberapa simbol [
+<a href=#r18><span>18 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn:s1=n}
+n = \sum_{i = 1}^n 1,
+\end{equation}</p><p>\begin{equation}\label{eqn:sx}
+{\rm Sx} = \sum _{i = 1}^n x_i,
+\end{equation}</p><p>\begin{equation}\label{eqn:sy}
+{\rm Sy} = \sum _{i = 1}^n y_i,
+\end{equation}</p><p>\begin{equation}\label{eqn:sxx}
+{\rm Sxx} = \sum _{i = 1}^n x_i^2,
+\end{equation}</p><p>\begin{equation}\label{eqn:syy}
+{\rm Syy} = \sum _{i = 1}^n y_i^2,
+\end{equation}</p><p>\begin{equation}\label{eqn:sxy}
+{\rm Sxy} = \sum _{i = 1}^n x_i y_i,
+\end{equation}</p><p>\begin{equation}\label{eqn:syx}
+{\rm Syx} = \sum _{i = 1}^n y_i x_i,
+\end{equation}</p><p>dengan dua persamaan terakhir memiliki nilai yang sama. Dengan menggunakan Persamaan \eqref{eqn:s1=n} - \eqref{eqn:syx}, Persamaan \eqref{eqn:sse-min-find-c0} dan \eqref{eqn:sse-min-find-c1} dapat disederhanakan menjadi</p><p>\begin{equation}\label{eqn:slr-ols-c0}
+c_0 = \frac{ {\rm Sx} \ {\rm Sxy} - {\rm Sxx} \ {\rm Sy} }{ {\rm Sx} \ {\rm Sx} - {\rm Sxx} \ n}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:slr-ols-c1}
+c_1 = \frac{n \ {\rm Sxy} - {\rm Sx} \ {\rm Sy} }{n \ {\rm Sxx} - {\rm Sx} \ {\rm Sx} }.
+\end{equation}</p><p>Persamaan \eqref{eqn:sse-min-find-c0} dan \eqref{eqn:sse-min-find-c1} dapat dituliskan juga, dengan menyederhanakan somasinya</p><p>$$
+c_0 = \frac{ \sum x_i \sum x_i y_i - \sum x_i^2 \sum y_i }{ \sum x_i \sum x_i - \sum x_i^2 \sum 1}
+$$</p><p>dan</p><p>$$
+c_1 = - \frac{ \sum 1 \sum x_i y_i - \sum x_i \sum y_i }{\sum x_i \sum x_i - \sum x_i^2 \sum 1},
+$$</p><p>yang dapat disatukan menjadi</p><p>\begin{equation}\label{eqn:slr-ols-c0-c1}
+c_j = (-1)^j \ \ \frac{ \sum x_i^{1-j} \sum x_i y_i - \sum x_i^{2-j} \sum y_i }{\sum x_i \sum x_i - \sum x_i^2 \sum 1},
+\end{equation}</p><p>dengan $j = 0, 1$. Lalu, apakah bentuk terakhir ini dapat dibuat lebih sederhana? Misalnya dengan Einstein summation notation atau ESN [
+<a href=#r19><span>19 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]?</p><h2 id=exer>exer</h2><ol><li>Tunjukkan bagian yang berbeda dari formula adjusted r-square atau adjusted r-squared dari Persamaan \eqref{eqn:r2-adjusted} dan \eqref{eqn:r2-adjusted-other-version}.</li><li>Apa perbedaan Persaman \eqref{eqn:lr} dan \eqref{eqn:linear-model-1-ind-var}?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Nathaniel E. Helwig, &ldquo;Simple Linear Regression&rdquo;, Psychology and Statistics, University of Minnesota (Twin Cities), 4 Jan 2017, url
+<a href=http://users.stat.umn.edu/~helwig/notes/slr-Notes.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://users.stat.umn.edu/~helwig/notes/slr-Notes.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Simple linear regression&rdquo;, Wikipedia, The Free Encyclopedia, 15 November 2021, 03:35 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1055308884" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1055308884 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r03></a>&ldquo;Simple Linear Regression Least Squares Estimates of β0 and β1&rdquo;, Amherst College, Amherst, Massachusetts, 29 Nov 2011, url
+<a href=https://www.amherst.edu/system/files/media/1287/SLR_Leastsquares.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.amherst.edu/system/files/media/1287/SLR_Leastsquares.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r04></a>Eric W. Weisstein, &ldquo;Least Squares Fitting&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, url
+<a href=https://mathworld.wolfram.com/LeastSquaresFitting.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/LeastSquaresFitting.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r05></a>Steven J. Miller, &ldquo;The Method of Least Squares&rdquo;, Mathematics Department, Brown University, 22 Jul 2006, url
+<a href=https://web.williams.edu/Mathematics/sjmiller/public_html/BrownClasses/54/handouts/MethodLeastSquares.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://web.williams.edu/Mathematics/sjmiller/public_html/BrownClasses/54/handouts/MethodLeastSquares.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r06></a>gunes, &ldquo;Answer to &lsquo;Least Squares Estimator Vs Ordinary Least Squares Estimator&rsquo;&rdquo;, Cross Validated, 21 Feb 2019, url
+<a href=https://stats.stackexchange.com/a/393612 target=_blank rel="nofollow noopener noreferrer"><span>https://stats.stackexchange.com/a/393612 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r07></a>Essam Amin, &ldquo;Deriving the Normal Equation for Ordinary Least Squares&rdquo;, Towards Data Science, 13 Jul 2021, url
+<a href=https://towardsdatascience.com/8da168d740c target=_blank rel="nofollow noopener noreferrer"><span>https://towardsdatascience.com/8da168d740c <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r08></a>SmallChess, &ldquo;Answer to &lsquo;"Least Squares" and "Linear Regression", are they synonyms?&rsquo;&rdquo;, Cross Validated, 2 Feb 2017, edited by Firebug at 2 Feb 2017, url
+<a href=https://stats.stackexchange.com/a/259528 target=_blank rel="nofollow noopener noreferrer"><span>https://stats.stackexchange.com/a/259528 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r09></a>Stephanie Glen, &ldquo;IID Statistics: Independent and Identically Distributed Definition and Examples&rdquo;, from StatisticsHowTo.com: Elementary Statistics for the rest of us!, 11 May 2016, url
+<a href=https://www.statisticshowto.com/iid-statistics/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.statisticshowto.com/iid-statistics/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r10></a>Michael R. Kosorok, &ldquo;Bootstraps of sums of independent but not identically distributed stochastic processes&rdquo;, Journal of Multivariate Analysis [J Multivar Anal], vol 84, no 2, p 299-318, Feb 2003, url
+<a href=https://doi.org/10.1016/S0047-259X%2802%2900040-4 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1016/S0047-259X(02)00040-4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r11></a>Galen R. Shorack, Jon A. Wellner, &ldquo;Independent But Not Identically Distributed Random Variables, in Empirical Processes with Applications to Statistics, Ch 25, Classics in Applied Mathematics series, no 59, SIAM (Society for Industrial and Applied Mathematics), Revised edition, Dec 2009, url
+<a href=https://doi.org/10.1137/1.9780898719017.ch25 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1137/1.9780898719017.ch25 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r12></a>Nataša Erjavec, &ldquo;Tests for Homogeneity of Variance&rdquo;, in International Encyclopedia of Statistical Science, Miodrag Lovric (ed), Springer, Berlin, Heidelberg, 2011 edition, 2011, url
+<a href=https://doi.org/10.1007/978-3-642-04898-2_590 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1007/978-3-642-04898-2_590 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r13></a>&ldquo;homogeneity of variance&rdquo;, Dictionary, American Psychological Association (APA), 2020, url
+<a href=https://dictionary.apa.org/homogeneity-of-variance target=_blank rel="nofollow noopener noreferrer"><span>https://dictionary.apa.org/homogeneity-of-variance <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r14></a>Stephanie Glen, &ldquo;Homoscedasticity / Homogeneity of Variance/ Assumption of Equal Variance&rdquo;, from StatisticsHowTo.com: Elementary Statistics for the rest of us!, 25 Apr 2021, url
+<a href=https://www.statisticshowto.com/homoscedasticity/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.statisticshowto.com/homoscedasticity/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r15></a>&ldquo;Statistics of Fit&rdquo;, SAS Institute Inc., SAS OnlineDoc®, Version 8, Cary, NC: SAS Institute Inc., Sep 1999, url
+<a href=https://www.sfu.ca/sasdoc/sashtml/ets/chap30/sect19.htm target=_blank rel="nofollow noopener noreferrer"><span>https://www.sfu.ca/sasdoc/sashtml/ets/chap30/sect19.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r16></a>Deepanshu Bhalla, &ldquo;Difference between Adjusted R-squared and R-squared&rdquo;, Listen Data, Aug 2014, url
+<a href=https://www.listendata.com/2014/08/adjusted-r-squared.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.listendata.com/2014/08/adjusted-r-squared.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211201].</li><li><a name=r17></a>&ldquo;1.1. Linear Models&rdquo;, Scikit Learn, 2021, url
+<a href=https://scikit-learn.org/stable/modules/linear_model.html target=_blank rel="nofollow noopener noreferrer"><span>https://scikit-learn.org/stable/modules/linear_model.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211202].</li><li><a name=r18></a>Colin McGrath, &ldquo;How to Calculate Linearity&rdquo;, Sciencing, 25 Apr 2017, url
+<a href=https://sciencing.com/calculate-linearity-7560898.html target=_blank rel="nofollow noopener noreferrer"><span>https://sciencing.com/calculate-linearity-7560898.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211202].</li><li><a name=r18></a>Wikipedia contributors, &ldquo;Einstein notation&rdquo;, Wikipedia, The Free Encyclopedia, 15 October 2021, 02:03 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1049981313" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1049981313 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211202].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-lang=en data-theme=light data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0210?src=hash&amp;ref_src=twsrc%5Etfw">#bug0210</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1466991256165249027?ref_src=twsrc%5Etfw">December 4, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><h2 id=heading> </h2><p><a><span>slr ls line <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>slr ls gradient descent <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) yang pertama terdapat penyebut $(n - k)$ dan yang kedua $(n - k - 1)$; &nbsp;
+2) untuk model linier satu variabel bebas keduanya sama, untuk yang lain persamaan pertama lebih umum dari yang kedua; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

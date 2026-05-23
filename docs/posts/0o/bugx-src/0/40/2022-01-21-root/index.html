@@ -1,0 +1,120 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>root | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>root</h1><time datetime=2022-01-21T21:56:00+07:00>January 21, 2022</time><p>Dalam matematika akar merupakan suatu solusi dari suatu persamaan, yang biasanya dinyatakan sebagai angka atau formula aljabar [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Solusi yang dimaksud adalah membuat suatu persamaan menjadi bernilai nol sehingga sering dikatakan sebagai pembuat nol [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Namun agar diperhatikan bahwa terdapat penggunaan kata akar sebagai cara ringkas untuk menyatakan akar kuadrat [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat berbagai algoritma untuk mencari akar suatu persamaan dengan salah satu penggolongannya adalah metode kurung, interpolasi, metode iteratif, dan kombinasi berbagai metode [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. ROOT suatu framework analisis data sumber-terbuka, ditulis utamanya dalam C++, yang digunakan dalam fisika energi tinggi dan lainnya menyediakan kelas pencarian akar satu dimensi [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sebagaimana SciPy suatu piranti lunak sumber-terbuka, berbasiskan Python, untuk matematika, sains, dan rekayasa yang menyediakan setidaknya delapan algoritma untuk mencari akar suatu fungsi skalar [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Atau dapat pula suatu program dituliskan dalam Python tanpa perlu impor modul apapun [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=x1>x1</h2><p>Bila $x_1$ merupakan akar dari suatu persamaan $f(x)$ maka hubungan</p><p>\begin{equation}\label{eqn:root-of-f(x)}
+f(x_1) = 0
+\end{equation}</p><p>harus terpenuhi. Selain itu menyelesaikan persamaan</p><p>\begin{equation}\label{eqn:root-of-g(x)-h(x)}
+g(x) = h(x),
+\end{equation}</p><p>merupakan hal yang sama karena dapat dibentuk</p><p>\begin{equation}\label{eqn:root-of-f(x)=g(x)-h(x)}
+f(x) = g(x) - h(x),
+\end{equation}</p><p>sehingga solusi dari Persamaan \eqref{eqn:root-of-f(x)} juga merupakan solusi dari Persamaan \eqref{eqn:root-of-g(x)-h(x)} melalui hubungan pada Persamaan \eqref{eqn:root-of-f(x)=g(x)-h(x)}. Atau dapat pula dikatakan bahwa bentuk Persamaan \eqref{eqn:root-of-g(x)-h(x)} akan menjadi seperti pada Persamaan \eqref{eqn:root-of-f(x)} bila dipilih $h(x) = 0$.</p><h2 id=parabolic-motion>parabolic motion</h2><p>Benda yang dilemparkan dengan sudut peluncuran (en: launch angle) $\theta$ dan menempuh gerak parabola merupakan contoh yang akrab untuk aplikasi pencari akar suatu persamaan. Mencari kapan benda kembali menyentuh lantai mendatar merupakan pemanfaatkan dari Persamaan \eqref{eqn:root-of-f(x)}, sedangkan untuk sistem yang sama akan tetapi dengan lantai miring dengan sudut inklinasi $\beta$ tertentu merupakan penerapan Persamaan \eqref{eqn:root-of-f(x)=g(x)-h(x)}.</p><p>Dengan kecepatan awal benda $v_0$, sudut peluncuran $\theta$, posisi awal $(x_0, y_0)$ maka lintasan benda diperoleh berbentuk parabolik terbuka ke bawah atau lintasan peluru</p><p>\begin{equation}\label{eqn:parabolic-trajectory-y-x}
+p(x) = y = c_0 + c_1 \ x + c_2 \ x^2,
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c0}
+c_0 = y_0 - \tan\theta \ x_0 - \frac{g x_0^2}{2 v_0^2 \cos^2\theta},
+\end{equation}</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c1}
+c_1 = \tan\theta - \frac{g x_0}{v_0^2 \cos^2\theta},
+\end{equation}</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c2}
+c_2 = -\frac{g}{2 v_0^2 \cos^2\theta}.
+\end{equation}</p><p>Dan secara umum bidang lantai dapat dipilih berbentuk linier atau bidang miring atau menanjak (en: incline)</p><p>\begin{equation}\label{eqn:incline}
+i(x) = m(x - x_0) + y_0,
+\end{equation}</p><p>yang juga lewat titik $(x_0, y_0)$.</p><h3 id=level-plane>level plane</h3><p>Gerak parabola yang umum diperoleh saat benda dilemparkan di atas bidang mendatar dengan sudut luncur $\theta$ dan kecepatan awal $v_0$. Posisi titik awal $(x_0, y_0)$ biasanya berada pada bidang mendatar tersebut.</p><p>![]({{ site.baseurl }}/assets/img/0/40/0400-a.png)<br>Gambar <a name=fig1>1</a>. Benda menempuh gerak parabola di atas bidang mendatar dengan $\tan\theta = 4/3$, $v_0 = 50$, $x_0 = 0$, $y_0 = 10$, dan $g = 10$.</p><p>Menggunakan Persamaan \eqref{eqn:projectile-trajectory-y-x-c0}, \eqref{eqn:projectile-trajectory-y-x-c1}, dan \eqref{eqn:projectile-trajectory-y-x-c2}, serta informasi pada keterangan Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c0-level}
+\begin{array}{rcl}
+c_0 & = & \displaystyle 10 - (\tfrac43)(0) - \frac{(10)(0)^2}{2 (50)^2 (3/5)^2} \newline
+& = & 10 - 0 - 0 \newline
+& = & 10,
+\end{array}
+\end{equation}</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c1-level}
+\begin{array}{rcl}
+c_1 & = & \displaystyle \tfrac43 - \frac{(10) (0)}{(50)^2 (3/5)^2} \newline
+& = & \tfrac43 - 0 \newline
+& = & \tfrac43,
+\end{array}
+\end{equation}</p><p>\begin{equation}\label{eqn:projectile-trajectory-y-x-c2-level}
+\begin{array}{rcl}
+c_2 & = & \displaystyle -\frac{g}{2 v_0^2 \cos^2\theta} \newline
+& = & \displaystyle -\frac{10}{2 (50)^2 (3/5)^2} \newline
+& = & \displaystyle -\frac{10}{2 (2500) (9/25)} \newline
+& = & \displaystyle -\frac{10}{1800} \newline
+& = & - 0.00556,
+\end{array}
+\end{equation}</p><p>sehingga</p><p>\begin{equation}\label{eqn:parabolic-trajectory-y-x-level}
+p(x) = -0.00556 \ x^2 + \tfrac43 \ x + 10,
+\end{equation}</p><p>seperti dalam Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Dan dengan</p><p>\begin{equation}\label{eqn:level-plane}
+i(x) = 10
+\end{equation}</p><p>maka persoalan akar yang dicari adalah</p><p>\begin{equation}\label{eqn:parabolic-level-equation}
+\begin{array}{rcl}
+f(x) & = & 0 \newline
+p(x) - i(x) & = & 0 \newline
+(-0.00556 \ x^2 + \tfrac43 \ x + 10) - (10) & = & 0 \newline
+-0.00556 \ x^2 + \tfrac43 \ x & = & 0.
+\end{array}
+\end{equation}</p><p>Solusi dari Persamaan \eqref{eqn:parabolic-level-equation} adalah $x_1 = 0$ yang merupakan titik awal lintasan parabola dan $x_2 = (\frac43)/0.00556 \approx 240$ seperti terlihat pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=inclined-plane>inclined plane</h3><p>Gerak parabola yang lain adalah saat benda dilemparkan di atas bidang miring. Parameter benda meliputi sudut luncur $\theta$ dan kecepatan awal $v_0$, sedangkan untuk bidang miringnya perlu sudut inklinasi $\beta$. Kembali posisi titik awal $(x_0, y_0)$ biasanya berada pada bidang miring tersebut.</p><p>![]({{ site.baseurl }}/assets/img/0/40/0400-b.png)<br>Gambar <a name=fig2>2</a>. Benda menempuh gerak parabola di atas bidang miring dengan $\tan\theta = 4/3$, $v_0 = 50$, $x_0 = 0$, $y_0 = 10$, dan $g = 10$, serta $\tan\beta = 1/3$.</p><p>Untuk kasus ini Persamaan \eqref{eqn:parabolic-trajectory-y-x-level} kembali digunakan, dan dengan</p><p>\begin{equation}\label{eqn:inclined-plane}
+i(x) = \frac13 \ x + 10
+\end{equation}</p><p>akan membuat Persamaan \eqref{eqn:parabolic-level-equation} menjadi</p><p>\begin{equation}\label{eqn:parabolic-incline-equation}
+\begin{array}{rcl}
+f(x) & = & 0 \newline
+p(x) - i(x) & = & 0 \newline
+(-0.00556 \ x^2 + \tfrac43 \ x + 10) - (\frac13 \ x + 10) & = & 0 \newline
+-0.00556 \ x^2 + x& = & 0.
+\end{array}
+\end{equation}</p><p>Kembali diperoleh dua titik sebagai solusi dari Persaamaan \eqref{eqn:parabolic-incline-equation} yaitu $x_1 = 0$ dan $x_2 = 1 / 0.00556 \approx 180$ seperti ditunjukkan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=wavy-plane>wavy plane</h3><p>Gerak parabola yang jarang ada adalah saat benda dilemparkan di atas bidang yang bergelombang. Parameter benda masih meliputi sudut luncur $\theta$ dan kecepatan awal $v_0$, sedangkan untuk bidang bergelombangnya perlu persaman $i(x)$ Kembali digunakan posisi titik awal $(x_0, y_0)$ biasanya berada pada bidang bergelombang tersebut.</p><p>![]({{ site.baseurl }}/assets/img/0/40/0400-c.png)<br>Gambar <a name=fig3>3</a>. Benda menempuh gerak parabola di atas bidang bergelombang dengan $\tan\theta = 4/3$, $v_0 = 50$, $x_0 = 0$, $y_0 = 10$, dan $g = 10$.</p><p>Pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>digunakan persamaan untuk bidang bergelombang dalam bentuk</p><p>\begin{equation}\label{eqn:wavy-plane}
+i(x) = 10 + 10\sin(2\pi/200) \cdot 0.012x,
+\end{equation}</p><p>yang akan memberikan solusi pada posisi $x_1 = 0$ dan sekitar $x_2 = 225$ menurut Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=others>others</h2><p>Selain gerak parabola, sistem fisis yang memerlukan konsep akar adalah peristiwa sebuah mobil menyusul mobil di depannya, peristiwa tumbukan antara dua bukan benda titik, penentuan titik pantul suatu berkas cahaya yang menuju cermin, gerak memantul bola pada lantai bergelombang, dan lain-lain.</p><h2 id=exer>exer</h2><ol><li>Tunjukkan bagaimana $c_0$, $c_1$, dan $c_2$ dari Persamaan \eqref{eqn:parabolic-trajectory-y-x} dapat diperoleh.</li><li>Tuliskan persamaan yang harus dipecahkan untuk mendapatkan $x_2$ dari Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Terdapat suatu bandul matematis yang berayun-ayun. Sebuah bola ditembakan pada waktu, sudut luncur, dan kecepatan tertentu. Ingin dicari kapan bola menyentuh bandul dan di mana. Apakah sistem ini termasuk dalam sistem yang memerlukan konsep akar?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>The Editors of Encyclopaedia Britannica, William L. Hosch, Gloria Lotha, &ldquo;root&rdquo;, Encyclopaedia Britannica, 10 Jan 2011, url url
+<a href=https://www.britannica.com/science/root-mathematics target=_blank rel="nofollow noopener noreferrer"><span>https://www.britannica.com/science/root-mathematics <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r02></a>Eric Weisstein, &ldquo;Root&rdquo;, MathWorld&ndash;A Wolfram Web Resource, Wolfram Research, 2022, url
+<a href=https://mathworld.wolfram.com/Root.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/Root.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r03></a>Rod Pierce, &ldquo;Root Definition (Illustrated Mathematics Dictionary)&rdquo;, Math Is Fun, Rod Pierce (Ed.), 28 Oct 2018, url
+<a href=http://www.mathsisfun.com/definitions/root.html target=_blank rel="nofollow noopener noreferrer"><span>http://www.mathsisfun.com/definitions/root.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r04></a>Wikipedia contributors, &ldquo;Root-finding algorithms&rdquo;, Wikipedia, The Free Encyclopedia, 20 September 2021, 22:17 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1045507141" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1045507141 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r05></a>ROOT Team, &ldquo;One-dimensional Root-Finding&rdquo;, ROOT Data Analysis Framework, Reference Guide, Version 6.28, 5 Jan 2022, url
+<a href=https://root.cern/doc/master/group__RootFinders.html target=_blank rel="nofollow noopener noreferrer"><span>https://root.cern/doc/master/group__RootFinders.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r06></a>The SciPy community, &ldquo;Root finding&rdquo;, SciPy documentation, Version 1.7.1, 1 Aug 2021, url
+<a href=https://docs.scipy.org/doc/scipy/reference/optimize.html#root-finding target=_blank rel="nofollow noopener noreferrer"><span>https://docs.scipy.org/doc/scipy/reference/optimize.html#root-finding <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li><li><a name=r07></a>Mohammad-Ali Bandzar, &ldquo;Finding a Functions Roots with Python&rdquo;, Medium, 18 Jun 2020, url
+<a href=https://medium.com/swlh/finding-a-functions-roots-with-python-590eca0d22a5 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/swlh/finding-a-functions-roots-with-python-590eca0d22a5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220122].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0400?src=hash&amp;ref_src=twsrc%5Etfw">#bug0400</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1484903145658793984?ref_src=twsrc%5Etfw">January 22, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $$ \begin{array}{rcl}
+x & = & x_0 + v_0 \cos\theta \ t, \newline
+t & = & \displaystyle \frac{x - x_0}{v_0 \cos\theta}, \newline
+y & = & y_0 + v_0 \sin\theta \ t - \tfrac12 gt^2 \newline
+& = & \displaystyle y_0 + v_0 \sin\theta \left( \frac{x - x_0}{v_0 \cos\theta} \right) - \tfrac12 g \left( \frac{x - x_0}{v_0 \cos\theta} \right)^2 \newline
+& = & \displaystyle y_0 + \tan\theta (x - x_0) - \left( \frac{\tfrac12 g}{v_0^2 \cos^2\theta} \right)
+( x^2 + 2x_0x + x_0^2) \newline
+& = & \displaystyle \left( y_0 - \tan\theta \ x_0 - \frac{g x_0^2}{2 v_0^2 \cos^2\theta} \right) \newline
+&& \displaystyle + \left( \tan\theta - \frac{g x_0}{v_0^2 \cos^2\theta} \right) x + \left( -\frac{g}{2 v_0^2 \cos^2\theta} \right) x^2 \newline
+& = & c_0 + c_1 \ x + c_2 \ x^2;
+\end{array} $$ &nbsp;
+2) $f(x) = -0.00556 \ x^2 + \frac43 x - 10\sin(2\pi/200) \cdot 0.012x$; &nbsp;
+3) ya karena merupakan bagian dari peristiwa tumbukan; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

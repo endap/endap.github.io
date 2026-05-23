@@ -1,0 +1,61 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>fetch backend | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>fetch backend</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-07-19T09:00:06 07:00">19 Jul 2025</time>
+&#183;
+1 min read</div></div><div class=note-content><script src=/js/src/25e41.js defer></script><script src=/js/src/25g54.js defer></script><div id=cnt1></div><script>document.addEventListener("DOMContentLoaded",function(){main_25g54()})</script><h2 id=apppy>app.py</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># flask --app app run --debug --port=5500</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> flask <span style=color:#f92672>import</span> Flask, request, jsonify
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> flask_cors <span style=color:#f92672>import</span> CORS
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>app <span style=color:#f92672>=</span> Flask(__name__)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>CORS(app, resources<span style=color:#f92672>=</span>{<span style=color:#e6db74>r</span><span style=color:#e6db74>&#34;/*&#34;</span>: {<span style=color:#e6db74>&#34;origins&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;http://localhost:1313&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;https://dudung.github.io&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;https://dudung.github.io/butiran&#34;</span>
+</span></span><span style=display:flex><span>]}})
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@app.route</span>(<span style=color:#e6db74>&#34;/&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>home</span>():
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Request from Origin:&#34;</span>, request<span style=color:#f92672>.</span>headers<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;Origin&#34;</span>))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;a response from butiran-backend on pythonanywhere&#34;</span>
+</span></span></code></pre></div><h2 id=in-post>in post</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>main_25g54</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>main_25g54</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cnt</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;cnt1&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;flex&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>style2</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;300px&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;200px&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>overflowY</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;scroll&#34;</span>,
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>txa</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;textarea&#34;</span>, <span style=color:#a6e22e>style2</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>txa</span>.<span style=color:#a6e22e>id</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;txa1&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>style3</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;25px&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;60px&#34;</span>,
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>btn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>, <span style=color:#a6e22e>style3</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Fetch&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>txa</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>btn</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;click&#34;</span>);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>baseURL</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>hostname</span>.<span style=color:#a6e22e>includes</span>(<span style=color:#e6db74>&#34;localhost&#34;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#f92672>?</span> <span style=color:#e6db74>&#34;http://localhost:5500/&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;https://butiran.pythonanywhere.com/&#34;</span>;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>baseURL</span>)
+</span></span><span style=display:flex><span>      .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>response</span> =&gt; <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>text</span>())
+</span></span><span style=display:flex><span>      .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>data</span> =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>txa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>data</span>;
+</span></span><span style=display:flex><span>      })
+</span></span><span style=display:flex><span>      .<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>error</span> =&gt; <span style=color:#a6e22e>txa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;Error fetching data:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>error</span>);
+</span></span><span style=display:flex><span>  })
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

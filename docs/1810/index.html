@@ -1,0 +1,109 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>Scatter plot with Chart.js | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>Scatter plot with Chart.js</h1><time datetime=2024-01-12T08:18:18+07:00>January 12, 2024</time><p>Create shortcode for scatter plot with
+<a href=https://www.chartjs.org/ target=_blank rel="nofollow noopener noreferrer"><span>Chart.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=create-post>create post</h2><pre tabindex=0><code>$ hugo new content tests/scatter-plot-with-chart-js.md
+Content &#34;D:\\blank\\content\\tests\\scatter-plot-with-chart-js.md&#34; created
+</code></pre><p>It is placed in <code>content/tests</code> folder while the shortcode being developed.</p><h2 id=tests-1>tests 1</h2><pre tabindex=0><code>{{&lt; blank/scatter 80 320 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-1,Data-2,Data-3
+B_PCOLOR #f88,#88f,#8f8
+B_PRADII 4,6,0
+B_LVISIB false,true,true
+B_LCOLOR #f88,#88f,#8f8
+
+5.000,3.000
+4.902,3.618
+4.618,4.176
+4.176,4.618
+3.618,4.902
+3.000,5.000
+2.382,4.902
+1.824,4.618
+1.382,4.176
+1.098,3.618
+1.000,3.000
+1.098,2.382
+1.382,1.824
+1.824,1.382
+2.382,1.098
+3.000,1.000
+3.618,1.098
+4.176,1.382
+4.618,1.824
+4.902,2.382
+
+12.000,3.000
+11.934,3.624
+11.741,4.220
+11.427,4.763
+11.007,5.229
+10.500,5.598
+9.927,5.853
+9.314,5.984
+8.686,5.984
+8.073,5.853
+7.500,5.598
+6.993,5.229
+6.573,4.763
+6.259,4.220
+6.066,3.624
+6.000,3.000
+6.066,2.376
+6.259,1.780
+6.573,1.237
+6.993,0.771
+7.500,0.402
+8.073,0.147
+8.686,0.016
+9.314,0.016
+9.927,0.147
+10.500,0.402
+11.007,0.771
+11.427,1.237
+11.741,1.780
+11.934,2.376
+
+9.000,2.000
+8.809,2.588
+8.309,2.951
+7.691,2.951
+7.191,2.588
+7.000,2.000
+7.191,1.412
+7.691,1.049
+8.309,1.049
+8.809,1.412
+{{&lt; /blank/scatter &gt;}}
+</code></pre><h2 id=test-2>test 2</h2><pre tabindex=0><code>{{&lt; blank/scatter 80 360 &gt;}}
+B_XLABEL x-y
+B_YLABEL x+y
+B_SLABEL A,B,C
+B_PCOLOR #22a,#2a2,#a22
+B_PRADII 0,4,8
+B_LVISIB true,false,false
+B_LCOLOR #22a,#dfd,#fdd
+
+0,0
+1,0
+1,1
+0,1
+
+3,0
+3,2
+5,2
+5,0
+4,1
+
+7,0
+8,4
+9,7
+10,9
+11,9.5
+12,9
+13,7
+14,4
+15,0
+{{&lt; /blank/scatter &gt;}}
+</code></pre><h2 id=version-1>version 1</h2><ul><li>Features<ul><li>Multi series with label,</li><li>Point, line, line-point,</li><li>Color for point and line,</li><li>Axis label.</li></ul></li><li>Problems<ul><li>hoverRadius seems wierd.</li></ul></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

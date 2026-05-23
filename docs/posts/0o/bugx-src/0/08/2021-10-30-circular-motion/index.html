@@ -1,0 +1,94 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>circular motion | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>circular motion</h1><time datetime=2021-10-31T19:03:00+07:00>October 31, 2021</time><p>Termasuk di dalam gerak 2d adalah gerak melingkar yang dapat diperkenalkan tanpa notasi vektor 2d dalam koordinat kartesian $(x, y)$ dan langsung ke besaran angular $\theta$, $\omega$, $\alpha$ [
+<a href=#ref01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], menggunakan ilustrasi penjumlahan vektor untuk mendapatkan percepatan sentripetal bagi gerak melingkar beraturan atau GMB dengan masih tanpa notasi vektor dalam koordinat kartesian secara eksplisit [
+<a href=#ref02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dan menampillkan gerak melingkar dalam variabel-variabel koordinat kartesian secara eksplisit [
+<a href=#ref03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#ref04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=cartesian-coordinate-system>cartesian coordinate system</h2><p>Dalam sistem koordinat Kartesius [
+<a href=#ref05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dapat dirumuskan fungsi posisi untuk suatu gerak melingkar beraturan atau GMB dalam bentuk</p><p>$$
+x = x_c + R \cos (\omega t + \phi),
+$$</p><p>$$
+y = y_c + R \sin (\omega t + \phi),
+$$</p><p>dengan $(x_c, y_c)$ pusat lintasan lingkaran, $R$ jari-jari, $\omega$ frekuensi angular atau frekuensi sudut, $t$ waktu, dan $\phi$ fasa awal. Umumnya untuk memudahkan dipilih $x_c = 0$ dan $y_c = 0$, yang juga akan digunakan di sini</p><p>\begin{equation}\label{eqn-circular-motion-x}
+x = R \cos (\omega t + \phi),
+\end{equation}</p><p>\begin{equation}\label{eqn-circular-motion-y}
+y = R \sin (\omega t + \phi),
+\end{equation}</p><p>Selanjutnya dengan menggunakan hubungan antara $v_x$ dan $x$, melalui</p><p>\begin{equation}\label{eqn-circular-motion-vx-dif-x}
+v_x = \frac{dx}{dt},
+\end{equation}</p><p>yang juga berlaku untuk $v_y$ dan $y$, dapat diperoleh dari Persamaan \eqref{eqn-circular-motion-x} dan \eqref{eqn-circular-motion-y}</p><p>\begin{equation}\label{eqn-circular-motion-vx}
+v_x = -\omega R \sin (\omega t + \phi),
+\end{equation}</p><p>\begin{equation}\label{eqn-circular-motion-vy}
+v_y = \omega R \cos (\omega t + \phi),
+\end{equation}</p><p>fungsi percepatan setiap waktunya.</p><p>Kemudian dengan menggunakan hubungan antara $a_x$ dan $v_x$, melalui</p><p>\begin{equation}\label{eqn-circular-motion-ax-dif-vx}
+a_x = \frac{dv_x}{dt},
+\end{equation}</p><p>yang juga berlaku untuk $a_y$ dan $v_y$, dari Persamaan \eqref{eqn-circular-motion-vx} dan \eqref{eqn-circular-motion-vy} dapat diperoleh</p><p>\begin{equation}\label{eqn-circular-motion-ax}
+a_x = -\omega^2 R \cos (\omega t + \phi),
+\end{equation}</p><p>\begin{equation}\label{eqn-circular-motion-ay}
+a_y = -\omega^2 R \sin (\omega t + \phi),
+\end{equation}</p><p>yang adalah fungsi percepatan setiap waktunya.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0082-a.png)<br>Gambar <a name=fig1>1</a>. Lintasan suatu GMB dengan vektor kecepatannya (panah biru) dan percepatannya (panah hijau) pada saat $t = 0, \frac14 T, \frac58 T$ dengan urutan berlawanan arah arah putar jarum jam.</p><p>Baik dari Persamaan \eqref{eqn-circular-motion-vx}, \eqref{eqn-circular-motion-vy}, \eqref{eqn-circular-motion-ax}, \eqref{eqn-circular-motion-ay} maupun Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terlihat bahwa arah kecepatan suatu GMB selalu tegak lurus dengan lintasannya dan arah percepatannya selalu menuju pusat lintasan lingkaran.</p><h3 id=trajectory>trajectory</h3><p>Dengan menggunakan Persamaan \eqref{eqn-circular-motion-x} dan \eqref{eqn-circular-motion-y} dapat diperoleh hubungan</p><p>\begin{equation}\label{eqn-circular-motion-trajectory}
+x^2 + y^2 = R^2,
+\end{equation}</p><p>yang menunjukkan bahwa lintasannya berbentuk lingkaran dengan pusat berada pada titik $(0, 0)$.</p><h3 id=tangential-velocity>tangential velocity</h3><p>Dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terlihat untuk suatu GMB arah kecepatannya selalu tegak lurus dengan vektor posisinya atau lintasannya. Kecepatan ini disebut sebagai kecepatan tangensial $v_T$. Dengan menggunakan Persamaan \eqref{eqn-circular-motion-vx} dan \eqref{eqn-circular-motion-vy} dapat diperoleh hubungan</p><p>\begin{equation}\label{eqn-circular-motion-tangensial-velocity}
+\begin{array}{rcl}
+v & \equiv & v_T, \newline
+v & = & \sqrt{v_x^2 + v_y^2} \newline
+& = & \omega R, \newline
+\end{array}
+\end{equation}</p><p>yang menunjukkan kaitannya dengan kecepatan sudut atau kecepatan angular $\omega$.</p><h3 id=radial-acceleration>radial acceleration</h3><p>Untuk suatu GMB telah ditunjukkan oleh Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bahwa arah percepatannya selalu menuju pusat lintasan lingkaran. Besarnya dapat diperoleh dengan menggunakan Persamaan \eqref{eqn-circular-motion-ax} dan \eqref{eqn-circular-motion-ay}</p><p>\begin{equation}\label{eqn-circular-motion-centripetal-acceleration}
+\begin{array}{rcl}
+a & \equiv & a_C \equiv a_R, \newline
+a & = & \sqrt{a_x^2 + a_y^2} \newline
+& = & \omega^2 R, \newline
+\end{array}
+\end{equation}</p><p>yang dikenal dengan percepatan sentripetal. Tanda negatif di depan Persamaan \eqref{eqn-circular-motion-ax} dan \eqref{eqn-circular-motion-ay}, yang bila dibandingkan dengan bentuk vektor posisinya pada Persamaan \eqref{eqn-circular-motion-x} dan \eqref{eqn-circular-motion-y}, telah jelas terlihat bahwa percepatan sentripetal selalu mengarah ke pusat lintasan. Pada \eqref{eqn-circular-motion-centripetal-acceleration} tanda ini hilang karena adanya operasi pengkuadratan.</p><p>Perlu diingat bahwa percepatan \eqref{eqn-circular-motion-centripetal-acceleration} memiliki bentuk demikian hanya untuk GMB. Untuk gerak lurus berubah beraturan atau GMBB akan terdapat komponen lain untuk percepatan. Dengan percepatan tidak lagi sama dengan percepatan sentripetal karena ada percepatan pada arah angular.</p><h2 id=polar-coordinate>polar coordinate</h2><p>Pada koordinat polar [
+<a href=#ref06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] variabelnya adalah posisi radial $r$ dan posisi angular $\theta$. Untuk lintasan berbentuk lingkaran dengan jari-jari $R$, posisi radial akan tetap sehingga</p><p>\begin{equation}\label{eqn-circular-motion-r}
+r = R.
+\end{equation}</p><p>Untuk posisi angular $\theta$ dapat diilustrasikan dengan menggunakan busur lingkaran. Bila panjang suatu busur lingkaran adalah $\Delta s$ dan jari-jari lingkaran adalah $R$ maka sudut yang terlingkupi busur tersebut adalah</p><p>\begin{equation}\label{eqn-circular-motion-polar-theta}
+\Delta \theta = \frac{\Delta s}{R},
+\end{equation}</p><p>yang dapat diingat dengan mengaitkannya dengan keliling sebuah lingkaran, di mana $\Delta \theta = 2\pi$ sehingga diperoleh $\Delta s = 2\pi R$.</p><p>![]({{ site.baseurl }}/assets/img/0/08/0082-b.png)<br>Gambar <a name=fig2>2</a>. Kiri: Panjang suatu busur lingkaran $\Delta s$ yang melingkupi sudut $\Delta \theta$. Kanan: Posisi angular $\theta$ dengan padanannya posisi sepanjang keliling lingkaran $s$.</p><p>Selanjutnya sering digunakan, untuk penyederhanaan $\Delta s \equiv s$ dan $\Delta \theta \equiv \theta$ dengan tetap mengingat bahwa keduanya adalah rentang jarak dan rentang sudut. Hal ini dapat dilakukan dengan asumsi bahwa terdapat referensi titik nol untuk $s$ dan $\theta$ seperti diilustrasikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(kanan).</p><h2 id=formula>formula</h2><p>Dengan menggunakan Persamaan \eqref{eqn-circular-motion-tangensial-velocity} dan \eqref{eqn-circular-motion-polar-theta} dapat dituliskan analogi antar keduanya untuk kinematika, sementara terdapat hal-hal lain yang juga dapat dianalogikan [
+<a href=#ref07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] akan tetapi belum disampaikan di sini.</p><p>Tabel <a name=tab1>1</a>. Analogi variabel dan persamaan kinematika antar gerak lurus dan gerak melingkar.</p><table><thead><tr><th style=text-align:left><strong>Hal</strong></th><th style=text-align:left>Gerak Lurus</th><th style=text-align:left>Gerak Melingkar</th></tr></thead><tbody><tr><td style=text-align:left><strong>Posisi</strong></td><td style=text-align:left>$s$, $s_0$, $\Delta s$ ($\rm m$)</td><td style=text-align:left>$\theta$, $\theta_0$, $\Delta \theta$ ($\rm rad$)</td></tr><tr><td style=text-align:left><strong>Kecepatan</strong></td><td style=text-align:left>$v$, $v_0$ ($\rm m/s$)</td><td style=text-align:left>$\omega$, $\omega_0$ ($\rm rad/s$)</td></tr><tr><td style=text-align:left><strong>Percepatan</strong></td><td style=text-align:left>$a$ ($\rm m/s^2$)</td><td style=text-align:left>$\alpha$ ($\rm rad/s^2$)</td></tr><tr><td style=text-align:left><strong>Relasi</strong></td><td style=text-align:left>$s = \theta \ R$</td><td style=text-align:left>$\displaystyle \theta = \frac{s}{R}$</td></tr><tr><td style=text-align:left>$v = \omega \ R$</td><td style=text-align:left>$\displaystyle \omega = \frac{v}{R}$</td><td></td></tr><tr><td style=text-align:left>$a = \alpha \ R$</td><td style=text-align:left>$\displaystyle \alpha = \frac{a}{R}$</td><td></td></tr><tr><td style=text-align:left><strong>Persamaan</strong></td><td style=text-align:left>$v = v_0 + at$</td><td style=text-align:left>$\omega = \omega_0 + \alpha t$</td></tr><tr><td style=text-align:left>$s = s_0 + v_0 t + \frac12 a t^2$</td><td style=text-align:left>$\theta = \theta_0 + \omega_0 t + \frac12 \alpha t^2$</td><td></td></tr><tr><td style=text-align:left>$v^2 = v_0^2 + 2as$</td><td style=text-align:left>$\omega^2 = \omega_0^2 + 2 \alpha \theta$</td><td></td></tr></tbody></table><p>Pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>telah ditambahkan percepatan sudut $\alpha$ yang merupakan ciri dari GMBB.</p><h2 id=exer>exer</h2><ol><li>Apakah perbedaan nilai untuk posisi pada gerak lurus dan gerak melingkar?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Robert C., &ldquo;Unit 2 - 2D Kinematics - Uniform Circular Motion Review&rdquo;, Numerade, url
+<a href=https://www.numerade.com/courses/physics-101-mechanics/motion-in-2d-or-3d/uniform-circular-motion-overview/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.numerade.com/courses/physics-101-mechanics/motion-in-2d-or-3d/uniform-circular-motion-overview/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r02></a>M. Dubson, &ldquo;Motion in 2D&rdquo;, Physics 1110, Fall 2012, url
+<a href=https://physicscourses.colorado.edu/phys1110/phys1110_fa12/LectureNotes/Motion2D.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://physicscourses.colorado.edu/phys1110/phys1110_fa12/LectureNotes/Motion2D.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r03></a>David J. Starling, &ldquo;Chapter 4 - Motion in 2D and 3D&rdquo;, PHYS 211 General Physics: Mechanics, Penn State Hazleton, 27 Sep 2012, url
+<a href=http://www.personal.psu.edu/djs75/p211/lecture/ch4.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://www.personal.psu.edu/djs75/p211/lecture/ch4.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r04></a>Beatriz Roldán Cuenya, &ldquo;Chapter 4 – 2D and 3D Motion&rdquo;, PHY 2048 Physics for Scientists & Engineers I, Spring 2023, The University of Central Florida, url
+<a href=https://physics.ucf.edu/~roldan/classes/phy2048-ch4_sp12.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://physics.ucf.edu/~roldan/classes/phy2048-ch4_sp12.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r05></a>Wikipedia contributors, &ldquo;Cartesian coordinate system&rdquo;, Wikipedia, The Free Encyclopedia, 30 August 2021, 17:35 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1041463197" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1041463197 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r06></a>Wikipedia contributors, &ldquo;Polar coordinate system&rdquo;, Wikipedia, The Free Encyclopedia, 14 September 2021, 10:13 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1044261299" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1044261299 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li><li><a name=r07></a>S. M. Blinder, &ldquo;Analogies between Kinematics of Linear and Angular Motion&rdquo;, Wolfram Demonstrations Project, 9 Oct 2018, url
+<a href=https://demonstrations.wolfram.com/AnalogiesBetweenKinematicsOfLinearAndAngularMotion/ target=_blank rel="nofollow noopener noreferrer"><span>https://demonstrations.wolfram.com/AnalogiesBetweenKinematicsOfLinearAndAngularMotion/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211030].</li></ol><h2 id=heading> </h2><p><a><span>uniform linear motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>nonuniform linear motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>superposition principle <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>kinematics 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>polar coordinates intro <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>uniform circular motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) Dapat bernilai berapa saja pada gerak lurus, akan tetapi pada gerak melingkar terbatas antara $0$ dan $2\pi$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,102 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>m func der diff | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>m func der diff</h1><time datetime=2023-10-02T16:11:00+07:00>October 2, 2023</time><h2 id=differentiation-and-derivative>differentiation and derivative</h2><ul><li>Differentiation is a technique which can be used for analyzing the way in which a functions change, or in particular, it measures how rapidly a function is changing at any point (
+<a href=https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/images/Intro_diffrntiatn.pdf target=_blank rel="nofollow noopener noreferrer"><span>HELM, 2008 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>In mathematics, differentiation is a process of finding the derivative, or rate of change, of a function, which can be carried out by purely algegraic manipulations using three basic derivatives, four rules of operation, and a knowledge of how to manipulate functions (
+<a href=https://www.britannica.com/science/differentiation-mathematics target=_blank rel="nofollow noopener noreferrer"><span>Britannica, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>Differentiation is a method of computing a derivative which the rate of change of the output $y$ of the function with respect to the change of the variable $x$ (
+<a href=https://www.tutorialspoint.com/difference-between-differential-and-derivative target=_blank rel="nofollow noopener noreferrer"><span>Nanda, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>Differentiation is a process that gives the derivative (
+<a href=https://math.stackexchange.com/a/2519697/645927 target=_blank rel="nofollow noopener noreferrer"><span>TZakrevskiy, 2017 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li></ul><h2 id=polynomial-function>polynomial function</h2><ul><li><p>It can be represented as its coefficient, e.g.</p><p>$$\tag{1}
+f(x) = \sum_{i = 0}^n a_i \ x^i \equiv [a_n \ \ a_{n-1} \ \ \dots \ \ a_i \ \ \dots \ \ a_1 \ \ a_0].
+$$</p></li><li><p>Its derivative $\displaystyle g(x) = \frac{df(x)}{dx}$ will be</p><p>$$\tag{2}
+g(x) = \sum_{i = 0}^{n-1} b_i \ x^i \equiv [b_n \ \ b_{n-1} \ \ \dots \ \ b_i \ \ \dots \ \ b_1 \ \ b_0].
+$$</p></li><li><p>And the relation between two sets of coefficients $\mathbf{b}$ and $\mathbf{a}$, in term of each element, is</p><p>$$\tag{3}
+b_i = (i+1) \ a_{i+1}, \ \ \ , i = 1, \ 2, \ 3, \ \dots, \ (n-1).
+$$</p></li></ul><h2 id=string-inline-function>string, inline, function</h2><ul><li>A string representation of a polynomial, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>fstr <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>&#39;</span>x<span style=color:#f92672>^</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>10</span>x <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>&#39;</span>;
+</span></span></code></pre></div></li><li>A function can be constructed from the string, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>f <span style=color:#f92672>=</span> inline(fstr);
+</span></span></code></pre></div></li><li>A value can be calculated from the function, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>f2 <span style=color:#f92672>=</span> f(<span style=color:#ae81ff>2</span>);
+</span></span></code></pre></div></li><li>Complete code is as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>fstr <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>&#39;</span>x<span style=color:#f92672>^</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>10</span>x <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>&#39;</span>;
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> inline(fstr);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>x<span style=color:#960050;background-color:#1e0010>\</span>tf(x)<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span><span style=display:flex><span>for x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span><span style=color:#960050;background-color:#1e0010>:</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> f(x);
+</span></span><span style=display:flex><span>  fprintf(<span style=color:#960050;background-color:#1e0010>&#39;%</span><span style=color:#ae81ff>.1</span>f<span style=color:#960050;background-color:#1e0010>\</span>t<span style=color:#960050;background-color:#1e0010>%</span><span style=color:#ae81ff>.1</span>f<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, x, y);
+</span></span><span style=display:flex><span>end
+</span></span></code></pre></div>with<pre tabindex=0><code>&gt;&gt; str_inline_func
+x	f(x)
+0.0	1.0
+1.0	12.0
+2.0	25.0
+3.0	40.0
+4.0	57.0
+5.0	76.0
+6.0	97.0
+7.0	120.0
+8.0	145.0
+9.0	172.0
+10.0	201.0
+</code></pre>as the result.</li></ul><h2 id=coeffs-string-inline-function>coeffs, string, inline, function</h2><ul><li>Previous polynomial function $f(x) = x^2 + 10x + 1$ can definede through its coefficients, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>b <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>10</span> <span style=color:#ae81ff>1</span>];
+</span></span></code></pre></div></li><li>String of it can be constructed using <code>poly2sym</code> function, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>gstr <span style=color:#f92672>=</span> poly2sym(b);
+</span></span></code></pre></div></li><li>The function is defined through <code>inline</code> function, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>g <span style=color:#f92672>=</span> inline(gstr);
+</span></span></code></pre></div></li><li>Value of the function is obtained simply by passing value as argument, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>g_m1 <span style=color:#f92672>=</span> g(<span style=color:#ae81ff>-1</span>);
+</span></span></code></pre></div></li><li>The complete code is as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span>b <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>10</span> <span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>gstr <span style=color:#f92672>=</span> poly2sym(b);
+</span></span><span style=display:flex><span>g <span style=color:#f92672>=</span> inline(gstr);
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>-1</span>;
+</span></span><span style=display:flex><span>g_m1 <span style=color:#f92672>=</span> g(x);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>f(<span style=color:#960050;background-color:#1e0010>%</span><span style=color:#ae81ff>.2</span>f) <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>%</span><span style=color:#ae81ff>.2</span>f<span style=color:#960050;background-color:#1e0010>&#39;</span>, x, g_m1);
+</span></span></code></pre></div>with<pre tabindex=0><code>&gt;&gt; coeffs_str_inline_func
+f(-1.00) = -8.00
+</code></pre>as the result.</li><li>It is confirmed that $f(-1) = (-1)^2 + 10(-1) + 1 = -8$.</li></ul><h2 id=polyder-and-diff>polyder and diff</h2><ul><li>Results are as follow.<pre tabindex=0><code>&gt;&gt; polyder_diff
+function
+a = [1, 1, 1, 1, 1]
+f(x) = x + x^2 + x^3 + x^4 + 1
+
+derivative using polyder
+b = [4, 3, 2, 1]
+g(x) = 2*x + 3*x^2 + 4*x^3 + 1
+
+derivative using diff
+h(x) = 2*x + 3*x^2 + 4*x^3 + 1
+</code></pre></li><li>And the complete code is given below.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-m data-lang=m><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> polyder_diff
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>clear;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> define a polynomial function
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>fstr <span style=color:#f92672>=</span> poly2sym(a);
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> inline(fstr);   <span style=color:#960050;background-color:#1e0010>%</span> not necessary
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> calculate derivative <span style=color:#ae81ff>1</span>st way
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> polyder(a);
+</span></span><span style=display:flex><span>gstr <span style=color:#f92672>=</span> poly2sym(b);
+</span></span><span style=display:flex><span>g <span style=color:#f92672>=</span> inline(gstr);   <span style=color:#960050;background-color:#1e0010>%</span> not necessary
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> calculate derivative <span style=color:#ae81ff>2</span>nd way
+</span></span><span style=display:flex><span>hstr <span style=color:#f92672>=</span> diff(fstr);
+</span></span><span style=display:flex><span>h <span style=color:#f92672>=</span> inline(hstr);   <span style=color:#960050;background-color:#1e0010>%</span> not necessary
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> display initial polynomial function
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>function<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>)
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>a <span style=color:#f92672>=</span> [<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;%</span>g, <span style=color:#960050;background-color:#1e0010>&#39;</span>, a(<span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>:</span>end<span style=color:#ae81ff>-1</span>));
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;%</span>g]<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, a(end));
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>f(x) <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>%</span>s<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, fstr);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> display derivative using <span style=color:#ae81ff>1</span>st way
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>derivative using polyder<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>)
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>b <span style=color:#f92672>=</span> [<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;%</span>g, <span style=color:#960050;background-color:#1e0010>&#39;</span>, b(<span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>:</span>end<span style=color:#ae81ff>-1</span>));
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;%</span>g]<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, b(end));
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>g(x) <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>%</span>s<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, gstr);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span> display derivative using <span style=color:#ae81ff>2</span>nd way
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>derivative using diff<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>)
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;</span>h(x) <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>%</span>s<span style=color:#960050;background-color:#1e0010>\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>, hstr);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#960050;background-color:#1e0010>&#39;\</span>n<span style=color:#960050;background-color:#1e0010>&#39;</span>);
+</span></span></code></pre></div></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

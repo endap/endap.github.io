@@ -1,0 +1,67 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>finite difference approximation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>finite difference approximation</h1><time datetime=2022-03-15T17:37:00+07:00>March 15, 2022</time><p>Pendekatan beda hingga untuk turunan merupakan satu metode tersederhana dan tertua untuk menyelsaikan persamaan diferensial [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Secara umum sulit untuk menyelesaikan persamaan diferensial dengan syarat batas pada sepanjang tepi domain dan amat langka formula analitiknya dapat diperoleh sebagai solusi, di sini metode beda hingga berperan dengan menggantikan turunan pada persamaan diferensial dengan aproksimasi beda hingga, yang menghasilkan sejumlah besar sistem persamaan aljabar untuk dipecahkan, sebagai ganti menyelesaikan persamaan diferensial semula, yang dapat dengan mudah diselesaikan pada suatu komputer [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=taylor-series>taylor series</h2><p>Suatu fungsi dapat dinyatakan dengan deret Taylor</p><p>\begin{equation}\label{eqn:taylor-series}
+\begin{array}{c}
+f(x) = f(x_0) + f&rsquo;(x_0) (x - x_0) \newline
++ f{'&rsquo;}(x_0) \tfrac12 (x - x_0)^2 \newline
++ f{''&rsquo;}(x_0) \tfrac16 (x - x_0)^3 \newline
++ f^{iv}(x_0) \tfrac{1}{24} (x - x_0)^4
+\end{array}
+\end{equation}</p><p>bila dituliskan sampai lima suku pertama. Selanjutnya dengan $\Delta x = x - x_0 \equiv h$ dan $x = x_0 + h$ Persamaan \eqref{eqn:taylor-series} dapat dituliskan kembali menjadi</p><p>\begin{equation}\label{eqn:taylor-series-pos-h}
+\begin{array}{c}
+f(x_0 + h) = f(x_0) + f&rsquo;(x_0) h \newline
++ f{'&rsquo;}(x_0) \tfrac12 h^2 + f{''&rsquo;}(x_0) \tfrac16 h^3 \newline
++ f^{iv}(x_0) \frac{1}{24} h^4,
+\end{array}
+\end{equation}</p><p>yang dengan cara yang mirip untuk $-h$ akan diperoleh</p><p>\begin{equation}\label{eqn:taylor-series-min-h}
+\begin{array}{c}
+f(x_0 - h) = f(x_0) - f&rsquo;(x_0) h \newline
++ f{'&rsquo;}(x_0) \tfrac12 h^2 - f{''&rsquo;}(x_0) \tfrac16 h^3 \newline
++ f^{iv}(x_0) \frac{1}{24} h^4.
+\end{array}
+\end{equation}</p><h2 id=first-derivative>first derivative</h2><p>Dengan mengurangi Persamaan \eqref{eqn:taylor-series-pos-h} dengan Persamaan \eqref{eqn:taylor-series-min-h} akan diperoleh</p><p>$$
+\begin{array}{rcl}
+f(x_0 + h) - f(x_0 - h) & = & 2h f&rsquo;(x_0) + f{&rsquo;&rsquo;&rsquo;}(x_0) \tfrac13 h^3 \newline
+\displaystyle \frac{f(x_0 + h) - f(x_0 - h)}{2h} & = & f&rsquo;(x_0) + \tfrac16 h^2 f{&rsquo;&rsquo;&rsquo;}(x_0)
+\end{array}
+$$</p><p>yang akan menghasilkan</p><p>\begin{equation}\label{eqn:finite-difference-app-1st-derivative-x0}
+\begin{array}{c}
+\displaystyle f&rsquo;(x_0) = \frac{f(x_0 + h) - f(x_0 - h)}{2h} + O(h^2)
+\end{array}
+\end{equation}</p><p>dengan $O(h^2) = \frac16 h^2 f{'&rsquo;&rsquo;}(x_0)$ merupakan kesalahan akibat pemotongan suku deret Taylor, yang sebanding dengan $h^2$. Agar lebih umum biasanya $x \equiv x_0$ karena berlaku untuk setiap $x$ sehingga diperoleh</p><p>\begin{equation}\label{eqn:finite-difference-app-1st-derivative}
+\begin{array}{c}
+\displaystyle f&rsquo;(x) = \frac{f(x + h) - f(x - h)}{2h} + O(h^2)
+\end{array}
+\end{equation}</p><p>yang merupakan rumusan beda hingga tengah untuk turunan pertama.</p><h2 id=second-derivative>second derivative</h2><p>Dengan menjumlahkan Persamaan \eqref{eqn:taylor-series-pos-h} dengan Persamaan \eqref{eqn:taylor-series-min-h} akan diperoleh</p><p>$$
+\begin{array}{rcl}
+f(x_0 + h) + f(x_0 - h) & = & 2 f(x_0) + h^2 f&rsquo;&rsquo;(x_0) + f^{iv}(x_0) \frac{1}{12} h^4 \newline
+f(x_0 + h) - 2 f(x_0) + f(x_0 - h) & = & h^2 f&rsquo;&rsquo;(x_0) + f^{iv}(x_0) \frac{1}{12} h^4 \newline
+\displaystyle \frac{f(x_0 + h) - 2 f(x_0) + f(x_0 - h)}{h^2} & = & f&rsquo;&rsquo;(x_0) + \frac{1}{12} h^2 f^{iv}(x_0)
+\end{array}
+$$</p><p>dan, dengan terlebih dahulu mengganti $x_0$ dengan $x$ agar lebih umum, selanjutnya akan memberikan</p><p>\begin{equation}\label{eqn:finite-difference-app-2nd-derivative}
+\begin{array}{c}
+\displaystyle f{'&rsquo;}(x) = \frac{f(x + h) - 2f(x) + f(x - h)}{h^2} + O(h^2),
+\end{array}
+\end{equation}</p><p>yang merupakan rumusan beda hingga tengah untuk turunan kedua, dengan $O(h^2) = \frac{1}{12} h^2 f^{iv}(x_0)$ merupakan kesalahan akibat pemotongan suku deret Taylor, yang sebanding dengan $h^2$.</p><h2 id=using-index>using index</h2><p>Notasi dengan fungsi dengan argumennya $f(x + h)$, $f(x)$, dan $f(x - h)$ akan lebih kompak dituliskan menggunakan indeks, selain karena memang nilainya diskrit, akan tetapi juga karena kelak akan menggunakan komputer untuk menyelesaikannya. Dengan demikian dapat Persamaan \eqref{eqn:finite-difference-app-1st-derivative} dan \eqref{eqn:finite-difference-app-2nd-derivative} dapat dituliskan kembali menjadi</p><p>\begin{equation}\label{eqn:fda-1st-derivative}
+f&rsquo;(x) \equiv f_i&rsquo; = \frac{f_{i+1} - f_{i-1}}{2h}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:fda-2nd-derivative}
+f''(x) \equiv f_i'' = \frac{f_{i+1} - 2 f_i + f_{i-1}}{h^2},
+\end{equation}</p><p>yang mengubah semua turunan, baik turunan pertama maupun turunan kedua, dengan fungsinya sehingga dihasillkan persamaan-persamaan aljabar.</p><p>Persamaan diferensial yang akan dipecahkan umumnya menghubungkan antara $f_i$, $f_i&rsquo;$, dan $f_i&rsquo;&rsquo;$ serta turunan-turunan lainnya, yang kemudian akan dihubungan dengan titik-titik di sekitarnya melalui Persamaan \eqref{eqn:fda-1st-derivative} dan \eqref{eqn:fda-2nd-derivative}. Mengingat yang diselesaikan adalah suatu persamaan diferensial, dibutuhkan pula konstanta integrasi yang disebut sebagai syarat batas (boundary condition, BC). Terdapat lima jenis syarat batas [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=exer>exer</h2><ol><li>Sebanding dengan lebar grid $h$ pangkat berapa kesalahan pendekatan beda hingga untuk turunan pertama dan kedua?</li><li>Terdapat berapa jenis syarat batas? Sebutkan nama-nama syarat batas tersebut.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Pascal Frey, Facultad de Ciencias Físicas y Matemáticas, &ldquo;The finite difference method&rdquo;, MA691 Numerical Simulation of Complex PDE Problems, Facultad de Ciencias Físicas y Matemáticas, Universidad de Chile, 8 Apr 2008, p 79, url
+<a href=https://www.ljll.math.upmc.fr/frey/cours/UdC/ma691/ma691_ch6.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.ljll.math.upmc.fr/frey/cours/UdC/ma691/ma691_ch6.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r02></a>Randall J. LeVeque, &ldquo;Finite Difference Methods
+for Differential Equations&rdquo;, AMath 585–586, University of Washingthon, Sep 2005 (draft version), p 3, url
+<a href=https://edisciplinas.usp.br/pluginfile.php/41896/mod_resource/content/1/LeVeque%20Finite%20Diff.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://edisciplinas.usp.br/pluginfile.php/41896/mod_resource/content/1/LeVeque%20Finite%20Diff.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r03></a>Fiaz Ur Rehman, Mathematics Lectures, &ldquo;Different Types of Boundary Conditions&rdquo;, YouTube, 06.04.2020, url
+<a href="https://www.youtube.com/watch?v=-n3jHwmNejg" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=-n3jHwmNejg <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0532?src=hash&amp;ref_src=twsrc%5Etfw">#bug0532</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1503681119656767490?ref_src=twsrc%5Etfw">March 15, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) sebanding dengan $h^2$ baik untuk pendekatan turunan pertama maupun kedua; &nbsp;
+2) lima, Dirichlet, Neumann, Robin, mixed, dan Cauchy; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

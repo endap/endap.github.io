@@ -1,0 +1,49 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>med npp url protocol win | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>med npp url protocol win</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-09-21T20:25:40 07:00">21 Sep 2025</time>
+&#183;
+4 mins read</div></div><div class=note-content><h2 id=info>info</h2><ul><li>title URL protocol to launch Notepad++</li><li>subtitle Create a protocol in Windows registry and use it on a Hugo post</li><li>url
+<a href=https://medium.com/p/0228e5e57e05 target=_blank rel="nofollow noopener noreferrer"><span>0228e5e57e05 <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>data 21-sep-2025</li></ul><h2 id=content>content</h2><p>Click on npp:// protocol will call npp.bat that later launch Notepad++.
+First part of an URI, before the : character, is scheme, which indicates which protocol the browser must use to fetch the resource and it determines how the rest of the URI is structured and interpreted (MDN contributors, 2025). Suppose that you want to create a protocol that does something when the link is clicked, e.g. open a file with certain application, etc. There is straight forward information to create it in Windows by creating a reg file and import it to Windows registry (Tare, 2024). The idea is how to create a protocol that allows a link to a file, when it is clicked, it will launch Notepad++ to edit the file. There is a note (actually a Hugo post) about the process to get it works (Viridi, 2025). Brief steps and the requirements to create such protocol and use it in a Hugo post are given in this story.</p><h3 id=protocol-name>Protocol name</h3><p>Since its purpose is to launch Notepad++ then the protocol is simply npp://. So, it you want to open C:\temp\README.md with a link then use it as</p><p><a href=npp://C:/temp/README.md>Edit with Notepad++</a>
+which is very intuitive, right?</p><h3 id=required-files>Required files</h3><p>There are three files required, beside the Markdown file — the Hugo post, which are a reg file for defining protocol in Windows registry, a batch file for handler, and a HTML file for Hugo shortcode.</p><h3 id=reg-file>Reg file</h3><p>Suppose it has the name npp.reg with following content.</p><pre tabindex=0><code>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\npp]
+&#34;URL Protocol&#34;=&#34;&#34;
+
+[HKEY_CLASSES_ROOT\npp\shell\open\command]
+@=&#34;\&#34;C:\\Tools\\npp.bat\&#34; \&#34;%1\&#34;&#34;r
+To import the content to Windows registry, just click it.
+</code></pre><p>Press enter or click to view image in full size</p><p>Right click on npp.reg file will open a context menu.
+You can choose Open or Open with Registry Editor.</p><p>Press enter or click to view image in full size</p><p>Confirmation after open npp.reg file.
+Just click Yes to proceed.</p><p>Press enter or click to view image in full size</p><p>Click OK to close the dialog box.</p><h3 id=batch-file>Batch file</h3><p>A batch file npp.bat is required with following content.</p><pre tabindex=0><code>@echo off
+setlocal enabledelayedexpansion
+
+:: get the incoming URL (quoted)
+set &#34;URL=%~1&#34;
+
+:: remove npp:// from the front
+set &#34;FILE=%URL:npp://=%&#34;
+
+:: replace forward slashes with backslashes
+set &#34;FILE=%FILE:/=\%&#34;
+
+:: remove the first backslash
+for /f &#34;tokens=1* delims=\&#34; %%A in (&#34;!FILE!&#34;) do (
+    set &#34;FILE=%%A%%B&#34;
+)
+
+:: launch Notepad++ with the real path
+&#34;C:\Program Files\Notepad++\notepad++.exe&#34; &#34;%FILE%&#34;
+
+endlocal
+</code></pre><p>It will perform some text manipulations such as removing npp://, replace all / with , and remove the first backslah to prevent the link to the file to be a relative path.</p><p>Notice in the las line of reg file npp.reg, this batch file npp.bat is called.</p><h3 id=hugo-shortcode>Hugo shortcode</h3><p>To include the protocol npp:// before a text of a filename and its path, a shortcode is required, e.g. npp.html which is in the folder layouts/shortcodes.</p><pre tabindex=0><code>&lt;a href=&#34;npp:///{{ .Get 0 }}&#34;&gt;{{ if .Get 1 }}{{ .Get 1 }}{{ else }}edit{{ end }}&lt;/a&gt;
+</code></pre><p>It simply has only a line. It creates an <a>element with the protocol npp:// prepending the filename and its path from first argument {{ .Get 0 }}and diplays text from second argument {{ .Get 1 }} if available.</p><h3 id=demo>Demo</h3><p>Suppose that there is a post with shortcode using the protocol.</p><p>Press enter or click to view image in full size</p><p>The text “edit” with blue color use the protocol npp://.
+Click on the text “edit” will open a dialog box.</p><p>Press enter or click to view image in full size</p><p>Dialog box for confirmation before opening npp.bat file.
+Click left button with text “Open npp.bat” to proceed.</p><p>Press enter or click to view image in full size</p><p>Notepad++ is opened and it shows the file for editing.
+The protocol opens Notepad++ showing content of the file for editing.</p><h3 id=steps>Steps</h3><p>Following are steps to use the protocol in a Hugo post.</p><ol><li>Create npp.reg and double-click it to merge its contents into the Windows Registry.</li><li>Create npp.bat and save it as C:\Tools\npp.bat.</li><li>Create a Hugo shortcode file named npp.html in layouts/shortcodes/.</li><li>Use the shortcode in your content (in a Hugo post):<br><a href=npp:///X:/path/to/a-post.md>open</a></li><li>Click the generated link to open the file in Notepad++.</li></ol><h3 id=summaries>Summaries</h3><p>After reading this story, you are able to</p><ul><li>Create a new URL protocol, and what it does to the rest of URI, in a reg file</li><li>Import reg file to Window registry</li><li>Create a Hugo shortcode to wrap a text with the protocol.</li><li>Use the shortcode in a Hugo post.</li><li>Click a link with the protocol to open Notepad++ showing content of a file.</li></ul><h3 id=refs>Refs</h3><ul><li>Avinash Tare, “How to create own URL Protocol In Windows”, DEV Community, 6 Aug 2024, url
+<a href=https://dev.to/avinash_tare/how-to-create-own-url-protocol-in-windows-42bj target=_blank rel="nofollow noopener noreferrer"><span>https://dev.to/avinash_tare/how-to-create-own-url-protocol-in-windows-42bj <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250921].</li><li>MDN contributors, “URI schemes”, MDN Web Docs, 23 Jul 2025, url
+<a href=https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes target=_blank rel="nofollow noopener noreferrer"><span>https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[2025091].</li><li>Sparisoma Viridi, “reg npp-protocol”, butiran, 21 Sep 2025, url
+<a href=https://dudung.github.io/butiran/25i67/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/butiran/25i67/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250921].</li></ul></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

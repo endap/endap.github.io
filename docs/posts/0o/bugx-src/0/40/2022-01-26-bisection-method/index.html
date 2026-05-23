@@ -1,0 +1,204 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>bisection method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>bisection method</h1><time datetime=2022-01-26T18:42:00+07:00>January 26, 2022</time><p>Metode bisection dalam bidang matematika merupakan suatu metode pencarian akar yang berlaku untuk sembarang fungsi kontinu dengan ketentuan diperlukan dua nilai fungsi yang berbeda tanda [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Kelebihan metode ini adalah adanya jaminan konvergensi, akan tetapi belum dapat mendeteksi bila terdapat banyak akar [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dengan dua nilai awal, nilai ketiga diperoleh sebagai titik tengah dua nilai sebelumnya yang lalu nilai terbaru ini perlu dipilih untuk menggantikan salah satu dari dua nilai sebelumnya, dengan memperhatikan bahwa akar terdapat di antara dua nilai terakhir yang disimpan, yang bersifat intuitif [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=code-1>code 1</h2><p>Salah satu contoh penerapannya adalah seperti kode berikut ini</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0402-bisection-with-list.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Calculate root using bisection method</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung/bug</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220126 Create this program.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a quadratic function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>f</span>(x):
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> <span style=color:#ae81ff>475</span>
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> a<span style=color:#f92672>*</span>x<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> b<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> c
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define initial value using list</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>15.0</span>]
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> len(x)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define error and accuracy</span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> abs(f(x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]))
+</span></span><span style=display:flex><span>eps <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># peform calculation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> err <span style=color:#f92672>&gt;</span> eps:
+</span></span><span style=display:flex><span>    xnew <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>])
+</span></span><span style=display:flex><span>    x<span style=color:#f92672>.</span>append(xnew)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    err <span style=color:#f92672>=</span> abs(f(x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> f(x[i]) <span style=color:#f92672>*</span> f(x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>], x[i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># display results</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> <span style=color:#ae81ff>2</span>:
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;x = &#34;</span>)
+</span></span><span style=display:flex><span>        print(x[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>        print(x[<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        print(x[i])
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    i <span style=color:#f92672>=</span> len(x)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># display error and accuracy</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;err = &#34;</span>, err, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;eps = &#34;</span>, eps, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>yang dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xrg22cjd target=_blank rel="nofollow noopener noreferrer"><span>3xrg22cjd <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Hasil program di atas adalah</p><pre tabindex=0><code>========= RESTART: 0402-bisection-with-list.py =========
+x = 
+15.0
+0.0
+3.75
+5.625
+4.6875
+5.15625
+4.921875
+5.0390625
+4.98046875
+5.009765625
+4.9951171875
+5.00244140625
+4.998779296875
+5.0006103515625
+4.99969482421875
+5.000152587890625
+4.9999237060546875
+5.000038146972656
+err = 0.006866460898891091
+eps = 0.01
+</code></pre><p>yang merupakan salah satu akar dari persamaan kuadrat $f(x) = x^2 - 100x + 475$.</p><h2 id=formulation>formulation</h2><p>Pada program sebelumnya telah diberikan bagaimana contoh implementasi metode bisection. Biasanya, agar lebih terstruktur, disampaikan dahulu perumusannya yang kemudian diikuti oleh implementasinya. Di sini ditunjukkan lebih dahulu contoh implementasinya agar dapat menjadi semangat, terutama untuk pembaca yang lebih menyukai praktek ketimbang teori.</p><p>Metode bisection memerlukan dua syarat awal, misalnya $x_1$ dan $x_2$, yang telah diasumsikan bahwa</p><p>\begin{equation}\label{eqn:bisection-initial-condition}
+f(x_1) f(x_2) &lt; 0,
+\end{equation}</p><p>yang menandakan bahwa terdapat jumlah ganjil akar, setidaknya satu, di antara kedua tebakan awal $x_1$ dan $x_2$. Nama bisection diperoleh dari langkah</p><p>\begin{equation}\label{eqn:bisection-new-x}
+x_3 = \tfrac12 (x_1 + x_2).
+\end{equation}</p><p>Selanjutnya kedua syarat awal perlu ditukar untuk memastikan bahwa akar selalu terletak pada dua nilai terakhir, misalnya dengan</p><p>\begin{equation}\label{eqn:bisection-swap-x2-x1}
+\left[ f(x_3)f(x_1) &lt; 0 \right] \Rightarrow (x_1 \rightleftarrows x_2).
+\end{equation}</p><p>Setelah itu tinggal mengulang-ulang Persamaan \eqref{eqn:bisection-new-x} dan \eqref{eqn:bisection-swap-x2-x1} sampai akurasi yang diinginkan, misalnya</p><p>\begin{equation}\label{eqn:bisection-termination}
+|f(x_n)| &lt; \varepsilon,
+\end{equation}</p><p>tercapai. Program <code>0402-bisection-with-list.py</code> merupakan implementasi dari persamaan-persamaan di atas. Selanjutnya dapat pula dituliskan sebagai syarat awal</p><p>\begin{equation}\label{eqn:bisection-compact-1}
+x_{n+2} = \tfrac12(x_{n+1} + x_{n}).
+\end{equation}</p><p>yang dilanjutkan dengan pengulangan</p><p>\begin{equation}\label{eqn:bisection-compact-2}
+x_{n+3} = \left\{
+\begin{array}{cc}
+\frac12(x_{n+2} + x_{n+1}), & f(x_{n+2})f(x_{n+1}) &lt; 0, \newline
+\frac12(x_{n+2} + x_{n}), & f(x_{n+2})f(x_{n+1}) > 0, \newline
+\end{array}
+\right.
+\end{equation}</p><p>sebagai perumusan yang lebih kompak. Implementasinya menjadi amat singkat sebagai berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x4 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x3 <span style=color:#f92672>+</span> x2) <span style=color:#66d9ef>if</span> poly(x3) <span style=color:#f92672>*</span> poly(x2) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x3 <span style=color:#f92672>+</span> x1)
+</span></span></code></pre></div><p>bila menggunakan ekspresi konditional Python [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=code-2>code 2</h3><p>Program berikut ini memanfaatkan Persamaan \eqref{eqn:bisection-compact-1} dan \eqref{eqn:bisection-compact-2}.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0402-bisection-compact.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Impelement bisection from only two equation</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung/bug</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220126 Create this program.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a polynomial function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>poly</span>(x):
+</span></span><span style=display:flex><span>    x1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.0</span>
+</span></span><span style=display:flex><span>    x2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>5.0</span>
+</span></span><span style=display:flex><span>    x3 <span style=color:#f92672>=</span> <span style=color:#ae81ff>9.0</span>
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> (x <span style=color:#f92672>-</span> x1) <span style=color:#f92672>*</span> (x <span style=color:#f92672>-</span> x2) <span style=color:#f92672>*</span> (x <span style=color:#f92672>-</span> x3)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define initial conditions</span>
+</span></span><span style=display:flex><span>x1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>7.0</span>
+</span></span><span style=display:flex><span>x2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>10.0</span>
+</span></span><span style=display:flex><span>x3 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x1 <span style=color:#f92672>+</span> x2)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define accuracy</span>
+</span></span><span style=display:flex><span>eps <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-14</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Calculate initial error</span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> abs(poly(x3))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Find a root</span>
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;n x&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> err <span style=color:#f92672>&gt;</span> eps:
+</span></span><span style=display:flex><span>    x4 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x3 <span style=color:#f92672>+</span> x2) <span style=color:#66d9ef>if</span> poly(x3) <span style=color:#f92672>*</span> poly(x2) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x3 <span style=color:#f92672>+</span> x1)
+</span></span><span style=display:flex><span>    err <span style=color:#f92672>=</span> abs(poly(x4))
+</span></span><span style=display:flex><span>    x1, x2, x3 <span style=color:#f92672>=</span> x2, x3, x4
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> n <span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    print(n, x4)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Resume result</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;step = &#34;</span>, n, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;err = &#34;</span>, err, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;root = &#34;</span>, x4, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>dengan</p><pre tabindex=0><code>n x
+1 9.25
+2 8.875
+3 9.0625
+4 8.96875
+5 9.015625
+6 8.9921875
+7 9.00390625
+8 8.998046875
+9 9.0009765625
+10 8.99951171875
+11 9.000244140625
+12 8.9998779296875
+13 9.00006103515625
+14 8.999969482421875
+15 9.000015258789062
+16 8.999992370605469
+17 9.000003814697266
+18 8.999998092651367
+19 9.000000953674316
+20 8.999999523162842
+21 9.000000238418579
+22 8.99999988079071
+23 9.000000059604645
+24 8.999999970197678
+25 9.000000014901161
+26 8.99999999254942
+27 9.00000000372529
+28 8.999999998137355
+29 9.000000000931323
+30 8.999999999534339
+31 9.00000000023283
+32 8.999999999883585
+33 9.000000000058208
+34 8.999999999970896
+35 9.000000000014552
+36 8.999999999992724
+37 9.000000000003638
+38 8.999999999998181
+39 9.00000000000091
+40 8.999999999999545
+41 9.000000000000227
+42 8.999999999999886
+43 9.000000000000057
+44 8.999999999999972
+45 9.000000000000014
+46 8.999999999999993
+47 9.000000000000004
+48 8.999999999999998
+49 9.0
+step = 49
+err = 0.0
+root = 9.0
+</code></pre><p>adalah hasilnya. Program di atas dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xrgr8bej target=_blank rel="nofollow noopener noreferrer"><span>3xrgr8bej <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,</p><h2 id=exer>exer</h2><ol><li>Gunakan kode pertama yang diberikan dan gantilah tebakan awalnya menjadi <code>[70.0, 100.0]</code>. Berapa nilai akar yang ditemukan? Kesalahannya?</li><li>Pada contoh program kedua apakah dapat digunakan untuk persamaan kuadrat? Bagaimana caranya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Wikipedia contributors, &ldquo;Bisection method&rdquo;, Wikipedia, The Free Encyclopedia, 11 January 2022, 12:47 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1065030259" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1065030259 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220126].</li><li><a name=r02></a>GeeksforGeeks, Nims972, jit_t, susmitakundugoaldanga, &ldquo;Program for Bisection Method&rdquo;, GeeksforGeeks, 6 Apr 2021, url
+<a href=https://www.geeksforgeeks.org/program-for-bisection-method/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/program-for-bisection-method/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220126].</li><li><a name=r03></a>Francis Adrian Viernes, &ldquo;Root-Finding Algorithm — Bisection Method From Scratch&rdquo;, Medium, 25 Aug 2021, url
+<a href=https://medium.com/mlearning-ai/using-the-bisection-method-to-find-the-root-of-an-equation-97c4ba7343db target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/mlearning-ai/using-the-bisection-method-to-find-the-root-of-an-equation-97c4ba7343db <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220126]</li><li><a name=r04></a>Vinko Vrsalovic, community wiki, &ldquo;Answer to &lsquo;Does Python have a ternary conditional operator?&rsquo;&rdquo;, Stack Overflow, 5 Aug 2020, url
+<a href=https://stackoverflow.com/a/394814/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/394814/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220126].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0402?src=hash&amp;ref_src=twsrc%5Etfw">#bug0402</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1486302876985344000?ref_src=twsrc%5Etfw">January 26, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) x = 94.99996185302734, err = 0.006866460898891091; &nbsp;
+2) bisa, kurangi salah satu akar, dan hilangkan suku terkait yang membentuk variabel y; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

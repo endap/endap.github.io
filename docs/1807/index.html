@@ -1,0 +1,65 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>Chart.js support | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>Chart.js support</h1><time datetime=2024-01-11T15:48:59+07:00>January 11, 2024</time><p>Add support for
+<a href=https://www.chartjs.org/ target=_blank rel="nofollow noopener noreferrer"><span>Chart.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>via shortcodes.</p><h2 id=shortcodes>shortcodes</h2><p>Create <code>chart.html</code> in <code>\layouts\shortcodes</code> with following content</p><pre tabindex=0><code>{{ $w := default &#34;100&#34; (.Get 0) }}
+{{ $h := default &#34;300&#34; (.Get 1) }}
+{{ $r := ( .Inner | chomp) }}
+{{ $seed := &#34;foo&#34; }}
+{{ $id := delimit (shuffle (split (md5 $seed) &#34;&#34; )) &#34;&#34; }}
+
+&lt;div style=&#34;width: {{ $w }}%;height: {{ $h }}px;margin: 0 auto&#34;&gt;
+    &lt;canvas id=&#34;{{ $id }}&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;!-- Previous url does not work.
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js&#34;&gt;&lt;/script&gt;
+--&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    var ctx = document.getElementById(&#39;{{ $id }}&#39;).getContext(&#39;2d&#39;);
+    var options = &#34;{{ $r | safeJS }}&#34;;
+    new Chart(ctx, options);
+&lt;/script&gt;
+</code></pre><p>as provided by
+<a href=https://github.com/shen-yu/hugo-chart/blob/master/layouts/shortcodes/chart.html target=_blank rel="nofollow noopener noreferrer"><span>Eric Shen <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>with change of script url.</p><h2 id=result>result</h2><h2 id=usage>usage</h2><pre tabindex=0><code>{{&lt; chart &gt;}}
+    type: &#39;bar&#39;,
+    data: {
+        labels: [&#39;Red&#39;, &#39;Blue&#39;, &#39;Yellow&#39;, &#39;Green&#39;, &#39;Purple&#39;, &#39;Orange&#39;],
+        datasets: [{
+            label: &#39;Bar Chart&#39;,
+            data: [12, 19, 18, 16, 13, 14],
+            backgroundColor: [
+                &#39;rgba(255, 99, 132, 0.2)&#39;,
+                &#39;rgba(54, 162, 235, 0.2)&#39;,
+                &#39;rgba(255, 206, 86, 0.2)&#39;,
+                &#39;rgba(75, 192, 192, 0.2)&#39;,
+                &#39;rgba(153, 102, 255, 0.2)&#39;,
+                &#39;rgba(255, 159, 64, 0.2)&#39;
+            ],
+            borderColor: [
+                &#39;rgba(255, 99, 132, 1)&#39;,
+                &#39;rgba(54, 162, 235, 1)&#39;,
+                &#39;rgba(255, 206, 86, 1)&#39;,
+                &#39;rgba(75, 192, 192, 1)&#39;,
+                &#39;rgba(153, 102, 255, 1)&#39;,
+                &#39;rgba(255, 159, 64, 1)&#39;
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+}
+{{&lt; /chart &gt;}}
+</code></pre></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

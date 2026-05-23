@@ -1,0 +1,318 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>daily-note-v2.1 shortcode | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>daily-note-v2.1 shortcode</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-05-15T07:21:24 07:00">15 May 2026</time>
+&#183;
+3 mins read
+&#183;
+<a class=link href=npprel:///26/e/30-daily-note-v2-shortcode.md>edit</a></div></div><div class=note-content><p>Is it possible to have such Hugo shortcode for daily note? Currently the activities are put in a table using Markdown. Let&rsquo;s ask the ChatGPT for it.</p><h2 id=1st-convers>1st-convers</h2><p>Result of the first conversation <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> is modified as follows.</p><h3 id=ussage>ussage</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>wall</span> &gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;01&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;beg daily note&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;wide&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;done&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>link</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/26e29/&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>beg</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0645&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>end</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0646&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>doc</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;✓&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;02&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;new 2nd-motw&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;done&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>link</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/26d53/&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>beg</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>end</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>doc</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;✓&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;03&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;wash oven&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tall&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;open&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;02&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;new 2nd-motw&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;done&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>link</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/26d53/&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>beg</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>end</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>doc</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;✓&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;02&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;new 2nd-motw&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;done&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>link</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/26d53/&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>beg</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>end</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0459&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>doc</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;✓&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;91&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;wash oven&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;open&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;92&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;wash oven&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;doing&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>log</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#a6e22e>item</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;93&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;wash oven&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;done&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{<span style=color:#960050;background-color:#1e0010>&lt;</span> /log/wall &gt;}}
+</span></span></code></pre></div><h3 id=container>container</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-wall&#34;</span>&gt;
+</span></span><span style=display:flex><span>  {{ .Inner }}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><h3 id=item>item</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ $size := .Get &#34;size&#34; | default &#34;small&#34; }}
+</span></span><span style=display:flex><span>{{ $stat := .Get &#34;stat&#34; | default &#34;open&#34; }}
+</span></span><span style=display:flex><span>{{ $link := .Get &#34;link&#34; | default &#34;#&#34; }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-item {{ $size }} stat-{{ $stat }}&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $link }}&#34;</span>
+</span></span><span style=display:flex><span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {{ with .Get &#34;id&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-item-id&#34;</span>&gt;
+</span></span><span style=display:flex><span>    {{ . }}
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  {{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {{ with .Get &#34;title&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-item-title&#34;</span>&gt;
+</span></span><span style=display:flex><span>    {{ . }}
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  {{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-item-meta&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    {{ with .Get &#34;beg&#34; }}
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>span</span>&gt;{{ . }}&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    {{ with .Get &#34;end&#34; }}
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>span</span>&gt;→ {{ . }}&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {{ with .Get &#34;doc&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;log-item-doc&#34;</span>&gt;
+</span></span><span style=display:flex><span>    {{ . }}
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  {{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span></code></pre></div><h3 id=css>css</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span><span style=color:#75715e>/* container */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-wall</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>grid</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-template-columns</span>:
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>repeat</span>(<span style=color:#66d9ef>auto</span><span style=color:#f92672>-</span><span style=color:#66d9ef>fill</span>, <span style=color:#a6e22e>minmax</span>(<span style=color:#ae81ff>140</span><span style=color:#66d9ef>px</span>, <span style=color:#ae81ff>1</span>fr));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-auto-rows</span>: <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* base card */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>min-height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0.8</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>14</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-decoration</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>card<span style=color:#f92672>-</span>bg, <span style=color:#ae81ff>#1f1f1f</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>border<span style=color:#f92672>-</span><span style=color:#66d9ef>color</span>, <span style=color:#ae81ff>#333</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>overflow</span>: <span style=color:#66d9ef>hidden</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transition</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>transform</span> <span style=color:#ae81ff>0.15</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>,
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>border-color</span> <span style=color:#ae81ff>0.15</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* hover */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>:<span style=color:#a6e22e>hover</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transform</span>: translateY(<span style=color:#ae81ff>-2</span><span style=color:#66d9ef>px</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-color</span>: <span style=color:#ae81ff>#666</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* typography */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item-id</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.72</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>opacity</span>: <span style=color:#ae81ff>0.55</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin-bottom</span>: <span style=color:#ae81ff>0.35</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item-title</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.95</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>line-height</span>: <span style=color:#ae81ff>1.3</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#ae81ff>600</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item-meta</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin-top</span>: <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding-top</span>: <span style=color:#ae81ff>0.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.72</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>opacity</span>: <span style=color:#ae81ff>0.7</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>0.45</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex-wrap</span>: <span style=color:#66d9ef>wrap</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item-doc</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin-top</span>: <span style=color:#ae81ff>0.5</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.82</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* masonry sizes */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>small</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-row</span>: span <span style=color:#ae81ff>12</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>wide</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-column</span>: span <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-row</span>: span <span style=color:#ae81ff>12</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>tall</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-row</span>: span <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>big</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-column</span>: span <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>grid-row</span>: span <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* statuses */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>stat-done</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#ae81ff>#1f2b22</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-color</span>: <span style=color:#ae81ff>#355c3f</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>stat-doing</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#ae81ff>#2b281f</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-color</span>: <span style=color:#ae81ff>#7a6a35</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>log-item</span>.<span style=color:#a6e22e>stat-open</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#ae81ff>#262626</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* mobile refinement */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>640px</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>log-wall</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>grid-template-columns</span>:
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>repeat</span>(<span style=color:#66d9ef>auto</span><span style=color:#f92672>-</span><span style=color:#66d9ef>fill</span>, <span style=color:#a6e22e>minmax</span>(<span style=color:#ae81ff>120</span><span style=color:#66d9ef>px</span>, <span style=color:#ae81ff>1</span>fr));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>log-item</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>12</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>log-item-title</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.88</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>in <code>assets/css/components/log.css</code>.</p><h2 id=csshtml>css.html</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{- $styles := slice
+</span></span><span style=display:flex><span>    (resources.Get &#34;css/main.css&#34;)
+</span></span><span style=display:flex><span>    (resources.Get &#34;css/components/log.css&#34;)
+</span></span><span style=display:flex><span>-}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{- range $styles }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {{- if hugo.IsDevelopment }}
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>link</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}?v={{ now.Unix }}&#34;</span>
+</span></span><span style=display:flex><span>    &gt;
+</span></span><span style=display:flex><span>  {{- else }}
+</span></span><span style=display:flex><span>    {{- with . | minify | fingerprint }}
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>link</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .Data.Integrity }}&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>
+</span></span><span style=display:flex><span>      &gt;
+</span></span><span style=display:flex><span>    {{- end }}
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  {{- end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{- end }}
+</span></span></code></pre></div><p>in <code>layouts/partial/head/css.html</code>.</p><h2 id=notes>notes</h2><ul><li>It is considered that this approach fails the files are removed to avoid pollution to the system.</li><li>Next idea v2.2 is to still using table but parse the content to grid of divs.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT-5.5, &ldquo;Activity Wall Shortcode&rdquo;, ChatGPT, 15 May 2026, url
+<a href=https://chatgpt.com/share/6a0669b7-e03c-83ec-9d7c-e3e1df5a5aee target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/6a0669b7-e03c-83ec-9d7c-e3e1df5a5aee <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260515].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

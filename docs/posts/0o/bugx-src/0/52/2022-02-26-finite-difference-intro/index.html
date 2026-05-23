@@ -1,0 +1,65 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>finite difference intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>finite difference intro</h1><time datetime=2022-02-26T15:47:00+07:00>February 26, 2022</time><p>Diferensial dapat didekati secara numerik dengan beda hingga [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=expansion-series>expansion series</h2><p>Suatu fungsi $f(x)$ dapat dituliskan dalam bentuk deret Taylor</p><p>\begin{equation}\label{eqn:taylor-series-of-a-function}
+f(x) = \sum_{n = 0}^N \left. \frac{d^n f(x)}{dx^n} \right|_{x = x_0} \frac{(x - x_0)^n}{n!},
+\end{equation}</p><p>Deret Maclaurin, yang merupakan deret Taylor di sekitar nol atau $x_0 = 0$, memiliki bentuk</p><p>\begin{equation}\label{eqn:maclaurin-series-of-a-function}
+f(x) = \sum_{n = 0}^N \left. \frac{d^n f(x)}{dx^n} \right|_{x = 0} \frac{x^n}{n!},
+\end{equation}</p><p>untuk sembarang fungsi $f(x)$ yang memiliki turunan ke-$N$.</p><h3 id=polynomial-function>polynomial function</h3><p>Sebagai ilustrasi yang paling sederhana untuk Persamaan \eqref{eqn:maclaurin-series-of-a-function} dapat digunakan suatu fungsi polinomial, e.g $f(x) = c_0 + c_1 x + c_2 x^2$, yang akan memberikan</p><p>$$
+\frac{d^0 f(x)}{dx^0} = c_0 + c_1 x + c_2 x^2,
+$$</p><p>$$
+\frac{d^1 f(x)}{dx^1} = c_1 + 2 c_2 x,
+$$</p><p>$$
+\frac{d^2 f(x)}{dx^2} = 2 c_2.
+$$</p><p>Ketiga persamaan terakhir untuk $x = 0$ akan menjadi</p><p>$$
+\left. \frac{d^0 f(x)}{dx^0} \right|_{x = 0} = \frac{d^0 f(0)}{dx^0} = c_0,
+$$</p><p>$$
+\left. \frac{d^1 f(x)}{dx^1} \right|_{x = 0} = \frac{d^1 f(0)}{dx^1} = c_1,
+$$</p><p>$$
+\left. \frac{d^2 f(x)}{dx^2} \right|_{x = 0} = \frac{d^2 f(0)}{dx^2} = 2 c_2.
+$$</p><p>Substitusi ketiga persamaan terakhir ke Persamaan \eqref{eqn:maclaurin-series-of-a-function} akan menghasilkan</p><p>$$
+\begin{array}{rcl}
+f(x) & = & \displaystyle \sum_{n = 0}^N \left. \frac{d^n f(x)}{dx^n} \right|_{x = 0} \frac{x^n}{n!} \newline
+& = & \displaystyle c_0 \cdot \frac{x^0}{0!} + c_1 \cdot \frac{x^1}{1^2} + 2c_2 \cdot \frac{x^2}{2!} \newline
+& = & c_0 + c_1 x + c_2 x^2,
+\end{array}
+$$</p><p>yang memberikan kembali $f(x)$. Suku-suku lebih tinggi tidak perlu dihitung karena turunan $f(x)$ bernilai nol untuk $n > 2$.</p><h2 id=two-first-terms>two first terms</h2><p>Bila hanya digunakan dua suku pertama pada ruas kanan Persamaan \eqref{eqn:taylor-series-of-a-function} maka</p><p>\begin{equation}\label{eqn:fuction-two-first-terms}
+f(x) \approx f(x_0) + f&rsquo;(x_0) (x - x_0).
+\end{equation}</p><p>Dengan $\Delta x = x - x_0$ dan $x = x_0 + \Delta x$ Persamaan \eqref{eqn:fuction-two-first-terms} dapat dituliskan menjadi</p><p>\begin{equation}\label{eqn:fuction-two-first-terms-x0}
+f(x_0 + \Delta x) \approx f(x_0) + f&rsquo;(x_0) \Delta x.
+\end{equation}</p><p>Perkenalkan simbol baru $x \equiv x_0$ sehingga Persamaan \eqref{eqn:fuction-two-first-terms-x0} menjadi</p><p>\begin{equation}\label{eqn:fuction-two-first-terms-x}
+f(x + \Delta x) \approx f(x) + f&rsquo;(x) \Delta x
+\end{equation}</p><p>yang akan memberikan</p><p>\begin{equation}\label{eqn:finite-difference-1}
+f&rsquo;(x) \approx \frac{f(x + \Delta x) - f(x)}{\Delta x}.
+\end{equation}</p><p>Bila didefinisikan $\Delta x = x_0 - x$ dan $x_0 = x + \Delta x$, maka dapat diperoleh bentuk yang mirip dengan Persamaan \eqref{eqn:finite-difference-1} dalam bentuk</p><p>\begin{equation}\label{eqn:finite-difference-2}
+f&rsquo;(x) \approx \frac{f(x) - f(x - \Delta x)}{\Delta x}.
+\end{equation}</p><h2 id=the-approximations>the approximations</h2><p>Pendekatan beda hingga meliputi beda hingga maju (FFD atau forward finite difference)</p><p>\begin{equation}\label{eqn:finite-difference-forward}
+f&rsquo;(x) \approx \frac{f(x + \Delta x) - f(x)}{\Delta x}.
+\end{equation}</p><p>beda hingga mundur (BFD atau backward finite difference)</p><p>\begin{equation}\label{eqn:finite-difference-backward}
+f&rsquo;(x) \approx \frac{f(x) - f(x - \Delta x)}{\Delta x}.
+\end{equation}</p><p>dan beda hingga tengah (CFD atau central finite difference)</p><p>\begin{equation}\label{eqn:finite-difference-central}
+f&rsquo;(x) \approx \frac{f(x + \Delta x) - f(x - \Delta x)}{2\Delta x}.
+\end{equation}</p><p>Persamaan \eqref{eqn:finite-difference-central} dapat diperoleh dari Persamaan \eqref{eqn:finite-difference-forward} dan \eqref{eqn:finite-difference-backward}.</p><p>![]({{ site.baseurl }}/assets/img/0/52/0521-a.png)<br>Gambar <a name=fig1>1</a>. Sebuah fungsi $f(x)$ dan turunan fungsi tersebut dengan pendekatan beda maju (FFD), beda mundur (BFD), dan beda tengah (CFD).</p><p>Pada Gambar
+<a href=#fig><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>digunakan nilai $\Delta x = 1$, yang cukup besar, hanya agar terlihat perbedaan dari ketiga pendekatan beda hingga pada Persamaan \eqref{eqn:finite-difference-forward}, \eqref{eqn:finite-difference-backward}, dan \eqref{eqn:finite-difference-central}, untuk</p><p>$$
+f(x) = c_0 + c_1 x + c_2 x^2 + c_3 x^3 + c_4 x^4
+$$</p><p>sebagai fungsinya dengan $c_0 = 6$, $c_1 = 1$, $c_2 = -0.05$, $c_3 = -0.1$, dan $c_4 = 0.01$.</p><h3 id=difference-with-fx>difference with f&rsquo;(x)</h3><p>Turunan yang diperoleh secara numerik $f&rsquo;_{\rm num}(x)$ dapat dibandingkan dengan turunan fungsinya secara langsung $f&rsquo;(x)$ yang diperleh secara analitik</p><p>![]({{ site.baseurl }}/assets/img/0/52/0521-b1.png) | ![]({{ site.baseurl }}/assets/img/0/52/0521-b2.png)</p><center>(a)</center>|<center>(b)</center>![]({{ site.baseurl }}/assets/img/0/52/0521-b3.png) | ![]({{ site.baseurl }}/assets/img/0/52/0521-b4.png)<center>(c)</center>|<center>(d)</center><p>Gambar <a name=fig2>2</a>. Nilai absolut selisih turunan numerik dan turunan analitik untuk berbagai nilai $\Delta x$: (a) 10, (b) 1, (c) 0.1, dan (d) 0.01.</p><p>Arti warna garis yang digunakan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk pendekatan FFD, BFD, dan CFD sama dengan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Hanya pada gambar terakhir ini</p><p>\begin{equation}\label{eqn:dfx-num-the}
+|\Delta f&rsquo;(x)| = |f&rsquo;_{\rm num}(x) - f&rsquo;(x)|
+\end{equation}</p><p>merupakan persamaan yang digunakan.</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh bahwa dengan semakin kecil nilai $\Delta x$ akan semakin kecil selisih $f&rsquo;_{\rm num}(x)$ dengan f&rsquo;(x) atau kesalahan yang dibuat oleh pendekatan numerik semakin kecil.</p><h2 id=exer>exer</h2><ol><li>Bagaimana cara memperoleh Persamaan \eqref{eqn:finite-difference-central} dari Persamaan \eqref{eqn:finite-difference-forward} dan \eqref{eqn:finite-difference-backward}?</li><li>Dengan melihat titik-titik pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, apakah telah dihitung untuk semua titik untuk membuat kurvanya atau hanya beberapa titik saja dan kurva dibuat dengan penghalusan kurva?</li><li>Apakah $\Delta x$ boleh sangat kecil untuk turunan fungsi dengan pendekatan numerik? Mengapa?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a></li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) jumlahkan keduanya lalu dibagi dua; &nbsp;
+2) hanya beberapa saja, tepatnya 11 titik saja, ya kurva dihaluskan dengan fungsi; &nbsp;
+3) tidak boleh karena f(x+&#916;x) - f(x) dapat menjadi nol; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

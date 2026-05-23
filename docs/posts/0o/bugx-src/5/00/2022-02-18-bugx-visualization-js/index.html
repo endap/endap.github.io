@@ -1,0 +1,144 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>bugx visualization js | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>bugx visualization js</h1><time datetime=2022-02-19T12:31:00+07:00>February 19, 2022</time><p>JavaScript (JS) merupakan satu dari bahasa fondasi pengembangan web, bersama-sama dengan HTML dan CSS, yang membantu sebagian besar halaman-halaman web di internet dan mendukung pengembangan web baik front end maupun back end [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Salah satu pemanfaatan JS adalah sebagai alat bantu visualisasi data [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan juga untuk simulasi sederhana dengan memanfaatkan elemen canvas HTML5 [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk bugx akan dimulai program sederhana untuk visualisasi dan simulasi, sambil membangun pustakanya,
+<a href=https://github.com/dudung/bugx-vis target=_blank rel="nofollow noopener noreferrer"><span>bugx-vis <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=an-example>an example</h2><p>Sebuah berkas HTML berisikan setidaknya baris-baris berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>html</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>header</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>title</span>&gt;tabtncan&lt;/<span style=color:#f92672>title</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tabtncan.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>header</span>&gt;
+</span></span><span style=display:flex><span>	&lt;<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>		&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>main</span>();
+</span></span><span style=display:flex><span>		&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>	&lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+</span></span></code></pre></div><p>diperlukan untuk memanggail berkas JS yang berisikan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/*
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	tabtncan.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	A simple UI using textarea, button, and canvas
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	Sparisoma Viridi | https://github.com/dudung/bugx-vis
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	20220218 Start this example application.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	0937 Create main initVisualElement functions, empty.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	1825 Make clearCanvas and drawCircle functions.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	2102 Finish drawCircle function.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	2127 Correct style width and height with px.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// define global variables
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>div</span>, <span style=color:#a6e22e>divL</span>, <span style=color:#a6e22e>divR</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>ta</span>, <span style=color:#a6e22e>btn</span>, <span style=color:#a6e22e>can</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// call all necessary function
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>initVisualElement</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// initialize visual element
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initVisualElement</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;div&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;400px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0px solid #000&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#eee&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;div&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>style</span>.<span style=color:#66d9ef>float</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;left&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;150px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#fdd&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0px solid #000&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divR</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;div&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divR</span>.<span style=color:#a6e22e>style</span>.<span style=color:#66d9ef>float</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;right&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divR</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divR</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>divR</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#ddf&#34;</span>;
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ta</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;textarea&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ta</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;150px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ta</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;228px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ta</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>overflowY</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;scroll&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ta</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;125 125 124\n&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;50 125 49\n&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;175 125 74&#34;</span>;
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>btn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;button&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Draw circle(s)&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, <span style=color:#a6e22e>clickButton</span>);
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#39;canvas&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;250px&#34;</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0px solid #000&#34;</span>;
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	document.<span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>div</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>divL</span>);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>ta</span>);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>divL</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>btn</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>divR</span>);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>divR</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>can</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// clear canvas
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>clearCanvas</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#39;2d&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clearRect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// draw circle
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawCircle</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>r</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#39;2d&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>r</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>PI</span>)
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// do something when button is clicked
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>clickButton</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>clearCanvas</span>();
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>lines</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>ta</span>.<span style=color:#a6e22e>value</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#39;\n&#39;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>N</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>length</span>;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span>(<span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>vars</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lines</span>[<span style=color:#a6e22e>i</span>].<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#39; &#39;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>vars</span>[<span style=color:#ae81ff>0</span>]);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>vars</span>[<span style=color:#ae81ff>1</span>]);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>r</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>vars</span>[<span style=color:#ae81ff>2</span>]);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>drawCircle</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>r</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>di mana keduanya diletakkan pada folder yang sama. Kedua kode di atas dapat dilihat pada repository
+<a href=https://github.com/dudung/bugx-vis target=_blank rel="nofollow noopener noreferrer"><span>bugx-vix <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>pada folder
+<a href=https://github.com/dudung/bugx-vis/tree/main/app/ui/tabtncan target=_blank rel="nofollow noopener noreferrer"><span>app/ui/tabtncan <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, serta dijalan di
+<a href=https://raw.githack.com/ target=_blank rel="nofollow noopener noreferrer"><span>raw.githack.com <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>pada
+<a href=https://rawcdn.githack.com/dudung/bugx-vis/b28e36c08a865a235be5f3e8c878c2ad5c89eab7/app/ui/tabtncan/tabtncan.html target=_blank rel="nofollow noopener noreferrer"><span>tabtncan.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=results>results</h3><p>Hasil kode di atas saat perancangan dan juga di
+<a href=https://raw.githack.com/ target=_blank rel="nofollow noopener noreferrer"><span>raw.githack.com <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>adalah seperti gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/5/00/5000-a.png)<br>Gambar <a name=fig1>1</a>. Contoh tampilan sebuah visualisasi secara lokal yang dibuat dengan JS.</p><p>Dan hasil penggunaan JS pada pembahasan ini adalah sebagai berikut, yang dapat berinteraksi dengan pengguna melalui pengisian textarea di sebelah kiri dan button di bagian bawahnya.</p><script src=https://rawcdn.githack.com/dudung/bugx-vis/b28e36c08a865a235be5f3e8c878c2ad5c89eab7/app/ui/tabtncan/tabtncan.js></script><script>main()</script><p>Perhatikan bahwa layout dari elemen-elemen seperti div, textarea, canvas, dan button belum seperti yang diharapkan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>saat dirancang dan ditampilkan secara lokal. Terdapat dugaan bahwa style yang digunakan pada Jekyll mempengaruhinya. Untuk sementara belum ada solusi mengenai permasalahan ini.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Trent Fowler, &ldquo;Is JavaScript Front End or Back End?&rdquo;, Career Karma, 5 Aug 2020, url
+<a href=https://careerkarma.com/blog/javascript-front-end-or-back-end/ target=_blank rel="nofollow noopener noreferrer"><span>https://careerkarma.com/blog/javascript-front-end-or-back-end/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220218].</li><li><a name=r02></a>Jakub Majorek, &ldquo;19 Best JavaScript Data Visualization Libraries [UPDATED 2022]&rdquo;, 13 Sep 2021, url &lt;19 Best JavaScript Data Visualization Libraries [UPDATED 2022]> [20220218].</li><li><a name=r03></a>Don Cross, &ldquo;Physical Simulation with JavaScript in the HTML5 Canvas&rdquo;, JavaScript in Plain English, 27 Nov 2019, url
+<a href=https://javascript.plainenglish.io/physical-simulation-with-javascript-in-the-html5-canvas-27dc6ea121cf target=_blank rel="nofollow noopener noreferrer"><span>https://javascript.plainenglish.io/physical-simulation-with-javascript-in-the-html5-canvas-27dc6ea121cf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220218].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug5000?src=hash&amp;ref_src=twsrc%5Etfw">#bug5000</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1494907277824131073?ref_src=twsrc%5Etfw">February 19, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

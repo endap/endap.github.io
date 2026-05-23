@@ -1,0 +1,47 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>3Dmol.js support | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>3Dmol.js support</h1><time datetime=2024-01-13T19:49:24+07:00>January 13, 2024</time><p>Add support to view molecules with
+<a href=https://3dmol.csb.pitt.edu/doc/ target=_blank rel="nofollow noopener noreferrer"><span>3Dmol.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=create-post>create post</h2><pre tabindex=0><code>$ hugo new content tests/3mol-js-support.md
+Content &#34;D:\\blank\\content\\tests\\3mol-js-support.md&#34; created
+</code></pre><h2 id=tests-1>tests 1</h2><pre tabindex=0><code>{{&lt; blank/3dmoljs &gt;}}
+11
+pyridine
+C       -0.180226841      0.360945118     -1.120304970
+C       -0.180226841      1.559292118     -0.407860970
+C       -0.180226841      1.503191118      0.986935030
+N       -0.180226841      0.360945118      1.29018350
+C       -0.180226841     -0.781300882      0.986935030
+C       -0.180226841     -0.837401882     -0.407860970
+H       -0.180226841      0.360945118     -2.206546970
+H       -0.180226841      2.517950118     -0.917077970
+H       -0.180226841      2.421289118      1.572099030
+H       -0.180226841     -1.699398882      1.572099030
+H       -0.180226841     -1.796059882     -0.917077970
+{{&lt; /blank/3dmoljs &gt;}}
+</code></pre><h2 id=test-2>test 2</h2><pre tabindex=0><code>{{&lt; blank/3dmoljs &gt;}}
+21
+Aspirin
+O    1.2333    0.5540    0.7792
+O   -0.6952   -2.7148   -0.7502
+O    0.7958   -2.1843    0.8685
+O    1.7813    0.8105   -1.4821
+C   -0.0857    0.6088    0.4403
+C   -0.7927   -0.5515    0.1244
+C   -0.7288    1.8464    0.4133
+C   -2.1426   -0.4741   -0.2184
+C   -2.0787    1.9238    0.0706
+C   -2.7855    0.7636   -0.2453
+C   -0.1409   -1.8536    0.1477
+C    2.1094    0.6715   -0.3113
+C    3.5305    0.5996    0.1635
+H   -0.1851    2.7545    0.6593
+H   -2.7247   -1.3605   -0.4564
+H   -2.5797    2.8872    0.0506
+H   -3.8374    0.8238   -0.5090
+H    3.7290    1.4184    0.8593
+H    4.2045    0.6969   -0.6924
+H    3.7105   -0.3659    0.6426
+H   -0.2555   -3.5916   -0.7337
+{{&lt; /blank/3dmoljs &gt;}}
+</code></pre><h2 id=refs>refs</h2><ul><li><a href=https://en.wikipedia.org/wiki/XYZ_file_format target=_blank rel="nofollow noopener noreferrer"><span>XYZ file format <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href="https://pubchem.ncbi.nlm.nih.gov/compound/2244#section=3D-Conformer" target=_blank rel="nofollow noopener noreferrer"><span>Aspirin <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://scicomp.stackexchange.com/q/252/47104 target=_blank rel="nofollow noopener noreferrer"><span>Where can I find a database of simple chemical structures in XYZ format? <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

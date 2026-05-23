@@ -1,0 +1,41 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>mobile browser emulator | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>mobile browser emulator</h1><time datetime=2021-12-05T21:14:00+07:00>December 5, 2021</time><p>Dalam pengembangannya aplikas untuk devais mobile perlu dicoba pada emulator, simulator, dan devais sebenarnya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk emulator dapat menggunakan yang telah tersedia pada beberapa penjelajah internet [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] ataupun mengintstalnya sebagai ekstensi Google Chrome [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=screenshot>screenshot</h2><p>Devais Samsung Galaxy A12 [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] digunakan untuk uji coba tata letak suatu halaman web yang hasilnya pada emulator dan devais sebenarnya diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><table><thead><tr><th style=text-align:center><span style="border:2px solid #777;border-radius:20px;display:inline-block;padding-top:16px;padding-bottom:10px"><img src="{{ site.baseurl }}/assets/img/0/22/0221-a-galaxy_a12_screenshot.jpg"></span></th><th style=text-align:center><span style="border:2px solid #777;border-radius:20px;display:inline-block;padding-top:15px;padding-bottom:10px"><img src="{{ site.baseurl }}/assets/img/0/22/0221-b-chrome_360x400_localhost.png"></span></th><th style=text-align:center>![]({{ site.baseurl }}/assets/img/0/22/0221-c-galaxy_s20_simulator.png)</th></tr></thead><tbody><tr><td style=text-align:center>(a)</td><td style=text-align:center>(b)</td><td style=text-align:center>(c)</td></tr></tbody></table><p>Gambar <a name=fig1>1</a>. Screenshot <code>bug</code> menggunakan: (a) devais Samsung Galaxy A12, (b) Google Chrome mobile browser emulator for 360×400 screen size, dan (c) Mobile simulator for Samsung Galaxy S20.</p><p>Pada dua gambar pertama pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bingkai seperti wadah smartphone dibuat dengan menggunakan sudut yang melengkung (rounded corners), sedangkan pada gambar terakhir memang bersumber dari aplikasinya [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Oleh karena itu ada tambahan ruang di atas dan di bawah untuk kedua gambar pertama karena berkas PNG yang tidak melengkung melewati elemen <code>span</code> (dengan opsi <code>display:inline-block</code>) [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] sehingga perlu ditambahkan <code>padding</code> di atas dan di bawah.</p><h2 id=exer>exer</h2><ol><li>Apa yang terjadi pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(a) dan (b) bila tidak digunakan opsi <code>padding</code> pada stylenya?</li><li>Apakah masalah yang segera terlihat pada tampilan halaman web yang dibuat?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Sreevatsa Sreerangaraju, &ldquo;Emulation vs. Simulation&rdquo;, Perfecto, 29 May 2020, url
+<a href=https://www.perfecto.io/blog/emulation-vs-simulation target=_blank rel="nofollow noopener noreferrer"><span>https://www.perfecto.io/blog/emulation-vs-simulation <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211205].</li><li><a name=r02></a>Ciprian Adrian Rusen, &ldquo;How to use the mobile browser emulator in Chrome, Firefox, Edge, and Opera&rdquo;, Digital Citizen, 25 Feb 2021,</li><li><a name=r03></a>François Duprat, &ldquo;Mobile simulator - responsive testing tool&rdquo;, Mobile First, Chrome Web Store, url
+<a href=https://chrome.google.com/webstore/detail/mobile-simulator-responsi/ckejmhbmlajgoklhgbapkiccekfoccmk target=_blank rel="nofollow noopener noreferrer"><span>https://chrome.google.com/webstore/detail/mobile-simulator-responsi/ckejmhbmlajgoklhgbapkiccekfoccmk <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211205].</li><li><a name=r04></a>Wikipedia contributors, &ldquo;Samsung Galaxy A12&rdquo;, Wikipedia, The Free Encyclopedia, 2 December 2021, 04:41 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1058216549" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1058216549 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211205].</li><li><a name=r05></a>Refsnes Data, &ldquo;CSS Rounded Corners&rdquo;, W3Schools, url
+<a href=https://www.w3schools.com/css/css3_borders.asp target=_blank rel="nofollow noopener noreferrer"><span>https://www.w3schools.com/css/css3_borders.asp <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211205].</li><li><a name=r06></a>casraf, &ldquo;Answer to &lsquo;How to set height property for SPAN&rsquo;&rdquo;, 26 Feb 2010, edited 12 Aug 2015, Stack Overflow, url
+<a href=https://stackoverflow.com/a/2344014 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/2344014 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211205].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-lang=en data-theme=light data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0221?src=hash&amp;ref_src=twsrc%5Etfw">#bug0221</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1467496976493137920?ref_src=twsrc%5Etfw">December 5, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><h2 id=heading> </h2><p><a><span>comment twitter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>show only youtube control <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>install node.js v16.13.1 x64 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) gambar screenshot akan memotong bingkai dengan keempat sudut melengkung; &nbsp;
+2) simbol di sebelah kiri kata `bug` terlihat berbeda pada devais sebenarnya dibanding dengan pada emulator; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,47 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>gene2grid | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>gene2grid</h1><time datetime=2023-12-20T05:31:00+08:00>December 20, 2023</time><h2 id=intro>intro</h2><ul><li>It is a Hugo schortcode, which is an advancement of
+<a><span>000i <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>It converts characters including spaces in line to grid.</li><li>Required parameter is <code>id</code> that must be unique.</li><li>Optional parameter is <code>display</code> with value <code>inline-block</code> for arrange several grids in a line.</li><li>Current version has only two colors, <code>#000</code> and <code>#fff</code> with border <code>#888</code>.</li></ul><h2 id=results>results</h2><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>gene2grid</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;c00&#34;</span> <span style=color:#a6e22e>display</span>=<span style=color:#e6db74>&#34;inline-block&#34;</span> &gt;}}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11111</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>/</span><span style=color:#a6e22e>gene2grid</span> &gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>gene2grid</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;c01&#34;</span> <span style=color:#a6e22e>display</span>=<span style=color:#e6db74>&#34;inline-block&#34;</span> &gt;}}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11110</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>10000</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>10000</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11110</span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>/</span><span style=color:#a6e22e>gene2grid</span> &gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>gene2grid</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;c02&#34;</span> <span style=color:#a6e22e>display</span>=<span style=color:#e6db74>&#34;inline-block&#34;</span> &gt;}}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>10001</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>01010</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>01010</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>10001</span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>/</span><span style=color:#a6e22e>gene2grid</span> &gt;}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>gene2grid</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;c03&#34;</span> <span style=color:#a6e22e>display</span>=<span style=color:#e6db74>&#34;inline-block&#34;</span> &gt;}}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11111</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00100</span>
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>/</span><span style=color:#a6e22e>gene2grid</span> &gt;}}
+</span></span></code></pre></div><h2 id=refs>refs</h2><ul><li>&ldquo;Create your own shortcodes&rdquo;, Hugo, url
+<a href=https://gohugo.io/templates/shortcode-templates/ target=_blank rel="nofollow noopener noreferrer"><span>https://gohugo.io/templates/shortcode-templates/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>&ldquo;How to check whether a string contains a substring in JavaScript?&rdquo;, StackOverflow, url
+<a href=https://stackoverflow.com/a/1789952/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/1789952/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>&ldquo;How to Remove the Last Element of a JavaScript Array&rdquo;, HackerNoon, url
+<a href=https://hackernoon.com/how-to-remove-the-last-element-of-a-javascript-array target=_blank rel="nofollow noopener noreferrer"><span>https://hackernoon.com/how-to-remove-the-last-element-of-a-javascript-array <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>&ldquo;JavaScript Array shift()&rdquo;, W3Schools, url
+<a href=https://www.w3schools.com/jsref/jsref_shift.asp target=_blank rel="nofollow noopener noreferrer"><span>https://www.w3schools.com/jsref/jsref_shift.asp <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>&ldquo;JavaScript split() a String – String to Array JS Method&rdquo;, freeCodeCamp, url
+<a href=https://www.freecodecamp.org/news/javascript-split-a-string-string-to-array-js-method/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.freecodecamp.org/news/javascript-split-a-string-string-to-array-js-method/ <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>&ldquo;Hugo - Show ShortCode Markdown in Code Block&rdquo;, url
+<a href=https://digitaldrummerj.me/hugo-show-shortcode-markdown-in-code-block/ target=_blank rel="nofollow noopener noreferrer"><span>https://digitaldrummerj.me/hugo-show-shortcode-markdown-in-code-block/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

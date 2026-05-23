@@ -1,0 +1,124 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>num int app 1 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>num int app 1</h1><time datetime=2022-03-09T18:03:00+07:00>March 9, 2022</time><p>Dengan menggunakan integrasi numerik baik aturan persegi panjang [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], trapesium [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], ataupun Simpson [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dapat dihitung usaha oleh gaya tidak konstan [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=a-non-constant-force>a non-constant force</h2><p>Sebuah gaya tidak konstan, yang sejajar dengan arah gerak benda, berbentuk</p><p>\begin{equation}\label{eqn:non-constant-force}
+f(x) = 5 + x \sin^2 x
+\end{equation}</p><p>bekerja pada benda mulai dari posisi awal $x_i = 0 \ {\rm m}$ sampai posisi akhir $x_f = 5.37 \ {\rm m}$. Massa benda $m = 4.73 \ {\rm kg}$ dan kecepatan awal benda $v_f = 0$. Ingin dicari usaha oleh gaya pada Persamaan \eqref{eqn:non-constant-force} dan kecepatan akhir benda $v_f$. Antara lantai dengan benda tidak terdapat gesekan dan lantai benar-benar mendatar sehingga gaya yang bekerja pada benda adalah hanyalah $f(x)$.</p><h3 id=work>work</h3><p>Usaha oleh gaya $f(x)$ pada Persamaan \eqref{eqn:non-constant-force} dapat diperoleh melalui</p><p>\begin{equation}\label{eqn:work-of-non-constant-force}
+W = \int f(x) \ dx = \int_{x_i}^{x_f} (5 + x \sin^2 x) \ dx
+\end{equation}</p><p>yang akan dihitung secara numerik</p><p>\begin{equation}\label{eqn:work-of-non-constant-force-numerical}
+W = \sum_{i = 1}^N \frac{\Delta x}{\alpha} \left[ \beta_1 f(x_i) + \beta_2 f(x_i + \tfrac12\Delta x) + \beta_3 f(x_i + \Delta x) \right]
+\end{equation}</p><p>dengan bentuk di bagian dalam penjumlahan bergantung dari metode numerik yang dipilih.</p><p>Tabel <a name=tab1>1</a>. Beberapa metode integrasi numerik yang menggunakan pita atau partisi.</p><table><thead><tr><th style=text-align:left>Aturan</th><th style=text-align:center>$\alpha$</th><th style=text-align:center>$\beta_1$</th><th style=text-align:center>$\beta_2$</th><th style=text-align:center>$\beta_3$</th></tr></thead><tbody><tr><td style=text-align:left>Persegi panjang titik awal</td><td style=text-align:center>1</td><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr><tr><td style=text-align:left>Persegi panjang titik akhir</td><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>1</td></tr><tr><td style=text-align:left>Persegi panjang titik tengah</td><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>1</td><td style=text-align:center>1</td></tr><tr><td style=text-align:left>Trapesium</td><td style=text-align:center>2</td><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>1</td></tr><tr><td style=text-align:left>Simpson</td><td style=text-align:center>6</td><td style=text-align:center>1</td><td style=text-align:center>4</td><td style=text-align:center>1</td></tr></tbody></table><p>Nilai-nilai $\alpha$, $\beta_1$, $\beta_2$, dan $\beta_3$ untuk Persamaan \eqref{eqn:work-of-non-constant-force-numerical} diberikan pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=work-kinetic-energy-theorem>work-kinetic energy theorem</h3><p>Teorema kerja-energi kinetik memberikan hubungan</p><p>\begin{equation}\label{eqn:work-kinetic-energy-theorem}
+W = \Delta K = K_f - K_i = \tfrac12 m v_f^2 - \tfrac12 m v_i^2
+\end{equation}</p><p>dengan $W$ adalah usaha oleh semua gaya yang bekerja pada benda. Dengan menggunakan usaha $W$ yang diperoleh dari Persamaan \eqref{eqn:work-of-non-constant-force} atau \eqref{eqn:work-of-non-constant-force-numerical} dapat diperoleh</p><p>\begin{equation}\label{eqn:final-velocity}
+v_f = \sqrt{\frac{2W}{m} + v_i^2}
+\end{equation}</p><p>yang merupakan kecepatan akhir benda.</p><h2 id=code>code</h2><p>Persamaan \eqref{eqn:work-of-non-constant-force-numerical} dan \eqref{eqn:final-velocity} dapat dihitung dengan menggunakan program Python berikut ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>force</span>(x):
+</span></span><span style=display:flex><span>  sinx <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>sin(x)
+</span></span><span style=display:flex><span>  f <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span> <span style=color:#f92672>+</span> x <span style=color:#f92672>*</span> sinx <span style=color:#f92672>*</span> sinx
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> f
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>intRectLeftPoint</span>(N, xi, xf, f):
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> (xf <span style=color:#f92672>-</span> xi) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>  A <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    xj <span style=color:#f92672>=</span> xi <span style=color:#f92672>+</span> j <span style=color:#f92672>*</span>dx
+</span></span><span style=display:flex><span>    Aj <span style=color:#f92672>=</span> f(xj) <span style=color:#f92672>*</span> dx
+</span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> A <span style=color:#f92672>+</span> Aj
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>intRectRightPoint</span>(N, xi, xf, f):
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> (xf <span style=color:#f92672>-</span> xi) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>  A <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    xj <span style=color:#f92672>=</span> xi <span style=color:#f92672>+</span> (j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>*</span>dx
+</span></span><span style=display:flex><span>    Aj <span style=color:#f92672>=</span> f(xj) <span style=color:#f92672>*</span> dx
+</span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> A <span style=color:#f92672>+</span> Aj
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>intRectMidPoint</span>(N, xi, xf, f):
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> (xf <span style=color:#f92672>-</span> xi) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>  A <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    xj <span style=color:#f92672>=</span> xi <span style=color:#f92672>+</span> j <span style=color:#f92672>*</span>dx
+</span></span><span style=display:flex><span>    Aj <span style=color:#f92672>=</span> f(xj <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> dx) <span style=color:#f92672>*</span> dx
+</span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> A <span style=color:#f92672>+</span> Aj
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>intTrap</span>(N, xi, xf, f):
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> (xf <span style=color:#f92672>-</span> xi) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>  A <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    xj <span style=color:#f92672>=</span> xi <span style=color:#f92672>+</span> j <span style=color:#f92672>*</span>dx
+</span></span><span style=display:flex><span>    Aj <span style=color:#f92672>=</span> (f(xj) <span style=color:#f92672>+</span> f(xj <span style=color:#f92672>+</span> dx)) <span style=color:#f92672>*</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> A <span style=color:#f92672>+</span> Aj
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>intSimp</span>(N, xi, xf, f):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> N <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>!=</span> round(N <span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>) :
+</span></span><span style=display:flex><span>    N <span style=color:#f92672>=</span> N <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> (xf <span style=color:#f92672>-</span> xi) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>  A <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    xj <span style=color:#f92672>=</span> xi <span style=color:#f92672>+</span> j <span style=color:#f92672>*</span>dx
+</span></span><span style=display:flex><span>    Aj <span style=color:#f92672>=</span> (f(xj) <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span><span style=color:#f92672>*</span>f(xj <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.5</span><span style=color:#f92672>*</span>dx) <span style=color:#f92672>+</span> f(xj <span style=color:#f92672>+</span> dx)) <span style=color:#f92672>*</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> A <span style=color:#f92672>+</span> Aj
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> <span style=color:#ae81ff>4.73</span>
+</span></span><span style=display:flex><span>xi <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>xf <span style=color:#f92672>=</span> <span style=color:#ae81ff>5.37</span>
+</span></span><span style=display:flex><span>vi <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>25</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Arecl <span style=color:#f92672>=</span> intRectLeftPoint(N, xi, xf, force)
+</span></span><span style=display:flex><span>Arecm <span style=color:#f92672>=</span> intRectMidPoint(N, xi, xf, force)
+</span></span><span style=display:flex><span>Arecr <span style=color:#f92672>=</span> intRectRightPoint(N, xi, xf, force)
+</span></span><span style=display:flex><span>Atrap <span style=color:#f92672>=</span> intTrap(N, xi, xf, force)
+</span></span><span style=display:flex><span>Asimp <span style=color:#f92672>=</span> intSimp(N, xi, xf, force)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Arecl = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span>Arecl)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Arecm = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span>Arecm)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Arecr = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span>Arecr)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Atrap = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span>Atrap)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Asimp = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span>Asimp)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>W <span style=color:#f92672>=</span> Atrap
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;W = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74> J&#34;</span> <span style=color:#f92672>%</span>W)
+</span></span><span style=display:flex><span>dK <span style=color:#f92672>=</span> W
+</span></span><span style=display:flex><span>vf <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>sqrt(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> dK <span style=color:#f92672>/</span> m <span style=color:#f92672>+</span> vi <span style=color:#f92672>*</span> vi)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;vf = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74> m/s&#34;</span> <span style=color:#f92672>%</span>vf)
+</span></span></code></pre></div><p>dengan hasilnya adalah</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>Output:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Arecl = 35.136
+</span></span><span style=display:flex><span>Arecm = 35.524
+</span></span><span style=display:flex><span>Arecr = 35.858
+</span></span><span style=display:flex><span>Atrap = 35.497
+</span></span><span style=display:flex><span>Asimp = 35.515
+</span></span><span style=display:flex><span>W = 35.497 J
+</span></span><span style=display:flex><span>vf = 3.874 m/s
+</span></span></code></pre></div><p>saat dijalankan. Program di atas dapat dieksekusi secara daring di OneCompiler
+<a href=https://onecompiler.com/python/3xvjm3mh2 target=_blank rel="nofollow noopener noreferrer"><span>3xvjm3mh2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Eric Cai, &ldquo;Rectangular Integration (a.k.a. The Midpoint Rule) – Conceptual Foundations and a Statistical Application in R&rdquo;, The Chemical Statistician, 20 Jan 2014, url
+<a href=https://chemicalstatistician.wordpress.com/2014/01/20/rectangular-integration-a-k-a-the-midpoint-rule/ target=_blank rel="nofollow noopener noreferrer"><span>https://chemicalstatistician.wordpress.com/2014/01/20/rectangular-integration-a-k-a-the-midpoint-rule/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Trapezoidal rule&rdquo;, Wikipedia, The Free Encyclopedia, 10 January 2022, 22:37 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1064927064" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1064927064 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Simpson&rsquo;s rule&rdquo;, Wikipedia, The Free Encyclopedia, 6 March 2022, 19:03 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1075614881" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1075614881 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r04></a>Peter Dourmashkin, &ldquo;Work done by Non-Constant Forces&rdquo;, Classical Mechanics, 31 Dec 2020, url
+<a href=https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_%28Dourmashkin%29/13%3A_Energy_Kinetic_Energy_and_Work/13.05%3A_Work_done_by_Non-Constant_Forces target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Dourmashkin)/13%3A_Energy_Kinetic_Energy_and_Work/13.05%3A_Work_done_by_Non-Constant_Forces <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309]</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

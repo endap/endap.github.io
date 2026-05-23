@@ -1,0 +1,144 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py list matrix pkg | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py list matrix pkg</h1><time datetime=2022-02-17T15:37:00+07:00>February 17, 2022</time><p>Operasi matriks di Python dapat dilakukan dengan berbantuan berbagai paket, misalnya saja adalan NumPy [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Di sini akan disajikan paket buatan sendiri tentang matriks yang dapat untuk menjumlahkan dan mengurangkan dua buah matriks, perkalian matriks dengan matriks, perkalian matriks dengan skalar, dan transpos suatu matriks. Digunakan hanya list Python dan pengulangan for.</p><h2 id=some-packages>some packages</h2><p>Selain NumPy, terdapat sekitar 260 paket Python terkait dengan matriks (Matrix) yang telah disaring dengan topik Scientific/Engineering lalu Mathematics [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>![]({{ site.baseurl }}/assets/img/0/48/0487-a.png)<br>Gambar <a name=fig1>1</a>. Hasil teratas pencarian paket Python dengan katan kunci &lsquo;matrix&rsquo; dan diberi filter &lsquo;Scientific/Engineering lalu Mathematics&rsquo; di PyPI.</p><p>Selain itu dapat pula dicari di GitHub untuk itu seperti diberikan pada gambar berikut ini, sekitar 23 repositori [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>![]({{ site.baseurl }}/assets/img/0/48/0487-b.png)<br>Gambar <a name=fig2>2</a>. Hasil tiga teratas pencarian paket Python dengan katan kunci &lsquo;matrices python mathematics&rsquo; di GitHub.</p><p>Demikianlah sekilas adanya paket-paket terkait matriks yang tersedia sebagaimana hasil pencariannya telah ditampikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Hasil pencarian sebenarnya akan lebih banyak dari 260 + 23 tersebut.</p><h2 id=the-code>the code</h2><p>Paket <code>matrix</code> buatan sendiri adalah sebagai berikut ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># matrix.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simple matrix library using list</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220216 Create this example.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220217 Add transpose.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print only two-dimension matrix in form of a list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printmat</span>(m):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume that all rows have the same columns</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            print(m[r][c], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>        print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create an new two-dimension matrix in form of a list filled with zero</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>newmat</span>(row, col):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>    m <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            newrow<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        m<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># add two two-dimension matrices in form of a list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>addmat</span>(m1, m2):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume both matrices have the same dimension</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m1)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m1[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>    m3 <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            newcol <span style=color:#f92672>=</span> m1[r][c] <span style=color:#f92672>+</span> m2[r][c]
+</span></span><span style=display:flex><span>            newrow<span style=color:#f92672>.</span>append(newcol)
+</span></span><span style=display:flex><span>        m3<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m3
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span><span style=color:#75715e># substract two two-dimension matrices in form of a list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>submat</span>(m1, m2):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume both matrices have the same dimension</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m1)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m1[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>    m3 <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            newcol <span style=color:#f92672>=</span> m1[r][c] <span style=color:#f92672>-</span> m2[r][c]
+</span></span><span style=display:flex><span>            newrow<span style=color:#f92672>.</span>append(newcol)
+</span></span><span style=display:flex><span>        m3<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m3
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># multiply a matrix with a scalar</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>mulmat1</span>(m, a):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume all rows have the same number of columns</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    m2 <span style=color:#f92672>=</span> newmat(row, col)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            m2[r][c] <span style=color:#f92672>=</span> m[r][c] <span style=color:#f92672>*</span> a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># multiply a matrix with a matrix</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>mulmat2</span>(m1, m2):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume colum of 1st and row of 2nd are matched</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m1)
+</span></span><span style=display:flex><span>    mid <span style=color:#f92672>=</span> len(m1[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m2[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    m3 <span style=color:#f92672>=</span> newmat(row, col)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            temp <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> m <span style=color:#f92672>in</span> range(mid):
+</span></span><span style=display:flex><span>                temp <span style=color:#f92672>=</span> temp <span style=color:#f92672>+</span> m1[r][m] <span style=color:#f92672>*</span> m2[m][c]
+</span></span><span style=display:flex><span>            m3[r][c] <span style=color:#f92672>=</span> temp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m3
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># transpose a matrix</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>tmat</span>(m):
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    mT <span style=color:#f92672>=</span> mat<span style=color:#f92672>.</span>newmat(col, row)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            mT[c][r] <span style=color:#f92672>=</span> m[r][c]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> mT
+</span></span></code></pre></div><p>yang bila diletakkan pada folder yang sama dengan suatu berkas Python lainnya, dapat dipanggil melalui berkas tersebut. Baris berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> matrix <span style=color:#66d9ef>as</span> mat
+</span></span></code></pre></div><p>perlu diletakkan dalam berkas pemanggilnya. Bila paket tersebut dijalankan, akan diperoleh</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: matrix.py ====
+</span></span></code></pre></div><p>sebagai hasilnya, yang menunjukkan setidaknya tidak terdapat kesalahan penulisan baris-baris kodenya, akan tetapi belum dijalankan.</p><h1 id=exer>exer</h1><ol><li>Apa hasil dari potongan kode berikut ini?<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> matrix <span style=color:#66d9ef>as</span> mat
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> mat<span style=color:#f92672>.</span>newmat(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>mat<span style=color:#f92672>.</span>printmat(m)
+</span></span></code></pre></div></li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>NumPy Developers, &ldquo;Creating matrices&rdquo;, NumPy, 2022, url
+<a href=https://numpy.org/doc/stable/user/absolute_beginners.html#creating-matrices target=_blank rel="nofollow noopener noreferrer"><span>https://numpy.org/doc/stable/user/absolute_beginners.html#creating-matrices <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li><li><a name=r02></a>&ldquo;matrix - FILTER TOPIC :: SCIENTIFIC/ENGINEERING :: MATHEMATICS&rdquo;, PyPI, Python Software Foundation, url
+<a href="https://pypi.org/search/?q=matrix&amp;o=&amp;c=Topic+%3A%3A+Scientific%2FEngineering+%3A%3A+Mathematics" target=_blank rel="nofollow noopener noreferrer"><span>https://pypi.org/search/?q=matrix&o=&c=Topic+%3A%3A+Scientific%2FEngineering+%3A%3A+Mathematics <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li><li><a name=r03></a>&ldquo;matrices python mathematics &ndash; 23 repository results&rdquo;, GitHub, Inc., 2022, url
+<a href="https://github.com/search?l=Python&amp;q=matrices+python+mathematics&amp;type=Repositories" target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/search?l=Python&q=matrices+python+mathematics&type=Repositories <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0487?src=hash&amp;ref_src=twsrc%5Etfw">#bug0487</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1494229177301880834?ref_src=twsrc%5Etfw">February 17, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) `0 0 0 0`; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,98 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py iterable for list range | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py iterable for list range</h1><time datetime=2021-12-19T07:33:00+07:00>December 19, 2021</time><p>Dalam Python loop dengan for digunakan untuk proses berkelanjutan yang berurutan (sequential traversal) seperti pengulangan pada suatu iterable seperti string, tuple, list, array dan lainnya, yang termasuk dalam kategori iterasi terdefinisi [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat perbedaan antara range dan list, yang sejak Python 3.x range tidak lagi memproduksi list sehingga elemen-elemennya tidak lagi memerlukan memori untuk menyimpannya, melainkan hanya dibuat on the fly saat iterasi dilakukan, sehingga proses iterasinya menjadi lebih cepat [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=for>for</h2><p>For pada Python dapat digunakan dengan bentuk</p><figure><blockquote><p><code>for var in iterable</code></p></blockquote></figure><p>dengan variabel <code>var</code> akan berisikan elemen-elemen pada <code>iterable</code> yang disampaikan satu per satu, di mana</p><pre tabindex=0><code>x = [3, 2, 1]
+for i in x:
+	print(i)
+</code></pre><p>merupakan salah satu contohnya, yang akan menampilkan semua elemen dari <code>x</code> pada konsol satu per baris. Pada contoh di atas <code>var</code> adalah <code>i</code> dan <code>iterable</code> adalah <code>x</code>, serta elemen-elemen <code>x</code> adalah <code>3</code>, <code>2</code>, dan <code>1</code>. Contoh ini dapat dijalankan di
+<a href=https://onecompiler.com/python/3xmrsn6v8 target=_blank rel="nofollow noopener noreferrer"><span>3xmrsn6v8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=range>range</h2><p>Range pada Python, yang berfungsi untuk membuat variabel immutable berisi urutan angka, bersifat inklusif [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] yang berarti bahwa argumen kedua <code>stop</code> tidak terikutkan dalam range yang dihasilkan, sedangkan argumen pertama <code>star</code> terikutkan, yang bentuk penggunaannya adalah</p><figure><blockquote><p><code>range(start, stop[, step])</code></p></blockquote></figure><p>dengan contoh</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(list(range(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>2</span>)))
+</span></span></code></pre></div><p>akan menghasilkan <code>[1, 3, 5, 7, 9]</code> dengan <code>11</code> tidak diikutsertakan. Coba contoh ini di
+<a href=https://onecompiler.com/python/ target=_blank rel="nofollow noopener noreferrer"><span>3xmrufzxt <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Terdapat penjelasan yang baik mengenai range() dengan disertai visualisasi yang menarik [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=example>example</h2><p>Dapat digunakan range, list, dan list terbuat dari range sebagai iterable pada loop for, dengan masing-masing variabelnya adalah <code>ra</code>, <code>li</code>, dan <code>lira</code>, sebagaimana tersajikan pada kode berikut ini</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># python 3.9.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 0292-a.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Range and list for iteration</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20211219</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># url bugx.vercel.app/pages/0292.html</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ref</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define a range</span>
+</span></span><span style=display:flex><span>ra <span style=color:#f92672>=</span> range(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>print(ra)
+</span></span><span style=display:flex><span>print(type(ra))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> ra:
+</span></span><span style=display:flex><span>    print(i)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define a list</span>
+</span></span><span style=display:flex><span>li <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>print(li)
+</span></span><span style=display:flex><span>print(type(li))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> li:
+</span></span><span style=display:flex><span>    print(i)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define a list from a range</span>
+</span></span><span style=display:flex><span>lira <span style=color:#f92672>=</span> list(ra)
+</span></span><span style=display:flex><span>print(lira)
+</span></span><span style=display:flex><span>print(type(lira))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> lira:
+</span></span><span style=display:flex><span>    print(i)
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>yang dapat dijalankan di
+<a href=https://onecompiler.com/python/3xmrrdhp6 target=_blank rel="nofollow noopener noreferrer"><span>3xmrrdhp6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan akan memberikan</p><pre tabindex=0><code>range(0, 12, 2)
+&lt;class &#39;range&#39;&gt;
+0
+2
+4
+6
+8
+10
+
+[0, 2, 4, 6, 8, 10]
+&lt;class &#39;list&#39;&gt;
+0
+2
+4
+6
+8
+10
+
+[0, 2, 4, 6, 8, 10]
+&lt;class &#39;list&#39;&gt;
+0
+2
+4
+6
+8
+10
+</code></pre><p>sebagai hasilnya.</p><h2 id=exer>exer</h2><ol><li>Bagaimana nilai-nilai <code>i</code> bila digunakan pada <code>range(0, 6, 1)</code>?</li><li>Kode <code>range(5, -1, -1)</code> akan menghasilkan iterable dengan nilai-nilai berapa saja?</li><li>Mengapa range() dikatakan bersifat inklusif?</li><li>Modifikasi <code>range(1, 7, 2)</code> agar dihasilkan 1, 3, 5, 7. Manfaatkan contoh di
+<a href=https://onecompiler.com/python/3xmrvkd7g target=_blank rel="nofollow noopener noreferrer"><span>3xmrvkd7g <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bila diperlukan.</li><li>Bila <code>x</code> merupakan suatu range dan ingin dibuat menjadi list dalam variabel bernama <code>y</code>, bagaimana caranya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>nikhilaggarwal3, ankushgarg1998
+balajikawle777, &ldquo;Python For Loops&rdquo;, GeeksforGeeks, 25 Aug 2021, url
+<a href=https://www.geeksforgeeks.org/python-for-loops/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/python-for-loops/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211219].</li><li><a name=r02></a>Anand S Kumar, &ldquo;Answer to &lsquo;What is the difference between &ldquo;range(0,2)&rdquo; and &ldquo;list(range(0,2))&rdquo;?&rsquo;&rdquo;, Stack Overflow, 5 Jul 2015, url
+<a href=https://stackoverflow.com/a/31227578 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/31227578 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r03></a>Krunal, &ldquo;Python Range Inclusive: Why Range Does Not Include End&rdquo;, AppDivident, 24 Mar 2021, url
+<a href=https://appdividend.com/2021/03/24/python-range-inclusive/ target=_blank rel="nofollow noopener noreferrer"><span>https://appdividend.com/2021/03/24/python-range-inclusive/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211219].</li><li><a name=r04></a>Vishal Hule, &ldquo;Python range() Explained with Examples&rdquo;, PYnative, 16 Jun 2021, url
+<a href=https://pynative.com/python-range-function/ target=_blank rel="nofollow noopener noreferrer"><span>https://pynative.com/python-range-function/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211219].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0292?src=hash&amp;ref_src=twsrc%5Etfw">#bug0292</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1472353014627254274?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) 0, 1, 2, 3, 4, 5; &nbsp;
+2) 5, 4, 3, 2, 1, 0; &nbsp;
+3) karena argumen <code>stop</code> tidak disertakan; &nbsp;
+4) <code>range(1, 7, 8)</code>; &nbsp;
+5) <code>y = list(x)</code>; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

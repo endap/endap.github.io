@@ -1,0 +1,118 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>tasklist shortcode | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>tasklist shortcode</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-04-03T18:42:23 07:00">3 Apr 2025</time>
+&#183;
+3 mins read</div></div><div class=note-content><p>It is an evolution of previous shortcode <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, which only lists available unfinished (also remembered) tasks and shows only general information as overview. To test a long title task, a dummy note is created <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p><h2 id=results>results</h2><p>Following is the current result of this shortcode.</p><p>The status at lower right corner of each task can have value of 0 (not started), 1 (in progress), 2 (completed), where daily note should have 2 by the end of the day when it is created.</p><p>For simplicity, updates show how many times a task has been further processed, with each consecutive processing separated by at least half a day.</p><h2 id=shortcode>shortcode</h2><p>Following is the shortcode <code>tasklist</code> in <code>layouts/shortcodes</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ $styles := resources.Get &#34;css/tasklist.css&#34; | resources.Minify | resources.Fingerprint }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $styles.RelPermalink }}&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ $urls := slice }}
+</span></span><span style=display:flex><span>{{ $updates := slice }}
+</span></span><span style=display:flex><span>{{ $status := slice }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ range split (trim .Inner &#34; \n\r\t&#34;) &#34;\n&#34; }}
+</span></span><span style=display:flex><span>  {{ $parts := split . &#34; | &#34; }}
+</span></span><span style=display:flex><span>  {{ $urls = $urls | append (index $parts 0) }}
+</span></span><span style=display:flex><span>  {{ $updates = $updates | append (index $parts 1) }}
+</span></span><span style=display:flex><span>  {{ $status = $status | append (index $parts 2) }}
+</span></span><span style=display:flex><span>{{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-list-container&#34;</span>&gt;
+</span></span><span style=display:flex><span>  {{ range $i, $url := $urls }}
+</span></span><span style=display:flex><span>    {{ $matchedPages := where site.RegularPages &#34;Params.url&#34; $url }}
+</span></span><span style=display:flex><span>    {{ if gt (len $matchedPages) 0 }}
+</span></span><span style=display:flex><span>      {{ $page := index $matchedPages 0 }}
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-header&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-url&#34;</span>&gt;{{ $page.Params.url }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-date&#34;</span>&gt;{{ dateFormat &#34;2-Jan-2006&#34; $page.Params.date }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-title&#34;</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $page.RelPermalink }}&#34;</span>&gt;{{ $page.Title }}&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-footer&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-updates&#34;</span>&gt;{{ strings.Repeat (int (index $updates $i)) &#34;▮&#34; }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;task-status&#34;</span>&gt;{{ (index $status $i) }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>  {{ end }}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><p>The character for updates can be modified by simply replacing &ldquo;▮&rdquo; with other character.</p><h2 id=css>css</h2><p>The shortcode requires following CSS named <code>tasklist.css</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>.<span style=color:#a6e22e>task-list-container</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>left</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#66d9ef>blue</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline-block</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>4</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>6</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>-1.5</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>word-break</span>: break-all;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>80</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#ae81ff>#f4f4f4</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#ae81ff>#ccc</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>96</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>110</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  scrollbar-color: <span style=color:#ae81ff>#4f81bd</span> <span style=color:#ae81ff>#f1f1f1</span>;
+</span></span><span style=display:flex><span>  scrollbar-width: <span style=color:#66d9ef>thin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>overflow</span>: <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>line-height</span>: <span style=color:#ae81ff>18.7</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-header</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-url</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex</span>: <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-family</span>: <span style=color:#66d9ef>monospace</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-date</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-family</span>: <span style=color:#66d9ef>monospace</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-title</span> {
+</span></span><span style=display:flex><span>  scrollbar-color: <span style=color:#ae81ff>#4f81bd</span> <span style=color:#ae81ff>#f1f1f1</span>;
+</span></span><span style=display:flex><span>  scrollbar-width: <span style=color:#66d9ef>thin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>overflow</span>: <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>3.5</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding-bottom</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-footer</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-updates</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex</span>: <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>letter-spacing</span>: <span style=color:#ae81ff>-2</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#ae81ff>#4f81bd</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-family</span>: <span style=color:#66d9ef>monospace</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>task-status</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-family</span>: <span style=color:#66d9ef>monospace</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>which is located in <code>assets/css</code>.</p><h2 id=usage>usage</h2><p>To use the shortcode put following lines</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span>{{<span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>tasklist</span> <span style=color:#f92672>&gt;</span>}}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d06</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d05</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d04</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d03</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d02</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d01</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#a6e22e>d00</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>|</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>&lt;</span> <span style=color:#f92672>/</span><span style=color:#a6e22e>tasklist</span> <span style=color:#f92672>&gt;</span>}}
+</span></span></code></pre></div><p>in a Hugo post, or note in this repository.</p><h2 id=notes>notes</h2><ul><li>Suggestion about alternatives for the progress bar does not work well, since syntax for Hugo <code>strings.Repeat</code> uses wrong order of arguments <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li><li>Solution is given on Hugo
+<a href=https://gohugo.io/functions/strings/repeat/ target=_blank rel="nofollow noopener noreferrer"><span>strings.Repeat page <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul><h2 id=to-do>to-do</h2><ul><li>Post this note on Medium as story with topics of Hugo SSG, shortcodes, or other related terms or phrases.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Sparisoma Viridi, &ldquo;progress shortcode&rdquo;, notes, 27 Mar 2025, (-), url
+<a href=https://dudung.github.io/notes/25c65/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/notes/25c65/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250327].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Sparisoma Viridi, &ldquo;post with long title just for testing vertical scrollbar in task-title in task&rdquo;, notes, 4 Apr 2025, (-), url
+<a href=https://dudung.github.io/notes/25d06/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/notes/25d06/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250404].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>GPT-4o, &ldquo;Task Monitoring and Status&rdquo;, Chat GPT, 4 Apr 2025, url
+<a href=https://chatgpt.com/share/67ef2677-e934-800a-b17b-87d55f52e432 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/67ef2677-e934-800a-b17b-87d55f52e432 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250404]&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

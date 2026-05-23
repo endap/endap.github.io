@@ -1,0 +1,85 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>internal energy | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>internal energy</h1><time datetime=2021-11-14T17:12:00+07:00>November 14, 2021</time><p>Energi dalam atau energi internal suatu gas ideal merupakan fungsi dari temperatur saja [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sehingga merupakan suatu variabel keadaan [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Energi dalam suatu gas adalah jumlah energi kinetik partikel-partikel dalam gas [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan juga energi potensialnya, yang untuk gas ideal diabaikan karena tidak ada interaksi inter-partikel [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Energi dalam dapat dituliskan dalam tiga besaran ekstensif, yaitu entropi, volume, dan massa [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=monoatomic-gas>monoatomic gas</h2><p>Energi dalam suatu gas ideal monoatomik diberikan oleh [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn-internal-energy}
+U = \tfrac32 NkT = \tfrac32 nRT,
+\end{equation}</p><p>dengan $N$ jumlah partikel gas, $k$ konstanta Boltzmann, dan $T$ temperatur, serta $n$ jumlah mol gas. Dan perubahannya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><p>\begin{equation}\label{eqn-internal-energy-change}
+dU = C_V dT,
+\end{equation}</p><p>dengan $C_V = \frac32 nR$ adalah kapasitas panas pada volume tetap dan bila dilakukan integrasi akan diperoleh</p><p>\begin{equation}\label{eqn-internal-energy-change-integral}
+\Delta U = U_f - U_i = C_V (T_f - T_i) = C_V \Delta T,
+\end{equation}</p><p>dengan indeks $f$ dan $i$ masing-masing menggambarkan keadaan akhir (final) dan awal (inisial). Persamaan \eqref{eqn-internal-energy} menjelaskan bahwa untuk gas monoatomik energi dalam suatu gas terdiri dari energi translasi saja [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=state-variable>state variable</h2><p>Energi dalam suatu gas merupakan suatu variabel keadaan sehingga perubahannya hanya bergantung pada keadaan awal dan keadaan akhir, tidak bergantung pada lintasan yang ditempuh suatu proses.</p><p>![]({{ site.baseurl }}/assets/img/0/13/0134-a.png)<br>Gambar <a name=fig1>1</a>. Sejumlah $384.8695 \ \rm mol$ gas ideal monoatomik mengalami tiga proses $1 \rightarrow 2$, $2 \rightarrow 3$, dan $3 \rightarrow 1$.</p><p>Dengan menggunakan persamaan gas ideal dapat diperoleh bahwa $T_1 = 1000 \ \rm K$, $T_2 = 2000 \ \rm K$, dan $T_3 = 1000 \ \rm K$. Untuk gas monoatomik $C_V = \frac32 nR = 4799.99 \approx 4800 \ \rm J/K$. Dengan demikian dapat dihitung bahwa</p><p>$$
+\Delta U_{1 \rightarrow 2} = C_V (T_2 - T_1) = 4800 \cdot (2000-1000) = 4.8 \times 10^6 \ \rm J,
+$$</p><p>$$
+\Delta U_{2 \rightarrow 3} = C_V (T_3 - T_2) = 4800 \cdot (1000-2000) = -4.8 \times 10^6 \ \rm J,
+$$</p><p>$$
+\Delta U_{3 \rightarrow 1} = C_V (T_3 - T_2) = 4800 \cdot (1000-1000) = 0 \ \rm J,
+$$</p><p>sehingga</p><p>$$
+\begin{array}{rcl}
+\Delta U_{1 \rightarrow 2 \rightarrow 3 \rightarrow 1} & = & \Delta U_{1 \rightarrow 2} + \Delta U_{2 \rightarrow 3} + \Delta U_{3 \rightarrow 1} \newline
+& = & 4.8 \times 10^6 - 4.8 \times 10^6 + 0 \newline
+& = & 0
+\end{array}
+$$</p><p>atau secara simbolik saja</p><p>$$
+\require{cancel}
+\newcommand\ccancel[2][black]{\color{#1}{\cancel{\color{black}{#2}}}}
+\newcommand\cbcancel[2][black]{\color{#1}{\bcancel{\color{black}{#2}}}}
+\newcommand\cxcancel[2][black]{\color{#1}{\xcancel{\color{black}{#2}}}}
+\begin{array}{rcl}
+\Delta U_{1 \rightarrow 2 \rightarrow 3 \rightarrow 1} & = & \Delta U_{1 \rightarrow 2} + \Delta U_{2 \rightarrow 3} + \Delta U_{3 \rightarrow 1} \newline
+& = & C_V (T_2 - T_1) + C_V (T_3 - T_2) + C_V (T_1 - T_3) \newline
+& = & \ccancel[red]{C_V T_2} - \cxcancel[green]{C_V T_1} + \cbcancel[blue]{C_V T_3} - \ccancel[red]{C_V T_2} + \cxcancel[green]{C_V T_1} - \cbcancel[blue]{C_V T_3} \newline
+& = & 0.
+\end{array}
+$$</p><p>Perhitungan dengan simbolik pada baris kedua dari terakhir lebih disarankan ketimbang perhitungan numerik karena lebih dapat memperkenalkan kesalahan.</p><p>![]({{ site.baseurl }}/assets/img/0/13/0134-b.png)<br>Gambar <a name=fig2>2</a>. Gas ideal monoatomik $384.8695 \ \rm mol$ mengalami dua proses terpisah, $1 \rightarrow 2 \rightarrow 3$ dan $1 \rightarrow 3$, yang memiliki keadaan awal dan akhir sama.</p><p>Ilustrasi pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang merupakan pengubahan dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, memberikan ilustrasi dua proses berbeda akan tetapi dengan keadaan awal dan akhir sama, yang akan memberikan</p><p>$$
+\Delta U_{1 \rightarrow 2 \rightarrow 3} = \Delta U_{1 \rightarrow 3}
+$$</p><p>perubahan energi dalam gas yang sama.</p><h1 id=exer>exer</h1><ol><li>Sebutkan tiga proses khusus yang terdapat pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Pada proses apa $\Delta U = 0$?</li><li>Bagaimana nilai $\Delta U$ suatu siklus?</li><li>Sebutkan rumus untuk $C_V$ gas ideal monoatomik.</li><li>Dari ketiga keadaan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, mana yang temperaturnya paling tingggi? Dan berapakah nilainya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>W. Craig Carter, &ldquo;Internal Energy of an Ideal Gas&rdquo;,28-09-2002, url
+<a href=http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html target=_blank rel="nofollow noopener noreferrer"><span>http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20111113].</li><li><a name=r02></a>Muller-Steinhagen, Hans Michael Gottfried, &ldquo;Internal Energy&rdquo;, Thermopedia, 13 February 2011, url
+<a href=https://dx.doi.org/10.1615/AtoZ.i.internal_energy target=_blank rel="nofollow noopener noreferrer"><span>https://dx.doi.org/10.1615/AtoZ.i.internal_energy <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r03></a>George M. Bodner, &ldquo;Energy, Enthalpy, and the First Law of Thermodynamics&rdquo; in General Chemistry, Division of Chemical Education, Purdue University, url
+<a href=https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch21/chemical.php target=_blank rel="nofollow noopener noreferrer"><span>https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch21/chemical.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211113].</li><li><a name=r04></a>Boundless, &ldquo;Internal Energy of an Ideal Gas&rdquo;, Concept Version 10, in Boundless Physics, Book Version 3, url
+<a href=http://kolibri.teacherinabox.org.au/modules/en-boundless/www.boundless.com/physics/textbooks/boundless-physics-textbook/temperature-and-kinetic-theory-12/kinetic-theory-105/internal-energy-of-an-ideal-gas-383-5642/index.html target=_blank rel="nofollow noopener noreferrer"><span>http://kolibri.teacherinabox.org.au/modules/en-boundless/www.boundless.com/physics/textbooks/boundless-physics-textbook/temperature-and-kinetic-theory-12/kinetic-theory-105/internal-energy-of-an-ideal-gas-383-5642/index.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211113].</li><li><a name=r05></a>Wikipedia contributors, &ldquo;Internal energy&rdquo;, Wikipedia, The Free Encyclopedia, 7 November 2021, 09:57 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1053983664" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1053983664 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r06></a>Bernd A. Berg, &ldquo;Heat Capacities of Gases&rdquo;, General Physics A (PHY2048), 4 Dec 2003, url
+<a href=http://www.hep.fsu.edu/~berg/teach/phy2048/1202.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://www.hep.fsu.edu/~berg/teach/phy2048/1202.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211114].</li></ol><h2 id=heading> </h2><p><a><span>kinetic theory of gases <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>ideal gas law <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>state, process, cycle <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>special processes <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) isobarik, isokhoric, isotermal; &nbsp;
+2) isotermal; &nbsp;
+3) $0$; &nbsp;
+4) $\frac32 nR$; &nbsp;
+5) keadaan $2$, $T_2 = 2000 \ \rm K$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

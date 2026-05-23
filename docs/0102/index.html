@@ -1,0 +1,108 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>fun with random number | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>fun with random number</h1><time datetime=2023-10-19T08:00:00+07:00>October 19, 2023</time><h2 id=introduction>introduction</h2><ul><li>A random number is a number generated using a large set of numbers and a mathematical algorithm which gives equal probability to all numbers occurring in the specified distribution, which are most commonly produced with the help of a random number generator (
+<a href=https://www.techopedia.com/definition/31706/random-number target=_blank rel="nofollow noopener noreferrer"><span>Rouse, 2016 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>It is a number which is generated for, or part of, a set exhibiting statistical randomness, where the statistical randomness is a characteristic where a numeric sequence is said to be statistically random when it contains no recognisable patterns or regularities (
+<a href=http://whs-blogs.co.uk/teaching/what-is-a-random-number-and-what-is-the-random-number-generator/ target=_blank rel="nofollow noopener noreferrer"><span>WHS, 2021 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li><li>A random number is a number chosen as if by chance from some specified distribution such that selection of a large set of these numbers reproduces the underlying distribution and almost always, such numbers are also required to be independent, so that there are no correlations between successive numbers
+(
+<a href=https://mathworld.wolfram.com/RandomNumber.html target=_blank rel="nofollow noopener noreferrer"><span>Weisstein, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>).</li></ul><h2 id=random-function>random function</h2><p>There is a function to generate random float number (
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random?retiredLocale=de" target=_blank rel="nofollow noopener noreferrer"><span>MND, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>)</p><figure><blockquote><p>The <code>Math.random()</code> static method returns a floating-point, pseudo-random number that&rsquo;s greater than or equal to 0 and less than 1, with approximately uniform distribution over that range — which you can then scale to your desired range. The implementation selects the initial seed to the random number generation algorithm; it cannot be chosen or reset by the user.</p></blockquote></figure><h2 id=random-number-in-0-1>random number $\in [0, 1)$</h2><ul><li>Result<pre tabindex=0><code>0.7322
+0.7564
+0.5447
+0.5297
+0.0453
+0.2310
+0.4751
+0.9178
+0.1715
+0.5252
+</code></pre></li><li>Code
+<a href=https://onecompiler.com/javascript/3zqvkr9k2 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zqvkr9k2 <i class="fa fa-external-link" style=font-size:14px></i></span></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// set repetition
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>N</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// set digit
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>M</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// generate random number
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>random</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>toFixed</span>(<span style=color:#a6e22e>M</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>xs</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li></ul><h2 id=integer-random-number>integer random number</h2><ul><li>Result<pre tabindex=0><code>[
+  7, 4, 2, 5, 5, 4, 4, 5, 4, 4,
+  2, 9, 7, 5, 4, 2, 6, 3, 4, 2,
+  7, 6, 5, 5, 8, 7, 9, 3, 8, 8,
+  3, 8, 6, 8, 9, 3, 2, 2, 3, 2
+]
+</code></pre></li><li>Code
+<a href=https://onecompiler.com/javascript/3zqvnpgc7 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zqvnpgc7 <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// set repetition
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>N</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>40</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// set range of integer
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>imin</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>imax</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>9</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// create empty array
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// generate random number
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>random</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>*</span> (<span style=color:#a6e22e>imax</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>imin</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>imin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>z</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>z</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a</span>);
+</span></span></code></pre></div><h2 id=randint-in-house-function>randint in-house function</h2><ul><li>Result<pre tabindex=0><code>[
+  11, 11, 11, 11, 12, 12, 13, 13, 13, 13, 14, 14,
+  15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16,
+  16, 16, 17, 17, 17, 18, 18, 18, 19, 20, 20, 21,
+  21, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23,
+  24, 24, 24, 24, 25, 25, 25, 25, 26, 26, 26, 26,
+  27, 27, 28, 28, 28, 28, 28, 28, 29, 29, 29, 30,
+  30, 30, 31, 31, 31, 31, 31, 32, 32, 33, 33, 33,
+  35, 35, 35, 36, 36, 36, 37, 37, 37, 37, 37, 39,
+  39, 40, 40, 40
+]
+[
+  25, 26, 12, 22, 25, 33, 21, 28, 16, 40, 13, 16,
+  13, 31, 24, 18, 24, 28, 25, 23, 35, 22, 22, 37,
+  37, 16, 22, 32, 31, 28, 33, 20, 15, 31, 36, 31,
+  29, 26, 30, 37, 29, 31, 37, 15, 15, 23, 13, 15,
+  39, 36, 22, 21, 27, 37, 30, 11, 18, 16, 17, 14,
+  20, 13, 17, 32, 35, 25, 19, 28, 23, 11, 40, 33,
+  24, 15, 17, 26, 16, 15, 29, 26, 28, 16, 24, 16,
+  35, 11, 23, 16, 18, 27, 14, 36, 28, 22, 11, 30,
+  12, 40, 39, 23
+]
+</code></pre></li><li>Code
+<a href=https://onecompiler.com/javascript/3zqvpgq53 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zqvpgq53 <i class="fa fa-external-link" style=font-size:14px></i></span></a><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// create randint function
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>randint</span>(<span style=color:#a6e22e>imin</span>, <span style=color:#a6e22e>imax</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>random</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>*</span> (<span style=color:#a6e22e>imax</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>imin</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>imin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>z</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>z</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// create randintn
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>randintn</span>(<span style=color:#a6e22e>imin</span>, <span style=color:#a6e22e>imax</span>, <span style=color:#a6e22e>N</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>randint</span>(<span style=color:#a6e22e>imin</span>, <span style=color:#a6e22e>imax</span>))
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// create array of integer random numbers
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>randintn</span>(<span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>40</span>, <span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> [...<span style=color:#a6e22e>x</span>];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>y</span>.<span style=color:#a6e22e>sort</span>());
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>);
+</span></span></code></pre></div></li></ul><h2 id=applications>application(s)</h2><ul><li><a href=https://medium.com/@6unpnp/random-http-headers-user-agent-23bcdd8c0537 target=_blank rel="nofollow noopener noreferrer"><span>Random HTTP headers User-Agent: One way to reduce being blocked while web scraping <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,82 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>alternating current | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>alternating current</h1><time datetime=2022-03-16T03:14:00+07:00>March 16, 2022</time><p>Arus yang mengalir hanya pada satu arah disebut sebagai arus searah atau direct current (DC), sedangkan arus yang arahnya sering berbalik disebut sebagai arus bolak-balik atau alternating current (AC) [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=voltage>voltage</h2><p>Tegangan listrik pada arus bolak-balik memiliki fungsi matematika</p><p>\begin{equation}\label{eqn:ac-voltage}
+V(t) = V_m \sin (\omega t + \varphi),
+\end{equation}</p><p>dengan $V(t)$ tegangan sebagai fungsi waktu $t$, $V_m$ tegangan maksimum, $\omega$ frekuensi angular, dan $\phi$ adalah beda fasa terhadap sumber lain. Frekuensi sudut adalah</p><p>\begin{equation}\label{eqn:ac-voltage-omega}
+\omega = 2\pi f = \frac{2\pi}{T},
+\end{equation}</p><p>dengan $f$ adalah frekuensi dan $T$ adalah periode.</p><h2 id=average-value>average value</h2><p>Mengingat tegangan pada arus bolak-balik selalu berubah mengikuti Persamaan \eqref{eqn:ac-voltage}, maka bila dihitung dalam satu periode</p><p>\begin{equation}\label{eqn:ac-voltage-average}
+V_{\rm avg} = \frac{1}{T} \int_t^{t+T} V_m \sin (\omega t + \varphi) \ dt
+\end{equation}</p><p>akan bernilai nol, sehingga konsep tegangan rata-rata tidak dapat digunakan. Untuk menghitung Persamaan \eqref{eqn:ac-voltage-average} diperlukan</p><p>$$
+\begin{array}{rcl}
+\sin \omega(t + T) & = & \displaystyle \sin \left[ \frac{2\pi}{T} (t + T) \right] \newline
+& = & \displaystyle \sin \left( \frac{2\pi}{T} t + 2\pi \right) \newline
+& = & \displaystyle \sin \left( \frac{2\pi}{T} t \right) \newline
+& = & \displaystyle \sin \omega t
+\end{array}
+$$</p><p>dan</p><p>$$
+\begin{array}{rcl}
+\cos \omega(t + T) & = & \displaystyle \cos \left[ \frac{2\pi}{T} (t + T) \right] \newline
+& = & \displaystyle \cos \left( \frac{2\pi}{T} t + 2\pi \right) \newline
+& = & \displaystyle \cos \left( \frac{2\pi}{T} t \right) \newline
+& = & \displaystyle \cos \omega t
+\end{array}
+$$</p><p>yang merupakan sifat periodik fungsi sin dan cos.</p><h2 id=rms-value>rms value</h2><p>Nilai tegangan pada Persamaan \eqref{eqn:ac-voltage} tidak nyaman atau sulit diukur dan dibutuhkan satu nilai yang mewakilinya. Untuk itu digunakan konsep akar rata-rata kuadrat atau root mean square (rms) yang diperoleh dari</p><p>\begin{equation}\label{eqn:ac-voltage-rms}
+V_{\rm rms} = \sqrt{ \frac{1}{T} \int_t^{t+T} [ V_m \sin (\omega t + \varphi) ]^2 \ dt }.
+\end{equation}</p><p>Untuk menghitung Persamaan \eqref{eqn:ac-voltage-rms} perlu terlebih dahulu menghitung</p><p>$$
+\begin{array}{rcl}
+\displaystyle \int \sin^2 ax \ dx & = & \displaystyle \int \left( \tfrac12 - \tfrac12 \cos 2ax \right) \ dx \newline
+& = & \displaystyle \frac12 x - \frac{1}{4a} \sin 2ax + c,
+\end{array}
+$$</p><p>yang akan memberikan bahwa</p><p>\begin{equation}\label{eqn:ac-voltage-rms-int-v}
+\begin{array}{rcl}
+\displaystyle \frac{1}{T} \int_t^{t+T} [ V_m \sin (\omega t + \varphi) ]^2 \ dt & = & \displaystyle \frac{V_m^2}{T} \left[ \frac12 t - \tfrac{1}{4\omega} \sin (2\omega t + \varphi) \right]_{t}^{t + T} \newline
+& = & \displaystyle \frac{V_m^2}{T} \left\{ \frac12( [t + T] - t) \right. \newline
+& & \displaystyle \left. - \frac{1}{4\omega} \left[ \sin (\omega [t + T] + \varphi) - \sin (\omega t + \varphi) \right] \right\} \newline
+& = & \displaystyle \frac{V_m^2}{T} \frac12 T \newline
+& = & \displaystyle \frac{V_m^2}{2}.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:ac-voltage-rms-int-v} ke Persamaan \eqref{eqn:ac-voltage-rms} akan memberikan</p><p>\begin{equation}\label{eqn:ac-voltage-rms-vm}
+V_{\rm rms} = \sqrt{ \frac{V_m^2}{2} } = \frac{V_m}{\sqrt{2}}.
+\end{equation}</p><p>Persamaan \eqref{eqn:ac-voltage-rms-vm} ini menggabarkan hubungan antara nilai $V_m$ pada Persamaan \eqref{eqn:ac-voltage} dengan nilai rms-nya yang dihitung melalui Persamaan \eqref{eqn:ac-voltage-rms}.</p><h2 id=current>current</h2><p>Hukum Ohm berlaku juga pada arus bolak-balik</p><p>\begin{equation}\label{eqn:ac-ohm-law}
+V(t) = Z I(t)
+\end{equation}</p><p>dengan hambatan $R$ diperluas menjadi impedansi $Z$ yang dapat mengandung resistor $R$, induktor $L$, dan kapasitor $L$. Melalui Persamaan \eqref{eqn:ac-ohm-law} dan \eqref{eqn:ac-voltage} dapat diperoleh</p><p>\begin{equation}\label{eqn:ac-current}
+\begin{array}{rcl}
+I(t) & = & \displaystyle \frac{V(t)}{Z} \newline
+& = & \displaystyle \frac{V_m \sin (\omega t + \varphi)}{Z} \newline
+& = & I_m \sin (\omega t + \varphi)
+\end{array}
+\end{equation}</p><p>yang memerlukan</p><p>\begin{equation}\label{eqn:ac-ohm-law-max}
+V_m = Z I_m.
+\end{equation}</p><p>Persamaan \eqref{eqn:ac-ohm-law-max} ini tak lain adalah amplitudo dari masing-masing fungsi pada kedua ruas Persamaan \eqref{eqn:ac-ohm-law}. Dan dengan segera diperoleh bahwa untuk arus</p><p>\begin{equation}\label{eqn:ac-current-rms-vm}
+I_{\rm rms} = \frac{I_m}{\sqrt{2}}
+\end{equation}</p><p>juga berlaku.</p><h2 id=power>power</h2><p>Setelah memiliki tegangan dan arus, keduanya fungsi waktu, nilai rms, dan juga maksimumnya, berikutnya adalah daya karena besaran ini merupakan hasil kali tegangan dan arus. Dengan mengalikan Persamaan \eqref{eqn:ac-voltage} dan \eqref{eqn:ac-current} akan diperoleh</p><p>\begin{equation}\label{eqn:ac-power}
+\begin{array}{rcl}
+P(t) & = & V(t) I(t) \newline
+& = & [V_m \sin (\omega t + \varphi)] [I_m \sin (\omega t + \varphi)] \newline
+& = & V_m I_m \sin^2 (\omega t + \varphi).
+\end{array}
+\end{equation}</p><p>Untuk daya kita tidak perlu mencari rms-nya karena dapat dirata-ratakan mengingat funsinya telah berupa $\sin^2 (\omega t + \varphi)$ sehingga rata-ratanya tidak nol. Dengan demikian</p><p>\begin{equation}\label{eqn:ac-power-average}
+\begin{array}{rcl}
+P_{\rm avg} & = & \displaystyle \frac{1}{T} \int_t^{t+T} P(t) \ dt \newline
+& = & \displaystyle \frac{1}{T} \int_t^{t+T} V_m I_m \sin^2 (\omega t + \varphi) \ dt \newline
+& = & \displaystyle \frac{V_m I_m}{2} \newline
+& = & \displaystyle \frac{V_m}{\sqrt{2}} \frac{I_m}{\sqrt{2}} \newline
+& = & \displaystyle V_{\rm rms} I_{\rm rms}.
+\end{array}
+\end{equation}</p><h2 id=not-a-perfect-sine>not a perfect sine</h2><p>Perumusan nilai rms mengasumsikan bahwa bentuk gelombang sinus halus sehingga terdapat kaitan antara nilai maksimum, baik arus maupun tegangan, dengan nilai rms-nya. Bila terdapat gangguang, maka perlu dilakukan sampling selain mendeteksi puncaknya dengan suatu vormula sementara yang lebih dapat diandalkan ketimbang hanya mendeteksi nilai maksimumnya [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=standard-time-function>standard time function</h2><p>Bentuk fungsi waktu dari tegangan dan arus akan mengikut Persamaan \eqref{eqn:ac-voltage} dan \eqref{eqn:ac-current} yang berlaku pada resistor, induktor, kapasitor, dan gabungan ketiganya pada susunan seri, paralel, dan kombinasi seri dengan paralel.</p><h2 id=exer>exer</h2><ol><li>Sebutkan satun dari $V(t)$, $V_m$, $\omega$, $\varphi$ pada Persamaan \eqref{eqn:ac-voltage} dan $f$, $T$ pada Persamaan \eqref{eqn:ac-voltage-omega}.</li><li>Mengapa pada arus bolak-balik tidak digunakan konsep tegangan rata-rata?</li><li>Mengapa dapat dihitung daya rata-rata?</li><li>Apakah nilai yang diukur oleh alat ukur?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Glenn Elert, &ldquo;Alternating Current&rdquo;, The Physics Hypertextbook, url
+<a href=https://physics.info/current-alternating/ target=_blank rel="nofollow noopener noreferrer"><span>https://physics.info/current-alternating/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r02></a>Promax, &ldquo;What do RMS and True RMS stand for? Here we explain you the differences&rdquo;, Promax, 27 Feb 2019, url
+<a href=https://www.promaxelectronics.com/ing/news/561/what-do-rms-and-true-rms-stand-for-here-we-explain-you-the-differences/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.promaxelectronics.com/ing/news/561/what-do-rms-and-true-rms-stand-for-here-we-explain-you-the-differences/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) V, V, rad/s, rad, Hz, s; &nbsp;
+2) nilainya selalu nol; &nbsp;
+3) fungsinya telah berupa $\sin^2 \omega t$ sehingga rata-ratanya tidak nol; &nbps;
+4) nilai maksimum kemudian diubah ke rms; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

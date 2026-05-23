@@ -1,0 +1,74 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>newton-raphson method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>newton-raphson method</h1><time datetime=2022-01-26T21:29:00+07:00>January 26, 2022</time><p>.. [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Metode Newton-Raphson memerlukan satu titik sebagai syarat awal, yang merupakan tebakan awal untuk akar, misalnya $x_1$. Nilai ini kemudian diperbaiki melalu rumusan iteratif</p><p>\begin{equation}\label{eqn:newton-raphson-method}
+x_{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)},
+\end{equation}</p><p>dengan $f(x)$ adalah fungsi yang ingin dicari akarnya dan $f&rsquo;(x)$ adalah turunan dari fungsi tersebut.</p><pre tabindex=0><code># 0403-newton-raphson.py
+# Impelement Newton-Raphson method
+# Sparisoma Viridi | https://github.com/dudung/bug
+# 20220126 Create this program.
+
+# define a polynomial function and its derivativve
+def poly(x):
+    x1 = 2.0
+    x2 = 5.0
+    x3 = 9.87654321
+    f = (x - x1) * (x - x2) * (x - x3)
+    fx1 = (x - x2) * (x - x3)
+    fx2 = (x - x1) * (x - x3)
+    fx3 = (x - x1) * (x - x2)
+    fx = fx1 + fx2 + fx3
+    return f, fx
+
+# define initial conditions
+x1 = 100
+
+# define accuracy
+eps = 1E-14
+
+# Set initial error
+f1, fx1 = poly(x1)
+err = abs(f1)
+
+# Find a root
+n = 0
+print(&#34;n x&#34;)
+while err &gt; eps:
+    f1, fx1 = poly(x1)
+    x2 = x1 - f1 / fx1
+    f2, fx2 = poly(x2)
+    err = abs(f1)
+    x1 = x2
+    n = n + 1
+    print(n, x2)
+
+# Resume result
+print(&#34;step = &#34;, n, sep=&#39;&#39;)
+print(&#34;err = &#34;, err, sep=&#39;&#39;)
+print(&#34;root = &#34;, x1, sep=&#39;&#39;)
+</code></pre><pre tabindex=0><code>============ RESTART: 0403-newton-raphson.py ===========
+n x
+1 68.57943328973627
+2 47.65146466568203
+3 33.728453898954925
+4 24.490707389328925
+5 18.400427840707824
+6 14.446544420628541
+7 11.977534952176475
+8 10.587696230350925
+9 10.00000625203186
+10 9.881306106256702
+11 9.876550723839335
+12 9.876543210018745
+13 9.87654321
+14 9.87654321
+step = 14
+err = 0.0
+root = 9.87654321
+</code></pre><h2 id=note>note</h2><ol><li><a name=r01></a></li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

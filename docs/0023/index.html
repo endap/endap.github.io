@@ -1,0 +1,103 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>linear interpolation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>linear interpolation</h1><time datetime=2023-08-29T20:07:00+07:00>August 29, 2023</time><p>Fungsi linier yang dibuat untuk menghubungkan dua buah titik data terdekat akan menyediakan informasi sehingga titik-titik lain di antara kedua titik data tersebut dapat diperoleh menggunakan fungsi tersebut. Hal ini dengan asumsi bahwa hubungan antara variabel bebas dan terikatnya antara kedua titik data bersifat linier.</p><h2 id=range-0-and-1>range $0$ and $1$</h2><p>Ilustrasi paling sederhana untuk interpolasi adalah mencari fungsi</p><p>$$\tag{1}
+f(x) = c_0 + c_1 x, \ \ \ \ 0 \le x \le 1.
+$$</p><p>Terdapat dua titik data $(0, y_0)$ dan $(1, y_1)$ yang memenuhi</p><p>$$\tag{2}
+f(0) = y_0, \ \ \ \ f(1) = y_1.
+$$</p><p>Substitusi Persamaan (2) ke Persamaan (1) akan memberikan</p><p>$$\tag{3}
+y_0 = c_0
+$$</p><p>dan</p><p>$$\tag{4}
+y_1 = c_0 + c_1.
+$$</p><p>Substitusi Persamaan (3) ke Persamaan (4) akan memberikan</p><p>$$\tag{5}
+c_1 = y_1 - y_0.
+$$</p><p>Dengan demikian Persamaan (1) dapat dituliskan kembali menjadi</p><p>$$\tag{6}
+f(x) = y_0 + (y_1 - y_0) x, \ \ \ \ 0 \le x \le 1.
+$$</p><h2 id=range-x_0-and-x_1>range $x_0$ and $x_1$</h2><p>Rentang $x$ dalam Persamaan (6) dapat diperluas menjadi $x_0$ dan $x_1$ dengan</p><p>$$\tag{7}
+0 = \frac{x_0 - x_0}{x_1 - x_0}
+$$</p><p>dan</p><p>$$\tag{8}
+1 = \frac{x_1 - x_0}{x_1 - x_0},
+$$</p><p>sehingga dapat memberikan</p><p>$$\tag{9}
+0 \le \frac{x - x_0}{x_1 - x_0} \le 1
+$$</p><p>atau</p><p>$$\tag{10}
+x_0 \le x \le x_1.
+$$</p><p>Titik data dalam Persamaan (2) perlu dimodifikasi menjadi</p><p>$$\tag{11}
+f(x_0) = y_0, \ \ \ \ f(x_1) = y_1,
+$$</p><p>yang apabila disubstitusikan ke Persamaan (1) akan memberikan</p><p>$$\tag{12}
+y_0 = c_0 + c_1 x_0
+$$</p><p>dan</p><p>$$\tag{13}
+y_1 = c_0 + c_1 x_1.
+$$</p><p>Dari Persamaan (12) dan (13) akan diperoleh</p><p>$$\tag{14}
+c_1 = \frac{y_1 - y_0}{x_1 - x_0}
+$$</p><p>dan</p><p>$$\tag{15}
+c_0 = \tfrac12(y_0 + y_1) - \tfrac12 (x_0 + x_1) c_1.
+$$</p><h2 id=range-x_i-and-x_i1>range $x_{i}$ and $x_{i+1}$</h2><p>Dengan menggunakan persamaan-persamaan sebelumnya dapat dituliskan bentuk yang umum, bila terdapat data $(x_i, y_i)$ dan $(x_{i+1}, y_{i+1})$, dapat diperoleh</p><p>$$\tag{16}
+c_{1,i} = \frac{y_{i+1} - y_i}{x_{i+1} - x_i}
+$$</p><p>dan</p><p>$$\tag{17}
+c_{0,i} = \tfrac12(y_{i+1} + y_i) - \tfrac12 (x_{i+1} + x_i) c_{1,i},
+$$</p><p>dengan fungsinya adalah</p><p>$$\tag{18}
+f_i(x) = c_{0,i} + c_{1,i} x, \ \ \ \ x_i \le x \le x_{i+1}.
+$$</p><p>Perhatikan bahwa bila terdapat $N$ titik data, maka hanya akan terdapat $N-1$ fungsi interpolasi linier sepert yang diberikan dalam Persamaan (17).</p><h2 id=an-example>an example</h2><p>Sebagai contoh dapat dimisalkan terdapat titik-titik data sebagai berikut.</p><p>Tabel 1. Titik data $(x_i, y_i)$, $i = 1, .., N$ dengan $N = 5$.</p><table><thead><tr><th style=text-align:center>$i$</th><th style=text-align:center>$x$</th><th style=text-align:center>$y$</th></tr></thead><tbody><tr><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr><tr><td style=text-align:center>2</td><td style=text-align:center>1</td><td style=text-align:center>1</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>3</td></tr><tr><td style=text-align:center>4</td><td style=text-align:center>3</td><td style=text-align:center>6</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>4</td><td style=text-align:center>10</td></tr></tbody></table><p>Dengan menggunakan Persamaan (15) dan (16) dapat diperoleh nilai-nilai $c_1$ dan $c_0$ sebagai berikut.</p><p>Tabel 2. Nilai-nilai $c_0$ dan $c_1$ untuk data pada Tabel 1.</p><table><thead><tr><th style=text-align:center>$x_i \le x \le x_{i+1}$</th><th style=text-align:center>$c_0$</th><th style=text-align:center>$c_1$</th></tr></thead><tbody><tr><td style=text-align:center>$0 \le x \le 1$</td><td style=text-align:center>$0$</td><td style=text-align:center>$1$</td></tr><tr><td style=text-align:center>$1 \le x \le 2$</td><td style=text-align:center>$-1$</td><td style=text-align:center>$2$</td></tr><tr><td style=text-align:center>$2 \le x \le 3$</td><td style=text-align:center>$-3$</td><td style=text-align:center>$3$</td></tr><tr><td style=text-align:center>$3 \le x \le 4$</td><td style=text-align:center>$-6$</td><td style=text-align:center>$4$</td></tr></tbody></table><p>Secara sederhana proses untuk memperoleh nilai-nilai $c_0$ dan $c_1$ pada Tabel 1 dapat mengikuti diagram alir berikut, yang merupakan ilustrasi umum dengan detil iterasi untuk setiap titik data tersiratkan dalam beberapa blok.</p><div class=mermaid>flowchart TD
+B --> I --> P1 --> o1a
+o1b --> P2 --> O --> E
+B(["Begin"])
+I[/"{(xi, yi) | i = 1 .. N}"/]
+P1["{c0} = f(x, y, N)"]
+o1a(("1"))
+o1b(("1"))
+P2["{c1} = g(x, y, N)"]
+O[/"{c0}, {c1}"/]
+E(["End"])</div><p>Gambar 1. Diagram alir untuk menghitung nilai-nilai $c_0$ dan $c_1$ dari $N$ titik data.</p><h2 id=codes>codes</h2><p>Nilai-nilai $c_0$ dan $c_1$ pada Tabel 2 dapat pula dihitung dengan menggunakan program berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> min(len(x), len(y))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>c0 <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>c1 <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>  c1i <span style=color:#f92672>=</span> (y[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> y[i]) <span style=color:#f92672>/</span> (x[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> x[i])
+</span></span><span style=display:flex><span>  c0i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (y[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> y[i]) <span style=color:#f92672>-</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (x[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> x[i]) <span style=color:#f92672>*</span> c1i
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  c0<span style=color:#f92672>.</span>append(c0i)
+</span></span><span style=display:flex><span>  c1<span style=color:#f92672>.</span>append(c1i)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;c0 =&#34;</span>, c0)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;c1 =&#34;</span>, c1)
+</span></span></code></pre></div><p>yang akan memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>c0 <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>0.0, -1.0, -3.0, -6.0<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>c1 <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>1.0, 2.0, 3.0, 4.0<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>dengan contoh programnya tersedia di
+<a href=https://onecompiler.com/python/3zjzynwmr target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zjzynwmr <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Selanjutnya adalah bagaimana menggunakan nilai-nilai $c_0$ dan $c_0$ untuk semua rentang data, yang dalam contoh di atas terdapat empat rentang data. Salah satu implementasinya adalah seperti dalam kode berikut.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xdata <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>]
+</span></span><span style=display:flex><span>ydata <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>c0 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0.0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1.0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>3.0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>6.0</span>]
+</span></span><span style=display:flex><span>c1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1.0</span>, <span style=color:#ae81ff>2.0</span>, <span style=color:#ae81ff>3.0</span>, <span style=color:#ae81ff>4.0</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>interp</span>(x, xdata, c0, c1):
+</span></span><span style=display:flex><span>  i <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(len(xdata) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (xdata[j] <span style=color:#f92672>&lt;=</span> x) <span style=color:#f92672>and</span> (x <span style=color:#f92672>&lt;=</span> xdata[j<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]):
+</span></span><span style=display:flex><span>      i <span style=color:#f92672>=</span> j
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> c0[i] <span style=color:#f92672>+</span> c1[i] <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>17</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [i <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.25</span> <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N)]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [interp(i, xdata, c0, c1) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>grid()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>xlabel(<span style=color:#e6db74>&#34;x&#34;</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>ylim([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>4</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>ylabel(<span style=color:#e6db74>&#34;y&#34;</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>ylim([<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>11</span>])
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>yticks([<span style=color:#f92672>*</span>range(<span style=color:#ae81ff>11</span>)], [<span style=color:#f92672>*</span>range(<span style=color:#ae81ff>11</span>)])
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>plot(x, y, <span style=color:#e6db74>&#39;.&#39;</span>, xdata, ydata, <span style=color:#e6db74>&#34;ro&#34;</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>show()
+</span></span></code></pre></div><p>Hasil dari kode di atas, yang tersedia di
+<a href=http://tpcg.io/_OE0CH4 target=_blank rel="nofollow noopener noreferrer"><span>http://tpcg.io/_OE0CH4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, diberikan pada Gambar 2 di bawah ini.</p><p>Gambar 2. Hasil interpolasi linier untuk titik-titik data pada Tabel 1 yang terdiri dari titik-titik data dan titik-titik hasil interpolasi.</p><p>Perhatikan bahwa terdapat titik-titik lain yang bukan merupakan titik-titik data pad Gambar 2. Titik-titik data digambarkan dengan lingkaran berukuran lebih besar, sedangkan titik-titik hasil interpolasi linier di antara dua titik data berurutan digambarkan dengan lingkaran berukuran lebih kecil.</p><h2 id=exercises>exercises</h2><ol><li>Perhatikan Gambar 1, tunjukkan bahwa interpolasi yang dihasilkan merupakan interpolasi linier pada setiap rentangnya. Setidaknya sampaikan argumen secara kualitatif dengan menggunakan gambar tersebut.</li><li>Gunakan data lain untuk memeriksa apakah program yang diberikan tetap bekerja.</li></ol></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

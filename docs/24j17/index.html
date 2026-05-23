@@ -1,0 +1,268 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>template customization 2 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>template customization 2</h1><time datetime=2024-10-12T20:11:01+07:00>October 12, 2024</time><p>Second theme customization of a new Hugo site following initial setting.</p><p>Modification of <code>main.css</code> and <code>hugo.toml</code> files are given here to complement previous post with title
+<a><span>template customization 1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><ol><li>Modify <code>hugo.toml</code> as follow.<pre tabindex=0><code>baseURL = &#39;https://dudung.github.io/bug2&#39;
+languageCode = &#39;en-us&#39;
+title = &#39;bug 2&#39;
+theme = &#39;default&#39;
+
+enableEmoji = true
+
+ignoreErrors = [&#39;error-missing-instagram-accesstoken&#39;]
+
+[taxonomies]
+  author = &#34;authors&#34;
+  tag = &#34;tags&#34;
+  category = &#34;categories&#34;
+
+[[menu.main]]
+  name = &#39;Home&#39;
+  weight = 2
+  identifier = &#39;home&#39;
+  url = &#39;/&#39;
+
+[[menu.main]]
+  name = &#39;Tags&#39;
+  weight = 1
+  identifier = &#39;tags&#39;
+  url = &#39;/tags&#39;
+</code></pre></li><li>Modify <code>assets\css\main.css</code> as follow.<pre tabindex=0><code>body {
+  color: #222;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+  text-align: justify;
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+/* to overwrite header border-bottom style */
+.homepage-header {
+  border-bottom: 0px solid #222;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  -ms-word-break: break-all;
+}
+
+pre {
+  padding: 1em;
+}
+
+ul.menu-item li {
+  display: inline-block;
+  margin: 5px;
+}
+
+nav &gt; ul &gt; li {
+  display: inline;
+  padding-left: 0.5em;
+}
+
+nav {
+  text-align: right;
+}
+
+.author {
+  font-size:110%;
+}
+.readingtimedate {
+  color: #999;
+}
+
+.footnotes {
+  border-top: 0px solid #222;
+  &gt; hr {
+     display: none;
+   }
+  &gt; ol &gt; li:not(:first-child):not(:last-child) {
+    margin: -1em 0;
+  }
+}
+
+// footnote link
+a[href^=&#34;#fn:&#34;],
+// Back to footnote link
+a[href^=&#34;#fnref:&#34;] {
+  text-decoration: none;
+  color: $orange;
+  font-family: monospace;
+}
+a[href^=&#34;#fn:&#34;]:before{ content: &#39;[&#39; }
+a[href^=&#34;#fn:&#34;]:after{ content: &#39;]&#39; }
+
+
+div.tags {
+  &gt; ul &gt; li {
+    display: inline-block;
+  }
+  &gt; ul &gt; li:not(:last-child):after {
+    content: &#39;, &#39;;
+  }
+  &gt; ul {
+    display: inline;
+    border: 0px black solid;
+    padding-left: 0px;
+  }
+}
+
+/*
+ul.authors {
+  &gt; li {
+    display: inline-block;
+  }
+  &gt; li:not(:last-child):after {
+    content: &#39;, &#39;;
+  }
+  display: inline;
+  border: 0px black solid;
+  padding-left: 0px;
+}
+*/
+
+figure.authors {
+  display: inline-block;
+  border: 0px black solid;
+  margin-left: 0px;
+  &gt; figcaption {
+    border: 0px black solid;
+    float: right;
+    margin-left: 10px;
+  }
+}
+
+.tocsec {
+  display: inline;
+  //margin-left: 10px;
+  padding-left: 10px;
+  //border-radius: 4px;
+  //border-left: 2px solid green;
+}
+
+.tocseccol {
+  color: #faa;
+}
+
+table {
+  //width: 100%;
+  border-collapse: collapse; /* Ensures there are no gaps between borders */
+  border-spacing: 0; /* Removes any spacing between cells */
+}
+
+table th {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 8px;
+  background-color: #f2f2f2;
+}
+
+table td {
+  padding-right: 2em;
+}
+
+table tr:last-child td {
+  border-bottom: 1px solid #000;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff; /* White for even rows */
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for odd rows */
+}
+
+.homepage-posts-box {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 8px;
+  width: auto;
+  height: auto;
+  text-align: left;
+  word-break: break-all;
+  margin: 2px 0px;
+  font-size: 90%;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+}
+.posts-box-container {
+  text-align: left;
+}
+</code></pre></li><li>Create <code>content/_index.md</code> as follow.<pre tabindex=0><code>bytes und grains to bridge understanding gap
+</code></pre></li><li>Create <code>layouts/index.html</code> as follow.<pre tabindex=0><code>{{ define &#34;main&#34; }}
+  &lt;main aria-role=&#34;main&#34;&gt;
+    &lt;header class=&#34;homepage-header&#34;&gt;
+
+      {{ with .Params.subtitle }}
+        &lt;span class=&#34;subtitle&#34;&gt;{{ . }}&lt;/span&gt;
+      {{ end }}
+    &lt;/header&gt;
+    &lt;div class=&#34;homepage-content&#34;&gt;
+      &lt;!-- Note that the content for index.html,
+      as a sort of list page, will pull from
+      content/_index.md --&gt;
+      {{ .Content }}
+    &lt;/div&gt;
+
+    {{ $max := len .Site.RegularPages }}
+    {{ $index :=  sub $max 1 }}
+
+    &lt;div class=&#34;posts-box-container&#34;&gt;
+      {{ range .Site.RegularPages }}
+
+        &lt;div class=&#34;homepage-posts-box&#34;&gt;
+          &lt;code&gt;
+            {{ dateFormat &#34;02-Jan-2006&#34; .Date }}
+          &lt;/code&gt;&lt;br&gt;
+          &lt;a href=&#34;{{ .RelPermalink }}&#34;&gt;{{ .LinkTitle }}&lt;/a&gt;
+        &lt;/div&gt;
+
+        {{ $index = sub $index 1 }}
+      {{ end }}
+    &lt;/div&gt;
+
+{{ end }}
+</code></pre></li></ol><p>The CSS is from
+<a href=https://dudung.github.io/bug target=_blank rel="nofollow noopener noreferrer"><span>bug <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>and only slightly modified. Some comments and commented styles are still there. Following additional part</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span><span style=color:#f92672>nav</span> <span style=color:#f92672>&gt;</span> <span style=color:#f92672>ul</span> <span style=color:#f92672>&gt;</span> <span style=color:#f92672>li</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding-left</span>: <span style=color:#ae81ff>0.5</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>nav</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>right</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>is for menu, Tags and Home, on the right top of each page. And</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>.<span style=color:#a6e22e>homepage-posts-box</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline-block</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>6</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>left</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>word-break</span>: break-all;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>90</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#ae81ff>#f4f4f4</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#ae81ff>#ccc</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>posts-box-container</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>left</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>for list of posts in the landing page. Notice also that content of <code>_index.md</code> will be included to <code>index.html</code> in the <code>{{ .Content }}</code>.</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

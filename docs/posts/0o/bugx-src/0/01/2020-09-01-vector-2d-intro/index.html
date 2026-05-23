@@ -1,0 +1,127 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>vector 2d intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>vector 2d intro</h1><time datetime=2020-09-21T08:25:00+07:00>September 21, 2020</time><p>A physics quantity of type vector must be specified with a magnitude and a direction [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], or vector is simply a quantity that has both magnitude and direction [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], where the magnitude is sometimes also referred to as size or length [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Further reading will explain vector as element of vector space [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Here we will require only the simple definition of a vector. Vector can be drawn using a directed line segment [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Two examples about vector, which differs it from scalar, are displacement compared to distance and velocity compared to speed [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>A vector $\vec{r}$ in a 2-d (two-dimension) space can be written as</p><p>\begin{equation}
+\label{eqn:vec-1}
+\vec{r} = r_x \ \hat{x} + r_y \ \hat{y},
+\end{equation}</p><p>\begin{equation}
+\label{eqn:vec-2}
+\vec{r} = x \ \hat{i} + y \ \hat{j},
+\end{equation}</p><p>\begin{equation}
+\label{eqn:vec-3}
+\vec{r} = (x, y),
+\end{equation}</p><p>with $r_x \equiv x$ and $r_y \equiv y$ are vector components in $x$ and $y$ directions, respectively. Each direction is indicated by each unit vector, i.e. $\hat{x} \equiv \hat{i}$, $\hat{y} \equiv \hat{j}$. In figures a vector, or in general a matrix, can also represent in the form of</p><p>\begin{equation}
+\label{eqn:vec-4}
+\mathbf{r} \equiv \vec{r},
+\end{equation}</p><p>with examples in Fig. <a href=#fig:vec-arrow-1>1</a>. A vector can be illustrated graphically using vector diagram in the form of an arrow [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], where length of the arrow represent magnitude of the vector and direction of the arrow is direction of the vector.</p><oo>svg 150 100 #fafafa fig:vec-arrow-1|Three arrows <b>a</b>, <b>b</b>, <b>c</b> representing three different vectors.<p>style lc:#f00 ls:0 lw:2 lo:1 fc:#f00 fo:1
+arrow 10 90 140 10
+style lw:0 fc:#000 fo:1 ts:normal tw:bold tf:Times tz:16px
+text 20 30 a</p><p>style lc:#0d0 ls:0 lw:2 lo:1 fc:#0d0 fo:1
+arrow 10 10 10 80
+style lw:0 fc:#000 fo:1 ts:normal tw:bold tf:Times tz:16px
+text 80 30 b</p><p>style lc:#00f ls:0 lw:2 lo:1 fc:#00f fo:1
+arrow 30 90 140 90
+style lw:0 fc:#000 fo:1 ts:normal tw:bold tf:Times tz:16px
+text 90 80 c</oo></p><p>There are three arrows shown in Fig. <a href=#fig:vec-arrow-1>1</a>, which are $\mathbf{a} \equiv \vec{a}$, $\mathbf{b} \equiv \vec{b}$, and $\mathbf{c} \equiv \vec{c}$, as previously described in Eqn. \eqref{eqn:vec-4}. Suppose that there is a vector $\vec{c} = 4 \hat{i} + 3 \hat{j}$ as shown in Fig. <a href=#fig:vec-arrow-2>2</a>.</p><oo>svg 240 200 #fafafa fig:vec-arrow-2|A vector $\mathbf{c} \equiv \vec{c} = 4 \hat{i} + 3 \hat{j}$ in $xy$ plane.<p>style lc:#000 ls:6-2 lw:0.3 lo:0.8
+grid 20 20 220 180 40 40</p><p>style lc:#000 ls:0 lw:1 lo:1
+arrow 20 180 220 180
+arrow 20 180 20 20</p><p>style lw:0 fc:#000 fo:1 ts:italic tw:normal tf:Times tz:16px
+text 225 185 x
+text 20 12 y</p><p>style lw:0 fc:#000 fo:1 ts:normal tw:normal tf:Times tz:16px
+text 15 197 0
+text 55 197 1
+text 95 197 2
+text 135 197 3
+text 175 197 4</p><p>text 5 185 0
+text 5 145 1
+text 5 105 2
+text 5 65 3</p><p>style lc:#f00 ls:0 lw:2 lo:1 fc:#f00 fo:1
+arrow 20 180 180 60</p><p>style lw:0 fc:#000 fo:1 ts:normal tw:bold tf:Times tz:16px
+text 95 105 c</p><p>style lc:#000 ls:8-4 lw:0.8 lo:1
+line 20 60 180 60
+line 180 60 180 180</oo></p><p>The value of 4 is projection of vector $\vec{c}$ along $x$ direction and 3 along $y$ direction as shown with darker dashed line in Fig. <a href=#fig:vec-arrow-2>2</a>. Any vector can also be drawn like $\vec{c}$. The vector $\vec{c}$ can be drawn from any point, not necessary from (0, 0), as long the length and direction are the same.</p><p>Magnitude of a vector in Eqn. \eqref{eqn:vec-2} can be obtained using</p><p>\begin{equation}
+\label{eqn:vec-2-magnitude}
+r = |\vec{r}| = \sqrt{x^2 + y^2},
+\end{equation}</p><p>which can also be produced using square root of dot product of the vector of itself. Dot product is one of multiplication operation of two vectors. The use of Eqn. \eqref{eqn:vec-2-magnitude} for vector in Fig. <a href=#fig:vec-arrow-2>2</a> will produce $c = |\vec{c}| = 5$.</p><h2 id=exer>exer</h2><ol><li>Explain about a vector using its two important features.</li><li>Tell which ones are scalar and which ones are vector from following physical quantities: speed, dispacement, velocity, distance, force, pressure, mass, density, torque, momentum.</li><li>Explain what direction the each unit vector $\hat{i}$ and $\hat{j}$ represents. See Eqns. \eqref{eqn:vec-1} - \eqref{eqn:vec-3} when necessary.</li><li>Draw a vector $\vec{c} = \hat{i} - 2 \hat{j}$ using previous example in Fig. <a href=#fig:vec-arrow-2>2</a>.</li><li>Eqn. \eqref{eqn:vec-2-magnitude} is magnitude for vector in Eqn. \eqref{eqn:vec-2}, write the magnitude for for vector in Eqn. \eqref{eqn:vec-1}.</li><li>Show that magnitude of vector in Fig. <a href=#fig:vec-arrow-2>2</a> is 5.</li><li>Calculate $\vec{c} = \vec{a} + \vec{b}$, if $\vec{a} = 2 \ \hat{i} - \hat{j}$ and $\vec{b} = 3 \ \hat{i} + 13 \ \hat{j}$. Find magnitude of $\vec{c}$ or $|\vec{c}|$.</li><li>If $\vec{a} = 2 \ \hat{j}$ and $\vec{b} = 3 \ \hat{i} - 2 \ \hat{j}$, calculate $\vec{c} = \vec{a} - \vec{b}$ and $c = |\vec{c}|$ or magnitude of vector $\vec{c}$.</li><li>Write the vectors given in Fig. <a href=#fig:vec-quiz-fig-3>3</a>.
+<oo>svg 560 320 #fafafa fig:vec-quiz-fig-3|Some vectors: $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$, $\mathbf{d}$, $\mathbf{e}$, $\mathbf{f}$, $\mathbf{g}$, $\mathbf{h}$, $\mathbf{l}$, $\mathbf{m}$, $\mathbf{n}$, and $\mathbf{o}$.</li></ol><p>style lc:#000 ls:6-2 lw:0.3 lo:0.8
+grid 20 20 540 300 40 40</p><p>style lc:#000 ls:0 lw:1 lo:1
+arrow 20 300 540 300
+arrow 20 300 20 20</p><p>style lw:0 fc:#000 fo:1 ts:italic tw:normal tf:Times tz:16px
+text 545 304 x
+text 18 12 y</p><p>style lw:0 fc:#000 fo:1 ts:normal tw:normal tf:Times tz:16px
+text 15 317 0
+text 55 317 1
+text 95 317 2
+text 135 317 3
+text 175 317 4
+text 215 317 5
+text 255 317 6
+text 295 317 7
+text 335 317 8
+text 375 317 9
+text 415 317 10
+text 455 317 11
+text 495 317 12</p><p>text 5 305 0
+text 5 265 1
+text 5 225 2
+text 5 185 3
+text 5 145 4
+text 5 105 5
+text 5 65 6</p><p>style lc:#f00 ls:0 lw:2 lo:1 fc:#f00 fo:1
+arrow 60 180 220 60</p><p>style lc:#00f ls:0 lw:2 lo:1 fc:#00f fo:1
+arrow 60 260 540 60</p><p>style lc:#0c0 ls:0 lw:2 lo:1 fc:#0c0 fo:1
+arrow 300 20 180 180</p><p>style lc:#e0e ls:0 lw:2 lo:1 fc:#e0e fo:1
+arrow 60 20 140 100</p><p>style lc:#aa0 ls:0 lw:2 lo:1 fc:#aa0 fo:1
+arrow 340 60 460 60</p><p>style lc:#0aa ls:0 lw:2 lo:1 fc:#0aa fo:1
+arrow 300 140 300 60</p><p>style lc:#0cf ls:0 lw:2 lo:1 fc:#0cf fo:1
+arrow 340 260 500 220</p><p>style lc:#c88 ls:0 lw:2 lo:1 fc:#c88 fo:1
+arrow 540 140 500 220</p><p>style lc:#000 ls:0 lw:2 lo:1 fc:#000 fo:1
+arrow 340 260 540 140</p><p>style lc:#999 ls:0 lw:2 lo:1 fc:#999 fo:1
+arrow 140 260 300 180</p><p>style lc:#44f ls:0 lw:2 lo:1 fc:#44f fo:1
+arrow 140 260 340 300</p><p>style lc:#955 ls:0 lw:2 lo:1 fc:#955 fo:1
+arrow 340 300 300 180</p><p>style lw:0 fc:#000 fo:1 ts:normal tw:bold tf:Times tz:16px
+text 110 100 a
+text 190 60 b
+text 180 150 c
+text 310 50 d
+text 440 45 e
+text 530 50 f
+text 260 220 g
+text 300 280 h
+text 320 200 l
+text 530 130 m
+text 480 250 n
+text 520 220 o</oo></p><h2 id=note>note</h2><ol><li><a name=r01></a>Carl R. Nave, &ldquo;Basic Vector Operations&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/vect.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/vect.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r02></a>The Editors of Encyclopaedia Britannica, &ldquo;Vector&rdquo;, Encyclopædia Britannica, 27 May 2020, url
+<a href=https://www.britannica.com/science/vector-physics target=_blank rel="nofollow noopener noreferrer"><span>https://www.britannica.com/science/vector-physics <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r03></a>Daniel Haas, &ldquo;Answer to &lsquo;What is a vector?&rdquo;, Quora, 17 Dec 2012, url
+<a href=https://qr.ae/pNYJ1p target=_blank rel="nofollow noopener noreferrer"><span>https://qr.ae/pNYJ1p <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r04></a>Eric W. Weisstein, &ldquo;Vector&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, url
+<a href=https://mathworld.wolfram.com/Vector.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/Vector.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r05></a>Wikipedia contributors, &ldquo;Vector (mathematics and physics)&rdquo;, Wikipedia, The Free Encyclopedia, 22 August 2020, 14:24 UTC,
+<a href="https://en.wikipedia.org/w/index.php?oldid=974354203" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=974354203 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r06></a>David Frank, Duane Q. Nykamp, &ldquo;An introduction to vectors&rdquo;, from Math Insight, url
+<a href=https://mathinsight.org/vector_introduction target=_blank rel="nofollow noopener noreferrer"><span>https://mathinsight.org/vector_introduction <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r07></a>Khan Academy, &ldquo;Intro to vectors & scalars | One-dimensional motion | Physics | Khan Academy&rdquo;, YouTube, 12.06.2011, url
+<a href="https://www.youtube.com/watch?v=ihNZlp7iUHE" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=ihNZlp7iUHE <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li><li><a name=r08></a>GCSE Physics, &ldquo;Vector Diagrams&rdquo;, GCSE Physics, Singapore, 21 Jun 2010, url
+<a href=http://olevelphysicsblog.blogspot.com/2010/06/vector-diagrams.html target=_blank rel="nofollow noopener noreferrer"><span>http://olevelphysicsblog.blogspot.com/2010/06/vector-diagrams.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li></ol><h2 id=heading> </h2><p><a><span>coord sys 2d intro <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>vector 2d add <i class="fa fa-external-link" style=font-size:14px></i></span></a></p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

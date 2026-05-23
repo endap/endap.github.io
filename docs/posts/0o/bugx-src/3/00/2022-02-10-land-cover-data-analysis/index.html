@@ -1,0 +1,61 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>land cover data analysis | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>land cover data analysis</h1><time datetime=2022-02-10T22:37:00+07:00>February 10, 2022</time><p>Perbedaan data tutupan lahan dari Badan Pusat Statistik (BPS) dan Badan Pertahanan Nasional (BPN) masih menarik untuk dibahas sebagaimana disinggung dalam suatu diskusi [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Data geospasial diolah dengan QGIS (Quantum GIS) untuk mendapatkan format tertentu [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang lebih lanjut dapat diolah menggunakan Vaex [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sebagaimana sedang dikerjakan untuk sejumlah kabupaten dalam suatu daerah [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Penelitian ini menarik untuk dilajutkan untuk menganalisis tutupan lahan lebih jauh, misalnya menggunakan rantai Markov sebagaimana telah dikerjakan sebelumnya untuk wilayah Jawa Barat [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Sebuah proposal akan dibuat, terpicu dengan informasi adanya penerimaan proposal kegiatan fakultas [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan adanya kesesuaian dengan prioritas penelitian institusi saat ini [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Kasus lain [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] mungkin dapat diadaptasi untuk analisis tutupan lahan ini.</p><h2 id=idea>idea</h2><p>Menarik untuk dapat [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><ol><li>merumuskan bagaimana cara melakukan analisis klaster untuk data besar seperti data tutupan lahan,</li><li>mengumpulkan data dan mengorganisasinya agar dapat diolah oleh suatu bahasa pemrograman atau aplikasi tertentu, dan</li><li>membangung program yang efektif sehingga analisis klaster dapat bekerja pada data yang sudah dirapihkan di langkah sebelumnya.</li></ol><p>Untuk data yang super besar saat ini dapat digunakan ROOT</p><figure><blockquote><p>ROOT: analyzing petabytes of data, scientifically.<br>An open-source data analysis framework used by high energy physics and others.</p></blockquote></figure><p>yang dibuat dengan C++ dan telah ada pula binding dengan Pythonnya [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dan platform berlatihnya dapat digunakan Kaggle</p><figure><blockquote><p>Kaggle: Your Machine Learning and Data Science Commmunity.</p></blockquote></figure><p>di mana telah terdapat sekitar 50.000 dataset publik dan 400.000 notebook publik [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=note>note</h2><ol><li><a name=r01></a>Udjianna Sekteria Pasaribu, Luthfita Khotimatul Amanah, Nisa Fadlilah, Wahyu Hidayat, Sparisoma Viridi, &ldquo;Diskusi Proposal P2MI Multi Disiplin 2022&rdquo;, Microsoft Teams, 10 Feb 2022, 1615-1815, url
+<a href=https://teams.microsoft.com/l/meetup-join/ target=_blank rel="nofollow noopener noreferrer"><span>https://teams.microsoft.com/l/meetup-join/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r02></a>&ldquo;Introduction to QGIS&rdquo;, An introduction to the Tidal Thames and using GIS, 15 Oct 2021, url
+<a href=https://bookdown.org/tep/gisbooklet/introduction-to-qgis.html target=_blank rel="nofollow noopener noreferrer"><span>https://bookdown.org/tep/gisbooklet/introduction-to-qgis.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r03></a>Maarten A. Breddels, &ldquo;What is Vaex?&rdquo;, vaex 4.8.0 documentation, 2014, url
+<a href=https://vaex.io/docs/index.html target=_blank rel="nofollow noopener noreferrer"><span>https://vaex.io/docs/index.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r04></a>Luthfita Khotimatul Amanah, Wahyu Hidayat, Udjianna Sekteria Pasaribu, &ldquo;Analisis Klaster pada Data Tutupan Lahan melalui Algoritma Hirarki Divisif&rdquo;, Penelitian Tesis Sains Komputasi, Institut Teknologi Bandung, (masih berproses), 2022.</li><li><a name=r05></a>Riantini Virtriana, Irawan Sumarto, Albertus Deliar, Udjianna Sekteria Pasaribu, Moh. Taufik, &ldquo;Model of land cover change prediction in West Java using cellular automata-Markov chain (CA-MC)&rdquo;, AIP Conference Proceedings [AIP Conf Proc], vol 1658, no 1, p 060008, Apr 2015, url
+<a href=https://doi.org/10.1063/1.4915060 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1063/1.4915060 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r06></a>Nisa Fadlilah Fathul Ilmi, &ldquo;Analisis Klaster-Rantai Markov pada Data Perubahan Tutupan Lahan Studi Kasus: Provinsi Jawa Barat&rdquo;, Tesis Magister, Institut Teknologi Bandung, 2018, url
+<a href=https://digilib.itb.ac.id/index.php/gdl/view/29679/ target=_blank rel="nofollow noopener noreferrer"><span>https://digilib.itb.ac.id/index.php/gdl/view/29679/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r07></a>Wahyu Srigutomo, &ldquo;Penerimaan Proposal Kegiatan PPMI 2022&rdquo;, Surat Dekan FMIPA no 335/IT1.C02/TA/2022, FMIPA, Institut Teknologi Bandung, 7 Februari 2022.</li><li><a name=r08></a>Hermawan Kresno Dipojono, &ldquo;Prioritas Penelitian Institut Teknologi Bandung&rdquo;, Peraturan Senat Akademik Institut Teknologi Bandung, no 01/PER/I1-SA/OT/2020, 17 Februari 2020, url
+<a href=https://itb.ac.id/files/focus/PERATURAN%20SENAT%20ITB-PRIORITAS%20PENELITIAN.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://itb.ac.id/files/focus/PERATURAN%20SENAT%20ITB-PRIORITAS%20PENELITIAN.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r09></a>Cindy, Cynthia, Valentino Vito, Devvi Sarwinda, Bevina Desjwiandra Handari, Gatot Fatwanto Hertono, &ldquo;Cluster Analysis on Dengue Incidence and Weather Data Using K-Medoids and Fuzzy C-Means Clustering Algorithms (Case Study: Spread of Dengue in the DKI Jakarta Province)&rdquo;, Journal of Mathematical and Fundamental Sciences [J Math Fund Sci], vol 53, no 3, p 466-486, Dec 2021, url
+<a href=https://doi.org/10.5614/j.math.fund.sci.2021.53.3.9 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.5614/j.math.fund.sci.2021.53.3.9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r10></a>ROOT Team, &ldquo;ROOT: Data Analysis Framework&rdquo;, 2021, url
+<a href=https://root.cern/ target=_blank rel="nofollow noopener noreferrer"><span>https://root.cern/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li><li><a name=r11></a>&ldquo;Start with more than a blinking cursor&rdquo;, Kaggle Inc, 2022, url
+<a href=https://www.kaggle.com/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.kaggle.com/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220210].</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p><a><span>kaggle <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p><p>{% comment %}
+ROOT + Kaggle + Python</p><p>Agglomerative Hierarchical algorithm (AHD)</p><p>Data spasial peta &ndash;> QGIS polygon menjadi CSV</p><p>Riantini &ndash; variabel menjadi prediktor
+Nisa &ndash; studi lanjut</p><p>Pemerintah sudah punya klaster-klaster.</p><p>Tujuan studi adalah merekam klaster-klaster lahan level kab apakah masih sama dengan peruntukan menurut pemerintah atau tidak. Bantuan sains data computer sains agar dapat merekomendasikan hal-hal tertentu? Di sana ada Pak Hasanudding GD.</p><p>Selama ini kurang canggih, masih data waktu dan belum menggunakan data-data piksel dari satelit.</p><p>[01:15, 2/9/2022] MA Udjianna Sekteria Pasaribu: Teh Nisa selamat gabung.</p><p>Spt yg sdh disampaikan bbrp kali, bhw ibu tdk eligible jadi PI unt masukkan proposal multi Disiplin Ke P2MI FMIPA krn sdh jd PI di Riset Unggulan yg didanai ITB melalui LPPM ITB</p><p>Alhamdulillaah nya pa Dudung belum jadi PI di Riset Unggulan ITB dan bersedia jadi PI di proposal Multi Disiplin (gmb bwh)
+[01:22, 2/9/2022] MA Udjianna Sekteria Pasaribu: Di pihak lain, Alhamdulillaah juga teh Nisa sdh mantap S3 di Prodi Mat mulai Sem I 2022-2023 tp jalurnya Comp Science maka
+A) Yuk buat proposal ke FMIPA dg topik Cluster Analysis Unt Data Besar spt data tutupan lahan.</p><p>B) Yg ditonjolkan ada 2 yi</p><ol><li>Mengoleksi data dan mengorganisasi spy bisa diolah oleh bhs program (mis Pyton) atau Stat Software, minimal Xcel Plus</li><li>bangun program yg efektif shg Cluster Analysis bisa bekerja di data yg sdh dirapikan di langkah 1 di atas.
+Di aini kami butuh masukan duo Pa Dudung & pa Wahid
+[01:24, 2/9/2022] MA Udjianna Sekteria Pasaribu: *Di sini
+[01:26, 2/9/2022] MA Udjianna Sekteria Pasaribu: Hipotesis ibu & teh Nisa bhw di langkah 2) ada prosedur analisis yg mampu sederhanakan jarak pasangan² vektor yg banyak (berupa pixel).</li></ol><p>Inilah tugas berat teh Nisa, belajar ke dosen² di KK Analisis
+[01:28, 2/9/2022] MA Udjianna Sekteria Pasaribu: Ini ibu sedang buka: Journal of Mathematical and Fundamental Sciences, publisher LPPM ITB dan dpt ini</p><p>[02:21, 2/9/2022] MA Udjianna Sekteria Pasaribu: Ke MIPA yg dikedepankan pengembangan bidang ilmu Computer Science-nya sejalan dg Prioritas Penelitian ITB yaitu Teknologi Informasi dan Komunikasi khususnya di Data Science</p><p>Sedangkan ke Mendikbudristek mah berkaitan dengan Peranan Analisis Klaster pada Big Data, khususnya yg berkaitan dg Kepadatan Penduduk di P Jawa
+[02:21, 2/9/2022] MA Udjianna Sekteria Pasaribu: Ke dua proposal harus dilandasi dg ini
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

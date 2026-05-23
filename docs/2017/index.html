@@ -1,0 +1,77 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>generate synthetic data for ml | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>generate synthetic data for ml</h1><time datetime=2024-04-21T22:19:00+07:00>April 21, 2024</time><p>How to generate synthetic data for ML understanding</p><h2 id=intro>intro</h2><p>In order to improve AI models, protect sensitive data, and mitigate bias, computer can augment or replace real data, where such kind of data known as synthetic data <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. For illustrating how to generate synthetic data, a session has been prepared <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>, where it is using available working code for the analysis <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</p><h2 id=code>code</h2><p>Dataset with two classes A and B is generated, with features X1, X2, X3 and output Y with following code.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#f92672>import</span> random <span style=color:#66d9ef>as</span> rnd
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>xx <span style=color:#f92672>=</span> []; yy <span style=color:#f92672>=</span> []; zz <span style=color:#f92672>=</span> []; label<span style=color:#f92672>=</span>[]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>; xmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>ymin <span style=color:#f92672>=</span> <span style=color:#ae81ff>40</span>; ymax <span style=color:#f92672>=</span> <span style=color:#ae81ff>90</span>
+</span></span><span style=display:flex><span>zmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>70</span>; zmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>90</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (xmax <span style=color:#f92672>-</span> xmin) <span style=color:#f92672>+</span> xmin
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (ymax <span style=color:#f92672>-</span> ymin) <span style=color:#f92672>+</span> ymin
+</span></span><span style=display:flex><span>    z <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (zmax <span style=color:#f92672>-</span> zmin) <span style=color:#f92672>+</span> zmin
+</span></span><span style=display:flex><span>    xx<span style=color:#f92672>.</span>append(x)
+</span></span><span style=display:flex><span>    yy<span style=color:#f92672>.</span>append(y)
+</span></span><span style=display:flex><span>    zz<span style=color:#f92672>.</span>append(z)
+</span></span><span style=display:flex><span>    label<span style=color:#f92672>.</span>append(<span style=color:#e6db74>&#39;A&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span>; xmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>
+</span></span><span style=display:flex><span>ymin <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>; ymax <span style=color:#f92672>=</span> <span style=color:#ae81ff>70</span>
+</span></span><span style=display:flex><span>zmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>; zmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>,n):
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (xmax <span style=color:#f92672>-</span> xmin) <span style=color:#f92672>+</span> xmin
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (ymax <span style=color:#f92672>-</span> ymin) <span style=color:#f92672>+</span> ymin
+</span></span><span style=display:flex><span>    z <span style=color:#f92672>=</span> rnd<span style=color:#f92672>.</span>random() <span style=color:#f92672>*</span> (zmax <span style=color:#f92672>-</span> zmin) <span style=color:#f92672>+</span> zmin
+</span></span><span style=display:flex><span>    xx<span style=color:#f92672>.</span>append(x)
+</span></span><span style=display:flex><span>    yy<span style=color:#f92672>.</span>append(y)
+</span></span><span style=display:flex><span>    zz<span style=color:#f92672>.</span>append(z)
+</span></span><span style=display:flex><span>    label<span style=color:#f92672>.</span>append(<span style=color:#e6db74>&#39;B&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>scatter(yy, zz)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>show()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># https://www.geeksforgeeks.org/writing-csv-files-in-python/ [20240421]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> csv
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e># field names</span>
+</span></span><span style=display:flex><span>fields <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;X1&#39;</span>, <span style=color:#e6db74>&#39;X2&#39;</span>, <span style=color:#e6db74>&#39;X3&#39;</span>, <span style=color:#e6db74>&#39;Y&#39;</span>]
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e># data rows of csv file</span>
+</span></span><span style=display:flex><span>rows <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n):
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>xx[i]<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>yy[i]<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>zz[i]<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>,
+</span></span><span style=display:flex><span>        label[i]
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>    rows<span style=color:#f92672>.</span>append(row)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># name of csv file</span>
+</span></span><span style=display:flex><span>filename <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;x123_y.csv&#34;</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e># writing to csv file</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(filename, <span style=color:#e6db74>&#39;w&#39;</span>, newline<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>) <span style=color:#66d9ef>as</span> csvfile:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># creating a csv writer object</span>
+</span></span><span style=display:flex><span>    csvwriter <span style=color:#f92672>=</span> csv<span style=color:#f92672>.</span>writer(csvfile)
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># writing the fields</span>
+</span></span><span style=display:flex><span>    csvwriter<span style=color:#f92672>.</span>writerow(fields)
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># writing the data rows</span>
+</span></span><span style=display:flex><span>    csvwriter<span style=color:#f92672>.</span>writerows(rows)
+</span></span></code></pre></div><p>And the data can be read using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># Load dataset</span>
+</span></span><span style=display:flex><span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;https://raw.githubusercontent.com/dudung/datasets/main/data/synthetic/x123_y.csv&#34;</span>
+</span></span><span style=display:flex><span>names <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;X1&#39;</span>, <span style=color:#e6db74>&#39;X2&#39;</span>, <span style=color:#e6db74>&#39;X3&#39;</span>, <span style=color:#e6db74>&#39;Y&#39;</span>]
+</span></span><span style=display:flex><span>dataset <span style=color:#f92672>=</span> read_csv(url, names<span style=color:#f92672>=</span>names, header<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div><p>where it has one line for header <code>X1,X2,X3,Y</code>. The dataset
+<a href=https://raw.githubusercontent.com/dudung/datasets/main/data/synthetic/x123_y.csv%22 target=_blank rel="nofollow noopener noreferrer"><span><code>x123_y.csv</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>can be downloaded.</p><h2 id=analysis>analysis</h2><p>The feature X3 plays important role in differing A and B classes.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Kim Martineau, &ldquo;What is synthetic data?&rdquo;, IBM, 8 Feb 2023, url
+<a href=https://research.ibm.com/blog/what-is-synthetic-data target=_blank rel="nofollow noopener noreferrer"><span>https://research.ibm.com/blog/what-is-synthetic-data <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240421].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Sparisoma Viridi, &ldquo;ML synthetic data with Python&rdquo;, OSF, 21 Apr 2024, url
+<a href=https://osf.io/wqv3z target=_blank rel="nofollow noopener noreferrer"><span>https://osf.io/wqv3z <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240421].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Jason Browniee, “Your First Machine Learning Project in Python Step-By-Step”, Machine Learning Mastery, 26 Sep 2023, url
+<a href=https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ target=_blank rel="nofollow noopener noreferrer"><span>https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[202400421].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

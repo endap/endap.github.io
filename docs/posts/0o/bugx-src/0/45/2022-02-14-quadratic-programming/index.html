@@ -1,0 +1,208 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>quadratic programming | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>quadratic programming</h1><time datetime=2022-02-15T08:51:00+07:00>February 15, 2022</time><p>Sedikit lebih umum dari pemrograman linier akan membawa kita pada pemrograman kuadrat atau quadratic programming, yang masih berfokus pada kasus konveks [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], di mana telah terdapat berbagai solver dalam Python seperti CVXOPT, CVXPY, Gurobi, MOSEK, qpOASES, dan quadprog [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Pemrograman kuadrat memiliki aplikasi pada bidang keuangan, berbagai jenis sistem komputer, statistik, produksi bahan kimia, dan algoritma untuk menyelesaikan pemrograman tak-linier yang lebih rumit [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Suatu pemrograman kuadratik adalah masalah melakukan optimasi suatu fungsi obyektif kuadratik yang tunduk pada kendala linier, yang perumusaman fungsi obybektifnya dapat terdiri dari tiga suku dengan suku kedua bertanda positif [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau cukup dua suku dengan suku kedua bertanda negatif [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Di sini akan digunakan hanya dua suku dengan suku kedua bertanda positif, di mana suku ketiga dapat dihilangkan karena tidak berdampak pada solusi $x^*$ [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sehingga memberikan</p><p>\begin{equation}\label{eqn:minimize}
+{\rm Minimumkan}: \ \ \ \ \ \ \ \ \frac12 x^T Q x + R^T x,
+\end{equation}</p><p>\begin{equation}\label{subject-to}
+\begin{array}{rl}
+{\rm patuhi}: \ \ \ \ \ \ \ \ & Ax \le b, \newline
+& A_{eq} x = b_{eq},
+\end{array}
+\end{equation}</p><p>dengan $x \in \mathbb{R}^n$ adalah vektor variabel desain yang memiliki $n$ elemen. Vektor dan matriks yang lain berdimensi $Q \in \mathbb{R}^{n \times n}$, $R \in \mathbb{R}^n$, $A \in \mathbb{R}^{m \times n}$, $b \in \mathbb{R}^m$, $A_{eq} \in \mathbb{R}^{l \times n}$, dan $b_{eq} \in \mathbb{R}^l$, dengan $n$ adalah jumlah variabel desain, $m$ jumlah kendala pertidaksamaan, dan $l$ adalah jumlah kendala persamaan.</p><h2 id=least-square>least square</h2><p>Kuadrat terkecil merupakan salah satu motivasi praktis dari pemrograman kuadratik yang akan dibahas di sini. Pertimbangkan suatu sistem persamaan linier yang bersifat terdeterminasi-berlebih (overdetermined), suatu matriks &lsquo;kurus&rsquo; $A$ dan persamaan yang akan diselesaikan dalam bentuk</p><p>\begin{equation}\label{linear-system-of-equations}
+y = Ax,
+\end{equation}</p><p>dengan $x \in \mathbb{R}^n$ merupakan vektor yang tidak diketahui, $y \in \mathbb{R}^m$ termasuk data yang diketahui, dan $A \in \mathbb{R}^{m \times n}$ adalah matriks yang diketahui dengan $m > n$. Dalam kondisi yang sesuai Persamaan \eqref{linear-system-of-equations} tidak memiliki solusi unik karena terdapat lebih banyak persamaan dari yang tidak diketahui, sehingga sistem ini disebut sebagai sistem persamaan terdeterminasi-berlebih.</p><p>Salah satu pendekatan adalah dengan mencari solusi &rsquo;terbaik cocok&rsquo; (best fit), yang untuk mencapainya didefinsikan kesalahan residual (residual error) sebagai</p><p>\begin{equation}\label{residual-error}
+r = Ax - y,
+\end{equation}</p><p>dan menganggap bahwa solusi $x^*$ meminimumkan norm dari residual, $||r||$. Solusi ini disebut sebagai solusi &lsquo;kuadrat terkecil&rsquo;. Seringnya pendekatan ini digunakan dalam analisis regresi, di antara banyak aplikasi sebagaimana akan ditunjukkan di bawah ini.</p><h3 id=linear-regression>linear regression</h3><p>Pada regresi linier, istilah linier merujuk pada hubungan antara parameter yang diestimasi dengan hasilnya [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dan tidak perlu linier dengan datanya. Sebagai contoh terdapat pasangan data $(x_i, y_i)$ untuk $i = 1, 2, \dots, N$ dengan $N > 0$ yang akan dicocokan dengan kurva polinomial order $5$</p><p>\begin{equation}\label{polynomial-5th-order}
+y = \sum_{j = 0}^5 c_j x^j.
+\end{equation}</p><p>Tujuannya adalah menentukan parameter $c_j$, $j = 0, .., 5$ yang terbaik agar cocok dengan data dalam arti tertentu. Untuk itu dapat dihitung residual $r_i$ untuk setiap pasangan data $(x_i, y_i)$</p><p>\begin{equation}\label{residual-error-i}
+\begin{array}{rcl}
+c_0 + c_1 x_1 + c_2 x_1^2 + c_3 x_1^3 + c_4 x_1^4 + c_5 x_1^5 - y_1 & = & r_1, \newline
+c_0 + c_1 x_2 + c_2 x_2^2 + c_3 x_2^3 + c_4 x_2^4 + c_5 x_2^5 - y_2 & = & r_2, \newline
+c_0 + c_1 x_3 + c_2 x_3^2 + c_3 x_3^3 + c_4 x_3^4 + c_5 x_3^5 - y_3 & = & r_3, \newline
+\vdots & = & \vdots \newline
+c_0 + c_1 x_N + c_2 x_N^2 + c_3 x_N^3 + c_4 x_N^4 + c_5 x_N^5 - y_N & = & r_N.
+\end{array}
+\end{equation}</p><p>Persamaan \eqref{residual-error-i} dapat diutliskan dalam bentuk matriks-vektor $Ac - y = r$, dengan</p><p>\begin{equation}\label{matrix-vector-a}
+A = \left[
+\begin{array}{cccccc}
+1 & x_1 & x_1^2 & x_1^3 & x_1^4 & x_1^5 \newline
+1 & x_2 & x_2^2 & x_2^3 & x_2^4 & x_2^5 \newline
+1 & x_3 & x_3^2 & x_3^3 & x_3^4 & x_3^5 \newline
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \newline
+1 & x_N & x_N^2 & x_N^3 & x_N^4 & x_N^5 \newline
+\end{array}
+\right]
+\end{equation}</p><p>\begin{equation}\label{matrix-vector-c}
+c = \left[
+\begin{array}{c}
+c_0 \newline
+c_1 \newline
+c_2 \newline
+c_3 \newline
+c_4 \newline
+c_5
+\end{array}
+\right],
+\end{equation}</p><p>\begin{equation}\label{matrix-vector-y}
+y = \left[
+\begin{array}{c}
+y_1 \newline
+y_2 \newline
+y_3 \newline
+\vdots \newline
+y_N
+\end{array}
+\right],
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{matrix-vector-r}
+r = \left[
+\begin{array}{c}
+r_1 \newline
+r_2 \newline
+r_3 \newline
+\vdots \newline
+r_N
+\end{array}
+\right].
+\end{equation}</p><p>Selanjutnya untuk menghitung kecocokan optimal untuk $c$, dilakukan dengan meminimumkan kuadrat dari residual, yang merupakan fungsi obyektifnya</p><p>\begin{equation}\label{objective-function}
+\begin{array}{rcl}
+f(x) & = & \frac12 ||r||^2 \newline
+& = & \frac12 r^Tr \newline
+& = & \frac12 (Ac - y)^T (Ac - y) \newline
+& = & \frac12 c^T A^T A c - \frac12 y^T A c - \frac12 c^T A^T y + \frac12 y^T y \newline
+& = & \frac12 c^T A^T A c - y^T A c + \frac12 y^T y.
+\end{array}
+\end{equation}</p><p>Perhatkan bahwa Persamaan \eqref{objective-function} merupakan fungsi kuadrat dalam variabel $c$ dan masalah ini tidak memiliki kendala. Sebagai hasilnya dapat dihitung turunan fungsi obyektif terhadap $c$ dan menyamakannya dengan nol untuk meminimumkannya</p><p>\begin{equation}\label{objective-function-minimum}
+\begin{array}{rcl}
+\displaystyle \frac{\partial}{\partial c} f(x) & = 0 \newline
+\displaystyle \frac{\partial}{\partial c} \left( \frac12 c^T A^T A c - y^T A c + \frac12 y^T y \right) & = 0 \newline
+A^T A c - A^T y & = & \newline
+A^T A c & = & A^T y \newline
+(A^T A)^{-1} A^T A c & = & (A^T A)^{-1} A^T y \newline
+I c & = & (A^T A)^{-1} A^T y \newline
+c & = & (A^T A)^{-1} A^T y,
+\end{array}
+\end{equation}</p><p>yang menghasilkan suatu formula langsung untuk mencocokkan koefisien polinomial $c_j$ dengan $j = 0, 1, \dots, 5$ menggunakan data yang diberikan.</p><h2 id=examples>examples</h2><p>Terdapat banyak contoh yang dapat diperoleh dengan berselancar. Untuk saat ini diberikan satu contoh berikut ini.</p><h3 id=linear-regression-1>linear regression</h3><p>Untuk memberikan ilustrasi implementasi dari kuadrat terkecil pada regresi linier gambar berikut ini memberikan suatu data buatan.</p><p>![]({{ site.baseurl}}/assets/img/0/45/0452-a.png)<br>Gambar <a name=fig1>1</a>. Data buatan yang dicocokan dengan kurva polinomial berorde ketiga.</p><p>Dengan menggunakan aplikasi spreadsheet Microsoft Excel diperoleh oleh bentuk persamaan polinomialnya adalah</p><p>\begin{equation}\label{eqn:polynomial-3rd-order-spreadsheet-fit}
+y = 0.756 + 3.355 x - 0.363 x^2 + 0.012 x^3
+\end{equation}</p><p>dengan datanya dapat tersedia pada berkas
+<a href=https://github.com/dudung/datax/blob/master/bugx/0452-a.txt target=_blank rel="nofollow noopener noreferrer"><span>0452-a.txt <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Selanjutnya adalah menerapkan Persamaan \eqref{objective-function-minimum} pada data yang diberikan oleh Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang salam satu implementasinya dengan bahasa pemrograman Python adalah seperti berikut ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0452-qp-ls-lr-poly3.pg</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Impelement QP for LS in the case of LR for POLY3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung/bug</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220215 Create this program.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># abbreviations</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># QP quaratic programming</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># LS least square</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># LR linear regression</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># POLY3 polynomial function of 3rd order</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># import numpy</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># open file, read lines and store them in a list, close file</span>
+</span></span><span style=display:flex><span>fn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;0452-a.txt&#39;</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;file:&#39;</span>, fn)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(fn) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    lines <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>readlines()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create empty list</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [[]]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [[]]
+</span></span><span style=display:flex><span>A <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># iterate through lines but ommit the first element</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> l <span style=color:#f92672>in</span> lines[<span style=color:#ae81ff>1</span>:]:
+</span></span><span style=display:flex><span>    s <span style=color:#f92672>=</span> l<span style=color:#f92672>.</span>rstrip(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span>) 
+</span></span><span style=display:flex><span>    s <span style=color:#f92672>=</span> s<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>    xi <span style=color:#f92672>=</span> float(s[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>    yi <span style=color:#f92672>=</span> float(s[<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    x[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>append(xi)
+</span></span><span style=display:flex><span>    y[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>append(yi)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    p0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    p1 <span style=color:#f92672>=</span> xi
+</span></span><span style=display:flex><span>    p2 <span style=color:#f92672>=</span> xi<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    p3 <span style=color:#f92672>=</span> xi<span style=color:#f92672>**</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>    Ai <span style=color:#f92672>=</span> [p0, p1, p2, p3]
+</span></span><span style=display:flex><span>    A<span style=color:#f92672>.</span>append(Ai)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create numpy array</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>transpose(np<span style=color:#f92672>.</span>array(x))
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>transpose(np<span style=color:#f92672>.</span>array(y))
+</span></span><span style=display:flex><span>A <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(A)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># find c via some temporary variables</span>
+</span></span><span style=display:flex><span>AT <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>transpose(A)
+</span></span><span style=display:flex><span>ATA <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>matmul(AT, A)
+</span></span><span style=display:flex><span>ATA_1 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>linalg<span style=color:#f92672>.</span>inv(ATA)
+</span></span><span style=display:flex><span>ATA_1AT <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>matmul(ATA_1, AT)
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>matmul(ATA_1AT, y)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print dimension of matrices</span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;y:&#39;</span>, y<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;A:&#39;</span>, A<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;AT:&#39;</span>, AT<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;ATA:&#39;</span>, ATA<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;ATA_1:&#39;</span>, ATA_1<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;ATA_1AT:&#39;</span>, ATA_1AT<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;c: &#39;</span>, c<span style=color:#f92672>.</span>shape)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print results</span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;c = &#39;</span>)
+</span></span><span style=display:flex><span>print(c)
+</span></span></code></pre></div><p>dengan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0452-qp-ls-lr-poly3.py ====
+</span></span><span style=display:flex><span>file: 0452-a.txt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>y: (101<span style=color:#75715e>, 1)</span>
+</span></span><span style=display:flex><span>A: (101<span style=color:#75715e>, 4)</span>
+</span></span><span style=display:flex><span>AT: (4, 101)
+</span></span><span style=display:flex><span>ATA: (4, 4)
+</span></span><span style=display:flex><span>ATA_1: (4, 4)
+</span></span><span style=display:flex><span>ATA_1AT: (4, 101)
+</span></span><span style=display:flex><span>c:  (4<span style=color:#75715e>, 1)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>c = 
+</span></span><span style=display:flex><span>[[ 0.75618375]
+</span></span><span style=display:flex><span> [ 3.35558613]
+</span></span><span style=display:flex><span> [-0.36394393]
+</span></span><span style=display:flex><span> [ 0.01210265]]
+</span></span></code></pre></div><p>adalah hasilnya saat dijalankan. Di bawah ini diberikan perbandingan hasil yang baru saja diperoleh dengan yang diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Tabel <a name=tab1>1</a> Nilai $c$ yang diperoleh menggunakan spreadsheet dan Python melalui Persamaan \eqref{objective-function-minimum}.</p><table><thead><tr><th style=text-align:center>Koefisien</th><th style=text-align:center>Spreadsheet</th><th style=text-align:center>Python</th></tr></thead><tbody><tr><td style=text-align:center>$c_0$</td><td style=text-align:center>$0.756$</td><td style=text-align:center>$0.75618375$</td></tr><tr><td style=text-align:center>$c_1$</td><td style=text-align:center>$3.355$</td><td style=text-align:center>$3.35558613$</td></tr><tr><td style=text-align:center>$c_2$</td><td style=text-align:center>$-0.363$</td><td style=text-align:center>$-0.36394393$</td></tr><tr><td style=text-align:center>$c_3$</td><td style=text-align:center>$0.012$</td><td style=text-align:center>$0.01210265$</td></tr></tbody></table><p>Hasil dengan suatu spreadsheet dapat dibuat lebih teliti terlihat bila diatur cara menampilkannya. Hasil pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>masih menggunakan opsi standar.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Johan Löfberg, &ldquo;Quadratic programming&rdquo;, YALMIP, 17 Sep 2016, url
+<a href=https://yalmip.github.io/tutorial/quadraticprogramming/ target=_blank rel="nofollow noopener noreferrer"><span>https://yalmip.github.io/tutorial/quadraticprogramming/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220209].</li><li><a name=r02></a>Stéphane Caron, &ldquo;Quadratic Programming in Python&rdquo;, scaron.info, Apr 2017, url
+<a href=https://scaron.info/blog/quadratic-programming-in-python.html target=_blank rel="nofollow noopener noreferrer"><span>https://scaron.info/blog/quadratic-programming-in-python.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220209].</li><li><a name=r03></a>Jack Heider, Dajun Yue, Fengqi You, &ldquo;Quadratic programming&rdquo;, CHEM_ENG 345: Process Optimization, Chemical and Biological Engineering Department, Northwestern University, Spring 2015, 7 June 2015, url
+<a href="https://optimization.mccormick.northwestern.edu/index.php?oldid=3876" target=_blank rel="nofollow noopener noreferrer"><span>https://optimization.mccormick.northwestern.edu/index.php?oldid=3876 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220209].</li><li><a name=r04></a>Scott Moura, &ldquo;Chapter 2: Quadratic Programming&rdquo;, CE 191 — Civil and Environmental Engineering Systems Analysis, University of California, Berkeley, 10 Dec 2014, url
+<a href=https://ecal.berkeley.edu/files/ce191/CH02-QuadraticProgramming.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://ecal.berkeley.edu/files/ce191/CH02-QuadraticProgramming.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220214].</li><li><a name=r05></a>Ronald H. W. Hoppe, &ldquo;Chapter 3 Quadratic Programming&rdquo;, MATH 6367 - Optimization Theory, University of Boston, 25 Oct 2006, url
+<a href=https://www.math.uh.edu/~rohop/fall_06/Chapter3.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.math.uh.edu/~rohop/fall_06/Chapter3.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220214].</li><li><a name=r06></a>Charlie, &ldquo;Answer to &lsquo;What does linear stand for in linear regression?&rsquo;&rdquo;, Cross Validated, 24 Mar 2011, url
+<a href=https://stats.stackexchange.com/a/8706/342139 target=_blank rel="nofollow noopener noreferrer"><span>https://stats.stackexchange.com/a/8706/342139 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220214].</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>counter anim canvas js | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>counter anim canvas js</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-01-20T08:12:32 07:00">20 Jan 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/a/81-counter-anim-canvas-js.md>edit</a></div></div><div class=note-content><h2 id=result>result</h2><div id=container></div><script>document.addEventListener("DOMContentLoaded",function(){function f(){let e=document.createElement("canvas");return e.width=n,e.style.width=n+"px",e.height=s,e.style.height=s+"px",e}function g(e,t,n){let s=document.createElement("button");return s.innerHTML=e,s.style.width="60px",s.style.height="20px",s.style.display="block",s.style.marginBottom="4px",s.addEventListener("click",()=>{let s="",o=event.target.innerHTML;o==e?(console.log(o),s=t,d=setInterval(n,m)):(console.log(o),s=e,clearInterval(d)),event.target.innerHTML=s}),s}function p(){console.log("Animate");const c=-1,m=1,d=m-c;let f=Math.round(Math.random()*d)+c;r.push(f);let p=Math.round(Math.random()*d)+c;if(l.push(p),r.length==1&&l.length==1)a=n/2,o=s/2,i=0;else{t=a+r[i]*u,e=o+l[i]*u;let d=!1;t>n&&(t-=n,d=!0),t<0&&(t+=n,d=!0),e>s&&(e-=s,d=!0),e<0&&(e+=s,d=!0);const c=h.getContext("2d");c.strokeStyle=colors[colorId],c.beginPath(),c.moveTo(a,o),d?(c.moveTo(t,e),colorId++,colorId>6&&(colorId=0)):c.lineTo(t,e),c.stroke(),a=t,o=e,i+=1}}let c=document.getElementById("container");c.style.paddingTop="0.5em";const n=200,s=200,m=2;let d,r=[],l=[],i,a,o,t,e;const u=4;colorId=0,colors=["#f00","#00f","#0f0","#ff0","#f0f","#0ff","#fff"];let v=g("Start","Stop",p),h=f();c.append(v),c.append(h)})</script><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createAnimationCanvas</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>can</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>width</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>width</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;px&#34;</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;px&#34;</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>can</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createToggleButton</span>(<span style=color:#a6e22e>cap1</span>, <span style=color:#a6e22e>cap2</span>, <span style=color:#a6e22e>funct</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>btn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cap1</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;60px&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20px&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;block&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>marginBottom</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;4px&#34;</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>newCap</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>oldCap</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>innerHTML</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>oldCap</span> <span style=color:#f92672>==</span> <span style=color:#a6e22e>cap1</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>oldCap</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>newCap</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cap2</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>counterId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>setInterval</span>(<span style=color:#a6e22e>funct</span>, <span style=color:#a6e22e>delay_ms</span>)
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>oldCap</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>newCap</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cap1</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>clearInterval</span>(<span style=color:#a6e22e>counterId</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>newCap</span>;
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>btn</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>animate</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Animate&#34;</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dirMin</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dirMax</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dirDif</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>dirMax</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>dirMin</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dx</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>round</span>(Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> <span style=color:#a6e22e>dirDif</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>dirMin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sx</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>dx</span>);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dy</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>round</span>(Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> <span style=color:#a6e22e>dirDif</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>dirMin</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sy</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>dy</span>);
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>sx</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>sy</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>width</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>sx</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>*</span> <span style=color:#a6e22e>ds</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>y2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y1</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>sy</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>*</span> <span style=color:#a6e22e>ds</span>;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>jump</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>x2</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>width</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>x2</span> <span style=color:#f92672>-=</span> <span style=color:#a6e22e>width</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>jump</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>x2</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>x2</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>width</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>jump</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>y2</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>height</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>y2</span> <span style=color:#f92672>-=</span> <span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>jump</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>y2</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>y2</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>jump</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>colors</span>[<span style=color:#a6e22e>colorId</span>];  
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x1</span>, <span style=color:#a6e22e>y1</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>jump</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x2</span>, <span style=color:#a6e22e>y2</span>);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x2</span>, <span style=color:#a6e22e>y2</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>colorId</span><span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>colorId</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>6</span>) <span style=color:#a6e22e>colorId</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y2</span>;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>i</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// get container object
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>cnt</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;container&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>paddingTop</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0.5em&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// create global variables
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>200</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>200</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>delay_ms</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>counterId</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sx</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sy</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>x1</span>, <span style=color:#a6e22e>y1</span>, <span style=color:#a6e22e>x2</span>, <span style=color:#a6e22e>y2</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ds</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>colorId</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>colors</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;#f00&#34;</span>, <span style=color:#e6db74>&#34;#00f&#34;</span>, <span style=color:#e6db74>&#34;#0f0&#34;</span>, <span style=color:#e6db74>&#34;#ff0&#34;</span>, <span style=color:#e6db74>&#34;#f0f&#34;</span>, <span style=color:#e6db74>&#34;#0ff&#34;</span>, <span style=color:#e6db74>&#34;#fff&#34;</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// create elements
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>btn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createToggleButton</span>(<span style=color:#e6db74>&#34;Start&#34;</span>, <span style=color:#e6db74>&#34;Stop&#34;</span>, <span style=color:#a6e22e>animate</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>can</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createAnimationCanvas</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// attach elements to container
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>btn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>can</span>);
+</span></span></code></pre></div><h2 id=steps>steps</h2><ol><li>Open a plain text editor, e.g. vim, nano, Notepad++, VS Code.</li><li>Copy and paste code given above.</li><li>Save with new name, e.g. <code>jstu-15-counter-anim-canvas.html</code>.</li><li>View using an internet browser, e.g. Google Chrome, Mozilla Firefox, Apple Safari.</li><li>Edit HTML file for further modification.</li><li>Save the changes</li><li>Refresh internet browser to see updated result.</li><li>Repeat the previous three steps (5-7).</li><li>Close the internet browser.</li><li>Close the plain text editor.</li></ol></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

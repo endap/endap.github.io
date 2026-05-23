@@ -1,0 +1,65 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>gaussian surface | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>gaussian surface</h1><time datetime=2022-01-23T18:58:00+07:00>January 23, 2022</time><p>Saat membicarakan hukum Gauss, terdapat konsep permukaan Gauss yang merupakan suatu permukaan khayal [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], suatu konstruksi matematika yang dapat berbentuk permukaan berbentuk apa saja asalkan tertutup, yang dalam implementasinya untuk meghitung fluks dengan permukaan, akan lebih mudah diselesaikan bila bentuk permukaan yang dipilih memiliki simetri tertentu [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Permukaan tertutup bukan merupakan permukaan Gauss walaupun permukaan dengan luas tak-hingga dapat merupakan pendekatan permukaan Gauss [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat pemahaman bahwa sudut antara suatu permukaan Gauss dengan medan listirk yang menembusnya perlu selalu tetap [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang tepat bila tujuan utama hukum ini adalah untuk memperoleh medan listrik dari distribusi muatan yang terlingkupi permukaan tertutup [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Akan tetapi bukan hanya itu pemanfaatan dari hukum Gauss sebenarnya. Terdapat pula informasi bahwa hukum Gauss dapat diterapkan untuk distribusi medan listrik oleh muatan cincin [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang seharusnya memerlukan syarat simetri untuk analisis Gauss agar produktif, kecuali bila merupakan penerapan solusi analisis beda hingga [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=closed-surface>closed surface</h2><p>Permukaan Gauss harus merupakan permukaan tertutup, baik merupakan suatu permukaan yang dapat diungkapkan dengan satu fungsi ataupun merupakan gabungan dari beberapa permukaan.</p><p>![]({{ site.baseurl }}/assets/img/0/41/0410-a.png)<br>Gambar <a name=fig1>1</a>. Suatu permukaan Gauss: (a) berbentuk kotak tertutup yang terdiri dari enam bidang datar, dan (b) terbagi menjadi bagian kiri (L: left) dan kanan (R: right).</p><p>Enam bidang datar terbatas berbentuk persegi panjang dapat digunakan untuk membentuk kotak tertutup yang merupakan suatu permukaan Gauss seperti diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Dalam hal ini integral pada gambar tersebut dapat menjadi penjumlahan luas enam bidang</p><p>\begin{equation}\label{eqn:gaussian-surface-box}
+\begin{array}{rcl}
+S & = & \oint dS \newline
+& = & \displaystyle \sum_{i = 1}^6 S_i \newline
+& = & (S_3 + S_4 + S_5) + (S_1 + S_2 + S_6) \newline
+& = & S_L + S_R,
+\end{array}
+\end{equation}</p><p>yang dapat dibagi menjadi bagian kiri dan kanan. Pembagian menjadi dua bagian ini hanya untuk memperjelas bila ada muatan di dalamnya kelak.</p><p>![]({{ site.baseurl }}/assets/img/0/41/0410-b.png)<br>Gambar <a name=fig2>2</a>. Beberapa bentuk permukaan yang membentuk ruang di antaranya.</p><p>Gabungan beberapa permukaan dengan fungsi tertentu dapat membentuk suatu ruang di antara permukaan-permukaan tersebut seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Perlu kejelia untuk melihat apakah permukaan-permukaan tersebut dapat digunakan sebagai permukaan Gauss.</p><h2 id=enclosed-charge>enclosed charge</h2><p>Setelah memahami syarat suatu permukaan Gauss, pengertian berikutnya yang perlu dipahami adalah muatan yang terlingkupi atau berada di dalam permukaan Gauss.</p><p>![]({{ site.baseurl }}/assets/img/0/41/0410-c.png)<br>Gambar <a name=fig3>3</a> Empat muatan dan permukaan Gauss berbentuk: (a) kulit bola, (b) kotak, dan (c) silinder.</p><p>Muatan-muatan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berada keseluruhannya di dalam atau di luar permukaan Gauss. Pada aplikasinya tidak perlu selalu demikian.</p><p>![]({{ site.baseurl }}/assets/img/0/41/0410-d.png)<br>Gambar <a name=fig4>4</a>. Sebuah muatan $q_i$, $i = 1, .., 4$, berbentuk bola pejal dan permukaan Gauss yang digunakan padanya berbentuk kotak untuk $q_1$, silinder untuk $q_2$, bola untuk $q_3$ ddan $q_4$.</p><p>Ada kalanya permukaan Gauss tidak melingkupi seluruh bagian muatan akan tetapi hanya sebagiannya. Contoh-contoh kasus ini diberikan pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=exer>exer</h2><ol><li>Manakah permukaan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>yang dapat digunakan sebagai suatu permukaan Gauss?</li><li>Tentukan muatan yang terlingkupi oleh permukaan Gauss pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(b).</li><li>Tentukan mautan yang tidak terlingkupi oleh permukaan Gauss pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(a).</li><li>Tentukan muatan yang terlingkupi oleh permukaan Gauss yang beririsan dengan muatan $q_1$ pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Tentukan muatan yang terlingkupi oleh permukaan Gauss yang beririsan dengan muatan $q_3$ pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Asumsikan berapat muatan volume $\rho$ seragam.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Carl R. Nave, &ldquo;Gaussian Surfaces&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gausur.html#c1 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gausur.html#c1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123]</li><li><a name=r02></a>Samuel J. Ling, Jeff Sanny, Bill Moebs, Many Contributing Authors, &ldquo;Explaining Gauss’s Law&rdquo;, University Physics, OpenStax, 6 Nov 2020, url
+<a href=https://phys.libretexts.org/@go/page/4380 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/4380 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li><li><a name=r03></a>Wikipedia contributors, &lsquo;Gaussian surface&rsquo;, Wikipedia, The Free Encyclopedia, 28 March 2021, 03:22 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1014613716" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1014613716 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li><li><a name=r04></a>Student Baba, &ldquo;Gaussian Surface and Steps to Determine a Gaussian Surface with Examples&rdquo;, The Student Baba, 15 Sep 2019, url
+<a href=https://student-baba.com/gaussian-surface-and-steps-to-determine-a-gaussian-surface-with-examples/ target=_blank rel="nofollow noopener noreferrer"><span>https://student-baba.com/gaussian-surface-and-steps-to-determine-a-gaussian-surface-with-examples/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li><li><a name=r05></a>Sanjay knowledge, &ldquo;What is the importance of Gauss law?&rdquo;, Actingcolleges.org, 22 Nov 2021, url
+<a href=https://actingcolleges.org/library/acting-questions/read/92086-what-is-the-importance-of-gauss-law target=_blank rel="nofollow noopener noreferrer"><span>https://actingcolleges.org/library/acting-questions/read/92086-what-is-the-importance-of-gauss-law <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li><li><a name=r06></a>Admin, &ldquo;Gauss Law - Applications, Gauss Theorem Formula&rdquo;, BYJUS, 28 Jun 2021, url
+<a href=https://byjus.com/jee/gauss-law/ target=_blank rel="nofollow noopener noreferrer"><span>https://byjus.com/jee/gauss-law/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li><li><a name=r07></a>Brad Barkert, &ldquo;Answer to &lsquo;How do I find the electric field of a circular ring using Gauss’s law?&rsquo;&rdquo;, Quora, 6 Dec 2018, url
+<a href=https://www.quora.com/How-do-I-find-the-electric-field-of-a-circular-ring-using-Gauss-s-law/answer/Brad-Barker-24 target=_blank rel="nofollow noopener noreferrer"><span>https://www.quora.com/How-do-I-find-the-electric-field-of-a-circular-ring-using-Gauss-s-law/answer/Brad-Barker-24 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220123].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0410?src=hash&amp;ref_src=twsrc%5Etfw">#bug0410</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1485220154673819648?ref_src=twsrc%5Etfw">January 23, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) (a) dan (d); &nbsp;
+2) $q2$ dan $q_3$; &nbsp;
+3) $q1$ dan $q_4$; &nbsp;
+4) $\frac18 q_1$; &nbsp;
+5) $(r/R)^3 q_3$; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

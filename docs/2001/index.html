@@ -1,0 +1,276 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>have no idea | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>have no idea</h1><time datetime=2024-04-05T20:32:00+07:00>April 5, 2024</time><p>A short story without any purposes</p><p>The same problem comes again and I follow the desire to make a new static site using
+<a href=https://pages.github.com/ target=_blank rel="nofollow noopener noreferrer"><span>GitHub Pages <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. The last site is
+<a href=https://dudung.github.io/o/ target=_blank rel="nofollow noopener noreferrer"><span>o <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, which still has the same style as this one. Usually, I become confused when there is already a lot of posts in a site, especially when it has various types of post that each have differents characteristics. Fortunately, a lot of posts are good for viewing how style works with many posts, that might look differently when only with few posts.</p><p>I just find out about how to make footnote<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, which is very convenient for writing references. Thanks to Foster and Valero for the wiki page. What is still not so good looking is that the horizontal line preceeding the footnotes. Perhaps it can be controlled with CSS. It will be later handled. First I must finish this story, which does not has any purposes while writing it.</p><p>Equations. What does it have to do with equations? Well I like it and the first love in writing a post using
+<a href=https://jekyllrb.com/ target=_blank rel="nofollow noopener noreferrer"><span>Jekyll <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>then
+<a href=https://gohugo.io/ target=_blank rel="nofollow noopener noreferrer"><span>Hugo <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>is their support on
+<a href=https://www.mathjax.org/ target=_blank rel="nofollow noopener noreferrer"><span>MathJax <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>for providing
+<a href=https://www.latex-project.org/ target=_blank rel="nofollow noopener noreferrer"><span>LaTex <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>equations.</p><p>This is an inline math mode, e.g. $y = ax^2 + bx + c$, while</p><p>$$\tag{1}
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$</p><p>is display math mode. In the first mode, equation is part of a paragraph, while in the second mode it has its own paragraph. Unfortunately, as fas as I know as about several months ago, link to an equation has not yet work.</p><p>LaTeX code for previous equations are</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$</span>y <span style=color:#f92672>=</span> ax^<span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> bx <span style=color:#f92672>+</span> c<span style=color:#e6db74>$</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>\tag{<span style=color:#ae81ff>1</span>}
+</span></span><span style=display:flex><span>x_{<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>} <span style=color:#f92672>=</span> \frac{<span style=color:#f92672>-</span>b \pm \sqrt{b^<span style=color:#ae81ff>2</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span>ac}}{<span style=color:#ae81ff>2</span>a}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>Eqn (1) can be calculated using any programming languages, e.g. Python, as follow</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># finding roots using quadratic formula</span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>x1 <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>b <span style=color:#f92672>+</span> (b<span style=color:#f92672>*</span>b <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span><span style=color:#f92672>*</span>a<span style=color:#f92672>*</span>c)<span style=color:#f92672>**</span><span style=color:#ae81ff>0.5</span>
+</span></span><span style=display:flex><span>x2 <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>b <span style=color:#f92672>-</span> (b<span style=color:#f92672>*</span>b <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span><span style=color:#f92672>*</span>a<span style=color:#f92672>*</span>c)<span style=color:#f92672>**</span><span style=color:#ae81ff>0.5</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;x1 =&#39;</span>, x1)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#39;x2 =&#39;</span>, x2)
+</span></span></code></pre></div><p>From previous example you can see that the code uses the same symbols as in Eqn (2) in providing clear connection between the equation and the code, which can be considered as self-explanation feature, that will help the reader a lot.</p><p>Actually, above can can be first design using flowchart before code it. On of the possible flowchart is as follow.</p><div class=mermaid>flowchart LR
+B --> I --> P --> O --> E
+B(["Begin"])
+I[/"a, b, c"/]
+P["x<sub>1</sub> = -b + (b<sup>2</sup> - 4ac)<sup>&half;</sup>
+x<sub>2</sub> = -b - (b<sup>2</sup> - 4ac)<sup>&half;</sup>"]
+O[/"x<sub>1</sub>, x<sub>2</sub>"/]
+E(["End"])</div><p>The flowchart is created using
+<a href=https://mermaid.js.org/ target=_blank rel="nofollow noopener noreferrer"><span>Mermaid <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, where</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>LR</span></span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>I</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>E</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span>([<span style=color:#e6db74>&#34;Begin&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>I</span>[<span style=color:#e6db74>/&#34;a, b, c&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P</span>[<span style=color:#e6db74>&#34;x&lt;sub&gt;1&lt;/sub&gt; = -b + (b&lt;sup&gt;2&lt;/sup&gt; - 4ac)&lt;sup&gt;&amp;half;&lt;/sup&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  x&lt;sub&gt;2&lt;/sub&gt; = -b - (b&lt;sup&gt;2&lt;/sup&gt; - 4ac)&lt;sup&gt;&amp;half;&lt;/sup&gt;&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>O</span>[<span style=color:#e6db74>/&#34;x1, x2&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>E</span>([<span style=color:#e6db74>&#34;End&#34;</span>])</span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style><p>is the code.</p><h2 id=chart-music-molecules>chart, music, molecules</h2><p>Well, it is unusual to correlate chart, music, and molecules, right? But there are only feature that can be supported using this Hugo-based static site.</p><p>Let us show the chart, e.g. xy scatter? Well, it can be fascillitated using Chart.js and Hugo shortcode as follow.</p><pre tabindex=0><code>{{&lt; blank/scatter 80 320 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-1,Data-2,Data-3
+B_PCOLOR #f88,#88f,#8f8
+B_PRADII 4,6,0
+B_LVISIB false,true,true
+B_LCOLOR #f88,#88f,#8f8
+
+5.000,3.000
+4.902,3.618
+4.618,4.176
+4.176,4.618
+3.618,4.902
+3.000,5.000
+2.382,4.902
+1.824,4.618
+1.382,4.176
+1.098,3.618
+1.000,3.000
+1.098,2.382
+1.382,1.824
+1.824,1.382
+2.382,1.098
+3.000,1.000
+3.618,1.098
+4.176,1.382
+4.618,1.824
+4.902,2.382
+
+12.000,3.000
+11.934,3.624
+11.741,4.220
+11.427,4.763
+11.007,5.229
+10.500,5.598
+9.927,5.853
+9.314,5.984
+8.686,5.984
+8.073,5.853
+7.500,5.598
+6.993,5.229
+6.573,4.763
+6.259,4.220
+6.066,3.624
+6.000,3.000
+6.066,2.376
+6.259,1.780
+6.573,1.237
+6.993,0.771
+7.500,0.402
+8.073,0.147
+8.686,0.016
+9.314,0.016
+9.927,0.147
+10.500,0.402
+11.007,0.771
+11.427,1.237
+11.741,1.780
+11.934,2.376
+
+9.000,2.000
+8.809,2.588
+8.309,2.951
+7.691,2.951
+7.191,2.588
+7.000,2.000
+7.191,1.412
+7.691,1.049
+8.309,1.049
+8.809,1.412
+{{&lt; /blank/scatter &gt;}}
+</code></pre><p>which produces</p><p>as the result. With this feature you can have a chart and also the data at the same time. Availability access to the data for the chart can be considered as advantage or disadvantage. That depends on what we considere.</p><p>Now, it is time for musical notes.</p><p>The notes can be displayed using
+<a href=https://www.abcjs.net/ target=_blank rel="nofollow noopener noreferrer"><span>abcjs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, a JS library, combined with Hugo shortcode.</p><pre tabindex=0><code>{{&lt; blank/abcjs &gt;}}
+X:1
+T:Twinkle Twinkle Little Star
+K:C
+L:1/4
+CC GG | AA G2 | CC GG | AA G2 |
+w:Twin- kle, twin- kle, lit- tle star how I won- der what you are!
+GG FF | EE D2 | GG FF | EE D2 |
+w:Up a- bove the world so high, like a dia- mond in the sky.
+CC GG | AA G2 | FF EE | DD C2 ||
+w:Twin- kle, twin- kle, lit- tle star, how I won- der what you are!
+{{&lt; /blank/abcjs &gt;}}
+</code></pre><p>I choose the song because it is simple and the only song that I remember the notes. Well, I am not good in musics, but I like to play it. But, of course, just for my self, since it will, Unfortunately, noise to the others ☹️.</p><p>Well, last but not the least is the molecules. We can display molecules in a post as follow.</p><p>using following code</p><pre tabindex=0><code>{{&lt; blank/3dmoljs &gt;}}
+21
+Aspirin
+O    1.2333    0.5540    0.7792
+O   -0.6952   -2.7148   -0.7502
+O    0.7958   -2.1843    0.8685
+O    1.7813    0.8105   -1.4821
+C   -0.0857    0.6088    0.4403
+C   -0.7927   -0.5515    0.1244
+C   -0.7288    1.8464    0.4133
+C   -2.1426   -0.4741   -0.2184
+C   -2.0787    1.9238    0.0706
+C   -2.7855    0.7636   -0.2453
+C   -0.1409   -1.8536    0.1477
+C    2.1094    0.6715   -0.3113
+C    3.5305    0.5996    0.1635
+H   -0.1851    2.7545    0.6593
+H   -2.7247   -1.3605   -0.4564
+H   -2.5797    2.8872    0.0506
+H   -3.8374    0.8238   -0.5090
+H    3.7290    1.4184    0.8593
+H    4.2045    0.6969   -0.6924
+H    3.7105   -0.3659    0.6426
+H   -0.2555   -3.5916   -0.7337
+{{&lt; /blank/3dmoljs &gt;}}
+</code></pre><p>with the help of JS library known as
+<a href=https://3dmol.csb.pitt.edu/ target=_blank rel="nofollow noopener noreferrer"><span>3Dmol.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>from University of Pittsburgh. By the way, it is a aspirin molecule <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p><h2 id=others>others</h2><p>Following are other features without clear explanation.</p><h3 id=path>path</h3><pre tabindex=0><code>{{&lt; blank/svgpath width=200 height=200 border=0 &gt;}}
+B_STYLE red,3,none # resistor 1
+M 40 30
+l 40 0 l 2.5 10
+l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20
+l 2.5 10 l 40 0
+
+B_STYLE green,3,none # resistor 2
+M 160 30
+l 0 40 l 10 2.5 
+l -20 5  l 20 5 l -20 5 l 20 5 l -20 5 l 20 5 l -20 5
+l 10 2.5 l 0 40
+
+B_STYLE blue,3,none # resistor 3
+M 160 150
+l -40 0 l -2.5 10
+l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20
+l -2.5 10 l -40 0
+
+B_STYLE cyan,3,none # battery 1
+M 40 150
+l 0 -50
+m -8 0 l 16 0
+m -8 -10 l -20 0 l 40 0
+m 0 -10 l 0 -10 m -5 5 l 10 0
+m -25 15 l 0 -60 
+{{&lt; /blank/svgpath &gt;}}
+</code></pre><h3 id=data-block>data block</h3><pre tabindex=0><code>{{&lt; blank/datablock &gt;}}
+1
+2
+3
+
+1,4,16
+2,32,64
+
+10,100
+20,200
+30,300
+40,400
+
+1,2,3,4,5,6
+7,8,9,0,9,8
+7,6,5,4,3,2
+1,0,1,2,3,4
+5,6,7,8,9,0
+{{&lt; /blank/datablock &gt;}}
+</code></pre><p>Most of above codes are published previously in a post on o<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>, where
+<a href=https://dudung.github.io/blank/ target=_blank rel="nofollow noopener noreferrer"><span>blank <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>is another project before
+<a href=https://dudung.github.io/o/ target=_blank rel="nofollow noopener noreferrer"><span>o <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><div class=mermaid>flowchart RL
+B --> O --> T
+B(("blank"))
+O(("o"))
+T(("to"))
+click T "https://dudung.github.io/to/" _blank
+click O "https://dudung.github.io/o/" _blank
+click B "https://dudung.github.io/blank/" _blank</div><h2 id=features>features</h2><p>By the way, I add reading time and author to <code>single.html</code> from</p><ul><li>-, &ldquo;Reading time&rdquo;, Hugo Codex, url
+<a href=https://hugocodex.org/add-ons/reading-time/ target=_blank rel="nofollow noopener noreferrer"><span>https://hugocodex.org/add-ons/reading-time/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].</li><li>McShelby, &ldquo;Displaying author and date in content&rdquo;, Hugo, 30 Aug 2021, url
+<a href=https://discourse.gohugo.io/t/displaying-author-and-date-in-content/34505/6 target=_blank rel="nofollow noopener noreferrer"><span>https://discourse.gohugo.io/t/displaying-author-and-date-in-content/34505/6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].</li></ul><p>It can only support single author. It requires futher study to find the support for multiple authors shown in a post. And</p><ul><li>kascme, &ldquo;Footnote styling&rdquo;, Hugo, 17 Jan 2019, url
+<a href=https://discourse.gohugo.io/t/footnote-styling/114/8 target=_blank rel="nofollow noopener noreferrer"><span>https://discourse.gohugo.io/t/footnote-styling/114/8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].</li><li>aeonfr, &ldquo;Footnote styling:&rdquo;, Hugo, 19 Jul 1017, url
+<a href=https://discourse.gohugo.io/t/footnote-styling/114/7 target=_blank rel="nofollow noopener noreferrer"><span>https://discourse.gohugo.io/t/footnote-styling/114/7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].</li></ul><p>are some style changes for footnotes.</p><h2 id=markdown>markdown</h2><p>I think I might later write about examples of using Markdown in this part. Well, it might be happend or it might be not.</p><table><thead><tr><th style=text-align:center>No</th><th style=text-align:left>First Name</th><th style=text-align:left>Last Name</th></tr></thead><tbody><tr><td style=text-align:center>1</td><td style=text-align:left>Mister</td><td style=text-align:left>Nobody</td></tr><tr><td style=text-align:center>2</td><td style=text-align:left>Jane</td><td style=text-align:left>Doe</td></tr><tr><td style=text-align:center>3</td><td style=text-align:left>Fulana</td><td style=text-align:left>Fulan</td></tr><tr><td style=text-align:center>4</td><td style=text-align:left>Nate</td><td style=text-align:left>Avail</td></tr></tbody></table><p>Above table is obtained using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>No | First Name | Last Name
+</span></span><span style=display:flex><span>:-: | :- | :-
+</span></span><span style=display:flex><span>1 | Mister | Nobody
+</span></span><span style=display:flex><span>2 | Jane | Doe
+</span></span><span style=display:flex><span>3 | Fulana | Fulan
+</span></span><span style=display:flex><span>4 | Nate | Avail
+</span></span></code></pre></div><p>as the Markdown code. Following icon in PNG format</p><p><img src="https://cdn.iconscout.com/icon/free/png-512/free-github-34-225988.png?f=webp&amp;w=100" alt="GitHub Octocat"></p><p>can be viewed using following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>![<span style=color:#f92672>GitHub Octocat</span>](<span style=color:#a6e22e>https://cdn.iconscout.com/icon/free/png-512/free-github-34-225988.png?f=webp&amp;w=100</span>)
+</span></span></code></pre></div><p>Then how about list?</p><ul><li>Animal<ul><li>Swim<ul><li>Fish</li></ul></li><li>Run<ul><li>Cheetah</li></ul></li><li>Fly<ul><li>Bird<ul><li>Shorebirds</li><li>Falcons<ul><li>Prairie</li><li>Peregrine</li></ul></li></ul></li><li>Butterfly</li></ul></li></ul></li><li>Plantation<ul><li>Creeper</li><li>Climbing</li><li>Herbs<ul><li>Tomato<ul><li>Cherry</li><li>Grape</li><li>Roma</li><li>Green</li></ul></li><li>Wheat</li><li>Paddy</li><li>Cabbage</li></ul></li><li>Shrub</li><li>Tree</li></ul></li></ul><p>Above list is obtained using following lines of Markdown code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>+ Animal
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Swim
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>-</span> Fish
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Run
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>-</span> Cheetah
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Fly
+</span></span><span style=display:flex><span>    + Bird
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Shorebirds
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Falcons
+</span></span><span style=display:flex><span>        + Prairie
+</span></span><span style=display:flex><span>        + Peregrine
+</span></span><span style=display:flex><span>    + Butterfly
+</span></span><span style=display:flex><span>+ Plantation
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Creeper
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Climbing
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Herbs
+</span></span><span style=display:flex><span>    + Tomato
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Cherry
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Grape
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Roma
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>-</span> Green
+</span></span><span style=display:flex><span>    + Wheat
+</span></span><span style=display:flex><span>    + Paddy
+</span></span><span style=display:flex><span>    + Cabbage
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Shrub
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-</span> Tree
+</span></span></code></pre></div><p>What is the following?</p><figure><blockquote><p>When one door closes, another opens;
+but we often look so long and so regretfully
+upon the closed door that we do not see the
+one which has opened for us</p></blockquote></figure><figure><blockquote><p>(Alexander Graham Bell)</p></blockquote></figure><p>It is a quote and the above appearance is obtained using following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>When one door closes, another opens;
+</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>but we often look so long and so regretfully
+</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>upon the closed door that we do not see the
+</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>one which has opened for us
+</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>(Alexander Graham Bell)
+</span></span></span></code></pre></div><p>Well, now is the last but not the least. It is about emoji. There is a lot of emojies supported by Hugo, e.g. as follow</p><table><thead><tr><th style=text-align:center>ico</th><th style=text-align:center>shortcode</th><th style=text-align:center>        </th><th style=text-align:center>ico</th><th style=text-align:center>shortcode</th></tr></thead><tbody><tr><td style=text-align:center>&#x1f600;</td><td style=text-align:center><code>:grinning:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f603;</td><td style=text-align:center><code>:smiley:</code></td></tr><tr><td style=text-align:center>&#x1f601;</td><td style=text-align:center><code>:grin:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f602;</td><td style=text-align:center><code>:joy:</code></td></tr><tr><td style=text-align:center>&#x1f412;</td><td style=text-align:center><code>:monkey:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f9a7;</td><td style=text-align:center><code>:orangutan:</code></td></tr><tr><td style=text-align:center>&#x1f345;</td><td style=text-align:center><code>:tomato:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f34c;</td><td style=text-align:center><code>:banana:</code></td></tr><tr><td style=text-align:center>&#x1f980;</td><td style=text-align:center><code>:crab:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f991;</td><td style=text-align:center><code>:squid:</code></td></tr><tr><td style=text-align:center>&#x1f559;</td><td style=text-align:center><code>:clock10:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f552;</td><td style=text-align:center><code>:clock3:</code></td></tr><tr><td style=text-align:center>&#x2714;&#xfe0f;</td><td style=text-align:center><code>:heavy_check_mark:</code></td><td style=text-align:center></td><td style=text-align:center>&#x274c;</td><td style=text-align:center><code>:x:</code></td></tr><tr><td style=text-align:center>&#x1f534;</td><td style=text-align:center><code>:red_circle:</code></td><td style=text-align:center></td><td style=text-align:center>&#x1f7e6;</td><td style=text-align:center><code>:blue_square:</code></td></tr></tbody></table><p>Information about the others can be found
+<a href=https://gohugo.io/quick-reference/emojis/ target=_blank rel="nofollow noopener noreferrer"><span>here <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=closing>closing</h2><ul><li><code>05-may-2024</code> It is 2310 now and I am tired. This post will be continued tomorrow early morning, while performing sahur, hopefully. I have to go to bed now.</li><li><code>06-may-2024</code> A new post
+<a><span>0002 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>is being created. Perhaps the Markdown part of this post will also be the same. <del>Today the other post will be the focus and not this one.</del> Today, this post is finished with 9 mins read, which I find sufficient long for a post without any purpose &#x1f606;.<ul><li>Use <code>~~erased phrases~~</code> to obtain <del>erased phrases</del>.</li><li>It ends at 1156, when the call is calling.</li></ul></li></ul><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Helen Foster, German Valero, &ldquo;Advanced use of Markdown&rdquo;, Moodle Docs, 21 Feb 2024 15:24, url
+<a href="https://docs.moodle.org/403/en/index.php?oldid=147883" target=_blank rel="nofollow noopener noreferrer"><span>https://docs.moodle.org/403/en/index.php?oldid=147883 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>National Center for Biotechnology Information (2024), PubChem Compound Summary for CID 2244, Aspirin, url
+<a href=https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin target=_blank rel="nofollow noopener noreferrer"><span>https://pubchem.ncbi.nlm.nih.gov/compound/Aspirin <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Viridi S (2024) &ldquo;some features on hugo&rdquo;, GitHub, 1 Mar 2024, url
+<a href=https://dudung.github.io/o/posts/if3110/some-features-on-hugo/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/o/posts/if3110/some-features-on-hugo/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240405].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

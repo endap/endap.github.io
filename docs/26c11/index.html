@@ -1,0 +1,141 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>ta-bu-ta read-param | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>ta-bu-ta read-param</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-03-03T06:02:19 07:00">3 Mar 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/c/11-ta-bu-ta-read-param.md>edit</a></div></div><div class=note-content><h2 id=result>result</h2><script src=/js/exp/26b39.js defer></script><script src=/js/exp/26b41.js defer></script><script src=/js/exp/26b43.js defer></script><script src=/js/exp/26c11.js defer></script><div id=container></div><script>document.addEventListener("DOMContentLoaded",function(){let s=null,n=null,a=null;const i=getContainer("container"),o=createTextarea("text-input"),t=createTextarea("text-output"),e=createDiv("button-container"),r=createButton("cv-button","Clear vars"),c=createButton("ci-button","Clear input"),l=createButton("co-button","Clear output"),d=createButton("de-button","Default"),u=createButton("rp-button","Read params"),h=createButton("mu-button","Calc area");i.append(o),i.append(e),i.append(t),e.append(r),e.append(c),e.append(l),e.append(d),e.append(u),e.append(h),changeElementsFlex(["text-input","3"],["button-container","3"],["text-output","3"]),consolex.setOutput(t),consolex.setEOL(""),c.addEventListener("click",()=>{clearTextarea("text-input")}),l.addEventListener("click",()=>{clearTextarea("text-output")}),d.addEventListener("click",()=>{o.value="# params",o.value+=`
+LENX 0.25`,o.value+=`
+LENY 0.40`}),u.addEventListener("click",()=>{let e,o;e="LENX",s=readParamFromTextarea("text-input",e),t.value+=e+"="+s+`
+`,e="LENY",n=readParamFromTextarea("text-input",e),t.value+=e+"="+n+`
+`}),h.addEventListener("click",()=>{a=s*n,t.value+="AREA="+a+`
+`}),r.addEventListener("click",()=>{s=null,n=null,a=null})})</script><h2 id=26c11html>26c11.html</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;container&#34;</span>&gt;&lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;26b39.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;26b41.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;26b43.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;26b11.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#75715e>// Define global variables
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>lenx</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>leny</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>area</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Instantiate containers, output textarea, and buttons
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cnt</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getContainer</span>(<span style=color:#e6db74>&#34;container&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>inTxa</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createTextarea</span>(<span style=color:#e6db74>&#34;text-input&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>outTxa</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createTextarea</span>(<span style=color:#e6db74>&#34;text-output&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>btnDiv</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createDiv</span>(<span style=color:#e6db74>&#34;button-container&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cvBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;cv-button&#34;</span>, <span style=color:#e6db74>&#34;Clear vars&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ciBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;ci-button&#34;</span>, <span style=color:#e6db74>&#34;Clear input&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>coBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;co-button&#34;</span>, <span style=color:#e6db74>&#34;Clear output&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>deBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;de-button&#34;</span>, <span style=color:#e6db74>&#34;Default&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>rpBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;rp-button&#34;</span>, <span style=color:#e6db74>&#34;Read params&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>muBtn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#34;mu-button&#34;</span>, <span style=color:#e6db74>&#34;Calc area&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Append textarea to container
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>inTxa</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>btnDiv</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>outTxa</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>cvBtn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>ciBtn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>coBtn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>deBtn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>rpBtn</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>btnDiv</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>muBtn</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Change elements flex value
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>changeElementsFlex</span>(
+</span></span><span style=display:flex><span>  [<span style=color:#e6db74>&#34;text-input&#34;</span>, <span style=color:#e6db74>&#34;3&#34;</span>],
+</span></span><span style=display:flex><span>  [<span style=color:#e6db74>&#34;button-container&#34;</span>, <span style=color:#e6db74>&#34;3&#34;</span>] , 
+</span></span><span style=display:flex><span>  [<span style=color:#e6db74>&#34;text-output&#34;</span>, <span style=color:#e6db74>&#34;3&#34;</span>],
+</span></span><span style=display:flex><span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Bind consolex output to textarea and set EOL character
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>consolex</span>.<span style=color:#a6e22e>setOutput</span>(<span style=color:#a6e22e>outTxa</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consolex</span>.<span style=color:#a6e22e>setEOL</span>(<span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Set onclick event to each button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>ciBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>clearTextarea</span>(<span style=color:#e6db74>&#34;text-input&#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>coBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>clearTextarea</span>(<span style=color:#e6db74>&#34;text-output&#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>deBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>inTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;# params&#34;</span>; 
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>inTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;\n&#34;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;LENX 0.25&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>inTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;\n&#34;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;LENY 0.40&#34;</span>;
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>rpBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>line</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>key</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;LENX&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>lenx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readParamFromTextarea</span>(<span style=color:#e6db74>&#34;text-input&#34;</span>, <span style=color:#a6e22e>key</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>outTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>key</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;=&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>lenx</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;\n&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>key</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;LENY&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>leny</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readParamFromTextarea</span>(<span style=color:#e6db74>&#34;text-input&#34;</span>, <span style=color:#a6e22e>key</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>outTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>key</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;=&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>leny</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;\n&#34;</span>;
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>muBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>area</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lenx</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>leny</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>outTxa</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;AREA=&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>area</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;\n&#34;</span>;  
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cvBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>lenx</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>leny</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>area</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div><h2 id=26c11js>26c11.js</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 26c11.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Helper functions for butiran-x/26c11 note.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Author: Sparisoma Viridi (https://github.com/dudung)
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Created: 2026-03-03
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Exports:
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * - readParamFromTextarea(id, key)
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Reads a parameter from a textarea element that starts with the specified key.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {string} id - The ID of the textarea element to read from.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {string} key - The key (first word) identifying the parameter to retrieve.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {&#34;string&#34; | &#34;int&#34; | &#34;float&#34;} type - The expected parameter type.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {string | number} The parameter value parsed according to the specified type.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> *
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @example
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * const value = readParamFromTextarea(&#34;text-input&#34;, &#34;KEY&#34;, &#34;int&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>readParamFromTextarea</span>(<span style=color:#a6e22e>id</span>, <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;string&#34;</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>/** @type {HTMLTextareaElement|null} */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>el</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#a6e22e>id</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>(<span style=color:#a6e22e>el</span> <span style=color:#66d9ef>instanceof</span> <span style=color:#a6e22e>HTMLTextAreaElement</span>)) <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lines</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>el</span>.<span style=color:#a6e22e>value</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;\n&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>param</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#a6e22e>l</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>lines</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cols</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>cols</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> <span style=color:#a6e22e>key</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>type</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;int&#34;</span>) {
+</span></span><span style=display:flex><span>        parseInt(<span style=color:#a6e22e>param</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cols</span>[<span style=color:#ae81ff>1</span>]);
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>type</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;float&#34;</span>) {
+</span></span><span style=display:flex><span>        parseFloat(<span style=color:#a6e22e>param</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cols</span>[<span style=color:#ae81ff>1</span>]);
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>param</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cols</span>[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>param</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// marker: 26c11.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>(() =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;[marker] 26c11.js loaded&#34;</span>);
+</span></span><span style=display:flex><span>})();
+</span></span></code></pre></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

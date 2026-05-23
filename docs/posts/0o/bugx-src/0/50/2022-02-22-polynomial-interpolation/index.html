@@ -1,0 +1,91 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>polynomial interpolation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>polynomial interpolation</h1><time datetime=2022-02-22T08:38:00+07:00>February 22, 2022</time><p>Fungsi polinomial memiliki banyak kegunaan di dalam matematika, yang salah satunya adalah pada interpolasi [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dua formula eksplisit interpolasi polinomial yang umum digunakan adalah polinomial Lagrange dan Newton [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang bersama-sama dengan spline dimanfaatkan dalam sains data [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Polinomial Lagrange telah pula diimplementasikan dalam bahasa Wolfram [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=a-polynomial-function>a polynomial function</h2><p>Sebagai ilustrasi terdapat empat titik data dan satu titik yang ingin diperoleh melalui interpolasi polinomial sebagaimana diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0502-a.png)<br>Gambar <a name=fig1>1</a>. Hubungan titik-titik data $(x_1, y_1)$, $(x_2, y_2)$, $(x_3, y_3)$, dan $(x_4, y_4)$ dengan nilai yang ingin diperoleh $y$ bila diketahui $x$.</p><p>Perhatikan bahwa titik data $x$ yang ingin diketahui nilai fungsinya $y$ berada di atas semua nilai-nilai $y_1$, $y_2$, $y_3$, dan $y_4$. Orde suatu polinomial merupakan pangkat tertinggi dari suku-sukunya</p><p>\begin{equation}\label{eqn:polynomial-function-order-n}
+p(x) = \sum_{n = 0}^N c_n x^n,
+\end{equation}</p><p>di mana $N$ adalah orde polinomial. Perhatikan bahwa</p><p>$$
+p(x) = 1 + 273x^4
+$$</p><p>adalah contoh polionomial berorde 4 walaupun terdapat suku-suku berorde rendah yang tidak ada dikarenakan $c_2 = 0$ dan $c_3 = 0$.</p><h2 id=lagrange-polynomial>lagrange polynomial</h2><p>Polinomial interpolasi Lagrange dengan derajat $\le (N-1)$ akan melewati $N$ buat titik-titik data $(x_1, y_1)$, .., $(x_N, y_N)$, di mana $y_i = f(x_i)$ dengan $f(x)$ adalah fungsi interpolasi yang akan dicari. Polinomial interpolasi Lagrange dirumuskan sebagai</p><p>\begin{equation}\label{eqn:lagrange-interpolating-polynomial-p}
+P(x) = \sum_{i = 1}^N P_i(x),
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:lagrange-interpolating-polynomial-pj}
+P_i(x) = y_i \prod_{\begin{array}{c}j = 1 \newline j \ne i \end{array}}^N \frac{x - x_j}{x_i - x_j}.
+\end{equation}</p><h2 id=example>example</h2><p>Terdapat data beberapa titik seperti diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0502-b.png)<br>Gambar <a name=fig2>2</a>. Titik-titik data $(1, 11)$, $(4, 18)$, $(7, 7)$, dan $(10, 5)$.</p><p>Akan dilakukan interpolasi polinomial pada empat titik data yang diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sehingga dapat dicari nilai $y$ pada sembarang $x$ untuk $1 \le x \le 10$.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0502-c.png)<br>Gambar <a name=fig3>3</a>. Kurva hasil interpolasi polinomial untuk titik-titik data $(1, 11)$, $(4, 18)$, $(7, 7)$, dan $(10, 5)$.</p><p>Hasil interpolasi polinomial berupa kurva yang melewati semua titik-titik data diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=code>code</h3><p>Terdapat program sederhana menggunakan bahasa pemrograman Python berikut ini</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0502-lagrange-inter.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Lagrange interpolatio</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220222 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define data points</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [<span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>18</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>5</span>]
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> min(len(x), len(y))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define lagrange interpolating polynomial function p(x)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>prod</span>(i, xx):
+</span></span><span style=display:flex><span>  prod <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> j <span style=color:#f92672>!=</span> i:
+</span></span><span style=display:flex><span>      prodj <span style=color:#f92672>=</span> (xx <span style=color:#f92672>-</span> x[j]) <span style=color:#f92672>/</span> (x[i] <span style=color:#f92672>-</span> x[j])
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>      prodj <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    prod <span style=color:#f92672>=</span> prod <span style=color:#f92672>*</span> prodj
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> prod
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>p</span>(xx):
+</span></span><span style=display:flex><span>  sum <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>    pi <span style=color:#f92672>=</span> y[i] <span style=color:#f92672>*</span> prod(i, xx)
+</span></span><span style=display:flex><span>    sum <span style=color:#f92672>=</span> sum <span style=color:#f92672>+</span> pi
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> sum
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># use the function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> xx <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>11</span>):
+</span></span><span style=display:flex><span>  yy <span style=color:#f92672>=</span> p(xx)
+</span></span><span style=display:flex><span>  print(xx, <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> yy)
+</span></span></code></pre></div><p>yang akan memberikan hasil berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0502-lagrange-inter.py ====
+</span></span><span style=display:flex><span>1 11.000
+</span></span><span style=display:flex><span>2 17.000
+</span></span><span style=display:flex><span>3 19.000
+</span></span><span style=display:flex><span>4 18.000
+</span></span><span style=display:flex><span>5 15.000
+</span></span><span style=display:flex><span>6 11.000
+</span></span><span style=display:flex><span>7 7.000
+</span></span><span style=display:flex><span>8 4.000
+</span></span><span style=display:flex><span>9 3.000
+</span></span><span style=display:flex><span>10 5.000
+</span></span></code></pre></div><p>saat dijalankan. Program tersebut dapat dijalan secara daring di OneCompiler
+<a href=https://onecompiler.com/python/3xu45zkbs target=_blank rel="nofollow noopener noreferrer"><span>3xu45zkbs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=results>results</h3><p>Hasil keluaran program dapat disajikan dalam bentuk tabel berikut ini.</p><p>Tabel <a name=tab1>1</a> Hasil keluaran program ``.</p><table><thead><tr><th style=text-align:center>$x$</th><th style=text-align:center>$y$</th></tr></thead><tbody><tr><td style=text-align:center>$\color{#88e}{1}$</td><td style=text-align:center>$\color{#88e}{11.00}$</td></tr><tr><td style=text-align:center>2</td><td style=text-align:center>17.00</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>19.00</td></tr><tr><td style=text-align:center>$\color{#88e}{4}$</td><td style=text-align:center>$\color{#88e}{18.00}$</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>15.00</td></tr><tr><td style=text-align:center>6</td><td style=text-align:center>11.00</td></tr><tr><td style=text-align:center>$\color{#88e}{7}$</td><td style=text-align:center>$\color{#88e}{7.00}$</td></tr><tr><td style=text-align:center>8</td><td style=text-align:center>4.00</td></tr><tr><td style=text-align:center>9</td><td style=text-align:center>3.00</td></tr><tr><td style=text-align:center>$\color{#88e}{10}$</td><td style=text-align:center>$\color{#88e}{5.00}$</td></tr></tbody></table><p>Perhatikan bahwa nilai-nilai telah dibulatkan sampai dua angka di belakang koma pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk yang bukan bilangan bulat. Nilai-nilai berwarna ($\color{#88e}\blacksquare$) adalah titik-titik data, sedangkan yang lainnnya merupakan hasil interpolasi polinomial</p><p>![]({{ site.baseurl}}/assets/img/0/50/0502-d.png)<br>Gambar <a name=fig4>4</a>. Kurva interpolasi polinomial Lagrange dan titik-titik hasil interpolasi ($\circ$) serta titik-titik datanya semula ($\color{#88e}\blacksquare$).</p><p>Perhatikan bahwa pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>telah terdapat titik-titik pada kurva polinomial, yang semula hanya menghubungkan titik-titik data pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan belum ada titik-titik lain di antara titik-titik data.</p><h2 id=exer>exer</h2><ol><li>Dengan menggunakan program <code>0502-lagrange-inter.py</code> carilah nilai $y$ untuk $x = 3.5, 6.5, 9.5$. Tampilkan sampai tiga angka di belakang koma.</li><li>Bagaimana dengan cepat mencari nilai-nilai yang diminta pada soal sebelumnya tanpa melakukan kompilasi programnya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Arnab Chakraborty, &ldquo;Polynomial interpolation&rdquo;, Numerical Analysis (B-I, 2020), 27 Feb 2020, url
+<a href=https://www.isical.ac.in/~arnabc/numana/interpol1.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.isical.ac.in/~arnabc/numana/interpol1.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220222].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Polynomial interpolation&rdquo;, Wikipedia, The Free Encyclopedia, 26 January 2022, 11:29 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1068051549" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1068051549 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220222].</li><li><a name=r03></a>Joos Korstanje, &ldquo;Polynomial Interpolation&rdquo;, Towards Data Science, 22 Jun 2021, url
+<a href=https://towardsdatascience.com/polynomial-interpolation-3463ea4b63dd target=_blank rel="nofollow noopener noreferrer"><span>https://towardsdatascience.com/polynomial-interpolation-3463ea4b63dd <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220222].</li><li><a name=r04></a>Branden Archer, Eric W. Weisstein, &ldquo;Lagrange Interpolating Polynomial&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, Wolfram Research, Inc., url
+<a href=https://mathworld.wolfram.com/LagrangeInterpolatingPolynomial.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/LagrangeInterpolatingPolynomial.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220222].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0502?src=hash&amp;ref_src=twsrc%5Etfw">#bug0502</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1495935905810743300?ref_src=twsrc%5Etfw">February 22, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) 18.8125, 8.9375, 3.5625; &nbsp;
+2) pada command line Python tuliskan p(3.5), p(3.5), dan p(3.5); &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

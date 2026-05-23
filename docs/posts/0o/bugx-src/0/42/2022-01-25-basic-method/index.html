@@ -1,0 +1,125 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>basic method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>basic method</h1><time datetime=2022-01-25T17:30:00+07:00>January 25, 2022</time><p>Berdasarkan kebiasaan metode-metode untuk menyelesaikan masalah dalam fisika matematika dapat dibagi menjadi dua kelas, metode analitik (analytical methods) dan metode hampiran (aproximate methods) [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam matematika beberapa masalah dapat dipecahkan secara analitik dan numerik, dengan metoda analitik lebih disukai karena lebih cepat dan solusinya eksak [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Solusi eksak dalam fisika digunakan untuk solusi yang menangkap keseluruhan aspek fisika dan matematika suatu masalah [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], karena tidak menggunakan aproksimasi [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan merupakan representasi simbolik [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang bila cukup dengan jumlah data berhingga akan menjadi bentuk tertutup atau closed form [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam komputasi matematika metode iteratif (iterative method) merupakan prosedur matematika yang menggunakan nilai awal untuk menghasilkan rangkaian hampiran solusi yang lebih baik dengan kriteria penghentian tertentu, di mana metode ini berlawanan dengan metode langsung (direct method) yang menyelesaikan masalah dengan sejumlah berhingga rangkaian operasi [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=polynomial-roots>polynomial roots</h2><p>Akar suatu persamaan polinomial dapat dicari dengan menggunakan metode langsung dan iteratif [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dengan contoh metode langsungnya adalah metode kuadrat akar Graeffe [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan metode iteratifnya adalah metode bisection dan iterasi titik tetap [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk persamaan kuadrat atau polinomial orde dua, formula kuadrat termasuk dalam metode langsung karena jumlah langkah operasi, yang meliputi operasi penjumlahan, pengurangan, pembagian dan perkalian dapat ditentukan, akan tetapi untuk polinomial dengan orde lebih tinggi metode ini sulit untuk digunakan, walapun ada [
+<a href=#r11><span>11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=linear-system-of-equations>linear system of equations</h2><p>Sistem persamaan linier, yang merupakan terjemahan dari system of linear equations (SLE) dan linear system of equations [
+<a href=#r12><span>12 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dapat dipecahkan menggunakan metode langsung seperti eliminasi Gauss dan faktorisasi LU [
+<a href=#r13><span>13 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau metode iteratif seperti metode Gauss-Seidel dan Successive Over-Relaxation (SOR) [
+<a href=#r14><span>14 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>Tabel <a name=tab1>1</a> Perbandingan metode langsung dan iteratif untuk pemecahan SLE.</p><p>Metode | Langsung | Iteratif
+:- | :-
+Langkah | Tertentu bergantung<br>ukuran matriks | Fleksibel dengan<br>memilih antara akurasi<br>atau waktu komputasi
+Waktu komputasi | Dapat diperkirakan<br>berdasarkan jumlah<br>langkah | Bergantung akurasi<br>yang diinginkan
+Tepat untuk | Matriks kecil | Matriks besar<br>dengan banyak nol
+Penghentian | Harus diselesaikan<br>atau solusi belum<br>diperoleh | Minimal satu siklus,<br>lalu sesuai akurasi<br>yang diinginkan</p><p>Metode langsung menggunakan sumber daya komputasi secara besar-besaran, akan tetapi amat bagus untuk menyelesaikan matriks berukuran kecil, handal dan cepat [
+<a href=#r15><span>15 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=example>example</h2><p>Sebagai contoh akan dipilih mencari satu akar dari suatu persamaan kuadrat dengan diskriminan $D > 0$.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> <span style=color:#ae81ff>196</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>D <span style=color:#f92672>=</span> b<span style=color:#f92672>*</span>b <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span><span style=color:#f92672>*</span>a<span style=color:#f92672>*</span>c
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> (<span style=color:#f92672>-</span>b <span style=color:#f92672>-</span> math<span style=color:#f92672>.</span>sqrt(D)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>a)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x = &#34;</span>, x, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>Program di atas merupakan penerapan metode langsung dengan menggunakan formula kuadrat. Kode dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xrdp6ggx target=_blank rel="nofollow noopener noreferrer"><span>3xrdp6ggx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Bandingkan dengan kode berikut ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>f</span>(x):
+</span></span><span style=display:flex><span>  a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>  c <span style=color:#f92672>=</span> <span style=color:#ae81ff>196</span>
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> a<span style=color:#f92672>*</span>x<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> b<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> c
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fx</span>(x):
+</span></span><span style=display:flex><span>  a <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> a<span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> b
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>eps <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-20</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>print(i, <span style=color:#e6db74>&#34;: x = &#34;</span>, x, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> err <span style=color:#f92672>&gt;</span> eps:
+</span></span><span style=display:flex><span>  xnew <span style=color:#f92672>=</span> x <span style=color:#f92672>-</span> f(x)<span style=color:#f92672>/</span>fx(x)
+</span></span><span style=display:flex><span>  err <span style=color:#f92672>=</span> abs(xnew <span style=color:#f92672>-</span> x)
+</span></span><span style=display:flex><span>  x <span style=color:#f92672>=</span> xnew
+</span></span><span style=display:flex><span>  i <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  print(i, <span style=color:#e6db74>&#34;: x = &#34;</span>, x, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>Program kedua di atas merupakan penerapan dari metode iteratif yang dikenal sebagai metode Newton-Raphson. Kode dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xrdpfxwq target=_blank rel="nofollow noopener noreferrer"><span>3xrdpfxwq <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Tabel <a name=tab1>2</a> Mencari satu akar dari persamaan kuadrat dengan metode langsung dan iteratif.</p><table><thead><tr><th style=text-align:left>Kelompok<br>Metode</th><th style=text-align:left>Langsung</th><th style=text-align:left>Iteratif</th></tr></thead><tbody><tr><td style=text-align:left>Metode</td><td style=text-align:left>Formula Kuadrat</td><td style=text-align:left>Newton-Raphson</td></tr><tr><td style=text-align:left>Fungsi</td><td style=text-align:left>$f(x) = ax^2 + bx + c$</td><td style=text-align:left>$f(x) = ax^2 + bx + c$</td></tr><tr><td style=text-align:left>Turunan<br>fungsi</td><td style=text-align:left>Tidak perlu</td><td style=text-align:left>$f&rsquo;(x) = 2ax + b$</td></tr><tr><td style=text-align:left>Persamaan</td><td style=text-align:left>$\displaystyle x = \frac{-b - \sqrt{b^2 - 4ac}}{2a}$</td><td style=text-align:left>$\displaystyle x_{i + 1} = x_i - \frac{f(x_i)}{f&rsquo;(x_i)}$</td></tr><tr><td style=text-align:left>Tebakan<br>awal</td><td style=text-align:left>Tidak perlu</td><td style=text-align:left>$x = 0$</td></tr><tr><td style=text-align:left>Keluaran</td><td style=text-align:left><code>x = 2.0</code></td><td style=text-align:left><code>0: x = 0</code><br><code>1: x = 1.96</code><br><code>2: x = 1.9999833472106578</code><br><code>3: x = 1.9999999999971112</code><br><code>4: x = 1.9999999999999998</code><br><code>5: x = 2.0</code><br><code>6: x = 2.0</code></td></tr><tr><td style=text-align:left>Batas<br>kesalahan<br>perhitungan<br>$\varepsilon$</td><td style=text-align:left>Tidak perlu</td><td style=text-align:left>$10^{-20}$</td></tr></tbody></table><p>Dapat terlihat secara tersirat pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bahwa jumlah langkah dengan metode langsung dapat diperkirakan, akan tetapi pada metode iteratif masih bergantung pada batas kesalahan perhitungan $\varepsilon$ yang diberikan.</p><p>Coba modifikasi program yang diberikan untuk fungsi kuadrat $f(x) = x^2 - 100x + 1875$ bagaimanakah hasilnya? Jangan gunakan alat bantu seperti Google [
+<a href=#r16><span>16 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. &#x1f604;</p><h2 id=exer>exer</h2><ol><li>Dengan mengacu pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berapakah nilai akar bila digunakan $\varepsilon = 0.001$?</li><li>Dengan metode iteratif pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bagaimana untuk mendapatkan akar keduanya? Dan berapa akarnya? Perlu berapa iterasi? Gunakan $\varepsilon = 10^{-20}$.</li><li>Dengan metode langsung pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bagaimana untuk mendapatkan akar keduanya? Berapa akarnya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>V. K. Andreev, &ldquo;Basic Method for Solving Equations of Mathematical Physics&rdquo;, Computational Methods and Algorithms, Volume 1, Vladimir V. Shaidurov, Olivier Pironneau (Eds.), Encyclopedia of Life Support Systems (EOLSS), url
+<a href=https://www.eolss.net/sample-chapters/c02/E6-04-01.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.eolss.net/sample-chapters/c02/E6-04-01.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r02></a>Jason Brownlee, &ldquo;&rdquo;, Machinery Learning Mastery, 13 Apr 2018, url
+<a href=https://machinelearningmastery.com/analytical-vs-numerical-solutions-in-machine-learning/ target=_blank rel="nofollow noopener noreferrer"><span>https://machinelearningmastery.com/analytical-vs-numerical-solutions-in-machine-learning/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r03></a>Eric W. Weisstein, &ldquo;Exact Solution&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, Wolfram Research, 21 Jan 2022, url
+<a href=https://mathworld.wolfram.com/ExactSolution.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/ExactSolution.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r04></a>Pengwuino, &ldquo;Answer to &lsquo;What does an exact solution to a pde mean?&rsquo;&rdquo;, Physics Forum, 30 Nov 2011, url
+<a href=https://www.physicsforums.com/threads/what-does-an-exact-solution-to-a-pde-mean.555623/#post-3643407 target=_blank rel="nofollow noopener noreferrer"><span>https://www.physicsforums.com/threads/what-does-an-exact-solution-to-a-pde-mean.555623/#post-3643407 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r05></a>Alex Jones, &ldquo;Asnwer to &lsquo;What is the main difference between the exact and numerical solution?&rsquo;&rdquo;, Quora, 29 Jul 2022, url
+<a href=https://www.quora.com/What-is-the-main-difference-between-the-exact-and-numerical-solution/answer/Alex-Jones-1227 target=_blank rel="nofollow noopener noreferrer"><span>https://www.quora.com/What-is-the-main-difference-between-the-exact-and-numerical-solution/answer/Alex-Jones-1227 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r06></a>Mark van Hoeij, &ldquo;Closed Form Solutions&rdquo;, Florida State University, ISSAC 2017, 2 Aug 2017, url
+<a href=https://www.math.fsu.edu/~hoeij/issac2017.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.math.fsu.edu/~hoeij/issac2017.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r07></a>Wikipedia contributors, &ldquo;Iterative method&rdquo;, Wikipedia, The Free Encyclopedia, 3 January 2022, 05:59 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1063462370" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1063462370 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r08></a>Wikipedia contributors, &ldquo;Numerical analysis&rdquo;, Wikipedia, The Free Encyclopedia, 27 December 2021, 12:57 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1062275306" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1062275306 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r09></a>Sanyasiraju V. S. S. Yedida, &ldquo;Graeffe&rsquo;s Root SquaringMethod&rdquo;, Transcendental Equations, Department of Mathematics, Indian Institute Of Technology Madras, Chennai, url
+<a href=https://math.iitm.ac.in/public_html/sryedida/caimna/transcendental/polynomial%20methods/direct.html target=_blank rel="nofollow noopener noreferrer"><span>https://math.iitm.ac.in/public_html/sryedida/caimna/transcendental/polynomial%20methods/direct.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r10></a>&ldquo;Iterations Methods for Locating a Root&rdquo;, Solution of Non-linear Equations in One Variable, IGNOU, Indira Gandhi National Open University, 2017, url
+<a href=https://www.egyankosh.ac.in/bitstream/123456789/18065/1/Unit-2.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.egyankosh.ac.in/bitstream/123456789/18065/1/Unit-2.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r11></a>FaadooEngineers, &ldquo;Methods of solving roots of polynomial equations&rdquo;, FaaDoO Engineers, url
+<a href=http://www.faadooengineers.com/online-study/post/cse/numerical-analysis/1427/methods-of-solving-roots-of-polynomial-equations target=_blank rel="nofollow noopener noreferrer"><span>http://www.faadooengineers.com/online-study/post/cse/numerical-analysis/1427/methods-of-solving-roots-of-polynomial-equations <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r12></a>&ldquo;Systems of Linear Equation&rdquo;, Science Direct, 2022, url
+<a href=https://www.sciencedirect.com/topics/mathematics/systems-of-linear-equation target=_blank rel="nofollow noopener noreferrer"><span>https://www.sciencedirect.com/topics/mathematics/systems-of-linear-equation <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r13></a>Chen Greif, &ldquo;Numerical Solution of Linear Systems&rdquo;, Department of Computer Science, The University of British Columbia, Vancouver B.C. 17 Dec 2008, url
+<a href=https://www.cs.tau.ac.il/~dcor/Graphics/adv-slides/Solving.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.cs.tau.ac.il/~dcor/Graphics/adv-slides/Solving.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r14></a>Yousef Saad, &ldquo;Iterative methods for linear systems of equations: A brief historical journey&rdquo;, arXiv:1908.01083v1 [math.HO], Fri, 2 Aug 2019 22:42:47 UTC, url
+<a href=https://arxiv.org/abs/1908.01083v1 target=_blank rel="nofollow noopener noreferrer"><span>https://arxiv.org/abs/1908.01083v1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r15></a>StudySession, &ldquo;Direct Vs Iterative Numerical Methods&rdquo;, YouTube, 28.07.2020, url
+<a href="https://www.youtube.com/watch?v=CHUlnCSkg5k" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=CHUlnCSkg5k <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r16></a>url
+<a href="https://www.google.com/search?q=solving+x%5E2+-+100x+%2B+1875&amp;oq=solving+x%5E2+-+100x+%2B+1875&amp;aqs=chrome..69i57.2854j0j9&amp;sourceid=chrome&amp;ie=UTF-8" target=_blank rel="nofollow noopener noreferrer"><span>https://www.google.com/search?q=solving+x%5E2+-+100x+%2B+1875&oq=solving+x%5E2+-+100x+%2B+1875&aqs=chrome..69i57.2854j0j9&sourceid=chrome&ie=UTF-8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0420?src=hash&amp;ref_src=twsrc%5Etfw">#bug0420</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1485921815805702148?ref_src=twsrc%5Etfw">January 25, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $x = 1.9999999999971112$; &nbsp;
+2) syarat awal $x = 100$ memberikan akar $x = 98.0$ dalam 5 iterasi; &nbsp;
+3) gunakan $\displaystyle x = \frac{-b + \sqrt{b^2 - 4ac}}{2a}$, diperoleh $x = 98.0$; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,176 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>taylor expansion u(x) for s(u, x, E) | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>taylor expansion u(x) for s(u, x, E)</h1><time datetime=2023-09-19T19:34:00+07:00>September 19, 2023</time><h2 id=place>place</h2><p>Estuary is coastal water body where streams from rivers mixes with streams from the ocean.</p><h2 id=concentration>concentration</h2><p>Concentration of single point source conservative pollutant in an estuary is as follow</p><p>$$\tag{1}
+s = s_0 \exp \left( \frac{xu}{E} \right)
+$$</p><p>for $x \le 0$, where $s$ is final centration $\rm (mg/L)$, $u$ is velocity $\rm (miles/day)$, $x$ is distance from point source $\rm (miles)$. There are coefficients for initial concentration $s_0 = 350 \ {\rm mg/L}$ and tide wave dispersion coefficients $E = 5 \ {\rm miles^2/day}$.</p><h2 id=velocity>velocity</h2><p>In a certain estuary the velocity can be formulated as</p><p>$$\tag{2}
+u(x) = | \sin 4.8x|.
+$$</p><h2 id=task>task</h2><ul><li>Use Taylor series to approximate the value of velociy for given distance $u(x)$ until 5% error result.</li><li>Use the aproximation value of velocity to calculate the concentration pollutant in particular distance in the estuary $s(x)$</li></ul><h2 id=output>output</h2><ul><li>If $x > 0$, repeat ask for $x$</li><li>$x = -1 \ {\rm miles}$</li><li>$N = 15$</li><li>$u = 0.98452 \ {\rm miles/day}$</li><li>$\epsilon = 1.1692 \ \%$</li><li>$s = 287.4445 \ {\rm mg/L}$</li></ul><h2 id=taylor-series>taylor series</h2><p>In general a function $f(x)$ can be approximated to $N+1$ terms</p><p>$$\tag{3}
+f(x) \approx \sum_{n=0}^N \frac{(x - x_0)^n}{n!} \left. \frac{d^n f(x)}{dx^n} \right|_{x=x_0} = \sum _{n=0}^N g_n(x, x_0),
+$$</p><p>which is known as Taylor series. And for $f(x)$ in Eqn (2) it would be similar to</p><p>$$\tag{4}
+f(x) = \sin ax.
+$$</p><h3 id=n--0>$n = 0$</h3><p>$$\tag{5.0}
+g_0(x, x_0) = \sin a x_0.
+$$</p><h3 id=n--1>$n = 1$</h3><p>$$\tag{5.1}
+g_1(x, x_0) = (x - x_0) \cdot a \cos a x_0.
+$$</p><h3 id=n--2>$n = 2$</h3><p>$$\tag{5.2}
+g_2(x, x_0) = \tfrac12(x - x_0)^2 \cdot -a^2 \sin a x_0.
+$$</p><h3 id=n--3>$n = 3$</h3><p>$$\tag{5.3}
+g_3(x, x_0) = \tfrac16 (x - x_0)^3 \cdot -a^3 \cos a x_0.
+$$</p><h2 id=general-form>general form</h2><p>Eqns (5.0) - (5.3) can be represented in</p><p>$$
+g_n(x, x_0) = (-1)^{\lfloor \frac12 n \rfloor} \frac{a^n (x - x_0)^n}{n!}
+\left\{
+\begin{array}{rc}
+\sin a x_0, & n = 0, 2, 4, \dots \newline
+\cos a x_0, & n = 1, 3, 5, \dots
+\end{array}
+\right.
+$$
+which holds for all $n$.</p><h2 id=python>python</h2><h3 id=code>code</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>concentration</span>(x, u):
+</span></span><span style=display:flex><span>  s0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>350</span>
+</span></span><span style=display:flex><span>  E <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> s0 <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>exp(x <span style=color:#f92672>*</span> u <span style=color:#f92672>/</span> E)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>velocity</span>(x, a):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> abs(math<span style=color:#f92672>.</span>sin(a <span style=color:#f92672>*</span> x))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>taylorterm</span>(n, x, x0, a):
+</span></span><span style=display:flex><span>  sign <span style=color:#f92672>=</span> (<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>**</span>math<span style=color:#f92672>.</span>floor(<span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> n)
+</span></span><span style=display:flex><span>  an <span style=color:#f92672>=</span> a<span style=color:#f92672>**</span>n
+</span></span><span style=display:flex><span>  dxn <span style=color:#f92672>=</span> (x <span style=color:#f92672>-</span> x0)<span style=color:#f92672>**</span>n
+</span></span><span style=display:flex><span>  facn <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>factorial(n)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> n <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>    fx <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>sin(a <span style=color:#f92672>*</span> x0)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    fx <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>cos(a <span style=color:#f92672>*</span> x0)
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  h <span style=color:#f92672>=</span> (sign <span style=color:#f92672>*</span> an <span style=color:#f92672>*</span> dxn <span style=color:#f92672>/</span> facn) <span style=color:#f92672>*</span> fx
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> h
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>4.8</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>x0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;n  utaylor error s&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>velotaylor <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>  u <span style=color:#f92672>=</span> velocity(x, a)
+</span></span><span style=display:flex><span>  velotaylor <span style=color:#f92672>+=</span> taylorterm(n, x, x0, a)
+</span></span><span style=display:flex><span>  err <span style=color:#f92672>=</span> abs(u <span style=color:#f92672>-</span> abs(velotaylor))
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  conc <span style=color:#f92672>=</span> concentration(x, velotaylor)
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  str1 <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>n<span style=color:#e6db74>:</span><span style=color:#e6db74>02d</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  str2 <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>velotaylor<span style=color:#e6db74>:</span><span style=color:#e6db74>0.5f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  str3 <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>(err<span style=color:#f92672>*</span><span style=color:#ae81ff>100</span>)<span style=color:#e6db74>:</span><span style=color:#e6db74>0.4f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>%&#39;</span>
+</span></span><span style=display:flex><span>  str4 <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>conc<span style=color:#e6db74>:</span><span style=color:#e6db74>0.4f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  print(str1, str2, str3, str4)
+</span></span></code></pre></div><p>Code is available
+<a href=https://onecompiler.com/python/3zn4x6dnc target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zn4x6dnc <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=result>result</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>n  utaylor error s
+</span></span><span style=display:flex><span><span style=color:#ae81ff>00</span> 0.00000 99.6165% 350.0000
+</span></span><span style=display:flex><span><span style=color:#ae81ff>01</span> -4.80000 380.3835% 914.0938
+</span></span><span style=display:flex><span><span style=color:#ae81ff>02</span> -4.80000 380.3835% 914.0938
+</span></span><span style=display:flex><span><span style=color:#ae81ff>03</span> 13.63200 1263.5835% 22.9091
+</span></span><span style=display:flex><span><span style=color:#ae81ff>04</span> 13.63200 1263.5835% 22.9091
+</span></span><span style=display:flex><span><span style=color:#ae81ff>05</span> -7.60166 660.5499% 1600.8115
+</span></span><span style=display:flex><span><span style=color:#ae81ff>06</span> -7.60166 660.5499% 1600.8115
+</span></span><span style=display:flex><span><span style=color:#ae81ff>07</span> 4.04652 305.0353% 155.8088
+</span></span><span style=display:flex><span><span style=color:#ae81ff>08</span> 4.04652 305.0353% 155.8088
+</span></span><span style=display:flex><span><span style=color:#ae81ff>09</span> 0.31910 67.7065% 328.3609
+</span></span><span style=display:flex><span><span style=color:#ae81ff>10</span> 0.31910 67.7065% 328.3609
+</span></span><span style=display:flex><span><span style=color:#ae81ff>11</span> 1.09982 10.3659% 280.8915
+</span></span><span style=display:flex><span><span style=color:#ae81ff>12</span> 1.09982 10.3659% 280.8915
+</span></span><span style=display:flex><span><span style=color:#ae81ff>13</span> 0.98452 1.1648% 287.4445
+</span></span><span style=display:flex><span><span style=color:#ae81ff>14</span> 0.98452 1.1648% 287.4445
+</span></span><span style=display:flex><span><span style=color:#ae81ff>15</span> 0.99717 0.1003% 286.7181
+</span></span><span style=display:flex><span><span style=color:#ae81ff>16</span> 0.99717 0.1003% 286.7181
+</span></span><span style=display:flex><span><span style=color:#ae81ff>17</span> 0.99610 0.0068% 286.7796
+</span></span><span style=display:flex><span><span style=color:#ae81ff>18</span> 0.99610 0.0068% 286.7796
+</span></span><span style=display:flex><span><span style=color:#ae81ff>19</span> 0.99617 0.0004% 286.7754
+</span></span></code></pre></div><h2 id=matlab>matlab</h2><h3 id=code-1>code</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=display:flex><span><span style=color:#75715e>% input</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i =<span style=color:#ae81ff>1</span>:inf
+</span></span><span style=display:flex><span>    x = input(&#34;x = &#34;);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>        disp(&#34;x should <span style=color:#f92672>&lt;</span>= <span style=color:#ae81ff>0</span>&#34;);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% parameters</span>
+</span></span><span style=display:flex><span>a = <span style=color:#ae81ff>4.8</span>;
+</span></span><span style=display:flex><span>x0 = <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>emin = <span style=color:#ae81ff>0.05</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% iteration</span>
+</span></span><span style=display:flex><span>vtay = <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>err = <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>N = <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n = <span style=color:#ae81ff>0</span>:N
+</span></span><span style=display:flex><span>    vtay = vtay <span style=color:#f92672>+</span> tayt(n, x, x0, a);
+</span></span><span style=display:flex><span>    vact = velo(x, a);
+</span></span><span style=display:flex><span>    err = abs(vact <span style=color:#f92672>-</span> abs(vtay));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> err <span style=color:#f92672>&lt;</span> emin
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% concentration of pollutan</span>
+</span></span><span style=display:flex><span>s = conc(x, vtay)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% results</span>
+</span></span><span style=display:flex><span>fprintf(<span style=color:#e6db74>&#39;n = %d\n&#39;</span>, n);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#e6db74>&#39;err = %.4f\n&#39;</span>, err <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#e6db74>&#39;vtay = %.5f\n&#39;</span>, vtay);
+</span></span><span style=display:flex><span>fprintf(<span style=color:#e6db74>&#39;s = %.4f\n&#39;</span>, s);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% n-th term of taylor series</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> t = <span style=color:#a6e22e>tayt</span>(n, x, x0, a)
+</span></span><span style=display:flex><span>    sign = (<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)^floor(<span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> n);
+</span></span><span style=display:flex><span>    an = a^n;
+</span></span><span style=display:flex><span>    dxn = (x <span style=color:#f92672>-</span> x0)^n;
+</span></span><span style=display:flex><span>    facn = factorial(n);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> mod(n, <span style=color:#ae81ff>2</span>) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        fx = sin(a <span style=color:#f92672>*</span> x0);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>        fx = cos(a <span style=color:#f92672>*</span> x0);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    t = (sign <span style=color:#f92672>*</span> an <span style=color:#f92672>*</span> dxn <span style=color:#f92672>/</span> facn) <span style=color:#f92672>*</span> fx;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% actual velocity</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> v = <span style=color:#a6e22e>velo</span>(x, a)
+</span></span><span style=display:flex><span>    v = abs(sin(a <span style=color:#f92672>*</span> x));
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>% concentration of pollutant</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> c = <span style=color:#a6e22e>conc</span>(x, u)
+</span></span><span style=display:flex><span>    s0 = <span style=color:#ae81ff>350</span>;
+</span></span><span style=display:flex><span>    E = <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span>    c = s0 <span style=color:#f92672>*</span> exp(x <span style=color:#f92672>*</span> u <span style=color:#f92672>/</span> E);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div><h3 id=result-1>result</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>x <span style=color:#f92672>=</span> 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>x should &lt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>x should &lt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> 
+</span></span><span style=display:flex><span>-1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>s <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  287.4445
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> <span style=color:#ae81ff>13</span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> 1.1648
+</span></span><span style=display:flex><span>vtay <span style=color:#f92672>=</span> 0.98452
+</span></span><span style=display:flex><span>s <span style=color:#f92672>=</span> 287.4445
+</span></span></code></pre></div><h2 id=comparison>comparison</h2><table><thead><tr><th style=text-align:left>Parameters</th><th style=text-align:left>Assignment</th><th style=text-align:left>Python</th><th style=text-align:left>Matlab</th></tr></thead><tbody><tr><td style=text-align:left>$N$</td><td style=text-align:left>15</td><td style=text-align:left>14</td><td style=text-align:left>13</td></tr><tr><td style=text-align:left>$u$</td><td style=text-align:left>0.98452</td><td style=text-align:left>0.98452</td><td style=text-align:left>0.98452</td></tr><tr><td style=text-align:left>$\epsilon$</td><td style=text-align:left>1.1692</td><td style=text-align:left>1.1648</td><td style=text-align:left>1.1648</td></tr><tr><td style=text-align:left>$s$</td><td style=text-align:left>287.4445</td><td style=text-align:left>287.4445</td><td style=text-align:left>287.4445</td></tr></tbody></table><p>Values for $N$ and $\epsilon$ are not the same for Assignment and Program.</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

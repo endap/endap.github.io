@@ -1,0 +1,50 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>distance 2d | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>distance 2d</h1><time datetime=2021-10-08T19:58:00+07:00>October 8, 2021</time><p>Jarak merupakan besaran skalar yang merujuk pada seberapa banyak (seberapa panjang) tanah (lintasan) yang dilingkupi (dijelajahi) selama suatu obyek bergerak [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], atau mungkin lebih tepatnya dapat disebut sebagai panjang lintasan.</p><h2 id=a-2-d-motion>a 2-d motion</h2><p>Suatu benda bergerak dari satu titik ke titik lain mengikuti lintasan garis lulus seperti diberikan oleh Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0034-a.png)<br>Gambar <a name=fig1>1</a>. Benda bergerak mulai dari waktu $t_1$ sampai $t_{10}$, di mana gerak antar titik mengikuti lintasan berupa garis lulus, dengan grid $1 \ {\rm m} \times 1 \ {\rm m}$.</p><p>Pada kiri atas Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tergambarkan keseluruhan lintasan yang ditempuh benda mulai dari waktu $t = t_1$ sampai $t = t_{10}$ yang akan memberikan jarak (atau panjang lintasan) $26 \ \rm m$. Selanjutnya, bagian kanan atas adalah jarak yang ditempuh benda mulai dari waktu $t = t_2$ sampai $t = t_7$ dengan nilai $15 \ \rm m$, bagian kiri bawah adalah jarak yang ditempuh benda mulai dari waktu $t = t_5$ sampai $t = t_{10}$ dengan nilai $13 \ \rm m$, dan bagian kanan bawah adalah jarak yang ditempuh benda mulai dari waktu $t = t_1$ sampai $t = t_5$ dengan nilai $13 \ \rm m$.</p><h2 id=another-2-d-motion>another 2-d motion</h2><p>Selain Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat pula dibuat banyak variasi gerak 2-d untuk mengilustrasikan bagaimana menghitung jarak. Beberapa contohnya adalah seperti diberikan oleh Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini. Keterangan NW (north west) adalah kiri atas, NE (north east) kanan atas, SW (south west) kiri bawah, dan SE (south east) kanan bawah.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0034-b.png)<br>Gambar <a name=fig2>2</a>. Dengan grid $1 \ {\rm m} \times 1 \ {\rm m}$, digambarkan berbagai lintasan benda yang bergerak dari waktu awal (inisial) $t_i$ sampai waktu akhir (final) $t_f$ dengan berbagai bentuk gerak: gerak melingkar (NW), gerak melingkar dan rangkaian gerak lurus (NE), rangkaian gerak melingkar dan gerak lurus (SW), dan rangkaian gerak lurus (SE).</p><p>Dapat diperoleh dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bahwa</p><p>$$
+L_{\rm NW} = \frac34 \cdot 2\pi \cdot R = 6 \pi \ {\rm m},
+$$</p><p>$$
+\begin{array}{rcl}
+L_{\rm NE} & = & \frac14 \cdot 2\pi \cdot R + L_{23} + L_{34} + L_{45} \newline
+& = & 2\pi + 4 + 5 + 5 = (2\pi + 14) \ {\rm m},
+\end{array}
+$$</p><p>$$
+\begin{array}{rcl}
+L_{\rm SE} & = & L_{12} + L_{23} + L_{34} + L_{45} + L_{56} + L_{67} \newline
+& = & 5 + 10 + 3 + 2 + 2 + 2 = 24 \ {\rm m},
+\end{array}
+$$</p><p>sedangkan untuk $L_{\rm SW}$ silakan dihitung sebagai latihan.</p><h2 id=exer>exer</h2><ol><li>Apa kesamaan dari keempat lintasan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>?</li><li>Tentukanlah $L_{\rm SW}$ dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>-, &ldquo;Distance and Displacement&rdquo;, the Physics Classroom, url
+<a href=https://www.physicsclassroom.com/class/1DKin/Lesson-1/Distance-and-Displacement target=_blank rel="nofollow noopener noreferrer"><span>https://www.physicsclassroom.com/class/1DKin/Lesson-1/Distance-and-Displacement <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211008].</li></ol><h2 id=heading> </h2><p><a><span>meter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>length <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>relative position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) Keempat lintasan memberikan perpindahan total yang sama; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

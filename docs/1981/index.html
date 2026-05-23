@@ -1,0 +1,30 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>intro numerical integration | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>intro numerical integration</h1><time datetime=2024-03-16T17:52:00+07:00>March 16, 2024</time><p>Numerical integration: A short introduction</p><ul><li><a href=https://osf.io/2akug target=_blank rel="nofollow noopener noreferrer"><span>intro_num_integ.pdf <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><h2 id=outline>outline</h2><ul><li>Intro 3</li><li>Theory 10</li><li>Some rules and errors 18</li><li>Case $y = x^2$ 25</li><li>Practical formulas 34</li><li>Closing 42</li></ul><h2 id=intro>intro</h2><p>Suppose that there is $f(x)$ with $x \in [a, b]$, where</p><p>$$\tag{1}
+\int_a^b f(x) dx.
+$$</p><p>is to be calculated.</p><h2 id=discretization>discretization</h2><p>Value of $x$ can be disretized as follow</p><p>$$\tag{2}
+x_i = a + \Delta x (i - 1), \ \ \ \ i = 0, 1, .., n-1, n,
+$$</p><p>where</p><p>$$\tag{3}
+\Delta x = \frac{b-a}{n}
+$$</p><p>is increment step.</p><p><strong>Assignment 1</strong>. Proove that $x_0 = a$ and $x_n = b$ using (2) and (3).</p><h2 id=formula>formula</h2><p>In general (4) can be approximated</p><p>$$\tag{4}
+\int_a^b f(x) dx \approx \sum_{i = 1}^n g_e(x_{i-1}, x_i) \Delta x,
+$$</p><p>where $g_e(x_i, x_j)$ is different for various types of Riemann sums and index $e$ stands for certain type of Rieman sum.</p><h2 id=lhr--rhl>lhr & rhl</h2><p>Left hand rule (LHR) is using</p><p>$$\tag{5}
+g_L(x_i, x_j) = f(x_i),
+$$</p><p>while</p><p>$$\tag{6}
+g_R(x_i, x_j) = f(x_j),
+$$</p><p>is used for right hand rule (RHR).</p><h2 id=mpr--trapezoid-rule>mpr & trapezoid rule</h2><p>Mid point rule (MPR) is using</p><p>$$\tag{7}
+g_M(x_i, x_j) = f( \tfrac12 (x_i + x_j) ),
+$$</p><p>which is different than trapezoid rule</p><p>$$\tag{8}
+g_T(x_i, x_j) = \tfrac12 ( f(x_i) + f(x_j) ).
+$$</p><p>Notice the difference between (6) and (7).</p><h2 id=simpsons-rule>simpson&rsquo;s rule</h2><p>Other approach in Riemann sum is</p><p>$$\tag{9}
+g_S(x_i, x_j) = \left\{
+\begin{array}{cc}
+\tfrac13 ( f(x_i) + 2 f(x_j)), & \lfloor i / 2 \rfloor = i/2, \newline \newline
+\tfrac13 ( 2 f(x_i) + f(x_j)), & \lfloor i / 2 \rfloor \ne i/2,
+\end{array}
+\right.
+$$</p><p>which is known as Simpson&rsquo;s rule. Note that $n$ or number of partitions must be even or there should be at least three points $x_i$, $x_{i+1}$, and $x_{i+2}$ for (8) to work.</p><h2 id=refs>refs</h2><ul><li>Petra Menz and Nicola Mulberry, &ldquo;Numerical Integration&rdquo;, in Calculus Early Transcendentals: Integral & Multi-Variable Calculus for Social Sciences, adapted from Lyryx&rsquo; textbook, Calculus Early Transcendentals an Open Text (VERSION 2017- REVISION A), Department of Mathematics, Simon Fraser University, 1 Jun 2020, url
+<a href=https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_Numerical_Integration.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_Numerical_Integration.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240316].</li><li>M. Bourne, “Riemann Sums Applet”, Interactive Mathematics, url
+<a href=https://www.intmath.com/integration/riemann-sums.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.intmath.com/integration/riemann-sums.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240317].</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

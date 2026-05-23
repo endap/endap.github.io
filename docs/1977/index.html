@@ -1,0 +1,204 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>fourier series short intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>fourier series short intro</h1><time datetime=2024-03-09T19:43:00+07:00>March 9, 2024</time><p>Fourier series short intro: Proofs of some integral identities.</p><ul><li><a href=https://osf.io/eupys target=_blank rel="nofollow noopener noreferrer"><span>fourier_series_short_intro.pdf <i class="fa fa-external-link" style=font-size:14px></i></span></a><ul><li>Intro 3</li><li>Coefficients 7</li><li>Related trigonometric identities 15</li><li>Integral of sine and cosine 19</li><li>Proofs a ≠ b 22</li><li>Proofs a = b 26</li><li>Integral identities 30</li><li>Interval changes 32</li><li>Other forms 38</li><li>Closing 42</li></ul></li></ul><h2 id=int-sin>int sin</h2><p>$$\tag{21}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin mx \ dx & = & \displaystyle \left[ -\frac{1}{m} \cos mx \right]_{-\pi}^\pi
+\newline \newline
+& = & \displaystyle -\frac{1}{m} \left[ \cos m \pi - \cos m(-\pi) \right]
+\newline \newline
+& = & \displaystyle -\frac{1}{m} ( \cos m \pi - \cos m \pi )
+\newline \newline
+& = & 0.
+\end{array}
+$$</p><h2 id=int-cos>int cos</h2><p>$$\tag{22}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \cos mx \ dx & = & \displaystyle \left[ -\frac{1}{m} \sin mx \right]_{-\pi}^\pi
+\newline \newline
+& = & \displaystyle -\frac{1}{m} \left[ \sin m \pi - \sin m(-\pi) \right]
+\newline \newline
+& = & \displaystyle -\frac{1}{m} ( \sin m \pi + \sin m \pi )
+\newline \newline
+& = & \displaystyle -\frac{1}{m} ( 0 + 0 ) \ \ = \ \ 0.
+\newline \newline
+\end{array}
+$$</p><h2 id=int-sin--sin-a-ne-b>int sin · sin, $a \ne b$</h2><p>$$\tag{23a}
+\begin{array}{rcl}
+\sin ax \sin bx & = & \frac12 \cos (ax - bx) - \frac12 \cos (ax + bx)
+\newline \newline
+& = & \frac12 \cos (a - b)x - \frac12 \cos (a + b)x
+\end{array}
+$$</p><p>$$\tag{23b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin ax \sin bx \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos (a - b)x \ dx
+\newline \newline
+& & \displaystyle - \tfrac12 \int_{-\pi}^\pi \cos (a + b)x \ dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos nx \ dx - \tfrac12 \int_{-\pi}^\pi \cos mx \ dx
+\newline \newline
+& = & 0 - 0 \ \ = \ \ 0.
+\end{array}
+$$</p><h2 id=int-cos--cos-sin-a-ne-b>int cos · cos; sin, $a \ne b$</h2><p>$$\tag{24a}
+\begin{array}{rcl}
+\cos ax \cos bx & = & \frac12 \cos (ax + bx) + \frac12 \cos (ax - bx)
+\newline \newline
+& = & \frac12 \cos (a + b)x + \frac12 \cos (a - b)x
+\end{array}
+$$</p><p>$$\tag{24b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \cos ax \cos bx \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos (a + b)x \ dx
+\newline \newline
+& & \displaystyle + \tfrac12 \int_{-\pi}^\pi \cos (a - b)x \ dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos mx \ dx + \tfrac12 \int_{-\pi}^\pi \cos nx \ dx
+\newline \newline
+& = & 0 + 0 \ \ = \ \ 0.
+\end{array}
+$$</p><h2 id=int-sin--cos-sin-a-ne-b>int sin · cos; sin, $a \ne b$</h2><p>$$\tag{25a}
+\begin{array}{rcl}
+\sin ax \cos bx & = & \frac12 \sin (ax + bx) + \frac12 \sin (ax - bx)
+\newline \newline
+& = & \frac12 \sin (a + b)x + \frac12 \sin (a - b)x
+\end{array}
+$$</p><p>$$\tag{25b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin ax \cos bx \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi \sin (a + b)x \ dx
+\newline \newline
+& & \displaystyle + \tfrac12 \int_{-\pi}^\pi \sin (a - b)x \ dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi \sin mx \ dx + \tfrac12 \int_{-\pi}^\pi \sin nx \ dx
+\newline \newline
+& = & 0 + 0 \ \ = \ \ 0.
+\end{array}
+$$</p><h2 id=int-sin--sin-a--b>int sin · sin, $a = b$</h2><p>$$\tag{26a}
+\begin{array}{rcl}
+\sin ax \sin ax & = & \frac12 \cos (ax - ax) - \frac12 \cos (ax + ax)
+\newline \newline
+& = & \frac12 - \frac12 \cos 2ax
+\end{array}
+$$</p><p>$$\tag{26b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin ax \sin ax \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi dx - \tfrac12 \int_{-\pi}^\pi \cos 2ax \ dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi dx - \tfrac12 \int_{-\pi}^\pi \cos mx \ dx
+\newline \newline
+& = & \pi - 0 \ \ = \ \ \pi.
+\end{array}
+$$</p><h2 id=int-cos--cos-sin-a--b>int cos · cos; sin, $a = b$</h2><p>$$\tag{27a}
+\begin{array}{rcl}
+\cos ax \cos ax & = & \frac12 \cos (ax + ax) + \frac12 \cos (ax - ax)
+\newline \newline
+& = & \frac12 \cos 2ax + \frac12
+\end{array}
+$$</p><p>$$\tag{27b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \cos ax \cos bx \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos 2ax \ dx + \tfrac12 \int_{-\pi}^\pi dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi \cos mx \ dx + \tfrac12 \int_{-\pi}^\pi dx
+\newline \newline
+& = & 0 + \pi \ \ = \ \ \pi.
+\end{array}
+$$</p><h2 id=int-sin--cos-sin-a--b>int sin · cos; sin, $a = b$</h2><p>$$\tag{28a}
+\begin{array}{rcl}
+\sin ax \cos ax & = & \frac12 \sin (ax + ax) + \frac12 \sin (ax - ax)
+\newline \newline
+& = & \frac12 \sin 2ax + 0
+\end{array}
+$$</p><p>$$\tag{28b}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin ax \cos bx \ dx & = & \displaystyle \tfrac12 \int_{-\pi}^\pi \sin 2ax \ dx
+\newline \newline
+& = & \displaystyle \tfrac12 \int_{-\pi}^\pi \sin mx \ dx
+\newline \newline
+& = & 0.
+\end{array}
+$$</p><h2 id=int-sin--sin-cos--cos--sin--cos>int sin · sin, cos · cos, sin · cos</h2><p>$$\tag{29}
+\int_{-\pi}^\pi \sin ax \sin bx \ dx = \left\{
+\begin{array}{rcl}
+0, & a \ne b \newline
+\pi, & a = b.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{30}
+\int_{-\pi}^\pi \cos ax \cos bx \ dx = \left\{
+\begin{array}{rcl}
+0, & a \ne b \newline
+\pi, & a = b.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{31}
+\int_{-\pi}^\pi \cos ax \sin bx \ dx = 0.
+$$</p><h2 id=interval-changes>interval changes</h2><p>$$\tag{32}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin mx \ dx & = & \displaystyle \int_{-\tfrac12 \lambda}^{\tfrac12 \lambda} \sin \left( m\frac{2\pi}{\lambda} x \right) \ dx
+\newline \newline
+\displaystyle -\left[ \frac{1}{m} \cos mx \right]^\pi_{-\pi} & = & \displaystyle -\left[ \frac{\lambda}{m2\pi} \cos \left( m \frac{2\pi}{\lambda} x \right) \right]_{-\tfrac12 \lambda}^{\tfrac12 \lambda}
+\newline \newline
+\displaystyle \frac{1}{m} [ \cos m \pi - \cos m(-\pi) ] & = & \displaystyle \frac{\lambda}{m2\pi} \left[ \cos \left( m \frac{2\pi}{\lambda} \right) (\tfrac12 \lambda) - \cos \left( m \frac{2\pi}{\lambda} \right) (-\tfrac12 \lambda) \right]
+\newline \newline
+& = & \displaystyle \frac{\lambda}{m2\pi} [ \cos m\pi - \cos m(-\pi) ]
+\newline \newline
+\displaystyle \frac{1}{m} (\cos m\pi - \cos m\pi) & = & \displaystyle \frac{\lambda}{m2\pi} (\cos m\pi - \cos m\pi)
+\newline \newline
+0 & = & 0.
+\end{array}
+$$</p><p> </p><p>$$\tag{33}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin mt \ dt & = & \displaystyle \int_{-\tfrac12 T}^{\tfrac12 T} \sin \left( m\frac{2\pi}{T} t \right) \ dt
+\newline \newline
+\displaystyle -\left[ \frac{1}{m} \cos mt \right]^\pi_{-\pi} & = & \displaystyle -\left[ \frac{T}{m2\pi} \cos \left( m \frac{2\pi}{T} t \right) \right]_{-\tfrac12 T}^{\tfrac12 T}
+\newline \newline
+\displaystyle \frac{1}{m} [ \cos m \pi - \cos m(-\pi) ] & = & \displaystyle \frac{T}{m2\pi} \left[ \cos \left( m \frac{2\pi}{T} \right) (\tfrac12 T) - \cos \left( m \frac{2\pi}{T} \right) (-\tfrac12 T) \right]
+\newline \newline
+& = & \displaystyle \frac{\lambda}{m2\pi} [ \cos m\pi - \cos m(-\pi) ]
+\newline \newline
+\displaystyle \frac{1}{m} (\cos m\pi - \cos m\pi) & = & \displaystyle \frac{\lambda}{m2\pi} (\cos m\pi - \cos m\pi)
+\newline \newline
+0 & = & 0.
+\end{array}
+$$</p><h2 id=period>period</h2><p>$$\tag{34}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin mx \ dx & = & \displaystyle \int_{-\tfrac12 \lambda}^{\tfrac12 \lambda} \sin \left( m\frac{2\pi}{\lambda} x \right) \ dx
+\newline \newline
+& = & \displaystyle \int_0^{\lambda} \sin \left( m\frac{2\pi}{\lambda} x \right) \ dx
+\newline \newline
+& = & \displaystyle \int_0^{\lambda} \sin ( m k x ) \ dx \ \ = \ \ \int_0^{\lambda} \sin ( k_m x ) \ dx
+\end{array}
+$$</p><p> </p><p>$$\tag{35}
+\begin{array}{rcl}
+\displaystyle \int_{-\pi}^\pi \sin mt \ dt & = & \displaystyle \int_{-\tfrac12 T}^{\tfrac12 T} \sin \left( m\frac{2\pi}{T} t \right) \ dt
+\newline \newline
+& = & \displaystyle \int_0^T \sin \left( m\frac{2\pi}{T} t \right) \ dt
+\newline \newline
+& = & \displaystyle \int_0^T \sin ( m \omega t ) \ dt \ \ = \ \ \int_0^T \sin ( \omega_m t) \ dt
+\end{array}
+$$</p><h2 id=wavenumber-and-angular-requency>wavenumber and angular requency</h2><p>$$\tag{36}
+k_m = m k_1, \ \ \ \ m = 1, 2, 3, ..
+$$
+$$
+\lambda_m = \frac{2\pi}{k_m}
+$$</p><p> </p><p>$$\tag{37}
+\omega_m = m \omega_1, \ \ \ \ m = 1, 2, 3, ..
+$$
+$$
+T_m = \frac{2\pi}{\omega_m}
+$$</p><h2 id=other-forms>other forms</h2><p>$$\tag{38}
+f(x) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{L} \right) x \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{L} \right) x \right] + c_0
+$$</p><p>$$\tag{39}
+a_m = \frac{2}{L}\int_0^L f(x) \ \cos \left[ m \left( \frac{2\pi}{L} \right) x \right] \ dx
+$$</p><p>$$\tag{40}
+b_m = \frac{2}{L}\int_0^L f(x) \ \cos \left[ m \left( \frac{2\pi}{L} \right) x \right] \ dx
+$$</p><p>$$\tag{41}
+c_0 = \frac{1}{L} \int_0^L f(x) \ dx.
+$$</p><p>$$\tag{42}
+f(t) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{L} \right) t \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{L} \right) t \right] + c_0
+$$</p><p>$$\tag{43}
+a_m = \frac{2}{T}\int_0^T f(t) \ \cos \left[ m \left( \frac{2\pi}{L} \right) t \right] \ dt
+$$</p><p>$$\tag{44}
+b_m = \frac{2}{T}\int_0^T f(t) \ \cos \left[ m \left( \frac{2\pi}{L} \right) t \right] \ dt
+$$</p><p>$$\tag{45}
+c_0 = \frac{1}{T} \int_0^T f(t) \ dt.
+$$</p><p> </p><p>$$\tag{46}
+k_m = m \frac{2\pi}{L}, \ \ \ \ m = 1, 2, 3, ..
+$$</p><p>$$\tag{47}
+\omega_m = m \frac{2\pi}{T}, \ \ \ \ m = 1, 2, 3, ..
+$$</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

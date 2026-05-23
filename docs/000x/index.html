@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>function args kwargs intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>function args kwargs intro</h1><time datetime=2023-12-30T12:24:00+08:00>December 30, 2023</time><h2 id=intro>intro</h2><ul><li>When writing a function in Python it is often required to pass values to the function, where this values are called function arguments, which can be in fixed or dynamic numbers (Krishna, 2022).</li><li>There two types of argument passed to function in Python, which are positional and keyword arguments (Wilkinson, 2023).</li><li>One of the reason Python programming languange, which is known for being simple and readable, is its way of handling parameters in very easy and dynamics way using <code>*args</code> and <code>*kwargs</code> (Bolanle, 2023).</li><li>Due tue not aware of all possible use cases of a code, and to offer more options for future programmers working with the module or for users interacting with the code, passing a variable number of arguments to a function can be accomodate using <code>*args</code> and <code>**kwargs</code> (Tagliaferri, 2021).</li><li>In the Python documentation about its functions it is common to see <code>*args</code> and <code>**args</code> defined as parameters in some functions, which is a major cause of confusion for most Python programmers (Pykes, 2022).</li><li>There are some combinations of normal positional arguments and normal keyword arguments that are working, which can be easier to understand by trying them yourself (Gruppeta, 2022).</li></ul><h2 id=using-args>using *args</h2><ul><li>Here a problem is presented, where one of the solutions is the use of <code>*args</code>.</li><li>The <code>*args</code> is a tuple containing all positional arguments.</li></ul><h3 id=problem>problem</h3><ul><li>Suppose we have to add two numbers using user-defined function <code>add</code> with following code, but we try to give unmatched number of arguments.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>add</span>(x, y):
+</span></span><span style=display:flex><span>  z <span style=color:#f92672>=</span> x <span style=color:#f92672>+</span> y
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> z
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> add(a, b)
+</span></span><span style=display:flex><span>print(a, <span style=color:#e6db74>&#34;+&#34;</span>, b, <span style=color:#e6db74>&#34;=&#34;</span>, c)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>d <span style=color:#f92672>=</span> add(a, b, c)
+</span></span><span style=display:flex><span>print(a, <span style=color:#e6db74>&#34;+&#34;</span>, b, <span style=color:#e6db74>&#34;+&#34;</span>, c, <span style=color:#e6db74>&#34;=&#34;</span>, d)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxwxjvam target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxwxjvam <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Output<pre tabindex=0><code>100 + 1 = 101
+
+
+Traceback (most recent call last):
+  File &#34;main.py&#34;, line 15, in &lt;module&gt;
+    d = add(a, b, c)
+TypeError: add() takes 2 positional arguments
+  but 3 were given
+</code></pre></li><li>Notice that 3 positional arguments are given, while it requires only 2.</li></ul><h3 id=solution>solution</h3><ul><li>One way to solve previous problem is by using <code>*args</code> as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>add</span>(<span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>  nums <span style=color:#f92672>=</span> list(args)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> sum(nums)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> add(a, b)
+</span></span><span style=display:flex><span>print(a, <span style=color:#e6db74>&#34;+&#34;</span>, b, <span style=color:#e6db74>&#34;=&#34;</span>, c)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>d <span style=color:#f92672>=</span> add(a, b, c)
+</span></span><span style=display:flex><span>print(a, <span style=color:#e6db74>&#34;+&#34;</span>, b, <span style=color:#e6db74>&#34;+&#34;</span>, c, <span style=color:#e6db74>&#34;=&#34;</span>, d)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> add(a)
+</span></span><span style=display:flex><span>print(a, <span style=color:#e6db74>&#34;=&#34;</span>, b)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxwxvqru target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxwxvqru <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Output<pre tabindex=0><code>100 + 1 = 101
+
+100 + 10 + 1 = 111
+
+10 = 10
+</code></pre></li><li>Notice that now the function works with arbitrary number of arguments, 1, 2, or 3.</li><li>There might be also some problems arise with current version, e.g. if the arguments are not integer or float.</li></ul><h2 id=positional-and-keyword-arguments>positional and keyword arguments</h2><ul><li>In previous section the use of positional arguments has been shown.</li><li>For positional arguments position of each parameter as the function called should match the corresponding argument.</li></ul><h3 id=positional-or-keyword-argument>positional or keyword argument</h3><ul><li>Following code will show the importance of position of parameters and how to change it using keyword arguments.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printArguments</span>(a, b, c, d):
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;1st =&#34;</span>, a)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;2dn =&#34;</span>, b)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;3rd =&#34;</span>, c)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;4th =&#34;</span>, d)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printArguments(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printArguments(a<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, d<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>, c<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>, b<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxx85pme target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxx85pme <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Output<pre tabindex=0><code>1st = 1
+2dn = 10
+3rd = 100
+4th = 1000
+
+1st = 1
+2dn = 2
+3rd = 3
+4th = 4
+</code></pre></li><li>Notice that upper part of the output is already clear, but in the lower part it is shown that the order of parameter can be rearranged using keyword argument for corresponding argument.</li></ul><h3 id=combinations-two-types-of-argument>combinations two types of argument</h3><ul><li>It is also possible to use both positional and keyword arguments at the same time when calling a function.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printArguments</span>(a, b, c, d):
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;1st =&#34;</span>, a)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;2dn =&#34;</span>, b)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;3rd =&#34;</span>, c)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;4th =&#34;</span>, d)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printArguments(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>10</span>, d<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>, c<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printArguments(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, c<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxx95unj target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxx95unj <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Output<pre tabindex=0><code>1st = 1
+2dn = 10
+3rd = 100
+4th = 1000
+
+
+Traceback (most recent call last):
+  File &#34;main.py&#34;, line 11, in &lt;module&gt;
+    printArguments(1, 2, 4, c=3)
+TypeError: printArguments() got multiple
+  values for argument &#39;c&#39;
+</code></pre></li><li>Notice that the third argument <code>c</code> has been assigned with two different values, first via positional argument with value <code>4</code> and second with keyword argument with value <code>3</code>.</li></ul><h3 id=positional-and-keyword>positional and keyword</h3><ul><li>Positional arguments must come first then followed by keywords arguments.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printArguments</span>(a, b, c, d):
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;1st =&#34;</span>, a)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;2dn =&#34;</span>, b)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;3rd =&#34;</span>, c)
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;4th =&#34;</span>, d)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printArguments(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>10</span>, c<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>1000</span>)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxx9rkjq target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxx9rkjq <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Output<pre tabindex=0><code>File &#34;main.py&#34;, line 7
+    printArguments(1, 10, c=100, 1000)
+                                 ^
+SyntaxError: positional argument follows
+  keyword argument
+</code></pre></li><li>In previous subsection the order between positional arguments and keyword arguments is already right, a parameter is assigned with two arguments.</li></ul><h2 id=challenges>challenges</h2><ul><li>Test previous <code>add</code> function for 4, 8, and 20 arguments. Prove that it always works.</li><li>Create similar function for calculate multiplication of numbers and name it as <code>mul</code> function, that can receive arbitrary number of arguments.</li><li>Create a function named <code>buyItemsWithAmount("orange", 12, "apple", 10, "durian", 1, "papaya", 3)</code>, that can have arbitrary number of items in pairs of item and amount.</li></ul><h2 id=refs>refs</h2><ul><li>Bolanle F (2023) &ldquo;How To Use *args and **kwargs In Python&rdquo;, DEV Community, 10 Aug, url
+<a href=https://dev.to/faithbolanle/understand-args-and-kwargs-use-it-the-right-way-2d45 target=_blank rel="nofollow noopener noreferrer"><span>https://dev.to/faithbolanle/understand-args-and-kwargs-use-it-the-right-way-2d45 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Gruppetta S (2022) &ldquo;Argh! What are args and kwargs in Python? [Intermediate Python Functions Series #4]&rdquo;, The Python Coding Book, 30 Nov, url
+<a href=https://thepythoncodingbook.com/2022/11/30/what-are-args-and-kwargs-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://thepythoncodingbook.com/2022/11/30/what-are-args-and-kwargs-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Krishna A (2022) &ldquo;How to Use *args and **kwargs in Python&rdquo;, freeCodeCamp, 23 Mar, url
+<a href=https://www.freecodecamp.org/news/args-and-kwargs-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.freecodecamp.org/news/args-and-kwargs-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Pykes K (2022) &ldquo;Python *args & **kwargs&rdquo;, Geek Culture, Medium, 16 Mar, url
+<a href=https://medium.com/geekculture/1c5c0ec9121 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/geekculture/1c5c0ec9121 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Wilkinson P (2023) &ldquo;*args, **kwargs, and Everything in Between&rdquo;, Towards Data Science, Medium, 18 Jul, url
+<a href=https://towardsdatascience.com/ff7d9b536494 target=_blank rel="nofollow noopener noreferrer"><span>https://towardsdatascience.com/ff7d9b536494 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li><li>Tagliaferri L (2021) &ldquo;How To Use *args and **kwargs in Python 3&rdquo;, DigitalOcean, 21 Aug, url
+<a href=https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3 target=_blank rel="nofollow noopener noreferrer"><span>https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231230].</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

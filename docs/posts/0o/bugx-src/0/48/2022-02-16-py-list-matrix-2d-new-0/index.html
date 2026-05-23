@@ -1,0 +1,105 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py list matrix 2d new 0 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py list matrix 2d new 0</h1><time datetime=2022-02-17T08:46:00+07:00>February 17, 2022</time><p>Dalam Python assignment suatu variabel dengan suatu nilai dapat dilakukan dengan berbagai cara, seperti umumnya dalam bahasa pemrograman lain, melalui tuple untuk asignment beberapa nilai sekaligus, menukar nilai variabel, dan lainnya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Para pengembang yang melompat menggunakan bahasa pemrograman Python dari bahasa pemrograman lainnya, seperti C++ dan Java, sering dibingungkan oleh proses melewatkan argumen pada Python, di mana model data terpusat-obyek dan bagaimana model ini memperlakukan assignment adalah penyebab kebingungan ini pada tingkat fundamental [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk menyalin suatu list sebaiknya digunakan methode <code>.copy</code> agar menjadi obyek yang berbeda [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang bila digunakan operator sama dengan <code>=</code> hanya akan membuat referensi antar obyek sehingga pengubahan pada obyek yang satu akan mengubah pula obyek yang lain [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Di sini akan dibahas membuat sebuah list dua dimensi baru, sebagai suatu matriks, yang berisi angka nol dengan ukuran yang dikehendaki. Lebih tepatnya adalah membuat suatu matriks nol baru.</p><h2 id=zero-matrix>zero matrix</h2><p>Suatu matriks nol dengan dimensi $m \times n$ contohnya sebagai berikut</p><p>\begin{equation}\label{eqn:zero-matrix}
+Z = \left[
+\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \newline
+0 & 0 & 0 & 0 & 0 & 0 & 0 \newline
+0 & 0 & 0 & 0 & 0 & 0 & 0 \newline
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\right],
+\end{equation}</p><p>untuk jumlah baris $m = 4$ dan jumlah kolom $n = 7$.</p><h2 id=a-code>a code</h2><p>Suatu pustaka <code>matrix.py</code> berisikan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># matrix.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simple matrix library using list</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220216 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print only two-dimension matrix in form of a list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printmat</span>(m):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># assume that all rows have the same columns</span>
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            print(m[r][c], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>        print()
+</span></span></code></pre></div><p>diperlukan agar dapat menggunakan <code>printmat</code> dalam program berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0480-matrix-no-numpy-zero.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create an empty matrix with dimensions row and col</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220216 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matrix <span style=color:#66d9ef>as</span> mat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create an new two-dimension matrix in form of a list filled with zero</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>newmat</span>(row, col):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>    m <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            newrow<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        m<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create a new zero matrix</span>
+</span></span><span style=display:flex><span>row <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>col <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> newmat(row, col)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># display results</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;row:&#34;</span>)
+</span></span><span style=display:flex><span>print(row)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;col:&#34;</span>)
+</span></span><span style=display:flex><span>print(col)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;m:&#34;</span>)
+</span></span><span style=display:flex><span>mat<span style=color:#f92672>.</span>printmat(m)
+</span></span></code></pre></div><p>yang memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0480-matrix-no-numpy-zero.py ====
+</span></span><span style=display:flex><span>row:
+</span></span><span style=display:flex><span>4
+</span></span><span style=display:flex><span>col:
+</span></span><span style=display:flex><span>2
+</span></span><span style=display:flex><span>m:
+</span></span><span style=display:flex><span>0	0	
+</span></span><span style=display:flex><span>0	0	
+</span></span><span style=display:flex><span>0	0	
+</span></span><span style=display:flex><span>0	0
+</span></span></code></pre></div><p>saat dijalankan.</p><p>Modifikasi kode di atas, sehingga <code>mat</code> dapat tetap digunakan, dapat dijalankan di OneCompiler
+<a href=https://onecompiler.com/python/3xtkwnm9x target=_blank rel="nofollow noopener noreferrer"><span>3xtkwnm9x <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang memerlukan definisi suatu namespace <code>mat</code> berisikan fungsi yang diperlukan untuk menggantikan baris <code>import matrix as mat</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#import matrix as mat</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>mat</span>:
+</span></span><span style=display:flex><span>  <span style=color:#75715e># print only two-dimension matrix in form of a list</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printmat</span>(m):
+</span></span><span style=display:flex><span>      <span style=color:#75715e># assume that all rows have the same number of columns</span>
+</span></span><span style=display:flex><span>      row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>      col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>      <span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>              print(m[r][c], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>          print()
+</span></span></code></pre></div><p>agar tidak perlu mengubah baris kode yang lain. Penggunaan pustaka <code>matrix</code> ini adalah untuk menyembuyikan fungsi-fungsi yang bukan menjadi fokus pembahasan di sini sehingga contoh program dapat masih cukup ringkas.</p><h2 id=exer>exer</h2><ol><li>Bagaimana untuk membuat matriks yang isinya angka satu semua?</li><li>Bagaimana cara membuat suatu matriks nol berbentuk bujur sangkar?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Jakub Przywóski, &ldquo;= Assignment&rdquo;, Python Reference (The Right Way), Rev 9a3b94e7, 2015, url
+<a href=https://python-reference.readthedocs.io/en/latest/docs/operators/assignment.html target=_blank rel="nofollow noopener noreferrer"><span>https://python-reference.readthedocs.io/en/latest/docs/operators/assignment.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li><li><a name=r02></a>RajuKumar19, akshaysingh98088, &ldquo;Pass by reference vs value in Python&rdquo;, GeeksforGeeks, 11 Oct 2021, url
+<a href=https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li><li><a name=r03></a>Rodrigo Girão Serrão, &ldquo;Pass-by-value, reference, and assignment | Pydon&rsquo;t 🐍 | Mathspp&rdquo;, Mathspp, 3 Nov 2021, url
+<a href=https://mathspp.com/blog/pydonts/pass-by-value-reference-and-assignment target=_blank rel="nofollow noopener noreferrer"><span>https://mathspp.com/blog/pydonts/pass-by-value-reference-and-assignment <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217].</li><li><a name=r04></a>Jay Lospinoso, &ldquo;How to Copy List Without Reference in Python 3&rdquo;, e Learning, 25 Jul 2021, url
+<a href=https://elearning.wsldp.com/python3/how-to-copy-list-without-reference-in-python-3/ target=_blank rel="nofollow noopener noreferrer"><span>https://elearning.wsldp.com/python3/how-to-copy-list-without-reference-in-python-3/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[202217].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0483?src=hash&amp;ref_src=twsrc%5Etfw">#bug0483</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1494119546864959489?ref_src=twsrc%5Etfw">February 17, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) Ubah `newrow.append(0)` menjadi `newrow.append(1)`; &nbsp;
+2) argumen `row` dan `col` harus bernilai sama; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

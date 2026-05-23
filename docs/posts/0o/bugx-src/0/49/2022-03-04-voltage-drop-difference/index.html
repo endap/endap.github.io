@@ -1,0 +1,90 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>voltage drop difference | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>voltage drop difference</h1><time datetime=2022-03-04T19:05:00+07:00>March 4, 2022</time><p>Dengan mengikuti arah arus listrik yang melewati suatu resistor, yang mengalir dari kaki resistor dengan potensial listrik lebih tinggi ke kaki lain dengan potensial listrik lebih rendah, akan diperoleh penurunan tegangan [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Istilah tegangan dalam sebuah baterai mengacu pada perbedaan potensial listrik antara terminal positif dan negatif baterai [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang bagaimana hal ini dapat terjadi telah dijelaskan dengan model sederhana baterai [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=convention>convention</h2><p>Terdapat beberapa konvensi yang digunakan di sini, yaitu</p><ol><li>arah arus listrik harus ditentukan terlebih dahulu,</li><li>penelusuran beda potensial listrik mengikuti arah arus listrik,</li><li>penurunan tegangan pada resistor adalah resistansinya dikalikan dengan arus yang lewat, dan bila terpaksa melawan arah arus listrik terjadi penaikan tegangan alih-alih penurunan tegangan,</li><li>penaikan tegangan setelah melewati baterai terjadi bila arus masuk dari terminal negatif dan keluar dari terminal positif, bila sebaliknya terjad penurunan tegangan,</li><li>notasi beda potensial antar dua titik disimbolkan dengan $V_{ab} = V_a - V_b$,</li><li>$V_{ab} = - V_{ba}$.</li></ol><p>Sebagai contoh bila arus $I$ mengalir dari titik $a$ ke titik $b$ melalui sebuah resistor $R$ maka penurunan tegangannya adalah $IR$ atau $V_{ab} = V_a - V_b = IR$. Perhatikan bahwa $V_a > V_b$ karena arus mengalir dari titik dengan potensial listrik lebih tinggi ke titik dengan potensial listrik lebih rendah.</p><p>Untuk sebuah baterai $\varepsilon$ bila terminal positif tertaut dengan titik $a$ dan terminal negatif tertaut dengan titik $b$ maka $V_{ab} = V_a - V_b = \varepsilon$ karena saat dihubungkan dengan suatu kawat arus akan mengalir dari titik $a$ ke $b$ melalui kawat yang berarti $V_a > V_b$.</p><h2 id=1-loop-5-res-4-bat>1-loop-5-res-4-bat</h2><p>Suatu rangkaian DC yang terdiri dari tiga baterai dan lima resistor adalah seperti di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/49/0493-a.png)<br>Gambar <a name=fig1>1</a>. Rangkaian arus searah dengan tiga buah baterai $\varepsilon_1$, $\varepsilon_2$, $\varepsilon_3$ dan lima resistor $R_1$, $R_2$, $R_3$, $R_4$, $R_5$, yang ketujuh komponen tersebut tersusun secara seri.</p><p>Konvensi 1 telah dicantumkan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sehingga penelusuran beda potensial akan mengikuti urutan titik-titik $a$ $\rightarrow$ $b$ $\rightarrow$ $c$ $\rightarrow$ $d$ $\rightarrow$ $e$ $\rightarrow$ $f$ $\rightarrow$ $g$ $\rightarrow$ $h$ $\rightarrow$ $a$ sebagai implementasi Konvensi 2.</p><p>Tabel <a name=tab1>1</a>. Tegangan antara dua titik $i$ (inisial, awal) dan $f$ (final, akhir) mengikuti arah arus.</p><table><thead><tr><th style=text-align:center>$i$</th><th style=text-align:center>$f$</th><th style=text-align:center>$v_{if}$</th></tr></thead><tbody><tr><td style=text-align:center>$a$</td><td style=text-align:center>$b$</td><td style=text-align:center>$I R_1$</td></tr><tr><td style=text-align:center>$b$</td><td style=text-align:center>$c$</td><td style=text-align:center>$I R_2$</td></tr><tr><td style=text-align:center>$c$</td><td style=text-align:center>$d$</td><td style=text-align:center>$I R_3$</td></tr><tr><td style=text-align:center>$d$</td><td style=text-align:center>$e$</td><td style=text-align:center>$\varepsilon_2$</td></tr><tr><td style=text-align:center>$e$</td><td style=text-align:center>$f$</td><td style=text-align:center>$I R_4$</td></tr><tr><td style=text-align:center>$f$</td><td style=text-align:center>$g$</td><td style=text-align:center>$-\varepsilon_3$</td></tr><tr><td style=text-align:center>$g$</td><td style=text-align:center>$h$</td><td style=text-align:center>$I R_5$</td></tr><tr><td style=text-align:center>$h$</td><td style=text-align:center>$a$</td><td style=text-align:center>$-\varepsilon_1$</td></tr></tbody></table><p>Isi pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>merupakan implementasi Konvensi 3 untuk resistor dan Konvesi $4$ untuk baterai. Kolom terakhir pada tabel merupakan penerapan Konvensi 5. Selanjutnya dapat dituliskan bahwa</p><p>\begin{equation}\label{eqn:voltage-in-a-loop}
+\begin{array}{c}
+V_{ab} + V_{bc} + V_{cd} + V_{de} + V_{ef} \newline
++ V_{fg} + V_{gh} + V_{ha} = 0,
+\end{array}
+\end{equation}</p><p>yang dengan menggunakan informasi dari Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>akan memberikan</p><p>\begin{equation}\label{eqn:kirchhoff-law-2}
+\begin{array}{c}
+I R_1 + I R_2 + I R_3 + \varepsilon_2 + I R_4 \newline
+- \varepsilon_3 + I R_5 - \varepsilon_1 = 0
+\end{array}
+\end{equation}</p><p>yang tak lain merupakan hukum II Kirchhoff. Dari Persamaan \eqref{eqn:kirchhoff-law-2} dapat diperoleh</p><p>\begin{equation}\label{eqn:kirchhoff-law-2-current}
+I = \frac{\varepsilon_1 - \varepsilon_2 + \varepsilon_3}{R_1 + R_2 + R_3 + R_4 + R_5}
+\end{equation}</p><p>yang merupakan arus yang mengaliri simpul pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=current-and-potential-difference>current and potential difference</h3><p>Nilai-nilai baterai $\varepsilon_1$, $\varepsilon_2$, $\varepsilon_3$ dan resistor $R_1$, $R_2$, $R_3$, $R_4$, $R_5$ diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/49/0493-b.png)<br>Gambar <a name=fig2>2</a>. Sebuah simpul dengan $\varepsilon_1 = 9 \ {\rm V}$, $\varepsilon_1 = 1.5 \ {\rm V}$, $\varepsilon_3 = 7.5 \ {\rm V}$ dan $R_1 = 1 \ \Omega$, $R_2 = 2 \ \Omega$, $R_3 = 3 \ \Omega$, $R_4 = 4 \ \Omega$, $R_5 = 5 \ \Omega$.</p><p>Dengan informasi dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan Persaamaan \eqref {eqn:kirchhoff-law-2-current} akan diperoleh arus yang mengalir pada simpul</p><p>$$
+\begin{array}{rcl}
+I & = & \displaystyle \frac{9 - 1.5 + 7.5}{1 + 2 + 3 + 4 + 5} \newline
+& = & \displaystyle \frac{15}{15} \newline
+& = & 1 \ {\rm A}.
+\end{array}
+$$</p><p>Dengan hasil arus ini Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dilengkapi menjadi</p><p>Tabel <a name=tab2>2</a>. Tegangan antara dua titik $i$ (inisial, awal) dan $f$ (final, akhir) setelah arus $I$ diketahui nilainya.</p><table><thead><tr><th style=text-align:center>$i$</th><th style=text-align:center>$f$</th><th style=text-align:center>$v_{if}$ (V)</th></tr></thead><tbody><tr><td style=text-align:center>$a$</td><td style=text-align:center>$b$</td><td style=text-align:center>$1$</td></tr><tr><td style=text-align:center>$b$</td><td style=text-align:center>$c$</td><td style=text-align:center>$2$</td></tr><tr><td style=text-align:center>$c$</td><td style=text-align:center>$d$</td><td style=text-align:center>$3$</td></tr><tr><td style=text-align:center>$d$</td><td style=text-align:center>$e$</td><td style=text-align:center>$1.5$</td></tr><tr><td style=text-align:center>$e$</td><td style=text-align:center>$f$</td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:center>$f$</td><td style=text-align:center>$g$</td><td style=text-align:center>$-7.5$</td></tr><tr><td style=text-align:center>$g$</td><td style=text-align:center>$h$</td><td style=text-align:center>$5$</td></tr><tr><td style=text-align:center>$h$</td><td style=text-align:center>$a$</td><td style=text-align:center>$-9$</td></tr></tbody></table><p>Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>hanya menunjukkan beda potensial antar dua titik dan belum potensial berdasarkan suatu titi referensi.</p><h3 id=potential-reference>potential reference</h3><p>Suatu titik referensi dapat dipilih dan ditetapkan nilai potensial listriknya sehingga titik-titik lain potensialnya akan dinyatakan secara relatif terhadap titik tersebut.</p><p>![]({{ site.baseurl }}/assets/img/0/49/0493-c.png)<br>Gambar <a name=fig3>3</a>. Potensial listrik di setiap titik dengan referensi $V_g = 0 \ {\rm V}$.</p><p>Titik $g$ dipilih sebagai referensi dan ditetapkan nilai potensialnya adalah nol yang ditunjukkan dengan simbol pembumian atau ground berupa ⏚. Lalu bagaimana cara memperoleh potensial di setiap titik dengan hanya mengetaui bahwa $V_g = 0 \ {\rm V}$? Gunakan Konvensi 5 dan informasi pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Untuk titik $f$</p><p>$$
+\begin{array}{rcl}
+V_f - V_g & = & V_{fg} \newline
+V_f & = & V_{fg} + V_g \newline
+& = & -7.5 + 0 \newline
+& = & -7.5 \ {\rm V}
+\end{array}
+$$</p><p>dan titik $h$</p><p>$$
+\begin{array}{rcl}
+V_{gh} & = & V_g - V_h \newline
+V_h & = & V_g - V_{gh} \newline
+& = & 0 - 5 \newline
+& = & -5 \ {\rm V},
+\end{array}
+$$</p><p>yang memberikan hasil seperti pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=another-value-of-the-reference>another value of the reference</h3><p>Nilai potensial referensi bebas ditetapkan dan titik yang dijadikan referensi juga bebas. Dengan tetap menggunakan titik $g$ akan tetapi saat ini diberi nilai potensial berbeda, yaitu $4 \ {\rm V}$, gambar simpulnya akan menjadi seperti berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/49/0493-d.png)<br>Gambar <a name=fig4>4</a>. Simpul dengan $V_g = 4 \ {\rm V}$.</p><p>Kembali gunakan Konvensi 5, informasi pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, dan ditambah Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk nilai $V_g$. Untuk titik $f$</p><p>$$
+\begin{array}{rcl}
+V_f - V_g & = & V_{fg} \newline
+V_f & = & V_{fg} + V_g \newline
+& = & -7.5 + 4 \newline
+& = & -3.5 \ {\rm V}
+\end{array}
+$$</p><p>dan titik $h$</p><p>$$
+\begin{array}{rcl}
+V_{gh} & = & V_g - V_h \newline
+V_h & = & V_g - V_{gh} \newline
+& = & 4 - 5 \newline
+& = & -1 \ {\rm V}.
+\end{array}
+$$</p><p>Dengan demikian dapat dihitung potensial pada titik $f$ dan $h$</p><h2 id=exer>exer</h2><ol><li>Tentukan nilai potensial listrik pada titik-titik $a$, $b$, $c$, $d$, dan $e$ pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Kevin Beck, &ldquo;How to Calculate a Voltage Drop Across Resistors&rdquo;, Sciencing, 10 Feb 2020, Reviewd by Lana Bandoim, url
+<a href=https://sciencing.com/calculate-voltage-drop-across-resistors-6128036.html target=_blank rel="nofollow noopener noreferrer"><span>https://sciencing.com/calculate-voltage-drop-across-resistors-6128036.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220304].</li><li><a name=r02></a>Wolfram Donat, &ldquo;What Is Voltage in a Battery?&rdquo;, Sciencing, 24 Apr 2017, url
+<a href=https://sciencing.com/voltage-battery-5058989.html target=_blank rel="nofollow noopener noreferrer"><span>https://sciencing.com/voltage-battery-5058989.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220304].</li><li><a name=r03></a>W. M. Saslow, &ldquo;How batteries discharge: A simple model&rdquo;, American Journal of Physics [Am J Phys], vol 76, no 3, p 218-223, Mar 2008, url
+<a href=https://doi.org/10.1119/1.2826658 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1119/1.2826658 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0493?src=hash&amp;ref_src=twsrc%5Etfw">#bug0493</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1499699465032433669?ref_src=twsrc%5Etfw">March 4, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $V_a = 8 \ {\rm V}$, $V_b = 7 \ {\rm V}$, $V_c = 5 \ {\rm V}$, $V_d = 2 \ {\rm V}$, $V_e = 0.5 \ {\rm V}$; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,127 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>polar coordinates intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>polar coordinates intro</h1><time datetime=2021-10-31T20:45:00+07:00>October 31, 2021</time><p>Koordinat polar dapat diperkenalkan dengan contoh pada kehidupan sehari-hari, di mana suatu tempat biasanya dirujuk dari posisi kita dan ke arah mana, misalnya $100 \ \rm km$ ke arah timur laut dari sini, dengan ini selain pemaknaan $r$ dan $\theta$ kerumitan lainnya belum perlu disampaikan [
+<a href=#ref1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Atau langsung dengan perumusannya akan tetapi masih menyembunyikan dimensi ketiganya, yang muncul saat perlu mendefinisikan perkalian silang dua buah vektor [
+<a href=#ref2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Mengaitkannya langsung dengan koordinat silinder merupakan alternatif lain, di mana simbol yang digunakan telah $\phi$ alih-alih $\theta$ [
+<a href=#ref3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sehingga akan memudahkan transisi dari sistem koordinat 2d ke 3d. Dalam sistem koordinat polar ini fungsi untuk menggambarkan kurva-kurva akan memiliki bentuk berbeda dengan dalam sistem koordinat Kartesius [
+<a href=#ref4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=coordinates>coordinates</h2><p>Suatu ruang dibentuk oleh koordinat-koordinatnya [
+<a href=#ref5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk ruang 2d dalam sistem koordinat Kartesius digunakan dua koordinat $x$ dan $y$, sedangkan dalam sistem koordinat polar digunakan koordinat $r$ dan $\theta$. Pasangan koordinat dari kedua sistem koordinat tersebut adalah sebagai berikut</p><p>\begin{equation}\label{eqn-polar-cs-r}
+r = \sqrt{x^2 + y^2},
+\end{equation}</p><p>\begin{equation}\label{eqn-polar-cs-theta}
+\tan\theta = \frac{y}{x},
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-cartesian-cs-x}
+x = r \cos \theta
+\end{equation}</p><p>\begin{equation}\label{eqn-cartesian-cs-y}
+y = r \sin \theta.
+\end{equation}</p><p>Ilustrasi mengenai kedua pasang koordinat di atas diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/01/0015-a.png)<br>Gambar <a name=fig1>1</a>. Terdapat titik-titik $\rm P_1$, $\rm P_2$, dan $\rm P_3$ yang digambarkan dalam koordinat Kartesius (kiri) dan polar (kanan).</p><p>Tiga titik, $\rm P_1$, $\rm P_2$, dan $\rm P_3$, diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, sebagai ilustrasi bagaimana titik $\rm P_1$ pada posisi sembarang, $\rm P_2$ pada sumbu $x$, dan $\rm P_3$ pada sumbu $y$ digambarkan dalam koordinat polar. Nilai $r$ selalu positif dan nilai $\theta$ diukur dari posisi sumbu $x+$ dengan arah putar melawan arah putar jarum jam atau counter clockwise (CCW).</p><p>Tabel <a name=tab1>1</a>. Contoht padanan nilai-nilai koordinat pada sistem koordinat Kartesius dan polar.</p><table><thead><tr><th style=text-align:center>Titik</th><th style=text-align:center>$x$</th><th style=text-align:center>$y$</th><th style=text-align:center>$r$</th><th style=text-align:center>$\theta$</th></tr></thead><tbody><tr><td style=text-align:center>$\rm P_1$</td><td style=text-align:center>$4$</td><td style=text-align:center>$3$</td><td style=text-align:center>$5$</td><td style=text-align:center>$36.7$</td></tr><tr><td style=text-align:center>$\rm P_2$</td><td style=text-align:center>$-3$</td><td style=text-align:center>$0$</td><td style=text-align:center>$3$</td><td style=text-align:center>$180$</td></tr><tr><td style=text-align:center>$\rm P_3$</td><td style=text-align:center>$0$</td><td style=text-align:center>$-4$</td><td style=text-align:center>$4$</td><td style=text-align:center>$270$</td></tr></tbody></table><p>Nilai sudut pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dinyatakan dalam derajat ($^\circ$) yang dapat pula dinyatakan dalam radian ($\rm rad$).</p><h2 id=vector>vector</h2><p>Suatu vektor $\vec{r}$ digambarkan dengan panah, di mana panjang panah merupakan besar vektor $r$ dan ke mana vektor menunjuk merupakan arah vektor $\theta$. Secara umum vektor dapat diuraikan dalam komponen-komponennya yang arah masing-masing komponen ditandai dengan suatu vektor satuan dengan notasi topi atau hat $\hat{}$. Dalam koordinat Kartesius sebuah vektor $\vec{c}$</p><p>\begin{equation}\label{eqn-cartesian-cs-vector}
+\vec{c} = c_x \ \hat{x} + c_y \ \hat{y}
+\end{equation}</p><p>dengan kompononen-komponennya pada arah $x$ dan $y$ dan dalam koordinat polar</p><p>\begin{equation}\label{eqn-polar-cs-vector}
+\vec{c} = c_r \ \hat{r} + c_\theta \ \hat{\theta}
+\end{equation}</p><p>dengan kompononen-komponennya pada arah $r$ dan $\theta$.</p><p>![]({{ site.baseurl }}/assets/img/0/01/0015-b.png)<br>Gambar <a name=fig2>2</a>. Suatu vektor posisi $\vec{r}$ digambarkan dalam koordinat Kartesius (kiri) dan polar (kanan).</p><p>Vektor posisi $\vec{r}$ memiliki kekhususan bahwa komponennya hanya pada arah radial dengan vektor satuan $\hat{r}$ dalam koordinat polar, seperti diilustrasikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(kanan). Selanjutnya dapat dituliskan bahwa suatu vektor posisi</p><p>$$
+\begin{array}{rcl}
+\vec{r} & = & r \ \hat{r}, \newline
+\vec{r} & = & x \ \hat{x} + y \ \hat{y} \newline
+& = & r \cos\theta \ \hat{x} + r \sin\theta \ \hat{y},
+\end{array}
+$$</p><p>sehingga dapat diperoleh Persamaan \eqref{eqn-cartesian-cs-x} dan \eqref{eqn-cartesian-cs-y}. Vektor satuan pada arah radial diperoleh melalui</p><p>\begin{equation}\label{eqn-polar-cs-unit-vector-r}
+\begin{array}{rcl}
+\hat{r} & = & \displaystyle \frac{\vec{r}}{r} \newline
+& = & \displaystyle{r \cos\theta \ \hat{x} + r \sin\theta \ \hat{y}}{r} \newline
+& = & \cos\theta \ \hat{x} + \sin\theta \ \hat{y},
+\end{array}
+\end{equation}</p><p>Kemudian dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terlihat bahwa $\hat{\theta}$ selalu tegak lurus $\hat{r}$ sehingga</p><p>\begin{equation}\label{eqn-polar-cs-unit-vector-theta}
+\begin{array}{rcl}
+\hat{\theta} & = & \hat{r}(\theta+\frac12\pi) \newline
+& = & \cos(\theta+\frac12\pi) \ \hat{x} + \sin(\theta+\frac12\pi) \ \hat{y}, \newline
+& = & -\sin \theta \ \hat{x} + \cos \theta \ \hat{y}.
+\end{array}
+\end{equation}</p><p>Operasi perkalian titik berikut,</p><p>\begin{equation}\label{eqn-polar-cs-unit-vector-r-theta-perp}
+\begin{array}{rcl}
+\hat{r} \cdot \hat{\theta} & = & (\cos\theta \ \hat{x} + \sin\theta \ \hat{y}) \cdot (-\sin \theta \ \hat{x} + \cos \theta \ \hat{y}) \newline
+& = & -\cos \theta \sin \theta + \sin \theta \cos \theta \newline
+& = & 0,
+\end{array}
+\end{equation}</p><p>menunjukkan bahwa $\hat{r} \perp \hat{\theta}$.</p><h2 id=time-derivative>time derivative</h2><p>Dalam sistem koordinat Kartesius turunan terhadap waktu untuk $\hat{x}$ dan $\hat{y}$ adalah nol, akan tetapi tidak demikian dalam sistem koordinat polar. Untuk mempersingkat penulisan notasi</p><p>\begin{equation}\label{eqn-time-derivative-notation}
+\dot{g} \equiv \frac{dg}{dt}
+\end{equation}</p><p>akan digunakan. Selanjutnya, untuk vektor satuan pada arah radial</p><p>\begin{equation}\label{eqn-polar-cs-unit-vector-r-dot}
+\begin{array}{rcl}
+\dot{\hat{r}} & = & -\dot{\theta} \sin\theta \ \hat{x} + \dot{\theta} \cos\theta \ \hat{y} \newline
+& = & \dot{\theta} (-\sin \theta \ \hat{x} + \cos \theta \ \hat{y}) \newline
+& = & \dot{\theta} \hat{\theta}
+\end{array}
+\end{equation}</p><p>dan untuk arah angular</p><p>\begin{equation}\label{eqn-polar-cs-unit-vector-theta-dot}
+\begin{array}{rcl}
+\dot{\hat{\theta}} & = & -\dot{\theta} \cos\theta \ \hat{x} - \dot{\theta} \sin\theta \ \hat{y} \newline
+& = & -\dot{\theta} (\cos\theta \ \hat{x} + \sin\theta \ \hat{y}) \newline
+& = & -\dot{\theta} \hat{r}.
+\end{array}
+\end{equation}</p><p>Perhatikan bahwa turunan terhadap waktu dari satu vektor satuan terkait dengan vektor satuan lainnya. Persamaan \eqref{eqn-polar-cs-unit-vector-r-dot} dan \eqref{eqn-polar-cs-unit-vector-theta-dot} diperlukan karena adanya hubungan</p><p>\begin{equation}\label{eqn-v=drdt}
+\vec{v} = \frac{d\vec{r}}{dt},
+\end{equation}</p><p>\begin{equation}\label{eqn-a=dvdt}
+\vec{a} = \frac{d\vec{v}}{dt},
+\end{equation}</p><p>antara variabel-variabel kinematika.</p><h2 id=kinematic-variables>kinematic variables</h2><p>Variabel kinematika seperti posisi, kecepatan, dan percepatan [
+<a href=#ref6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], terhubung melalui diferensial satu dengan lainnya, yang dalam sistem koordinat polar tidak sesederhana seperti dalam koordinat Kartesius. Hal ini dikarenakan vektor satuannya tidak tetap terhadap waktu, sehingga turunannya terhadap waktu tidak nol, seperti telah diberikan oleh Persamaan \eqref{eqn-polar-cs-unit-vector-r-dot} dan \eqref{eqn-polar-cs-unit-vector-theta-dot}.</p><h3 id=position>position</h3><p>Seperti telah diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i></span></a></p><p>\begin{equation}\label{eqn-polar-cs-position}
+\vec{r} = r \ \hat{r}
+\end{equation}</p><p>adalah vektor posisi dalam koordinat polar.</p><h3 id=velocity>velocity</h3><p>Dengan menerapan Persamaan \eqref{eqn-v=drdt} pada Persamaan \eqref{eqn-polar-cs-position} menggunakan Persamaan \eqref{eqn-polar-cs-unit-vector-r-dot} dan \eqref{eqn-polar-cs-unit-vector-theta-dot} akan diperoleh</p><p>\begin{equation}\label{eqn-polar-cs-velocity}
+\begin{array}{rcl}
+\vec{v} & = & \dot{\vec{r} } \newline
+& = & \dot{r} \ \hat{r} + r \ \dot{\hat{r}} \newline
+& = & \dot{r} \ \hat{r} + r \dot{\theta} \ \hat{\theta},
+\end{array}
+\end{equation}</p><p>di mana suku pertama di ruas kanan merupakan kecepatan pada arah radial $v_r = \dot{r}$ dan suku kedua merupakan kecepatan pada arah angular $v_\theta = r\dot{\theta}$.</p><h3 id=acceleration>acceleration</h3><p>Kembali menggunakan Persamaan \eqref{eqn-polar-cs-unit-vector-r-dot} dan \eqref{eqn-polar-cs-unit-vector-theta-dot} saat menerapkan Persamaan \eqref{eqn-a=dvdt} pada Persamaan \eqref{eqn-polar-cs-velocity} akan memberikan</p><p>\begin{equation}\label{eqn-polar-cs-acceleration}
+\begin{array}{rcl}
+\vec{a} & = & \dot{\vec{v} } \newline
+& = & \ddot{r} \ \hat{r} + \dot{r} \ \dot{\hat{r}} + \dot{r} \dot{\theta} \ \hat{\theta} + r \ddot{\theta} \ \hat{\theta} + r \dot{\theta} \ \dot{\hat{\theta}} \newline
+& = & \ddot{r} \ \hat{r} + \dot{r} \dot{\theta} \ \hat{\theta} + \dot{r} \dot{\theta} \ \hat{\theta} + r \ddot{\theta} \ \hat{\theta} + r \dot{\theta} \ (-\dot{\theta} \ \hat{r}) \newline
+\newline
+& = & \left( \ddot{r} - r \dot{\theta}^2 \right) \ \hat{r} + \left( r\ddot{\theta} + 2\dot{r}\dot{\theta} \right) \ \hat{\theta},
+\end{array}
+\end{equation}</p><p>yang merupakan ungkapan percepatan dalam koordinat polar.</p><h2 id=circular-motion>circular motion</h2><p>Penerapan sistem koordinat polar dapat dilakukan pada berbagai permasalahan, salah satunya adalah pada gerak melingkar, di mana di dalamnya termasuk gerak melingkar beraturan (GMB) dan gerak melingkar berubah beraturan (GMBB). Jenis gerak pertama memiliki percepatan sudut $\alpha = 0$, sedangkan pada jenis gerak yang kedua $\alpha \ne 0$.</p><p>Pada suatu gerak melingkar benda bergerak mengikuti lintasan berbentuk lingkaran berjari-jari tertentu, misalnya $r = R$, yang bernilai tetap. Dengan demikian Persamaan \eqref{eqn-polar-cs-position} akan menjadi</p><p>\begin{equation}\label{eqn-polar-cs-position-ucm}
+\vec{r} = R \ \hat{r},
+\end{equation}</p><p>Persamaan \eqref{eqn-polar-cs-velocity} akan menjadi</p><p>\begin{equation}\label{eqn-polar-cs-velocity-ucm}
+\vec{v} = R \dot{\theta} \ \hat{\theta},
+\end{equation}</p><p>dan Persamaan \eqref{eqn-polar-cs-acceleration} akan menjadi</p><p>\begin{equation}\label{eqn-polar-cs-acceleration-ucm}
+\vec{a} = -R \dot{\theta}^2 \ \hat{r} + R \ddot{\theta} \ \hat{\theta}.
+\end{equation}</p><p>Dengan menggunakan notasi $\omega = \dot{\theta}$ dan menuliskan besarnya saja Persamaan \eqref{eqn-polar-cs-velocity-ucm} akan memberikan</p><p>\begin{equation}\label{eqn-polar-cs-velocity-ucm-tangential}
+v_T = R \omega,
+\end{equation}</p><p>yang merupakan kecepatan tangensial. Dan dengan tambahan $\alpha = \ddot{\theta}$ diperoleh</p><p>\begin{equation}\label{eqn-polar-cs-acceleration-ucm-total}
+\vec{a} = -R \omega^2 \ \hat{r} + R \alpha \ \hat{\theta},
+\end{equation}</p><p>di mana</p><p>\begin{equation}\label{eqn-polar-cs-acceleration-ucm-tangential}
+a_T = R \alpha,
+\end{equation}</p><p>yang merupakan percepatan tangensial dan</p><p>\begin{equation}\label{eqn-polar-cs-acceleration-ucm-centripetal}
+a_C = -R \omega^2 = - \frac{v_T^2}{R},
+\end{equation}</p><p>yang adalah percepatan sentripetal, dengan tanda negatif berarti percepatan menuju ke pusat. Persamaan \eqref{eqn-polar-cs-acceleration-ucm-centripetal} telah menggunakan Persamaan \eqref{eqn-polar-cs-velocity-ucm-tangential}.</p><h2 id=exer>exer</h2><ol><li>Apa hasil dari $\hat{r} \times \hat{\theta}$?</li><li>Mengapa tanda negatif pada Persamaan \eqref{eqn-polar-cs-acceleration-ucm-centripetal} menunjukkan percepatan menuju pusat?</li></ol><h2 id=note>note</h2><ol><li><a name=ref1></a>Jennifer Piggott, Graeme Brown, &ldquo;An Introduction to Polar Coordinates&rdquo;, NRICH Maths, University of Cambridge, 2019, url
+<a href=https://nrich.maths.org/2755 target=_blank rel="nofollow noopener noreferrer"><span>https://nrich.maths.org/2755 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211031].</li><li><a name=ref2></a>Saurabh Basu, &ldquo;Polar Coordinates&rdquo;, PH 101 Classical Mechanics, Department of Physics, Indian Institute of Technology Guwahati, Jul-Nov 2017, url
+<a href=https://www.iitg.ac.in/physics/fac/saurabh/ph101/Lecture2-SBasu.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.iitg.ac.in/physics/fac/saurabh/ph101/Lecture2-SBasu.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211031].</li><li><a name=ref3></a>Carl R. Nave, &ldquo;Cylindrical Polar Coordinates&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/sphc.html#c2 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/sphc.html#c2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20201031].</li><li><a name=ref4></a>Wikipedia contributors, &ldquo;Polar coordinate system&rdquo;, Wikipedia, The Free Encyclopedia, 14 September 2021, 10:13 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1044261299" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1044261299 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211031].</li><li><a name=ref5></a>Tech Target Contributor, &ldquo;coordinates&rdquo;, Whatis.com, Sep 2005, url
+<a href=https://whatis.techtarget.com/definition/coordinates target=_blank rel="nofollow noopener noreferrer"><span>https://whatis.techtarget.com/definition/coordinates <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211031].</li><li><a name=ref6></a>Gavin L. Moir, &ldquo;Strength and Conditioning: A Biomechanical Approach&rdquo;, Jones & Bartlett Learning, 2016, pp. 5-14, url
+<a href=http://samples.jbpub.com/9781284034844/Chapter1.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://samples.jbpub.com/9781284034844/Chapter1.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211031].</li></ol><h2 id=heading> </h2><p><a><span>coord sys 2d intro <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $\hat{k}$; &nbsp; 2) -$\hat{r}$ menuju pusat; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,65 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>ordinary differential equation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>ordinary differential equation</h1><time datetime=2022-03-15T12:30:00+07:00>March 15, 2022</time><p>Persamaan diferensial biasa (PDB) atau ordinary differential equation (ODE) adalah merupakan suatu kesamaan yang melibatkan suatu fungsi dan turunannya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam pengenalan PDB dapat diselesaikan beberapa persamaan diferensial tertentu seperti persamaan skalar order pertama, persamaan linier orde kedua, dan sistem persamaan linier [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk persamaan diferensial dengan lebih dari satu variabel, misalnya persamaan panas, metode separasi variabel akan menghasilkan satu PDB untuk masing-masing variabel [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=types>types</h2><p>Terdapat pembagian PDB menjadi [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><ul><li>autonomous,</li><li>linier,</li><li>nonlinier.</li></ul><p>Di sini hanya akan dibahas jenis yang kedua, yaitu PDB linier.</p><h2 id=ode>ode</h2><p>Suatu PDB berorde $n$ dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:ode-nth-order}
+F\left(x, y, y&rsquo;, \dots, y^{(n)}\right) = 0
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:ode-y-x}
+y = y(x)
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:ode-y-derivative}
+y^{(n)} = \frac{dy}{dx}
+\end{equation}</p><p>merupakan turunan ke $n$ dari $y$ terhadap $x$. Perhatikan bahwa notasi yang digunakan adalah pangkat $(n)$ dan bukan $n$, karena yang pertama berarti turunan ke $n$ sedangkan yang kedua berarti pangkat $n$.</p><h3 id=linear>linear</h3><p>Suatu PDB orde $n$ dikatakan linier bila berbentuk</p><p>\begin{equation}\label{eqn:ode-liniear}
+\sum_{j = 0}^n a_j(x) y^{(j)} = Q(x).
+\end{equation}</p><p>Perhatikan bahwa $a_j(x)$ dapat berbentuk apa saja asalkan bukan fungsi dari $y$ dan turunannya.</p><h3 id=homogeneous>homogeneous</h3><p>Bila $Q(x) = 0$ maka Persamaan \eqref{eqn:ode-liniear} akan menjadi</p><p>\begin{equation}\label{eqn:ode-liniear-homogeneous}
+\sum_{j = 0}^n a_j(x) y^{(j)} = 0
+\end{equation}</p><p>sehingga memiliki sifat tambahan yang disebut sebagai homogen.</p><h2 id=solution>solution</h2><p>Secara umum suatu PDB berorde $n$ memiliki $n$ buah solusi yang saling bebas linier. Lebih jauh, semua kombinasi linier dari solusi fungsi-fungsi bebas linier yang diperoleh, juga merupakan solusi.</p><h3 id=spring-mass-system>spring-mass system</h3><p>Suatu sistem pegas-benda yang berada pada lantai yang licin akan memberikan persamaan</p><p>\begin{equation}\label{eqn:spring-mass-system-newton-2-x-direction}
+ma = -kx
+\end{equation}</p><p>untuk arah $x$ yang diperoleh dari hukum II Newton. Terdapat hubungan</p><p>\begin{equation}\label{eqn:kinematics-a-v}
+a = \frac{dv}{dt}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:kinematics-v-x}
+v = \frac{dx}{dt}
+\end{equation}</p><p>yang akan membuat Persamaan \eqref{eqn:spring-mass-system-newton-2-x-direction} menjadi</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-1}
+m \frac{d^2x}{dt^2} = -kx
+\end{equation}</p><p>yang dapat dituliskan lebih lanjut menjadi</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-2}
+m \frac{d^2x}{dt^2} + kx = 0
+\end{equation}</p><p>sehingga sesuai dengan Persamaan \eqref{eqn:ode-liniear-homogeneous}, yang menyatakan bahwa PDB dari sistem pegas-massa merupakan suatu PDB linier dan homogen. Persamaan \eqref{eqn:ode-spring-mass-system-2} dapat dituliskan menjadi</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-y(x)}
+m y&rsquo;&rsquo; + ky = 0,
+\end{equation}</p><p>bila menggunakan simbol-simbol pada Persamaan \eqref{eqn:ode-liniear-homogeneous}. Perhatikan bahwa notasi pada Persamaan \eqref{eqn:ode-spring-mass-system-2} adalah $x$ dan $t$ sedangkan pada Persamaan \eqref{eqn:ode-liniear-homogeneous} adalah $y$ dan $x$.</p><p>Selanjutnya agar tidak mengaburkan sistem fisis yang direpresentasikan, digunakan simbol $x$ dan $t$, yang akan menghasilkan solusi dari Persamaan \eqref{eqn:ode-spring-mass-system-2} berupa</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-solution-1}
+x_1 = A \cos \omega t
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-solution-2}
+x_2 = B \sin \omega t
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:ode-spring-mass-system-solution-omega}
+\omega = \sqrt{\frac{k}{m}}.
+\end{equation}</p><p>Persamaan \eqref{eqn:ode-spring-mass-system-solution-1} dan \eqref{eqn:ode-spring-mass-system-solution-2} saling bebas linier, di mana, dengan $c$ suatu konstanta, tidak dapat diperoleh bahwa</p><p>$$
+x_2 = c x_1,
+$$</p><p>atau sebaliknya $x_1$ tidak dapat dinyatakan dalam $x_2$ [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Selain dengan cara tersebut, dapat pula saling bebas linier antara $x_1$ dan $x_2$ diperoleh dari</p><p>$$
+c_1 x_1 + c_2 x_2 = 0
+$$</p><p>untuk semua $x$ hanya dapat dipenuhi bila $c_1 = 0$ dan $c_2 = 0$. Selanjutnya, kedua solusi tersebut dapat digambarkan berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/53/0530-a.png)<br>Gambar <a name=fig1>1</a>. Fungsi $c_1 x_1$ dan $c_2 x_2$, serta penjumlahannya yang tidak pernah bernilai nol untuk semua $x$ bila $c_1 = 1 \ne 0$ dan $c_2 = 2 \ne 0$.</p><p>Dikarenakan $x_1$ dan $x_2$ merupakan solusi maka kombinasi linier dari keduanya</p><p>\begin{equation}\label{eqn:linear-combination}
+x_3 = c_1 x_1 + c_2 x_2
+\end{equation}</p><p>juga merupakan solusi. Selanjutnya Persamaan \eqref{eqn:ode-spring-mass-system-2} yang merupakan PDB linier homogen orde kedua memiliki dua solusi yang saling bebas linier, seperti telah diberikan pada Persamaan \eqref{eqn:ode-spring-mass-system-solution-1} dan \eqref{eqn:ode-spring-mass-system-solution-2}.</p><h2 id=exer>exer</h2><ol><li><p>Tentukan dari persamaan-persamaan berikut yang merupakan persamaan diferensial biasa linier.<br>a. $y&rsquo;&rsquo;&rsquo; \tan x = \ln y$.<br>b. $10x^2 - \cos y = y&rsquo;&rsquo;$.<br>c. $y&rsquo;&rsquo; + 2xy&rsquo; + \sin x = 0$.<br>d. $(y&rsquo;)^2 + y&rsquo;&rsquo; = 2x$.<br>e. $\sqrt{y&rsquo;&rsquo;} - x + 2y + 10y&rsquo;&rsquo; = 0$.</p></li><li><p>Tentukan dari persamaan-persamaan berikut yang persamaan diferensial biasa linier yang homogen.<br>a. $y + x^2 y&rsquo;&rsquo; + \tan x = 0$.<br>b. $7x y&rsquo;&rsquo;&rsquo; - 2\sqrt{x} y&rsquo;&rsquo; = y$.<br>c. $y&rsquo;&rsquo;&rsquo; = y&rsquo; \exp(x^2)$.<br>d. $y&rsquo; + y = 2x$.<br>e. $y&rsquo;&rsquo;&rsquo; + y&rsquo;&rsquo; + y + x = 0$.</p></li><li><p>Pada benda jatuh bebas dengan memperhitungkan gesekan udara, akan diperoleh persamaan $ma = -bv$. Tentukan sifat yang paling tepat persamaan diferensial ini dari sifat-sifat berikut.<br>a. Bukan persamaan diferensial.<br>b. Bukan persamaan diferensial biasa.<br>c. Persamaan diferensial biasa.<br>d. Persamaan diferensial biasa linier.<br>e. Persamaan diferensial biasa linier dan homogen.</p></li><li><p>Tentukan sistem fisis mana yang termasuk akan menghasilkan persamaan diferensial biasa linier dan tak-homogen.<br>a. Sistem pegas benda di atas lantai mendatar kasar.<br>b. Sistem pegas benda di atas lantai mendatar licin.<br>c. Sistem pegas vertikal tanpa gesekan udara.<br>d. Sistem pegas vertikal dengan gesekan udara.<br>e. Sistem pegas vertikal tanpa gesekan udara dengan gaya luar fungsi waktu.</p></li><li><p>Tunjukkan bagaimana kombinasi linier dari solusi, seperti pada Persamaan \eqref{eqn:linear-combination}, juga merupakan solusi suatu persamaan diferensial.</p></li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Eric W. Weisstein, &ldquo;Ordinary Differential Equation&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, url
+<a href=https://mathworld.wolfram.com/OrdinaryDifferentialEquation.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/OrdinaryDifferentialEquation.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r02></a>Gabriel Nagy, &ldquo;Ordinary Differential Equations&rdquo;, Mathematics Department, Michigan State University, East Lansing, 18 Jan 2021, url
+<a href=https://users.math.msu.edu/users/gnagy/teaching/ode.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://users.math.msu.edu/users/gnagy/teaching/ode.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r03></a>Paul Dawkins, &ldquo;Differential Equations&rdquo;, Paul&rsquo;s Online Notes, 8 Sep 2020, url
+<a href=https://tutorial.math.lamar.edu/classes/de/de.aspx target=_blank rel="nofollow noopener noreferrer"><span>https://tutorial.math.lamar.edu/classes/de/de.aspx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r04></a>Admin, &ldquo;Ordinary Differential Equation&rdquo;, BYJU&rsquo;S, 31 Aug 2020, url
+<a href=https://byjus.com/maths/ordinary-differential-equations/ target=_blank rel="nofollow noopener noreferrer"><span>https://byjus.com/maths/ordinary-differential-equations/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li><li><a name=r05></a>&ldquo;Linear Combinations, Linear Independence&rdquo;, CliffsNotes, Course Hero, Inc., 2021, url
+<a href=https://www.cliffsnotes.com/study-guides/differential-equations/second-order-equations/linear-combinations-linear-independence target=_blank rel="nofollow noopener noreferrer"><span>https://www.cliffsnotes.com/study-guides/differential-equations/second-order-equations/linear-combinations-linear-independence <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220315].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0530?src=hash&amp;ref_src=twsrc%5Etfw">#bug0530</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1503603997311369216?ref_src=twsrc%5Etfw">March 15, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) c; &nbsp;
+2) b, c; &nbsp;
+3) e; &nbsp;
+4) a, c, d, e; &nbsp;
+5) Substitusikan $x_3$ ke persamaan diferensialnya; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

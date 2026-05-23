@@ -1,0 +1,66 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>relative position | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>relative position</h1><time datetime=2021-10-04T18:54:00+07:00>October 4, 2021</time><p>Posisi relative adalah posisi suatu obyek dinyatakan secara relatif terhadap obyek lainnya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], misalnya seseorang sedang naik kapal yang menyusuri suatu kanal. Posisi kapal umumnya dinyatakan terhadap bumi (tepi kanal, tanah) dan posisi orang dapat pula dinyatakan terhadap referensi yang sama (tepi kanal, tanah) atau dapat menggunakan posisi relatif terhadap kapal.</p><h2 id=notation>notation</h2><p>Sebagai ilustrasi akan dibahas kembali contoh pada bagian awal, yaitu penumpang $\rm P$ yang sedang menaiki kapal $\rm B$ yang sedang menyusuri kanal $\rm C$ dengan origin untuk kerangka acuan $\rm O$ diambil pada tepi kanal sebagaimana tersaji dalam Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0031-a.png)<br>Gambar <a name=fig1>1</a>. Penumpang $\rm P$ yang berada di atas kapal $\rm B$ yang sedang menyusuri kanal $\rm C$.</p><p>Posisi kapal ${\rm B}$ terhadap origin (tepi kanal) diberikan oleh $\vec{r}_{\rm B}$ dan posisi penumpang ${\rm P}$ terhadap origin diberikan oleh $\vec{r} _{\rm P}$. Posisi relatif penumpang $\rm P$ terhadap kapal $\rm B$ diberikan oleh</p><p>\begin{equation}\label{eqn-01}
+\vec{r} _{\rm PB} = \vec{r} _{\rm P} - \vec{r} _{\rm B}.
+\end{equation}</p><p>Mungkin untuk memudahkan mengingatnya, dapat dituliskan</p><p>\begin{equation}\label{eqn-02}
+\vec{r} _{\rm PO} = \vec{r} _{\rm P} - \vec{r} _{\rm O}.
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-03}
+\vec{r} _{\rm BO} = \vec{r} _{\rm B} - \vec{r} _{\rm O},
+\end{equation}</p><p>bahwa saat suatu posisi dinyatakan terhadap suatu orgin, $\vec{r}_{\rm O} = (0, 0, 0)$, sebenarnya posisi tersebut telah dikurangi terhadap posisi origin yang dimaksud ${\rm O}(0, 0, 0)$.</p><h2 id=numerical-calculation>numerical calculation</h2><p>Perhitungan secara numerik dalam menyelesaikan permasalahan fisika dianjurkan karena kesulitan yang dihadapi peserta ajar akan menjadi pengalaman berharga untuk meningkatkan pemahaman dan kemampuan mereka [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk itu contoh Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sebelumnya akan ditingkatkan kesulitannya menjadi seperti dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0031-b.png)<br>Gambar <a name=fig2>2</a>. Penumpang $\rm P$ yang berada di atas truk $\rm T$ yang berada di atas kapal $\rm S$ yang sedang menyusuri kanal $\rm C$ dengan ukuran grid $2 \ {\rm m} \times 2 \ {\rm m}$.</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh bahwa</p><p>$$
+\vec{r}_{\rm S} = (9 \cdot 2) \hat{x} + (6 \cdot 2) \hat{y} = 18\hat{x} + 12 \hat{y},
+$$</p><p>$$
+\vec{r}_{\rm TS} = (5 \cdot 2) \hat{x} + (1 \cdot 2) \hat{y} = 10\hat{x} + 2 \hat{y},
+$$</p><p>$$
+\vec{r}_{\rm PT} = (-3 \cdot 2) \hat{x} + (1 \cdot 2) \hat{y} = -6\hat{x} + 2 \hat{y}.
+$$</p><p>Selain Persamaan \eqref{eqn-01} dapat pula dituliskan hubungan dalam bentuk</p><p>\begin{equation}\label{eqn-04}
+\vec{r} _{\rm P} = \vec{r} _{\rm PT} + \vec{r} _{\rm TS} + \vec{r} _{\rm S},
+\end{equation}</p><p>sehingga dengan menggunakan ketiga persamaan sebelumnya dapat diperoleh bahwa</p><p>$$
+\begin{array}{rcl}
+\vec{r} _{\rm P} & = & \vec{r} _{\rm PT} + \vec{r} _{\rm TS} + \vec{r} _{\rm S} \newline
+& = & (-6\hat{x} + 2 \hat{y}) + (10\hat{x} + 2 \hat{y}) + (18\hat{x} + 12 \hat{y}) \newline
+& = & (-6 + 10 + 18) \hat{x} + (2 + 2 + 12) \hat{y} \newline
+& = & 22 \hat{x} + 16 \hat{y},
+\end{array}
+$$</p><p>yang hasilnya dapat dikonfirmasi dengan menghitung grid untuk $\vec{r} _{\rm P}$ dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=exer>exer</h2><ol><li>Dengan menggunakan informasi dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tentukanlah $\vec{r} _{\rm T}$ secara langsung dengan menghitung grid dan dengan menggunakan informasi $\vec{r} _{\rm S}$ dan $\vec{r} _{\rm TS}$. Kemudian bandingkan hasil keduanya dan apakah sama hasilnya?</li><li>Bila kapal $\rm S$ bergerak maju searah $x+$ dengan besar kecepatan $v_{\rm Sx} = 4 \ \rm m/s$. Tuliskan rumusan posisi setiap saat kapal $\rm S$ bila saa $t = 0 \ \rm s$ posisinya adalah seperti pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>-, &ldquo;Relative Velocities and Relative Positions&rdquo;, IGCE Math Notes, url
+<a href=https://astarmathsandphysics.com/igcse-maths-notes/510-relative-velocities-and-relative-positions.html target=_blank rel="nofollow noopener noreferrer"><span>https://astarmathsandphysics.com/igcse-maths-notes/510-relative-velocities-and-relative-positions.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211004].</li><li><a name=r01></a>Rhett Allain, &ldquo;You Physics Teachers Really Ought to Teach Numerical Calculations&rdquo;, Wired, 4 Mar 2017, url
+<a href=https://www.wired.com/2017/03/physics-teachers-really-teach-numerical-calculations/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.wired.com/2017/03/physics-teachers-really-teach-numerical-calculations/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211004].</li></ol><h2 id=heading> </h2><p><a><span>vector 2d intro <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>meter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>length <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $\vec{r} _{\rm T} = 28 \hat{x} + 14 \hat{y}$, $\vec{r} _{\rm T} = \vec{r} _{\rm TS} + \vec{r} _{\rm S} = (18\hat{x} + 12 \hat{y}) + (10\hat{x} + 2 \hat{y}) = 28 \hat{x} + 14 \hat{y}$, sama. &nbsp;
+2) $\vec{r} _{\rm S}(t) = (18 + 4t) \hat{x} + 12 \hat{y}$</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

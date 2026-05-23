@@ -1,0 +1,234 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>scraping with cheerio | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>scraping with cheerio</h1><time datetime=2023-10-20T14:44:00+07:00>October 20, 2023</time><h2 id=website>website</h2><p>url
+<a href=https://dudung.github.io/web2scrap/elem-class-attr target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/web2scrap/elem-class-attr <i class="fa fa-external-link" style=font-size:14px></i></span></a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>html</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>title</span>&gt;Title of the document&lt;/<span style=color:#f92672>title</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;abcd&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iiii&#34;</span>&gt;Apple&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span>&gt;Cat&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>jsname</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;jjjj&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://www.google.com/&#34;</span>&gt;Google&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>cite</span> <span style=color:#a6e22e>city</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;serang&#34;</span>&gt;Surabaya&lt;/<span style=color:#f92672>cite</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>cite</span>&gt;Malang&lt;/<span style=color:#f92672>cite</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+</span></span></code></pre></div><h2 id=js-code>js code</h2><p>url
+<a href=https://github.com/Darshan972/GoogleScrapingBlogs/blob/main/GoogleorganicResultsScraper.js target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/Darshan972/GoogleScrapingBlogs/blob/main/GoogleorganicResultsScraper.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(original)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>unirest</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;unirest&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cheerio</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;cheerio&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>getOrganicData</span> <span style=color:#f92672>=</span> () =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>unirest</span>
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;http://dudung.github.io/web2scrap/elem-class-attr&#34;</span>)
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>headers</span>({
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;User-Agent&#34;</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36&#34;</span>,
+</span></span><span style=display:flex><span>    })
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>then</span>((<span style=color:#a6e22e>response</span>) =&gt; {
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// Display content of HTML file
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>body</span>);
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>$</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>cheerio</span>.<span style=color:#a6e22e>load</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>body</span>);
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;body&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>body</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>body</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>abcd</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;.abcd&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>abcd</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>abcd</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>efgh</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;.efgh &gt; span&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>efgh</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>efgh</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_attr</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>kota_attr</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#34;city&#34;</span>);
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_attr</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_cont</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>kota_cont</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_cont</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_attr_cont</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite[city=&#39;serang&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>kota_attr_cont</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_attr_cont</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a1</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;a[jsname=&#39;jjjj&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>a1</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a1</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a2</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;a[jsname=&#39;jjjj&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>a2</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#34;href&#34;</span>);
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a2</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>getOrganicData</span>();
+</span></span></code></pre></div><h2 id=html-file>html file</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&lt;!DOCTYPE html&gt;
+</span></span><span style=display:flex><span>&lt;html&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;head&gt;
+</span></span><span style=display:flex><span>  &lt;title&gt;Title of the document&lt;/title&gt;
+</span></span><span style=display:flex><span>  &lt;/head&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;body&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;abcd&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;span class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iiii&#34;</span>&gt;Apple&lt;/span&gt;
+</span></span><span style=display:flex><span>        &lt;span&gt;Cat&lt;/span&gt;
+</span></span><span style=display:flex><span>      &lt;/div&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;a jsname<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;jjjj&#34;</span> href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://www.google.com/&#34;</span>&gt;Google&lt;/a&gt;
+</span></span><span style=display:flex><span>      &lt;/div&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;efgh&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;cite city<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;serang&#34;</span>&gt;Surabaya&lt;/cite&gt;
+</span></span><span style=display:flex><span>        &lt;cite&gt;Malang&lt;/cite&gt;
+</span></span><span style=display:flex><span>      &lt;/div&gt;
+</span></span><span style=display:flex><span>    &lt;/div&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/body&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div></li><li>Snippet<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>body</span>);
+</span></span></code></pre></div></li></ul><h2 id=elem-body-to-text>elem body to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;  \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;    \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Apple\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Cat\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Google\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Surabaya\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Malang\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;    \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;  \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;  \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Snippet<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;body&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>body</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>body</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div></li></ul><h2 id=class-abcd-to-text>class abcd to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Apple\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Cat\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Google\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Surabaya\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;        Malang\n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;      \n&#39;</span> +
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;    &#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>abcd</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;.abcd&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>abcd</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>abcd</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div></li></ul><h2 id=class-efgh-elem-span-to-text>class efgh, elem span to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;Apple&#39;</span>, <span style=color:#e6db74>&#39;Cat&#39;</span> <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>efgh</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;.efgh &gt; span&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>efgh</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>efgh</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div></li></ul><h2 id=elem-cite-attr-city>elem cite, attr city</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;serang&#39;</span>, undefined <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_attr</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>kota_attr</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#34;city&#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_attr</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div><h2 id=elem-cite-to-text>elem cite to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;Surabaya&#39;</span>, <span style=color:#e6db74>&#39;Malang&#39;</span> <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_cont</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>kota_cont</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_cont</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div><h2 id=elem-attr-to-text>elem attr to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;Surabaya&#39;</span> <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>kota_attr_cont</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;cite[city=&#39;serang&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>kota_attr_cont</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>kota_attr_cont</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div></li></ul><h2 id=elem-attr-to-text-1>elem attr to text</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;Google&#39;</span> <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a1</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;a[jsname=&#39;jjjj&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>a1</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a1</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div><h2 id=elem-attr-attr>elem attr attr</h2><ul><li>Result<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> <span style=color:#e6db74>&#39;https://www.google.com/&#39;</span> <span style=color:#f92672>]</span>
+</span></span></code></pre></div></li><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a2</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;a[jsname=&#39;jjjj&#39;]&#34;</span>).<span style=color:#a6e22e>each</span>((<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>el</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>a2</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#a6e22e>el</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#34;href&#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>a2</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span></code></pre></div></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,67 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>euler method intro | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>euler method intro</h1><time datetime=2022-03-15T12:39:00+07:00>March 15, 2022</time><p>Terdapat banyak persamaan diferensial order pertama yang tidak linier, separabel, dan eksak, yang bahkan bila masih separabel dan eksak pun tidak selalu dapat diselesaikan untuk mendapatkan suatu solusi eksplisit, di mana tanpa solusi eksplisit akan amat sulit mencari informasi mengenai solusinya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Metode Euler merupakan salah satu solusi untuk permasalahan ini, yang dapat memecahkan persamaan diferensial biasa bila diberikan suatu kondisi atau syarat awal, di mana metode ini menganalisa persamaan diferensial dengan memanfaatkan ide linearitas lokal atau pendekatan linier [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Metode ini diperkenalkan dalam penyelesaian persamaan diferensial biasa order pertama secara numerik karena secara umum sederhana [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan memiliki berbagai keterbatasan [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=fode>fode</h2><p>Sebuah persamaan diferensial order pertama atau FODE (first order differential equation) berbentuk</p><p>\begin{equation}\label{eqn:fode}
+\frac{dy}{dx} = g(x, y)
+\end{equation}</p><p>ingin dicari solusinya $y = y(x)$. Bila diketahui suatu syarat awal $(x_k, y_k)$ dengan nilai $\Delta x$ yang kecil dan</p><p>\begin{equation}\label{eqn:y=f(x)}
+y_k = y(x_k), \ \ \ \ y_{k+1} = y(x_{k+1}),
+\end{equation}</p><p>dapat didekati bahwa</p><p>\begin{equation}\label{eqn:euler}
+y_{k+1} = y_k + (x_{k+1} - x_k) g(x_k, y_k),
+\end{equation}</p><p>dari pendekatan dari Persamaan \eqref{eqn:fode} berbentuk</p><p>\begin{equation}\label{eqn:gradient}
+\frac{dy}{dx} \approx \frac{\Delta y}{\Delta x} = \frac{y_{k+1} - y_k}{x_{k+1} - x_k},
+\end{equation}</p><p>yang merupakan gradien solusi yang dingin dicari.</p><h2 id=the-method>the method</h2><p>Dengan sumbstitusi Persamaan \eqref{eqn:gradient} ke Persamaan \eqref{eqn:euler} akan diperoleh</p><p>\begin{equation}\label{eqn:euler-method}
+y_{k+1} = y_k + (x_{k+1} - x_k) \left. \frac{dy}{dx} \right|_{x = x_k}
+\end{equation}</p><p>yang merupakan metode Euler. Atau dapat pula dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:euler-method-as-function}
+f(x + \Delta x) = f(x) + \Delta x \frac{df(x)}{dx},
+\end{equation}</p><p>di mana $f(x)$ merupakan fungsi dari satu variabel bebas $x$. Terkait dengan Persaman \eqref{eqn:fode}, $g(x) = f&rsquo;(x)$ dan $y = f(x)$.</p><h2 id=illustrations>illustrations</h2><p>Beberapa persamaan diferensial orde pertama diberikan sebagai ilustrasi.</p><h3 id=v-from-a>v from a</h3><p>Suatu benda yang berbgerak dengan percepatan $a(t)$ akan memiliki persamaan diferensial</p><p>\begin{equation}\label{eqn:velo-from-acce}
+\frac{dv}{dt} = a(t)
+\end{equation}</p><p>untuk memperoleh rumusan kecepatannya, sehingga dapat diperoleh</p><p>\begin{equation}\label{eqn:velo-from-acce-euler}
+v(t + \Delta t) = v(t) + a(t) \Delta t,
+\end{equation}</p><p>dengan metode Euler. Syarat awalnya adalah $v_0 = v(t_0)$.</p><h3 id=x-from-v>x from v</h3><p>Suatu benda yang berbgerak dengan kecepatan $v(t)$ akan memiliki persamaan diferensial</p><p>\begin{equation}\label{eqn:post-from-velo}
+\frac{dx}{dt} = v(t)
+\end{equation}</p><p>untuk memperoleh rumusan posisinya, sehingga dapat diperoleh</p><p>\begin{equation}\label{eqn:post-from-velo-euler}
+x(t + \Delta t) = x(t) + v(t) \Delta t,
+\end{equation}</p><p>dengan metode Euler. Syarat awalnya adalah $x_0 = x(t_0)$.</p><h3 id=v-from-a-x-from-v>v from a, x from v</h3><p>Dua contoh sebelumnya dapat digabungkan sehingga seakan-akan memecahkan persamaan diferensial orde kedua, yang dipisahkan masing-masing menjadi dua persamaan orde pertama, yaitu</p><p>\begin{equation}\label{eqn:post-from-acc-two-fode}
+\begin{array}{c}
+v(t + \Delta t) = v(t) + a(t) \Delta t, \newline
+x(t + \Delta t) = x(t) + v(t) \Delta t,
+\end{array}
+\end{equation}</p><p>dengan metode Euler. Syarat awalnya adalah $v_0 = v(t_0)$ dan $x_0 = x(t_0)$.</p><h3 id=two-dimensional>two-dimensional</h3><p>Bila terdapat gerak dalam dua-dimensi, Persamaan \eqref{eqn:post-from-acc-two-fode} tetap dapat dimanfaatkan dengan menggunakan notasi vektor</p><p>\begin{equation}\label{eqn:post-from-acc-two-fode-vector}
+\begin{array}{c}
+\vec{v}(t + \Delta t) = \vec{v}(t) + \vec{a}(t) \Delta t, \newline
+\vec{r}(t + \Delta t) = \vec{r}(t) + \vec{v}(t) \Delta t,
+\end{array}
+\end{equation}</p><p>di mana $\vec{r} = x(t)\hat{x} + y(t)\hat{y}$ dan $\vec{v} = v_x(t)\hat{x} + v_y(t)\hat{y}$.</p><h2 id=examples>examples</h2><p>Sebagai contoh sistem fisis dari persamaan-persamaan yang telah diberikan disajikan gerak parabola dengan gerak partikel bermuatan pada medan magnetik yang selalu tegak lurus arah geraknya.</p><h3 id=parabolic-motion>parabolic motion</h3><p>Gerak parabola memiliki solusi numerik</p><p>\begin{equation}\label{eqn:fode-euler-parabolic-motion}
+\begin{array}{c}
+\vec{a} = -g\hat{y}, \newline
+\vec{v}(t + \Delta t) = \vec{v}(t) + \vec{a}(t) \Delta t, \newline
+\vec{r}(t + \Delta t) = \vec{r}(t) + \vec{v}(t) \Delta t,
+\end{array}
+\end{equation}</p><p>dengan metode Euler untuk persamaan FODE. Syarat awalnya adalah $\vec{v}(t_0) = v_x(t_0) \hat{x} + v_y(t_0) \hat{y}$ dan $\vec{r}(t_0) = x(t_0) \hat{x} + y(t_0) \hat{y}$. Selain itu terdapat pula syarat dari lingkungannya $\vec{g} = -g\hat{y}$.</p><h3 id=moving-charged-particle-in-perpendicular-magnetic-field>moving charged particle in perpendicular magnetic field</h3><p>Gerak partikel bermuatan dalam medan magnetik tegak lurus arah kecepatan memiliki solusi numerik</p><p>\begin{equation}\label{eqn:fode-mov-chrg-perp-mag-field-motion}
+\begin{array}{c}
+\vec{a} = q v_y(t) B_z \hat{x} - q v_x(t) B_z \hat{y}
+, \newline
+\vec{v}(t + \Delta t) = \vec{v}(t) + \vec{a}(t) \Delta t, \newline
+\vec{r}(t + \Delta t) = \vec{r}(t) + \vec{v}(t) \Delta t,
+\end{array}
+\end{equation}</p><p>dengan metode Euler untuk persamaan FODE. Syarat awalnya adalah $\vec{v}(t_0) = v_x(t_0) \hat{x} + v_y(t_0) \hat{y}$ dan $\vec{r}(t_0) = x(t_0) \hat{x} + y(t_0) \hat{y}$. Selain itu terdapat pula syarat dari lingkungannya $\vec{B} = B_z \hat{z}$.</p><h2 id=exer>exer</h2><ol><li>Rumusan $\displaystyle f(x + \Delta x) = f(x) + \Delta x \frac{df(x)}{dx}$ merupakan solusi untuk apa? Dan apa syaratnya?</li><li>Metode Euler dicontohkan untuk suatu FODE. Apakah dapat diterpakan untuk orde persamaan diferensial yang lebih tinggi? Bagaimana caranya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Paul Dawkins, &ldquo;Euler&rsquo;s Method&rdquo;, Paul&rsquo;s Online Notes, Lamar University, 3 Dec 2018, url
+<a href=https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx target=_blank rel="nofollow noopener noreferrer"><span>https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220301].</li><li><a name=r02></a>Jenn &ldquo;How to do Euler&rsquo;s Method? Simply Explained in 3 Powerful Examples&rdquo;, Calcworkshop LLC, 31 Dec 2019, url
+<a href=https://calcworkshop.com/first-order-differential-equations/eulers-method-table/ target=_blank rel="nofollow noopener noreferrer"><span>https://calcworkshop.com/first-order-differential-equations/eulers-method-table/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220301].</li><li><a name=r03></a>Kenneth Howell, &ldquo;Euler’s Numerical Method&rdquo;, Ordinary Differential Equations An Introduction to the Fundamentals, The University of Alabama in Huntsville, 28 Jun 2010, url
+<a href=https://www.uah.edu/images/people/faculty/howellkb/DEText-Ch9.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.uah.edu/images/people/faculty/howellkb/DEText-Ch9.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220301].</li><li><a name=r04></a>Laura Evans, &ldquo;Limitations of Euler&rsquo;s Method for Numerical Integration&rdquo;, 18.034 Honors Differential Equations, Massachusetts Institute of Technology, Spring 2007, url
+<a href=https://dspace.mit.edu/bitstream/handle/1721.1/55903/18-034Spring-2007/NR/rdonlyres/Mathematics/18-034Spring-2007/Projects/eulerl.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://dspace.mit.edu/bitstream/handle/1721.1/55903/18-034Spring-2007/NR/rdonlyres/Mathematics/18-034Spring-2007/Projects/eulerl.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220301].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0531?src=hash&amp;ref_src=twsrc%5Etfw">#bug0531</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1503606086951391236?ref_src=twsrc%5Etfw">March 15, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) solusi persamaan diferensial biasa orde pertama, syarat awal diperlukan; &nbsp;
+2) ya, persamaan diferensial dengan orde lebih tinggi dipecahkan menjadi beberapa FODE yang saling terkait; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

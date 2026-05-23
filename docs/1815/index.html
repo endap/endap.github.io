@@ -1,0 +1,60 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>How about electronic circuit | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>How about electronic circuit</h1><time datetime=2024-01-14T07:51:28+07:00>January 14, 2024</time><p>JS lib for drawing electronic circuit can not be found, and following is the current alternative.</p><h2 id=plain-text>plain text</h2><pre tabindex=0><code>            R1
+     +----\/\/\----+
+     |             |
+     | +           &gt;
+ ε1 ---            &lt; R2
+     -             &gt;
+     |             |
+     +----\/\/\/---+
+             R3
+</code></pre><h2 id=mermaid>mermaid</h2><div class=mermaid>flowchart LR
+o1 --- R1 --- o2
+o2 --- R2 --- o3
+o4 --- R3 --- o3
+o1 --- E1 --- o4
+R1["R1"]
+R2["R2"]
+R3["R3"]
+E1(["&#1013;1"])
+o1((" ")); o2((" ")); o3((" ")); o4((" "));</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  o1 --- R1 --- o2
+  o2 --- R2 --- o3
+  o4 --- R3 --- o3
+  o1 --- E1 --- o4
+  R1[&#34;R1&#34;]
+  R2[&#34;R2&#34;]
+  R3[&#34;R3&#34;]
+  E1([&#34;&amp;varepsilon;1&#34;])
+  o1((&#34; &#34;)); o2((&#34; &#34;)); o3((&#34; &#34;)); o4((&#34; &#34;));
+{{&lt; /mermaid &gt;}}
+</code></pre><h2 id=svg>svg</h2><pre tabindex=0><code>{{&lt; blank/svgpath width=200 height=200 &gt;}}
+B_STYLE red,3,none # resistor 1
+M 40 30
+l 40 0 l 2.5 10
+l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20
+l 2.5 10 l 40 0
+
+B_STYLE green,3,none # resistor 2
+M 160 30
+l 0 40 l 10 2.5 
+l -20 5  l 20 5 l -20 5 l 20 5 l -20 5 l 20 5 l -20 5
+l 10 2.5 l 0 40
+
+B_STYLE blue,3,none # resistor 3
+M 160 150
+l -40 0 l -2.5 10
+l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20
+l -2.5 10 l -40 0
+
+B_STYLE cyan,3,none # battery 1
+M 40 150
+l 0 -50
+m -8 0 l 16 0
+m -8 -10 l -20 0 l 40 0
+m 0 -10 l 0 -10 m -5 5 l 10 0
+m -25 15 l 0 -60 
+{{&lt; /blank/svgpath &gt;}}
+</code></pre><h2 id=refs>refs</h2><p>Not quite meet the need, but inspiring</p><ul><li><a href=https://github.com/mermaid-js/mermaid/issues/2112#issuecomment-1632889991 target=_blank rel="nofollow noopener noreferrer"><span>[Feature Request] Electrical circuit diagrams <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://www.wiquid.fr/index.php/2022/11/22/a-circuit-simulator-in-javascript/ target=_blank rel="nofollow noopener noreferrer"><span>An electronic circuit simulator in javascript <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://www.jointjs.com/demos/logic-circuits target=_blank rel="nofollow noopener noreferrer"><span>Logic Circuits <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://synergycodes.com/blog/simplify-your-work-in-power-electronics/ target=_blank rel="nofollow noopener noreferrer"><span>Simplify Your Work in Power Electronics with Circuit Diagram Tool <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://www.jsdelivr.com/package/npm/jointjs target=_blank rel="nofollow noopener noreferrer"><span>CDN jointjs <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://stackoverflow.com/a/20620297/9475509 target=_blank rel="nofollow noopener noreferrer"><span>Question on SO, comment #3 <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

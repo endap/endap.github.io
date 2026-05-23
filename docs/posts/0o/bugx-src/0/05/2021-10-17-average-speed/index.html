@@ -1,0 +1,156 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>average speed | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>average speed</h1><time datetime=2021-10-19T15:23:00+07:00>October 19, 2021</time><p>Laju rata-rata adalah jarak yang ditempuh dibagi dengan waktu selama gerak itu terjadi [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang kadang disebut saja sebagai laju, sebagai suatu definisi yang belum final [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], atau penyederhanaan untuk kalangan tertentu [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Untuk menghitung laju rata $s_{\rm avg}$ dari waktu inisial $t_i$ sampai waktu final $t_f$, untuk kasus 1d, dapat diperoleh dari fungsi kecepatan $v$</p><p>\begin{equation}\label{eqn-1}
+s_{\rm avg} = \frac{1}{t_f - t_i} \int_{t_i}^{t_f} \left| v \right| dt \equiv \bar{s}
+\end{equation}</p><p>ataupun fungsi posisi $x$</p><p>\begin{equation}\label{eqn-2a}
+s_{\rm avg} = \frac{1}{t_f - t_i} \sum_{n = 1}^N \left| x_{n+1} - x_n \right| \equiv \bar{s},
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn-2b}
+x_n = x(t_i) + \left[ \frac{x(t_f) - x(t_i)}{N} \right] (n - 1),
+\end{equation}</p><p>di mana yang lazim adalah dengan menggunakan Persaamaan \eqref{eqn-1} ketimbang Persamaan \eqref{eqn-2a}. Penggunaan Persamaan \eqref{eqn-1} pun tidak dilakukan secara eksplisit melainkan melalui menghitung luas di bahwa kurva pada grafik $v-t$. Atau secara sederhana</p><p>\begin{equation}\label{eqn-1b}
+\bar{s} \equiv s_{\rm avg} = \frac{d_{if}}{t_f - t_i}
+\end{equation}</p><p>bila jarak $d_{if}$ yang ditempuh antar waktu $t_i$ dan $t_f$ telah diketahui. Persamaan \eqref{eqn-1b} berlaku umum untuk kasua 1d, 2d, dan 3d.</p><h2 id=1d-motion>1d motion</h2><p>Sebuah kotak bergerak dari posisi $x_1$ sampai posisi $x_5$ mulai dari waktu $t_1$ sampai waktu $t_5$ sebagaimana diilustrasikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0052-a.png)<br>Gambar <a name=fig1>1</a>. Sebuah kotak bergerak dari satu titik ke titik lainnya sepanjang sumbu $x$, dengan kecepatan benda bernilai konstan saat bergerak antar dua titik berurutan.</p><div style=float:left;width:200px;padding-right:20px>Tabel <a name=tab1>1</a>. Posisi benda pada waktu tertentu.<table style=width:120px><tr><td>$n$</td><td>$t_n$</td><td>$x_n$</td></tr><tr><td>$1$</td><td>$0$</td><td>$1$</td></tr><tr><td>$2$</td><td>$2$</td><td>$3$</td></tr><tr><td>$3$</td><td>$5$</td><td>$9$</td></tr><tr><td>$4$</td><td>$6$</td><td>$8$</td></tr><tr><td>$5$</td><td>$10$</td><td>$0$</td></tr></table></div><div style=float:left;width:200px>Tabel <a name=tab2>2</a>. Kecepatan benda pada selang waktu tertentu.<table style=width:140px><tr><td style=text-align:center>$t$</td><td>$v$</td></tr><tr><td>$0 \le t < 2$</td><td>$1$</td></tr><tr><td>$2 \le t < 5$</td><td>$2$</td></tr><tr><td>$5 \le t < 6$</td><td>$-1$</td></tr><tr><td>$6 \le t < 10$</td><td>$-2$</td></tr></table></div><br clear=all><div style="float:left;width:200px;padding-right:20px;border:0 solid #000;font-size:80%">\begin{equation}\label{eqn-3}
+x = \left\{
+\begin{array}{rr}
+t + 1, & 0 \le t < 2, \newline
+2t - 1, & 2 \le t < 5, \newline
+14 - t, & 5 \le t < 6, \newline
+20 - 2t, & 6 \le t < 10,
+\end{array}
+\right.
+\end{equation}</div><div style="float:left;width:200px;border:0 solid #000;font-size:80%">\begin{equation}\label{eqn-4}
+v = \left\{
+\begin{array}{rr}
+1, & 0 \le t < 2, \newline
+2, & 2 \le t < 5, \newline
+-1, & 5 \le t < 6, \newline
+-2, & 6 \le t < 10,
+\end{array}
+\right.
+\end{equation}</div><br clear=all><div style="float:left;width:200px;padding-right:20px;border:0 solid #000"><img src="{{ site.baseurl }}/assets/img/0/05/0052-b1.png">
+Gambar <a name=fig2>2</a>. Posisi benda setiap saat.</div><div style="float:left;width:200px;border:0 solid #000"><img src="{{ site.baseurl }}/assets/img/0/05/0052-b2.png">
+Gambar <a name=fig3>3</a>. Kecepatan benda setiap saat.</div><br clear=all><p>Ilustrasi gerak benda pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>diperjelas dengan informasi posisi benda dan waktu pada setiap titik pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>serta kecepatan antar dua buah titik pada Tabel
+<a href=#tab2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang secara eksplisit dituliskan dalam Persamaan \eqref{eqn-3} dan Persamaan \eqref{eqn-4} untuk posisi $x$ dan kecepatan $v$, berturut-turut. Grafik untuk keduanya pun diberikan dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Selanjutnya dengan menggunakan tabel, di mana baris menggambarkan posisi inisial (awal) dan kolom posisi final (akhir) dapat dicari jarak $d_{if}$ dan selang waktu $\Delta t_{if}$.</p><p>Tabel <a name=tab3>3</a>. Jarak, selang waktu, dan laju rata-rata benda.</p><table><thead><tr><th style=text-align:center>$d_{if}$</th><th style=text-align:center>1</th><th style=text-align:center>2</th><th style=text-align:center>3</th><th style=text-align:center>4</th><th style=text-align:center>5</th></tr></thead><tbody><tr><td style=text-align:center>$1$</td><td style=text-align:center></td><td style=text-align:center>$2$</td><td style=text-align:center>$8$</td><td style=text-align:center>$9$</td><td style=text-align:center>$17$</td></tr><tr><td style=text-align:center>$2$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$6$</td><td style=text-align:center>$7$</td><td style=text-align:center>$15$</td></tr><tr><td style=text-align:center>$3$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$1$</td><td style=text-align:center>$9$</td></tr><tr><td style=text-align:center>$4$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$8$</td></tr><tr><td style=text-align:center>$5$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td></td></tr></tbody></table><table><thead><tr><th style=text-align:center>$\Delta t_{if}$</th><th style=text-align:center>1</th><th style=text-align:center>2</th><th style=text-align:center>3</th><th style=text-align:center>4</th><th style=text-align:center>5</th></tr></thead><tbody><tr><td style=text-align:center>$1$</td><td style=text-align:center></td><td style=text-align:center>$2$</td><td style=text-align:center>$5$</td><td style=text-align:center>$6$</td><td style=text-align:center>$10$</td></tr><tr><td style=text-align:center>$2$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$3$</td><td style=text-align:center>$4$</td><td style=text-align:center>$8$</td></tr><tr><td style=text-align:center>$3$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$1$</td><td style=text-align:center>$5$</td></tr><tr><td style=text-align:center>$4$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$4$</td></tr><tr><td style=text-align:center>$5$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td></td></tr></tbody></table><table><thead><tr><th style=text-align:center>$\bar{s}_{if}$</th><th style=text-align:center>1</th><th style=text-align:center>2</th><th style=text-align:center>3</th><th style=text-align:center>4</th><th style=text-align:center>5</th></tr></thead><tbody><tr><td style=text-align:center>$1$</td><td style=text-align:center></td><td style=text-align:center>$1$</td><td style=text-align:center>$\frac85$</td><td style=text-align:center>$\frac32$</td><td style=text-align:center>$1.7$</td></tr><tr><td style=text-align:center>$2$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$2$</td><td style=text-align:center>$1\frac34$</td><td style=text-align:center>$1\frac78$</td></tr><tr><td style=text-align:center>$3$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$1$</td><td style=text-align:center>$1\frac45$</td></tr><tr><td style=text-align:center>$4$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center>$2$</td></tr><tr><td style=text-align:center>$5$</td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td style=text-align:center></td><td></td></tr></tbody></table><p>Tabel
+<a href=#tab3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>bagian bawah diperoleh dengan menggunakan informasi dari tabel bagian atas dan tengah yang dimasukkan ke Persamaan \eqref{eqn-1b}. Perhatikan bahwa nilai laju rata-rata selalu berharga positif. Dan untuk semakin banyak jumlah titik yang diperhitungkan (dilewati benda) nilai jarak yang diperoleh akan semakin besar, misalnya $d_{14} > d_{13}$ karena yang pertama melewati empat titik (1, 2, 3, 4) dan yang kedua hanya tiga titik (1, 2, 3).</p><p>Dengan menggunakan Persamaan \eqref{eqn-1} yang sebenarnya adalah menghitung luas di bawah kurva dengan memutlakkan semua nilai luas yang diperoleh.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0052-c1.png)<br><center>(a)</center>| ![]({{ site.baseurl }}/assets/img/0/05/0052-c2.png)<br><center>(b)</center>![]({{ site.baseurl }}/assets/img/0/05/0052-c3.png)<br><center>(a)</center>| ![]({{ site.baseurl }}/assets/img/0/05/0052-c4.png)<br><center>(b)</center></p><p>Gambar <a name=fig4>4</a>. Luas di bawah kurva untuk waktu: (a) $0 - 6 \ \rm s$, (b) $0 - 7 \ \rm s$, (c) $0 - 8 \ \rm s$, dan (d) $0 - 10 \ \rm s$.</p><p>Dengan menggunakan informasi dari Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dihitung laju rata-rata seperti dalam
+<a href=#tab4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut. Ingat bahwa semua nilai luas di bawah kurva digunakan nilai mutlaknya (bila bernilai negatif, dibuat menjadi positif).</p><p>Tabel <a name=tab4>4</a>. Selang waktu, jarak, dan laju rata-rata.</p><table><thead><tr><th style=text-align:center>$\Delta t$</th><th style=text-align:center>$d$</th><th style=text-align:center>$s_{\rm avg}$</th></tr></thead><tbody><tr><td style=text-align:center>$6 - 0 = 6$</td><td style=text-align:center>$|+2| + |+6| + |-1| = 9$</td><td style=text-align:center>$\frac32$</td></tr><tr><td style=text-align:center>$7 - 0 = 7$</td><td style=text-align:center>$|+2| + |+6| + |-1| + |-2| = 11$</td><td style=text-align:center>$1\frac47$</td></tr><tr><td style=text-align:center>$8 - 0 = 8$</td><td style=text-align:center>$|+2| + |+6| + |-1| + |-4| = 13$</td><td style=text-align:center>$1\frac58$</td></tr><tr><td style=text-align:center>$10 - 0 = 10$</td><td style=text-align:center>$|+2| + |+6| + |-1| + |-8| = 17$</td><td style=text-align:center>1.7</td></tr></tbody></table><p>Nilai pada baris pertama dan terakhir pada Tabel
+<a href=#tab4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dikonfirmasi dengan nilai pada Tabel
+<a href=#tab3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=2d-motion>2d motion</h2><p>Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>merupakan salah satu gerak 2d yang akan dijadikan sebagai contoh untuk menghitung laju rata-rata.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0052-d.png)<br>Gambar <a name=fig5>5</a>. Gerak 2d dengan selang waktu antara dua titik berurutan adalah $1 \ \rm s$ dan grid $1 \ {\rm m} \times 1 \ {\rm m}$.</p><p>Dengan memperhatikan Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dihitung jarak antar dua titik berurutan sebagai seperti dalam Tabel
+<a href=#tab5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>Tabel <a name=tab5>5</a>. Jarak antar dua titik berurutan dalam Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>$t_i$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$
+$t_f$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$
+$d_{t_i - t_f}$ | $\frac56 \pi$ | $\frac56 \pi$ | $\frac56 \pi$ | $\frac52$ | $\frac52$ | $3$ | $3$ | $4$ |$5$ | $10$</p><p>Dengan demikian bila ingin dicari, misalnya antara waktu inisial (awal) $t = 2$ dan waktu final (akhir) $t = 6$ maka jarak yang ditempuh adalah</p><p>$$
+\begin{array}{rcl}
+d_{2-6} & = & d_{2-3} + d_{3-4} + d_{4-5} + d_{5-6} \newline
+& = & \frac56 \pi + \frac52 + \frac52 + 3 \newline
+& = & \frac56 \pi + 8
+\end{array}
+$$</p><p>dan dapat pula dicari untuk antar dua titik yang lainnya. Masih untuk waktu antara $t = 2$ dan $t = 6$ ini $\Delta t = 6 - 2 = 4$ sehingga</p><p>$$
+\begin{array}{rcl}
+\bar{v}<em>{2-6} & = & \displaystyle \frac{d</em>{2-6}}{\Delta t} \newline
+& = & \displaystyle \frac{\frac56 \pi + 8}{4} \newline
+& = & \frac{5}{24} \pi + 2
+\end{array}
+$$</p><p>adalah laju rata-ratanya.</p><p>Tabel <a name=tab6>6</a> Jarak antar dua titik mulai dari $t = 0$ sampai $t = 10$.</p><p>$d$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+0 | | $\frac56 \pi$ | $\frac53 \pi$ | $\frac52 \pi$ | $\frac52 \pi + \frac52$ | $\frac52 \pi + 5$ | $\frac52 \pi + 8$ | $\frac52 \pi + 11$ | $\frac52 \pi + 15$ | $\frac52 \pi + 20$ | $\frac52 \pi + 30$<br>1 | | | $\frac56 \pi$ | $\frac53 \pi$ | $\frac53 \pi + \frac52$ | $\frac53 \pi + 5$ | $\frac53 \pi + 8$ | $\frac53 \pi + 11$ | $\frac53 \pi + 15$ | $\frac53 \pi + 20$ | $\frac53 \pi + 30$
+2 | | | | $\frac56 \pi$ | $\frac56 \pi + \frac52$ | $\frac56 \pi + 5$ | $\frac56 \pi + 8$ | $\frac56 \pi + 11$ | $\frac56 \pi + 15$ | $\frac56 \pi + 20$ | $\frac56 \pi + 30$
+3 | | | | | $\frac52$ | $5$ | $8$ | $11$ | $15$ | $20$ | $30$
+4 | | | | | | $2\frac12$ | $5\frac12$ | $8\frac12$ | $12\frac12$ | $17\frac12$ | $27\frac12$
+5 | | | | | | | $3$ | $6$ | $10$ | $15$ | $25$
+6 | | | | | | | | $3$ | $7$ | $12$ | $22$
+7 | | | | | | | | | $4$ | $9$ | $19$
+8 | | | | | | | | | | $5$ | $15$
+9 | | | | | | | | | | | $10$
+10 | | | | | | | | | | | |</p><p>Dengan $\Delta t = t_f - t_i$ dan jarak antar dua titik terlah diberikan oleh Tabel
+<a href=#tab6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>maka laju rata-rata antar dua titik mulai dari $t = 0$ sampai $t = 10$ dapat dihitung.</p><h2 id=3d-motion>3d motion</h2><p>Salah satu masalah dalam membahas gerak 3d adalah memberikan ilustrasinya. Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut merupakan salah satu contoh gerak yang cukup sederhana dengan antar dua titik berurutan benda bergerak dengan kecepatan tetap. Secara umum bisa saja benda bergerak menguti suatu fungsi parametric $x(t)$, $y(t)$, dan $z(t)$.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0052-e.png)<br>Gambar <a name=fig6>6</a>. Gerak 3d dengan kecepatan konstan antar dua waktu berurutan dan grid $1 \ {\rm m} \times 1 \ {\rm m} \times 1 \ {\rm m}$.</p><p>Komponen $x$, $y$, dan $z$ untuk menghitung jarak antar dua waktu berurutan diberikan pada Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>agar memudahkan, yang sebenarnya dapat dibaca pula dari grafik dengan menggunakan garis bantu (putus-putus) sewarna dengan vektornya. Jarak antara $t = 0$ dan $t = 3$ dapat dihitung melalui</p><p>\begin{equation}\label{eqn-5}
+d_{0-3} = \sqrt{x_{0-3}^2 + y_{0-3}^2 + y_{0-3}^2}
+\end{equation}</p><p>bila lintasannya berupa garis lurus, dengan</p><p>\begin{equation}\label{eqn-5b}
+\begin{array}{rcl}
+x_{0-3} & = & x(3) - x(0), \newline
+y_{0-3} & = & y(3) - y(0), \newline
+z_{0-3} & = & z(3) - z(0),
+\end{array}
+\end{equation}</p><p>di mana $x(3)$ berarti nilai $x$ saat $t = 3$.</p><p>Tabel <a name=tab7>7</a>. Jarak antar dua titik berurutan suatu gerak 3d pada Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan laju rata-ratanya.</p><table><thead><tr><th style=text-align:center>$t_i$</th><th style=text-align:center>$t_f$</th><th style=text-align:center>$x_{i-f}$</th><th style=text-align:center>$y_{i-f}$</th><th style=text-align:center>$z_{i-f}$</th><th style=text-align:center>$d$</th><th style=text-align:center>$\Delta t$</th><th style=text-align:center>$s_{\rm avg}$</th></tr></thead><tbody><tr><td style=text-align:center>0</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>8</td><td style=text-align:center>1</td><td style=text-align:center>9</td><td style=text-align:center>3</td><td style=text-align:center>3</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>10</td><td style=text-align:center>3</td><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>7</td><td style=text-align:center>7</td><td style=text-align:center>1</td></tr><tr><td style=text-align:center>10</td><td style=text-align:center>13</td><td style=text-align:center>4</td><td style=text-align:center>2</td><td style=text-align:center>4</td><td style=text-align:center>6</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr><tr><td style=text-align:center>13</td><td style=text-align:center>15</td><td style=text-align:center>2</td><td style=text-align:center>1</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>1.5</td></tr></tbody></table><p>Antara $t = 0$ dan $t = 10$ dapat diperoleh</p><p>\begin{array}{rcl}
+d_{0-10} & = & d_{0-3} + d_{3-10} \newline
+& = & 9 + 7 \newline
+& = & 16
+\end{array}</p><p>dan dengan $\Delta t = 10 - 0 = 10$ akan diperoleh $s_{\rm avg} = 16 / 10 = 1.6$. Laju rata-rata antar dua waktu yang lain dapat diperoleh dengan cara yang sama. Selanjutnya, hanya sebagai motivasi, contoh fungsi yang lebih rumit diberikan pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0052-f.png)<br>Gambar <a name=fig7>7</a>. Gerak 3d mengikuti suatu fungsi parametric dengan grid $0.5 \times 0.5 \times 0.5$.</p><p>Grafik pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh melalui fungsi parametric berikut</p><p>$$
+\begin{array}{rcl}
+x & = & 0.1 t \cos 2t, \newline
+y & = & 0.1 t \sin 2t, \newline
+z & = & 0.15 t,
+\end{array}
+$$</p><p>dengan $0 \le t \le 20$ dalam 200 langkah yang dilukis secara daring menggunakan [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Bagaimana menghitung panjang lintasan atau jarak dan kemudian laju untuk gerak 3d seperti pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tidak akan dibahas di sini. Gambar tersebut diberikan hanya untuk ilustrasi bahwa ada bentuk lintasan yang lebih rumit yang tidak dapat dihitung secara sederhana menggunakan Persamaan \eqref{eqn-1} ataupun Persamaan \eqref{eqn-2a}.</p><h2 id=exer>exer</h2><ol><li>Hitunglah laju rata-rata antara $t = 8$ dan $t = 10$ dari Tabel
+<a href=#tab6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Dengan menggunakan Tabel
+<a href=#tab6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>carial nilai $\bar{v}_{5-10}$.</li><li>Carilah $\bar{s}_{3-15}$ dari Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Paul Peter Urone, Roger Hinrichs, &ldquo;Time, Velocity, and Speed&rdquo;, in College Physics, OpenStax, Houston, Texas, 21 Jun 2012, url
+<a href=https://openstax.org/books/college-physics/pages/2-3-time-velocity-and-speed target=_blank rel="nofollow noopener noreferrer"><span>https://openstax.org/books/college-physics/pages/2-3-time-velocity-and-speed <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211017].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Speed&rdquo;, Wikipedia, The Free Encyclopedia, 18 August 2021, 08:28 UTC,
+<a href="https://en.wikipedia.org/w/index.php?oldid=1039365254" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1039365254 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211017].</li><li><a name=r03></a>Glenn Elert, &ldquo;Speed and Velocity&rdquo;, in the Physics Hypertextbook, 2021, url
+<a href=https://physics.info/velocity/ target=_blank rel="nofollow noopener noreferrer"><span>https://physics.info/velocity/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211017].</li><li><a name=r04></a>Ducksters, &ldquo;Physics for Kids: Speed and Velocity&rdquo;, Ducksters, Technological Solutions, Inc. (TSI), url
+<a href=https://www.ducksters.com/science/physics/speed_and_velocity.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.ducksters.com/science/physics/speed_and_velocity.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211017].</li><li><a name=r05></a>Paul Seeburger, &ldquo;Space Curves: Helix&rdquo;, CalcPlot3D, Monroe Community College, 18 Aug 2020, url
+<a href=https://c3d.libretexts.org/CalcPlot3D/index.html#SpaceCurves target=_blank rel="nofollow noopener noreferrer"><span>https://c3d.libretexts.org/CalcPlot3D/index.html#SpaceCurves <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>average velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $7.5$; &nbsp; 2) $5$; &nbsp; 3) $4/3$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

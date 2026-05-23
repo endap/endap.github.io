@@ -1,0 +1,98 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>vib 1-d grains | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>vib 1-d grains</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-09-05T12:44:23 07:00">5 Sep 2025</time>
+&#183;
+3 mins read</div></div><div class=note-content><ul><li><code>05-sep-2025</code>
+<a href="https://github.com/dudung/
+25i20/blob/main/01/
+README.md" target=_blank rel=noopener><code>25i20.01</code>
+</a>Initial discussion and sketcth.</li></ul><h2 id=notes>notes</h2><ul><li>Source of the disturbance is a vibrator, which make the grains oscillating <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</li><li>Problem when aligning grouped objects in Word and solution with Inkscape <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</li><li>Inkscape installation for creating the figures <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li><li>Sections eqns-a &ndash; eqns-e on 05-sep-2025.</li><li>There is a color scheme for showing Mermaid code on
+<a href=/butiran/25i25/><span>25i25
+</span></a>.</li></ul><h2 id=eqns-a>eqns-a</h2><ul><li>max function
+$$\tag{1}
+\max(a, b) = \left\{
+\begin{array}{rc}
+a, & a \ge b, \newline
+b, & a &lt; b.
+\end{array}
+\right.
+$$</li><li>sign function
+$$\tag{2}
+{\rm sign(x)} = \left\{
+\begin{array}{rc}
+1, & x > 0, \newline
+0, & x = 0, \newline
+-1, & x &lt; 0.
+\end{array}
+\right.
+$$</li></ul><h2 id=egns-b>egns-b</h2><ul><li>Weight of particle $i$ is <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>
+$$\tag{3}
+\vec{W}_{i} = m_i \vec{g},
+$$
+with $g$ is gravitational acceleration.</li></ul><h2 id=egns-c>egns-c</h2><ul><li>Base particle has mass $m_0$, radius $R_0$, vertical position $z_0$.</li><li>Relative position of particle $i$ from particle $j$ is
+$$\tag{4}
+\vec{r}_{ij} = \vec{r}_i - \vec{r}_j.
+$$</li><li>Relative distance of particle $i$ from particle $j$ is
+$$\tag{5}
+r_{ij} = |\vec{r}_{ij}|.
+$$</li><li>Unit verctor of relative position is
+$$\tag{6}
+\hat{r}_{ij} = \frac{\vec{r} _{ij}}{r _{ij}}.
+$$</li><li>Overlap between to adjacent particles is
+$$\tag{7}
+\xi_{ij} = \max(0, R_i + R_j - r_{ij}).
+$$</li><li>Time derivative of overlap is
+$$\tag{8}
+\dot{\xi} _{ij} = - v _{ij} \ {\rm sign}(\xi _{ij}).
+$$</li><li>Normal force on particle $i$ due to contact with particle $j$ is
+$$\tag{9}
+\vec{N}_{ij} = k_N \xi _{ij} \hat{r} _{ij} - \gamma_N \dot{\xi} _{ij} \hat{v} _{ij}.
+$$</li></ul><h2 id=egns-d>egns-d</h2><ul><li>Number of particles is $n$.</li><li>Index of particle is from 1 to $n$.</li><li>Base or particle with index 0 is not considered as particle.</li><li>Net external force on particle $i$ is
+$$\tag{10}
+\vec{F}_i = \left\{
+\begin{array}{rc}
+\vec{N} _{i, i-1} + \vec{N} _{i, i+1} + \vec{W}_i, & 0 &lt; i &lt; n, \newline
+\vec{N} _{i, i-1} + \vec{W}_i, & i = n.
+\end{array}
+\right.
+$$</li></ul><h2 id=eqns-e>eqns-e</h2><ul><li>Newton&rsquo;s second law is <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>
+$$\tag{11}
+\vec{a}_i = \frac{\vec{F}_i}{m_i}
+$$
+for partile $i$ at time $t$.</li><li>Euler integration for calculating velocity from acceleration <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup> gives
+$$\tag{12}
+\vec{v}_i(t + \Delta t) = \vec{v}_i(t) + \vec{a}_i \Delta t.
+$$</li><li>With similar way, position is obtained from velocity using
+$$\tag{13}
+\vec{r}_i(t + \Delta t) = \vec{r}_i(t) + \vec{v}_i(t) \Delta t.
+$$</li><li>New position, which is
+$$\tag{14}
+\vec{r}_i \equiv \vec{r}_i(t),
+$$
+will update Eqns (4)-(10).</li></ul><h2 id=flowchart>flowchart</h2><p>A proposed simulation pipeline is as follow.</p><div class=mermaid>flowchart LR;
+%% -
+B --> I1 --> I2;
+I2 --> P1 --> P2 --> P3 --> O1;
+O1 --> O2 --> E;
+%% def
+B(["Begin"]);
+I1[/"n, [m, r]"/];
+I2[/"kN, &#947;N, g"/];
+P1["N, W, F"];
+P2["a, v, r"];
+P3["Process"];
+O1[/"n, [m, r]"/];
+O2[/"E, T, f"/];
+E(["End"]);</div><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT-5, &ldquo;Vibration vs Oscillation&rdquo;, ChatGPT, 5 Sep 2025, url
+<a href=https://chatgpt.com/share/68ba7e12-7344-800a-9a49-62a2d1bc0ca6 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68ba7e12-7344-800a-9a49-62a2d1bc0ca6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>GPT-5, &ldquo;Word alignment issue and using Inkscape&rdquo;, ChatGPT, 5 Sep 2025, url
+<a href=https://chatgpt.com/share/68ba9d32-2ee8-800a-ba00-490b193ffcf7 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68ba9d32-2ee8-800a-ba00-490b193ffcf7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Sparisoma Viridi, &ldquo;Install (again) Inkscape on Windows 11: After can not aligned grouped objects inside Word&rdquo;, Medium, 5 Sep 2025, url
+<a href=https://medium.com/p/11-f84c4693fb1c target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/11-f84c4693fb1c <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>GPT-5, &ldquo;Gravitational force explanation&rdquo;, ChatGPT, 5 Sep 2025, url
+<a href=https://chatgpt.com/share/68bad021-df00-800a-b1ef-0b95e55fc9dc target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68bad021-df00-800a-b1ef-0b95e55fc9dc <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>OpenStax, &ldquo;Newton’s Second Law&rdquo;, Physics 201, Joliet Junior College, 18 Jun 2019, url
+<a href=https://phys.libretexts.org/@go/page/18158 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/18158 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Ahmad Moussa, &ldquo;Euler and Verlet Integration for Particle Physics&rdquo;, Gorrilla Sun, 3 Aug 2023, url
+<a href=https://www.gorillasun.de/blog/euler-and-verlet-integration-for-particle-physics/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.gorillasun.de/blog/euler-and-verlet-integration-for-particle-physics/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250905].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

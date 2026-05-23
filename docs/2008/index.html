@@ -1,0 +1,230 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>latex equations on hugo | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>latex equations on hugo</h1><time datetime=2024-04-12T07:12:00+07:00>April 12, 2024</time><p>LaTex equations with KaTex and their code</p><h2 id=intro>intro</h2><p>I have just informed today that both MathJax and KateX provide support for chemical equations <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, but for KaTeX the
+<a href=https://mhchem.github.io/MathJax-mhchem/ target=_blank rel="nofollow noopener noreferrer"><span>mhchem <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>extension should be enabled first <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. This post showing LaTeX equations supported by KaTeX in a Hugo post.</p><h2 id=front-matter>front matter</h2><p>Following is front matter for this post</p><pre tabindex=0><code>+++
+title = &#39;latex equations on hugo&#39;
+date = 2024-04-12T07:12:00+07:00
+draft = false
+math = true
+tags = [&#39;latex&#39;, &#39;equation&#39;, &#39;katex&#39;, &#39;hugo&#39;, &#39;mhchem&#39;]
+url = &#39;0008&#39;
+authors = [&#39;viridi&#39;]
++++
+</code></pre><p>which is using TOML format. There are also two other formats supported by Hugo <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. The line</p><pre tabindex=0><code>math = true
+</code></pre><p>must be supplied in order to able to render LaTex equations using KaTex through <code>math</code> partial.</p><h2 id=partial>partial</h2><p>In my installed Hugo (v0.124.1-db083b05f16c945fec04f745f0ca8640560cf1ec+extended windows/amd64 BuildDate=2024-03-20T11:40:10Z VendorInfo=gohugoio) I put a partial <code>math.html</code> in <code>layouts\partials\posts</code> folder, where its contents is as follow</p><pre tabindex=0><code>{{- if or (.Params.math) (.Site.Params.math) (.Params.katex) (.Site.Params.katex) -}}
+
+  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css&#34;
+    integrity=&#34;sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0&#34; crossorigin=&#34;anonymous&#34;&gt;
+  {{/* The loading of KaTeX is deferred to speed up page rendering */}}
+  &lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js&#34;
+    integrity=&#34;sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+ 
+  &lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js&#34;
+    integrity=&#34;sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05&#34; crossorigin=&#34;anonymous&#34;
+    onload=&#34;renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: &#39;$$&#39;, right: &#39;$$&#39;, display:true},
+          {left: &#39;$&#39;, right: &#39;$&#39;, display:false},
+          {left: &#39;\\(&#39;, right: &#39;\\)&#39;, display: false},
+          {left: &#39;\\[&#39;, right: &#39;\\]&#39;, display: true}
+        ]
+      }
+    );&#34;&gt;&lt;/script&gt;
+{{- end -}}
+</code></pre><p>And according to information obtained from mhchem extension on GitHub following lines</p><pre tabindex=0><code>&lt;!--
+url https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem [20240412]
+--&gt;
+&lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js&#34; integrity=&#34;sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0&#34;  crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;!-- --&gt;    
+</code></pre><p>should be put it after the line that calls <code>katex.js</code>. And before the line that calls <code>auto-render.js</code>, if only you use it.</p><h2 id=mhchem>mhchem</h2><p>Example equation from GitHub</p><p>$$
+C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}
+$$</p><p>is obtained with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>C_p<span style=color:#f92672>[</span>\ce{H<span style=color:#ae81ff>2</span>O<span style=color:#f92672>(</span>l<span style=color:#f92672>)</span>}<span style=color:#f92672>]</span> <span style=color:#f92672>=</span> \pu{<span style=color:#ae81ff>75</span>.<span style=color:#ae81ff>3</span> J <span style=color:#f92672>//</span> mol K}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>Other examples are also available <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, e.g.</p><p>$$
+\ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$}
+$$</p><p>using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\ce{CH<span style=color:#ae81ff>4</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> $\left<span style=color:#f92672>(</span> \ce{O<span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>79</span><span style=color:#f92672>/</span><span style=color:#ae81ff>21</span> N<span style=color:#ae81ff>2</span>} \right<span style=color:#f92672>)</span>$}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>$$
+\ce{^234_90Th -> ^0_-1\beta{} + ^234_91Pa}
+$$</p><p>using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\ce{^<span style=color:#ae81ff>234</span>_<span style=color:#ae81ff>90</span>Th <span style=color:#f92672>-</span>&gt; ^<span style=color:#ae81ff>0</span>_<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>\beta{} <span style=color:#f92672>+</span> ^<span style=color:#ae81ff>234</span>_<span style=color:#ae81ff>91</span>Pa}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>$$
+\ce{A-B=C#D}
+$$</p><p>using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\ce{A<span style=color:#f92672>-</span>B<span style=color:#f92672>=</span>C#D}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>and</p><p>$$
+\ce{Zn^2+
+&lt;=>[+ 2OH-][+ 2H+]
+$\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$
+&lt;=>[+ 2OH-][+ 2H+]
+$\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$
+}
+$$</p><p>using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\ce</span>{Zn^2+
+</span></span><span style=display:flex><span>&lt;=&gt;[+ 2OH-][+ 2H+]
+</span></span><span style=display:flex><span><span style=color:#e6db74>$</span>\underset{\text{amphoteres Hydroxid}}{\ce{Zn<span style=color:#f92672>(</span>OH<span style=color:#f92672>)</span><span style=color:#ae81ff>2</span> v}}<span style=color:#e6db74>$</span>
+</span></span><span style=display:flex><span>&lt;=&gt;[+ 2OH-][+ 2H+]
+</span></span><span style=display:flex><span><span style=color:#e6db74>$</span>\underset{\text{Hydroxozikat}}{\ce{<span style=color:#f92672>[</span>Zn<span style=color:#f92672>(</span>OH<span style=color:#f92672>)</span><span style=color:#ae81ff>4</span><span style=color:#f92672>]</span>^<span style=color:#ae81ff>2</span><span style=color:#f92672>-</span>}}<span style=color:#e6db74>$</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=equation-number>equation number</h2><p>To have following result</p><p>$$\tag{10}
+x
+$$</p><p>following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>\tag{<span style=color:#ae81ff>10</span>}
+</span></span><span style=display:flex><span>x
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>is required. Notice that the value <code>10</code> can be substituted with any string.</p><h2 id=fraction>fraction</h2><p>To have following result</p><p>$$
+x = \frac{y}{z}
+$$</p><p>following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> \frac{y}{z}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>is required. The <code>{y}</code> and <code>{z}</code> can be substituted with any LeTex expression, e.g. fractions as numerator and denominator</p><p>$$
+x = \frac{1 + \frac{a}{b}}{1 - \frac{c}{d}}
+$$</p><p>with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> \frac{<span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> \frac{a}{b}}{<span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> \frac{c}{d}}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>as the code. To have bigger font, as not in a fraction inline, use <code>\displaystyle</code> as follow</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> \frac{\displaystyle <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> \frac{\displaystyle <span style=color:#ae81ff>1</span> \times 
+</span></span><span style=display:flex><span>\frac{a <span style=color:#f92672>+</span> c}{a <span style=color:#f92672>-</span> c}}{b}}
+</span></span><span style=display:flex><span>{<span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> \frac{c}{d}}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>to produce</p><p>$$
+x = \frac{\displaystyle 1 + \frac{\displaystyle 1 \times
+\frac{a + c}{a - c}}{b}}
+{1 - \frac{c}{1 + \frac{d}{e}}}
+$$</p><p>Notice that the denominator does not use the feature and it still has smaller font. And use it in excesive way as in the numerator makes difficult to read the sub fraction, doesn&rsquo;t it?</p><h2 id=subscript>subscript</h2><p>A subscript is obtained using <code>_</code> followed by the subscript symbol, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>x_<span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> y_<span style=color:#ae81ff>2</span> <span style=color:#f92672>=</span> z_<span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+x_1 + y_2 = z_3
+$$</p><p>The subscript symbol can be any mathematical expression in LaTex inside surrounded by <code>{</code> and <code>}</code>, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>y_{f<span style=color:#f92672>(</span>x<span style=color:#f92672>)</span>} <span style=color:#f92672>=</span> f_<span style=color:#ae81ff>2</span><span style=color:#f92672>(</span>x_{<span style=color:#ae81ff>109</span>}<span style=color:#f92672>)</span> <span style=color:#f92672>+</span> g_{a_{b <span style=color:#f92672>+</span> c}}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+y_{f(x)} = f_2(x_{109}) + g_{a_{b + c}}
+$$</p><p>Notice that there might be another subscript in an expression as subscript.</p><h2 id=superscript>superscript</h2><p>It is similear with the subscript but it uses <code>^</code> followed by subscript symbol, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> ax^<span style=color:#ae81ff>3</span> <span style=color:#f92672>+</span> bx^<span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> cx <span style=color:#f92672>+</span> d
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+y = ax^3 + bx^2 + cx + d
+$$</p><p>It is also similar to subscript, that the superscript symbol can be any mathematical expression in LaTeX surrounded by <code>{</code> and <code>}</code>, and it can be nested, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> x^{<span style=color:#ae81ff>2</span>x^<span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> x} <span style=color:#f92672>+</span> x^{x^x}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>wil produce</p><p>$$
+y = x^{2x^2 + x} + x^{x^x}
+$$</p><h2 id=subscript-and-superscript>subscript and superscript</h2><p>Both subscript and superscript can be used in any order, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>x_<span style=color:#ae81ff>3</span>^<span style=color:#ae81ff>2</span> \equiv x^<span style=color:#ae81ff>2</span>_<span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+x_3^2 \equiv x^2_3
+$$</p><p>where both sides produce the same result, even the order is <code>_</code> then followed by <code>^</code> in the left side of the equation and is <code>^</code> then followed by <code>_</code> in the right side of the equation.</p><p>Only one character after <code>_</code> or <code>^</code> considered as the subscript or superscript symbol. For more than multiple characters, put them inside <code>{}</code>, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>\tag{<span style=color:#ae81ff>15</span>}
+</span></span><span style=display:flex><span>x^<span style=color:#ae81ff>21</span>_abc \ne x^{<span style=color:#ae81ff>21</span>}_{abc}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>gives</p><p>$$\tag{15}
+x^21_abc \ne x^{21}_{abc}
+$$</p><p>as the result. Notice that without <code>{}</code> the <code>x^21</code> is interpretated as <code>x^2 1</code>. Then the <code>_</code> is after <code>1</code> means that <code>1_a</code> instead of <code>abc</code> as subscript. To get the right expression for right side of equation (15) it should be <code>x^{21}_{abc}</code> which means that <code>21</code> is expression for superscript and <code>abc</code> is expression for subscript.</p><h2 id=greek-letters>greek letters</h2><p>It is easy to memorize the Greek letter in LaTeX if you know how to write them in English <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>. There are 24 Greek letters, where some of the capital letters are not available since their Roman counterparts are used instead <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>.</p><table><thead><tr><th style=text-align:center>Code</th><th style=text-align:center>LaTex</th><th style=text-align:center>    </th><th style=text-align:center>Code</th><th style=text-align:center>HTML</th><th style=text-align:center>            </th><th style=text-align:center>Code</th><th style=text-align:center>LaTex</th><th style=text-align:center>    </th><th style=text-align:center>Code</th><th style=text-align:center>HTML</th></tr></thead><tbody><tr><td style=text-align:center><code>\alpha</code></td><td style=text-align:center>$\alpha$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;alpha;</code></td><td style=text-align:center>α</td><td style=text-align:center></td><td style=text-align:center><code>\Alpha</code></td><td style=text-align:center>$\Alpha$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Alpha;</code></td><td style=text-align:center>Α</td></tr><tr><td style=text-align:center><code>\beta</code></td><td style=text-align:center>$\beta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;beta;</code></td><td style=text-align:center>β</td><td style=text-align:center></td><td style=text-align:center><code>\Beta</code></td><td style=text-align:center>$\Beta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Beta;</code></td><td style=text-align:center>Β</td></tr><tr><td style=text-align:center><code>\gamma</code></td><td style=text-align:center>$\gamma$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;gamma;</code></td><td style=text-align:center>γ</td><td style=text-align:center></td><td style=text-align:center><code>\Gamma</code></td><td style=text-align:center>$\Gamma$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Gamma;</code></td><td style=text-align:center>Γ</td></tr><tr><td style=text-align:center><code>\delta</code></td><td style=text-align:center>$\delta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;delta;</code></td><td style=text-align:center>δ</td><td style=text-align:center></td><td style=text-align:center><code>\Delta</code></td><td style=text-align:center>$\Delta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Delta;</code></td><td style=text-align:center>Δ</td></tr><tr><td style=text-align:center><code>\epsilon</code></td><td style=text-align:center>$\epsilon$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;epsilon;</code></td><td style=text-align:center>Ε</td><td style=text-align:center></td><td style=text-align:center><code>\Epsilon</code></td><td style=text-align:center>$\Epsilon$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Epsilon;</code></td><td style=text-align:center>Ε</td></tr><tr><td style=text-align:center><code>\zeta</code></td><td style=text-align:center>$\zeta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;zeta;</code></td><td style=text-align:center>ζ</td><td style=text-align:center></td><td style=text-align:center><code>\Zeta</code></td><td style=text-align:center>$\Zeta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Zeta;</code></td><td style=text-align:center>Ζ</td></tr><tr><td style=text-align:center><code>\eta</code></td><td style=text-align:center>$\eta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;eta;</code></td><td style=text-align:center>η</td><td style=text-align:center></td><td style=text-align:center><code>\eta</code></td><td style=text-align:center>$\Eta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Eta;</code></td><td style=text-align:center>Η</td></tr><tr><td style=text-align:center><code>\theta</code></td><td style=text-align:center>$\theta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;theta;</code></td><td style=text-align:center>θ</td><td style=text-align:center></td><td style=text-align:center><code>\Theta</code></td><td style=text-align:center>$\Theta$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Theta;</code></td><td style=text-align:center>Θ</td></tr><tr><td style=text-align:center><code>\iota</code></td><td style=text-align:center>$\iota$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;iota;</code></td><td style=text-align:center>ι</td><td style=text-align:center></td><td style=text-align:center><code>\Iota</code></td><td style=text-align:center>$\Iota$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Iota;</code></td><td style=text-align:center>Ι</td></tr><tr><td style=text-align:center><code>\kappa</code></td><td style=text-align:center>$\kappa$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;kappa;</code></td><td style=text-align:center>κ</td><td style=text-align:center></td><td style=text-align:center><code>\Kappa</code></td><td style=text-align:center>$\Kappa$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Kappa;</code></td><td style=text-align:center>Κ</td></tr><tr><td style=text-align:center><code>\lambda</code></td><td style=text-align:center>$\lambda$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;lambda;</code></td><td style=text-align:center>Λ</td><td style=text-align:center></td><td style=text-align:center><code>\Lambda</code></td><td style=text-align:center>$\Lambda$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Lambda;</code></td><td style=text-align:center>Λ</td></tr><tr><td style=text-align:center><code>\mu</code></td><td style=text-align:center>$\mu$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;mu;</code></td><td style=text-align:center>μ</td><td style=text-align:center></td><td style=text-align:center><code>\Mu</code></td><td style=text-align:center>$\Mu$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Mu;</code></td><td style=text-align:center>Μ</td></tr><tr><td style=text-align:center><code>\nu</code></td><td style=text-align:center>$\nu$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;nu;</code></td><td style=text-align:center>ν</td><td style=text-align:center></td><td style=text-align:center><code>\Nu</code></td><td style=text-align:center>$\Nu$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Nu;</code></td><td style=text-align:center>Ν</td></tr><tr><td style=text-align:center><code>\xi</code></td><td style=text-align:center>$\xi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;xi;</code></td><td style=text-align:center>ξ</td><td style=text-align:center></td><td style=text-align:center><code>\Xi</code></td><td style=text-align:center>$\Xi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Xi;</code></td><td style=text-align:center>Ξ</td></tr><tr><td style=text-align:center><code>\omicron</code></td><td style=text-align:center>$\omicron$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;omicron;</code></td><td style=text-align:center>Ο</td><td style=text-align:center></td><td style=text-align:center><code>\Omicron</code></td><td style=text-align:center>$\Omicron$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Omicron;</code></td><td style=text-align:center>Ο</td></tr><tr><td style=text-align:center><code>\pi</code></td><td style=text-align:center>$\pi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;pi;</code></td><td style=text-align:center>π</td><td style=text-align:center></td><td style=text-align:center><code>\Pi</code></td><td style=text-align:center>$\Pi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Pi;</code></td><td style=text-align:center>Π</td></tr><tr><td style=text-align:center><code>\rho</code></td><td style=text-align:center>$\rho$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;rho;</code></td><td style=text-align:center>ρ</td><td style=text-align:center></td><td style=text-align:center><code>\Rho</code></td><td style=text-align:center>$\Rho$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Rho;</code></td><td style=text-align:center>Ρ</td></tr><tr><td style=text-align:center><code>\sigma</code></td><td style=text-align:center>$\sigma$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;sigma;</code></td><td style=text-align:center>Σ</td><td style=text-align:center></td><td style=text-align:center><code>\Sigma</code></td><td style=text-align:center>$\Sigma$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Sigma;</code></td><td style=text-align:center>Σ</td></tr><tr><td style=text-align:center><code>\tau</code></td><td style=text-align:center>$\tau$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;tau;</code></td><td style=text-align:center>τ</td><td style=text-align:center></td><td style=text-align:center><code>\Tau</code></td><td style=text-align:center>$\Tau$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Tau;</code></td><td style=text-align:center>Τ</td></tr><tr><td style=text-align:center><code>\upsilon</code></td><td style=text-align:center>$\upsilon$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;upsilon;</code></td><td style=text-align:center>Υ</td><td style=text-align:center></td><td style=text-align:center><code>\Upsilon</code></td><td style=text-align:center>$\Upsilon$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Upsilon;</code></td><td style=text-align:center>Υ</td></tr><tr><td style=text-align:center><code>\phi</code></td><td style=text-align:center>$\phi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;phi;</code></td><td style=text-align:center>φ</td><td style=text-align:center></td><td style=text-align:center><code>\Phi</code></td><td style=text-align:center>$\Phi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Phi;</code></td><td style=text-align:center>Φ</td></tr><tr><td style=text-align:center><code>\chi</code></td><td style=text-align:center>$\chi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;chi;</code></td><td style=text-align:center>χ</td><td style=text-align:center></td><td style=text-align:center><code>\Chi</code></td><td style=text-align:center>$\Chi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Chi;</code></td><td style=text-align:center>Χ</td></tr><tr><td style=text-align:center><code>\psi</code></td><td style=text-align:center>$\psi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;psi;</code></td><td style=text-align:center>ψ</td><td style=text-align:center></td><td style=text-align:center><code>\Psi</code></td><td style=text-align:center>$\Psi$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Psi;</code></td><td style=text-align:center>Ψ</td></tr><tr><td style=text-align:center><code>\omega</code></td><td style=text-align:center>$\omega$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;omega;</code></td><td style=text-align:center>ω</td><td style=text-align:center></td><td style=text-align:center><code>\Omega</code></td><td style=text-align:center>$\Omega$</td><td style=text-align:center></td><td style=text-align:center><code>&amp;Omega;</code></td><td style=text-align:center>Ω</td></tr></tbody></table><p>The HTML counterpart characters are also shown to show that they have the same pattern in defining the entities <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>.</p><h2 id=matrices>matrices</h2><p>There are at least to ways to display matrices in LaTex, where the first way is using <code>matrix</code> environment and the second is using <code>array</code> environment, and there is also other environments for matrix with various types of brackets and also for smaller size <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup>.</p><p>Let us firs use <code>array</code> environment to obtain</p><p>$$
+\begin{array}{cccc}
+1 & 2 & 3 & 4 \newline
+5 & 6 & 7 & 8
+\end{array}
+$$</p><p>which using following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\begin{array}{cccc}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span> &amp; <span style=color:#ae81ff>2</span> &amp; <span style=color:#ae81ff>3</span> &amp; <span style=color:#ae81ff>4</span> \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>5</span> &amp; <span style=color:#ae81ff>6</span> &amp; <span style=color:#ae81ff>7</span> &amp; <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>\end{array}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>Notice that it requires one argument for number of columns and also at the same time for columns alignment, that can have value <code>l</code> for left, <code>c</code> for center, and <code>r</code> for right. Following code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\begin{array}{lcr}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1000</span> &amp; <span style=color:#ae81ff>2000</span> &amp; <span style=color:#ae81ff>3000</span>  \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>400</span> &amp; <span style=color:#ae81ff>500</span> &amp; <span style=color:#ae81ff>600</span> \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>70</span> &amp; <span style=color:#ae81ff>80</span> &amp; <span style=color:#ae81ff>90</span> \newline
+</span></span><span style=display:flex><span>a &amp; b &amp; c
+</span></span><span style=display:flex><span>\end{array}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>would produce</p><p>$$
+\begin{array}{lcr}
+1000 & 2000 & 3000 \newline
+400 & 500 & 600 \newline
+70 & 80 & 90 \newline
+a & b & c
+\end{array}
+$$</p><p>what hopefully give better understanding about columns alignment options <code>l</code>, <code>c</code>, and <code>r</code>.</p><p>If the columns alignment always <code>c</code> then consider to use <code>matrix</code> environment instead, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\begin{matrix}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1000</span> &amp; <span style=color:#ae81ff>2000</span> &amp; <span style=color:#ae81ff>3000</span>  \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>400</span> &amp; <span style=color:#ae81ff>500</span> &amp; <span style=color:#ae81ff>600</span> \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>70</span> &amp; <span style=color:#ae81ff>80</span> &amp; <span style=color:#ae81ff>90</span> \newline
+</span></span><span style=display:flex><span>a &amp; b &amp; c
+</span></span><span style=display:flex><span>\end{matrix}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+\begin{matrix}
+1000 & 2000 & 3000 \newline
+400 & 500 & 600 \newline
+70 & 80 & 90 \newline
+a & b & c
+\end{matrix}
+$$</p><p>Or addtional argument can also be supplied when using the alternative <code>matrix*</code> environment but it holds for all columns, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\begin{matrix<span style=color:#f92672>*</span>}<span style=color:#f92672>[</span>l<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1000</span> &amp; <span style=color:#ae81ff>2000</span> &amp; <span style=color:#ae81ff>3000</span>  \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>400</span> &amp; <span style=color:#ae81ff>500</span> &amp; <span style=color:#ae81ff>600</span> \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>70</span> &amp; <span style=color:#ae81ff>80</span> &amp; <span style=color:#ae81ff>90</span> \newline
+</span></span><span style=display:flex><span>a &amp; b &amp; c
+</span></span><span style=display:flex><span>\end{matrix<span style=color:#f92672>*</span>}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+\begin{matrix*}[l]
+1000 & 2000 & 3000 \newline
+400 & 500 & 600 \newline
+70 & 80 & 90 \newline
+a & b & c
+\end{matrix*}
+$$</p><p>where you can also use <code>[r]</code> and <code>[c]</code> other than <code>[l]</code> as the optional argument.</p><p>Next is matrix with small size what can be used inline with text, following is for display mode</p><p>$$
+\begin{smallmatrix}
+1 & 2 & 3 & 4 \newline
+5 & 6 & 7 & 8
+\end{smallmatrix}
+$$</p><p>and this is for inline mode $\begin{smallmatrix} 1 & 2 & 3 & 4 \newline 5 & 6 & 7 & 8 \end{smallmatrix}$, where the codes are</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\begin{smallmatrix}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span> &amp; <span style=color:#ae81ff>2</span> &amp; <span style=color:#ae81ff>3</span> &amp; <span style=color:#ae81ff>4</span> \newline
+</span></span><span style=display:flex><span><span style=color:#ae81ff>5</span> &amp; <span style=color:#ae81ff>6</span> &amp; <span style=color:#ae81ff>7</span> &amp; <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>\end{smallmatrix}
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>and <code>$\begin{smallmatrix} 1 & 2 & 3 & 4 \newline 5 & 6 & 7 & 8 \end{smallmatrix}$</code>.</p><p>If brackets are required there are <code>bmatrix</code>, <code>pmatrix</code>, and <code>vmatrix</code> enviroment that provide <code>[]</code>, <code>()</code>, and <code>||</code> brackets types, respectively, as shown in following table.</p><table><thead><tr><th style=text-align:center>Bracket type</th><th style=text-align:center>  Environment  </th><th style=text-align:center>Result</th></tr></thead><tbody><tr><td style=text-align:center>square <code>[]</code></td><td style=text-align:center><code>bmatrix</code></td><td style=text-align:center>$\begin{bmatrix} 1 & 2 \newline 3 & 4 \end{bmatrix}$</td></tr><tr><td style=text-align:center> </td><td style=text-align:center> </td><td style=text-align:center> </td></tr><tr><td style=text-align:center>round <code>()</code></td><td style=text-align:center><code>pmatrix</code></td><td style=text-align:center>$\begin{pmatrix} 1 & 2 \newline 3 & 4 \end{pmatrix}$</td></tr><tr><td style=text-align:center> </td><td style=text-align:center> </td><td style=text-align:center> </td></tr><tr><td style=text-align:center>vertical <code>||</code></td><td style=text-align:center><code>vmatrix</code></td><td style=text-align:center>$\begin{vmatrix} 1 & 2 \newline 3 & 4 \end{vmatrix}$</td></tr></tbody></table><p>If other types of brackets required, use <code>\left</code> and <code>\right</code> macros followed by bracket characters or macro representing the characters, e.g.</p><p>$$
+\left|
+\left(
+\left\lfloor
+\begin{matrix}
+11 & 12 & 13 & 14 \newline
+21 & 22 & 23 & 24 \newline
+31 & 32 & 33 & 34
+\end{matrix}
+\right\rceil
+\right\rbrace
+\right]
+$$</p><p>Notice the pairs of <code>\left</code> and <code>\right</code> should be complete.</p><h2 id=root>root</h2><p>Root of something can be obtained using <code>\sqrt[]{}</code>, e.g.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span><span style=display:flex><span>\sqrt{x} <span style=color:#f92672>+</span> \sqrt<span style=color:#f92672>[</span><span style=color:#ae81ff>7</span><span style=color:#f92672>]</span>{<span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> \frac{x}{<span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> x^<span style=color:#ae81ff>2</span>}} <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>$$</span>
+</span></span></code></pre></div><p>will produce</p><p>$$
+\sqrt{x} + \sqrt[7]{1 + \frac{x}{1 - x^2}} = 0
+$$</p><p>where inside <code>{}</code> can any LaTeX math expressions.</p><h2 id=functions>functions</h2><p>There are predefined functions, e.g. <code>\sin</code>, <code>\cos</code>, <code>\tan</code>, <code>\log</code>, <code>\ln</code>,<code>\exp</code> that can be used</p><p>$$
+\exp x + \log y \ne exp x + ln y
+$$</p><p>Notice that <code>\sin</code> is name of a function, while <code>sin</code> are three variables <code>s</code>, <code>i</code>, and <code>n</code>.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Hugo Authors, &ldquo;Mathematics in Markdown&rdquo;, hugoDocs &ndash; GitHub, 20 Feb 2024, url
+<a href=https://github.com/gohugoio/hugoDocs/blob/c60cd20a/content/en/content-management/mathematics.md target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/gohugoio/hugoDocs/blob/c60cd20a/content/en/content-management/mathematics.md <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>KaTeX Authors, &ldquo;mhchem extension&rdquo;, KaTeX &ndash; GitHub, 25 Mar 2024, url
+<a href=https://github.com/KaTeX/KaTeX/tree/ab323598f/contrib/mhchem target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/KaTeX/KaTeX/tree/ab323598f/contrib/mhchem <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[202404212].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Hugo Authros, &ldquo;Front matter&rdquo;, hugoDocs, 8 Apr 2024, url
+<a href=https://gohugo.io/content-management/front-matter/ target=_blank rel="nofollow noopener noreferrer"><span>https://gohugo.io/content-management/front-matter/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Martin Hensel, &ldquo;The mhchem Bundle Documentation for the LATEX Packages mhchem v4.10, hpstatement v2.1.0 and rsphrase v3.11&rdquo;, url
+<a href=https://www.ctan.org/pkg/mhchem target=_blank rel="nofollow noopener noreferrer"><span>https://www.ctan.org/pkg/mhchem <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>UNCO Admin, &ldquo;The Greek Alphabet&rdquo;, University of Northern Colorado, 10 Jun 2022, url
+<a href=https://www.unco.edu/fraternity-sorority/resources/greek-alphabet.aspx target=_blank rel="nofollow noopener noreferrer"><span>https://www.unco.edu/fraternity-sorority/resources/greek-alphabet.aspx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Jason Blevins, &ldquo;The Greek Alphabet in LaTeX&rdquo;, 5 Feb 2009, url
+<a href=https://jblevins.org/log/greek target=_blank rel="nofollow noopener noreferrer"><span>https://jblevins.org/log/greek <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7><p>Jeremy Girard, &ldquo;How to Get HTML Codes for Greek Language Characters&rdquo;, ThoughtCo, 4 Aug 2019, url
+<a href=https://www.thoughtco.com/p-4062212 target=_blank rel="nofollow noopener noreferrer"><span>https://www.thoughtco.com/p-4062212 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240412].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:8><p>atulsaini2810, &ldquo;matrices in LaTeX&rdquo;, GeeksforGeeks, 8 May 2023, url
+<a href=https://www.geeksforgeeks.org/matrices-in-latex/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/matrices-in-latex/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240414].&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

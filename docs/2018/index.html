@@ -1,0 +1,101 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>ffnn schematic and matrix | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>ffnn schematic and matrix</h1><time datetime=2024-04-22T09:53:00+07:00>April 22, 2024</time><p>Schematic for feed forward neural network and its matrix</p><h2 id=intro>intro</h2><p>A Feedforward Neural Network (FFNN) is the simplest kind of artificial neural network, where information moves only in one direction, from the input layer through any hidden layers and finally to the output layer <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. With the unidirectional flow of data, absence of cycles, and reliance on backpropagation and activation functions, it forms a crucial component of the artificial intelligence (AI) and machine learning (ML) landscape, due to its ability to model complex relationships through a relatively simple architecture, which has made this kind of neural network (NN) indispensable in both historical and contemporary contexts <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Normaly a schematic of FFNN is showing flow of data from left to right, i.e. input layer is on the left and output layer is on the right, but there is also a visualization of NN showing flow of data from right to left <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. For fully connected layer the relations between nodes in successive layers can be represented in matrix <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup> but for others it requires also activation function.</p><p>In this post both schematics showing flow of data from left to right or from right to left are presented and also their matrix representation, in showing which schematic would have better relation to its mathematical formulation.</p><h2 id=schematics>schematics</h2><p>A FNN with input layer, hidden layer, and output layer with some nodes can be drawn as follow.</p><div class=mermaid>flowchart LR
+I1 --"w<sub>11</sub>"--> H1
+I1 --"w<sub>21</sub>"--> H2
+I1 --"w<sub>31</sub>"--> H3
+I1 --"w<sub>41</sub>"--> H4
+I2 --"w<sub>12</sub>"--> H1
+I2 --"w<sub>22</sub>"--> H2
+I2 --"w<sub>32</sub>"--> H3
+I2 --"w<sub>42</sub>"--> H4
+I3 --"w<sub>13</sub>"--> H1
+I3 --"w<sub>23</sub>"--> H2
+I3 --"w<sub>33</sub>"--> H3
+I3 --"w<sub>43</sub>"--> H4
+H1 --"u<sub>11</sub>"--> O1
+H1 --"u<sub>21</sub>"--> O2
+H2 --"u<sub>12</sub>"--> O1
+H2 --"u<sub>22</sub>"--> O2
+H3 --"u<sub>13</sub>"--> O1
+H3 --"u<sub>23</sub>"--> O2
+H4 --"u<sub>14</sub>"--> O1
+H4 --"u<sub>24</sub>"--> O2
+subgraph I
+I1(("I<sub>1</sub>"))
+I2(("I<sub>2</sub>"))
+I3(("I<sub>3</sub>"))
+end
+subgraph H
+H1(("H<sub>1</sub>"))
+H2(("H<sub>2</sub>"))
+H3(("H<sub>3</sub>"))
+H4(("H<sub>4</sub>"))
+end
+subgraph O
+O1(("O<sub>1</sub>"))
+O2(("O<sub>2</sub>"))
+end
+style I fill:#8c8, stroke-width:0;
+style H fill:#88f, stroke-width:0;
+style O fill:#f88, stroke-width:0;</div><p>Figure 1. A left-right schematic of 3-4-2 FFNN.</p><p>Neuron $i$ in hidden layer $H$ obtains its value via</p><p>$$\tag{1}
+H_j = f\left( a_j + \sum_i w_{ji} I_i \right)
+$$</p><p>and neuraon $k$ in output layer $O$ via</p><p>$$\tag{2}
+O_k = f\left( b_k + \sum_j u_{kj} H_j \right),
+$$</p><p>with $a_j$ and $b_k$ are bias for each related neurons.</p><h2 id=bias>bias</h2><p>It is common to use additional element for every layer whose value is always 1 for the bias, so that it becomes the part of weights.</p><h2 id=matrix>matrix</h2><p>Using matrix Eqn (1) will be</p><p>$$\tag{3}
+\begin{bmatrix}
+1 \newline
+H_1 \newline
+H_2 \newline
+H_3 \newline
+H_4
+\end{bmatrix} =
+f\left(
+\begin{bmatrix}
+1 & 0 & 0 \newline
+a_1 & w_{11} & w_{12} \newline
+a_2 & w_{21} & w_{22} \newline
+a_3 & w_{31} & w_{32} \newline
+a_4 & w_{41} & w_{42}
+\end{bmatrix}
+\begin{bmatrix}
+1 \newline
+I_1 \newline
+I_2 \newline
+\end{bmatrix}
+\right)
+$$</p><p>and Eqn (2) will be</p><p>$$\tag{4}
+\begin{bmatrix}
+1 \newline
+O_1 \newline
+O_2
+\end{bmatrix} =
+f\left(
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 \newline
+b_1 & u_{11} & u_{12} & u_{13} & u_{14} \newline
+b_2 & u_{21} & u_{22} & u_{23} & u_{24}
+\end{bmatrix}
+\begin{bmatrix}
+1 \newline
+H_1 \newline
+H_2 \newline
+H_3 \newline
+H_3
+\end{bmatrix}
+\right).
+$$</p><p>Notice that the first element 1 in $\mathbf{I}$, $\mathbf{H}$, and $\mathbf{O}$ do not have any meaning, but only exist for integrating bias to the weight matrix. The two last equations can be rewritten as</p><p>$$\tag{5}
+\mathbf{H} = f(\mathbf{W}\mathbf{I})
+$$</p><p>and</p><p>$$\tag{6}
+\mathbf{O} = f(\mathbf{U}\mathbf{H}),
+$$</p><p>or</p><p>$$\tag{7}
+\mathbf{O} = f(\mathbf{U}f(\mathbf{W}\mathbf{I}))
+$$</p><p>as the whole feed forward flow of data.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Sasirekha Rameshkumar, &ldquo;Deep Learning Basics — Part 7 — Feed Forward Neural Networks (FFNN)&rdquo;, Medium, 7 Dec 2023, url
+<a href=https://medium.com/p/93a708f84a31 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/93a708f84a31 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240422].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Josh Fox, &ldquo;Feedforward Neural Network&rdquo;, Deepgram, 16 Feb 2024, url
+<a href=https://deepgram.com/ai-glossary/feedforward-neural-network target=_blank rel="nofollow noopener noreferrer"><span>https://deepgram.com/ai-glossary/feedforward-neural-network <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240422].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Lawrence V. Fulton, Diane Dolezel, Jordan Harrop, Yan Yan, Christopher P. Fulton, &ldquo;Classification of Alzheimer’s Disease with and without Imagery Using Gradient Boosted Machines and ResNet-50&rdquo;, Brain Sciences [Brain Sci], vol 9, no 9, p 212, Sep 2019, url
+<a href=http://doi.org/10.3390/brainsci9090212 target=_blank rel="nofollow noopener noreferrer"><span>http://doi.org/10.3390/brainsci9090212 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Andy Pokai Chen, &ldquo;Using Matrix to Represent Fully Connected Layer and Its Gradient&rdquo;, Medium, 20 Feb 2023, url
+<a href=https://medium.com/p/35604d99d138 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/35604d99d138 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240422].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

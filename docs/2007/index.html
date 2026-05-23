@@ -1,0 +1,316 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>some html elements with js on hugo | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>some html elements with js on hugo</h1><time datetime=2024-04-11T05:19:00+07:00>April 11, 2024</time><p>Display HTML elements on Hugo with JS</p><h2 id=intro>intro</h2><p>There are some static site generators, where one of the free ones is Hugo <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. And one of the feature of Hugo static pages is its support to use JS for dynamic content, but in this post only feature to display some HTML elements is shown. Since normally Hugo does not allow to execute JS directly from its post <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> and it requires defining a shortcode <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>, a shortcode <code>js</code> is provided, that has 10 lines of code.</p><p>In order to understand this post it is assumed that you are already familiar with HTML, JS, CSS, and Hugo shortcode. And for the last you know where to save it and how to called in a post. And for the HTML elements <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, only few of them are discussed here.</p><h2 id=shortcode>shortcode</h2><p>In order to embed JS in Hugo posts, a shortcode named <code>js</code> is made with following content</p><pre tabindex=0><code>{{- $seed := &#34;foo&#34; -}}
+{{- $id := delimit (shuffle (split (md5 $seed) &#34;&#34; )) &#34;&#34; -}}
+&lt;div id=&#34;{{- $id -}}&#34;&gt;
+&lt;script&gt;
+js = document.getElementById(&#34;{{- $id -}}&#34;);
+var fn = &#34;f_{{- $id -}}&#34;;
+window[fn] = function() { &#34;{{- .Inner | safeJS -}}&#34; }
+window[fn]();
+&lt;/script&gt;
+&lt;/div&gt;
+</code></pre><p>Notice that <code>js</code> and <code>fn</code> variable are global variables and they are reused every time the shortcode is called. To avoid error message that a variable is already declared, all script in <code>.Inner</code> of Hugo shortoce is place inside a function whose name is generated randomly, each time the shortcode is called.</p><p>Then, the shortcode is called within a post this way</p><pre tabindex=0><code>{{&lt; js &gt;}}
+console.log(js);
+{{&lt; /js &gt;}}
+</code></pre><p>where <code>js</code> is the container element, a <code>&lt;div></code> as parent element, of the script. An as the result</p><pre tabindex=0><code>&lt;div id=&#34;4bc1ce45e8dcacdf44d6ccda2bcf588f&#34;&gt;
+  &lt;script&gt;
+    js = document.getElementById(&#34;4bc1ce45e8dcacdf44d6ccda2bcf588f&#34;);
+    var fn = &#34;f_4bc1ce45e8dcacdf44d6ccda2bcf588f&#34;;
+    window[fn] = function() {
+    console.log(js);
+    }
+    window[fn]();
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre><p>will be shown in browser JS console <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>. Value of <code>id</code> will be generated randomly to assure that each script will have unique id.</p><h2 id=button>button</h2><p>Let us now just display a button</p><p>with following script</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let btn = document.createElement(&#34;button&#34;)
+btn.innerHTML = &#34;OK&#34;;
+js.appendChild(btn);
+{{&lt; /js &gt;}}
+</code></pre><p>You can click it or hover mouse pointer on it, but nothing happen since how response on such events have not been defined.</p><p>Now, with still using only button element, a <code>click</code> event can be added and how it behaves can also be defined. Let us make the simplest one</p><p>where the code is as follow</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let btn = document.createElement(&#34;button&#34;)
+js.appendChild(btn);
+
+btn.innerHTML = 0;
+btn.addEventListener(&#34;click&#34;, function() { btn.innerHTML++; } )
+{{&lt; /js &gt;}}
+</code></pre><p>Notice the differences between the code above and the one preceeded it. Button <code>btn</code> caption <code>innerHTML</code> is assigned with number <code>0</code> in initialization. When the button is clicked by the registered even <code>click</code>, it adds <code>1</code> to the number and increase the caption. This code is not save, e.g. it would be better to use <code>parseInt()</code> from <code>innerHTML</code> to assure it is an integer before added it with <code>1</code> using <code>++</code> operator.</p><p>What is next to do with only a button element?</p><p>Position of button is altered as it is clicked. Every click moves the button <code>40px</code> to the right. And</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let btn = document.createElement(&#34;button&#34;)
+js.appendChild(btn);
+
+btn.style.left = &#34;0px&#34;;
+btn.style.position = &#39;relative&#39;;
+btn.innerHTML = &#34;&amp;rightarrow;&#34;;
+btn.addEventListener(&#34;click&#34;,
+  function() {
+    let left = parseInt(btn.style.left);
+    left += 40;
+    btn.style.left = left + &#34;px&#34;;
+  } 
+)
+{{&lt; /js &gt;}}
+</code></pre><p>is the code. What do you think? Any other idea is crossing you mind for an example using only one HTML button?</p><h2 id=textarea>textarea</h2><p>Let us now using other HTML element, textarea.</p><p>with</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let ta = document.createElement(&#34;textarea&#34;);
+js.appendChild(ta);
+{{&lt; /js &gt;}}
+</code></pre><p>is the code. Then you can type whatever you want on the textarea.</p><p>You can add content to textarea to produce</p><p>where</p><pre tabindex=0><code>ta.value = &#34;Hello, World!&#34;;
+</code></pre><p>is the only additional line to previous code.</p><h2 id=textarea--button>textarea + button</h2><p>Remember the button that change its caption when it is clicked? Now we can modify the <code>click</code> event not to change button caption but content of the textarea.</p><p>Every time the button clicked, it add a line of &ldquo;Hello, World!&rdquo; phrase to the textarea.</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let btn = document.createElement(&#34;button&#34;)
+btn.innerHTML = &#34;Add &#39;Hello, World!&#39;&#34;
+js.appendChild(btn);
+
+let ta = document.createElement(&#34;textarea&#34;);
+ta.style.height = &#34;100px&#34;;
+js.appendChild(ta);
+
+btn.addEventListener(&#34;click&#34;,
+  function() {
+    ta.value += &#34;Hello, World!&#34; + &#34;\n&#34;;
+  }
+);
+{{&lt; /js &gt;}}
+</code></pre><p>Above code has not yet used CSS but only to set height of the textarea by assigning <code>style.height</code> with value <code>100px</code>. The way to get nice layout using CSS will be discussed later.</p><p>Let us now use two buttons, one is as in the previous example and the new one is for clearing the text area.</p><p>Go get the result add following lines</p><pre tabindex=0><code>let btn2 = document.createElement(&#34;button&#34;)
+btn2.innerHTML = &#34;Clear&#34;
+js.appendChild(btn2);
+
+btn2.addEventListener(&#34;click&#34;,
+  function() {
+    ta.value = &#34;&#34;;
+  }
+);
+</code></pre><p>to previous code. The layout still looks messy, but for now the importang thing is that works.</p><h2 id=select>select</h2><p>There is select element with code</p><pre tabindex=0><code>{{&lt; js &gt;}}
+var sel = document.createElement(&#34;select&#34;);
+js.appendChild(sel);
+
+var opt1 = document.createElement(&#34;option&#34;);
+opt1.innerHTML = &#34;Apple&#34;;
+sel.add(opt1);
+var opt2 = document.createElement(&#34;option&#34;);
+opt2.innerHTML = &#34;Durian&#34;;
+sel.add(opt2);
+
+sel.selectedIndex = -1;
+{{&lt; /js &gt;}}
+</code></pre><p>to produce following result</p><p>Notice that the <code>select</code> element has two <code>option</code> elements, one is with &ldquo;Apple&rdquo; for its <code>innerHTML</code> and the other is for &ldquo;Durian&rdquo;. You can click to select which one you want to choose.</p><h2 id=select--button--textarea>select + button + textarea</h2><p>Let us now use one select element, four option element, one button element, and one textarea element. The result is as follow</p><p>Now you can select the fruit you want and then click the button to add to textarea, a sort of shopping list. Pretty neat, isn&rsquo;t it?</p><p>And</p><pre tabindex=0><code>{{&lt; js &gt;}}
+var sel = document.createElement(&#34;select&#34;);
+fruits = [&#34;Apple&#34;, &#34;Durian&#34;, &#34;Manggo&#34;, &#34;Pear&#34;]
+for(let f of fruits) {
+  var opt = document.createElement(&#34;option&#34;);
+  opt.innerHTML = f;
+  sel.add(opt)
+}
+sel.selectedIndex = -1;
+
+var btn = document.createElement(&#34;button&#34;);
+btn.innerHTML = &#34;Add&#34;;
+
+var txa = document.createElement(&#34;textarea&#34;);
+txa.style.height = &#34;100px&#34;;
+
+btn.addEventListener(&#34;click&#34;,
+  function () {
+    if(sel.selectedIndex &gt;= 0) {
+      txa.value += sel[sel.selectedIndex].innerHTML + &#34;\n&#34;;
+    }
+  }
+)
+
+js.appendChild(sel);
+js.appendChild(btn);
+js.appendChild(txa);
+{{&lt; /js &gt;}}
+</code></pre><p>is the code to get above result. You can modify the code to add more fruit as options, just expand the array <code>fluits</code>.</p><h2 id=svg>svg</h2><p>As one of HTML elements, svg element has special status in HTML, where SVG code can be put in it, since all the actual graphics tags are already defined in SVG standar <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>, where there are at aleast about 52 elements available <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>.</p><p>Three graphical objects are created, which are circle, rect, and path elements with</p><pre tabindex=0><code>{{&lt; js &gt;}}
+var xlmns = &#34;http://www.w3.org/2000/svg&#34;;
+var width = 400;
+var height = 150;
+
+var svg = document.createElementNS(xlmns, &#34;svg&#34;);
+svg.setAttribute(null, &#34;viewBox&#34;,
+  &#34;0 0 &#34; + width + &#34; &#34; + height);
+svg.setAttributeNS(null, &#34;width&#34;, width);
+svg.setAttributeNS(null, &#34;height&#34;, height);
+svg.style.background = &#34;#fafafa&#34;;
+
+var circ = document.createElementNS(xlmns, &#34;circle&#34;);
+circ.setAttributeNS(null, &#34;cx&#34;, 50);
+circ.setAttributeNS(null, &#34;cy&#34;, 50);
+circ.setAttributeNS(null, &#34;r&#34;, 40);
+circ.style.strokeWidth = &#34;4px&#34;;
+circ.style.fill = &#34;#faa&#34;;
+circ.style.stroke = &#34;#a00&#34;;
+
+var rect = document.createElementNS(xlmns, &#34;rect&#34;);
+rect.setAttributeNS(null, &#34;x&#34;, 110);
+rect.setAttributeNS(null, &#34;y&#34;, 40);
+rect.setAttributeNS(null, &#34;width&#34;, 80);
+rect.setAttributeNS(null, &#34;height&#34;, 40);
+rect.style.strokeWidth = 4;
+rect.style.fill = &#34;#aaf&#34;;
+rect.style.stroke = &#34;#00a&#34;;
+
+var path = document.createElementNS(xlmns, &#34;path&#34;);
+path.style.strokeWidth = 4;
+path.style.fill = &#34;#afa&#34;;
+path.style.stroke = &#34;#0aa&#34;;
+path.setAttributeNS(null, &#34;d&#34;, &#34;M 270,50 l 50,50, h -100 z&#34;);
+
+svg.appendChild(circ);
+svg.appendChild(rect);
+svg.appendChild(path);
+
+js.appendChild(svg);
+{{&lt; /js &gt;}}
+</code></pre><p>as the code. Let us advance it a litle bit to produce following result.</p><p>Now, when mouse enter an object, object color and border change. Additional lines to previous code are as follow.</p><pre tabindex=0><code>path.addEventListener(&#34;mouseenter&#34;, function() {
+  path.style.fill = &#34;#4c4&#34;;
+  path.style.stroke = &#34;#044&#34;;
+});
+path.addEventListener(&#34;mouseleave&#34;, function() {
+  path.style.fill = &#34;#afa&#34;;
+  path.style.stroke = &#34;#0aa&#34;;
+});
+
+circ.addEventListener(&#34;mouseenter&#34;, function() {
+  circ.style.fill = &#34;#844&#34;;
+  circ.style.stroke = &#34;#f00&#34;;
+});
+circ.addEventListener(&#34;mouseleave&#34;, function() {
+  circ.style.fill = &#34;#faa&#34;;
+  circ.style.stroke = &#34;#a00&#34;;
+});
+
+rect.addEventListener(&#34;mouseenter&#34;, function() {
+  rect.style.fill = &#34;#00a&#34;;
+  rect.style.stroke = &#34;#aaf&#34;;
+});
+rect.addEventListener(&#34;mouseleave&#34;, function() {
+  rect.style.fill = &#34;#aaf&#34;;
+  rect.style.stroke = &#34;#00a&#34;;
+});
+</code></pre><table><thead><tr><th style=text-align:left>Element    </th><th style=text-align:left>mouseenter event       </th><th style=text-align:left>mouseleave event</th></tr></thead><tbody><tr><td style=text-align:left>circle</td><td style=text-align:left><code>fill = "#844"</code></td><td style=text-align:left><code>style.fill = "#faa"</code></td></tr><tr><td style=text-align:left> </td><td style=text-align:left><code>stroke = "#f00"</code></td><td style=text-align:left><code>stroke = "#a00"</code></td></tr><tr><td style=text-align:left>rect</td><td style=text-align:left><code>fill = "#00a"</code></td><td style=text-align:left><code>fill = "#aaf"</code></td></tr><tr><td style=text-align:left> </td><td style=text-align:left><code>stroke = "#aaf"</code></td><td style=text-align:left><code>stroke = "#00a"</code></td></tr><tr><td style=text-align:left>path</td><td style=text-align:left><code>fill = "#4c4"</code></td><td style=text-align:left><code>fill = "#afa"</code></td></tr><tr><td style=text-align:left> </td><td style=text-align:left><code>stroke = "#044"</code></td><td style=text-align:left><code>stroke = "#0aa"</code></td></tr></tbody></table><p>Above tabel gives the states when <code>mouseenter</code> and <code>mouseleave</code> events triggered.</p><p>Actually there is also another approach to change style using CSS selectors, but unfortunately, I can not still perform that using JS.</p><h2 id=select--button--svg>select + button + svg</h2><p>Let us wrap all up with following code</p><pre tabindex=0><code>{{&lt; js &gt;}}
+let div = document.createElement(&#34;div&#34;);
+div.style.border = &#34;0px solid black&#34;;
+div.style.width = &#34;100px&#34;;
+div.style.float = &#34;left&#34;;
+
+let sel = document.createElement(&#34;select&#34;);
+sel.style.width = &#34;100px&#34;;
+shapes = [&#34;Circle&#34;, &#34;Rect&#34;, &#34;Path&#34;]
+for(let s of shapes) {
+  let opt = document.createElement(&#34;option&#34;);
+  opt.innerHTML = s;
+  sel.add(opt)
+}
+sel.selectedIndex = 0;
+
+let btnL = document.createElement(&#34;button&#34;);
+btnL.innerHTML = &#34;&lt;&lt;&#34;;
+btnL.style.width = &#34;50px&#34;;
+btnL.addEventListener(&#34;click&#34;,
+  function () {
+    let id = sel[sel.selectedIndex].innerText;
+    let el = document.getElementById(id);
+    if(el instanceof SVGCircleElement) {
+      let cx = parseInt(el.getAttributeNS(null, &#34;cx&#34;));
+      cx -= 10;
+      el.setAttributeNS(null, &#34;cx&#34;, cx);
+    } if(el instanceof SVGRectElement) {
+      let x = parseInt(el.getAttributeNS(null, &#34;x&#34;));
+      x -= 10;
+      el.setAttributeNS(null, &#34;x&#34;, x);
+    } else if(el instanceof SVGPathElement) {
+      let d = el.getAttributeNS(null, &#34;d&#34;);
+      let i = d.indexOf(&#39;,&#39;);
+      let sL = d.substring(0, i);
+      let sR = d.substring(i);
+      let x = parseInt(sL.split(&#39; &#39;)[1]);
+      x -= 10;
+      d = &#34;M &#34; + x + sR;
+      el.setAttributeNS(null, &#34;d&#34;, d);
+    }
+  }
+)
+
+let btnR = document.createElement(&#34;button&#34;);
+btnR.innerHTML = &#34;&gt;&gt;&#34;;
+btnR.style.width = &#34;50px&#34;;
+btnR.addEventListener(&#34;click&#34;,
+  function () {
+    let id = sel[sel.selectedIndex].innerText;
+    let el = document.getElementById(id)
+    if(el instanceof SVGCircleElement) {
+      let cx = parseInt(el.getAttributeNS(null, &#34;cx&#34;));
+      cx += 10;
+      el.setAttributeNS(null, &#34;cx&#34;, cx);
+    } if(el instanceof SVGRectElement) {
+      let x = parseInt(el.getAttributeNS(null, &#34;x&#34;));
+      x += 10;
+      el.setAttributeNS(null, &#34;x&#34;, x);
+    } else if(el instanceof SVGPathElement) {
+      let d = el.getAttributeNS(null, &#34;d&#34;);
+      let i = d.indexOf(&#39;,&#39;);
+      let sL = d.substring(0, i);
+      let sR = d.substring(i);
+      let x = parseInt(sL.split(&#39; &#39;)[1]);
+      x += 10;
+      d = &#34;M &#34; + x + sR;
+      el.setAttributeNS(null, &#34;d&#34;, d);
+    }
+  }
+)
+
+
+// the differences to previous code
+circ.setAttributeNS(null, &#34;cx&#34;, 200);
+circ.setAttributeNS(null, &#34;cy&#34;, 25);
+circ.setAttributeNS(null, &#34;r&#34;, 15);
+
+rect.setAttributeNS(null, &#34;x&#34;, 185);
+rect.setAttributeNS(null, &#34;y&#34;, 60);
+rect.setAttributeNS(null, &#34;width&#34;, 30);
+rect.setAttributeNS(null, &#34;height&#34;, 30);
+
+path.setAttributeNS(null, 
+  &#34;d&#34;, &#34;M 200,110 l 20,30, h -40 z&#34;);
+
+// mouseenter &amp; mouseleave events are the same as previous code
+
+path.addEventListener(&#34;click&#34;, function() {
+  path.setAttributeNS(
+    null, &#34;d&#34;,
+    &#34;M 200,110 l 20,30, h -40 z&#34;
+  );
+});
+circ.addEventListener(&#34;click&#34;, function() {
+  circ.setAttributeNS(null, &#34;cx&#34;, 200);
+  circ.setAttributeNS(null, &#34;cy&#34;, 25);
+});
+rect.addEventListener(&#34;click&#34;, function() {
+  rect.setAttributeNS(null, &#34;x&#34;, 185);
+  rect.setAttributeNS(null, &#34;y&#34;, 60);
+});
+
+js.appendChild(div);
+  div.appendChild(sel);
+  div.appendChild(btnL);
+  div.appendChild(btnR);
+js.append(svg);
+  svg.appendChild(circ);
+  svg.appendChild(rect);
+  svg.appendChild(path);
+{{&lt; /js &gt;}}
+</code></pre><p>that produces</p><p>Select shape, click <code>&lt;&lt;</code> to move left or <code>>></code> to move right. Hover on shapes to see they react, and click them to reset their position.</p><h2 id=closing>closing</h2><p>Some examples of using JS through a shortcode for displaying HTML elements in a Hugo post have been presented and discussed in brief.</p><h2 id=notes>notes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Harish Rajora, &ldquo;A Beginner’s Guide to Static Site Generator&rdquo;, Medium, 13 Dec 2023, url
+<a href=https://medium.com/p/806583fd81f3 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/806583fd81f3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>n_m, &ldquo;Hugo use inline javascript within posts&rdquo;, Stack Overflow 28 Jul 2020, url
+<a href=https://stackoverflow.com/a/63138441/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/63138441/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Pyth0n, &ldquo;Insert js in a Hugo post&rdquo;, Stack Overflow, 8 Mar 2017, url
+<a href=https://stackoverflow.com/a/42672833/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/42672833/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Jamie Juviler, &ldquo;HTML Elements: What They Are and How to Use Them&rdquo;, HubSpot, 25 Jul 2022, url
+<a href=https://blog.hubspot.com/website/html-elements target=_blank rel="nofollow noopener noreferrer"><span>https://blog.hubspot.com/website/html-elements <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>Šime Vidas, Russ Bateman, &ldquo;How do I open the JavaScript console in different browsers?&rdquo;, Webmasters Stack Exchange, 17 Oct 2019, url
+<a href=https://webmasters.stackexchange.com/a/77337/138202 target=_blank rel="nofollow noopener noreferrer"><span>https://webmasters.stackexchange.com/a/77337/138202 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Schindlabua, &ldquo;Are SVG elements considered HTML elements?&rdquo;, Sololearn, 30 Jul 2020, url
+<a href=https://www.sololearn.com/en/Discuss/2421836/are-svg-elements-considered-html-elements target=_blank rel="nofollow noopener noreferrer"><span>https://www.sololearn.com/en/Discuss/2421836/are-svg-elements-considered-html-elements <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7><p>GfG, &ldquo;SVG Element Complete Reference&rdquo;, GeeksforGeek, 6 Jul 2023, url
+<a href=https://www.geeksforgeeks.org/svg-element-complete-reference/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/svg-element-complete-reference/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240411].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,13 @@
+(()=>{function u(e,o="320px"){let t=document.getElementById(e);if(!(t instanceof HTMLDivElement))return null;let i={marginTop:"1em",width:o,background:"var(--box-bg)",border:"0 solid var(--border)",display:"flex",height:"180px"};return Object.assign(t.style,i),t}var a=[],s=[],r=[],c=[];function f(e){let o=e.getBoundingClientRect(),t=window.devicePixelRatio||1;e.width=o.width*t,e.height=o.height*t,e.getContext("2d").scale(t,t)}function p(e,o={}){let t=document.createElement("div");Object.assign(t.style,o);for(let i of e){let n=document.createElement("textarea");n.style.flex="1",n.id=i,n.placeholder=i,n.style.fontFamily="monospace",t.append(n)}return t}function x(e,o={},t=y){let i=document.createElement("div");Object.assign(i.style,o);for(let n of e){let l=document.createElement("button");l.innerHTML=n,l.style.flex="1",i.append(l)}return i.addEventListener("click",n=>{t(n)}),i}function y(e){let o=e.target.closest("button");if(o.innerHTML=="wipe"&&(a[0].value="",a[1].value=""),o.innerHTML=="data"){let t="";t+=`0;0;0;0;0;0;0;0;0;0
+`,t+=`0;0;0;0;0;0;0;0;0;0
+`,t+=`0;0;0;0;0;0;0;0;0;0
+`,t+=`0;0;0;0;1;1;0;0;0;0
+`,t+=`0;0;0;1;2;2;1;0;0;0
+`,t+=`0;0;0;1;2;2;1;0;0;0
+`,t+=`0;0;0;0;1;1;0;0;0;0
+`,t+=`0;0;0;0;0;0;0;0;0;0
+`,t+=`0;0;0;0;0;0;0;0;0;0
+`,t+="0;0;0;0;0;0;0;0;0;0",a[0].value=t}if(o.innerHTML=="read"){let t=a[0].value.split(`
+`);s=[];for(let i of t){let n=[],l=i.split(";");for(let d of l)n.push(parseInt(d));s.push(n)}a[1].value=s.map(i=>i.join(" ")).join(`
+`),c=structuredClone(s)}o.innerHTML=="exec"&&(r=m(c),a[1].value=r.map(t=>t.join(" ")).join(`
+`),c=structuredClone(r))}function m(e){let o=structuredClone(e),t=e.length,i=e[0].length;for(let n=1;n<t-1;n++)for(let l=1;l<i-1;l++)e[n][l]==0&&(e[n-1][l]==1||e[n-1][l-1]==1||e[n][l-1]==1||e[n+1][l-1]==1||e[n+1][l]==1||e[n+1][l+1]==1||e[n][l+1]==1||e[n-1][l+1]==1)&&(o[n][l]=1),e[n][l]==1&&(e[n-1][l]==2||e[n-1][l-1]==2||e[n][l-1]==2||e[n+1][l-1]==2||e[n+1][l]==2||e[n+1][l+1]==2||e[n][l+1]==2||e[n-1][l+1]==2)&&(o[n][l]=2);return o}function g(){let e=document.createElement("div"),i=p(["agents-input","agents-output"],{display:"flex",flexDirection:"row",border:"0px solid magenta"});a=i.querySelectorAll("textarea");let d=x(["wipe","data","read","exec"],{display:"flex",flexDirection:"row",width:"100%",border:"0px solid cyan"});return e.style.display="flex",e.style.flexDirection="column",e.style.border="1px solid var(--border)",e.append(i),e.append(d),i.style.flex="6",d.style.flex="1",e}function v(e){let o=e.querySelectorAll("canvas");for(let t of o)f(t)}function b(e){let o=u(e),t=g();o.append(t),v(t)}window._26ca1={mount:e=>{b(e)}};console.log("[marker] 26ca1.js loaded");})();

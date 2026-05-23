@@ -1,0 +1,114 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>linear interpolation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>linear interpolation</h1><time datetime=2022-02-22T05:08:00+07:00>February 22, 2022</time><p>Interpolasi linier merupakan salah satu jenis interpolasi, yang melibatkan pembangkitan nilai baru berdasarkan himpunan nilai-nilai yang ada, yang dicapai dengan membuat secara geometri sebuah garis lurus antara dua titik berurutan pada sebuah grafik atau bidang [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Interpolasi dari himpunan titik-titik data didefinisikan sebagai rangkaian interpolan linier antar setiap pasang titik-titik data, yang menghasilkan kurva kontinu akan tetapi dengan turunan diskontinu [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam bahasa pemrograman Python dengan menggunakan <code>numpy</code> interpolasi linier dapat dilakukan dengan hanya satu baris kode [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat banyak kalkulator interpolasi linier yang telah tersedia secara daring [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang juga dilengkapi rumusnya [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=between-two-points>between two points</h2><p>Terdapat dua pasang data yaitu $(x_1, y_1)$ dan $(x_2, y_2)$, ingin dicari nilai $y$ untuk suatu nilai $x$ di mana $x_1 &lt; x &lt; x_2$. Hal ini dapat dilakukan dengan memperhatikan ilustrasi berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0501-a.png)<br>Gambar <a name=fig1>1</a>. Hubungan titik-titik data $(x_1, y_1)$ dan $(x_2, y_2)$ dengan nilai yang ingin diperoleh $y$ bila diketahui $x$.</p><p>Dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, melalui hubungan segitiga sebangun [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dapat diperoleh perumusan berikut ini</p><p>\begin{equation}\label{eqn:linear-interpolation-two-points}
+\begin{array}{rcl}
+\displaystyle \frac{y - y_1}{y_2 - y_1} & = & \displaystyle \frac{x - x_1}{x_2 - x_1} \newline
+y - y_1 & = & \displaystyle \left( \frac{y_2 - y_1}{x_2 - x_1} \right) (x - x_1) \newline
+y & = & \displaystyle \left( \frac{y_2 - y_1}{x_2 - x_1} \right) (x - x_1) + y_1 \newline
+& = & \displaystyle \left( \frac{y_2 - y_1}{x_2 - x_1} \right) x + \left[ y_1 - \left( \frac{y_2 - y_1}{x_2 - x_1} \right) x_1 \right] \newline
+f(x) & = & c_1 x + c_0,
+\end{array}
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:linear-interpolation-two-points-c0}
+c_0 = y_1 - \left( \frac{y_2 - y_1}{x_2 - x_1} \right) x_1
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:linear-interpolation-two-points-c1}
+c_1 = \frac{y_2 - y_1}{x_2 - x_1}.
+\end{equation}</p><p>Persamaan \eqref{eqn:linear-interpolation-two-points-c0} dan \eqref{eqn:linear-interpolation-two-points-c1} dapat digeneralisasi sehingga berlaku untuk $N$ pasang data dengan $N > 2$.</p><h2 id=n-points>n points</h2><p>Terdapat $N$ titik data dengan $N > 2$ dalam bentuk $(x_1, x_2)$, .., $(x_N, x_N)$. Dalam interpolasi linier di mana suatu titik $x$ pasti berada pada rentang $x_i \le x \le x_{i+1}$, perlu ditentukan nilai $i$, dengan $1 &lt; i &lt; N-1$. Bila diasumsikan bahwa rentang antara dua titik adalah sama</p><p>\begin{equation}\label{eqn:points-interval}
+L = x_{i+1} - x_i,
+\end{equation}</p><p>salah satu cara untuk menentukannya $i$ adalah dengan menggunakan</p><p>\begin{equation}\label{eqn:interval}
+i = 1 + \left\lfloor \frac{x - x_1}{L} \right\rfloor.
+\end{equation}</p><p>Kurung $\lfloor \ \rfloor$ merupakan fungsi floor [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Setelah mendapatkan $i$ untuk suatu $x$ dari Persamaan \eqref{eqn:interval}, maka digunakan Persamaan \eqref{eqn:linear-interpolation-two-points}, \eqref{eqn:linear-interpolation-two-points-c0}, dan \eqref{eqn:linear-interpolation-two-points-c1} untuk mendapatkan nilai $y$.</p><h2 id=example>example</h2><p>Terdapat data beberapa titik seperti diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0501-b.png)<br>Gambar <a name=fig2>2</a>. Titik-titik data $(1, 11)$, $(4, 18)$, $(7, 7)$, dan $(10, 5)$.</p><p>Akan dilakukan interpolasi linier pada empat titik data yang diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sehingga dapat dicari nilai $y$ pada sembarang $x$ untuk $1 \le x \le 10$.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0501-c.png)<br>Gambar <a name=fig3>3</a>. Garis-garis fungsi interpolasi linier untuk titik-titik data $(1, 11)$, $(4, 18)$, $(7, 7)$, dan $(10, 5)$.</p><p>Hasil interpolasi linier berupa rangkaian garis-garis lurus antar dua titik terdekat dari Gambar
+<a href=#fig3><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=code>code</h3><p>Terdapat program sederhana menggunakan bahasa pemrograman Python berikut ini</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0501-lin-inter.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Linear interpolation</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220221 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># import package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define data points</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> [<span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>18</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>5</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create coefficients c0 and c1 with zero values</span>
+</span></span><span style=display:flex><span>c0 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>c1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate c0 and c1</span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> len(c0)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>  c1[i] <span style=color:#f92672>=</span> (y[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> y[i]) <span style=color:#f92672>/</span> (x[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> x[i])
+</span></span><span style=display:flex><span>  c0[i] <span style=color:#f92672>=</span> y[i] <span style=color:#f92672>-</span> c1[i] <span style=color:#f92672>*</span> x[i]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define linear interpolation function f(x)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>f</span>(xx):
+</span></span><span style=display:flex><span>    i <span style=color:#f92672>=</span> int(np<span style=color:#f92672>.</span>floor((xx <span style=color:#f92672>-</span> x[<span style=color:#ae81ff>0</span>])<span style=color:#f92672>/</span>(x[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> x[<span style=color:#ae81ff>0</span>])))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> i <span style=color:#f92672>&gt;</span> N <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> c0[i] <span style=color:#f92672>+</span> c1[i] <span style=color:#f92672>*</span> xx
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># use the function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> xx <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>11</span>):
+</span></span><span style=display:flex><span>  yy <span style=color:#f92672>=</span> f(xx)
+</span></span><span style=display:flex><span>  print(xx, yy)
+</span></span></code></pre></div><p>yang akan memberikan hasil berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0501-lin-inter.py ====
+</span></span><span style=display:flex><span>1 11.0
+</span></span><span style=display:flex><span>2 13.333333333333332
+</span></span><span style=display:flex><span>3 15.666666666666666
+</span></span><span style=display:flex><span>4 18.0
+</span></span><span style=display:flex><span>5 14.333333333333332
+</span></span><span style=display:flex><span>6 10.666666666666664
+</span></span><span style=display:flex><span>7 7.0
+</span></span><span style=display:flex><span>8 6.333333333333333
+</span></span><span style=display:flex><span>9 5.666666666666666
+</span></span><span style=display:flex><span>10 5.0
+</span></span></code></pre></div><p>saat dijalankan. Program tersebut dapat dijalan secara daring di OneCompiler
+<a href=https://onecompiler.com/python/3xu2hf4vv target=_blank rel="nofollow noopener noreferrer"><span>3xu2hf4vv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=results>results</h3><p>Hasil keluaran program dapat disajikan dalam bentuk tabel berikut ini.</p><p>Tabel <a name=tab1>1</a> Hasil keluaran program <code>0501-lin-inter.py</code>.</p><table><thead><tr><th style=text-align:center>$x$</th><th style=text-align:center>$y$</th></tr></thead><tbody><tr><td style=text-align:center>$\color{#88e}{1}$</td><td style=text-align:center>$\color{#88e}{11}$</td></tr><tr><td style=text-align:center>2</td><td style=text-align:center>13.33</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>15.67</td></tr><tr><td style=text-align:center>$\color{#88e}{4}$</td><td style=text-align:center>$\color{#88e}{18}$</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>14.33</td></tr><tr><td style=text-align:center>6</td><td style=text-align:center>10.67</td></tr><tr><td style=text-align:center>$\color{#88e}{7}$</td><td style=text-align:center>$\color{#88e}{7}$</td></tr><tr><td style=text-align:center>8</td><td style=text-align:center>6.33</td></tr><tr><td style=text-align:center>9</td><td style=text-align:center>5.67</td></tr><tr><td style=text-align:center>$\color{#88e}{10}$</td><td style=text-align:center>$\color{#88e}{5}$</td></tr></tbody></table><p>Perhatikan bahwa nilai-nilai telah dibulatkan sampai dua angka di belakang koma pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk yang bukan bilangan bulat. Nilai-nilai berwarna ($\color{#88e}\blacksquare$) adalah titik-titik data, sedangkan yang lainnnya merupakan hasil interpolasi.</p><p>![]({{ site.baseurl}}/assets/img/0/50/0501-d.png)<br>Gambar <a name=fig4>4</a>. Garis-garis fungsi interpolasi linier dan titik-titik hasil interpolasi ($\circ$) serta titik-titik datanya semula ($\color{#88e}\blacksquare$).</p><p>Perhatikan bahwa pada Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>telah terdapat titik-titik di pada garis-garis hasil interpolasi linier, yang semula hanya menghubungkan titik-titik data pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan belum ada titik-titik lain di antara titik-titik data.</p><h2 id=exer>exer</h2><ol><li>Dengan menggunakan program <code>0501-lin-inter.py</code> carilah nilai $y$ untuk $x = 3.5, 6.5, 9.5$. Tampilkan sampai tiga angka di belakang koma.</li><li>Bagaimana dengan cepat mencari nilai-nilai yang diminta pada soal sebelumnya tanpa melakukan kompilasi programnya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Techopedia, &ldquo;Linear Interpolation&rdquo;, Technopedia, 29 Jun 2017, url
+<a href=https://www.techopedia.com/definition/20366/linear-interpolation target=_blank rel="nofollow noopener noreferrer"><span>https://www.techopedia.com/definition/20366/linear-interpolation <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Linear interpolation&rdquo;, Wikipedia, The Free Encyclopedia, 7 January 2022, 14:58 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1064278127" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1064278127 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r03></a>David S. Fulford, &ldquo;Linear Interpolation In Python a Single Line of Code&rdquo;, Towards Data Science, 29 Jun 2020, url
+<a href=https://towardsdatascience.com/linear-interpolation-in-python-a-single-line-of-code-25ab83b764f9 target=_blank rel="nofollow noopener noreferrer"><span>https://towardsdatascience.com/linear-interpolation-in-python-a-single-line-of-code-25ab83b764f9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r04></a>&ldquo;Linear Interpolation Calculator&rdquo;, EasyCalculation.com, Free Online Calculator and Converter, url
+<a href=https://www.easycalculation.com/analytical/linear-interpolation.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.easycalculation.com/analytical/linear-interpolation.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r05></a>Jimmy Raymond, &ldquo;Linear Interpolation Equation Calculator Engineering - Interpolator Formula&rdquo;, AJ Design Software, 2015, url
+<a href=https://www.ajdesigner.com/phpinterpolation/linear_interpolation_equation.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.ajdesigner.com/phpinterpolation/linear_interpolation_equation.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r06></a>Admin, &ldquo;Similar Triangles&rdquo;, BYJU&rsquo;S, 10 Mar 2021, url
+<a href=https://byjus.com/maths/similar-triangles/ target=_blank rel="nofollow noopener noreferrer"><span>https://byjus.com/maths/similar-triangles/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li><li><a name=r07></a>Eric W. Weisstein, &ldquo;Floor Function&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, Wolfram Research, Inc., 2022, url
+<a href=https://mathworld.wolfram.com/FloorFunction.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/FloorFunction.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220221].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0501?src=hash&amp;ref_src=twsrc%5Etfw">#bug0501</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1495883081122971649?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) 16.833, 8.833, 5.333; &nbsp;
+2) pada command line Python tuliskan print(f(3.5)), print(f(3.5)), dan print(f(3.5)); &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

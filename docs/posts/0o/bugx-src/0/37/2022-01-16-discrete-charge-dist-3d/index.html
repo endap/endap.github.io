@@ -1,0 +1,97 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>discrete charge dist 3d | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>discrete charge dist 3d</h1><time datetime=2022-01-16T21:52:00+07:00>January 16, 2022</time><p>Dalam pembelajaran perhitungan medan listrik oleh sejumlah titik muatan dalam 3d, salah satu problemnya adalah sistem berbentuk sejumlah muatan yang terletak pada titik-titik sudut sebuah kubus [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Visualiasi medan listrik oleh beberapa muatan titik dalam 3d, juga permukaan ekipotensialnya, dapat digambarkan menggunakan software Maple 10 [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam aplikasinya medan listrik dalam tiga dimensi menjadi penting sehingga perlu dihitung dan diukur di substation bertegangan tinggi [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan dimodelkan untuk membantu analisis pada sistem peringatan petir [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk saat ini tiga muatan titik pada sudut-sudut suatu kotak dan kontribusinya pada suatu titik amat akan dibahas sebagai ilustrasi superposisi medan listrik [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang dalam hal ini bersumber dari tiga muatan titik. Sistem ini dapat diperluas menjadi bersumber dari $N$ muatan titik.</p><h2 id=rectangular-block>rectangular block</h2><p>Sebuah balok persegi panjang dengan panjang sisi-sisi $a$, $b$, dan $c$ merupakan bangun 3d untuk meletakkan tiga muatan titik seperti diberikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/37/0373-a.png)<br>Gambar <a name=fig1>1</a>. Tiga muatan titik $q_1$, $q_2$, $q_3$, dan titik amat $\rm P$ pada titik-titik sudut suatu balok dengan panjang sisi-sisi $a$, $b$, dan $c$.</p><p>Untuk saat ini ketiga muatan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dipilih bertanda positif, walaupun dengan menggunakan Persamaan \eqref{eqn:electric-field-point-charge} tanda muatan cukup digunakan saja, agar semua medan listriknya mengarah keluar dari sumber agar konsisten. Bila kemudian akan digunakan muatan bertanda negatif arah medan listriknya hanya perlu diubah sebaliknya.</p><h2 id=electric-field>electric field</h2><p>Pada posisi $\vec{r}_i$ terdapat sebuah muatan titik $q_i$ yang akan meyebabkan medan listrik $\vec{E}_i$ berbentuk</p><p>\begin{equation}\label{eqn:electric-field-point-charge}
+\vec{E}_i = k \frac{q_i}{|\vec{r} - \vec{r}_i|^3} \ (\vec{r} - \vec{r}_i),
+\end{equation}</p><p>pada posisi titik amat $\vec{r}$. Baik vektor posisi muatan titik maupun vektor posisi titik amat, keduanya akan memiliki komponen pada arah $x$, $y$ dan $z$.</p><h3 id=e1>e1</h3><p>Medan listrik oleh muatan $q_1$ diilustrasikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/37/0373-b.png)<br>Gambar <a name=fig2>2</a>. Medan listrik $\vec{E}_1$ akibat muatan titik $q_1$ pada titik amat $\rm P$.</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:q1-rel-pos}
+\begin{array}{rcl}
+\vec{r} - \vec{r}_1 & = & (a\hat{x} + c\hat{z}) - (c\hat{z}) \newline
+& = & a\hat{x}, \newline
+| \vec{r} - \vec{r}_1 | & = & a.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:q1-rel-pos} ke Persamaan \eqref{eqn:electric-field-point-charge} akan menghasilkan</p><p>\begin{equation}\label{eqn:q1-e-field}
+\begin{array}{rcl}
+\vec{E}_1 & = & \displaystyle k \frac{q_1}{|\vec{r} - \vec{r}_1|^3} \ (\vec{r} - \vec{r}_1) \newline
+& = & \displaystyle k \frac{q_1}{a^3} \ (a\hat{x}) \newline
+& = & \displaystyle \left( k \frac{q_1}{a^2} \right) \hat{x},
+\end{array}
+\end{equation}</p><p>yang merupakan medan listrik oleh muatan $q_1$.</p><h3 id=e2>e2</h3><p>Medan listrik oleh muatan $q_2$ diilustrasikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/37/0373-c.png)<br>Gambar <a name=fig3>3</a>. Medan listrik $\vec{E}_2$ akibat muatan titik $q_2$ pada titik amat $\rm P$.</p><p>Dari Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:q2-rel-pos}
+\begin{array}{rcl}
+\vec{r} - \vec{r}_2 & = & (a\hat{x} + c\hat{z}) - (b\hat{y} + c\hat{z}) \newline
+& = & a\hat{x} - b\hat{y}, \newline
+| \vec{r} - \vec{r}_2 | & = & (a^2 + b^2)^{1/2}.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:q2-rel-pos} ke Persamaan \eqref{eqn:electric-field-point-charge} akan menghasilkan</p><p>\begin{equation}\label{eqn:q2-e-field}
+\begin{array}{rcl}
+\vec{E}_2 & = & \displaystyle k \frac{q_2}{|\vec{r} - \vec{r}_2|^3} \ (\vec{r} - \vec{r}_2) \newline
+& = & \displaystyle k \frac{q_2}{(a^2 + b^2)^{3/2}} \ (a\hat{x} - b\hat{y}) \newline
+& = & \displaystyle k \frac{q_2}{a^2 + b^2} \ \left(\frac{a}{\sqrt{a^2 + b^2}} \hat{x} - \frac{b}{\sqrt{a^2 + b^2}} \hat{y} \right) \newline
+& = & \displaystyle \left[ k \frac{aq_2}{(a^2 + b^2)^{3/2}} \right] \hat{x} - \left[ k \frac{bq_2}{(a^2 + b^2)^{3/2}} \right] \hat{y},
+\end{array}
+\end{equation}</p><p>yang merupakan medan listrik oleh muatan $q_2$.</p><h3 id=e3>e3</h3><p>Medan listrik oleh muatan $q_3$ diilustrasikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/37/0373-d.png)<br>Gambar <a name=fig4>4</a>. Medan listrik $\vec{E}_3$ akibat muatan titik $q_3$ pada titik amat $\rm P$.</p><p>Dari Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:q3-rel-pos}
+\begin{array}{rcl}
+\vec{r} - \vec{r}_3 & = & (a\hat{x} + c\hat{z}) - (b\hat{y}) \newline
+& = & a\hat{x} - b\hat{y} + c\hat{z}, \newline
+| \vec{r} - \vec{r}_3 | & = & (a^2 + b^2 + c^2)^{1/2}.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:q3-rel-pos} ke Persamaan \eqref{eqn:electric-field-point-charge} akan menghasilkan</p><p>\begin{equation}\label{eqn:q3-e-field}
+\begin{array}{rcl}
+\vec{E}_3 & = & \displaystyle k \frac{q_3}{|\vec{r} - \vec{r}_3|^3} \ (\vec{r} - \vec{r}_3) \newline
+& = & \displaystyle k \frac{q_3}{(a^2 + b^2 + c^2)^{3/2}} \ (a\hat{x} - b\hat{y} + c\hat{z}) \newline
+& = & \displaystyle k \frac{q_3}{a^2 + b^2 + c^2} \ \left( \frac{a}{\sqrt{a^2 + b^2 + c^2}} \hat{x} \right. \newline
+&& \displaystyle \left. - \frac{b}{\sqrt{a^2 + b^2 + c^2}} \hat{y} + \frac{c}{\sqrt{a^2 + b^2 + c^2}} \hat{z} \right) \newline
+& = & \displaystyle \left[ k \frac{aq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{x} \newline
+&& \displaystyle - \left[ k \frac{bq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{y} \newline
+&& \displaystyle + \left[ k \frac{cq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{z},
+\end{array}
+\end{equation}</p><p>yang merupakan medan listrik oleh muatan $q_1$.</p><h3 id=etotal>etotal</h3><p>Medan listrik oleh ketiga muatan $q_1$, $q_2$, $q_3$ diilustrasikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/37/0373-e.png)<br>Gambar <a name=fig5>5</a>. Medan listrik $\vec{E} _{\rm Total}$ akibat muatan titik $q_1$, $q_2$, $q_3$ pada titik amat $\rm P$.</p><p>Dengan menjumlahkan Persamaan \eqref{eqn:q1-e-field}, \eqref{eqn:q2-e-field}, dan \eqref{eqn:q3-e-field} dapat diperoleh</p><p>\begin{equation}\label{eqn:total-e-field}
+\begin{array}{rcl}
+\vec{E} _{\rm Total} & = & \vec{E}_1 + \vec{E}_2 + \vec{E}_3 \newline
+& = & \displaystyle \left( k \frac{q_1}{a^2} \right) \hat{x} \newline
+&& \displaystyle + \left[ k \frac{aq_2}{(a^2 + b^2)^{3/2}} \right] \hat{x} - \left[ k \frac{bq_2}{(a^2 + b^2)^{3/2}} \right] \hat{y} \newline
+&& \displaystyle + \left[ k \frac{aq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{x} \newline
+&& \displaystyle - \left[ k \frac{bq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{y} \newline
+&& \displaystyle + \left[ k \frac{cq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{z} \newline
+& = & \displaystyle k \left[ \frac{aq_1}{(a^2)^{3/2}} + \frac{aq_2}{(a^2 + b^2)^{3/2}} + \frac{aq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{x} \newline
+&& \displaystyle - k \left[ \frac{bq_2}{(a^2 + b^2)^{3/2}} + \frac{bq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{y} \newline
+&& \displaystyle + k \left[ \frac{cq_3}{(a^2 + b^2 + c^2)^{3/2}} \right] \hat{z},
+\end{array}
+\end{equation}</p><p>yang merupakan medan listrik total $\vec{E} _{\rm Total}$ akibat ketiga muatan $q_1$, $q_2$, $q_3$.</p><h2 id=exer>exer</h2><ol><li>Di baris ketiga dari bawah pada Persamaan \eqref{eqn:total-e-field}, mengapa suku pertama dalam kurung persegi dituliskan seperti itu dan tidak seperti pada baris kedua pada persamaan yang sama?</li><li>Dengan mengatur besar dan tanda ketiga muatan $q_1$, $q_2$, $q_3$, serta dimensi balok $a$, $b$, $c$, apakah mungkin diperoleh $\vec{E} _{\rm Total} = 0$ di titik amat $\rm P$?</li><li>Apa yang dimaksud dengan superposisi medan listrik?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Admin, &ldquo;A Cube Of Side A Has Point Charges Q Located At Each Of Its Vertices&rdquo;, BYJU&rsquo;S, 3 Aug 2021, url
+<a href=https://byjus.com/jee-questions/a-cube-of-side-a-has-point-charges-q-located-at-each-of-its-vertices/ target=_blank rel="nofollow noopener noreferrer"><span>https://byjus.com/jee-questions/a-cube-of-side-a-has-point-charges-q-located-at-each-of-its-vertices/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220116].</li><li><a name=r02></a>Takao Takeuchi, &ldquo;3D Equipotential and electric field lines due to point charges&rdquo;, Department of Mathematics and Physics, State University of New York at Alfred, Alfred, New York, 13 Sep 2006, url
+<a href="https://www.maplesoft.com/applications/view.aspx?SID=4817&amp;view=html" target=_blank rel="nofollow noopener noreferrer"><span>https://www.maplesoft.com/applications/view.aspx?SID=4817&view=html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220116].</li><li><a name=r03></a>Sayed A. Ward, Samy M. Ghania, Essam M Shaalan, &ldquo;Three-dimensional electric field calculation and measurements inside high voltage substations&rdquo;, 2011 Annual Report Conference on Electrical Insulation and Dielectric Phenomena (CEIDP), 16-19 October 2011, Cancun, Mexico, p 219-222, url
+<a href=http://dx.doi.org/10.1109/CEIDP.2011.6232636 target=_blank rel="nofollow noopener noreferrer"><span>http://dx.doi.org/10.1109/CEIDP.2011.6232636 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.
+<a href=https://www.researchgate.net/publication/261396284 target=_blank rel="nofollow noopener noreferrer"><span><code>PDF</code> <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a name=r04></a>Hong-yan Xing, Gui-xian He, Xin-yuan Ji, &ldquo;Analysis on Electric Field Based on Three Dimensional Atmospheric Electric Field Apparatus&rdquo;, Journal of Electrical Engineering and Technology [J Electr Eng Technol], vol 13, no 4, p 1697-1704, Jul 2018, url
+<a href=http://doi.org/10.5370/JEET.2018.13.4.1697 target=_blank rel="nofollow noopener noreferrer"><span>http://doi.org/10.5370/JEET.2018.13.4.1697 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r05></a>J Thomas, &ldquo;Answer to &lsquo;Superposition Principle for Electric Fields&rsquo;&rdquo;, Physics Stack Exchange, 27 Dec 2018, url
+<a href=https://physics.stackexchange.com/a/450684/260719 target=_blank rel="nofollow noopener noreferrer"><span>https://physics.stackexchange.com/a/450684/260719 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220116].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0373?src=hash&amp;ref_src=twsrc%5Etfw">#bug0373</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1482726994089754624?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p><a><span>electric charge <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>electric field and source <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) untuk menujukkan keteraturan bentuk pembilang dan penyebut; &nbsp;
+2) tidak; &nbsp;
+3) medan pada suatu titik oleh banyak sumber muatan dapat diperoleh dengan menjumlahkan secara vektor medan akibat masing-masing sumber atau medan listrik akibat satu sumber tidak bergantung dengan medan listrik yang disebabkan oleh sumber lain; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

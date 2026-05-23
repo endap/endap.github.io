@@ -1,0 +1,108 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>repos separation | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>repos separation</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-10-11T17:37:30 07:00">11 Oct 2025</time>
+&#183;
+3 mins read
+&#183;
+<a class=link href=npprel:///25/j/22-repos-separation.md>edit</a></div></div><div class=note-content><h2 id=renaming>renaming</h2><ul><li>1627 Visit
+<a href=https://github.com/dudung/butiran target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/butiran <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>1628 Change settings<ul><li><a href=https://github.com/dudung/butiran/settings target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/butiran/settings <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>Repo name butiran &ndash;> butiran-src</li></ul></li><li>1630 Change Visibility in Danger Zone<ul><li>Change repository visibility</li><li>Change to private</li></ul></li><li>1644 Clone it locally and fresh.</li><li>1744 Create this note.</li></ul><h2 id=visiting>visiting</h2><ul><li>1747
+<a href=https://dudung.github.io/butiran target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/butiran <i class="fa fa-external-link" style=font-size:14px></i></span></a><ul><li>404</li><li>Page not found :(</li><li>The requested page could not be found.</li></ul></li><li>1748 Pause.</li></ul><h2 id=revising>revising</h2><ul><li>2029 Finally it end but without no full understanding.</li><li>Content of <code>hugo.yml</code> in the private repo<pre tabindex=0><code>name: Deploy Hugo site to public &#34;blog&#34; repo
+
+on:
+  push:
+    branches: [&#34;main&#34;]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: &#34;pages&#34;
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.146.4
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          &amp;&amp; sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Checkout private source repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Node.js dependencies
+        run: &#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+            REPO_NAME=&#34;butiran&#34;
+            BASE_URL=&#34;https://${{ github.repository_owner }}.github.io/${REPO_NAME}/&#34;
+            hugo --minify --baseURL &#34;$BASE_URL&#34;
+
+      - name: Upload public folder as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: public
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download built site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: public
+
+      - name: Clone public repo
+        run: |
+          git clone https://${{ secrets.BUTIRAN_DEPLOY_SECRET }}@github.com/dudung/butiran.git deploy_repo
+
+          cd deploy_repo
+
+          # Make sure public folder exists
+          mkdir -p public
+          mkdir -p docs
+
+          # Clean old build
+          rm -rf docs/*
+
+          # Copy new build into /public
+          cp -r ../public/* docs/
+
+          # Optional: keep README and LICENSE untouched
+          git config user.name &#34;github-actions[bot]&#34;
+          git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;
+
+          git add docs
+          git commit -m &#34;Update Hugo site in /public&#34; || echo &#34;No changes to commit&#34;
+          git push
+</code></pre></li><li>2023 Consider it done.</li></ul><h2 id=triggering>triggering</h2><ul><li>2042 Use trigger action <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><pre tabindex=0><code>git tag deploy-2025-10-11
+git push origin deploy-2025-10-11
+</code></pre></li><li>2059 Test it. Ok.</li><li>2110 Resuse single tag<pre tabindex=0><code>git tag -f deploy-now
+git push origin deploy-now -f
+</code></pre></li><li>2116 Tested and ok.<ul><li>Use to force GitHub Pages deployment.<pre tabindex=0><code> git tag -f deploy-now &amp;&amp; git push origin deploy-now -f
+</code></pre></li><li>Commit and push do not trigger the deployment.</li></ul></li></ul><h2 id=notes>notes</h2><ul><li>Discussion and instructions are availabe to read <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> and <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li><li>It is observed on 24-oct-2025 that trigger action is still working but not directly activated after push. It requires about a minute or two to hapen. Cause is still unknown. Previously, it is called several times to activate it, which is actually simply the time required by the first call. Finally, tested on 0124 and observed on 0126.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT-5, &ldquo;Trigger action by commit message&rdquo;, ChatGPT, 11 Oct 2025, url
+<a href=https://chatgpt.com/share/68ea5f2f-4bb0-800a-a405-7810dce5711c target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68ea5f2f-4bb0-800a-a405-7810dce5711c <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20251011].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>GPT-5, &ldquo;Private blog source setup&rdquo;, ChatGPT, 11 Oct 2025, url
+<a href=https://chatgpt.com/share/68ea33c9-762c-800a-b0cc-7b3b7ce35066 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68ea33c9-762c-800a-b0cc-7b3b7ce35066 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20251011].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>GPT-5, &ldquo;Deploy Hugo to public repo&rdquo;, ChatGPT, 11 Oct 2025, url
+<a href=https://chatgpt.com/share/68ea5cd5-a258-800a-bb97-d3fd4a4ac72c target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/68ea5cd5-a258-800a-bb97-d3fd4a4ac72c <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20251011].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,124 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>cygwin xlsx2csv six | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>cygwin xlsx2csv six</h1><time datetime=2022-02-06T18:18:00+07:00>February 6, 2022</time><p>Berkas XLSX yang diperoleh dari SIX [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] tidak dapat langsung dikonversi melalui command line menggunakan xlsx2csv [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] karena menghasilkan pesan kesalahan terkait angka nol di awal angka [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang bila diperbaiki hanya dengan menghilangkan angka nol pada informasi bulan dan hari akan menghasilkan kesalahan lain, termasuk tidak adanya atribut &lsquo;has_key&rsquo; [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Solusi diperoleh dengan mengubah versi Python yang digunakan menjadi 2.7 dan membuka lalu menyimpan berkas yang diunduh.</p><h2 id=install-xlsx2csv>install xlsx2csv</h2><p>Instalasi dilakukan pada Cygwin, mintty 3.4.4 (i686-pc-cygwin) [Windows 19042] (c) 2013/2020 Andy Koppe / Thomas Wolff, mengikuti suatu saran [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pip install xlsx2csv
+</span></span><span style=display:flex><span>Requirement already satisfied: xlsx2csv in /usr/local/lib/python3.8/site-packages <span style=color:#f92672>(</span>0.7.8<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>WARNING: You are using pip version 21.0.1; however, version 22.0.3 is available.
+</span></span><span style=display:flex><span>You should consider upgrading via the <span style=color:#e6db74>&#39;/usr/bin/python3.8.exe -m pip install --upgrade pip&#39;</span> command.
+</span></span></code></pre></div><p>sehingga saat dijalankan akan memberikan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ xlsx2csv
+</span></span><span style=display:flex><span>usage: xlsx2csv <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-a<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-c OUTPUTENCODING<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-d DELIMITER<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>--hyperlinks<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-e<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>--no-line-breaks<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>-E EXCLUDE_SHEET_PATTERN <span style=color:#f92672>[</span>EXCLUDE_SHEET_PATTERN ...<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>-f DATEFORMAT<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-t TIMEFORMAT<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>--floatformat FLOATFORMAT<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>--sci-float<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>-I INCLUDE_SHEET_PATTERN <span style=color:#f92672>[</span>INCLUDE_SHEET_PATTERN ...<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>--exclude_hidden_sheets<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>--ignore-formats IGNORE_FORMATS <span style=color:#f92672>[</span>IGNORE_FORMATS ...<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>-l LINETERMINATOR<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-m<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-n SHEETNAME<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-i<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>--skipemptycolumns<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-p SHEETDELIMITER<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-q QUOTING<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>[</span>-s SHEETID<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>                xlsxfile <span style=color:#f92672>[</span>outfile<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>xlsx2csv: error: the following arguments are required: xlsxfile
+</span></span></code></pre></div><p>yang menunjukkan bahwa berkas <code>xlsxfile</code> perlu diberikan setelah perintah <code>xlsx2csv</code>.</p><h2 id=download-xlsx-file>download xlsx file</h2><p>Berkas XLSX diperoleh dari SIX [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dengan mengunduhnya dalam suatu matakuliah tertentu seperti pada gambar di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/22/0224-a.png)<br>Gambar <a name=fig1>1</a>. Opsi untuk mengunduh berkas XLSX dan PDF pada situs SIX.</p><p>Dengan memilih opsi pertama pada bagian Download yaitu Microsoft Excel akan diperoleh berkas XLSX yang diperlukan.</p><h2 id=produce-error>produce error</h2><p>Salin berkas <code>xlsx2csv</code> ke folder aktif</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ cp /bin/xlsx2csv xlsx2csv.py
+</span></span></code></pre></div><p>dan jalankan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./xlsx2csv.py nt60940120211.xlsx
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line <span style=color:#ae81ff>286</span>
+</span></span><span style=display:flex><span>    date <span style=color:#f92672>=</span> datetime.datetime<span style=color:#f92672>(</span>1904, 01, 01<span style=color:#f92672>)</span> + datetime.timedelta<span style=color:#f92672>(</span>float<span style=color:#f92672>(</span>data<span style=color:#f92672>))</span>
+</span></span><span style=display:flex><span>                                    ^
+</span></span><span style=display:flex><span>SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix <span style=color:#66d9ef>for</span> octal integers
+</span></span></code></pre></div><p>yang merupakan pesan kesalahan terkait angkan nol di awal angka [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], seperti <code>01</code>, <code>09</code> dan seterusnya, dengan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>date <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>datetime(<span style=color:#ae81ff>1904</span>, <span style=color:#ae81ff>01</span>, <span style=color:#ae81ff>01</span>) <span style=color:#f92672>+</span> datetime<span style=color:#f92672>.</span>timedelta(float(data))
+</span></span></code></pre></div><p>adalah baris 286 yang dimaksud.</p><h2 id=fix-error>fix error</h2><p>Terbersit bahwa cara tercepat adalah mengubah baris 286 menjadi</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>date <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>datetime(<span style=color:#ae81ff>1904</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> datetime<span style=color:#f92672>.</span>timedelta(float(data))
+</span></span></code></pre></div><p>yang sayangnya tidak menyelesaikan masalah akan tetapi malah memberikan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./xlsx2csv.py nt60940120211.xlsx
+</span></span><span style=display:flex><span>Traceback <span style=color:#f92672>(</span>most recent call last<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 427, in &lt;module&gt;
+</span></span><span style=display:flex><span>    xlsx2csv<span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]</span>, sys.stdout, **kwargs<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 100, in xlsx2csv
+</span></span><span style=display:flex><span>    workbook <span style=color:#f92672>=</span> parse<span style=color:#f92672>(</span>ziphandle, Workbook, <span style=color:#e6db74>&#34;xl/workbook.xml&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 127, in parse
+</span></span><span style=display:flex><span>    instance.parse<span style=color:#f92672>(</span>ziphandle.read<span style=color:#f92672>(</span>filename<span style=color:#f92672>))</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 151, in parse
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> attrs.has_key<span style=color:#f92672>(</span><span style=color:#e6db74>&#39;r:id&#39;</span><span style=color:#f92672>)</span>: id <span style=color:#f92672>=</span> int<span style=color:#f92672>(</span>attrs<span style=color:#f92672>[</span><span style=color:#e6db74>&#34;r:id&#34;</span><span style=color:#f92672>]</span>.value<span style=color:#f92672>[</span>3:<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>AttributeError: <span style=color:#e6db74>&#39;dict&#39;</span> object has no attribute <span style=color:#e6db74>&#39;has_key&#39;</span>
+</span></span></code></pre></div><p>sebagai pesan kesalahan berikutnya, termasuk tidak adanya tribut &lsquo;has_key&rsquo; yang tidak dikenal di Python 3 [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Kemudian dilihat versi Python yang terinstal</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ python
+</span></span><span style=display:flex><span>python             python3            python3.6-config   python3.7
+</span></span><span style=display:flex><span>python2            python3-config     python3.6m-config  python3.7m.exe
+</span></span><span style=display:flex><span>python2.7.exe      python3.6          python3.6m.exe     python3.8.exe
+</span></span></code></pre></div><p>dan terdapat versi 2 dan 3. Baris pertama berkas <code>xlsx2csv</code> diubah dari yang semula</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/python</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>__author__ <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Dilshod Temirkhodjaev &lt;tdilshod@gmail.com&gt;&#34;</span>
+</span></span><span style=display:flex><span>__license__ <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;GPL&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> csv<span style=color:#f92672>,</span> datetime<span style=color:#f92672>,</span> zipfile<span style=color:#f92672>,</span> sys<span style=color:#f92672>,</span> os
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> xml.parsers.expat
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> xml.dom <span style=color:#f92672>import</span> minidom
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> optparse <span style=color:#f92672>import</span> OptionParser
+</span></span></code></pre></div><p>menjadi</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/python2.7</span>
+</span></span></code></pre></div><p>menggunakan versi 2 tertinggi yang terinstal. Jalankan kembali</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./xlsx2csv.py nt60940120211.xlsx
+</span></span><span style=display:flex><span>Traceback <span style=color:#f92672>(</span>most recent call last<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 427, in &lt;module&gt;
+</span></span><span style=display:flex><span>    xlsx2csv<span style=color:#f92672>(</span>args<span style=color:#f92672>[</span>0<span style=color:#f92672>]</span>, sys.stdout, **kwargs<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>  File <span style=color:#e6db74>&#34;./xlsx2csv.py&#34;</span>, line 109, in xlsx2csv
+</span></span><span style=display:flex><span>    raise Exception<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Sheet %i Not Found&#34;</span> %sheetid<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Exception: Sheet <span style=color:#ae81ff>1</span> Not Found
+</span></span></code></pre></div><p>dan tetap diperoleh pesan kesalahan yang belum dapat diperoleh.</p><h2 id=save-the-xlsx-file>save the xlsx file</h2><p>Saat berkas XLSX dibuka terlihat bahwa nama sheet bukan lagi Sheet1 akan tetapi telah menjadi kode matakuliah dan kelasnya. Saat direname kembali ke Sheet1, disimpan dan keluar. Berkas XLSX dapat terbaca</p><pre tabindex=0><code>$ ./xlsx2csv.py nt60940120211.xlsx
+INSTITUT TEKNOLOGI BANDUNG,,,
+Daftar Nilai Akhir,,,
+ ,,,
+Mata Kuliah: NT6094 Teknik Penulisan Jurnal Ilmiah,,,
+No Kelas: 01,,,
+Semester: 1 - 2021/2022,,,
+&#34;Dosen: Dr. rer. nat. Sparisoma Viridi, S.Si., Dr.Eng. Muhammad Haris Mahyuddin, S.T., M.Eng.&#34;,,,
+ ,,,
+NO,NIM,NAMA,NILAI
+1,23620033,Dhimaz Galang Hastungkorojati,A
+2,28720001,Helmi Majid Ar Rasyid,AB
+3,28720002,Lavita Nur&#39;aviana Rizalputri,AB
+4,28720003,Husni Ihsudha,AB
+5,28720005,Achmad Zacky Fairuza,AB
+6,28720006,Nurul Hanifah,AB
+7,28720007,Akhmad Zein Eko Mustofa,A
+8,28720008,Raih Rona Althof,AB
+9,28720009,Satria Hidayat,AB
+10,28721002,Diaz Ayu Widyasari,AB
+11,28721004,Asnan Rinovian,A
+12,28721005,Nining Oktafina Sifana,AB
+</code></pre><p>Kemudian dilakukan upaya minimal dengan tanpa mengubah nama sheet akan tetapi langsung menekan tombol Save dengan tetikus dan keluar dari aplikasi Microsoft Excel, ternyata berkas dapat dibaca oleh <code>xlsx2csv</code>.</p><p>![]({{ site.baseurl }}/assets/img/0/22/0224-b.png)<br>Gambar <a name=fig2>2</a>. Tombol Save pada Microsoft Excel.</p><p>Tombol Save adalah icon berbentuk disket seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p><code>06-feb-2022</code> Sampai saat ini belum diperoleh penjelasan mengapa berkas XLSX yang terunduh perlu dibuka dengan Microsoft Excel, disimpan, lalu ditutup kembali sehingga baru dapat dibaca oleh program Python <code>xlsx2csv</code> karya Dilshod Temirkhodjaev [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=note>note</h2><ol><li><a name=r01></a>&ldquo;Sistem Informasi Akademik&rdquo;, Direktorat Pendidikan, Institut Teknologi Bandung, 2022, url
+<a href=https://akademik.itb.ac.id/ target=_blank rel="nofollow noopener noreferrer"><span>https://akademik.itb.ac.id/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220206].</li><li><a name=r02></a>Aniket Parulekar, &ldquo;Answer to &lsquo;How to convert xlsx file to csv file using shell script?&rsquo;&rdquo;, Stack Overflow, 7 Feb 2017, url
+<a href=https://stackoverflow.com/a/42093752/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/42093752/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220206].</li><li><a name=r03></a>Midhun, &ldquo;Leading zeros are not allowed in Python?&rdquo;, Stack Overflow, 22 Jul 2020, url
+<a href=https://stackoverflow.com/q/63026713/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/q/63026713/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220206].</li><li><a name=r04></a>qloveshmily, &ldquo;Answer to &lsquo;dict&rsquo; object has no attribute &lsquo;has_key&rsquo;&rdquo;, Stack Overflow, 29 May 2019, url
+<a href=https://stackoverflow.com/a/56356127/9475509 target=_blank rel="nofollow noopener noreferrer"><span>https://stackoverflow.com/a/56356127/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220206].</li><li><a name=r05></a>Dilshod Temirkhodjaev, &ldquo;xlsx2csv&rdquo;, GitHub, version 0.7.8, 20 Apr 2021, url
+<a href=https://github.com/dilshod/xlsx2csv target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dilshod/xlsx2csv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220206].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0224?src=hash&amp;ref_src=twsrc%5Etfw">#bug0224</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1490281409319415808?ref_src=twsrc%5Etfw">February 6, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p><a><span>comment twitter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>mobile browser emulator <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>show only youtube control <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>install node.js v16.13.1 x64 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

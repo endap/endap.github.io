@@ -1,0 +1,74 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>impulse | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>impulse</h1><time datetime=2021-11-07T14:50:00+07:00>November 7, 2021</time><p>Impuls merupakan perkalian dari nilai rata-rata gaya dan rentang waktu selama gaya tersebut bekerja atau perubahan momentum yang dihasilkan gaya tersebut [
+<a href=#ref01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], atau lebih umum merupakan integral dari gaya selama selang waktu bekerjanya gaya tersebut [
+<a href=#ref02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Penggunaan utama dari konsep ini adalah untuk mempelajari gaya impak rata-rata selama tumbukan, dikarenakan massa dan perubahan kecepatan umumnya diukur akan tetapi kecepatan selama tumbukan tidak [
+<a href=#ref03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Bila diketahui fungsi waktu dari gaya $\vec{F}(t)$, impuls dapat diperoleh melalui</p><p>\begin{equation}\label{eqn-impulse-force-integral}
+\vec{I} = \int \vec{F} dt
+\end{equation}</p><p>atau bila menggunakan gaya rata-rata $\vec{F}_{\rm avg}$</p><p>\begin{equation}\label{eqn-impulse-force-average}
+\vec{I} = \vec{F}_{\rm avg} \Delta t,
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-impulse-momentum-change}
+\vec{I} = \Delta \vec{p},
+\end{equation}</p><p>bila terkait dengan perubahan momentum $\Delta \vec{p}$, di mana</p><p>\begin{equation}\label{eqn-momentum-change-constant-mass}
+\Delta \vec{p} = m \Delta \vec{v},
+\end{equation}</p><p>bila selama tumbukan massa benda tidak berubah.</p><h2 id=force-over-time>force over time</h2><p>Idealnya gaya yang menyebabkan impuls dapat diketahui bentuk fungsinya sehingga Persamaan \eqref{eqn-impulse-force-integral} dapat digunakan. Akan tetapi bila tidak diketahui bentuk $\vec{F}(t)$, yang umumnya terjadi di dalam pengamatan atau eksperimen, digunakan gaya rata-rata $\vec{F}_{\rm avg}$ sebagai pendekatannya seperti diberikan oleh Persamaan \eqref{eqn-impulse-force-average}.</p><p>![]({{ site.baseurl }}/assets/img/0/10/0102-a.png)<br>Gambar <a name=fig1>1</a>. Beberapa bentuk gaya sebagai fungsi waktu $F(t)$ yang bekerja selama $\Delta t = 4$ dan menghasilkan impuls yang sama.</p><p>Bentuk gaya rata-rata $F_{\rm avg}$ diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(d) yang dapat dianggap mewakili kurva-kurva $F(t)$ yang lain, (a), (b), (c), bila bentuk sebenarnya tidak diketahui. Keempat kurva $F(t)$ pada gambar di atas memberikan nilai impuls yang sama $10 \frac23$, yang merupakan luas daerah di bawah kurva. Daerah yang dimaksud telah ditandai dengan warna merah. Gaya sebagai fungsi waktu $F(t)$ untuk Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(a)-(d) adalah</p><p>\begin{equation}\label{eqn-impulse-force-func-a}
+F(t) = 4t - t^2,
+\end{equation}</p><p>\begin{equation}\label{eqn-impulse-force-func-b}
+F(t) =
+\left\{
+\begin{array}{rcl}
+\frac83 t, & 0 \le t \le 2, \newline
+-\frac83 t(x-2) + \frac{16}3, & 2 \le t \le 4, \newline
+\end{array}
+\right.
+\end{equation}</p><p>\begin{equation}\label{eqn-impulse-force-func-c}
+F(t) =
+\left\{
+\begin{array}{rcl}
+\frac83, & 0 \le t \le 1, \newline
+3, & 1 \le t \le 2, \newline
+2, & 2 \le t \le 4,
+\end{array}
+\right.
+\end{equation}</p><p>\begin{equation}\label{eqn-impulse-force-func-d}
+F(t) = \tfrac83.
+\end{equation}</p><p>Fungsi pada Persamaan \eqref{eqn-impulse-force-func-a} dan \eqref{eqn-impulse-force-func-d} tidak perlu diberi rentang karena kebetulan merupakan fungsi malar atau kontinu dalam selang waktu gaya tersebut bekerja, yaitu $0 \le t \le 4$.</p><h2 id=momentum-change>momentum change</h2><p>Sebelum berinteraksi dengan gaya $\vec{F}$ momentum suatu benda adalah $\vec{p}(t_1)$ dan setelah berinteraksi menjadi $\vec{p}(t_1 + \Delta t)$ dengan $\Delta t$ adalah durasi gaya bekerja atau $\vec{F}(t)$ hanya berlaku saat $t_1 \le t \le t_1 + \Delta t$, yang dapat dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn-impulse-force-func-e}
+F(t) =
+\left\{
+\begin{array}{rcl}
+0, & t \le t_1, \newline
+f(t), & t_1 \le t \le t_1 + \Delta t, \newline
+0, & t_1 + \Delta t \le t,
+\end{array}
+\right.
+\end{equation}</p><p>dengan $f(t)$ suatu fungsi kontinu.</p><p>![]({{ site.baseurl }}/assets/img/0/10/0102-b.png)<br>Gambar <a name=fig2>2</a>. Ilustrasi sebuah bola menumbuk dinding dengan keadaan awal ($\color{#fcc}{\blacksquare}$) sebelum peristiwa tumbukan, saat impuls bekerja ($\color{#ccc}{\blacksquare}$) selama peristiwa tumbukan, dan keadaan akhirnya ($\color{#ccf}{\blacksquare}$) setelah peristiwa tumbukan.</p><p>Dengan menggunakan fungsi gaya berbentuk kuadratik seperti pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(a) dapat digambarkan ilustrasi perubahan momentum benda sebelum, saat, dan setelah peristiwa tumbukan seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Telah jelas terlihat bagaimana momentum benda, setelah mulai menyentuh dinding, perlahan-lahan mengecil, menjadi nol, lalu mulai berbalik arah.</p><h2 id=exer>exer</h2><ol><li>Sebuah benda dengan momentum awal $2 \ \rm kg \cdot m/s$ menumbuk dinding di depannya dan mendapatkan impuls $-4 \ \rm kg \cdot m/s$ dan kemudian bergerak berbalik arah. Tentukan momentum akhir benda.</li><li>Sebuah gaya rata-rata $10 \ \rm N$ bekerja selama $0.1 \ \rm s$ pada sebuah benda. Tentukan impuls yang diterima benda.</li><li>Apakah satuan impuls dari gaya dikalikan waktu sama dengan dari perubahan momentum? Jelaskan.</li><li>Perubahan momentum yang dialami suatu benda adalah $25 \ \rm kg\cdot m/s$. Bila gaya yang menyebabkannya bekerja selama $0.1 \ \rm s$, tentukan besar gaya rata-rata tersebut.</li><li>Apakah impuls dapat digunakan dengan gaya yang terus-menerus ada? Adakah yang lebih baik digunakan?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>&ldquo;impulse&rdquo;, Merriam-Webster, Inc., 2021, url
+<a href=https://www.merriam-webster.com/dictionary/impulse target=_blank rel="nofollow noopener noreferrer"><span>https://www.merriam-webster.com/dictionary/impulse <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211107].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Impulse (physics)&rdquo;, Wikipedia, The Free Encyclopedia, 3 July 2021, 01:05 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1031676704" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1031676704 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211107].</li><li><a name=r03></a>Carl R. Nave, &ldquo;Impulse of Force&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/impulse.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/impulse.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20200901].</li></ol><h2 id=heading> </h2><p><a><span>velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>newton&rsquo;s 2nd law <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>momentum <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $-2 \ \rm kg \cdot m/s$; &nbsp;
+2) $1 \ \rm N\cdot s$; &bnsp;
+3) sama; $\rm N = kg\cdot m/s^2$ sehingga $\rm N\cdot s = kg\cdot m/s$; &nbsp;
+4) $250 \ \rm N$; &nbsp;
+5) ya, tetapi tidak umum digunakan untuk gaya seperti itu; bila gaya selalu ada atau kontinu, untuk mencari perubahan momentumnya digunakan hukum II Newton; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

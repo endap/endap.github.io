@@ -1,0 +1,102 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>surf chrg e field disc axis | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>surf chrg e field disc axis</h1><time datetime=2022-01-10T21:12:00+07:00>January 10, 2022</time><p>Saat membahas medan listrik yang disebabkan oleh muatan permukaan berbentuk sebuah cakram atau pelat bundar pada sumbu cakram, umumnya digunakan pendekatan elemen muatan berbentuk cincin [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang telah menghilangkan komponen-komponen medan listrik selain komponen yang sejajar sumbu. Hal ini akan membuat bentuk-bentuk seperti sektor lingkaran [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dan segmen anulus [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] tidak dapat digunakan sebagai bentuk muatan permukaan untuk dihitung medan listrik yang disebabkannya. Dengan menggunakan elemen luas lingkaran, sebagai cara terakhir dari tiga cara mengitung luas lingkaran [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], hasil yang lebih umum dapat diperoleh.</p><h2 id=electric-field>electric field</h2><p>Suatu distribusi muatan dengan elemen muatan $dq$ yang terletak pada posisi $\vec{r}_q$ memberikan elemen medan listrik $d\vec{E}$ pada posisi $\vec{r}$ mengikuti</p><p>\begin{equation}\label{eqn:electric-field-charge-distribution}
+d\vec{E}_q = k \ \frac{dq}{| \vec{r} - \vec{r}_q |^3} \ (\vec{r} - \vec{r}_q),
+\end{equation}</p><p>dengan $k = 8.9875517923(14)\times 10^9$ ${\rm kg \cdot m^3 \cdot s^{-2} \cdot C^{-2}}$ adalah konstanta Coulomb.</p><h2 id=surface-charge>surface charge</h2><p>Rapat muatan permukaan diberikan oleh</p><p>\begin{equation}\label{eqn:surface-charge-density}
+\sigma = \frac{dq}{dA},
+\end{equation}</p><p>yang untuk distribusi muatan seragam akan menjadi</p><p>\begin{equation}\label{eqn:surface-charge-density-uniform}
+\sigma = \frac{Q}{A},
+\end{equation}</p><p>dengan $A$ adalah luas permukaan dan $Q$ muatan totalnya. Untuk sistem berbentuk cakram</p><p>\begin{equation}\label{eqn:area-element}
+dA = (dr)(rd\theta)
+\end{equation}</p><p>merupakan elemen luasnya dalam koordinat polar dan sillinder. Dan</p><p>\begin{equation}\label{eqn:radial-unit-vector}
+\hat{r} = \hat{x} \cos\theta + \hat{y} \sin\theta
+\end{equation}</p><p>merupakan vektor satuan arah radialnya.</p><h2 id=unformly-charged-disc>unformly charged disc</h2><p>Sebuah muatan permukaan berbentuk cakram dengan dengan jari-jari $R$ dan muatan total $Q$ memiliki elemen muatan $dq$ yang memberikan elemen medan listrik $d\vec{E}$ pada titik amat $\rm P$ yang terletak sepanjang sumbu $z$ pada jarak $z$ dari cakram. Ilustrasi sistem ini diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/33/0333-a.png)<br>Gambar <a name=fig1>1</a>. Elemen muatan $dq$ dari sebuah muatan permukaan berbentuk cakram dan elemen medan listrik $d\vec{E}$ yang disebabkannya.</p><p>Dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh</p><p>\begin{equation}\label{eqn:uniformly-charged-disc-relative-position}
+\begin{array}{rcl}
+\vec{r} - \vec{r}_q & = & z\hat{z} - r\hat{r}, \newline
+|\vec{r} - \vec{r}_q| & = & \sqrt{z^2 + r^2}.
+\end{array}
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:surface-charge-density}, \eqref{eqn:area-element}, \eqref{eqn:radial-unit-vector}, dan \eqref{eqn:uniformly-charged-disc-relative-position} ke Persamaan \eqref{eqn:electric-field-charge-distribution} akan memberikan</p><p>\begin{equation}\label{eqn:uniformly-charged-disc-electric-field}
+\begin{array}{rcl}
+d\vec{E}_q & = & \displaystyle k \ \frac{\sigma \ dA}{(z^2 + r^2)^{3/2}} \ (z\hat{z} - r\hat{r}) \newline
+& = & \displaystyle k \ \frac{\sigma \ (dr \ rd\theta)}{(z^2 + r^2)^{3/2}} \ [z\hat{z} - r(\hat{x} \cos\theta + \hat{y} \sin\theta)] \newline
+& = & \hat{z} dE_z + \hat{x} dE_x + \hat{y} dE_y, \newline
+\vec{E}_q & = & \hat{z} E_z + \hat{x} E_x + \hat{y} E_y,
+\end{array}
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:uniformly-charged-disc-electric-field-Ex}
+E_x = -k\sigma \int \frac{r^2 dr}{(z^2 + r^2)^{3/2}} \int \cos\theta d\theta
+\end{equation}</p><p>\begin{equation}\label{eqn:uniformly-charged-disc-electric-field-Ey}
+E_y = -k\sigma \int \frac{r^2 dr}{(z^2 + r^2)^{3/2}} \int \sin\theta d\theta
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:uniformly-charged-disc-electric-field-Ez}
+E_z = k \sigma z \int \frac{rdr}{(z^2 + r^2)^{3/2}} \int d\theta.
+\end{equation}</p><p>Dengan</p><p>\begin{equation}\label{eqn:int-05f}
+\begin{array}{rcl}
+\displaystyle \int \frac{r^2 dr}{(z^2 + r^2)^{3/2}} & = & \displaystyle - \frac{r}{\sqrt{z^2 + r^2}} \newline
+&& \displaystyle + \ln \left| \frac{\sqrt{z^2 + r^2}}{z} + \frac{r}{z} \right| + C
+\end{array}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:int-00}
+\int \frac{r \ dr}{(z^2 + r^2)^{3/2}} = - \frac{1}{(z^2 + r^2)^{1/2}} + C,
+\end{equation}</p><p>Persamaan \eqref{eqn:uniformly-charged-disc-electric-field-Ex}, \eqref{eqn:uniformly-charged-disc-electric-field-Ey}, dan \eqref{eqn:uniformly-charged-disc-electric-field-Ez} dapat dipecahkan.</p><p>Untuk $R$ batas bawah integralnya adalah $R_1$ dan batas atasnya adalah $R_2$, sedangkan untuk $\theta$ batas bawah integralnya adalah $\theta_1$ dan baas atasnya adalah $\theta_2$.</p><h3 id=x-component>x component</h3><p>Untuk arah $x$ dapat diperoleh</p><p>\begin{equation}\label{eqn:Ex-solution}
+\begin{array}{rcl}
+E_x({\rm P}) & = & \displaystyle -k\sigma (\sin\theta_2 - \sin\theta_1) \ \cdot \newline
+&& \displaystyle \left( - \frac{R_2}{\sqrt{z^2 + R_2^2}} + \ln \left| \frac{\sqrt{z^2 + R_2^2}}{z} + \frac{R_1}{z} \right| \right. \newline
+&& \displaystyle \left. + \frac{R_1}{\sqrt{z^2 + R_1^2}} - \ln \left| \frac{\sqrt{z^2 + R_1^2}}{z} + \frac{R_1}{z} \right| \right).
+\end{array}
+\end{equation}</p><h3 id=y-component>y component</h3><p>Untuk arah $y$ dapat diperoleh</p><p>\begin{equation}\label{eqn:Ey-solution}
+\begin{array}{rcl}
+E_y({\rm P}) & = & \displaystyle k\sigma (\cos\theta_2 - \cos\theta_1) \ \cdot \newline
+&& \displaystyle \left( - \frac{R_2}{\sqrt{z^2 + R_2^2}} + \ln \left| \frac{\sqrt{z^2 + R_2^2}}{z} + \frac{R_1}{z} \right| \right. \newline
+&& \displaystyle \left. + \frac{R_1}{\sqrt{z^2 + R_1^2}} - \ln \left| \frac{\sqrt{z^2 + R_1^2}}{z} + \frac{R_1}{z} \right| \right).
+\end{array}
+\end{equation}</p><h3 id=z-component>z component</h3><p>Untuk arah $z$ dapat diperoleh</p><p>\begin{equation}\label{eqn:Ez-solution}
+E_z({\rm P}) = -k \sigma z (\theta_2 - \theta_1) \left( \frac{1}{\sqrt{z^2 + R_2^2}} - \frac{1}{\sqrt{z^2 + R_1^2}} \right).
+\end{equation}</p><h3 id=total-electric-field>total electric field</h3><p>Keseluruhan medan listrik pada titik amat $\rm P$ diperoleh dengan menjumlahan secara vektor Persamaan \eqref{eqn:Ex-solution}, \eqref{eqn:Ey-solution}, dan \eqref{eqn:Ez-solution}</p><p>\begin{equation}\label{eqn:E-solution}
+\vec{E}({\rm P}) = \hat{x} E_x({\rm P}) + \hat{y} E_y({\rm P}) + \hat{z} E_z({\rm P}).
+\end{equation}</p><p>Persamaan \eqref{eqn:E-solution} ini dapat diterapkan untuk cakram, anulus, sektor lingkaran, dan segmen anulus.</p><h2 id=circular-forms>circular forms</h2><p>Untuk bentuk muatan permukaan berbentuk sirkular terdapat cakram dan anulus.</p><h3 id=annulus>annulus</h3><p>Untuk anulus perlu diterapkan $\theta_1 = 0$ dan $\theta_2 = 2\pi$ pada Persamaan \eqref{eqn:Ex-solution}, \eqref{eqn:Ey-solution}, dan \eqref{eqn:Ez-solution}, yang akan menghasilkan</p><p>\begin{equation}\label{eqn:E-solution-annulus}
+\vec{E}({\rm P}) = \hat{z} k \sigma 2\pi \left( \frac{z}{\sqrt{z^2 + R_1^2}}- \frac{z}{\sqrt{z^2 + R_2^2}} \right).
+\end{equation}</p><p>sebagai hasilnya. Urutan suku dalam kurung telah diubah mengingat $R_1 &lt; R_2$.</p><h3 id=disc>disc</h3><p>Untuk cakram perlu diterapkan $R_1 = 0$, $R_2 = R$, $\theta_1 = 0$, dan $\theta_2 = 2\pi$ pada Persamaan \eqref{eqn:Ex-solution}, \eqref{eqn:Ey-solution}, dan \eqref{eqn:Ez-solution}, yang akan memberikan</p><p>\begin{equation}\label{eqn:E-solution-disc}
+\vec{E}({\rm P}) = \hat{z} k \sigma 2\pi \left( \frac{z}{|z|}- \frac{z}{\sqrt{z^2 + R^2}} \right).
+\end{equation}</p><p>sebagai hasilnya. Perhatikan bahwa suku di dalam kurung telah diubah urutannya.</p><p>Baik untuk anulus maupun cakram, komponen pada arah $x$ dan $y$, pada masing-masing komponen terdapat suku $(\sin\theta_2 - \sin\theta_1)$ dan $(\cos\theta_2 - \cos\theta_1)$, berturut-turut, yang akan menjadi bernilai nol saat diterapkan $\theta_1 = 0$ dan $\theta_2 = 2\pi$.</p><h3 id=very-large-disc>very large disc</h3><p>Untuk cakram yang amat luas atau $R = \infty$ Persamaan \eqref{eqn:E-solution-disc} akan menjadi</p><p>\begin{equation}\label{eqn:E-solution-disc-very-large}
+\vec{E}({\rm P}) = \hat{z} k \sigma 2\pi \frac{z}{|z|} = \hat{z} \frac{\sigma}{2\epsilon_0} \frac{z}{|z|},
+\end{equation}</p><p>yang besarnya cukup dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:E-solution-disc-very-large-magnitude}
+E_{\rm large \ disc} = \frac{\sigma}{2\epsilon_0},
+\end{equation}</p><p>karena suku $\hat{z} \cdot (z/|z|)$ hanya menunjukkan arah medan listriknya. Persamaan \eqref{eqn:E-solution-disc-very-large} atau \eqref{eqn:E-solution-disc-very-large-magnitude} akan digunakan dalam menentukan medan listrik oleh pelat luas, yang juga dimanfaatkan dalam kapasitor.</p><h2 id=exer>exer</h2><ol><li>Mengapa suku di dalam kurung pada Persamaan \eqref{eqn:E-solution-annulus} perlu diubah urutannya?</li><li>Mengapa suku di dalam kurung pada Persamaan \eqref{eqn:E-solution-disc} perlu diubah urutannya?</li><li>Apakah kondisi cakram luas sehingga dapat diperoleh Persamaan \eqref{eqn:E-solution-disc-very-large} atau \eqref{eqn:E-solution-disc-very-large-magnitude}?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>George Watson, &ldquo;Electric Field on the Axis of a Uniformly Charged Disk&rdquo;, PHYS208 2/25 Class, University of Delaware, 25 Feb 1998, url
+<a href=https://www.physics.udel.edu/~watson/phys208/clas0225.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.physics.udel.edu/~watson/phys208/clas0225.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li><li><a name=r02></a>Carl R. Nave, &ldquo;Electric Field:Disc of Charge&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elelin.html#c3 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elelin.html#c3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li><li><a name=r03></a>Jeremy Tatum, &ldquo;Field on the Axis of a Uniformly Charged Disc&rdquo;, Celestial Mechanics (Tatum), University of Victoria, 21 Jun 2021, url
+<a href=https://phys.libretexts.org/@go/page/6476 target=_blank rel="nofollow noopener noreferrer"><span>https://phys.libretexts.org/@go/page/6476 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li><li><a name=r04></a>Admin, &ldquo;Sector Of A Circle&rdquo;, Byju&rsquo;s, 20 Jan 2021, url
+<a href=https://byjus.com/maths/sector-of-a-circle/ target=_blank rel="nofollow noopener noreferrer"><span>https://byjus.com/maths/sector-of-a-circle/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li><li><a name=r05></a>&ldquo;Circle, Circular Sector, Circular Segment, Annulus&rdquo;, Nabla, 2020, url
+<a href=http://www.nabla.hr/BA-QuadPolygonCircleB.htm target=_blank rel="nofollow noopener noreferrer"><span>http://www.nabla.hr/BA-QuadPolygonCircleB.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li><li><a name=r06></a>Raushan Raj, &ldquo;Methods to derive the formula for Area of Circle&rdquo;, JEE Physics for You, Feb 2019, url
+<a href=https://www.iitjeephysics4u.com/2019/02/methods-to-derive-formula-for-area-of.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.iitjeephysics4u.com/2019/02/methods-to-derive-formula-for-area-of.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220110].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0333?src=hash&amp;ref_src=twsrc%5Etfw">#bug0333</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1480542812848332801?ref_src=twsrc%5Etfw">January 10, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p><a><span>electric charge <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>electric field <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>charge distribution <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) agar nilai keseluruhan menjadi positif; &nbsp;
+2) agar nilai keseluruhan menjadi positif; &nbsp;
+3) $R = \infty$ atau cukup $R > > z$; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

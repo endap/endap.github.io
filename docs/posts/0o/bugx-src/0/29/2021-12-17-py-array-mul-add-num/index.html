@@ -1,0 +1,243 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py array mul add num | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py array mul add num</h1><time datetime=2021-12-18T18:57:00+07:00>December 18, 2021</time><p>Array merupakan struktur data yang terdiri dari kumpulan elemen, berupa nilai atau variabel, yang dirujuk dengan setidaknya satu indeks atau key, di mana dalam implementasinya yang bergantung pada bahasa pemrograman jenis array ini dapat beririsan dengan jenis data lainnya yang menyimpan agregat nilai seperti list dan string [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Larik merupakan terjemahan array dalam bahasa Indonesia [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam Python terdapat perbedaan antara array dan list [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang saat mengaksesnya dapat melalui iterasi [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] ataupun terlihat tidak [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Cara yang terakhir ini terlihat lebih elegan akan tetapi memerlukan pemahaman akan adanya iterasi yang berlangsung secara tersirat. Untuk membantu pemahaman kode lengkap yang disajikan dapat dicoba langsung pada kompiler daring seperti OneCompiler [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=list-and-array>list and array</h2><p>Terdapat list dan array dalam Python, di mana struktur data yang terakhir tersedia melalui modul array dan paket numpy, yang sifatnya berbeda [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=built-in-list>built-in list</h3><p>Suatu list dapat digunakan dengan cara</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Use list 1</span>
+</span></span><span style=display:flex><span>lst1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>print(lst1)
+</span></span><span style=display:flex><span>print(type(lst1))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>dengan hasilnya adalah</p><pre tabindex=0><code>[1, 2, 8, 16, 32]
+&lt;class &#39;list&#39;&gt;
+</code></pre><p>atau melalui penggunaan konstruktor</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Use list 2</span>
+</span></span><span style=display:flex><span>lst2 <span style=color:#f92672>=</span> list([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>])
+</span></span><span style=display:flex><span>print(lst2)
+</span></span><span style=display:flex><span>print(type(lst2))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>yang akan memberikan hasil yang sama. List merupakan salah satu dari empat jenis data bawaan (built-in) yang disediakan Python untuk menyimpan sekumpulan data [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=array-module>array module</h3><p>Dengan memanfaatkan modul array pada Python dapat dilakukan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Import necessary module or package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> array <span style=color:#66d9ef>as</span> arr
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use array from array module</span>
+</span></span><span style=display:flex><span>arr1 <span style=color:#f92672>=</span> arr<span style=color:#f92672>.</span>array(<span style=color:#e6db74>&#39;i&#39;</span>, [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>])
+</span></span><span style=display:flex><span>print(arr1)
+</span></span><span style=display:flex><span>print(type(arr1))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>yang akan menghasilkan</p><pre tabindex=0><code>array(&#39;i&#39;, [1, 2, 8, 16, 32])
+&lt;class &#39;array.array&#39;&gt;
+</code></pre><p>dengan batasan bahwa jenis array dari modul array hanya mendukung satu jenis data, yang pada contoh di atas berjenis bilangan bulat atau integer dengan argumen pertamanya <code>'i'</code>.</p><h3 id=numpy-package>numpy package</h3><p>Dalam paket numpy terdapat pula array yang mendukung jenis data yang berbeda dalam satu array. Untuk contoh sebelumnya, dapat dilakukan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Import necessary module or package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use array from numpy package</span>
+</span></span><span style=display:flex><span>arr2 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(lst1)
+</span></span><span style=display:flex><span>print(arr2)
+</span></span><span style=display:flex><span>print(type(arr2))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>yang akan memberikan hasil</p><pre tabindex=0><code>[ 1  2  8 16 32]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</code></pre><p>yang sama dengan hasil menggunakan list.</p><h3 id=code-of-0290-a>code of 0290-a</h3><p>Potongan-potongan kode sebelumnya dapat dituliskan dalam satu program kecil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># python 3.9.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 0290-a.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example of list and array</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20211218</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># url bugx.vercel.app/pages/0290.html</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ref</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Import necessary module or package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> array <span style=color:#66d9ef>as</span> arr
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use list 1</span>
+</span></span><span style=display:flex><span>lst1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>print(lst1)
+</span></span><span style=display:flex><span>print(type(lst1))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use list 2</span>
+</span></span><span style=display:flex><span>lst2 <span style=color:#f92672>=</span> list(lst1)
+</span></span><span style=display:flex><span>print(lst2)
+</span></span><span style=display:flex><span>print(type(lst2))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use array from array module</span>
+</span></span><span style=display:flex><span>arr1 <span style=color:#f92672>=</span> arr<span style=color:#f92672>.</span>array(<span style=color:#e6db74>&#39;i&#39;</span>, lst1)
+</span></span><span style=display:flex><span>print(arr1)
+</span></span><span style=display:flex><span>print(type(arr1))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use array from numpy package</span>
+</span></span><span style=display:flex><span>arr2 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(lst1)
+</span></span><span style=display:flex><span>print(arr2)
+</span></span><span style=display:flex><span>print(type(arr2))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><p>yang dapat langsung dijalankan dengan
+<a href=https://onecompiler.com/python/3xmpf8nuh target=_blank rel="nofollow noopener noreferrer"><span>3xmpf8nuh <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>pada OneCompiler.</p><h2 id=data-with-linear-function>data with linear function</h2><p>Data dapat diperoleh dari observasi atau pengukuran, akan tetapi dapat pula dibuat dengan menggunakan suatu fungsi, yang untuk saat ini digunakan fungsi linier.</p><h3 id=linear-function>linear function</h3><p>Sebuah fungsi linier, yang grafiknya berbentuk garis lurus, memiliki bentuk</p><p>\begin{equation}\label{eqn:linear-function}
+y = f(x) = a + bx,
+\end{equation}</p><p>dengan $a$ adalah suatu konstanta atau titik potong pada sumbu $y$ dan $b$ adalah koefisien dari variabel bebas $x$, yang juga diketahui sebagai kemiringan kurva dan memberikan laju perubahan dari variabel terikat $y$ [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Persamaan \eqref{eqn:linear-function} dapat diterapkan dalam Python</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>f <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x,a,b : a<span style=color:#f92672>+</span>b<span style=color:#f92672>*</span>x
+</span></span></code></pre></div><p>dengan memanfaatkan fungsi Lambda [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=generating-data>generating data</h3><p>Dapat didefinsikan data untuk variabel bebas menggunakan larik seperti</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span></code></pre></div><p>dan ingin dibuat data untuk variabel terikatnya menggunakan fungsi linier seperti pada Persamaan \eqref{eqn:linear-function} dengan nilai $a$ dan $b$ tertentu, sehingga diperoleh</p><pre tabindex=0><code>y = a + bx
+a =  1
+b =  2
+x =  [1, 2, 8, 16, 32]
+y =  [3, 5, 9, 17, 33, 65]
+</code></pre><p>sebagai suatu hasil misalnya.</p><h3 id=code-of-0290-b>code of 0290-b</h3><p>Hasil sebelumnya di atas dan potongan kodenya dapat digabungkan menjadi</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># python 3.9.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 0290-b.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Linear function for list with lambda function</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20211218</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># url bugx.vercel.app/pages/0290.html</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ref 0290-a.py</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Import necessary module or package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> array <span style=color:#66d9ef>as</span> arr
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define independent variables in x</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Defina a lambda function for f</span>
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x,a,b: a<span style=color:#f92672>+</span>b<span style=color:#f92672>*</span>x
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y</span>
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x:
+</span></span><span style=display:flex><span>    y<span style=color:#f92672>.</span>append(f(i, a, b))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Show result</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y = a + bx&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;a = &#34;</span>, a)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;b = &#34;</span>, b)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x = &#34;</span>, x)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y = &#34;</span>, y)
+</span></span></code></pre></div><p>yang dapat dijalankan dengan
+<a href=https://onecompiler.com/python/3xmpncwzn target=_blank rel="nofollow noopener noreferrer"><span>3xmpncwzn <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di OneCompiler.</p><h2 id=alternatives>alternatives</h2><p>Terdapat dua cara alternatif [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] untuk mendapatkan larik variabel terikat dari larik variabel bebas dengan fungsi linier seperti pada Persamaan \eqref{eqn:linear-function}.</p><h3 id=for-inside-square-brackets>for inside square brackets</h3><p>Dalam suatu list dapat dituliskan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y2 from x2</span>
+</span></span><span style=display:flex><span>x2 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>y2 <span style=color:#f92672>=</span> [f(i, a, b) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x2]
+</span></span></code></pre></div><p>dengan</p><pre tabindex=0><code>x2 =  [1, 2, 4, 8, 16, 32]
+y2 =  [3, 5, 9, 17, 33, 65]
+</code></pre><p>adalah hasilnya. Cara ini sedikit lebih sedikit satu baris dibandingkan dengan cara sebelumnya.</p><h3 id=operators-with-numpy-array>operators with numpy array</h3><p>Jenis variabel array dalam numpy dapat digunakan sehingga operasi yang cukup sederhana seperti</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y3 from x3</span>
+</span></span><span style=display:flex><span>x3 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>])
+</span></span><span style=display:flex><span>y3 <span style=color:#f92672>=</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> x3
+</span></span></code></pre></div><p>di mana $\mathbf{y}_3$ tak lain adalah penjumlahan matriks $\mathbf{a}$ dengan hasil perkalian skalar $b$ dengan matriks $\mathbf{x}_3$</p><p>$$
+\mathbf{y}_3 = \mathbf{a} + b \ \mathbf{x}_3,
+$$</p><p>yang akan memberikan</p><pre tabindex=0><code>x3 =  [ 1  2  4  8 16 32]
+y3 =  [ 3  5  9 17 33 65]
+</code></pre><p>sebagai hasilnya.</p><h3 id=code-of-0290-c>code of 0290-c</h3><p>Program singkat berikut ini menggabungkan potongan-potongan kode sebelumnya</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># python 3.9.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 0290-c.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Linear function for list with lambda function</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20211218</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># url bugx.vercel.app/pages/0290.html</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ref 0290-a.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ref 0290-b.py</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Import necessary module or package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Defina a lambda function for f</span>
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x,a,b: a<span style=color:#f92672>+</span>b<span style=color:#f92672>*</span>x
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y1 from x1</span>
+</span></span><span style=display:flex><span>x1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>y1 <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x1:
+</span></span><span style=display:flex><span>    y1<span style=color:#f92672>.</span>append(f(i, a, b))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y2 from x2</span>
+</span></span><span style=display:flex><span>x2 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>]
+</span></span><span style=display:flex><span>y2 <span style=color:#f92672>=</span> [f(i, a, b) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x2]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create dependent variables in y3 from x3</span>
+</span></span><span style=display:flex><span>x3 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>32</span>])
+</span></span><span style=display:flex><span>y3 <span style=color:#f92672>=</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> x3
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Show result</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y = a + bx&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;a = &#34;</span>, a)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;b = &#34;</span>, b)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x1 = &#34;</span>, x1)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y1 = &#34;</span>, y1)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x2 = &#34;</span>, x2)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y2 = &#34;</span>, y2)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x3 = &#34;</span>, x3)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;y3 = &#34;</span>, y3)
+</span></span></code></pre></div><p>yang dapat dieksekusi dengan
+<a href=https://onecompiler.com/python/3xmpwmptx target=_blank rel="nofollow noopener noreferrer"><span>3xmpwmptx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di OnlineCompiler.</p><h2 id=comparison>comparison</h2><p>Dari kode <code>0290-b</code> dan <code>0290-c</code> terdapat ketiga cara yang dapat digunakan untuk menerapkan fungsi linier pada suatu larik data sebagai variabel bebas untuk menghasilkan larik data yang merupakan variabel terikat. Bagian utama dari ketiga cara tersebut diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut ini.</p><p>![]({{ site.baseurl }}/assets/img/0/29/0290-a.png) |![]({{ site.baseurl }}/assets/img/0/29/0290-b.png) | ![]({{ site.baseurl }}/assets/img/0/29/0290-c.png)</p><p>Gambar <a name=fig1>1</a>. Pembandingan visual potongan kode untuk ketiga cara.</p><p>Suatu program yang lebih pendek, dengan menghapus komentar-komdentarnya, yang mengilustrasikan pemanfaatan dari potongan kode pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dijalankan melalui
+<a href=https://onecompiler.com/python/3xmpxyc8r target=_blank rel="nofollow noopener noreferrer"><span>3xmpxyc8r <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di OneCompiler.</p><h2 id=exer>exer</h2><ol><li>Pesan kesalahan apa yang muncul bila baris kedua dari potongan kode pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(kiri) dihapus?</li><li>Apa hasil dari perintah <code>print(type(y3))</code> bila diletakkan pada baris terakhir pada program <code>0290-c</code>?</li><li>Apa makna dari kode berikut<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Define dot product function</span>
+</span></span><span style=display:flex><span>dot <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x1,y1,x2,y2 : x1<span style=color:#f92672>*</span>x2 <span style=color:#f92672>+</span> y1<span style=color:#f92672>*</span>y2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Project vector 3x + 4y to x</span>
+</span></span><span style=display:flex><span>proj_to_x <span style=color:#f92672>=</span> dot(<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>print(proj_to_x)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Project vector 3x + 4y to y</span>
+</span></span><span style=display:flex><span>proj_to_y <span style=color:#f92672>=</span> dot(<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>print(proj_to_y)
+</span></span></code></pre></div>yang dapat dijalankan di
+<a href=https://onecompiler.com/python/3xmq3naxn target=_blank rel="nofollow noopener noreferrer"><span>3xmq3naxn <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>?</li><li>Volume suatu benda berbentuk balok dihitung dengan rumus $V = l \cdot w \cdot h$, dengan $l$ panjang, $w$ lebar, dan $h$ tinggi. Buatlah fungsi untuk menghitungya. Gunakan fungsi lambda yang disediakan Python.</li><li>Dari kode berikut<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>]; y <span style=color:#f92672>=</span> [i<span style=color:#f92672>*</span>i <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x]; print(x, y)
+</span></span></code></pre></div>tuliskan hasilnya.</li><li>Dengan memodifikasi kode sebelumnya menjadi<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>] y <span style=color:#f92672>=</span> [i<span style=color:#f92672>*</span>i <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x] print(x, y)
+</span></span></code></pre></div>jelaskan hasil yang diperoleh.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Kenneth Leroy Busbee, Dave Braunschweig, &ldquo;&rdquo;, Programming Fundamentals, 15 Dec 2018, url
+<a href=https://press.rebus.community/programmingfundamentals/chapter/arrays-and-lists/ target=_blank rel="nofollow noopener noreferrer"><span>https://press.rebus.community/programmingfundamentals/chapter/arrays-and-lists/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211217].</li><li><a name=r02></a>Kontributor Wikipedia, &ldquo;Larik&rdquo;, Wikipedia, Ensiklopedia Bebas, 12 Agustus 2021, 05.15 UTC, url
+<a href="https://id.wikipedia.org/w/index.php?oldid=18961559" target=_blank rel="nofollow noopener noreferrer"><span>https://id.wikipedia.org/w/index.php?oldid=18961559 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211217].</li><li><a name=r03></a>Kateryna Koidan, &ldquo;Array vs. List in Python – What&rsquo;s the Difference?&rdquo;, LearnPython, Vertabelo SA, 17 Dec 2019, url
+<a href=https://learnpython.com/blog/python-array-vs-list/ target=_blank rel="nofollow noopener noreferrer"><span>https://learnpython.com/blog/python-array-vs-list/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211217].</li><li><a name=r04></a>Uni_Omni, Akanksha_Rai, espinozahg, punamsingh628700, &ldquo;Iterate over a list in Python&rdquo;, GeeksforGeeks, 6 Nov 2021, url
+<a href=https://www.geeksforgeeks.org/iterate-over-a-list-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/iterate-over-a-list-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211217].</li><li><a name=r05></a>&ldquo;How to multiply each element of a list by a number in Python&rdquo;, Kite, url
+<a href=https://www.kite.com/python/answers/how-to-multiply-each-element-of-a-list-by-a-number-in-python target=_blank rel="nofollow noopener noreferrer"><span>https://www.kite.com/python/answers/how-to-multiply-each-element-of-a-list-by-a-number-in-python <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211217].</li><li><a name=r06></a>&ldquo;One Compiler&rdquo;, 2021, url
+<a href=https://onecompiler.com/ target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r07></a>Refsnes Data, &ldquo;Python Lists&rdquo;, W3Schools, 2 Sep 2021, url
+<a href=https://www.w3schools.com/python/python_lists.asp target=_blank rel="nofollow noopener noreferrer"><span>https://www.w3schools.com/python/python_lists.asp <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r08></a>&ldquo;Linear Functions&rdquo;, Economics and Mathematics, Columbia University, 2021, url
+<a href=http://www.columbia.edu/itc/sipa/math/linear.html target=_blank rel="nofollow noopener noreferrer"><span>http://www.columbia.edu/itc/sipa/math/linear.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li><li><a name=r09></a>Venmani A D, &ldquo;Lambda Function in Python – How and When to use?&rdquo;, Machinelearningplus, 12 Sep 2020, url
+<a href=https://www.machinelearningplus.com/python/lambda-function/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.machinelearningplus.com/python/lambda-function/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211218].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0290?src=hash&amp;ref_src=twsrc%5Etfw">#bug0290</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1472157436869967874?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) `NameError: name 'y1' is not defined`; &nbsp;
+2) `<class 'numpy.ndarray'>`; &nbsp;
+3) Menghitung proyeksi vektor $\vec{r} = 3\hat{x} + 4\hat{y}$ masing-masing pada arah $x$ dan $y$.
+4) `vol = lambda l,w,h : l*w*h`; &nbsp;
+5) `[1, 2, 3, 4, 5] [1, 4, 9, 16, 25]`; &nbsp;
+6) `SyntaxError: invalid syntax` karena perlu disisipkan karakter `;` sebagai pengganti baris baru; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

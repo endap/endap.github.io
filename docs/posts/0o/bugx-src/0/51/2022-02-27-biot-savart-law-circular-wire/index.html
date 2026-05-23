@@ -1,0 +1,76 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>biot-savart law circular wire | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>biot-savart law circular wire</h1><time datetime=2022-02-27T17:45:00+07:00>February 27, 2022</time><p>Medan magnetik oleh kawat berbentuk busur lingkaran berarus dapat diperoleh dengan menggunakan hukum Biot-Savart [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sedangkan untuk sistem ideal solenodia dan toroida dapat menggunakan hukum Ampere [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=the-law>the law</h2><p>Elemen arus listrik yang mengalir pada sebuah kawat $Id\vec{l}$ akan memberikan elemen medan magnetik $d\vec{B}$ pada posisi $\vec{r}$ dari kawat yang diberikan oleh hukum Biot-Savart</p><p>\begin{equation}\label{eqn:biot-savart-law}
+d\vec{B} = \frac{\mu_0}{4\pi} \frac{Id\vec{l} \times \vec{r}}{r^3},
+\end{equation}</p><p>seperti digambarkan berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/51/0512-a.png)<br>Gambar <a name=fig1>1</a>. Elemen medan magnetik $d\vec{B}$ yang disebabkan oleh elemen arus $Id\vec{l}$ pada titik amat yang terletap pada posisi relatif $\vec{r}$ terhadap kawat berarus.</p><p>Kawat berarus dapat berbentuk sembarang kurva. Bentuk yang umum adalah garis lurus dan busur lingkaran.</p><h2 id=application>application</h2><p>Di sini akan diterapkan hukum Biot-Savart untuk kawat berbentuk busur lingkaran yang merupakan bentuk yang lebih umum dari bentuk lingkaran.</p><h3 id=arc-wire>arc wire</h3><p>Agar hukum Biot-Savart dapat diterapkan dengan mudah Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>perlu diperjelas dengan elemen integral untuk $dl = Rd\theta$ seperti pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/51/0512-b.png)<br>Gambar <a name=fig2>2</a>. Elemen medan magnetik $d\vec{B}$ pada posisi relatif $\vec{r}$ dari kawat dengan elemen arus $Id\vec{l}$ dengan elemen panjang kawat adalah $Rd\theta$.</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh elemen medan magnetik $d\vec{B}$ ($\color{#0b5}{\blacksquare}$) pada titik di sepanjang sumbu $z$ yang disebabkan oleh elemen arus pada kawat $Id\vec{l}$ ($\color{#f94}{\blacksquare}$). Selain itu keseluruhan elemen medan magnetik ($\color{#0b5}{\blacksquare}$ dan $\color{#cda}{\blacksquare}$) akibat elemen arus ($\color{#f94}{\blacksquare}$) juga digambarkan untuk kembali mengingatkan mengenai aplikasi dari aturan tangan kanan. Untuk titik pengamatan di sepanjang sumbu $z$ hanya $d\vec{B}$ yang berwarna hijau lebih gelap ($\color{#0b5}{\blacksquare}$) yang berperan.</p><p>Pada koordinat silinder dapat diperoleh</p><p>\begin{equation}\label{eqn:cylindrical-coordinate-dl}
+d\vec{l} = Rd\theta \ \hat{\theta}
+\end{equation}</p><p>seperti diberikan pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Dan dari gambar tersebut didapatkan pula</p><p>\begin{equation}\label{eqn:relative-position}
+\vec{r} = z\hat{z} - R\hat{r},
+\end{equation}</p><p>sehingga</p><p>\begin{equation}\label{eqn:relative-position-mag}
+r = \sqrt{z^2 + R^2}.
+\end{equation}</p><p>Dari Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dituliskan</p><p>\begin{equation}\label{eqn:tan-beta}
+z = R \tan \beta.
+\end{equation}</p><p>Vektor satuan pada Persaman \eqref{eqn:cylindrical-coordinate-dl} dapat dinyatakan dengan vektor satuan pada koordinat kartesian</p><p>\begin{equation}\label{eqn:theta-hat}
+\hat{\theta} = -\hat{x} \sin \theta + \hat{y} \cos \theta,
+\end{equation}</p><p>dengan $\theta$ bermula dari sumbu $x$ menuju sumbu $y$ dan untuk Persamaan \eqref{eqn:relative-position}</p><p>\begin{equation}\label{eqn:r-hat}
+\hat{r} = \hat{x} \cos \theta + \hat{y} \sin \theta.
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:cylindrical-coordinate-dl}, \eqref{eqn:relative-position}, dan \eqref{eqn:relative-position-mag}, serta \eqref{eqn:theta-hat} dan \eqref{eqn:r-hat} ke Persamaan \eqref{eqn:biot-savart-law} akan memberikan</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire}
+\begin{array}{rcl}
+d\vec{B} & = & \displaystyle \frac{\mu_0}{4\pi} \frac{IR d\theta (-\hat{x} \sin \theta + \hat{y} \cos \theta)}{(z^2 + R^2)^{3/2}} \newline
+&& \times (z\hat{z} - R\cos\theta\hat{x} - R\sin\theta\hat{y})
+\end{array}
+\end{equation}</p><p>Suku-suku yang terlibat dalam perkalian silang pada Persamaan \eqref{eqn:biot-savart-law-arc-wire} akan memberikan</p><p>$$
+z \sin \theta \hat{y} + R \sin^2 \theta \hat{z} + z \cos \theta \hat{x} + R \cos^2 \theta \hat{z}
+$$</p><p>yang akan menjadi</p><p>$$
+z \cos \theta \hat{x} + z \sin \theta \hat{y} + R \hat{z},
+$$</p><p>sehingga bila disubstitukan kembali ke Persamaan \eqref{eqn:biot-savart-law-arc-wire} akan menghasilkan</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-2}
+\begin{array}{rcl}
+d\vec{B} & = & \displaystyle \hat{x} \frac{\mu_0}{4\pi} \frac{IR z \cos \theta d\theta}{(z^2 + R^2)^{3/2}} \newline
+&& \displaystyle + \hat{y} \frac{\mu_0}{4\pi} \frac{IR z \sin \theta d\theta}{(z^2 + R^2)^{3/2}} \newline
+&& \displaystyle + \hat{z} \frac{\mu_0}{4\pi} \frac{IR^2 d\theta}{(z^2 + R^2)^{3/2}} \newline
+\vec{B} & = & \displaystyle \int d\vec{B} \newline
+& = & \hat{x} B_x + \hat{y} B_y + \hat{z} B_z.
+\end{array}
+\end{equation}</p><p>Masing-masing komponen dari Persamaan \eqref{eqn:biot-savart-law-arc-wire-2} adalah</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-bx}
+B_x = \frac{\mu_0}{4\pi} \frac{IR z}{(z^2 + R^2)^{3/2}} (\sin \theta_2 - \sin \theta_1),
+\end{equation}</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-by}
+B_y = -\frac{\mu_0}{4\pi} \frac{IR z}{(z^2 + R^2)^{3/2}} (\cos \theta_2 - \cos \theta_1),
+\end{equation}</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-bz}
+B_z = \frac{\mu_0}{4\pi} \frac{IR^2}{(z^2 + R^2)^{3/2}} (\theta_2 - \theta 1),
+\end{equation}</p><p>dengan $\theta_1$ dan $\theta_2$ adalah batas bawah dan atas integral yang diukur dari sumbu $x+$ berputar ke arah sumbu $y+$.</p><h2 id=cases>cases</h2><p>Terdapat beberapa kasus yang dapat disinggung terkait dengan pemanfaatan Persamaan \eqref{eqn:biot-savart-law-arc-wire-bx}, \eqref{eqn:biot-savart-law-arc-wire-by}, dan \eqref{eqn:biot-savart-law-arc-wire-bz} seperti diberikan pada tabel di bawah ini.</p><p>Tabel <a name=tab1>1</a>. Beberapa sistem kawat berbentuk busur lingkaran berarus dan medan magnetik yang disebabkannya.</p><table><thead><tr><th style=text-align:center>No</th><th style=text-align:center>Kasus</th><th style=text-align:center>Keterangan</th></tr></thead><tbody><tr><td style=text-align:center>1</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-c1.png)</td><td style=text-align:center>$\theta_1 = 0$,<br>$\theta_2 = \pi$,<br>$z > 0$,<br><br>$B_x = 0$,<br>$B_y > 0$,<br>$B_z > 0$</td></tr><tr><td style=text-align:center>2</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-c2.png)</td><td style=text-align:center>$\theta_1 = \pi$,<br>$\theta_2 = 2\pi$,<br>$z > 0$,<br><br>$B_x = 0$,<br>$B_y &lt; 0$,<br>$B_z > 0$</td></tr><tr><td style=text-align:center>3</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-c3.png)</td><td style=text-align:center>$\theta_1 = \frac12 \pi$,<br>$\theta_2 = \frac32 \pi$,<br>$z > 0$,<br><br>$B_x &lt; 0$,<br>$B_y = 0$,<br>$B_z > 0$</td></tr><tr><td style=text-align:center>4</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-c4.png)</td><td style=text-align:center>$\theta_1 = \frac32 \pi$,<br>$\theta_2 = \frac12 \pi$,<br>$z > 0$,<br><br>$B_x > 0$,<br>$B_y = 0$,<br>$B_z > 0$</td></tr><tr><td style=text-align:center>5</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-d.png)</td><td style=text-align:center>$\theta_1 = 0$,<br>$\theta_2 = 2\pi$,<br>$z > 0$,<br><br>$B_x = 0$,<br>$B_y = 0$,<br>$B_z > 0$</td></tr><tr><td style=text-align:center>6</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/51/0512-e.png)</td><td style=text-align:center>$\theta_1 \in [0, 2\pi]$,<br>$\theta_2 > \theta_1$,<br>$z = 0$,<br><br>$B_x = 0$,<br>$B_y = 0$,<br>$B_z > 0$</td></tr></tbody></table><p>Sebagai ilustrasi pemanfaatan Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, misalnya digunakan kasus nomor 5 akan tetapi dengan $z = 0$, yang akan membuat Persamaan \eqref{eqn:biot-savart-law-arc-wire-bx}, \eqref{eqn:biot-savart-law-arc-wire-by}, dan \eqref{eqn:biot-savart-law-arc-wire-bz} menjadi</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-bx-case-5-z=0}
+B_x = 0,
+\end{equation}</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-by-case-5-z=0}
+B_y = 0,
+\end{equation}</p><p>\begin{equation}\label{eqn:biot-savart-law-arc-wire-bz-case-5-z=0}
+B_z = \frac{\mu_0 I}{2R},
+\end{equation}</p><p>sehingga</p><p>\begin{equation}\label{eqn:biot-savart-law-circular-loop-center-point}
+\vec{B} = \hat{z} \frac{\mu_0 I}{2R}
+\end{equation}</p><p>adalah medan listrik totalnya yang hanya terdiri dari komponen pada arah $z$.</p><h1 id=exer>exer</h1><ol><li>Untuk kasus nomor 5 pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, bagaimana arah medan magnetik di sepanjang sumbu $z$, di atas dan di bawah simpul melingkar?</li><li>Mengapa untuk kasus nomor 6 pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>tidak terdapat komponen medan magnetik pada arah $x$ dan $y$?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Andrew Duffy, Ali Loewy, &ldquo;Magnetic Field from an Arc of Current&rdquo;, Physlets, Boston University, 2nd Semester, 20 Sep 2019, url
+<a href=http://physics.bu.edu/~duffy/semester2/c14_arc.html target=_blank rel="nofollow noopener noreferrer"><span>http://physics.bu.edu/~duffy/semester2/c14_arc.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220227].</li><li><a name=r02></a>Fred Harris, &ldquo;Ampere&rsquo;s Law&rdquo;, Physics 272: Physics II, Section 1, University of Hawaii, 30 Oct 2014, url
+<a href=https://www.phys.hawaii.edu/~fah/272www/272lectures_2014/lecture%2025%2824%29b.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.phys.hawaii.edu/~fah/272www/272lectures_2014/lecture%2025(24)b.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220227].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0512?src=hash&amp;ref_src=twsrc%5Etfw">#bug0512</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1497883766408495110?ref_src=twsrc%5Etfw">February 27, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) arahnya sama; &nbsp;
+2) karena $B_x =0$ dan $B_y = 0$ bila $z = 0$; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

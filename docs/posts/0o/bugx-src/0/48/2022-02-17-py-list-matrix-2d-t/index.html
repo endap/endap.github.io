@@ -1,0 +1,140 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py list matrix t | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py list matrix t</h1><time datetime=2022-02-17T13:30:00+07:00>February 17, 2022</time><p>Melakukan transpose suatu matriks dalam bahasa pemrograman Python dapat dilakukan pada list dengan bantuan pengulangan for bersarang dua [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] atau hanya dalam satu baris [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dengan memanfaatkan paket numerik NumPy perintah keseluruhannya cukup dalam satu baris [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><h2 id=transpose-a-matrix>transpose a matrix</h2><p>Terdapat suat matriks</p><p>\begin{equation}\label{eqn:matrix-a}
+A = \left[
+\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} & a_{14} \newline
+a_{21} & a_{22} & a_{23} & a_{24}
+\end{array}
+\right]
+\end{equation}</p><p>yang akan ditranspose melalui</p><p>\begin{equation}\label{eqn:matrix-b=aT}
+B = A^T,
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:matrix-B}
+B = \left[
+\begin{array}{ccc}
+b_{11} & b_{12} \newline
+b_{21} & b_{22} \newline
+b_{31} & b_{32} \newline
+b_{41} & b_{42}
+\end{array}
+\right].
+\end{equation}</p><p>Terdapat hubungan</p><p>\begin{equation}\label{eqn:matrix-b=aT-element}
+b_{ij} = a_{ji}
+\end{equation}</p><p>antar setiap elemen dari kedua matriks.</p><h2 id=a-code>a code</h2><p>Suatu pustaka <code>matrix.py</code> berisikan setidaknya</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># matrix.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simple matrix library using list</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220216 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print only two-dimension matrix in form of a list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printmat</span>(m):
+</span></span><span style=display:flex><span>		<span style=color:#75715e># assume that all rows have the same columns</span>
+</span></span><span style=display:flex><span>		row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>		col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>						print(m[r][c], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>				print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create an new two-dimension matrix in form of a list filled with zero</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>newmat</span>(row, col):
+</span></span><span style=display:flex><span>	<span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>	m <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>		newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>			newrow<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		m<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> m
+</span></span></code></pre></div><p>diperlukan agar dapat menggunakan <code>printmat</code> dan <code>newmat</code> dalam program berikut</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0480-matrix-no-numpy-t.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Transpose a matrix</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220217 Create this example.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matrix <span style=color:#66d9ef>as</span> mat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># transpose a matrix</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>tmat</span>(m):
+</span></span><span style=display:flex><span>    row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>    col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    mT <span style=color:#f92672>=</span> mat<span style=color:#f92672>.</span>newmat(col, row)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>            mT[c][r] <span style=color:#f92672>=</span> m[r][c]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> mT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a list as two-dimension matrix</span>
+</span></span><span style=display:flex><span>m1 <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>0</span>],
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>m2 <span style=color:#f92672>=</span> tmat(m1)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># display results</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;m1:&#34;</span>)
+</span></span><span style=display:flex><span>mat<span style=color:#f92672>.</span>printmat(m1)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;m2 = m1^T:&#34;</span>)
+</span></span><span style=display:flex><span>mat<span style=color:#f92672>.</span>printmat(m2)
+</span></span></code></pre></div><p>yang memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== 0480-matrix-no-numpy-t.py ====
+</span></span><span style=display:flex><span>m1:
+</span></span><span style=display:flex><span>1	2	3	4	5	
+</span></span><span style=display:flex><span>6	7	8	9	0	
+</span></span><span style=display:flex><span>m2 = m1<span style=color:#ae81ff>^T</span>:
+</span></span><span style=display:flex><span>1	6	
+</span></span><span style=display:flex><span>2	7	
+</span></span><span style=display:flex><span>3	8	
+</span></span><span style=display:flex><span>4	9	
+</span></span><span style=display:flex><span>5	0
+</span></span></code></pre></div><p>saat dijalankan.</p><p>Modifikasi kode di atas, sehingga <code>mat</code> dapat tetap digunakan, dapat dijalankan di OneCompiler
+<a href=https://onecompiler.com/python/3xtmhru5d target=_blank rel="nofollow noopener noreferrer"><span>3xtmhru5d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang memerlukan definisi suatu namespace <code>mat</code> berisikan fungsi yang diperlukan untuk menggantikan baris <code>import matrix as mat</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#import matrix as mat</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>mat</span>:
+</span></span><span style=display:flex><span>	<span style=color:#75715e># print only two-dimension matrix in form of a list</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>printmat</span>(m):
+</span></span><span style=display:flex><span>		<span style=color:#75715e># assume that all rows have the same number of columns</span>
+</span></span><span style=display:flex><span>		row <span style=color:#f92672>=</span> len(m)
+</span></span><span style=display:flex><span>		col <span style=color:#f92672>=</span> len(m[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>				print(m[r][c], end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>			print()
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#75715e># create an new two-dimension matrix in form of a list filled with zero</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>newmat</span>(row, col):
+</span></span><span style=display:flex><span>		<span style=color:#75715e># create empty matrix</span>
+</span></span><span style=display:flex><span>		m <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e># iterate through rows then colums</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> range(row):
+</span></span><span style=display:flex><span>			newrow <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(col):
+</span></span><span style=display:flex><span>				newrow<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>			m<span style=color:#f92672>.</span>append(newrow)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> m
+</span></span></code></pre></div><p>agar tidak perlu mengubah baris kode yang lain. Penggunaan paket <code>matrix</code> ini adalah untuk menyembuyikan fungsi-fungsi yang bukan menjadi fokus pembahasan di sini sehingga contoh program dapat masih cukup ringkas.</p><h2 id=exer>exer</h2><ol><li>Apakah suatu matriks dapat dikalikan dengan transposenya? Bila ya bagaimana sifat hasilnya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>GeeksforGeeks, &ldquo;Python Program to find transpose of a matrix&rdquo;, GeeksforGeeks, 30 Dec 2020, url
+<a href=https://www.geeksforgeeks.org/python-program-to-find-transpose-of-a-matrix/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/python-program-to-find-transpose-of-a-matrix/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217]</li><li><a name=r02></a>Vaibhav, &ldquo;Transpose a Matrix in Python&rdquo;, DelfStack, 29 Nov 2021, url
+<a href=https://www.delftstack.com/howto/python/transpose-a-matrix-in-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.delftstack.com/howto/python/transpose-a-matrix-in-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217]</li><li><a name=r03></a>GeeksforGeeks, pwakchaure, tahmidhasan3003, punamsingh628700, &ldquo;Transpose a matrix in Single line in Python&rdquo;, GeeksforGeeks, 24 Dec 2021, url
+<a href=https://www.geeksforgeeks.org/transpose-matrix-single-line-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/transpose-matrix-single-line-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220217]</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0486?src=hash&amp;ref_src=twsrc%5Etfw">#bug0486</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1494196921032134657?ref_src=twsrc%5Etfw">February 17, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) ya, matriks bujursangkar; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

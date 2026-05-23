@@ -1,0 +1,228 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>some features on hugo | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>some features on hugo</h1><time datetime=2024-03-01T16:14:00+07:00>March 1, 2024</time><p>Some features on Hugo: JavaScript enhanced static web page.</p><p>Additional features on static web page using Hugo.</p><ul><li><a href=https://osf.io/u9gkh target=_blank rel="nofollow noopener noreferrer"><span>some_features_on_hugo.pdf <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><h2 id=equation>equation</h2><p>$$\tag{255}
+y = ax^2 + bx + c
+$$
+$$\tag{225}
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$</p><pre tabindex=0><code>$$\tag{255}
+y = ax^2 + bx + c
+$$
+$$\tag{225}
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+</code></pre><h2 id=matrix>matrix</h2><p>$$\tag{1}
+\mathbf{M} = \left[
+\begin{array}{cccc}
+x & 1 & 0.5 & 2 \newline
+0 & -39 & y & 1 \newline
+z & 2^x & \sqrt{x} & \frac{1}{z} \newline
+0 & 0 & 0 & 1
+\end{array}
+\right]
+$$</p><pre tabindex=0><code>$$\tag{1}
+\mathbf{M} = \left[
+\begin{array}{cccc}
+x &amp;  1 &amp; 0.5 &amp; 2 \newline
+0 &amp; -39 &amp; y &amp; 1 \newline
+z &amp; 2^x &amp; \sqrt{x} &amp; \frac{1}{z} \newline
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right]
+$$
+</code></pre><h2 id=fraction>fraction</h2><p>$$\tag{63}
+y = \frac{\displaystyle 1 -
+\frac{1 - \frac{\displaystyle 1 -
+\frac{1}{x}}{\displaystyle x}}{x}}
+{\displaystyle 1 +
+\frac{1}{\displaystyle 1 +
+\frac{1}{\displaystyle 1 +
+\frac{1}{x}}}}
+$$</p><pre tabindex=0><code>$$\tag{63}
+y = \frac{\displaystyle 1 -
+\frac{1 - \frac{\displaystyle 1 -
+\frac{1}{x}}{\displaystyle x}}{x}}
+{\displaystyle 1 +
+\frac{1}{\displaystyle 1 +
+\frac{1}{\displaystyle 1 +
+\frac{1}{x}}}}
+$$
+</code></pre><h2 id=flowchart>flowchart</h2><div class=mermaid>flowchart LR
+B --> I --> C --"Y"--> P1
+C --"N"--> P2
+P1 & P2 --> O --> E
+B(["Begin"])
+I[/"Input"/]
+C{"If yes"}
+P1["Process 1"]
+P2["Process 2"]
+O[/"Output"/]
+E(["End"])</div><pre tabindex=0><code>{{&lt; mermaid &gt;}}
+flowchart LR
+  B --&gt; I --&gt; C --&#34;Y&#34;--&gt; P1
+  C --&#34;N&#34;--&gt; P2
+  P1 &amp; P2 --&gt; O --&gt; E
+  B([&#34;Begin&#34;])
+  I[/&#34;Input&#34;/]
+  C{&#34;If yes&#34;}
+  P1[&#34;Process 1&#34;]
+  P2[&#34;Process 2&#34;]
+  O[/&#34;Output&#34;/]
+  E([&#34;End&#34;])
+{{&lt; /mermaid &gt;}}
+</code></pre><h2 id=scatter>scatter</h2><pre tabindex=0><code>{{&lt; blank/scatter 80 320 &gt;}}
+B_XLABEL x
+B_YLABEL y
+B_SLABEL Data-1,Data-2,Data-3
+B_PCOLOR #f88,#88f,#8f8
+B_PRADII 4,6,0
+B_LVISIB false,true,true
+B_LCOLOR #f88,#88f,#8f8
+
+5.000,3.000
+4.902,3.618
+4.618,4.176
+4.176,4.618
+3.618,4.902
+3.000,5.000
+2.382,4.902
+1.824,4.618
+1.382,4.176
+1.098,3.618
+1.000,3.000
+1.098,2.382
+1.382,1.824
+1.824,1.382
+2.382,1.098
+3.000,1.000
+3.618,1.098
+4.176,1.382
+4.618,1.824
+4.902,2.382
+
+12.000,3.000
+11.934,3.624
+11.741,4.220
+11.427,4.763
+11.007,5.229
+10.500,5.598
+9.927,5.853
+9.314,5.984
+8.686,5.984
+8.073,5.853
+7.500,5.598
+6.993,5.229
+6.573,4.763
+6.259,4.220
+6.066,3.624
+6.000,3.000
+6.066,2.376
+6.259,1.780
+6.573,1.237
+6.993,0.771
+7.500,0.402
+8.073,0.147
+8.686,0.016
+9.314,0.016
+9.927,0.147
+10.500,0.402
+11.007,0.771
+11.427,1.237
+11.741,1.780
+11.934,2.376
+
+9.000,2.000
+8.809,2.588
+8.309,2.951
+7.691,2.951
+7.191,2.588
+7.000,2.000
+7.191,1.412
+7.691,1.049
+8.309,1.049
+8.809,1.412
+{{&lt; /blank/scatter &gt;}}
+</code></pre><h2 id=music-notation>music notation</h2><pre tabindex=0><code>{{&lt; blank/abcjs &gt;}}
+X:1
+T:Twinkle Twinkle Little Star
+K:C
+L:1/4
+CC GG | AA G2 | CC GG | AA G2 |
+w:Twin- kle, twin- kle, lit- tle star how I won- der what you are!
+GG FF | EE D2 | GG FF | EE D2 |
+w:Up a- bove the world so high, like a dia- mond in the sky.
+CC GG | AA G2 | FF EE | DD C2 ||
+w:Twin- kle, twin- kle, lit- tle star, how I won- der what you are!
+{{&lt; /blank/abcjs &gt;}}
+</code></pre><h2 id=molecules>molecules</h2><pre tabindex=0><code>{{&lt; blank/3dmoljs &gt;}}
+21
+Aspirin
+O    1.2333    0.5540    0.7792
+O   -0.6952   -2.7148   -0.7502
+O    0.7958   -2.1843    0.8685
+O    1.7813    0.8105   -1.4821
+C   -0.0857    0.6088    0.4403
+C   -0.7927   -0.5515    0.1244
+C   -0.7288    1.8464    0.4133
+C   -2.1426   -0.4741   -0.2184
+C   -2.0787    1.9238    0.0706
+C   -2.7855    0.7636   -0.2453
+C   -0.1409   -1.8536    0.1477
+C    2.1094    0.6715   -0.3113
+C    3.5305    0.5996    0.1635
+H   -0.1851    2.7545    0.6593
+H   -2.7247   -1.3605   -0.4564
+H   -2.5797    2.8872    0.0506
+H   -3.8374    0.8238   -0.5090
+H    3.7290    1.4184    0.8593
+H    4.2045    0.6969   -0.6924
+H    3.7105   -0.3659    0.6426
+H   -0.2555   -3.5916   -0.7337
+{{&lt; /blank/3dmoljs &gt;}}
+</code></pre><h2 id=path>path</h2><pre tabindex=0><code>{{&lt; blank/svgpath width=200 height=200 border=0 &gt;}}
+B_STYLE red,3,none # resistor 1
+M 40 30
+l 40 0 l 2.5 10
+l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20 l 5 20 l 5 -20
+l 2.5 10 l 40 0
+
+B_STYLE green,3,none # resistor 2
+M 160 30
+l 0 40 l 10 2.5 
+l -20 5  l 20 5 l -20 5 l 20 5 l -20 5 l 20 5 l -20 5
+l 10 2.5 l 0 40
+
+B_STYLE blue,3,none # resistor 3
+M 160 150
+l -40 0 l -2.5 10
+l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20 l -5 20 l -5 -20
+l -2.5 10 l -40 0
+
+B_STYLE cyan,3,none # battery 1
+M 40 150
+l 0 -50
+m -8 0 l 16 0
+m -8 -10 l -20 0 l 40 0
+m 0 -10 l 0 -10 m -5 5 l 10 0
+m -25 15 l 0 -60 
+{{&lt; /blank/svgpath &gt;}}
+</code></pre><h2 id=data-block>data block</h2><pre tabindex=0><code>{{&lt; blank/datablock &gt;}}
+1
+2
+3
+
+1,4,16
+2,32,64
+
+10,100
+20,200
+30,300
+40,400
+
+1,2,3,4,5,6
+7,8,9,0,9,8
+7,6,5,4,3,2
+1,0,1,2,3,4
+5,6,7,8,9,0
+{{&lt; /blank/datablock &gt;}}
+</code></pre></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

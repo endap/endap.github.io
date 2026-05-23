@@ -1,0 +1,58 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>gauss's law solid sphere | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>gauss's law solid sphere</h1><time datetime=2022-01-30T18:58:00+07:00>January 30, 2022</time><p>Pemilihan permukaan Gauss yang bersesuaian dengan simetri medan listrik yang disebabkan oleh distribusi muatan akan membuat integrasinya dapat dilakukan untuk memperoleh medan listriknya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=system>system</h2><p>Sebuah bola pejal bermuatan total $Q$ dengan rapat muatan seragam yang terletak di origin akan memberikan medan listrik pada setiap titik di sekitarnya dalam bentuk</p><p>\begin{equation}\label{eqn:electric-field-form}
+\vec{E} = E(r) \ \hat{r}
+\end{equation}</p><p>yang menggambarkan simetri bola. Untuk bola pejal berbahan isolator permukaan Gauss dan muatan yang terlingkupinya untuk kedua rentang jarak dari origin $r$ diberikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/43/0432-a.png)<br>Gambar <a name=fig1>1</a>. Bola pejal bermuatan seragam dengan permukaan Gaussnya.</p><p>Permukaan Gauss yang dipilih berbentuk</p><p>\begin{equation}\label{eqn:gaussian-surface}
+\begin{array}{rcl}
+\displaystyle \oint d\vec{A} & = & \displaystyle \oint \hat{r} \ dA \newline
+& = & \displaystyle \int_0^\pi \int_0^{2\pi} \hat{r} \ (r d\theta) (r \sin\theta d\phi) \newline
+& = & \displaystyle \hat{r} \ r^2 \int_0^\pi \sin\theta d\theta \int_0^{2\pi} d\phi \newline
+& = & \hat{r} \ 4\pi r^2.
+\end{array}
+\end{equation}</p><p>Muatan yang terlingkupi untuk kasus silinder pejal berbahan isolator yang berapat muatan seragam terbagi menjadi dua bagian, yaitu</p><p>\begin{equation}\label{eqn:enclosed-charge}
+q_{\rm enc} = \left\{
+\begin{array}{cc}
+\displaystyle Q \frac{r^3}{R^3}, & 0 \le r \le R, \newline
+Q, & R \le 0,
+\end{array}
+\right.
+\end{equation}</p><p>seperti diilusrasikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Persamaan \eqref{eqn:enclosed-charge} berlaku untuk $\rho$ bernilai tetap atau rapat muatan seragam atau $\rho \ne \rho(r)$. Dengan demikian saat menggunakan hukum Gauss dengan menerapkan Persamaan \eqref{eqn:electric-field-form}, \eqref{eqn:gaussian-surface}, dan \eqref{eqn:enclosed-charge} perlu dibagi dalam rentang $0 \le r \le R$ dan $R \le r$. Untuk rentang $0 \le r \le R$</p><p>\begin{equation}\label{eqn:gauss-law-solid-sphere-inner}
+\begin{array}{rcl}
+\displaystyle \oint \vec{E} \cdot d\vec{A} & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+\displaystyle \oint E(r) \ \hat{r} \cdot \hat{r} \ dA & = & \newline
+\displaystyle \oint E(r) dA & = & \newline
+\displaystyle \oint E(r) (r d\theta) (r \sin\theta d\phi) & = & \newline
+\displaystyle E(r) \ r^2 \oint \sin\theta d\theta d\phi & = & \newline
+\displaystyle E(r) \ r^2 \int_0^\pi \sin\theta d\theta \int_0^{2\pi} d\phi & = & \newline
+E(r) \ r^2 \ (2) \ (2\pi) & = & \newline
+E(r) & = & \displaystyle \frac{1}{4\pi r^2} \frac{(Qr^3/R^3)}{\varepsilon_0} \newline
+& = & \displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{Q}{R^2} \ \frac{r}{R},
+\end{array}
+\end{equation}</p><p>dan untuk $R \le r$ hanya berbeda di tiga baris terakhir</p><p>\begin{equation}\label{eqn:gauss-law-solid-sphere-outter}
+\begin{array}{rcl}
+\displaystyle \oint \vec{E} \cdot d\vec{A} & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+E(r) \ r^2 \ (2) \ (2\pi) & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+E(r) & = & \displaystyle \frac{1}{4\pi r^2} \frac{Q}{\varepsilon_0} \newline
+& = & \displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{Q}{r^2}.
+\end{array}
+\end{equation}</p><p>Dengan menggunakan hasil dari Persamaan \eqref{eqn:gauss-law-solid-sphere-inner} dan \eqref{eqn:gauss-law-solid-sphere-outter} dapat digabungkan menjadi</p><p>\begin{equation}\label{eqn:gauss-law-solid-sphere}
+E(r) = \left\{
+\begin{array}{cc}
+\displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{Q}{R^2} \ \frac{r}{R}, & 0 \le r \le R, \newline
+\displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{Q}{r^2}, & R \le r, \newline
+\end{array}
+\right.
+\end{equation}</p><p>yang merupakan medan listrik akibat sebuah bola pejal berbahan konduktor dengan muatan seragam $\rho = Q/V$.</p><p>![]({{ site.baseurl }}/assets/img/0/43/0432-b.png)<br>Gambar <a name=fig2>2</a>. Medan listrik $E$ sebagai fungsi jarak $r$ dari pusat origin untuk bola pejal yang terbuat dari isolator bermuatan seragam.</p><p>Ilustrasi grafik medan listrik $E$ sebagai fungsi jarak dari origin $r$ diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dengan $E_1 = (1/4\pi\varepsilon_0)(Q/R^2)(r/R)$ yang merupakan suku pada Persamaan \eqref{eqn:gauss-law-solid-sphere} untuk bagian dalam bola pejal.</p><h2 id=exer>exer</h2><ol><li>Bagaimana nilai fungsi medan listrik pada jarak $r = R$ menurut Persamaan \eqref{eqn:gauss-law-solid-sphere} untuk bagian dalam dan bagian luarnya? Apakah nilainya kontinu pada dinding bola?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Milica Marković, &ldquo;Calculation of electric field using Gauss’s Law&rdquo;, Electromagnetics, Ximera, The Ohio State University, 2022, url
+<a href=https://ximera.osu.edu/electromagnetics/electromagnetics/electrostatics/digInGaussLaw target=_blank rel="nofollow noopener noreferrer"><span>https://ximera.osu.edu/electromagnetics/electromagnetics/electrostatics/digInGaussLaw <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220130].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0432?src=hash&amp;ref_src=twsrc%5Etfw">#bug0432</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1487756821100363785?ref_src=twsrc%5Etfw">January 30, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) bernilai sama, ya kontinu; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

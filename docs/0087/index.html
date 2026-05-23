@@ -1,0 +1,157 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py newton-raphson secant | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py newton-raphson secant</h1><time datetime=2023-10-04T20:41:00+07:00>October 4, 2023</time><h2 id=direction>direction</h2><ul><li>Mr. Satoru is stuck in a train station with a bunch of monsters (which he needs to kill) and humans (which he needs to save). He can expand a “sure-kill” domain that kills anyone within its perimeters, with him as the center, but he must consider the optimal amount of monsters killed and humans saved.</li><li>The monsters are distributed around him in a randomized manner, but can be represented with the equation
+$$\tag{1}
+M(x) = 20x - x^2.
+$$</li><li>The humans distributed around him can also be represented with the equation
+$$\tag{2}
+H(x) = \sin 2x.
+$$</li><li>Mr. Satoru’s judgement on the radius in which he would expand him domain can be represented with the following equation
+$$\tag{3}
+R(x) = M(x) + H(x).
+$$</li><li>Optimize the radius of Mr. Satoru’s domain using the Newton-Raphson method, and Secant Method until the error $\varepsilon &lt; 10^{-3}$! (Hint: To optimize a function, differentiate it first and find its root).</li></ul><h2 id=derivative>derivative</h2><ul><li>differentiate Eqn (3), with the help of Eqns (1) and (2) wil give
+$$\tag{4}
+R'(x) = M'(x) + H'(x) = 20 - 2x + 2\cos 2x.
+$$</li><li>Optimum radius is obtained when
+$$\tag{5}
+R'(x_{\rm optimum}) = 0.
+$$</li><li>Find root of $x'(x)$ to get $x_{\rm optimum}$.</li></ul><h2 id=iterative-method>iterative method</h2><ul><li>Newton-Raphson method
+$$\tag{6}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+$$</li><li>Secant method
+$$\tag{7}
+x_{n+2} = x_{n+1} - \frac{(x_{n+1} - x_n) f(x_{n+1})}{f(x_{n+1}) - f(x_n)}.
+$$</li><li>Newton-Raphson method requires one initial value $x_0$ and secant method requires two initial values $x_0$ and $x_1$.</li></ul><h2 id=solution>solution</h2><ul><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># test find optimum or y = (x - 2)(x - 6)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># it will give x = 4</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># and ok</span>
+</span></span><span style=display:flex><span>TEST <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># break</span>
+</span></span><span style=display:flex><span>ITERMAX <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># show iteration</span>
+</span></span><span style=display:flex><span>SHOWITER <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Method</span>
+</span></span><span style=display:flex><span>METHOD <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Newton-Raphson&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>R</span>(x):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> TEST:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>*</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>6</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span> <span style=color:#f92672>*</span> x <span style=color:#f92672>-</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> math<span style=color:#f92672>.</span>sin(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> x)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>R_</span>(x):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> TEST:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>+</span> (x <span style=color:#f92672>-</span> <span style=color:#ae81ff>6</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>x <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>cos(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> x)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>R__</span>(x):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> TEST:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>sin(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> x)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># method 1</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Newton-Raphson method&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> SHOWITER:
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;i&#34;</span>, <span style=color:#e6db74>&#34;err&#34;</span>, <span style=color:#e6db74>&#34;R_(x)&#34;</span>, <span style=color:#e6db74>&#34;x&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>19</span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> err <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1E-3</span>:
+</span></span><span style=display:flex><span>  <span style=color:#75715e># finding root for R_(x) not for R(x)</span>
+</span></span><span style=display:flex><span>  x1 <span style=color:#f92672>=</span> x0 <span style=color:#f92672>-</span> R_(x0) <span style=color:#f92672>/</span> R__(x0)
+</span></span><span style=display:flex><span>  err <span style=color:#f92672>=</span> abs((x1 <span style=color:#f92672>-</span> x0))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> SHOWITER:
+</span></span><span style=display:flex><span>    errs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>err<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    R_xs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>R_(x1)<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    xs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x1<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    print(i, errs, R_xs, xs, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  x0 <span style=color:#f92672>=</span> x1
+</span></span><span style=display:flex><span>  i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> i <span style=color:#f92672>&gt;</span> ITERMAX:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> x1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Results&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;iteration =&#34;</span>, i)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;err =&#34;</span>, err)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x =&#34;</span>, x)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R(x) =&#34;</span>, R(x))
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R_(x) =&#34;</span>, R_(x))
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R__(x) =&#34;</span>, R__(x))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># method 2</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;secant method&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> SHOWITER:
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;i&#34;</span>, <span style=color:#e6db74>&#34;err&#34;</span>, <span style=color:#e6db74>&#34;R_(x)&#34;</span>, <span style=color:#e6db74>&#34;x&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>x1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>err <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> err <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1E-3</span>:
+</span></span><span style=display:flex><span>  <span style=color:#75715e># finding root for R_(x) not for R(x)</span>
+</span></span><span style=display:flex><span>  x2 <span style=color:#f92672>=</span> x1 <span style=color:#f92672>-</span> R_(x1) <span style=color:#f92672>/</span> (R_(x1) <span style=color:#f92672>-</span> R_(x0)) <span style=color:#f92672>*</span> (x1 <span style=color:#f92672>-</span> x0)
+</span></span><span style=display:flex><span>  err <span style=color:#f92672>=</span> abs((x2 <span style=color:#f92672>-</span> x1))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> SHOWITER:
+</span></span><span style=display:flex><span>    errs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>err<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    R_xs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>R_(x2)<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    xs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x2<span style=color:#e6db74>:</span><span style=color:#e6db74>.2f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>    print(i, errs, R_xs, xs, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  x0 <span style=color:#f92672>=</span> x1
+</span></span><span style=display:flex><span>  x1 <span style=color:#f92672>=</span> x2
+</span></span><span style=display:flex><span>  i <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> i <span style=color:#f92672>&gt;</span> ITERMAX:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>i <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> x2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Results&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;iteration =&#34;</span>, i)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;err =&#34;</span>, err)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x =&#34;</span>, x)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R(x) =&#34;</span>, R(x))
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R_(x) =&#34;</span>, R_(x))
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;R__(x) =&#34;</span>, R__(x))
+</span></span></code></pre></div></li><li>Result<pre tabindex=0><code>Newton-Raphson method
+
+Results
+iteration = 8
+err = 7.699729229315722e-06
+x = 10.139963731429795
+R(x) = 100.97056678487193
+R_(x) = -3.319355901254539e-11
+R__(x) = -5.960626523950763
+
+secant method
+
+Results
+iteration = 5
+err = 0.0002986050511903926
+x = 10.139963647548765
+R(x) = 100.97056678487193
+R_(x) = 4.9995029555161e-07
+R__(x) = -5.960626430028292
+</code></pre></li></ul><p>url
+<a href=https://onecompiler.com/python/3zpg9vgqa target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zpg9vgqa <i class="fa fa-external-link" style=font-size:14px></i></span></a></p><h2 id=notes>notes</h2><ul><li>It seem that Newton-Raphson method is very sensitive to initial value to obtain optimum of Eqn (3).</li><li>Furhter study is required to investigate the good function to optimize and not too sensitive to initial value for Newton-Raphson method and to initial values for secant method.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,83 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>displacement 1d | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>displacement 1d</h1><time datetime=2021-10-07T21:22:00+07:00>October 7, 2021</time><p>Perpindahan suatu benda didefinisikan sebagai suatu vektor yang mengarah mulai dari suatu posisi awal (inisial) ke suatu posisi akhir (final) [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formula>formula</h2><p>Untuk kasus 1-d perpindahan dihitung menggunakan</p><p>\begin{equation}\label{eqn-01}
+\Delta x_{i-f} = x_f - x_i,
+\end{equation}</p><p>yang dapat bernilai positif ataupun negatif karena perpindahan merupakan besaran vektor, dengan indeks $i$ berarti awal (inisial) dan indeks $f$ berarti akhir (final).</p><h2 id=1-d-motion>1-d motion</h2><p>Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut memberikan ilustrasi gerak benda dalam 1-d. Abaikan keberadaan sumbu $y$ karena selama benda bergerak, ia terus menempel dengan lantai sehingga hal ini merupakan gerak dalam 1-d.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-a.png)<br>Gambar <a name=fig1>1</a>. Gerak benda dalam 1-d yang melibatkan gerak maju ($v$ ke kanan, menuju $+x$) dan mundur ($v$ ke kiri, menuju $-x$).</p><p>Nilai indeks $i$ (inisial) dan $f$ (final) dalam Persamaan \eqref{eqn-01} disesuaikan dengan kasus yang dibahas, misalnya untuk Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat</p><p>Untuk melengkapi informasi Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, berikut adalah data informasi waktunya.</p><p>$n$ | 1 | 2 | 3 | 4 | 5 | 6
+$t_n \ \rm (s)$ | 0 | 6 | 10 | 22 | 30 | 34
+$x_n \ \rm (m)$ | 2 | 8 | 16 | 4 | 12 | 4</p><p>Posisi $x$ dalam tabel di atas hanya merupakan informasi berulang karena nilai-nilainya sudah dapat dibaca pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Untuk seluruh variasi yang mungkin dapat dituliskan nilai-nilai perpindahan antara waktu inisial $t = t_i$ dan waktu final $t = t_f$, dengan dengan $t_i &lt; t_f$.</p><p>$\Delta x_{\rm i-f}$ | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$
+$x_1$ | 0 | 6 | 14 | 2 | 10 | 2
+$x_2$ | - | 0 | 8 | -4 | 4 | 0
+$x_3$ | - | - | 0 | -12 | -4 | -12
+$x_4$ | - | - | - | 0 | 8 | 0
+$x_5$ | - | - | - | - | 0 | -8
+$x_6$ | - | - | - | - | - | 0</p><p>Bagian sel pada tabel yang berisi - adalah untuk kondisi yang tidak mungkin, yaitu $t_i > t_f$. Sebagai contoh perpindahan antara $t = t_3 dan $t = t_6$ adalah</p><p>$$
+\Delta x _{3-6} = x_6 - x_3 = 4 - 16 = -12,
+$$</p><p>yang dapat ditemukan dalam tabel terakhir pada baris 4 dan kolom 7 (atau perpotongan baris $x_3$ dengan kolom $x_6$). Selain itu Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>sebelumnya dapat pula digunakan untuk menghitung perpindahan dengan menempatkan benda pada $t_i$ (tanpa warna, garis putus-putus) dan benda pada $t_f$ (berwarna biru muda, garis utuh) dan menggambarkan vektor dari $x_i$ ke $x_f$ sebagaimana diberikan dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-b.png)<br>Gambar <a name=fig2>2</a>. Perpindahan $\Delta t_{i-f}$ untuk berbagai waktu awal (inisial) $t_i$ dan waktu akhir (final) $t_f$.</p><p>Hasil dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat kembali dikonfirmasi dengan nilai-nilai dalam tabel sebelumnya.</p><h2 id=x-t-graph>x-t graph</h2><p>Informasi waktu dan posisi dari tabel kedua atau tabel terakhir dapat disajikan seperti Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-c.png)<br>Gambar <a name=fig3>3</a>. Grafik posisi $x$ sebagai fungsi waktu $t$, dengan satu kotak berarti $4 \ {\rm s} \times 2 \ {\rm m}$.</p><p>Yang ditampikal pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>merupakan representasi lain dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, di mana semua posisi ditangkap dalam satu gambar dengan adanya indeks waktu $t$ sebagai sumbu mendatarnya dan posisi $x$ sebagai sumbu tegaknya. Mirip dengan cara pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, informasi pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>ini pun dapat digunakan untuk mendapatkan perpindahan $\Delta_{i-f}$ dari waktu awal (inisial) $t = t_i$ sampai waktu akhir (final) $t = t_f$. Persamaan \eqref{eqn-01} kembali digunakan dan vektor digambarkan dari $x_i$ ke $x_f$ sebagaimana dalam Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-d.png)<br>Gambar <a name=fig4>4</a>. Perpindahan $\Delta_{i-f}$ diperoleh dari grafik $x-t$, untuk berbagai waktu awal (inisial) $t_i$ dan waktu akhir (final) $t_f$.</p><p>Hasil-hasil dalam Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dikonfirmasi dengan Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan hasil perhitungan dalam tabel kedua.</p><h2 id=v-t-graph>v-t graph</h2><p>Dengan mencari kemiringan garis pada setiap selang $t_n$ dan $t_{n+1}$ dapat diperoleh grafik kecepatan $v$ terhadap waktu $t$ yang diberikan oleh Gambar
+<a href=#fig5><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-e.png)<br>Gambar <a name=fig5>5</a>. Grafik kecepatan $v$ sebagai fungsi waktu $t$, dengan satu kotak berarti $4 \ {\rm s} \times 1 \ {\rm m/s}$.</p><p>Dengan menghitung luas di bawah kurva, yang dapat bernilai positif maupun negatif, mulai dari $t = t_i$ sampai $t = t_f$ akan dapat diperoleh nilai perpindahan $\Delta t_{i-f}$.</p><p>{% comment %}
+3-6, 1-6, 1-5, 3-4
+{% endcomment %}</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-f.png)<br>Gambar <a name=fig6>6</a>. Perpindahan $\Delta x_{i-f}$ dengan menghitung luas di bahwa kurva mulai dari $t = t_i$ sampai $t = t_f$.</p><p>Kembali hasil Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat dikonfirmasi dengan hasil perhitungan pada tabel kedua atau Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan Gambar
+<a href=#fig4><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=another-v-t-graph>another v-t graph</h2><p>Grafik $v-t$ tidaklah harus berbentuk hanya garis mendatar, akan tetapi dapat juga garis dengan kemiringan tertentu seperti pada Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut, di mana untuk saat ini yang hanya perlu menghitung luas di bawah kurva, cara menentukan perpindahan $\Delta x_{i-f}$ tetaplah sama dan tidak bergantung dari bentuk kurvanya.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0033-g.png)<br>Gambar <a name=fig7>7</a>. Grafik $v-t$ dengan hanya kecepatan tetap (kiri) dan bila terdapat pula percepatan (kanan).</p><p>Total perpindahan dari kedua grafik $v-t$ dalam Gambar
+<a href=#fig7><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>adalah nol, yaitu dengan menghitung luas di bawah kurva untuk $t = 0 \ \rm s$ sampai $t = 10 \ \rm s$ untuk bagian kiri dan $t = 0 \ \rm s$ sampai $t = 9 \ \rm s$ untuk bagian kanan.</p><h1 id=exer>exer</h1><ol><li>Dengan menggunakan Gambar
+<a href=#fig6><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>jelaskan mengapa perpindahan $\Delta x_{3-6}$ dan $\Delta x_{3-4}$ memberikan hasil yang sama?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Carl. R. Nave, &ldquo;Displacement&rdquo;, HyperPhysics, Georgia State University, USA, 2017,
+url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/posit.html#c2 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/posit.html#c2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211006].</li></ol><h2 id=heading> </h2><p><a><span>meter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>length <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>relative position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) Perpindahan $\Delta_{4-5} = -\Delta_{5-6}$ sehingga perpindahan $\Delta x_{3-6} = \Delta x_{3-4}$ karena $\Delta x_{3-6} = \Delta x_{3-4} + \Delta x_{4-5} + \Delta x_{5-6}$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

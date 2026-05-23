@@ -1,0 +1,108 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>template customization 1 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>template customization 1</h1><time datetime=2024-10-11T21:03:19+07:00>October 11, 2024</time><p>First theme customization of a new Hugo site following initial setting.</p><p>In previous post with title
+<a><span>first post again <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>customization is only in <code>layouts/partials/footer.html</code>. Here more customizations in various files are given.</p><ol><li>Create content of <code>layouts/posts/single.html</code> is as follow.<pre tabindex=0><code>{{ define &#34;main&#34; }}
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+
+  {{ $dateMachine := .Date | time.Format &#34;2006-01-02T15:04:05-07:00&#34; }}
+  {{ $dateHuman := .Date | time.Format &#34;:date_long&#34; }}
+
+  {{- range .Params.authors }}
+    {{- with $.Site.GetPage &#34;taxonomyTerm&#34; (printf &#34;authors/%s&#34; (urlize .)) }}
+      &lt;figure class=&#39;authors&#39;&gt;
+        &lt;!--img src=&#34;{{ .Params.photo }}&#34; alt=&#34;&#34;/ --&gt;
+        &lt;figcaption&gt;
+          &lt;a href=&#34;{{ .Permalink }}&#34;&gt;{{ .Params.name }}&lt;/a&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    {{ end }}
+  {{ end }}
+
+  &lt;div class=&#39;readingtimedate&#39;&gt;
+    {{ partial &#34;reading-time.html&#34; . }} &amp;middot;
+    &lt;time datetime=&#34;{{ $dateMachine }}&#34;&gt;{{ $dateHuman }}&lt;/time&gt;
+  &lt;/div&gt;
+
+  {{ .Content }}
+  {{ partial &#34;terms.html&#34; (dict &#34;taxonomy&#34; &#34;tags&#34; &#34;page&#34; .) }}
+
+  {{ partial &#34;posts/math.html&#34; . }}
+{{ end }}
+</code></pre></li><li>Create content of <code>layouts/partials/reading-time.html</code> is as follow.<pre tabindex=0><code>{{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }} read
+</code></pre></li><li>Create content of <code>layouts/partials/posts/math.html</code> is as follow.<pre tabindex=0><code>{{- if or (.Params.math) (.Site.Params.math) (.Params.katex) (.Site.Params.katex) -}}
+
+  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css&#34;
+    integrity=&#34;sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0&#34; crossorigin=&#34;anonymous&#34;&gt;
+  {{/* The loading of KaTeX is deferred to speed up page rendering */}}
+  &lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js&#34;
+    integrity=&#34;sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4&#34; crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+
+&lt;!--
+url https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem [20240412]
+--&gt;
+&lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js&#34; integrity=&#34;sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0&#34;  crossorigin=&#34;anonymous&#34;&gt;&lt;/script&gt;
+&lt;!-- --&gt;    
+
+  &lt;script defer src=&#34;https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js&#34;
+    integrity=&#34;sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05&#34; crossorigin=&#34;anonymous&#34;
+    onload=&#34;renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: &#39;$$&#39;, right: &#39;$$&#39;, display:true},
+          {left: &#39;$&#39;, right: &#39;$&#39;, display:false},
+          {left: &#39;\\(&#39;, right: &#39;\\)&#39;, display: false},
+          {left: &#39;\\[&#39;, right: &#39;\\]&#39;, display: true}
+        ]
+      }
+    );&#34;&gt;&lt;/script&gt;
+{{- end -}}
+</code></pre></li><li>Create content of <code>layouts/_default/baseof.html</code> is as follow.<pre tabindex=0><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;{{ or site.Language.LanguageCode site.Language.Lang }}&#34; dir=&#34;{{ or site.Language.LanguageDirection `ltr` }}&#34;&gt;
+&lt;head&gt;
+  {{ partial &#34;head.html&#34; . }}
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    {{ partial &#34;header.html&#34; . }}
+
+    {{ if .HasShortcode &#34;blank/scatter&#34; }}
+      {{ partial &#34;script/inner.html&#34; . }}
+      {{ partial &#34;script/chartjs.html&#34; . }}
+    {{ end }}
+
+    {{ if .HasShortcode &#34;blank/svgpath&#34; }}
+      {{ partial &#34;script/inner.html&#34; . }}
+    {{ end }}
+  &lt;/header&gt;
+  &lt;main&gt;
+    {{ block &#34;main&#34; . }}{{ end }}
+  &lt;/main&gt;
+  &lt;footer&gt;
+    {{ partial &#34;footer.html&#34; . }}
+  &lt;/footer&gt;
+
+  {{ if .Store.Get &#34;hasMermaid&#34; }}
+    &lt;script type=&#34;module&#34;&gt;
+      import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;
+      mermaid.initialize({ startOnLoad: true });
+    &lt;/script&gt;
+  {{ end }}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li><li>Create content of <code>layouts/_default/_markup/render-codeblock-mermaid.html</code> as follow.<pre tabindex=0><code>&lt;pre class=&#34;mermaid&#34;&gt;
+  {{- .Inner | safeHTML }}
+&lt;/pre&gt;
+{{ .Page.Store.Set &#34;hasMermaid&#34; true }}
+</code></pre></li><li>Create content of <code>content/authors/viridi/_index.md</code> as follow.<pre tabindex=0><code>+++
+name = &#39;Sparisoma Viridi&#39;
+twitter = &#39;@6unpnp&#39;
++++
+Sparisoma Viridi is granular physicist who likes doing programming.
+</code></pre></li></ol><p>Without Step 6 for an author page, even when Step 1 is performed, the link will not be shown in a post. Step 4 is for including any partials by checking first the existance of the related shortcodes files. And support for Mermaid in Step 5 is performed using code block render hooks <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> instead of shortcodes <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. There is also support for a KaTeX extension, mhchem <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Hugo Authors, &ldquo;Code block render hooks&rdquo;, Hugo, 14 Jun 2024, url
+<a href=https://gohugo.io/render-hooks/code-blocks/ target=_blank rel="nofollow noopener noreferrer"><span>https://gohugo.io/render-hooks/code-blocks/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20241012].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Navendu Pattekkat, &ldquo;Adding Diagrams to Your Hugo Blog With Mermaid&rdquo;, Navendu.me, 26 Aug 2022, url
+<a href=https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/ target=_blank rel="nofollow noopener noreferrer"><span>https://navendu.me/posts/adding-diagrams-to-your-hugo-blog-with-mermaid/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20241012].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>KaTeX Contributors, &ldquo;mhchem extension&rdquo;, KaTeX, GitHub, 2 Jul 2024, url
+<a href=https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20241012].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

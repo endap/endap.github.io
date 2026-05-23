@@ -1,0 +1,235 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>m iqair bisection regula falsi | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>m iqair bisection regula falsi</h1><time datetime=2023-10-03T03:42:00+07:00>October 3, 2023</time><h2 id=direction>direction</h2><ul><li>IQAir wants to estimate of the amount of air pollutants resulting from the combustion reaction at a coal-based PLTU around Jakarta which is one of the causes of air quality in Jakarta getting worse.</li><li>If the combustion reaction equation is known to be nonlinear with the function is
+$$\tag{1}
+f(x) = x^3 - 3x - 7,
+$$
+help find the approximate value of the pollutant $(x)$ from the equation using the regula falsi OR bisection method as well as the desired number of iterations and pollutant limit values $[a,b]$.</li><li><strong>Note</strong>: There is mission information, e.g.<ul><li>What is the meaning of combustion reaction equation, when $f(x) = 0$?</li><li>Why if $f(x) = 0$, the solution $x$ is the approximate value of the pollutant?</li></ul></li><li>Output</li></ul><pre tabindex=0><code>Method:
+1. Bisection
+2. Regula Falsi
+Select Method: 1
+Input pollutan lower limit value (mg/L): 1
+Input pollutan upper limit value (mg/L): 8
+Input the number of interations: 3
+
+  Iteration no    Estimation Value of Pollutan Concentration (mg/L)    Error
+  ------------    -------------------------------------------------    -----
+       1                             4.5                                3.5
+       2                             2.75                               1.75
+       3                             1.875                              0.875
+</code></pre><h2 id=code>code</h2><ul><li>Code<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>combustion</span>(x):
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>3</span><span style=color:#f92672>*</span>x <span style=color:#f92672>-</span> <span style=color:#ae81ff>7</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Method:&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;1. Bisection&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;2. Regula Falsi&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Select Method: &#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>method <span style=color:#f92672>=</span> input()
+</span></span><span style=display:flex><span>print(method)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Input pollutan lower&#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39; &#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;limit value (mg/L): &#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> float(input())
+</span></span><span style=display:flex><span>print(a)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Input pollutan upper&#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39; &#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;limit value (mg/L): &#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> float(input())
+</span></span><span style=display:flex><span>print(b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Input number of iteration: &#34;</span>, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> int(input())
+</span></span><span style=display:flex><span>print(N)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;i</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>x</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>err&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, N<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>  fa <span style=color:#f92672>=</span> combustion(a)
+</span></span><span style=display:flex><span>  fb <span style=color:#f92672>=</span> combustion(b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> fa <span style=color:#f92672>==</span> fb:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> method <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;1&#39;</span>:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># apply bisection method</span>
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> (a <span style=color:#f92672>+</span> b) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># update a and b</span>
+</span></span><span style=display:flex><span>    fc <span style=color:#f92672>=</span> combustion(c)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> fa <span style=color:#f92672>*</span> fc <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>      b <span style=color:#f92672>=</span> c
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>elif</span> fc <span style=color:#f92672>*</span> fb <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>      a <span style=color:#f92672>=</span> c
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>pass</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>elif</span> method <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;2&#39;</span>:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># apply bisection regular falsi method</span>
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> (b <span style=color:#f92672>*</span> fa <span style=color:#f92672>-</span> a <span style=color:#f92672>*</span> fb) <span style=color:#f92672>/</span> (fa <span style=color:#f92672>-</span> fb)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># update a and b</span>
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> b
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> c
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># apply other methods</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pass</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># calculate error</span>
+</span></span><span style=display:flex><span>  err <span style=color:#f92672>=</span> abs(a <span style=color:#f92672>-</span> b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># display results</span>
+</span></span><span style=display:flex><span>  print(i, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>  print(c, end<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>  print(err)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>cs <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>c<span style=color:#e6db74>:</span><span style=color:#e6db74>.20f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x =&#34;</span>, cs)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;error =&#34;</span>, err)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;interation =&#34;</span>, i)
+</span></span></code></pre></div></li><li>Method 1 (Bisection)<pre tabindex=0><code>Method:
+1. Bisection
+2. Regula Falsi
+Select Method: 1
+Input pollutan lower limit value (mg/L): 1.0
+Input pollutan upper limit value (mg/L): 8.0
+Input number of iteration: 100
+
+i	x	err
+1	4.5	3.5
+2	2.75	1.75
+3	1.875	0.875
+4	2.3125	0.4375
+5	2.53125	0.21875
+6	2.421875	0.109375
+7	2.4765625	0.0546875
+8	2.44921875	0.02734375
+9	2.435546875	0.013671875
+10	2.4287109375	0.0068359375
+11	2.42529296875	0.00341796875
+12	2.427001953125	0.001708984375
+13	2.4261474609375	0.0008544921875
+14	2.42572021484375	0.00042724609375
+15	2.425933837890625	0.000213623046875
+16	2.4260406494140625	0.0001068115234375
+17	2.4259872436523438	5.340576171875e-05
+18	2.426013946533203	2.6702880859375e-05
+19	2.4260005950927734	1.33514404296875e-05
+20	2.4259939193725586	6.67572021484375e-06
+21	2.425990581512451	3.337860107421875e-06
+22	2.4259889125823975	1.6689300537109375e-06
+23	2.4259880781173706	8.344650268554688e-07
+24	2.425988495349884	4.172325134277344e-07
+25	2.4259887039661407	2.086162567138672e-07
+26	2.425988808274269	1.043081283569336e-07
+27	2.425988756120205	5.21540641784668e-08
+28	2.425988782197237	2.60770320892334e-08
+29	2.425988769158721	1.30385160446167e-08
+30	2.425988762639463	6.51925802230835e-09
+31	2.425988759379834	3.259629011154175e-09
+32	2.4259887577500194	1.6298145055770874e-09
+33	2.425988756935112	8.149072527885437e-10
+34	2.425988757342566	4.0745362639427185e-10
+35	2.4259887575462926	2.0372681319713593e-10
+36	2.425988757444429	1.0186340659856796e-10
+37	2.4259887573934975	5.093170329928398e-11
+38	2.4259887573680317	2.546585164964199e-11
+39	2.4259887573552987	1.2732925824820995e-11
+40	2.425988757361665	6.366462912410498e-12
+41	2.425988757358482	3.183231456205249e-12
+42	2.4259887573600736	1.5916157281026244e-12
+43	2.4259887573608694	7.958078640513122e-13
+44	2.4259887573612673	3.979039320256561e-13
+45	2.4259887573614662	1.9895196601282805e-13
+46	2.4259887573615657	9.947598300641403e-14
+47	2.4259887573616155	4.973799150320701e-14
+48	2.4259887573616403	2.4868995751603507e-14
+49	2.425988757361628	1.2434497875801753e-14
+50	2.4259887573616217	6.217248937900877e-15
+51	2.425988757361625	3.1086244689504383e-15
+52	2.4259887573616234	1.7763568394002505e-15
+53	2.4259887573616226	8.881784197001252e-16
+54	2.425988757361622	8.881784197001252e-16
+55	2.425988757361622	8.881784197001252e-16
+56	2.425988757361622	8.881784197001252e-16
+57	2.425988757361622	8.881784197001252e-16
+58	2.425988757361622	8.881784197001252e-16
+59	2.425988757361622	8.881784197001252e-16
+60	2.425988757361622	8.881784197001252e-16
+61	2.425988757361622	8.881784197001252e-16
+62	2.425988757361622	8.881784197001252e-16
+63	2.425988757361622	8.881784197001252e-16
+64	2.425988757361622	8.881784197001252e-16
+65	2.425988757361622	8.881784197001252e-16
+66	2.425988757361622	8.881784197001252e-16
+67	2.425988757361622	8.881784197001252e-16
+68	2.425988757361622	8.881784197001252e-16
+69	2.425988757361622	8.881784197001252e-16
+70	2.425988757361622	8.881784197001252e-16
+71	2.425988757361622	8.881784197001252e-16
+72	2.425988757361622	8.881784197001252e-16
+73	2.425988757361622	8.881784197001252e-16
+74	2.425988757361622	8.881784197001252e-16
+75	2.425988757361622	8.881784197001252e-16
+76	2.425988757361622	8.881784197001252e-16
+77	2.425988757361622	8.881784197001252e-16
+78	2.425988757361622	8.881784197001252e-16
+79	2.425988757361622	8.881784197001252e-16
+80	2.425988757361622	8.881784197001252e-16
+81	2.425988757361622	8.881784197001252e-16
+82	2.425988757361622	8.881784197001252e-16
+83	2.425988757361622	8.881784197001252e-16
+84	2.425988757361622	8.881784197001252e-16
+85	2.425988757361622	8.881784197001252e-16
+86	2.425988757361622	8.881784197001252e-16
+87	2.425988757361622	8.881784197001252e-16
+88	2.425988757361622	8.881784197001252e-16
+89	2.425988757361622	8.881784197001252e-16
+90	2.425988757361622	8.881784197001252e-16
+91	2.425988757361622	8.881784197001252e-16
+92	2.425988757361622	8.881784197001252e-16
+93	2.425988757361622	8.881784197001252e-16
+94	2.425988757361622	8.881784197001252e-16
+95	2.425988757361622	8.881784197001252e-16
+96	2.425988757361622	8.881784197001252e-16
+97	2.425988757361622	8.881784197001252e-16
+98	2.425988757361622	8.881784197001252e-16
+99	2.425988757361622	8.881784197001252e-16
+100	2.425988757361622	8.881784197001252e-16
+
+x = 2.42598875736162211680380096368025988340377807617187500
+error = 8.881784197001252e-16
+interation = 100
+</code></pre>Note: It has not yet stopped in 100 iterations since there is always new <code>c</code> from previous <code>a</code> and <code>b</code>.</li><li>Method 2 (Regula Falsi)<pre tabindex=0><code>Method:
+1. Bisection
+2. Regula Falsi
+Select Method: 2
+Input pollutan lower limit value (mg/L): 1.0
+Input pollutan upper limit value (mg/L): 8.0
+Input number of iteration: 100
+
+i	x	err
+1	1.1285714285714286	6.871428571428572
+2	1.2540693397752025	0.12549791120377396
+3	8.22098176347065	6.966912423695447
+4	1.3690203109391845	6.851961452531466
+5	1.4789269031521688	0.10990659221298427
+6	4.136642366324688	2.6577154631725195
+7	1.844814336803726	2.2918280295209623
+8	2.093593129020052	0.24877879221632582
+9	2.5681447002446642	0.47455157122461245
+10	2.4009115872524283	0.16723311299223598
+11	2.4242907675446332	0.023379180292204982
+12	2.4260101070971984	0.0017193395525652022
+13	2.4259887393490422	2.136774815619802e-05
+14	2.4259887573614316	1.8012389357835445e-08
+15	2.4259887573616217	1.900701818158268e-13
+16	2.425988757361622	4.440892098500626e-16
+17	2.425988757361622	0.0
+
+x = 2.42598875736162211680380096368025988340377807617187500  
+error = 0.0
+interation = 18
+</code></pre>Note: It stops in 18 iterations after <code>fa == fb</code>.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

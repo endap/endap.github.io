@@ -1,0 +1,181 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>scanning method | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>scanning method</h1><time datetime=2023-12-23T20:27:00+08:00>December 23, 2023</time><h2 id=intro>intro</h2><p>The simplest way to find a root of an equation is by scanning root candidates from an intial value, e.g. $x = x_a$, with increment $\Delta x$ until sign of the function change from previously ${\rm sign}(f(x_a))$, or if possible until $f(x) = 0$ (Rahmansyah & Ahhad, 2013). It is a typical solution in optics if met the physical limit of a resolution (Rom39, 2015).</p><h2 id=example>example</h2><ul><li>Suppose that there is a function
+$$\tag{1}
+f(x) = x^2 - 104.25x + 425,
+$$
+whose root is to be find.</li><li>Navigate the mouse on a point to view value of $(x, f(x))$ on following figure of Equation (1).
+Figure 1. Plot of $f(x)$ against $x$.</li><li>The quadratic form of Equation (1) can not be seen since it is only plotted for $x \in [0, 10]$, which seems to be linear but unfortunately not.</li><li>Following data are used for Figure 1.<pre tabindex=0><code>x
+[
+0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0,
+3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5,
+7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0
+]
+
+f(x)
+[
+425.0, 373.125, 321.75, 270.875, 220.5,
+170.625, 121.25, 72.375, 24.0, -23.875,
+-71.25, -118.125, -164.5, -210.375,
+-255.75, -300.625, -345.0, -388.875,
+-432.25, -475.125, -517.5
+]
+</code></pre></li><li>Code 1. Generate data $x$ and $f(x)$.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>f</span>(x):
+</span></span><span style=display:flex><span>  y1 <span style=color:#f92672>=</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  y2 <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>104.25</span> <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>  y3 <span style=color:#f92672>=</span> <span style=color:#ae81ff>425</span>
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> y1 <span style=color:#f92672>+</span> y2 <span style=color:#f92672>+</span> y3
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xx <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>yy <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> ix <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>21</span>):
+</span></span><span style=display:flex><span>  x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> ix
+</span></span><span style=display:flex><span>  xs <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;{x:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;,&#34;</span>
+</span></span><span style=display:flex><span>  ys <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;y:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>f(x)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;},&#34;</span>
+</span></span><span style=display:flex><span>  print(xs, ys)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  xx<span style=color:#f92672>.</span>append(x)
+</span></span><span style=display:flex><span>  yy<span style=color:#f92672>.</span>append(f(x))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x&#34;</span>)
+</span></span><span style=display:flex><span>print(xx)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;f(x)&#34;</span>)
+</span></span><span style=display:flex><span>print(yy)
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/python/3zxfanw68 target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zxfanw68 <i class="fa fa-external-link" style=font-size:14px></i></span></a><br>This code generates two types of data, in the form of<ul><li>list of dictionary <code>{x: value, y:value}</code>,</li><li>list of $x$ and $f(x)$.</li></ul></li></ul><h2 id=flowchart>flowchart</h2><ul><li>Following flowchart shows how scanning method works. At the end it average two points, where the root lies, as the root.<div class=mermaid>flowchart TD
+B --> I --> P1 --> P2 --> o2a
+o1a --> P2
+o2b --> P3 --> C1 --"N"--> P5 --> o3a
+C1 --"Y"--> P6 --> o4a
+o3b --> C2 --"Y"--> o1b
+C2 --"N"--> O2 --> o5a
+o4b --> O1 ---> o5b --> E
+B(["Begin"])
+I[/"xa, xb, &#916;x"/]
+P1["x = xa"]
+P2["s1 = sign(f(x))"]
+P3["s2 = sign(f(x+&#916;x))"]
+P5["x = x + &#916;x"]
+P6["root = x + &#916;x/2"]
+C1{"s1 &#183; s2 < 0?"}
+C2{"x &le; xb?"}
+O1[/"root"/]
+O2[/"no root"/]
+E(["End"])
+o1a(("1")); o1b(("1"))
+o2a(("2")); o2b(("2"))
+o3a(("3")); o3b(("3"))
+o4a(("4")); o4b(("4"))
+o5a(("5")); o5b(("5"))
+classDef style1 fill:none, color:inherit
+classDef style2 fill:#888, color:#fff
+class B,E,I,P1,P2,P3,P4,P5,P6,C1,C2,O1,O2 style1
+class o1a,o1b,o1c,o2a,o2b,o3a,o3b,o4a,o4b,o5a,o5b style2
+linkStyle default stroke:#8a8</div>Figure 2. Flowchart for finding roots of $f(x)$.</li></ul><h2 id=algorithm>algorithm</h2><ol><li>Start.</li><li>Define $x_a$, $x_b$, $\Delta x$.</li><li>Initiate $x = x_a$.</li><li>Caculate $s_1 = {\rm sign}(f(x))$.</li><li>Caculate $s_2 = {\rm sign}(f(x + \Delta x))$.</li><li>If $s_1 s_2 &lt; 0$ go to to Step 11.</li><li>Advance $x$ with $\Delta x$.</li><li>If $x \le x_b$ go to Step 4.</li><li>Display no root found.</li><li>Go to Step 13.</li><li>Calculate ${\rm root} = x + \frac12 \Delta x$.</li><li>Display root value.</li><li>End.</li></ol><h2 id=code>code</h2><ul><li>Code 2. Scanning method to find a root of $f(x)$.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Scanning method&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// round to n digit
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>roundn</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>n</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>mag</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>mag</span>) <span style=color:#f92672>/</span> <span style=color:#a6e22e>mag</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// define a Function
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span><span style=color:#f92672>*</span><span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>104.25</span><span style=color:#f92672>*</span><span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>425</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// define range and step
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>xa</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>xb</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dx</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>xa</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sx</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>sign</span>(<span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>));
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sxnew</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;x\tf(x)&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>&lt;=</span> <span style=color:#a6e22e>xb</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sxnew</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>sx</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sx</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>sign</span>(<span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>xx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>roundn</span>(<span style=color:#a6e22e>x</span>, <span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>yy</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>roundn</span>(<span style=color:#a6e22e>y</span>, <span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>xx</span>, <span style=color:#e6db74>&#39;\t&#39;</span>, <span style=color:#a6e22e>yy</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>sx</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>sxnew</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>dx</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sxnew</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>sign</span>(<span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>roundn</span>(<span style=color:#a6e22e>x</span><span style=color:#f92672>-</span><span style=color:#a6e22e>dx</span>, <span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>roundn</span>(<span style=color:#a6e22e>x</span>, <span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Root is located between&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x1</span>, <span style=color:#e6db74>&#39;\t&#39;</span>, <span style=color:#a6e22e>x2</span>);
+</span></span></code></pre></div>url
+<a href=https://onecompiler.com/javascript/3zxfe9c7m target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/javascript/3zxfe9c7m <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Result<pre tabindex=0><code>$ node scanning_method.js
+x       f(x)
+0        425
+0.1      414.585
+0.2      404.19
+0.3      393.815
+0.4      383.46
+0.5      373.125
+0.6      362.81
+0.7      352.515
+0.8      342.24
+0.9      331.985
+1        321.75
+1.1      311.535
+1.2      301.34
+1.3      291.165
+1.4      281.01
+1.5      270.875
+1.6      260.76
+1.7      250.665
+1.8      240.59
+1.9      230.535
+2        220.5
+2.1      210.485
+2.2      200.49
+2.3      190.515
+2.4      180.56
+2.5      170.625
+2.6      160.71
+2.7      150.815
+2.8      140.94
+2.9      131.085
+3        121.25
+3.1      111.435
+3.2      101.64
+3.3      91.865
+3.4      82.11
+3.5      72.375
+3.6      62.66
+3.7      52.965
+3.8      43.29
+3.9      33.635
+4        24
+4.1      14.385
+4.2      4.79
+4.3      -4.785
+
+Root is located between
+4.2      4.3
+</code></pre></li><li>Discussion<ul><li>It finds $4.2 &lt; r_1 &lt; 4.3$, whose value is supposed to be $4.25$.</li><li>The root can be obtained by averaging the values bracketing it, i.e. $\frac12(4.2 + 4.3) = 4.25$, which is true accidentally for this case.</li><li>Previous step will not work for general case, e.g. $f(x) = x^2 - 104.125x + 412.5$.</li></ul></li></ul><h2 id=challenges>challenges</h2><ul><li>Write code to implement the algorithm or the flowchart using Python. You can modify the given JavaScript code.</li><li>Is there any relation between increment of $x$, $\Delta x$ with the accuracy of the result? Explain using examples.</li></ul><h2 id=refs>refs</h2><ul><li>Rahmansyah A A, Ahhad F M (2013), &ldquo;Metode Scanning, Newton Raphson, Secant - Matlab&rdquo;, Scribd, 8 Oct 2013, url
+<a href=https://www.scribd.com/document/174418503 target=_blank rel="nofollow noopener noreferrer"><span>https://www.scribd.com/document/174418503 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231225].</li><li>Rom38 (2015) &ldquo;Finding all zeroes - mysterious missing roots&rdquo;, comment, Mathematica, 17 Mar 2015, url
+<a href=https://mathematica.stackexchange.com/q/77389/95975 target=_blank rel="nofollow noopener noreferrer"><span>https://mathematica.stackexchange.com/q/77389/95975 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20231225].</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

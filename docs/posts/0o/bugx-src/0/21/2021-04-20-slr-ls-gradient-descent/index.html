@@ -1,0 +1,126 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>slr ls gradient descent | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>slr ls gradient descent</h1><time datetime=2021-04-21T09:44:00+07:00>April 21, 2021</time><p>Regresi merupakan salah satu permasalahan dalam machine learning (ML) dengan cara belajar supervised learning [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=linear-regression>linear regression</h2><p>Untuk satu variabel bebas $x$ dan satu variabel terikat $y$ suatu prediktor dalam bentuk</p><p>\begin{equation}\label{eqn:0265-0}
+y = a + bx,
+\end{equation}</p><p>nilai $a$ dan $b$ dapat diperoleh menggunakan regresi linier.</p><h2 id=least-square>least square</h2><p>Bila terdapat pasangan data $\{(x_i, y_i) \ | \ i = 1, 2, .., N \}$ nilai $a$ dan $b$ dapat diperoleh menggunakan least square yang menghasilkan</p><p>\begin{equation}\label{eqn:0265-1}
+a = \frac{\sum_{i = 1}^N y_i \sum_{i = 1}^N x_i^2 - \sum_{i = 1}^N x_i \sum_{i = 1}^N x_i y_i}{N \sum_{i = 1}^N x_i^2 - \left( \sum_{i = 1}^N x_i \right)^2}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:0265-2}
+b = \frac{N \sum_{i = 1}^N {x_i y_i} - \sum_{i = 1}^N x_i \sum_{i = 1}^N y_i}{N \sum_{i = 1}^N x_i^2 - \left( \sum_{i = 1}^N x_i \right)^2}.
+\end{equation}</p><p>Kesalahan antara data dan prediktor diberikan oleh</p><p>\begin{equation}\label{eqn:0265-3}
+\varepsilon = \sum_{i = 1}^N (a + b x_i - y_i)^2.
+\end{equation}</p><p>Persamaan \eqref{eqn:0265-1} dan \eqref{eqn:0265-2} diperoleh dengan menggunakan Persamaan \eqref{eqn:0265-3} melalui</p><p>\begin{equation}\label{eqn:0265-4}
+\frac{\partial \varepsilon}{\partial a} = 0, \ \ \ \ \frac{\partial \varepsilon}{\partial b} = 0.
+\end{equation}</p><h2 id=gradient-descent>gradient descent</h2><p>Untuk ML nilai $a$ dan $b$ diubah dengan gradient descent melalui</p><p>\begin{equation}\label{eqn:0265-5}
+a^+ = a - \eta \frac{\partial \varepsilon}{\partial a}
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn:0265-6}
+b^+ = b - \eta \frac{\partial \varepsilon}{\partial b}
+\end{equation}</p><p>dengan $\eta$ adalah laju belajar. Indeks atas $+$ menunjukkan nilai baru dari kedua parameter, yang diubah agar kesalahan $\varepsilon$ berkurang. Idealnya akan tercapai nilai $a$ dan $b$ seperti pada Persamaan \eqref{eqn:0265-1} dan \eqref{eqn:0265-2}, yang tak lain adalah $a^+$ dan $b^+$ pada Persamaan \eqref{eqn:0265-5} dan \eqref{eqn:0265-6} saat Persamaan \eqref{eqn:0265-4} terpenuhi, yang ilustrasi pengubahan nilai-nilainya diberikan pada gambar berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/21/0212-a.gif)<br>Gambar <a name=fig1>1</a>. Proses pencarian persamaan garis $y = a + bx$ melalui algoritma gradient descent.</p><p>Nilai <code>err</code> pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di atas diberikan oleh Persamaan \eqref{eqn:0265-3}, yang telrihat semakin lama semakin kecil dengan berubahnya nilai-nilai $a$ dan $b$ melalui penerapan Persamaan \eqref{eqn:0265-5} dan \eqref{eqn:0265-6}. Gambar sebelumnya dapat diperoleh menggunakan kode Python berikut.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Import required libraries</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> numpy <span style=color:#f92672>import</span> sin, cos
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.animation <span style=color:#66d9ef>as</span> animation
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xdata <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>10</span>])
+</span></span><span style=display:flex><span>ydata <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1.5</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2.5</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3.5</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>4.5</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>5.5</span>, <span style=color:#ae81ff>6</span>])
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> min(len(xdata), len(ydata))
+</span></span><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>eta <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.001</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>curve</span>(a, b):
+</span></span><span style=display:flex><span>	y <span style=color:#f92672>=</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> xdata
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create array for time t from tbed to tend with step dt</span>
+</span></span><span style=display:flex><span>tbeg <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>tend <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>dt <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>t <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>arange(tbeg, tend, dt)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get range of x and y</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#y = wave(0)</span>
+</span></span><span style=display:flex><span>xmin <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>xmax <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>dx <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>ymin <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>ymax <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>dy <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>xmt <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>arange(xmin, xmax <span style=color:#f92672>+</span> dx, dx)
+</span></span><span style=display:flex><span>ymt <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>arange(ymin, ymax <span style=color:#f92672>+</span> dy, dy)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get figure for plotting and set it</span>
+</span></span><span style=display:flex><span>fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>[<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Configure axes</span>
+</span></span><span style=display:flex><span>ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot()
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>grid(which<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;both&#39;</span>)
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_xlabel(<span style=color:#e6db74>&#39;$x$&#39;</span>)
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_ylabel(<span style=color:#e6db74>&#39;$y$&#39;</span>)
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_xlim([xmin, xmax])
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_ylim([ymin, ymax])
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_xticks(xmt, minor<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>ax<span style=color:#f92672>.</span>set_yticks(ymt, minor<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># It must be set after configuring axis to give the effect</span>
+</span></span><span style=display:flex><span>fig<span style=color:#f92672>.</span>tight_layout(rect<span style=color:#f92672>=</span>[<span style=color:#f92672>-</span><span style=color:#ae81ff>0.03</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>0.03</span>, <span style=color:#ae81ff>1.03</span>, <span style=color:#ae81ff>1.03</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Prepare curve</span>
+</span></span><span style=display:flex><span>mark, <span style=color:#f92672>=</span> ax<span style=color:#f92672>.</span>plot([], [], <span style=color:#e6db74>&#39;sr&#39;</span>, lw<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, ms<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>line, <span style=color:#f92672>=</span> ax<span style=color:#f92672>.</span>plot([], [], <span style=color:#e6db74>&#39;-b&#39;</span>, lw<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>time_template <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;s = </span><span style=color:#e6db74>%i</span><span style=color:#e6db74>, a = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>, b = </span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>time_text <span style=color:#f92672>=</span> ax<span style=color:#f92672>.</span>text(<span style=color:#ae81ff>0.03</span>, <span style=color:#ae81ff>0.93</span>, <span style=color:#e6db74>&#39;&#39;</span>, transform<span style=color:#f92672>=</span>ax<span style=color:#f92672>.</span>transAxes)
+</span></span><span style=display:flex><span>err_template <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;err = </span><span style=color:#e6db74>%.4f</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>err_text <span style=color:#f92672>=</span> ax<span style=color:#f92672>.</span>text(<span style=color:#ae81ff>0.03</span>, <span style=color:#ae81ff>0.83</span>, <span style=color:#e6db74>&#39;&#39;</span>, transform<span style=color:#f92672>=</span>ax<span style=color:#f92672>.</span>transAxes)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Perform animation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>init</span>():
+</span></span><span style=display:flex><span>	line<span style=color:#f92672>.</span>set_data([], [])
+</span></span><span style=display:flex><span>	mark<span style=color:#f92672>.</span>set_data([], [])
+</span></span><span style=display:flex><span>	time_text<span style=color:#f92672>.</span>set_text(<span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>	err_text<span style=color:#f92672>.</span>set_text(<span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> line, mark, time_text
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>animate</span>(i):
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>global</span> a, b
+</span></span><span style=display:flex><span>	eps <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>	depsda <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>	depsdb <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, N):
+</span></span><span style=display:flex><span>		f <span style=color:#f92672>=</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> xdata[j]
+</span></span><span style=display:flex><span>		eps <span style=color:#f92672>+=</span> (f <span style=color:#f92672>-</span> ydata[j]) <span style=color:#f92672>*</span> (f <span style=color:#f92672>-</span> ydata[j])
+</span></span><span style=display:flex><span>		depsda <span style=color:#f92672>+=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> (f <span style=color:#f92672>-</span> ydata[j]) <span style=color:#f92672>*</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>		depsdb <span style=color:#f92672>+=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> (f <span style=color:#f92672>-</span> ydata[j]) <span style=color:#f92672>*</span> xdata[j]
+</span></span><span style=display:flex><span>	a <span style=color:#f92672>=</span> a <span style=color:#f92672>-</span> eta <span style=color:#f92672>*</span> depsda
+</span></span><span style=display:flex><span>	b <span style=color:#f92672>=</span> b <span style=color:#f92672>-</span> eta <span style=color:#f92672>*</span> depsdb
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	s <span style=color:#f92672>=</span> i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> s <span style=color:#f92672>%</span> <span style=color:#ae81ff>40</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>		y <span style=color:#f92672>=</span> curve(a, b)
+</span></span><span style=display:flex><span>		line<span style=color:#f92672>.</span>set_data([xdata], [y])
+</span></span><span style=display:flex><span>		mark<span style=color:#f92672>.</span>set_data([xdata], [ydata])
+</span></span><span style=display:flex><span>		time_text<span style=color:#f92672>.</span>set_text(time_template <span style=color:#f92672>%</span> (s, a, b))
+</span></span><span style=display:flex><span>		err_text<span style=color:#f92672>.</span>set_text(err_template <span style=color:#f92672>%</span> eps)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> line, mark, time_text
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ani <span style=color:#f92672>=</span> animation<span style=color:#f92672>.</span>FuncAnimation(
+</span></span><span style=display:flex><span>	fig, animate, np<span style=color:#f92672>.</span>arange(<span style=color:#ae81ff>1</span>, len(t)),
+</span></span><span style=display:flex><span>	interval<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>, blit<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, init_func<span style=color:#f92672>=</span>init
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Write to to a GIF animation</span>
+</span></span><span style=display:flex><span>writergif <span style=color:#f92672>=</span> animation<span style=color:#f92672>.</span>PillowWriter(fps<span style=color:#f92672>=</span><span style=color:#ae81ff>40</span>)
+</span></span><span style=display:flex><span>ani<span style=color:#f92672>.</span>save(<span style=color:#e6db74>&#39;0267.gif&#39;</span>, writer<span style=color:#f92672>=</span>writergif)
+</span></span></code></pre></div><h2 id=exer>exer</h2><ol><li>Tentukan nilai $a$ dan $b$ pada contoh program yang diberikan saat step $s = 520$.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Nick McCrea, &ldquo;An Introduction to Machine Learning Theory and Its Applications: A Visual Tutorial with Examples&rdquo;, Toptal, url
+<a href=https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer target=_blank rel="nofollow noopener noreferrer"><span>https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20210421].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-lang=en data-theme=light data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0212?src=hash&amp;ref_src=twsrc%5Etfw">#bug0212</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1466992298282020865?ref_src=twsrc%5Etfw">December 4, 2021</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><h2 id=heading> </h2><p><a><span>simple linear regression least square <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>slr ls line <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $1.199$ dan $0.471$, &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

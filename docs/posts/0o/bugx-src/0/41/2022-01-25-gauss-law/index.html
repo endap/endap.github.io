@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>gauss's law | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>gauss's law</h1><time datetime=2022-01-26T09:51:00+07:00>January 26, 2022</time><p>Hubungan antara total fluks listrik yang menembus suatu permukaan tertutup dan muatan yang terlingkupi oleh permukaan tertutup tersebut dideskripsikan dalam hukum Gauss [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Hukum Coulomb dapat diturunkan dari hukum Gauss dan sebaliknya pula hukum Gauss dapat diturun dari hukum Coulomb [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Untuk menerapkan hukum Gauss pada distribusi muatan sehingga dapat diperoleh medan listriknya, perlu memperhatikan simetri dari distribusi muatan yang kemudian disesuaikan dengan permukaan Gauss yang digunakan [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=electric-flux>electric flux</h2><p>Elemen fluks listrik akibat vektor medan listrik $\vec{E}$ yang menembus elemen luas $d\vec{A}$ adalah</p><p>\begin{equation}\label{eqn:electric-flux-element}
+d\Phi_E = \vec{E} \cdot d\vec{A},
+\end{equation}</p><p>yang untuk mendapatkan fluks oleh seluruh permukaan perlu dilakukan integrasi</p><p>\begin{equation}\label{eqn:electric-flux-integral}
+\Phi_E = \int \vec{E} \cdot d\vec{A}.
+\end{equation}</p><p>Bila $\vec{E}$ dan element luas $d\vec{A}$ sudutnya selalu tetap dan juga besar $|\vec{E}|$ maka Persamaan \eqref{eqn:electric-flux-integral} akan menjadi</p><p>\begin{equation}\label{eqn:electric-flux-integral-constant}
+\Phi_E = \vec{E} \cdot \int d\vec{A} = \vec{E} \cdot \vec{A}.
+\end{equation}</p><h2 id=gaussian-surface>gaussian surface</h2><p>Permukaan Gauss merupakan suatu permukaan tertutup sembaang yang bersifat khayal. Sebagai simbolnya terdapat tanda O pada integralnya</p><p>\begin{equation}\label{eqn:gaussian-surface}
+\vec{A}_{\rm Gauss} = \oint d\vec{A},
+\end{equation}</p><p>yang menggambarkan integral suatu permukaan tertutup. Dengan integral dari Persamaan \eqref{eqn:gaussian-surface} diterapkan pada Persamaan \eqref{eqn:electric-flux-integral} maka akan diperoleh</p><p>\begin{equation}\label{eqn:electric-flux-integral-gaussian-surface}
+\Phi_{E,\rm total} = \oint \vec{E} \cdot d\vec{A}.
+\end{equation}</p><h2 id=enclosed-charge>enclosed charge</h2><p>Muatan yang terlingkupi oleh permukaan Gauss adalah</p><p>\begin{equation}\label{eqn:enclosed-charge}
+q_{\rm enc} = \int \rho dV,
+\end{equation}</p><p>dengan $\rho$ adalah rapat muatan volume, di mana volume yang dimaksud adalah volume dalam permukaan Gauss.</p><p>Tabel <a name=tab1>1</a>. Beberapa permukaan Gauss dan volume yang berada di dalamnya.</p><table><thead><tr><th style=text-align:left>Bentuk</th><th style=text-align:center>$n$</th><th style=text-align:center>Permukaan Gauss</th><th style=text-align:center>Volume terlingkupi</th><th style=text-align:center>Gambar [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</th></tr></thead><tbody><tr><td style=text-align:left>Bola</td><td style=text-align:center>$1$</td><td style=text-align:center>$4\pi r^2 \hat{r}$</td><td style=text-align:center>$\frac43\pi r^3$</td><td style=text-align:center><a href=https://pressbooks.online.ucf.edu/osuniversityphysics2/chapter/applying-gausss-law/#CNX_UPhysics_23_03_Symmetry target=_blank rel="nofollow noopener noreferrer"><span>Fig 6.21 <i class="fa fa-external-link" style=font-size:14px></i></span></a></td></tr><tr><td style=text-align:left>Silinder</td><td style=text-align:center>$3$</td><td style=text-align:center>$\pi r^2 \hat{z}$, $2\pi r h \hat{r}$, $-\pi r^2 \hat{z}$</td><td style=text-align:center>$\pi r^2 h$</td><td style=text-align:center><a href=https://pressbooks.online.ucf.edu/osuniversityphysics2/chapter/applying-gausss-law/#CNX_UPhysics_23_03_CylSymm target=_blank rel="nofollow noopener noreferrer"><span>Fig 6.27 <i class="fa fa-external-link" style=font-size:14px></i></span></a></td></tr><tr><td style=text-align:left>Kotak</td><td style=text-align:center>$6$</td><td style=text-align:center>$lw\hat{z}$, $wh\hat{x}$, $lh\hat{y}$,<br>$-lw\hat{z}$, $-wh\hat{x}$, $-lh\hat{y}$</td><td style=text-align:center>$lwh$</td><td style=text-align:center><a href=https://pressbooks.online.ucf.edu/osuniversityphysics2/chapter/applying-gausss-law/#CNX_UPhysics_23_03_Components target=_blank rel="nofollow noopener noreferrer"><span>Fig 6.32 <i class="fa fa-external-link" style=font-size:14px></i></span></a></td></tr></tbody></table><p>Ketiga bentuk dalam Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>adalah bentuk permukaan yang digunakan untuk distribusi muatan dengan simetri bola seperti muatan titik dan bola bermuatan, simetri silinder untuk kawat lurus panjang bermuatan seragam dan silinder panjang bermuatan seragam, dan simetri planar untuk pelat luas bermuatan seragam.</p><h2 id=the-law>the law</h2><p>Hukum Gauss menghubungkan antara Persamaan \eqref{eqn:electric-flux-integral-gaussian-surface} dengan muatan yang terlingkupi oleh permukaan Gauss pada Persamaan \eqref{eqn:enclosed-charge} dengan bantuan permitivitas ruang $\epsilon_0$ dalam bentuk</p><p>\begin{equation}\label{eqn:gauss-law-1}
+\Phi_{E,\rm total} = \frac{q_{\rm enc}}{\varepsilon_0},
+\end{equation}</p><p>yang merupakan hukum Gauss dan lebih sering dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:gauss-law-2}
+\oint \vec{E} \cdot d\vec{A} = \frac{q_{\rm enc}}{\varepsilon_0}.
+\end{equation}</p><h2 id=electric-field>electric field</h2><p>Hukum Gauss dapat digunakan untuk menghitung medan listrik dengan terlebih dahulu mengetahui simetri medan listrik yang disebabkan oleh distribusi muatan sehingga dapat menuliskan</p><p>\begin{equation}\label{eqn:electric-field-symmetry}
+\vec{E} = E \ \hat{n}_1
+\end{equation}</p><p>dan kemudian memilih elemen permukaan Gauss yang tepat</p><p>\begin{equation}\label{eqn:gaussian-surface-symmetry}
+d\vec{A} = \hat{n}_2 \ dA
+\end{equation}</p><p>sehingga Persamaan \eqref{eqn:gauss-law-2} mudah dihitung, yang dalam hal ini dapat berarti $\hat{n}_1 \cdot \hat{n}_2$ bernilai nol atau satu.</p><h3 id=point-charge>point charge</h3><p>Sebuah titik muatan $q$ yang terletak di pusat koordinat memiliki medan listrik yang dapaat dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:point-charge-electric-field-symmetry}
+\vec{E} = E \ \hat{r},
+\end{equation}</p><p>yang menunjukkan simetri bola dengan bentuk fungsi $E$ dianggap belum diketahui. Kemudian untuk simetri bola akan dipilih bentuk elemen permukaan</p><p>\begin{equation}\label{eqn:spherical-symmetry-surface-element}
+d\vec{A} = \hat{r} \ dA = \hat{r} \ (rd\theta)(r\sin\theta d\phi),
+\end{equation}</p><p>dengan batas integral untuk $\theta$ adalah dari $0$ sampai $\pi$ dan untuk $\phi$ dari $0$ sampai $2\pi$ agar membentuk dapat membentuk suatu permukaan Gauss. Lalu muatan yang terlingkupi oleh selubung bola dengan jari-jari $r$ adalah</p><p>\begin{equation}\label{eqn:point-charge-enclosed-charge}
+q_{\rm enc} = q.
+\end{equation}</p><p>Substitusi Persamaan \eqref{eqn:point-charge-electric-field-symmetry}, \eqref{eqn:spherical-symmetry-surface-element}, dan \eqref{eqn:point-charge-enclosed-charge} ke Persamaan \eqref{eqn:gauss-law-2} akan memberikan</p><p>\begin{equation}\label{eqn:gauss-law-point-charge}
+\begin{array}{rcl}
+\displaystyle \oint \vec{E} \cdot d\vec{A} & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+\displaystyle \oint E \ \hat{r} \cdot \hat{r} \ (rd\theta)(r\sin\theta d\phi) & = & \displaystyle \frac{q}{\varepsilon_0} \newline
+\displaystyle \oint E \ (\hat{r} \cdot \hat{r}) \ r^2 \ \sin\theta d\theta \ d\phi & = & \newline
+\displaystyle \int_0^{\pi} \int_0^{2\pi} E \ r^2 \ \sin\theta d\theta \ d\phi & = & \newline
+\displaystyle E \ r^2 \int_0^{\pi} \sin\theta d\theta \int_0^{2\pi} d\phi & = & \newline
+\displaystyle E \ r^2 \ \ \ [ -\cos\theta ]_0^{\pi} \ \ \ [ \phi ]_0^{2\pi} & = & \newline
+\displaystyle E \ r^2 \ \ \ ( -\cos 2\pi + \cos 0 ) \ \ \ ( 2\pi - 0 ) & = & \newline
+\displaystyle E \ r^2 \ ( 1 + 1 ) \ ( 2\pi ) & = & \newline
+E \ r^2 \ 4\pi & = & \newline
+E & = & \displaystyle \frac{1}{4\pi \ r^2} \ \frac{q}{\varepsilon_0} \newline
+& = & \displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{q}{r^2} \newline
+& = & \displaystyle k \frac{q}{r^2},
+\end{array}
+\end{equation}</p><p>yang merupakan besar medan listrik satu titik muatan menurut hukum Coulomb. Substitusi kembali hasil ini ke Persamaan \eqref{eqn:point-charge-electric-field-symmetry} akan memberikan rumusan vektornya.</p><h3 id=long-line-charge>long line charge</h3><p>Sebuah muatan garis amat panjang berapat muatan seragam $\lambda$ yang terletak di sepanjang sumbu $z$ akan memberikan medan listrik di sekelilingnya pada jarak $r$ dalam bentuk</p><p>\begin{equation}\label{eqn:long-line-charge-electric-field-symmetry}
+\vec{E} = E \ \hat{r},
+\end{equation}</p><p>yang menunjukkan simetri silinder dengan bentuk fungsi $E$ dianggap belum diketahui. Kemudian untuk simetri silinder akan dipilih bentuk elemen permukaan untuk selubung silinder</p><p>\begin{equation}\label{eqn:cylindrical-symmetry-surface-element-1}
+d\vec{A}_1 = \hat{r} \ dA_1 = \hat{r} \ (dz)(rd\theta),
+\end{equation}</p><p>dan tutup atas serta bawahnya</p><p>\begin{equation}\label{eqn:cylindrical-symmetry-surface-element-2}
+d\vec{A}_2 = \hat{z} \ dA_2 = \hat{z} \ (dr)(rd\theta),
+\end{equation}</p><p>\begin{equation}\label{eqn:cylindrical-symmetry-surface-element-3}
+d\vec{A}_3 = -\hat{z} \ dA_3 = -\hat{z} \ (dr)(rd\theta),
+\end{equation}</p><p>dengan batas integral untuk $\theta$ adalah dari $0$ sampai $2\pi$, untuk $z$ dari $-\frac12 L$ sampai $\frac12 L$, dan untuk $r$ dari $0$ sampai $r$. Lalu muatan yang terlingkupi oleh permukaan silinder dengan jari-jari $r$ dan tinggi $L$ adalah</p><p>\begin{equation}\label{eqn:long-line-charge-enclosed-charge}
+q_{\rm enc} = q = \lambda L.
+\end{equation}</p><p>Substitusi Persaamaan \eqref{eqn:long-line-charge-electric-field-symmetry}, \eqref{eqn:cylindrical-symmetry-surface-element-1}, \eqref{eqn:cylindrical-symmetry-surface-element-2}, \eqref{eqn:cylindrical-symmetry-surface-element-3}, dan \eqref{eqn:long-line-charge-enclosed-charge} ke Persamaan \eqref{eqn:gauss-law-2} akan menghasilkan</p><p>\begin{equation}\label{eqn:gauss-law-long-line-charge}
+\begin{array}{rcl}
+\displaystyle \oint \vec{E} \cdot d\vec{A} & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+\displaystyle \int E \ \hat{r} \cdot \hat{r} \ (dz)(rd\theta) & + & \newline
+\displaystyle \int E \ \hat{r} \cdot \hat{z} \ (dr)(rd\theta) & + & \newline
+\displaystyle \int E \ \hat{r} \cdot -\hat{z} \ (dr)(rd\theta) & = & \displaystyle \frac{\lambda L}{\varepsilon_0} \newline
+\displaystyle \int E \ r \ dz d\theta + 0 + 0 & = & \newline
+\displaystyle \int_{-\frac12 L}^{\frac12 L} \int_0^{2\pi} E \ r \ dz d\theta & = & \newline
+\displaystyle E \ r \int_{-\frac12 L}^{\frac12 L} dz \int_0^{2\pi} d\theta & = & \newline
+\displaystyle E \ r \ [ z ]_{-\frac12 L}^{\frac12 L} \ \ [ \theta ]_0^{2\pi} & = & \newline
+E \ r \ [\tfrac12 L - (-\tfrac12 L)] \ (2\pi - 0) & = & \newline
+E \ r \ L \ 2\pi & = & \newline
+E & = & \displaystyle \frac{1}{2\pi \ r \ L} \ \frac{\lambda L}{\varepsilon_0} \newline
+& = & \displaystyle \frac{1}{2\pi\varepsilon_0} \ \frac{\lambda}{r} \newline
+& = & \displaystyle \frac{1}{4\pi\varepsilon_0} \ \frac{2\lambda}{r} \newline
+& = & \displaystyle k \frac{2\lambda}{r},
+\end{array}
+\end{equation}</p><p>yang merupakan besar medan listrik di sekitar kawat lurus berapat muatan seragam $\lambda$. Substitusi hasil ini ke Persaamaan \eqref{eqn:long-line-charge-electric-field-symmetry} akan memberikan bentuk vektornya.</p><h3 id=large-charged-plate>large charged plate</h3><p>Suatu pelat luas berapat muatan seragam $\sigma$ yang terletak pada bidang $z = 0$ akan memiliki medan listrik berbentuk</p><p>\begin{equation}\label{eqn:large-charged-plate-electric-field-symmetry}
+\vec{E} = \left\{
+\begin{array}{cc}
+E \ \hat{z}, & z > 0, \newline
+-E \ \hat{z}, & z &lt; 0,
+\end{array}
+\right.
+\end{equation}</p><p>yang menunjukkan simetri planar dengan bentuk fungsi $E$ dianggap belum diketahui. Kemudian untuk simetri planar akan dipilih bentuk elemen permukaan berbentuk kotak</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-1}
+d\vec{A}_1 = \hat{z} \ dA_1 = \hat{z} \ (dx)(dy),
+\end{equation}</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-2}
+d\vec{A}_2 = -\hat{z} \ dA_2 = -\hat{z} \ (dx)(dy),
+\end{equation}</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-3}
+d\vec{A}_3 = \hat{x} \ dA_3 = \hat{x} \ (dy)(dz),
+\end{equation}</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-4}
+d\vec{A}_4 = -\hat{x} \ dA_4 = -\hat{x} \ (dy)(dz),
+\end{equation}</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-5}
+d\vec{A}_5 = \hat{y} \ dA_5 = \hat{y} \ (dz)(dx),
+\end{equation}</p><p>\begin{equation}\label{eqn:planar-symmetry-surface-element-6}
+d\vec{A}_6 = -\hat{y} \ dA_6 = -\hat{y} \ (dz)(dx),
+\end{equation}</p><p>dengan batas integral untuk $x$ adalah dari $-L/2$ sampai $L/2$, $y$ adalah dari $-W/2$ sampai $W/2$, dan $z$ adalah dari $-H/2$ sampai $H/2$. Perhatikan bahwa pusat koordinat terletak di tengah-tengah pelat luas bermuatan seragam ini. Lalu muatan yang terlingkupi oleh permukaan kotak dengan panjang $L$, lebar $W$, dan tinggi $H$ adalah</p><p>\begin{equation}\label{eqn:large-charged-plate-enclosed-charge}
+q_{\rm enc} = q = \sigma LW.
+\end{equation}</p><p>Substitusi Persaamaan \eqref{eqn:large-charged-plate-electric-field-symmetry}, \eqref{eqn:planar-symmetry-surface-element-1}, \eqref{eqn:planar-symmetry-surface-element-2}, \eqref{eqn:planar-symmetry-surface-element-3}, \eqref{eqn:planar-symmetry-surface-element-4}, \eqref{eqn:planar-symmetry-surface-element-5}, \eqref{eqn:planar-symmetry-surface-element-6}, dan \eqref{eqn:large-charged-plate-enclosed-charge} ke Persamaan \eqref{eqn:gauss-law-2} akan mendapatkan</p><p>\begin{equation}\label{eqn:gauss-law-large-charged-plate}
+\begin{array}{rcl}
+\displaystyle \oint \vec{E} \cdot d\vec{A} & = & \displaystyle \frac{q_{\rm enc}}{\varepsilon_0} \newline
+\int E \ \hat{z} \cdot \hat{z} \ (dx)(dy) & + & \newline
+\int -E \ \hat{z} \cdot -\hat{z} \ (dx)(dy) & + & \newline
+0 + 0 + 0 + 0 & = & \displaystyle \frac{\sigma LW}{\varepsilon_0} \newline
+2\int E \ dx \ dy & = & \newline
+\displaystyle2E \int_{-L/2}^{L/2} \int_{-W/2}^{W/2} \ dx \ dy & = & \newline
+\displaystyle2E \int_{-L/2}^{L/2} dx \int_{-W/2}^{W/2} dy & = & \newline
+2E \ [x] _{-L/2}^{L/2} \ \ \ [y] _{-W/2}^{W/2} & = & \newline
+2E (L/2 + L/2) (W/2 + W/2) & = & \newline
+2E \ L \ W & = & \newline
+E & = & \displaystyle \frac{1}{2LW} \ \frac{\sigma LW}{\varepsilon_0} \newline
+& = & \displaystyle \frac{\sigma}{2\varepsilon_0},
+\end{array}
+\end{equation}</p><p>yang merupakan besar medan listrik di sekitar kawat pelat luas berapat muatan seragam $\sigma$. Substitusi hasil ini ke Persaamaan \eqref{eqn:large-charged-plate-electric-field-symmetry} akan memberikan bentuk vektornya.</p><h2 id=exer>exer</h2><ol><li>Apakah untuk menghitung medan listrik $E$ oleh pelat luas berapat muatan seragam $\sigma$ menggunakan hukum Gauss dapat digunakan permukaan Gauss berbentuk permukaan silinder? Apa syaratnya?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Carl R. Nave, &ldquo;Gauss&rsquo;s Law&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gaulaw.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/gaulaw.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Gauss&rsquo;s law&rdquo;, Wikipedia, The Free Encyclopedia, 11 December 2021, 15:13 UTC,
+<a href="https://en.wikipedia.org/w/index.php?oldid=1059774203#Relation_to_Coulomb%27s_law" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1059774203#Relation_to_Coulomb's_law <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r03></a>Milica Marković, &ldquo;Calculation of electric field using Gauss’s Law&rdquo;, Electromagnetics, Ximera, The Ohio State University, 2022, url
+<a href=https://ximera.osu.edu/electromagnetics/electromagnetics/electrostatics/digInGaussLaw target=_blank rel="nofollow noopener noreferrer"><span>https://ximera.osu.edu/electromagnetics/electromagnetics/electrostatics/digInGaussLaw <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li><li><a name=r04></a>Samuel J. Ling, William Moebs, Jeff Sanny, Contributing Authors, &ldquo;University Physics Volume 2&rdquo;, UCF Pressbooks, University of Central Florida, 15 Sep 2016, url
+<a href=https://pressbooks.online.ucf.edu/osuniversityphysics2/ target=_blank rel="nofollow noopener noreferrer"><span>https://pressbooks.online.ucf.edu/osuniversityphysics2/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220125].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0412?src=hash&amp;ref_src=twsrc%5Etfw">#bug0412</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1486169622370197504?ref_src=twsrc%5Etfw">January 26, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) boleh, permukaan tutup dan alas silinder sejajar dengan permukaan pelat atau permukaan selubung silinder tegak lurus dengan permukaan pelat; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

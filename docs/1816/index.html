@@ -1,0 +1,152 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>DC circuit 3 loops | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>DC circuit 3 loops</h1><time datetime=2024-01-14T17:12:38+07:00>January 14, 2024</time><p>Analyze DC circuit with 3 loops.</p><h2 id=simulator>simulator</h2><p>One of the hosted version of
+<a href=https://github.com/sharpie7/circuitjs1 target=_blank rel="nofollow noopener noreferrer"><span>CircuitJS1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>is available on
+<a href=https://www.falstad.com/circuit/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.falstad.com/circuit/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, where following code</p><pre tabindex=0><code>$ 1 0.000005 0.7703437568215379 41 5 50 5e-11
+v 80 176 80 80 0 0 40 6 0 0 0.5
+r 80 80 240 80 0 1
+r 240 80 240 176 0 1.5
+r 240 176 80 176 0 2
+r 240 176 400 176 0 2
+v 400 176 400 80 0 0 40 12 0 0 0.5
+r 80 176 80 288 0 16
+v 400 288 80 288 0 0 40 16 0 0 0.5
+r 240 80 400 80 0 1
+w 400 288 400 176 0
+</code></pre><p>will produce
+<a href=http://tinyurl.com/ytbrufmb target=_blank rel="nofollow noopener noreferrer"><span>http://tinyurl.com/ytbrufmb <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>with circuit diagram of</p><p>where $\varepsilon_1 = 6 \ {\rm V}$, $\varepsilon_2 = 12 \ {\rm V}$, and $\varepsilon_3 = 16 \ {\rm V}$, respectively in CW direction from NW.</p><h2 id=elements>elements</h2><p>Let us name the elements as follow</p><pre tabindex=0><code>    a--R1--b--R2--c 
+↑   |      |      |   ↑
+I1  E1     R3     E2  I2
+    |      |      |
+    d--R4--e--R5--f
+    |             |   
+    R6            |  I6
+    |             |  ↓ 
+    g------E3-----h
+</code></pre><p>according to the position of each element in previous figure.</p><table><thead><tr><th style=text-align:left>Element</th><th style=text-align:center>$\varepsilon_1$</th><th style=text-align:center>$\varepsilon_2$</th><th style=text-align:center>$\varepsilon_3$</th><th style=text-align:center>$R_1$</th><th style=text-align:center>$R_2$</th><th style=text-align:center>$R_3$</th><th style=text-align:center>$R_4$</th><th style=text-align:center>$R_5$</th><th style=text-align:center>$R_6$</th></tr></thead><tbody><tr><td style=text-align:left><strong>Value</strong></td><td style=text-align:center>6</td><td style=text-align:center>12</td><td style=text-align:center>16</td><td style=text-align:center>1</td><td style=text-align:center>1</td><td style=text-align:center>1.5</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>12</td></tr></tbody></table><h2 id=equations-from-kcl>equations from kcl</h2><p>Current subscript is chosen to be the same as the resistor it is passing through.</p><ul><li>Point $b$
+$$
+\tag{1} I_1 + I_2 = I_3.
+$$</li><li>Point $e$
+$$\tag{2}
+I_3 = I_4 + I_5.
+$$</li><li>Point $d$
+$$\tag{3}
+I_6 + I_4 = I_1.
+$$</li><li>Point $f$
+$$\tag{4}
+I_5 = I_2 + I_6.
+$$</li></ul><h2 id=equation-from-kvl>equation from kvl</h2><p>Loop begins from negative terminal of a battery.</p><ul><li>Loop $d-a-b-e-a$
+$$\tag{5}
+\varepsilon_1 - I_1 R_1 - I_3 R_3 - I_4 R_4 = 0.
+$$</li><li>Loop $f-c-b-e-f$
+$$\tag{6}
+\varepsilon_2 - I_2 R_2 - I_3 R_3 - I_5 R_5 = 0.
+$$</li><li>Loop $h-g-d-e-f-h$
+$$\tag{7}
+\varepsilon_3 - I_6 R_6 + I_4 R_4 - I_5 R_5 = 0.
+$$</li></ul><h2 id=equations-reduction>equations reduction</h2><p>Since there are only three unknowns use Equations (1)-(4) in Equations (5)-(6) so that it contains only $I_1$, $I_2$, and $I_6$.</p><ul><li>(1) & (3) → (5)
+$$\tag{8}
+\begin{array}{c}
+\varepsilon_1 - I_1 R_1 - (I_1 + I_2) R_3 - (I_1 - I_6) R_4 = 0 \newline
+I_1 R_1 + (I_1 + I_2) R_3 + (I_1 - I_6) R_4 = \varepsilon_1 \newline
+(R_1 + R_3 + R_4) I_1 + R_3 I_2 - R_4 I_6 = \varepsilon_1.
+\end{array}
+$$</li><li>(1) & (4) → (6)
+$$\tag{9}
+\begin{array}{c}
+\varepsilon_2 - I_2 R_2 - (I_1 + I_2) R_3 - (I_2 + I_6) R_5 = 0 \newline
+I_2 R_2 + (I_1 + I_2) R_3 + (I_2 + I_6) R_5 = \varepsilon_2 \newline
+R_3 I_1 + (R_2 + R_3 + R_5) I_2 + R_5 I_6 = \varepsilon_2.
+\end{array}
+$$</li><li>(3) & (4) → (7)
+$$\tag{10}
+\begin{array}{c}
+\varepsilon_3 - I_6 R_6 + (I_1 - I_6) R_4 - (I_2 + I_6) R_5 = 0 \newline
+I_6 R_6 - (I_1 - I_6) R_4 + (I_2 + I_6) R_5 = \varepsilon_3 \newline
+-R_4 I_1 + R_5 I_2 + (R_4 + R_5 + R_6) I_6 = \varepsilon_3.
+\end{array}
+$$</li></ul><h2 id=new-variables>new variables</h2><p>To simplity a new and more compact variable is defined</p><p>$$\tag{11}
+R_{abc} = R_a + R_b + R_c.
+$$</p><p>Using this equation we can have from (8), (9), (10)</p><p>$$\tag{12}
+\begin{array}{c}
+R_{134} I_1 + R_3 I_2 - R_4 I_6 = \varepsilon_1,\newline
+R_3 I_1 + R_{235} I_2 + R_5 I_6 = \varepsilon_2,\newline
+-R_4 I_1 + R_5 I_2 + R_{456} I_6 = \varepsilon_3,
+\end{array}
+$$</p><p>which later can be presented in matrix form as follow</p><p>$$\tag{13}
+\left[
+\begin{array}{ccc}
+R_{134} & R_3 & -R_4 \newline
+R_3 & R_{235} & R_5 \newline
+-R_4 & R_5 & R_{456}
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+I_1 \newline
+I_2 \newline
+I_6
+\end{array}
+\right] =
+\left[
+\begin{array}{c}
+\varepsilon_1 \newline
+\varepsilon_2 \newline
+\varepsilon_6
+\end{array}
+\right].
+$$</p><p>The last equation can be solved using invers matrix or iterative method for SLE.</p><h2 id=matrices>matrices</h2><p>From previous table, Equation (13) can be written with its elements value</p><p>$$\tag{14}
+\left[
+\begin{array}{ccc}
+4.5 & 1.5 & -2 \newline
+1.5 & 4.5 & 2 \newline
+-2 & 2 & 16
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+I_1 \newline
+I_2 \newline
+I_6
+\end{array}
+\right] =
+\left[
+\begin{array}{c}
+6 \newline
+12 \newline
+16
+\end{array}
+\right].
+$$</p><p>It would be clearer if every matrix in above equation is uniquely named.</p><h2 id=numpy>numpy</h2><p>There is <code>solve()</code> function in NumPy to solve SLE.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>R <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>  [
+</span></span><span style=display:flex><span>    [  <span style=color:#ae81ff>4.5</span>,  <span style=color:#ae81ff>1.5</span>,  <span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>],
+</span></span><span style=display:flex><span>    [  <span style=color:#ae81ff>1.5</span>,  <span style=color:#ae81ff>4.5</span>,   <span style=color:#ae81ff>2</span>],
+</span></span><span style=display:flex><span>    [ <span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>,    <span style=color:#ae81ff>2</span>,    <span style=color:#ae81ff>16</span>]
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>E <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>  [
+</span></span><span style=display:flex><span>     <span style=color:#ae81ff>6</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>12</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>16</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>I <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>linalg<span style=color:#f92672>.</span>solve(R,E)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(I)
+</span></span></code></pre></div><p>that is available on
+<a href=https://onecompiler.com/python/3zze7accv target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zze7accv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>and
+with the result is as follow</p><pre tabindex=0><code>[1.1 1.9 0.9]
+</code></pre><p>which shows that $I_1 = 1.1 \ {\rm A}$, $I_2 = 1.9 \ {\rm A}$, and $I_6 = 0.9 \ {\rm A}$.</p><h2 id=challenges>challenges</h2><ul><li>Solve Equations (12) using substitution or elimination method to find $I_1$, $I_2$, and $I_3$. Then find formula of the current as function of batteries and resistors.</li><li>Execute the code on
+<a href=https://onecompiler.com/python/3zze7accv target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zze7accv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>and explain what the matrices $\mathbf{R}$, $\mathbf{E}$, and $\mathbf{I}$ are.</li><li>Relate the $\mathbf{R}$, $\mathbf{E}$, and $\mathbf{I}$ matrices with matrices in Equation (14).</li><li>Compare the result from given code with the simulator on
+<a href=http://tinyurl.com/ytbrufmb target=_blank rel="nofollow noopener noreferrer"><span>http://tinyurl.com/ytbrufmb <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Calculate the values of $I_1$, $I_2$, and $I_3$ if $\varepsilon_1 = 12 \ {\rm V}$, $\varepsilon_2 = 24 \ {\rm V}$, and $\varepsilon_3 = 32 \ {\rm V}$,</li></ul><h2 id=refs>refs</h2><ul><li><a href=https://www.electronics-tutorials.ws/dccircuits/dcp_4.html target=_blank rel="nofollow noopener noreferrer"><span>Kirchhoffs circuit laws <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=http://www2.stat.duke.edu/~sayan/863/lec/iterative.pdf target=_blank rel="nofollow noopener noreferrer"><span>Iterative methods <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><a href=https://stackabuse.com/solving-systems-of-linear-equations-with-pythons-numpy/ target=_blank rel="nofollow noopener noreferrer"><span>Solving Systems of Linear Equations with Python&rsquo;s Numpy <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

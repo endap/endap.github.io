@@ -1,0 +1,88 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>card/web shortcode | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>card/web shortcode</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-02-01T18:08:31 07:00">1 Feb 2026</time>
+&#183;
+1 min read
+&#183;
+<a class=link href=npprel:///26/b/02-card-web-shortcode.md>edit</a></div></div><div class=note-content><p>Card for showing user web page with id, url, title, and creation date.</p><style>.web-card{display:inline-flex;flex-direction:column;justify-content:space-between;width:80px;height:120px;margin:.3em;border:1px solid var(--muted-border);border-radius:8px;padding:4px;background:var(--box-bg);box-shadow:0 1px 3px rgba(0,0,0,8%);transition:transform .2s ease,box-shadow .2s ease;box-sizing:border-box;text-decoration:none;color:var(--fg)}.web-card:hover{transform:translateY(-2px);box-shadow:3px 3px 8px color-mix( in srgb,var(--fg) 20%,transparent )}.web-card .top-row{text-align:center}.web-card .bottom-row{text-align:center}.web-card .id{font-size:.75em;color:#fc4}.web-card .url{font-size:.75em;color:#888}.web-card .date{font-size:.75em;color:#4c4}.web-card .title-wrapper{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6px}.web-card .title{font-weight:600;font-size:.85em;line-height:1.1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;word-break:break-word}</style><a class=web-card href=https://chatgpt.com/c/697ec8c3-f6dc-8323-b325-dd951c042901><div class=top-row><div class=id>001</div></div><div class=title-wrapper><div class=title>creation date visibility issue</div></div><div class=bottom-row><div class=date>01-feb-2026</div></div></a><h2 id=usage>usage</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>card</span><span style=color:#f92672>/</span><span style=color:#a6e22e>web</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;001&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span>=<span style=color:#e6db74>&#34;creation date visibility issue&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>date</span>=<span style=color:#e6db74>&#34;01-feb-2026&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>url</span>=<span style=color:#e6db74>&#34;https://chatgpt.com/c/697ec8c3-f6dc-8323-b325-dd951c042901&#34;</span>
+</span></span><span style=display:flex><span>&gt;}}
+</span></span></code></pre></div><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>style</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline-flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>space-between</span>; <span style=color:#75715e>/* space between top row and bottom */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>80</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>120</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>0.3</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>muted<span style=color:#f92672>-</span>border);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>4</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>box<span style=color:#f92672>-</span>bg);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>3</span><span style=color:#66d9ef>px</span> rgba(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0.08</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transition</span>: <span style=color:#66d9ef>transform</span> <span style=color:#ae81ff>0.2</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>, <span style=color:#66d9ef>box-shadow</span> <span style=color:#ae81ff>0.2</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-sizing</span>: <span style=color:#66d9ef>border-box</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-decoration</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>fg);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span>:<span style=color:#a6e22e>hover</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transform</span>: translateY(<span style=color:#ae81ff>-2</span><span style=color:#66d9ef>px</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>3</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>3</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>8</span><span style=color:#66d9ef>px</span> <span style=color:#a6e22e>color-mix</span>(
+</span></span><span style=display:flex><span>    in srgb,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>fg) <span style=color:#ae81ff>20</span><span style=color:#66d9ef>%</span>,
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>transparent</span>
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>top-row</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>bottom-row</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>id</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.75</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>:<span style=color:#ae81ff>#fc4</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>url</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.75</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>:<span style=color:#ae81ff>#888</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>date</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.75</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>:<span style=color:#ae81ff>#4c4</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>title-wrapper</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex</span>: <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>align-items</span>: <span style=color:#66d9ef>center</span>;      <span style=color:#75715e>/* vertically center if short */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>6</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>web-card</span> .<span style=color:#a6e22e>title</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#ae81ff>600</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0.85</span><span style=color:#66d9ef>em</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>line-height</span>: <span style=color:#ae81ff>1.1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>-webkit-</span>box;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-webkit-</span>box-orient: <span style=color:#66d9ef>vertical</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>-webkit-</span>line-clamp: <span style=color:#ae81ff>5</span>;    <span style=color:#75715e>/* up to 5 lines */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>overflow</span>: <span style=color:#66d9ef>hidden</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>word-break</span>: <span style=color:#66d9ef>break-word</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;web-card&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .Get &#34;</span><span style=color:#a6e22e>url</span><span style=color:#960050;background-color:#1e0010>&#34;</span> <span style=color:#960050;background-color:#1e0010>}}&#34;</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;top-row&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>&gt;{{ .Get &#34;id&#34; }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;title-wrapper&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;title&#34;</span>&gt;{{ .Get &#34;title&#34; }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bottom-row&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;date&#34;</span>&gt;{{ .Get &#34;date&#34; }}&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span></code></pre></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

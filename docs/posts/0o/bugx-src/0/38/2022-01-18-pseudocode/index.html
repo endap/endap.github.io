@@ -1,0 +1,120 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>pseudocode | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>pseudocode</h1><time datetime=2022-01-20T19:34:00+07:00>January 20, 2022</time><p>Secara harfiah pseudocode berarti kode palsu, yang merupakan cara informal dan dibuat-buat dalam penulisan program dengan menyampaikan urutan tindakan dan instruksi (algoritma) dalam bentuk yang mudah dipahami manusia [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Atau dapat dikatakan bahwa pseudocode merupakan suatu metodologi yang mengijinkan programer untuk menampilkan implementasi suatu algoritma [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dalam pseudocode detil yang penting agar mesin (komputer) dapat memahami algoritma, seperti deklarasi variabel dan kode khusus bahasa, diabaikan atau tidak digunakan [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Mencari luas lapangan sepak bola, menentukan bilangan genap atau ganjil, menghitung mundur, menghitung luas segitiga, dan menghitung luas lingkaran dapat menjadi contoh kasus untuk pseudocode [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=language-independent>language independent</h2><p>Pseudocode digunakan dalam perencanaan algoritma dengan membuat sketsa struktur suatu program sebelumn aktivitas sebenarnya dalam membuat kode dilakukan, yang biasanya dituliskan oleh perancang sistem untuk memastikan para pemrogram mengerti kebutuhan piranti lunak dan dapat menyelaraskan kode yang akan dibuat, yang karena merupakan cara informal dalam deskripsi pemrograman tidak memerlukan sintaks bahasa pemrograman apapun dengan ketat ataupun pertimbanan teknologi yang mendasarinya [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Secara umum kosa kata yang digunakan dalam suatu pseudocode harus berasal domain masalah yang akan dipecahkan dan bukan dari domain penerapannya, e.g. berbagai bahasa pemrograman [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Walaupun demikian terkadang sulit untuk benar-benar meninggalkan kosa kata dalam bahasa pemrograman, sehingga jalan tengah yang baik adalah melihat pseudocode sebagai suatu program komputer yang tersusun secara sederhana menggunakan setengah bahasa Inggris dan setengah kode [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=examples>examples</h2><p>Banyak contoh yang dapat dicari dengan menggunakan mesin pencari. Tiga buah di antaranya disajikan berikut ini.</p><h3 id=moving-a-robot>moving a robot</h3><p>Gerak maju suatu robot dengan memeriksa terlebih dahulu apakah terdapat penghalang di hadapannya [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><figure><blockquote><p>IF robot has no obstacle in front THEN<br>  Call Move robot<br>  Add the move command to the command history<br>  RETURN true<br>ELSE<br>  RETURN false without moving the robot<br>END IF</p></blockquote></figure><h3 id=computing-sales-tax>computing sales tax</h3><p>Menentukan harga final suatu barang setelah memperhitungkan pajak penjualannya [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><figure><blockquote><p>GET price of item<br>GET sales tax rate<br>sales tax = price of item times sales tax rate<br>final price = price of item plus sales tax<br>DISPLAY final price<br>Halt</p></blockquote></figure><h3 id=calculating-grade-average>calculating grade average</h3><p>Menghitung rata-rata nilai peserta kuliah yang berjumlah sepuluh orang [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]</p><figure><blockquote><p>SET total to zero<br>SET grade counter to one<br>WHILE grade counter is less than or equal to ten<br>  Input the next grade<br>  Add the grade into the total<br>  Set the class average to the total divided by ten<br>DISPLAY the class average</p></blockquote></figure><p>Perhatikan bahwa telah digunakan kosa kata yang umum dalam berbagai bahasa pemrograman seperti GET, SET, DISPLAY, WHILE, IF, THEN, dan END. Lalu perhatikan pula bahwa pada contoh pertama blok IF diakhir dengan END IF sedangkan pada contoh ketiga blok WHILE cukup ditandai dengan baris-baris yang menjorok ke dalam. Contoh dengan END IF terpengaruh dengan sintaks BASIC [
+<a href=#r09><span>9 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] sedangkan contoh tanpanya terpengaruh dengan sintaks Python [
+<a href=#r10><span>10 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=pros-cons>pros-cons</h2><p>Walaupun terdapat kekurangan pseudocode seperti tidak adanya standar dalam menuliskannya dan merupakan sesuatu yang tidak dapat dikompilasi serta dieksekusi untuk memeriksa kebenarannya menggunakan komputer [
+<a href=#r11><span>11 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], pseudocode dapat digunakan untuk mengekspresikan pemikiran di balik solusi dengan orang-orang yang bahkan tidah tahu banyak mengenai koding, dengan keuntungan lainnya adalah sebagai suatu cetak biru sehingga pseudocode yang sama dapat digunakan untuk menerjemahkan solusi ke berbagai bahasa pemrograman yang berbeda [
+<a href=#r12><span>12 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=pseudocode>pseudocode</h3><p>Sebagai ilustrasi keuntungan atau fleksibilitas suatu pseudocode yang dapat digunakan pada berbagai bahasa pemrograman adalah sebagai berikut ini.</p><figure><blockquote><p>SET first<br>SET second<br>IF first larger than second<br> DISPLAY first is larger than second<br>ELSE<br> IF first smaller than second<br>  DISPLAY first is smaller than second<br> ELSE<br>  DISPLAY first is equal to second</p></blockquote></figure><p>Contoh penerapan pseudocode di atas diberikan dalam Python, JavaScript, dan C++.</p><h3 id=in-python>in python</h3><p>Implementasi pseudocode sebelumnya dalam Python adalah seperti di bawah ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> x <span style=color:#f92672>&lt;</span> y:
+</span></span><span style=display:flex><span>  print(x, <span style=color:#e6db74>&#39;&lt;&#39;</span>, y)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> y:
+</span></span><span style=display:flex><span>    print(x, <span style=color:#e6db74>&#39;&gt;&#39;</span>, y)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    print(x, <span style=color:#e6db74>&#39;=&#39;</span>, y)
+</span></span></code></pre></div><p>Kode di atas dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xqwsukk8 target=_blank rel="nofollow noopener noreferrer"><span>3xqwsukk8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=in-javascript>in javascript</h3><p>Implementasi pseudocode sebelumnya dalam JavaScript adalah seperti di bawah ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &lt; &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>y</span>)
+</span></span><span style=display:flex><span>} <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &gt; &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>y</span>)
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; = &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>y</span>)
+</span></span><span style=display:flex><span>  }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Kode di atas dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/javascript/3xqwtcwhk target=_blank rel="nofollow noopener noreferrer"><span>3xqwtcwhk <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=in-c>in c++</h3><p>Implementasi pseudocode sebelumnya dalam C++ adalah seperti di bawah ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() 
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>int</span> x <span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>int</span> y <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(x <span style=color:#f92672>&lt;</span> y) {
+</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> x <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &lt; &#34;</span> <span style=color:#f92672>&lt;&lt;</span> y <span style=color:#f92672>&lt;&lt;</span> endl;
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(x <span style=color:#f92672>&gt;</span> y) {
+</span></span><span style=display:flex><span>      cout <span style=color:#f92672>&lt;&lt;</span> x <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &gt; &#34;</span> <span style=color:#f92672>&lt;&lt;</span> y <span style=color:#f92672>&lt;&lt;</span> endl;
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      cout <span style=color:#f92672>&lt;&lt;</span> x <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; = &#34;</span> <span style=color:#f92672>&lt;&lt;</span> y <span style=color:#f92672>&lt;&lt;</span> endl;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Kode di atas dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/cpp/3xqwt3vu6 target=_blank rel="nofollow noopener noreferrer"><span>3xqwt3vu6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=exer>exer</h2><ol><li>Sebutkan bidang-bidang atau domain masalah yang akan dipecahkan oleh ketiga contoh pseudocode yang diberikan.</li><li>Apa salah cari ciri pseudocode yang merupakan kelemahan dan juga kelebihannya?</li><li>Telah diberikan penerapan pseudocode yang sama ke dalam tiga bahasa pemrograman yang berbeda. Perhatikan kode berikut di OneCompiler
+<a href=https://onecompiler.com/fortran/3xqwxbbzr target=_blank rel="nofollow noopener noreferrer"><span>3xqwxbbzr <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fortran data-lang=fortran></code></pre></div></li></ol><p>program compare
+integer :: x, y
+x = 8
+y = 3
+if (x > y) then
+print &lsquo;(I1, A3, I1)&rsquo;, x, " > &ldquo;, y
+else if (x &lt; y) then
+print &lsquo;(I1, A3, I1)&rsquo;, x, " &lt; &ldquo;, y
+else
+print &lsquo;(I1, A3, I1)&rsquo;, x, " = &ldquo;, y
+end if
+end program compare
+```
+Dalam bahasa pemrograman apakah kode di atas ditulis? Apakah akan memberikan hasil sesuai dengan pseudocode terakhir yang diberikan?</p><h2 id=note>note</h2><ol><li><a name=r01></a>Kingsley Ubah, &ldquo;What is Pseudocode? How to Use Pseudocode to Solve Coding Problems&rdquo;, freeCodeCamp, 26 Jul 2021, url
+<a href=https://www.freecodecamp.org/news/what-is-pseudocode-in-programming/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.freecodecamp.org/news/what-is-pseudocode-in-programming/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220118].</li><li><a name=r02></a>theprogrammedwords, &ldquo;How to write a Pseudo Code?&rdquo;, GeeksforGeeks, 30 Sep 2021, url
+<a href=https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220118].</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Pseudocode&rdquo;, Wikipedia, The Free Encyclopedia, 16 December 2021, 02:26 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1060527586" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1060527586 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220118].</li><li><a name=r04></a>Anisa Sekarningrum, &ldquo;5 Contoh Algoritma Pseudocode dan Cara Menulisnya&rdquo;, EKRUT, 21 Dec 2021, url
+<a href=https://www.ekrut.com/media/pseudocode-adalah target=_blank rel="nofollow noopener noreferrer"><span>https://www.ekrut.com/media/pseudocode-adalah <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220118].</li><li><a name=r05></a>&ldquo;Definition of &lsquo;Pseudocode&rsquo;&rdquo;, Software-Development, The Economic Times, url
+<a href=https://economictimes.indiatimes.com/definition/pseudocode target=_blank rel="nofollow noopener noreferrer"><span>https://economictimes.indiatimes.com/definition/pseudocode <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r06></a>John Dalbey, &ldquo;Pseudocode Standard&rdquo;, General SWE Resources, 8 May 2001, url
+<a href=https://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html target=_blank rel="nofollow noopener noreferrer"><span>https://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120]</li><li><a name=r07></a>&ldquo;Pseudocode 101&rdquo;, Poverty Action Lab, 16 May 2020, url
+<a href=https://www.povertyactionlab.org/sites/default/files/research-resources/rr_datacleaning_Pseudocode.pdf target=_blank rel="nofollow noopener noreferrer"><span>https://www.povertyactionlab.org/sites/default/files/research-resources/rr_datacleaning_Pseudocode.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r08></a>Bob Roggio, &ldquo;Pseudocode Examples&rdquo;, COP 2221 Introduction to C Programming, Spring 2015, url
+<a href=https://www.unf.edu/~broggio/cop2221/2221pseu.htm target=_blank rel="nofollow noopener noreferrer"><span>https://www.unf.edu/~broggio/cop2221/2221pseu.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r09></a>Wikibooks contributors, &ldquo;BASIC Programming/Beginning BASIC/Control Structures/IF&mldr;THEN&mldr;ELSEIF&mldr;ELSE&rdquo;, Wikibooks, The Free Textbook Project, 26 August 2021, 00:21 UTC, url
+<a href="https://en.wikibooks.org/w/index.php?oldid=3968628" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikibooks.org/w/index.php?oldid=3968628 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r10></a>Refsnes Data, &ldquo;Python While Loops&rdquo;, W3Schools, 2022, url
+<a href=https://www.w3schools.com/python/python_while_loops.asp target=_blank rel="nofollow noopener noreferrer"><span>https://www.w3schools.com/python/python_while_loops.asp <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r11></a>&ldquo;Pseudocodes (Guidelines, Advantages & Disadvantages)&rdquo;, Codesansar, 2022, url
+<a href=https://www.codesansar.com/computer-basics/pseudocodes.htm target=_blank rel="nofollow noopener noreferrer"><span>https://www.codesansar.com/computer-basics/pseudocodes.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li><li><a name=r12></a>Felix Cabrera, &ldquo;Don’t Skip The Pseudocode: Benefits of using pseudocode to write computer programs&rdquo;, Medium, 3 Sep 2019, url
+<a href=https://medium.com/swlh/dont-skip-the-pseudocode-a786187e4f3d target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/swlh/dont-skip-the-pseudocode-a786187e4f3d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220120].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0382?src=hash&amp;ref_src=twsrc%5Etfw">#bug0382</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1484119188558213124?ref_src=twsrc%5Etfw">January 20, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) pajak, robotika, pendidikan; &nbsp;
+2) tidak sesuai dengan bahasa pemrograman apapun sehingga tidak bisa diperiksa kebenarannya, akan tetapi menjadi fleksibel untuk diterapkan dalam bahasa pemrograman apapun; &nbsp;
+3) fortran, ya; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

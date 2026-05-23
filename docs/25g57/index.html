@@ -1,0 +1,168 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>grain conf viewer | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>grain conf viewer</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-07-20T05:28:23 07:00">20 Jul 2025</time>
+&#183;
+4 mins read</div></div><div class=note-content><h2 id=notes>notes</h2><ul><li>The term is chosen grain configuration instead of particle configuration, since it gives more nuance in the domain of granular physics <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</li><li>As initial format several properties are considered, which are particle ID and types, x, y, z positions, fill and stroke colors <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</li><li>The grain configuration viewer will be designed in a Hugo post using a shortcode with inline JS, but later will be ported to external JS for the simulation <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li><li>The use of frontmatter in enhancing CSV is advisable from a discussion<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</li><li>Version number starts from 0.1 since it is not stable <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</li><li>The shortcode will placed under <code>viewer</code> folder for future development of other viewer <sup id=fnref1:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</li><li>Progress of this note is tracked daily in
+<a href=/butiran/25g56/><span>25g56
+</span></a>note.<ul><li><code>20-jul-2025</code> <code>v0.1</code> It can draw grains with different stroke and fill colors. It uses diameter instead of radius due to nature of measurement.</li></ul></li></ul><h2 id=inputs>inputs</h2><ul><li>Metadata and content of version 0.1 is as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csv data-lang=csv><span style=display:flex><span><span style=color:#e6db74>---</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>version: 0.1</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>description: Simple grain configuration</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>columns: id type x y z d fill stroke</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>units: - - mm mm mm mm - -</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>---</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>000 A 1.00 1.00 0.00 2.0 #fee #a00</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>001 B 2.00 1.00 0.00 1.5 #efe #0a0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>002 C 3.00 1.00 0.00 0.5 #eef #00a</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>003 D 3.00 2.00 0.00 1.0 #ffe #aa0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>004 E 1.00 2.00 0.00 0.5 #eff #0aa</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>005 F 1.00 3.00 0.00 0.6 #fef #a0a</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>006 G 2.00 3.00 0.00 1.0 #fff #aaa</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>007 H 3.00 3.00 0.00 1.0 #888 #000</span>
+</span></span></code></pre></div></li></ul><h2 id=shortcode>shortcode</h2><ul><li>Shortcode of verison 0.1 is as follow.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewer-grain&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;view-container&#34;</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getLines</span>(<span style=color:#a6e22e>text</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lines</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>text</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;\n&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>lines</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>shift</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>lines</span>[<span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>lines</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getHeader</span>(<span style=color:#a6e22e>lines</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>lines</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>indexOf</span>(<span style=color:#e6db74>&#34;columns:&#34;</span>) <span style=color:#f92672>&gt;</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>cols</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;:&#34;</span>)[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>cols</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>cols</span>.<span style=color:#a6e22e>shift</span>();
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>cols</span>[<span style=color:#a6e22e>cols</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>cols</span>.<span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>cols</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getGrains</span>(<span style=color:#a6e22e>lines</span>, <span style=color:#a6e22e>header</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>grains</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>isData</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>N</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>length</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>isData</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cols</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>lines</span>[<span style=color:#a6e22e>i</span>].<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>grain</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>N2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>header</span>.<span style=color:#a6e22e>length</span>;
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>N2</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>grain</span>[<span style=color:#a6e22e>header</span>[<span style=color:#a6e22e>j</span>]] <span style=color:#f92672>=</span> <span style=color:#a6e22e>cols</span>[<span style=color:#a6e22e>j</span>]
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>grains</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>grain</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>lines</span>[<span style=color:#a6e22e>i</span>].<span style=color:#a6e22e>indexOf</span>(<span style=color:#e6db74>&#34;---&#34;</span>) <span style=color:#f92672>&gt;</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>isData</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    }    
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>grains</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>transform</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>src</span>, <span style=color:#a6e22e>dest</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>xmin</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>src</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>xmax</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>src</span>[<span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>XMIN</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>dest</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>XMAX</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>dest</span>[<span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>X</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>xmin</span>) <span style=color:#f92672>/</span> (<span style=color:#a6e22e>xmax</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>xmin</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>X</span> <span style=color:#f92672>*=</span> (<span style=color:#a6e22e>XMAX</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>XMIN</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>X</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>XMIN</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>X</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawGrainsOnCanvas</span>(<span style=color:#a6e22e>grains</span>, <span style=color:#a6e22e>can</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>XMIN</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>XMAX</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>width</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>YMIN</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>YMAX</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>xmin</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>xmax</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ymin</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ymax</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>can</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>g</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>grains</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> parseFloat(<span style=color:#a6e22e>g</span>[<span style=color:#e6db74>&#34;x&#34;</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> parseFloat(<span style=color:#a6e22e>g</span>[<span style=color:#e6db74>&#34;y&#34;</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>d</span> <span style=color:#f92672>=</span> parseFloat(<span style=color:#a6e22e>g</span>[<span style=color:#e6db74>&#34;d&#34;</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fillColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>g</span>[<span style=color:#e6db74>&#34;fill&#34;</span>];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>strokeColor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>g</span>[<span style=color:#e6db74>&#34;stroke&#34;</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>X</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>transform</span>(<span style=color:#a6e22e>x</span>, [<span style=color:#a6e22e>xmin</span>, <span style=color:#a6e22e>xmax</span>], [<span style=color:#a6e22e>XMIN</span>, <span style=color:#a6e22e>XMAX</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>Y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>transform</span>(<span style=color:#a6e22e>y</span>, [<span style=color:#a6e22e>ymin</span>, <span style=color:#a6e22e>ymax</span>], [<span style=color:#a6e22e>YMIN</span>, <span style=color:#a6e22e>YMAX</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>X2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>transform</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.5</span><span style=color:#f92672>*</span><span style=color:#a6e22e>d</span>, [<span style=color:#a6e22e>xmin</span>, <span style=color:#a6e22e>xmax</span>], [<span style=color:#a6e22e>XMIN</span>, <span style=color:#a6e22e>XMAX</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>R</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>X2</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>X</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fillColor</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>()
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>X</span>, <span style=color:#a6e22e>Y</span>, <span style=color:#a6e22e>R</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>Math.<span style=color:#a6e22e>PI</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fill</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>strokeColor</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>()
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>X</span>, <span style=color:#a6e22e>Y</span>, <span style=color:#a6e22e>R</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>Math.<span style=color:#a6e22e>PI</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>div</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;view-container&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span>(<span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>style</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200px&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200px&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;block&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1px solid #ccc&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#fafafa&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>marginTop</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0.25em&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>can</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span>(<span style=color:#a6e22e>can</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>with</span>(<span style=color:#a6e22e>style</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;200px&#34;</span>;
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>can</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lines</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getLines</span>(<span style=color:#e6db74>&#34;{{- .Inner -}}&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>header</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getHeader</span>(<span style=color:#a6e22e>lines</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>grains</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getGrains</span>(<span style=color:#a6e22e>lines</span>, <span style=color:#a6e22e>header</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>drawGrainsOnCanvas</span>(<span style=color:#a6e22e>grains</span>, <span style=color:#a6e22e>can</span>);
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div></li></ul><h2 id=results>results</h2><ul><li>Result of last version is as follow.<div class=viewer-grain id=view-container></div><script>function getLines(e){const t=e.split(`
+`);return t[0].length==0&&t.shift(),t[t.length-1].length==0&&t.pop(),t}function getHeader(e){for(let t of e)if(t.indexOf("columns:")>-1){let e=t.split(":")[1].split(" ");return e[0].length==0&&e.shift(),e[e.length-1].length==0&&e.pop(),e}}function getGrains(e,t){const n=[];let s=!1;const o=e.length;for(let i=0;i<o;i++){if(s){const s=e[i].split(" ");grain={};const o=t.length;for(let e=0;e<o;e++)grain[t[e]]=s[e];n.push(grain)}e[i].indexOf("---")>-1&&i>0&&(s=!0)}return n}function transform(e,t,n){const o=t[0],a=t[1],i=n[0],r=n[1];let s=(e-o)/(a-o);return s*=r-i,s+=i,s}function drawGrainsOnCanvas(e,t){const s=0,o=parseInt(t.width),r=parseInt(t.height),c=0,i=0,a=4,l=0,d=4,n=t.getContext("2d");for(let t of e){const h=parseFloat(t.x),p=parseFloat(t.y),g=parseFloat(t.d),v=t.fill,b=t.stroke,u=transform(h,[i,a],[s,o]),m=transform(p,[l,d],[r,c]),j=transform(h+.5*g,[i,a],[s,o]),f=j-u;n.fillStyle=v,n.beginPath(),n.arc(u,m,f,0,2*Math.PI),n.fill(),n.lineWidth="1",n.strokeStyle=b,n.beginPath(),n.arc(u,m,f,0,2*Math.PI),n.stroke()}}</script><script>const div=document.getElementById("view-container");with(div.style)width="200px",height="200px",display="block",border="1px solid #ccc",background="#fafafa",marginTop="0.25em";const can=document.createElement("canvas");with(can)with(width="200",height="200",style)width="200px",height="200px";div.appendChild(can);const lines=getLines(`
+---
+version: 0.1
+description: Simple grain configuration
+columns: id type x y z d fill stroke
+units: - - mm mm mm mm - -
+---
+000 A 1.00 1.00 0.00 2.0 #fee #a00
+001 B 2.00 1.00 0.00 1.5 #efe #0a0
+002 C 3.00 1.00 0.00 0.5 #eef #00a
+003 D 3.00 2.00 0.00 1.0 #ffe #aa0
+004 E 1.00 2.00 0.00 0.5 #eff #0aa
+005 F 1.00 3.00 0.00 0.6 #fef #a0a
+006 G 2.00 3.00 0.00 1.0 #fff #aaa
+007 H 3.00 3.00 0.00 1.0 #888 #000
+`),header=getHeader(lines),grains=getGrains(lines,header);drawGrainsOnCanvas(grains,can)</script></li></ul><h2 id=todo>todo</h2><ul><li>Add to frotmatter the world and canvas dimensions for more flexible display, e.g.<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>world</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>canvas</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>0</span>
+</span></span></code></pre></div></li><li>Modify code to use the additional metadata.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT-4o, &ldquo;On the Terminology of Particle and Grain Configurations in Computational Materials Simulations&rdquo;, ChatGPT, 20 Jul 2025, url
+<a href=https://chatgpt.com/share/687c1d67-0180-800a-ad74-c53c7feaf6ef target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/687c1d67-0180-800a-ad74-c53c7feaf6ef <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250720].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>GPT-4o, &ldquo;Designing a CSV-Based Format for 2D Granular Particle Visualization&rdquo;, ChatGPT, 20 Jul 2025, url
+<a href=https://chatgpt.com/share/687c212a-09c8-800a-a2fa-3275c832ca9d target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/687c212a-09c8-800a-a2fa-3275c832ca9d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250720].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>GPT-4o, &ldquo;Integrating Simulation Visuals in Scientific Blogging with Hugo and JavaScript&rdquo;, ChatGPT, 20 Jul 2025, url
+<a href=https://chatgpt.com/share/687c23bd-baf8-800a-b924-0b2c5677a03c target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/687c23bd-baf8-800a-b924-0b2c5677a03c <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250720].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>GPT-40, &ldquo;Viewer Shortcode Design: Specific vs Multi-Type Approaches in Hugo&rdquo;, ChatGPT, 20 Jul 2025, url
+<a href=https://chatgpt.com/share/687c6a33-2aa4-800a-a25e-d3fa550754c2 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/687c6a33-2aa4-800a-a25e-d3fa550754c2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250720].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a>&#160;<a href=#fnref1:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>GPT-4o, &ldquo;Versioning Strategy and Compatibility Guidelines for Particle Configuration Formats&rdquo;, ChatGPT, 20 Jul 2025, url
+<a href=https://chatgpt.com/share/687c5dea-ea2c-800a-b7f1-2d0a511e7f02 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/687c5dea-ea2c-800a-b7f1-2d0a511e7f02 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20250720].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

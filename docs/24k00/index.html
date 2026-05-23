@@ -1,0 +1,60 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>intro to pasir | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>intro to pasir</h1><time datetime=2024-11-02T20:22:25+07:00>November 2, 2024</time><p>Create pasir as continuation of butiran, which has undetermined pause.</p><p>Updates:</p><ul><li>It is now has Python and JavaScript parts, where the first is for calculation and the second is for visulization.</li></ul><p>Progress:</p><ul><li><code>01-dec-2024</code> Create rust.<ul><li>Copy content from
+<a href=https://dudung.github.io/pasir target=_blank rel="nofollow noopener noreferrer"><span>pasir <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to
+<a href=https://dudung.github.io/rust target=_blank rel="nofollow noopener noreferrer"><span>rust <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>End this log and move to intro to rust (not yet made).</li></ul></li><li><code>30-nov-2024</code> Use
+<a href=https://gohugo.io/render-hooks/blockquotes/ target=_blank rel="nofollow noopener noreferrer"><span>blockquote render hooks <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.<ul><li>Update Hugo from <code>v0.124.1</code> to
+<a href=https://github.com/gohugoio/hugo/releases/tag/v0.139.3 target=_blank rel="nofollow noopener noreferrer"><span><code>v0.139.3</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>since it is new in <code>v0.132.0</code>.</li><li>Create <code>layouts/_default/_markup/render-blockquote.html</code>.</li><li>Modify <code>hugo.toml</code>.</li><li>Use first blockquote in
+<a href=/rust/24k17><span><code>24k17</code>
+</span></a>note.</li></ul></li><li><code>26-nov-2024</code> Update pasir to PyPI with version
+<a href=https://pypi.org/project/pasir/0.0.5/ target=_blank rel="nofollow noopener noreferrer"><span><code>0.0.5</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, including <code>datasets</code> package.</li><li><code>16-nov-2024</code> Change post to note in <code>layouts/partials/footer.html</code>.</li><li><code>15-nov-2024</code> Add icon for external link, that open new tab.<ul><li>Create <code>render-link.html</code> in <code>layouts/_default/_markup</code> as in Hugo
+<a href="https://discourse.gohugo.io/t/simple-way-to-open-in-a-new-tab/28677/4?u=dudung" target=_blank rel="nofollow noopener noreferrer"><span><code>28677</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Add style for the external link
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>as given in W3Schools
+<a href="https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-external-link" target=_blank rel="nofollow noopener noreferrer"><span><code>fa fa-external-link</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></li><li><code>10-nov-2024</code> Fix <code>hugo.yml</code> and <code>python-publish.yml</code> GitHub Actions.<ul><li>Create fresh repository.</li><li>Clone <code>pasir</code> to <code>testpasir</code>.</li><li>Rename <code>pasir</code> to <code>old-pasir</code> and <code>testpasir</code> to <code>pasir</code>.</li><li>Test blog built with Hugo, still error
+<a href=https://github.com/dudung/pasir/actions/runs/11760110667/job/32760300240 target=_blank rel="nofollow noopener noreferrer"><span><code>11760110667</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Finally
+<a href=https://github.com/dudung/pasir/blob/main/.github/workflows/hugo.yml target=_blank rel="nofollow noopener noreferrer"><span><code>hugo.yml</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>work
+<a href=https://github.com/dudung/pasir/actions/runs/11760166744/job/32760418928 target=_blank rel="nofollow noopener noreferrer"><span><code>11760166744</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Check existance of <code>secrets.A_TOKEN</code> using
+<a href=https://github.com/dudung/pasir/blob/main/.github/workflows/check-secret.yml target=_blank rel="nofollow noopener noreferrer"><span><code>check-secret.yml</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Twine works for
+<a href=https://pypi.org/project/pasir/0.0.1/ target=_blank rel="nofollow noopener noreferrer"><span>pasir 0.0.1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>but not yet GitHub Action
+<a href=https://github.com/dudung/pasir/blob/main/.github/workflows/python-publish.yml target=_blank rel="nofollow noopener noreferrer"><span><code>python-publish.yml</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Finally <code>python-publish.yml</code> works
+<a href=https://github.com/dudung/pasir/actions/runs/11761303889/job/32762892975 target=_blank rel="nofollow noopener noreferrer"><span><code>11761303889</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, after defining it as
+<a href=https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/ target=_blank rel="nofollow noopener noreferrer"><span>Trusted Publishers <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, but this is not a unrecommended way. Then it does not work anymore for other GitHub Action, e.g. <code>ci-cd.yml</code> as illustred
+<a href=https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/ target=_blank rel="nofollow noopener noreferrer"><span>here <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Now, <code>python-publish.yml</code> works
+<a href=https://github.com/dudung/pasir/actions/runs/11762105117 target=_blank rel="nofollow noopener noreferrer"><span><code>11762105117</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>without adding it to Trusted Publishers, stil using <code>__token__</code> as user and <code>secrets.A_TOKEN</code> as password. Not really sure how it can happen.</li><li>The steps and discussion to make AIP Token Authentification works is available on
+<a href=https://chatgpt.com/share/67303803-ff04-800a-aa67-ba747bd57ebf target=_blank rel="nofollow noopener noreferrer"><span><code>67303803-ff04-800a-aa67-ba747bd57ebf</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></li><li><code>09-nov-2024</code> Use a word for section instead of <code>##</code> prefix.<ul><li>Current section words are Update, Progress, Info, Activities.</li><li>It is to accompany Tags, which is genereated by Hugo template.</li><li>Still unable to fix error
+<a href=https://github.com/dudung/pasir-old/actions/runs/11753616655/job/32746705870 target=_blank rel="nofollow noopener noreferrer"><span><code>11753616655</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>while deploying to
+<a href=https://pypi.org/ target=_blank rel="nofollow noopener noreferrer"><span>PyPI <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Similar GitHub Action works on
+<a href=https://github.com/dudung/remah/actions/runs/11753526587/job/32746507721 target=_blank rel="nofollow noopener noreferrer"><span><code>11753526587</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Try a solution but still not works
+<a href=https://github.com/dudung/pasir-old/actions/runs/11753616655/job/32750716145 target=_blank rel="nofollow noopener noreferrer"><span><code>11753616655</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>It works on new repo with
+<a href=https://github.com/dudung/pasir/actions/runs/11755638995/job/32750903513 target=_blank rel="nofollow noopener noreferrer"><span><code>11755638995</code> <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></li><li><code>03-nov-2024</code> Add
+<a href=https://pypi.org/project/butiran/ target=_blank rel="nofollow noopener noreferrer"><span>butiran <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.<ul><li>Create folder <code>butiran</code> in <code>src</code> for integration to pasir.</li><li>Unable to fix error
+<a href=https://github.com/dudung/pasir-old/actions/runs/11646202081 target=_blank rel="nofollow noopener noreferrer"><span><code>11646202081</code> <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>while uploading package to
+<a href=https://pypi.org/ target=_blank rel="nofollow noopener noreferrer"><span>PyPI <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ul></li><li><code>02-nov-2024</code> Create
+<a href=https://github.com/dudung/pasir-old/tree/0245302c3eef38d6948c059ba458a0738f3e4a00 target=_blank rel="nofollow noopener noreferrer"><span>pasir <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.<ul><li>Combine <code>src</code> (Python + JavaScript) and <code>blog</code> (Hugo) in a repo.</li><li>Fix default <code>hugo.yml</code> for GitHub Action.<ul><li>Add <code>-s blog</code> after <code>run: | hugo</code>.</li><li>Modify <code>./public</code> to <code>./blog/public</code> in <code>path</code> of <code>Upload artifact</code>.</li></ul></li></ul></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

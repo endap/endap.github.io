@@ -1,0 +1,40 @@
+/* table-0.css */
+
+.table-0 {
+  margin-top: 1.4em;
+}
+
+.table-0 table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+.table-0 th {
+  padding: 0.4em 0.6em;
+  text-align: left;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background-color: var(--hover-bg);
+}
+
+.table-0 td {
+  padding: 0.3em 0.6em;
+  border-bottom: 1px solid var(--muted-border);
+}
+
+.table-0 tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Zebra striping */
+.table-0 tr:nth-child(odd) {
+  background-color: var(--box-bg);
+}
+
+.table-0 tr:nth-child(even) {
+  background-color: var(--hover-bg);
+}

@@ -1,0 +1,189 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>fourier decomposition example | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>fourier decomposition example</h1><time datetime=2024-03-10T12:22:00+07:00>March 10, 2024</time><p>Fourier decomposition example: Three terms &ndash; constant, cosine, sine.</p><ul><li><a href=https://osf.io/ukcmw target=_blank rel="nofollow noopener noreferrer"><span>fourier_decomposition_example.pdf <i class="fa fa-external-link" style=font-size:14px></i></span></a><ul><li>Intro 3</li><li>For f(x) 6</li><li>For f(t) 10</li><li>An example (f1 = 1 Hz) 14</li><li>Same example with f1 = 2 Hz 22</li><li>General f1 value 30</li><li>Discussion and assignment 34</li></ul></li></ul><h2 id=integral-identities-x>integral identities $x$</h2><p>$$\tag{1}
+\int_0^L \sin \left( m \frac{2\pi}{L} x \right) \sin \left( n \frac{2\pi}{L} x \right) \ dx = \left\{
+\begin{array}{rcl}
+0, & m \ne n, \newline
+\tfrac12 L, & m = n.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{2}
+\int_0^L \cos \left( m \frac{2\pi}{L} x \right) \cos \left( n \frac{2\pi}{L} x \right) \ dx = \left\{
+\begin{array}{rcl}
+0, & m \ne n, \newline
+\tfrac12 L, & m = n.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{3}
+\int_0^L \cos \left( m \frac{2\pi}{L} x \right) \sin \left( n \frac{2\pi}{L} x \right) \ dt = 0.
+$$</p><p> </p><p>$$\tag{3b}
+\int_0^L \cos \left( m \frac{2\pi}{L} x \right) \ dt = 0.
+$$</p><p> </p><p>$$\tag{3c}
+\int_0^L \sin \left( n \frac{2\pi}{L} x \right) \ dt = 0.
+$$</p><h2 id=coefficients-x>coefficients $x$</h2><p>$$\tag{4}
+f(x) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{L} \right) x \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{L} \right) x \right] + c_0
+$$</p><p>$$\tag{5}
+a_m = \frac{2}{L}\int_0^L f(x) \ \cos \left[ m \left( \frac{2\pi}{L} \right) x \right] \ dx
+$$</p><p>$$\tag{6}
+b_m = \frac{2}{L}\int_0^L f(x) \ \sin \left[ m \left( \frac{2\pi}{L} \right) x \right] \ dx
+$$</p><p>$$\tag{7}
+c_0 = \frac{1}{L} \int_0^L f(x) \ dx.
+$$</p><p>$$\tag{8}
+k_m = m \frac{2\pi}{L}, \ \ \ \ m = 1, 2, 3, ..
+$$</p><h2 id=integral-identities-t>integral identities $t$</h2><p>$$\tag{9}
+\int_0^T \sin \left( m \frac{2\pi}{T} t \right) \sin \left( n \frac{2\pi}{T} t \right) \ dt = \left\{
+\begin{array}{rcl}
+0, & m \ne n, \newline
+\tfrac12 T, & m = n.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{10}
+\int_0^T \cos \left( m \frac{2\pi}{T} t \right) \cos \left( n \frac{2\pi}{T} t \right) \ dt = \left\{
+\begin{array}{rcl}
+0, & m \ne n, \newline
+\tfrac12 T, & m = n.
+\end{array}
+\right.
+$$</p><p> </p><p>$$\tag{11}
+\int_0^T \cos \left( m \frac{2\pi}{T} t \right) \sin \left( n \frac{2\pi}{T} t \right) \ dt = 0.
+$$</p><p> </p><p>$$\tag{11b}
+\int_0^T \cos \left( m \frac{2\pi}{T} t \right) \ dt = 0.
+$$</p><p> </p><p>$$\tag{11c}
+\int_0^T \sin \left( n \frac{2\pi}{T} t \right) \ dt = 0.
+$$</p><h2 id=coefficients-t>coefficients $t$</h2><p>$$\tag{12}
+f(t) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{T} \right) t \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{T} \right) t \right] + c_0
+$$</p><p>$$\tag{13}
+a_m = \frac{2}{T}\int_0^T f(t) \ \cos \left[ m \left( \frac{2\pi}{T} \right) t \right] \ dt
+$$</p><p>$$\tag{14}
+b_m = \frac{2}{T}\int_0^T f(t) \ \sin \left[ m \left( \frac{2\pi}{T} \right) t \right] \ dt
+$$</p><p>$$\tag{15}
+c_0 = \frac{1}{T} \int_0^T f(t) \ dt.
+$$</p><p>$$\tag{16}
+\omega_m = m \frac{2\pi}{T}, \ \ \ \ m = 1, 2, 3, ..
+$$</p><h2 id=example>example</h2><p>$$\tag{17}
+f(t) = 2 + 5 \cos 20 \pi t + 3 \sin 8 \pi t.
+$$</p><p> </p><p>$$\tag{18}
+\begin{array}{rcl}
+f(t) & = & \displaystyle 2 + 5 \cos \left( \frac{2\pi}{0.1} t \right) + 3 \sin \left( \frac{2\pi}{0.25} t \right)
+\newline \newline
+& = & \displaystyle 2 + 5 \cos \left( 10 \frac{2\pi}{1} t \right) + 3 \sin \left( 4 \frac{2\pi}{1} t \right)
+\end{array}
+$$</p><h2 id=consine-terms-coefficients>consine terms coefficients</h2><ul><li>Use Eqns (13), (10), (11) on (18).</li></ul><p>$$\tag{19}
+\begin{array}{rcl}
+a_m & = & \displaystyle \frac{2}{T}\int_0^T 2 \ \cos \left[ m \left( \frac{2\pi}{T} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 5 \cos \left( 10 \frac{2\pi}{1} t \right) \ \cos \left[ m \left( \frac{2\pi}{1} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 3 \sin \left( 4 \frac{2\pi}{1} t \right) \ \cos \left[ m \left( \frac{2\pi}{1} \right) t \right] \ dt
+\newline \newline
+& = & \displaystyle 0 + \frac{2}{T} \tfrac{1}{2} T 5 \delta_{10,m} + 0
+\ \ = \ \ 5 \delta_{10,m}.
+\end{array}
+$$</p><p>$$\tag{19b}
+\begin{array}{rl}
+a_m = 0, & 0 &lt; m &lt; 10, \newline
+a_{10} = 5, & \newline
+a_m = 0, & 10 &lt; m.
+\end{array}
+$$</p><h2 id=sine-terms-coefficients>sine terms coefficients</h2><ul><li>Use Eqn (14), (9), (11) on (18).</li></ul><p>$$\tag{20}
+\begin{array}{rcl}
+b_m & = & \displaystyle \frac{2}{T}\int_0^T 2 \ \sin \left[ m \left( \frac{2\pi}{T} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 5 \cos \left( 10 \frac{2\pi}{1} t \right) \ \sin \left[ m \left( \frac{2\pi}{1} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 3 \sin \left( 4 \frac{2\pi}{1} t \right) \ \sin \left[ m \left( \frac{2\pi}{1} \right) t \right] \ dt
+\newline \newline
+& = & \displaystyle 0 + 0 + \frac{2}{T} \tfrac{1}{2} T 3 \delta_{4,m}
+\ \ = \ \ 3 \delta_{4,m}.
+\end{array}
+$$</p><p>$$\tag{20b}
+\begin{array}{rl}
+b_m = 0, & 0 &lt; m &lt; 4, \newline
+b_{4} = 3, & \newline
+b_m = 0, & 4 &lt; m.
+\end{array}
+$$</p><h2 id=constant-term>constant term</h2><ul><li>Use Eqn (15), (11b), (11c) on (18).</li></ul><p>$$\tag{21}
+\begin{array}{rcl}
+c_0 & = & \displaystyle \frac{1}{T}\int_0^T 2 \ dt
+\newline \newline
+& + & \displaystyle \frac{1}{T}\int_0^T 5 \cos \left( 10 \frac{2\pi}{1} t \right) \ dt
+\newline \newline
+& + & \displaystyle \frac{1}{T}\int_0^T 3 \sin \left( 4 \frac{2\pi}{1} t \right) \ dt
+\newline \newline
+& = & \displaystyle 2 + 0 + 0 \ \ = \ \ 2.
+\end{array}
+$$</p><h2 id=function-ft>function $f(t)$</h2><p>$$\tag{12}
+f(t) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{1} \right) t \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{1} \right) t \right] + c_0
+$$</p><p>$$\tag{22}
+\begin{array}{rcl}
+f(t) & = & \displaystyle a_{10} \cos \left[ 10 \left( \frac{2\pi}{1} \right) t \right] + b_4 \sin \left[ 4 \left( \frac{2\pi}{1} \right) t \right] + c_0
+\newline \newline
+& = & \displaystyle 5 \cos \left[ 10 \left( \frac{2\pi}{1} \right) t \right] + 3 \sin \left[ 4 \left( \frac{2\pi}{1} \right) t \right] + 2.
+\end{array}
+$$</p><p> </p><p>$$\tag{17}
+f(t) = 2 + 5 \cos 20 \pi t + 3 \sin 8 \pi t.
+$$</p><h2 id=f_1--2--rm-hz>$f_1 = 2 \ \rm Hz$</h2><p>$$\tag{17}
+f(t) = 2 + 5 \cos 20 \pi t + 3 \sin 8 \pi t.
+$$</p><p> </p><p>$$\tag{23}
+\begin{array}{rcl}
+f(t) & = & \displaystyle 2 + 5 \cos \left( \frac{2\pi}{0.1} t \right) + 3 \sin \left( \frac{2\pi}{0.25} t \right)
+\newline \newline
+& = & \displaystyle 2 + 5 \cos \left( 5 \frac{2\pi}{0.5} t \right) + 3 \sin \left( 2 \frac{2\pi}{0.5} t \right)
+\end{array}
+$$</p><h2 id=consine-terms-coefficients-1>consine terms coefficients</h2><ul><li>Use Eqns (13), (10), (11) on (23).</li></ul><p>$$\tag{24}
+\begin{array}{rcl}
+a_m & = & \displaystyle \frac{1}{T}\int_0^T 2 \ \cos \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 5 \cos \left( 5 \frac{2\pi}{0.5} t \right) \ \cos \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 3 \sin \left( 2 \frac{2\pi}{0.5} t \right) \ \cos \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& = & \displaystyle 0 + \frac{2}{T} \tfrac{1}{2} T 5 \delta_{10,m} + 0
+\ \ = \ \ 5 \delta_{5,m}.
+\end{array}
+$$</p><p>$$\tag{24b}
+\begin{array}{rl}
+a_m = 0, & 0 &lt; m &lt; 5, \newline
+a_{5} = 5, & \newline
+a_m = 0, & 5 &lt; m.
+\end{array}
+$$</p><h2 id=sine-terms-coefficients-1>sine terms coefficients</h2><ul><li>Use Eqn (14), (9), (11) on (23).</li></ul><p>$$\tag{25}
+\begin{array}{rcl}
+b_m & = & \displaystyle \frac{1}{T}\int_0^T 2 \ \sin \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 5 \cos \left( 5 \frac{2\pi}{0.5} t \right) \ \sin \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 3 \sin \left( 2 \frac{2\pi}{0.5} t \right) \ \sin \left[ m \left( \frac{2\pi}{0.5} \right) t \right] \ dt
+\newline \newline
+& = & \displaystyle 0 + 0 + \frac{2}{T} \tfrac{1}{2} T 3 \delta_{4,m}
+\ \ = \ \ 3 \delta_{2,m}.
+\end{array}
+$$</p><p>$$\tag{25b}
+\begin{array}{rl}
+b_m = 0, & 0 &lt; m &lt; 2, \newline
+b_{2} = 3, & \newline
+b_m = 0, & 2 &lt; m.
+\end{array}
+$$</p><h2 id=constant-term-1>constant term</h2><ul><li>Use Eqn (15), (11b), (11c) on (23).</li></ul><p>$$\tag{26}
+\begin{array}{rcl}
+c_0 & = & \displaystyle \frac{1}{T}\int_0^T 2 \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 5 \cos \left( 5 \frac{2\pi}{0.5} t \right) \ dt
+\newline \newline
+& + & \displaystyle \frac{2}{T}\int_0^T 3 \sin \left( 2 \frac{2\pi}{0.5} t \right) \ dt
+\newline \newline
+& = & \displaystyle 2 + 0 + 0 \ \ = \ \ 2.
+\end{array}
+$$</p><h2 id=function-ft-1>function $f(t)$</h2><p>$$\tag{12}
+f(t) = \sum_{m=1}^\infty a_m \cos \left[ m \left( \frac{2\pi}{0.5} \right) t \right] + \sum_{m=1}^\infty b_m \sin \left[ m \left( \frac{2\pi}{0.5} \right) t \right] + c_0
+$$</p><p>$$\tag{27}
+\begin{array}{rcl}
+f(t) & = & \displaystyle a_{5} \cos \left[ 5 \left( \frac{2\pi}{0.5} \right) t \right] + b_2 \sin \left[ 2 \left( \frac{2\pi}{0.5} \right) t \right] + c_0
+\newline \newline
+& = & \displaystyle 5 \cos \left[ 5 \left( \frac{2\pi}{0.5} \right) t \right] + 3 \sin \left[ 2 \left( \frac{2\pi}{0.5} \right) t \right] + 2.
+\end{array}
+$$</p><p> </p><p>$$\tag{17}
+f(t) = 2 + 5 \cos 20 \pi t + 3 \sin 8 \pi t.
+$$</p><h2 id=refs>refs</h2><ul><li>Michael Richmond, &ldquo;Examples of Fsinier decomposition&rdquo;, Phys283 Vibrations and Waves, Rochester Institute of Technology, Spring 2024, url
+<a href=http://spiff.rit.edu/classes/phys283/lectures/fourier_2/fourier_2.html target=_blank rel="nofollow noopener noreferrer"><span>http://spiff.rit.edu/classes/phys283/lectures/fourier_2/fourier_2.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20240310].</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

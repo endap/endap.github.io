@@ -1,0 +1,65 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>py plot xy | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>py plot xy</h1><time datetime=2022-03-09T20:50:00+07:00>March 9, 2022</time><p>Terdapat contoh program yang menggunakan pustaka Matplotlib untuk menggambarkan sebuah line chart [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], mungkin lebih tepat adalah xy chart. Contoh ini tidak berjalan pada OneCompiler [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dapat dijalankan akan tetapi tidak tersimpan dengan baik pada Trinket karena Python3 [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dan dapat pula dijalankan pada Coding Ground, Tutorials Point [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=example>example</h2><p>Contoh program yang berikut diperoleh dengan memodifikasi contoh yang ada [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><pre tabindex=0><code>import matplotlib.pyplot as plt
+
+x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+y = [2, 3, 4, 7, 8, 9, 3, 2, 1, 1, 20]
+
+plt.plot(x, y, color=&#39;red&#39;, marker=&#39;o&#39;)
+plt.title(&#39;y vs x&#39;, fontsize=14)
+plt.xlabel(&#39;x&#39;, fontsize=14)
+plt.ylabel(&#39;y&#39;, fontsize=14)
+plt.grid(True)
+plt.show()
+</code></pre><p>Modifikasi utama adalah data x dan y.</p><h2 id=results>results</h2><p>Hasil-hasil yang diperoleh pada ketiga online compiler adalah seperti di bawah ini.</p><h3 id=onecompiler>onecompiler</h3><p>Diperolen pesan</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>Output:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Matplotlib created a temporary config/cache directory at /tmp/matplotlib-enjvk7yg because the default path (/root/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+</span></span></code></pre></div><p>saat program di atas dijalankan dan tidak muncul gambar apapun.</p><h3 id=trinket>trinket</h3><p>Dapat diperoleh gambar dengan format PNG, dan bernama <code>trinket_plot.png</code> saat diunduh.</p><h3 id=coding-ground>coding ground</h3><p>Dapat diperoleh gambar dengan format PNG, dan bernama <code>Download.png</code> saat diunduh.</p><p>![]({{ site.baseurl}}/assets/img/7/01/7010-a.png)<br>Gambar <a name=fig1>1</a>. Grafik $xy$ hasil kompilasi daring pada Trinket dan Coding Ground.</p><p>Hasil grafik yang diperoleh dari Trinket dan Coding Ground, keduanya berformat PNG, diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=recent-way>recent way</h2><p>Dikarenakan untuk Python3 belum dapat tersimpan dengan baik di Trinket pada bagian My Trinket, juga penataan kode-kode yang kurang baik, saat ini lebih nyaman untuk menyimpannya di OneCompiler. Dan dikarenakan tidak dapat menghasilkan keluaran, kode akan dijalankan di Trinket dan tautan di berikan dalam kode yang disimpan di OneCompiler.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>  xi <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>cos(i <span style=color:#f92672>*</span> (<span style=color:#ae81ff>360</span><span style=color:#f92672>/</span>N) <span style=color:#f92672>/</span> <span style=color:#ae81ff>180</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>pi)
+</span></span><span style=display:flex><span>  yi <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>sin(i <span style=color:#f92672>*</span> (<span style=color:#ae81ff>360</span><span style=color:#f92672>/</span>N) <span style=color:#f92672>/</span> <span style=color:#ae81ff>180</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>pi)
+</span></span><span style=display:flex><span>  x<span style=color:#f92672>.</span>append(xi)
+</span></span><span style=display:flex><span>  y<span style=color:#f92672>.</span>append(yi)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>plot(x, y, color<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;blue&#39;</span>, marker<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;o&#39;</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>title(<span style=color:#e6db74>&#39;y vs x&#39;</span>, fontsize<span style=color:#f92672>=</span><span style=color:#ae81ff>14</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>xlabel(<span style=color:#e6db74>&#39;x&#39;</span>, fontsize<span style=color:#f92672>=</span><span style=color:#ae81ff>14</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>ylabel(<span style=color:#e6db74>&#39;y&#39;</span>, fontsize<span style=color:#f92672>=</span><span style=color:#ae81ff>14</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>grid(<span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>show()
+</span></span></code></pre></div><p>Program di atas tersimpan di OneCompiler
+<a href=https://onecompiler.com/python/3xvkxvfts target=_blank rel="nofollow noopener noreferrer"><span>3xvkxvfts <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan hasil gambarnya dapat dilihat di Trinket
+<a href=https://trinket.io/python3/717e3d1d5b target=_blank rel="nofollow noopener noreferrer"><span>717e3d1d5b <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><p>![]({{ site.baseurl}}/assets/img/7/01/7010-b.png)<br>Gambar <a name=fig2>2</a>. Grafik $xy$ hasil kompilasi daring pada Trinket.</p><p>Dengan menggunakan $x = \cos\theta$ dan $y = \sin\theta$ dengan $\theta = 0^\circ$, $18^\circ$, $\dots$, $342^\circ$, $360^\circ$ dapat diperoleh Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Doron, &ldquo;How to Plot a Line Chart in Python using Matplotlib&rdquo;, Data to Fish, 12 Apr 2020, url
+<a href=https://datatofish.com/line-chart-python-matplotlib/ target=_blank rel="nofollow noopener noreferrer"><span>https://datatofish.com/line-chart-python-matplotlib/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r02></a>&ldquo;3xvkneb7v&rdquo;, OneCompiler, url
+<a href=https://onecompiler.com/python/3xvkneb7v target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3xvkneb7v <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r03></a>&ldquo;main.py&rdquo;, Triket, url
+<a href=https://trinket.io/python3/de45437284 target=_blank rel="nofollow noopener noreferrer"><span>https://trinket.io/python3/de45437284 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r04></a>&ldquo;Execute Metplotlib Online (Matplotlib 3.3.4)&rdquo;, Coding Ground, Tutorials Point, url
+<a href=https://www.tutorialspoint.com/execute_matplotlib_online.php target=_blank rel="nofollow noopener noreferrer"><span>https://www.tutorialspoint.com/execute_matplotlib_online.php <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug7010?src=hash&amp;ref_src=twsrc%5Etfw">#bug7010</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1501555902411063297?ref_src=twsrc%5Etfw">March 9, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

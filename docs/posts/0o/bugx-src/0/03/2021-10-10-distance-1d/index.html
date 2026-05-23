@@ -1,0 +1,166 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>distance 1d | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>distance 1d</h1><time datetime=2021-10-11T20:51:00+07:00>October 11, 2021</time><p>Jarak yang merupakan besaran skalar merujuk pada seberapa banyak bumi yang dilingkupi oleh suatu obyek selama pergerakannya [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Persoalan menjadi lebih kompleks apabila benda bergerak dengan gerak konsekutif (berkelanjutan) [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang dapat dengan kecepatan berbeda (kadang dengan percepatan berbeda) pada setiap rentang waktunya.</p><h2 id=two-velocities>two velocities</h2><p>Sebagai ilustrasi diambil kasus gerak lurus dalam 1-d, suatu gerak konsekutif dengan dua kecepatan berbeda, yang fungsi kecepatannya dapat dituliskan sebagai</p><p>\begin{equation}\label{eqn-1}
+v(t) =
+\left\{
+\begin{array}{cc}
+v_1, & 0 \le t &lt; t_1, \newline
+v_2, & t_1 \le t &lt; t_2,
+\end{array}
+\right.
+\end{equation}</p><p>dengan beberapa variasi kasusnya adalah seperti diberikan dalam Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0035-a.png)<br>Gambar <a name=fig1>1</a>. Beberapa gerak lurus dengan dua kecepatan berbeda, dengan grid $0.5 \ {\rm s} \times 0.5 \ {\rm m/s}$.</p><p>Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(i), (ii), (iii), (iv), (v), dan (vi) akan menghasilkan grafik $x-t$ yang berbeda sehingga akan pula memberikan besaran-besaran terkait $x$ yang berbeda.</p><h2 id=x-t>x-t</h2><p>Dengan hubungan</p><p>\begin{equation}\label{eqn-2}
+x_f - x_i = \int_{t_i}^{t_f} v \ dt
+\end{equation}</p><p>akan dapat diperoleh grafik $x-t$ dari grafik $v-t$ pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang dalam hal ini semua kecepatan bernilai tetap sehingga Persamaan \eqref{eqn-2} dapat disederhanakan menjadi</p><p>\begin{equation}\label{eqn-3}
+x_f = x_i + v (t_f - t_i).
+\end{equation}</p><p>Dalam menyelesaikan Persamaan \eqref{eqn-1} akan digunakan Persamaan \eqref{eqn-3} sebanyak dua kali, yaitu</p><p>\begin{equation}\label{eqn-4}
+x_1 = x(0) + v_1 (t_1 - 0)
+\end{equation}</p><p>dan</p><p>\begin{equation}\label{eqn-5}
+x_2 = x_1 + v_2 (t_2 - t_1),
+\end{equation}</p><p>dengan $x(0)$ merupakan syarat awal yang perlu diberikan. Perhatikan bahwa $x_1$ pada Persamaan \eqref{eqn-5} merupakan syarat awal akan tetapi nilanya diberikan oleh Persamaan \eqref{eqn-4}. Kaitan kedua Persamaan \eqref{eqn-4} dan \eqref{eqn-5} melalui $x_1$ telah menggambarkan sifat gerak konsekutif, selain bahwa $x(t)$ perlu selalu kontinu agar dapat memiliki turunan atau terdapat $v(t)$.</p><p>Selanjutnya, hanya untuk memudahkan, semua grafik $x-t$ pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>akan menggunakan syarat awal $x(0) = 0$.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0035-b.png)<br>Gambar <a name=fig2>2</a>. Posisi benda untuk gerak konsekutif dengan dua kecepatan berbeda, dengan grid $0.5 \ {\rm s} \times 1 \ {\rm m}$.</p><p>Garis tegak oranye pada setiap grafik dalam Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>menunjukkan jarak yang ditempuh benda selama $3 \ \rm s$, yang memperlihatkan bahwa $2 \ \rm m$ merupakan jarak yang ditempuh untuk semua contoh gerak konsekutif yang diberikan.</p><h2 id=v-t>v-t</h2><p>Selain dengan menggunakan cara seperti pada Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>jarak yang ditempuh benda dapat pula diperoleh dengan menggunakan grafik $v-t$ dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yaitu melalui menghitung luas di bawah kurva akan tetapi dengan nilai luas telah dimutlakkan. Nilai-nilai luas di bawah kurva yang belum dimutlakkan diberikan pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>berikut.</p><p>![]({{ site.baseurl }}/assets/img/0/03/0035-c.png)<br>Gambar <a name=fig3>3</a>. Kecepatan benda untuk gerak konsekutif dengan dua kecepatan dan jarak total yang ditempuhnya, dengan grid $0.5 \ {\rm s} \times 0.5 \ {\rm m/s}$.</p><p>Dengan memutlakkan nilai-nilai luas di bawah kurva akan diperoleh jarak untuk masing-masing gerak pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>adalah seperti di bawah ini.</p><table><thead><tr><th style=text-align:center>Gambar 3</th><th style=text-align:center>Jarak</th><th style=text-align:center>Perpindahan</th></tr></thead><tbody><tr><td style=text-align:center>(i)</td><td style=text-align:center>$1 + 1 = 2 $</td><td style=text-align:center>$1 + 1 = 2$</td></tr><tr><td style=text-align:center>(ii)</td><td style=text-align:center>$1 + 1 = 2 $</td><td style=text-align:center>$1 + 1 = 2$</td></tr><tr><td style=text-align:center>(iii)</td><td style=text-align:center>$1 + |-1| = 2$</td><td style=text-align:center>$1 - 1 - 0$</td></tr><tr><td style=text-align:center>(iv)</td><td style=text-align:center>$1 + |-1| = 2$</td><td style=text-align:center>$1 - 1 - 0$</td></tr><tr><td style=text-align:center>(v)</td><td style=text-align:center>$|-1| + 1 = 2$</td><td style=text-align:center>$-1 + 1 - 0$</td></tr><tr><td style=text-align:center>(v)</td><td style=text-align:center>$|-1| + 1 = 2$</td><td style=text-align:center>$-1 + 1 - 0$</td></tr></tbody></table><p>Kolom ketiga pada tabel di atas bukan merupakan bahasan jarak akan tetapi ditambahkan hanya untuk menjadi pengingat perbedaan cara dalam menghitung jarak (kolom kedua) dan perpindahan (kolom ketiga).</p><h1 id=functions>functions</h1><p>Dari Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dan
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>dapat diperoleh fungsi-fungsi berikut yang diajikan secara acak.</p><div style="border:1px solid #000;width:732px"><div style=padding:4px;width:22px;display:inline-block;text-align:center></div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block;text-align:center">C1</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block;text-align:center">C2</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block;text-align:center">C3</div></div><div style="border:1px solid #000;width:732px"><div style=padding:4px;width:22px;display:inline-block;text-align:center>R1</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v4}
+v(t) =
+\left\{
+\begin{array}{cc}
+1, & 0 \le t < 1, \newline
+-\frac12, & 1 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v5}
+v(t) =
+\left\{
+\begin{array}{cc}
+-\frac12, & 0 \le t < 2, \newline
+1, & 2 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v6}
+v(t) =
+\left\{
+\begin{array}{cc}
+-1, & 0 \le t < 1, \newline
+\frac12, & 1 \le t < 3,
+\end{array}
+\right.
+$</div></div><div style="border:1px solid #000;width:732px"><div style=padding:4px;width:22px;display:inline-block;text-align:center>R2</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x1}
+x(t) =
+\left\{
+\begin{array}{cc}
+\frac12t, & 0 \le t < 2, \newline
+t - 1, & 2 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x2}
+x(t) =
+\left\{
+\begin{array}{cc}
+t, & 0 \le t < 1, \newline
+\frac12t + \frac12, & 1 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x3}
+x(t) =
+\left\{
+\begin{array}{cc}
+\frac12t, & 0 \le t < 2, \newline
+-t + 3, & 2 \le t < 3,
+\end{array}
+\right.
+$</div></div><div style="border:1px solid #000;width:732px"><div style=padding:4px;width:22px;display:inline-block;text-align:center>R3</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x4}
+x(t) =
+\left\{
+\begin{array}{cc}
+t, & 0 \le t < 1, \newline
+-\frac12 t + \frac32, & 1 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x5}
+x(t) =
+\left\{
+\begin{array}{cc}
+-\frac12 t, & 0 \le t < 2, \newline
+t - 3, & 3 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-x6}
+x(t) =
+\left\{
+\begin{array}{cc}
+-t, & 0 \le t < 1, \newline
+\frac12t - \frac32, & 1 \le t < 3,
+\end{array}
+\right.
+$</div></div><div style="border:1px solid #000;width:732px"><div style=padding:4px;width:22px;display:inline-block;text-align:center>R4</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v1}
+v(t) =
+\left\{
+\begin{array}{cc}
+\frac12, & 0 \le t < 2, \newline
+1, & 2 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v2}
+v(t) =
+\left\{
+\begin{array}{cc}
+1, & 0 \le t < 1, \newline
+\frac12, & 1 \le t < 3,
+\end{array}
+\right.
+$</div><div style="padding:4px;width:220px;border:1px solid #000;display:inline-block">$\label{eqn-v3}
+v(t) =
+\left\{
+\begin{array}{cc}
+\frac12, & 0 \le t < 2, \newline
+-1, & 2 \le t < 3,
+\end{array}
+\right.
+$</div></div><p>Suatu sel pada tabel di atas dapat dirujuk dengan baris dan kolomnya, misalnya untuk sel kanan atas adalah R1C3.</p><h2 id=exer>exer</h2><ol><li>Untuk Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(i) dan
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>(i), tentukan fungsi posisi $x(t)$ dan kecepatan $v(t)$ yang memenuhi dari tabel sebelumnya.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>-, &ldquo;Distance and Displacement&rdquo;, the Physics Classroom, url
+<a href=https://www.physicsclassroom.com/class/1DKin/Lesson-1/Distance-and-Displacement target=_blank rel="nofollow noopener noreferrer"><span>https://www.physicsclassroom.com/class/1DKin/Lesson-1/Distance-and-Displacement <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211010].</li><li><a name=r02></a>CONCEPTREE Learning- For JEE, NEET and Olympiads, &ldquo;Motion in One Dimension-Connected Motion and Consecutive Motion&rdquo;, YouTube, 07.11.2020, url
+<a href="https://www.youtube.com/watch?v=UBNXLTxViDs" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=UBNXLTxViDs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211011].</li></ol><h2 id=heading> </h2><p><a><span>meter <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>length <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>relative position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>distance 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) R4C1 dan R2C1; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

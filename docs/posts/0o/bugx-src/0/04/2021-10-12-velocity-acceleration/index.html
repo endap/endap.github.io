@@ -1,0 +1,42 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>velocity acceleration | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>velocity acceleration</h1><time datetime=2021-10-13T17:29:00+07:00>October 13, 2021</time><p>Untuk kasus gerak lurus dengan percepatan konstan hubungan antara kecepatan dan percepatan (juga dengan posisi) bisa didapatkan dengan menggunakan persamaa-persamaan gerak [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Percepatan merupakan laju perubahan kecepatan dibagi selang waktu perubahan [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang secara umum percepatan merupakan turunan dari kecepatan terhadap waktu [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=a-from-v>a from v</h2><p>Dengan memanfaatkan diferensial</p><p>\begin{equation}\label{eqn-1}
+a = \frac{dv}{dt}.
+\end{equation}</p><p>Persamaan \eqref{eqn-1} mengilustrasikan bagaimana informasi fungsi percepatan $a$ dapat diperoleh dari fungsi kecepatan $v$, dengan keduanya merupakan fungsi dari waktu $t$. Suatu gerak jatuh bebas, gerak yang hanya dipengaruhi oleh gaya gravitasi [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], memiliki fungsi kecepatan</p><p>$$
+v = v_0 - gt,
+$$</p><p>dengan mengambil arah positif ke atas yang berlawanan dengan arah percepatan gravitasi $g$. Dengan menggunakan Persamaan \eqref{eqn-1} dapat diperoleh bahwa</p><p>$$
+a = -g,
+$$</p><p>yang menegaskan bahwa memang hanya gaya gravitasi yang mempengaruhi gerak benda dengan percepatan benda adalah negatif dari percepatan gravitasi. Hal terakhir ini terkait dengan pemilihan arah positif koordinat saat merumuskan fungsi kecepatan $v$.</p><h2 id=v-from-a>v from a</h2><p>Dengan memanfaatkan integral</p><p>\begin{equation}\label{eqn-2}
+v - v_0 = \int_{t_0}^t a \ dt,
+\end{equation}</p><p>di mana $v_0$ merupakan syarat awal. Perhatikan urutan dari fungsi kecepatan $v$ pada ruas kiri, yaitu $v = v(t)$ dan $v_0 = v(t_0)$, terkait dengan batas bawah dan batas atas integral pada ruas kanan, yaitu $t_0$ dan $t$. Misalkan terdapat benda yang bergerak dengan fungsi percepatan</p><p>$$
+a = 1 + 2t + 3t^2 + 4t^3
+$$</p><p>di mana saat $t_0 = 1$ kecepatannya adalah $v(t_0) = 5$, maka</p><p>$$
+\begin{array}{rcl}
+v - v_0 & = & \displaystyle \int_{t_0}^t (1 + 2t + 3t^2 + 4t^3) \ dt \newline
+v - v(t_0) & = & \displaystyle \left[ t + t^2 + t^3 + t^4 \right]_{t_0}^t \newline
+v - v(1) & = & \displaystyle \left[ t + t^2 + t^3 + t^4 \right]_1^t \newline
+v - 5 & = & (t + t^2 + t^3 + t^4) - (1 + 1 + 1 + 1) \newline
+v & = & t + t^2 + t^3 + t^4 - 4 + 5 \newline
+& = & 1 + t + t^2 + t^3 + t^4
+\end{array}
+$$</p><p>adalah fungsi kecepepatannya.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Lee Johnson, &ldquo;How to Find Acceleration With Velocity & Distance&rdquo;, Sciencing, Leaf Group Media, 8 Dec 2020, url
+<a href=https://sciencing.com/acceleration-velocity-distance-7779124.html target=_blank rel="nofollow noopener noreferrer"><span>https://sciencing.com/acceleration-velocity-distance-7779124.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211013].</li><li><a name=r02>Sally, &ldquo;How are acceleration, time and velocity related?&rdquo;, Socratic Q&amp;A, 10 Jun 2014, </a>url
+<a href=https://socratic.org/answers/104812 target=_blank rel="nofollow noopener noreferrer"><span>https://socratic.org/answers/104812 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211013].</li><li><a name=r03></a>Carl R. Nave, &ldquo;Calculus Application for Constant Acceleration&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/acons.html#c2 target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/acons.html#c2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211013].</li><li><a name=r04></a>Wikipedia contributors, &ldquo;Free fall&rdquo;, Wikipedia, The Free Encyclopedia, 29 September 2021, 13:54 UTC,
+<a href="https://en.wikipedia.org/w/index.php?oldid=1047185824" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1047185824 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211013].</li></ol><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

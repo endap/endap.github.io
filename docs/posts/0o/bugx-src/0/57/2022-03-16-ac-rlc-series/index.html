@@ -1,0 +1,46 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>ac rlc series | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>ac rlc series</h1><time datetime=2022-03-16T06:51:00+07:00>March 16, 2022</time><p>Pada rangkaian seri arus yang melewati semua komponen listrik memiliki nilai yang sama. Untuk arus bolak-balik prinsip ini pun tetap berlaku. Dengan menggunakan tegangan pada resistor [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], induktor [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dan kapasitor [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] dapat dibahas tegangan total pada rangkaian RLC seri yang diberik arus bolak-balik.</p><h2 id=current-source>current source</h2><p>Sumber arus bolak-balik memiliki fungsi</p><p>\begin{equation}\label{eqn:ac-current-source}
+I(t) = I_m \sin (\omega t + \varphi),
+\end{equation}</p><p>dengan $I(t)$ arus sebagai fungsi waktu, $I_m$ amplitudo atau nilai maksimum arus, $\omega$ frekuensi angular, $t$ waktu, dan $\varphi$ adalah fasa awal.</p><h2 id=voltage-function>voltage function</h2><p>Pada masing-masing komponen $R$, $L$, dan $C$ terdapat fungsi tegangan dengan fasa yang berbeda beda.</p><h3 id=resistor-voltage>resistor voltage</h3><p>Dengan arus dari Persamaan \eqref{eqn:ac-current-source} akan diperoleh</p><p>\begin{equation}\label{eqn:ac-current-source-voltage-r}
+V_R(t) = V_{R,m} \sin (\omega t + \varphi),
+\end{equation}</p><p>yang merupakan tegangan pada resitor.</p><h3 id=inductor-voltage>inductor voltage</h3><p>Dengan arus dari Persamaan \eqref{eqn:ac-current-source} akan diperoleh</p><p>\begin{equation}\label{eqn:ac-current-source-voltage-c}
+V_L(t) = V_{L,m} \sin (\omega t + \varphi + \tfrac12 \pi),
+\end{equation}</p><p>yang merupakan tegangan pada induktor.</p><h3 id=capacitor-voltage>capacitor voltage</h3><p>Dengan arus dari Persamaan \eqref{eqn:ac-current-source} akan diperoleh</p><p>\begin{equation}\label{eqn:ac-current-source-voltage-l}
+V_C(t) = V_{C,m} \sin (\omega t + \varphi - \tfrac12 \pi),
+\end{equation}</p><p>yang merupakan tegangan pada kapasitor.</p><h3 id=total-voltage>total voltage</h3><p>Tegangan-tegangan pada Persamaan \eqref{eqn:ac-current-source-voltage-r}, \eqref{eqn:ac-current-source-voltage-l}, dan \eqref{eqn:ac-current-source-voltage-c} dapat dijumlahkan karena merupakan rangkaian seri</p><p>\begin{equation}\label{eqn:ac-current-source-voltage-rlc-series}
+\begin{array}{rcl}
+V(t) & = & V_R(t) + V_L(t) + V_C(t) \newline
+& = & V_{R,m} \sin (\omega t + \varphi) \newline
+&& + V_{L,m} \sin (\omega t + \varphi + \tfrac12 \pi) \newline
+&& + V_{C,m} \sin (\omega t + \varphi - \tfrac12 \pi) \newline
+& = & V_m \sin (\omega t + \varphi + \phi),
+\end{array}
+\end{equation}</p><p>yang merupakan tegangan total rangkaian seri RLC dengan $\phi$ adalah sudut fasa yang akan dicari.</p><h2 id=impedance>impedance</h2><p>Persamaan \eqref{eqn:ac-current-source-voltage-rlc-series} dapat dituliskan kembali dalam bentuk</p><p>\begin{equation}\label{eqn:ac-current-source-voltage}
+V(t) = Z I_m \sin (\omega t + \varphi + \phi),
+\end{equation}</p><p>dengan $Z$ adalah impedansi rangkaian</p><p>\begin{equation}\label{eqn:ac-rlc-series-impedance}
+Z = \sqrt{R^2 + (X_L - X_C)^2}
+\end{equation}</p><p>yang diperoleh dengan diagram fasor, di mana</p><p>\begin{equation}\label{eqn:inductive-reactance}
+X_L = \omega L
+\end{equation}</p><p>adalah reaktansi induktif dan</p><p>\begin{equation}\label{eqn:capacitive-reactance}
+X_C = \frac{1}{\omega C}
+\end{equation}</p><p>adalah reaktansi kapasitif. Dan bahwa</p><p>\begin{equation}\label{eqn:phase-angle}
+\tan \phi = \frac{X_L - X_C}{R}
+\end{equation}</p><p>dapat pual diperoleh dari digram fasor.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Carl Rod Nave, &ldquo;Resistor AC Response&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/acres.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/acres.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r02></a>Carl Rod Nave, &ldquo;Inductor AC Response&rdquo;, HyperPhysics, 2017, url
+<a href=http://hyperphysics.phy-astr.gsu.edu/hbase/electric/acind.html target=_blank rel="nofollow noopener noreferrer"><span>http://hyperphysics.phy-astr.gsu.edu/hbase/electric/acind.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r03></a>Carl Rod Nave, &ldquo;Capacitor AC Response&rdquo;, HyperPhysics, 2017, url
+<a href=https://hyperphysics.phy-astr.gsu.edu/hbase/electric/accap.html target=_blank rel="nofollow noopener noreferrer"><span>https://hyperphysics.phy-astr.gsu.edu/hbase/electric/accap.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

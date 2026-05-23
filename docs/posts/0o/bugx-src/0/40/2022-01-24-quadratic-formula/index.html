@@ -1,0 +1,117 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>quadratic formula | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>quadratic formula</h1><time datetime=2022-01-25T06:20:00+07:00>January 25, 2022</time><p>Persamaan kuadrat atau disebut juga persamaan dengan derajat dua memiliki bentuk $ax^2 + bx + c = 0$ dengan $a$, $b$, $c$ diketahui, $a \ne 0$, dan $x$ merupakan nilai yang ingin dicari [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Nilai $x$ dapat diperoleh dengan melengkapi bentuk kuadrat dari persamaan kuadrat [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], sehingga memberikan formula kuadrat [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=equation-and-formula>equation and formula</h2><p>Persamaan kuadrat berbentuk</p><p>\begin{equation}\label{eqn:quadratic-equation}
+ax^2 + bx + c = 0
+\end{equation}</p><p>dapat dilengkapi bentuk kuadratnya</p><p>$$
+\begin{array}{rcl}
+ax^2 + bx + c & = & 0 \newline
+\displaystyle x^2 + \frac{b}{a} x + \frac{c}{a} & = & \newline
+\displaystyle x^2 + \frac{b}{a} x & = & \displaystyle -\frac{c}{a} \newline
+\displaystyle x^2 + \frac{b}{a} x + \frac{b^2}{4a^2} & = & \displaystyle -\frac{c}{a} + \frac{b^2}{4a^2} \newline
+\displaystyle \left( x + \frac{b}{2a} \right)^2 & = & \displaystyle -\frac{4ac}{4a \cdot a} + \frac{b^2}{4a^2} \newline
+& = & \displaystyle \frac{1}{4a^2} \left( -4ac + b^2 \right) \newline
+\displaystyle x + \frac{b}{2a} & = & \displaystyle \pm \frac{1}{2a} \sqrt{-4ac + b^2} \newline
+x & = & \displaystyle - \frac{b}{2a} \pm \frac{1}{2a} \sqrt{-4ac + b^2} \newline
+& = & \displaystyle - \frac{b}{2a} \pm \frac{1}{2a} \sqrt{-4ac + b^2},
+\end{array}
+$$</p><p>yang lebih umum dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn:quadratic-formula}
+x_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}</p><p>dan dikenal sebagai formula kuadrat.</p><h2 id=discriminant>discriminant</h2><p>Formula kuadrat tidak hanya menghasilkan solusi dari persamaan kuadrat tetapi juga memberikan informasi mengenai sifat solusi yang diperoleh, di mana informasi ini tersimpan dalam diskriminan yang memberitahu apakah solusinya berupa bilangan riil atau kompleks dan berapa jumlah solusi dari masihg-masing jenis bilangan untuk diharapkan [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>Tabel <a name=tab1>1</a> Nilai diskriminan dan artinya.</p><table><thead><tr><th style=text-align:left>Nilai Diskriminan</th><th style=text-align:left>Catatan</th><th style=text-align:left>Hasil</th><th></th></tr></thead><tbody><tr><td style=text-align:left>$b^2 - 4ac = 0$</td><td style=text-align:left></td><td style=text-align:left>Satu solusi rasional<br>berulang</td><td></td></tr><tr><td style=text-align:left>$b^2 - 4ac > 0$</td><td style=text-align:left>kuadrat sempurna</td><td style=text-align:left>Dua solusi rasional</td><td></td></tr><tr><td style=text-align:left>$b^2 - 4ac > 0$</td><td style=text-align:left>bukan kuadrat<br>sempurna</td><td style=text-align:left>Dua solusi irasional</td><td></td></tr><tr><td style=text-align:left>$b^2 - 4ac &lt; 0$</td><td style=text-align:left></td><td style=text-align:left>Dua solusi kompleks</td><td></td></tr></tbody></table><p>Untuk saat ini akan dibatas dulu pada satu solusi berulang atau dua solusi yang keduanya merupakan bilangan rasional.</p><h2 id=implementation>implementation</h2><p>Impementasi dari Persamaan \eqref{eqn:quadratic-formula} dan pemanfaatan diskriminan diberikan pada program berikut ini.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0401-quadratic-formula.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Solve quadratic equation using quadartic formula</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung/bugx</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220124 Create this program.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># import the math module</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create cofficients for quadratic equation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>equation</span>(x1, x2):
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>(x1 <span style=color:#f92672>+</span> x2)
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> x1 <span style=color:#f92672>*</span> x2
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> [c, b, a]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate discriminant of a quadratic equation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>discriminant</span>(coef):
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> coef[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> coef[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> coef[<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>    D <span style=color:#f92672>=</span> b <span style=color:#f92672>*</span> b <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> a <span style=color:#f92672>*</span> c;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> D
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate roots of a quadratic equation</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>root</span>(coef):
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> coef[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> coef[<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>    D <span style=color:#f92672>=</span> discriminant(coef)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(D <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>):
+</span></span><span style=display:flex><span>        x1 <span style=color:#f92672>=</span> (<span style=color:#f92672>-</span>b <span style=color:#f92672>-</span> math<span style=color:#f92672>.</span>sqrt(D)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>a)
+</span></span><span style=display:flex><span>        x2 <span style=color:#f92672>=</span> (<span style=color:#f92672>-</span>b <span style=color:#f92672>+</span> math<span style=color:#f92672>.</span>sqrt(D)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>a)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        x1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;not real&#34;</span>
+</span></span><span style=display:flex><span>        x2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;not real&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x1, x2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a quadratic equation ax^2 + bx + c with [c, b, a]</span>
+</span></span><span style=display:flex><span>quad_eqn <span style=color:#f92672>=</span> [<span style=color:#ae81ff>9</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># create a quadratic equation from (x - x1)(x - x2)</span>
+</span></span><span style=display:flex><span>quad_eqn <span style=color:#f92672>=</span> equation(<span style=color:#ae81ff>3</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>10</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate discriminant</span>
+</span></span><span style=display:flex><span>disc <span style=color:#f92672>=</span> discriminant(quad_eqn)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate only real roots using quadratic formula</span>
+</span></span><span style=display:flex><span>x1, x2 <span style=color:#f92672>=</span> root(quad_eqn)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># print results</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;equation: &#34;</span>, quad_eqn, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;D = &#34;</span>, disc, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x1 = &#34;</span>, x1, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x2 = &#34;</span>, x2, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span></code></pre></div><p>Kode di atas dapat dicoba di OneCompiler
+<a href=https://onecompiler.com/python/3xrazmhzv target=_blank rel="nofollow noopener noreferrer"><span>3xrazmhzv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Koefisien persamaan kuadrat $a$, $b$, $c$ diungkapkan dalam bentuk larik <code>[c0, c1, c2]</code> yang merepresentasikan persamaan $c_0 + c_1 x + c_2 x^2 = 0$ atau dengan kata lain $c_2 = a$, $c_1 = b$, dan $c_0 = c$. Larik ini akan digunakan oleh fungsi <code>root</code> dan <code>discriminant</code>. Selain itu terdapat pula fungsi <code>equation</code> yang menghasilkan larik tersebut dengan masukannya adalah akar-akar persamaan dari persamaan $(x - x_1)(x - x_2) = 0$.</p><h3 id=some-cases>some cases</h3><p>Tiga buah fungsi kuadrat diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>untuk dibandingkan keberadaan akar-akarnya secara grafis dengan menggunakan Persamaan \eqref{eqn:quadratic-formula} melalui program <code>0401-quadratic-formula.py</code> yang diberikan.</p><p>![]({{ site.baseurl }}/assets/img/0/40/0401-a.png)<br>Gambar <a name=fig1>1</a>. Tiga fungsi kuadrat yang tidak memiliki akar riil (atas, $\color{#ac5}{\blacktriangle}$), satu akar riil berulang (tengah, $\color{#c55}{\small\blacksquare}$), dan dua akar riil (bawah, $\color{#58c}{\Large\bullet}$).</p><p>Program <code>0401-quadratic-formula.py</code> dijalankan dengan hasil</p><pre tabindex=0><code>========== RESTART: 0401-quadratic-formula.py ==========
+equation: [34, -10, 1]
+D = -36
+x1 = not real
+x2 = not real
+&gt;&gt;&gt; 
+========== RESTART: 0401-quadratic-formula.py ==========
+equation: [25, -10, 1]
+D = 0
+x1 = 5.0
+x2 = 5.0
+&gt;&gt;&gt; 
+========== RESTART: 0401-quadratic-formula.py ==========
+equation: [16, -10, 1]
+D = 36
+x1 = 2.0
+x2 = 8.0
+</code></pre><p>yang cocok dengan Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=exer>exer</h2><ol><li>Apa hasil dari program <code>0401-quadratic-formula.py</code> bila digunakan larik <code>[9, -10, 10]</code> sebagai masukan koefisien dari fungsi <code>root</code>?</li><li>Bagaimana larik yang dihasilkan oleh fungsi <code>equation</code> bila kedua argumennya adalah <code>3</code> dan <code>5</code>?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>Rod Pierce, &ldquo;Quadratic Equation&rdquo;, MathIsFun.com, Rod Pierce (Ed.), 31 Aug 2021, url
+<a href=https://www.mathsisfun.com/algebra/quadratic-equation.html target=_blank rel="nofollow noopener noreferrer"><span>https://www.mathsisfun.com/algebra/quadratic-equation.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220124].</li><li><a name=r02></a>Eric W. Weisstein, &ldquo;Quadratic Equation&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, Wolfram Research, Inc., 21 Jan 2022, url
+<a href=https://mathworld.wolfram.com/QuadraticEquation.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/QuadraticEquation.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220124]</li><li><a name=r03></a>Wikipedia contributors, &ldquo;Quadratic formula&rdquo;, Wikipedia, The Free Encyclopedia, 25 December 2021, 14:47 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1062001380" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1062001380 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220124].</li><li><a name=r04></a>Lumen Learning, &ldquo;The Discriminant&rdquo;, Intermediate Algebra, Lumen Waymaker, url
+<a href=https://courses.lumenlearning.com/intermediatealgebra/chapter/read-the-discriminant/ target=_blank rel="nofollow noopener noreferrer"><span>https://courses.lumenlearning.com/intermediatealgebra/chapter/read-the-discriminant/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220124].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0401?src=hash&amp;ref_src=twsrc%5Etfw">#bug0401</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1485619675015053315?ref_src=twsrc%5Etfw">January 24, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) kedua akar bukan bilangan riil (not real); &nbsp;
+2) `[15, -8, 1]`; &nbsp;</ans><p>{% comment %}
+{% endcomment %}</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,257 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>deploy no artifact gh action | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1779545760'></head><div class=note-container><h1 class=note-title>deploy no artifact gh action</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2025-12-21T15:33:30 07:00">21 Dec 2025</time>
+&#183;
+4 mins read
+&#183;
+<a class=link href=npprel:///25/l/49-deploy-no-artifact-gh-action.md>edit</a></div></div><div class=note-content><h2 id=newest-version>newest-version</h2><pre tabindex=0><code>name: Deploy Hugo site from private repo to public repo
+
+on:
+  push:
+    tags:
+      - &#34;deploy-*&#34;
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      HUGO_VERSION: 0.146.4
+      REPO_NAME: butiran
+
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Checkout private source repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Node.js dependencies
+        run: &#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          BASE_URL=&#34;https://${{ github.repository_owner }}.github.io/${REPO_NAME}/&#34;
+          hugo --minify --baseURL &#34;$BASE_URL&#34;
+
+      - name: Clone public Pages butiran
+        run: |
+          #git clone https://${{ secrets.REPO_DEPLOY_SECRET }}@github.com/username/reponame.git deploy_repo
+          #git clone --branch main https://${{ secrets.REPO_DEPLOY_SECRET }}@github.com/username/reponame.git deploy_repo
+          #git clone https://x-access-token:${{ secrets.REPO_DEPLOY_SECRET }}@github.com/username/reponame.git deploy_repo
+
+          #echo &#34;Token length: ${#GITHUB_TOKEN}&#34;
+          #git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/reponame.git deploy_repo
+          git clone https://x-access-token:${{ github.token }}@github.com/usename/reponame.git deploy_repo
+
+
+      - name: Deploy site
+        run: |
+          cd deploy_repo
+
+          mkdir -p docs
+          rm -rf docs/*
+
+          #cp -r ../public/* docs/
+          #rsync -av --delete ../public/ docs/
+          #rsync -av --delete \
+          rsync -a --delete \
+          --info=progress2 \
+          --no-owner \
+          --no-group \
+          --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r \
+          --ignore-errors \
+          ../public/ docs/
+
+          git config user.name &#34;github-actions[bot]&#34;
+          git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;
+
+          git add docs
+          
+          #git commit -m &#34;Deploy Hugo site&#34; || echo &#34;No changes to commit&#34;
+          #git push
+
+          if git diff --cached --quiet; then
+            echo &#34;No changes to deploy&#34;
+            exit 0
+          fi
+          
+          git commit -m &#34;Deploy Hugo site&#34;
+          git push --verbose
+</code></pre><h2 id=newer-version>newer-version</h2><pre tabindex=0><code>name: Deploy Hugo site from private repo to public repo
+
+on:
+  push:
+    tags:
+      - &#34;deploy-*&#34;
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      HUGO_VERSION: 0.146.4
+      REPO_NAME: butiran
+
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Checkout private source repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Node.js dependencies
+        run: &#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          BASE_URL=&#34;https://${{ github.repository_owner }}.github.io/${REPO_NAME}/&#34;
+          hugo --minify --baseURL &#34;$BASE_URL&#34;
+
+      - name: Clone public Pages butiran
+        run: |
+          git clone https://${{ secrets.REPO_DEPLOY_SECRET }}@github.com/username/reponame.git deploy_repo
+
+      - name: Deploy site
+        run: |
+          cd deploy_repo
+
+          mkdir -p docs
+          rm -rf docs/*
+
+          cp -r ../public/* docs/
+
+          git config user.name &#34;github-actions[bot]&#34;
+          git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;
+
+          git add docs
+          git commit -m &#34;Deploy Hugo site&#34; || echo &#34;No changes to commit&#34;
+          git push
+</code></pre><h2 id=old-version>old-version</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy Hugo site to public &#34;butiran&#34; repo</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>tags</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#e6db74>&#34;deploy-*&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>workflow_dispatch</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>permissions</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>contents</span>: <span style=color:#ae81ff>write</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>concurrency</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>group</span>: <span style=color:#e6db74>&#34;pages&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>cancel-in-progress</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>defaults</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>run</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>shell</span>: <span style=color:#ae81ff>bash</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>HUGO_VERSION</span>: <span style=color:#ae81ff>0.146.4</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Install Hugo CLI</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          &amp;&amp; sudo dpkg -i ${{ runner.temp }}/hugo.deb</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Install Dart Sass</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>sudo snap install dart-sass</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Checkout private source repo</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>submodules</span>: <span style=color:#ae81ff>recursive</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Install Node.js dependencies</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#e6db74>&#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build with Hugo</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>HUGO_CACHEDIR</span>: <span style=color:#ae81ff>${{ runner.temp }}/hugo_cache</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>HUGO_ENVIRONMENT</span>: <span style=color:#ae81ff>production</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            REPO_NAME=&#34;butiran&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            BASE_URL=&#34;https://${{ github.repository_owner }}.github.io/${REPO_NAME}/&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            hugo --minify --baseURL &#34;$BASE_URL&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Upload public folder as artifact</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/upload-artifact@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>site</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>path</span>: <span style=color:#ae81ff>public</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>deploy</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>needs</span>: <span style=color:#ae81ff>build</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Download built site</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/download-artifact@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>site</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>path</span>: <span style=color:#ae81ff>public</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Clone public repo</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git clone https://${{ secrets.BUTIRAN_DEPLOY_SECRET }}@github.com/username/reponame.git deploy_repo
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          cd deploy_repo
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Make sure public folder exists
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          mkdir -p public
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          mkdir -p docs
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Clean old build
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          rm -rf docs/*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Copy new build into /public
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          cp -r ../public/* docs/
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Optional: keep README and LICENSE untouched
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git config user.name &#34;github-actions[bot]&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git add docs
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git commit -m &#34;Update Hugo site in /public&#34; || echo &#34;No changes to commit&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          git push</span>
+</span></span></code></pre></div><h2 id=notes>notes</h2><ul><li>Old version is as input for a discussion that gives new version as output <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</li><li>It still does not work even with newest version.</li><li>It is postponed at 1838 on 21-dec-2025.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>GPT 5.2, &ldquo;Artifact storage quota issue&rdquo;, ChatGPT, 21 Dec 2025, url
+<a href=https://chatgpt.com/share/69474862-c034-800a-b244-6d33cfc2123f target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/69474862-c034-800a-b244-6d33cfc2123f <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20251221].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,84 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>fd damped oscillation dt | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>fd damped oscillation dt</h1><time datetime=2023-09-25T19:56:00+07:00>September 25, 2023</time><h2 id=description>description</h2><ul><li>Equation of motion of a damped oscillation
+$$\tag{1}
+\ddot{x} + 2 \gamma \dot{x} + \omega^2 x = 0.
+$$</li><li>Numerical approach using Finite Difference
+$$\tag{2}
+f(t + \Delta t) = f(t) + \frac{df(t)}{dt} \Delta t.
+$$</li><li>Solution for $x$ if $\gamma \ne \gamma(t)$ and $\omega \ne \omega(t)$.</li><li>To find suitable $\Delta t$.</li></ul><h2 id=formulation>formulation</h2><ul><li>Time
+$$\tag{7}
+t_{n+1} = t_n + \Delta t, \ \ \ n = 0, 1, 2, \dots.
+$$</li><li>Acceleration
+$$\tag{4}
+\ddot{x}(t_n) = - 2 \gamma \dot{x}(t_n) - \omega^2 x(t_n).
+$$</li><li>Velocity
+$$\tag{5}
+\dot{x}(t_{n+1}) = \dot{x}(t_n) + \ddot{x}(t_n) \Delta t.
+$$</li><li>Position
+$$\tag{6}
+x(t_{n+1}) = x(t_n) + \dot{x}(t_n) \Delta t.
+$$</li></ul><h2 id=initial-conditions>initial conditions</h2><ul><li>Iteration
+$$\tag{7}
+n = 0.
+$$</li><li>Time
+$$\tag{8}
+t = t_0.
+$$</li><li>Velocity
+$$\tag{9}
+v(t_0) = v_0
+$$</li><li>Posittion
+$$\tag{10}
+x(t_0) = x_0.
+$$</li></ul><h2 id=parameters>parameters</h2><ul><li>Oscillation period
+$$\tag{11}
+T = 2 \pi \sqrt{\frac{m}{k}}.
+$$</li><li>Time step
+$$\tag{12}
+\Delta t \lt \lt T.
+$$</li></ul><h2 id=code>code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>T <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>tbeg <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>tend <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> T
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>dt <span style=color:#f92672>=</span> (tend <span style=color:#f92672>-</span> tbeg) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>time <span style=color:#f92672>=</span> [(i<span style=color:#f92672>*</span>dt <span style=color:#f92672>+</span> tbeg) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(N<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>k <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>pi<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> ( T<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>/</span> (<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>pi<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>) ) <span style=color:#f92672>*</span> k
+</span></span><span style=display:flex><span>omega <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>pi <span style=color:#f92672>/</span> T
+</span></span><span style=display:flex><span>gamma <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>v0 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tt <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>xx <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> t <span style=color:#f92672>in</span> time:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> t <span style=color:#f92672>==</span> tbeg:
+</span></span><span style=display:flex><span>    v <span style=color:#f92672>=</span> v0
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> x0
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>  <span style=color:#f92672>*</span> gamma <span style=color:#f92672>*</span> v <span style=color:#f92672>-</span> omega<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>  <span style=color:#f92672>*</span> gamma <span style=color:#f92672>*</span> v <span style=color:#f92672>-</span> omega<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>    v <span style=color:#f92672>=</span> v <span style=color:#f92672>+</span> a <span style=color:#f92672>*</span> dt
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> x <span style=color:#f92672>+</span> v <span style=color:#f92672>*</span> dt
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  tstr <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>t<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  astr <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>a<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  vstr <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>v<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  xstr <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;{x:&#34;</span>, tstr, <span style=color:#e6db74>&#34;, y:&#34;</span>, xstr, <span style=color:#e6db74>&#34;},&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  tt<span style=color:#f92672>.</span>append(float(tstr))
+</span></span><span style=display:flex><span>  xx<span style=color:#f92672>.</span>append(float(xstr))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>print(tt)
+</span></span><span style=display:flex><span>print(xx)
+</span></span></code></pre></div><p>It is available at
+<a href=https://onecompiler.com/python/3znm4u5zv target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3znm4u5zv <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=solution-1>solution 1</h2><ul><li>$x_0 = 1$, $v_0 = 0$.</li><li>$T = 1$, $k = 4\pi^2$, $m = 1$.</li><li>$t \in [0, 4T]$, $\Delta t = 4$, $N = 1 + 1$.</li><li>$\gamma = 0$.</li></ul><h2 id=solution-2>solution 2</h2><ul><li>$x_0 = 1$, $v_0 = 0$.</li><li>$T = 1$, $k = 4\pi^2$, $m = 1$.</li><li>$t \in [0, 4T]$, $\Delta t = 0.4$, $N = 10 + 1$.</li><li>$\gamma = 0$.</li></ul><h2 id=solution-3>solution 3</h2><ul><li>$x_0 = 1$, $v_0 = 0$.</li><li>$T = 1$, $k = 4\pi^2$, $m = 1$.</li><li>$t \in [0, 4T]$, $\Delta t = 0.04$, $N = 100 + 1$.</li><li>$\gamma = 0$.</li></ul><h2 id=solution-4>solution 4</h2><ul><li>$x_0 = 1$, $v_0 = 0$.</li><li>$T = 1$, $k = 4\pi^2$, $m = 1$.</li><li>$t \in [0, 4T]$, $\Delta t = 0.004$, $N = 1000 + 1$.</li><li>$\gamma = 0$.</li></ul><h2 id=solution-5>solution 5</h2><ul><li>$x_0 = 1$, $v_0 = 0$.</li><li>$T = 1$, $k = 4\pi^2$, $m = 1$.</li><li>$t \in [0, 4T]$, $\Delta t = 0.01$, $N = 400 + 1$.</li><li>$\gamma = 0$.</li></ul><h2 id=summaries>summaries</h2><ul><li>Unrealistic results are obtained for $\Delta t \ge 0.4T$.</li><li>Displacement could be larger than amplitude for $\Delta t = 0.04T$.</li><li>It is sufficient for $\Delta t = 0.01 T$.</li><li>It might be too fine for $\Delta t = 0.004 T$.</li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

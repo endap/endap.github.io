@@ -1,0 +1,148 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>numerical differential | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>numerical differential</h1><time datetime=2022-02-26T12:10:00+07:00>February 26, 2022</time><p>Diferensial atau turunan diperkenalkan melalui konsep limit [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=differential>differential</h2><p>Turunan suatu fungsi $f(x)$ dapat diperoleh dengan</p><p>\begin{equation}\label{eqn:differential-of-a-function}
+f&rsquo;(x) = \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \frac{f(x + \Delta x) - f(x)}{\Delta x},
+\end{equation}</p><p>dengan $f(x)$ merupakan fungsi yang kontinu pada titik di mana turunan fungsinya $f&rsquo;(x)$ ingin diperoleh.</p><h3 id=polynomial-function>polynomial function</h3><p>Untuk memberikan ilustrasi pemanfaatan Persamaan \eqref{eqn:differential-of-a-function} dapat digunakan suatu polinomial, seperti $f(x) = ax^2 + bx + c$ sebagai berikut ini. Pertama-tama perlu dihitung</p><p>$$
+\begin{array}{rcl}
+\Delta f(x) & = & f(x + \Delta x) - f(x) \newline
+& = & [ a(x + \Delta x)^2 + b (x + \Delta x) + c] \newline
+&& - (ax^2 + bx + c) \newline
+& = & a[x^2 + 2x\Delta x + (\Delta x)^2] + bx + b\Delta x + c] \newline
+&& - ax^2 - bx - c \newline
+& = & ax^2 + 2ax\Delta x + a(\Delta x)^2 + bx + b\Delta x + c \newline
+&& - ax^2 - bx - c \newline
+& = & ax^2 - ax^2 + bx - bx + c - c \newline
+&& 2ax\Delta x + a(\Delta x)^2 + b\Delta x \newline
+& = & 2ax\Delta x + a(\Delta x)^2 + b\Delta x \newline
+& = & (2ax + a\Delta x + b) \Delta x \newline
+\end{array}
+$$</p><p>yang kemudian disubstitusikan</p><p>$$
+\begin{array}{rcl}
+f&rsquo;(x) & = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \displaystyle \frac{\Delta f(x)}{\Delta x} \newline
+& = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \displaystyle \frac{f(x + \Delta x) - f(x)}{\Delta x} \newline
+& = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \displaystyle \frac{(2ax + a\Delta x + b) \Delta x}{\Delta x} \newline
+& = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ 2ax + a\Delta x + b \newline
+& = & 2ax + b,
+\end{array}
+$$</p><p>yang merupakan turunan dari $f(x) = ax^2 + bx + c$.</p><h3 id=trigonometric-function>trigonometric function</h3><p>Dengan hubungan</p><p>\begin{equation}\label{eqn:sin(a+b)}
+\sin (a + b) = \sin a \cos b + \cos a \sin b
+\end{equation}</p><p>dapat diperoleh</p><p>$$
+\sin(x + \Delta x) = \sin x \cos \Delta x + \cos x \sin \Delta x,
+$$</p><p>sehingga</p><p>$$
+\begin{array}{c}
+\Delta f(x) = \sin(x + \Delta x) - \sin x = \newline
+\sin x (\cos \Delta x - 1) + \cos x \sin \Delta x.
+\end{array}
+$$</p><p>Lalu terdapat pula</p><p>$$
+\left. \frac{\sin x}{x} \right|_{x = 0} = 1.
+$$</p><p>Dengan menggunakan hubungan-hubungan di atas dapat diperoleh</p><p>$$
+\begin{array}{rcl}
+f&rsquo;(x) & = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \ \ \displaystyle \frac{\Delta f(x)}{\Delta x} \newline
+& = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \ \ \displaystyle \frac{\sin(x + \Delta x) - \sin x}{\Delta x} \newline
+& = & \begin{array}{c} \lim \newline \Delta x \rightarrow 0 \end{array} \ \ \ \ \left[ \displaystyle \frac{\sin x (\cos \Delta x - 1)}{\Delta x} \right. \newline
+&& \displaystyle + \left. \frac{\cos x \sin \Delta x}{\Delta x} \right] \newline
+& = & \cos x,
+\end{array}
+$$</p><p>yang merupakan turunan dari $\sin x$.</p><h2 id=numerical-approach>numerical approach</h2><p>Pendekatan numerik untuk mencari turunan dapat dilakukan dengan menggunakan Persamaan \eqref{eqn:differential-of-a-function} yang hasilnya adalah nilai numerik dan bukan berupa fungsi matematika.</p><h3 id=polynomial-function-1>polynomial function</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0520-simple-num-diff-poly.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simple numerical differential polynomial function</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220226 Create this example program</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a polynomial function and its derivative</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>6</span>]
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>poly</span>(x):
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> c[<span style=color:#ae81ff>0</span>]  <span style=color:#f92672>+</span> c[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>*</span> x <span style=color:#f92672>+</span> c[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>*</span> x <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>diff</span>(x):
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> c[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> c[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span>dx <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;poly(x) = &#34;</span>, c, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x = &#34;</span>, x, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;the  dx    num&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>  fx_the <span style=color:#f92672>=</span> diff(x)
+</span></span><span style=display:flex><span>  fx_num <span style=color:#f92672>=</span> (poly(x <span style=color:#f92672>+</span> dx) <span style=color:#f92672>-</span> poly(x)) <span style=color:#f92672>/</span> dx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.1f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> fx_the, <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.0e</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> dx, <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.8f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> fx_num)
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>10</span>
+</span></span></code></pre></div><p>Program di atas akan memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0520-simple-num-diff-poly.py ====
+</span></span><span style=display:flex><span>poly(x) = [1, 3, 6]
+</span></span><span style=display:flex><span>x = 1
+</span></span><span style=display:flex><span>the  dx    num
+</span></span><span style=display:flex><span>15.0 1e+00 21.00000000
+</span></span><span style=display:flex><span>15.0 1e-01 15.60000000
+</span></span><span style=display:flex><span>15.0 1e-02 15.06000000
+</span></span><span style=display:flex><span>15.0 1e-03 15.00600000
+</span></span><span style=display:flex><span>15.0 1e-04 15.00060000
+</span></span><span style=display:flex><span>15.0 1e-05 15.00006000
+</span></span><span style=display:flex><span>15.0 1e-06 15.00000600
+</span></span><span style=display:flex><span>15.0 1e-07 15.00000060
+</span></span><span style=display:flex><span>15.0 1e-08 15.00000000
+</span></span><span style=display:flex><span>15.0 1e-09 15.00000124
+</span></span><span style=display:flex><span>15.0 1e-10 15.00000124
+</span></span><span style=display:flex><span>15.0 1e-11 14.99991242
+</span></span><span style=display:flex><span>15.0 1e-12 15.00133351
+</span></span><span style=display:flex><span>15.0 1e-13 14.99245172
+</span></span><span style=display:flex><span>15.0 1e-14 15.09903313
+</span></span></code></pre></div><p>saat dijalankan yang menghitung $f&rsquo;(x)$ dari $f(x) = 1 + 3x + 6x^2$ untuk $x = 1$, di mana hasil analitik adalah $f&rsquo;(1) = 15$. Hasil analitik dan numerik diindikasikan dengan <code>the</code> dan <code>num</code>.</p><h3 id=trigonometric-function-1>trigonometric function</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0520-simple-num-diff-trigo.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simple numerical differential trigonometric function</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220226 Create this example program</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># import package</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a trigonometric function and its derivative</span>
+</span></span><span style=display:flex><span>trigos <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;2 sin 3x&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>trigo</span>(x):
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>sin(<span style=color:#ae81ff>3</span> <span style=color:#f92672>*</span> x)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>diff</span>(x):
+</span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>cos (<span style=color:#ae81ff>3</span> <span style=color:#f92672>*</span> x)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span>dx <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;trigo(x) = &#34;</span>, trigos, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;x = &#34;</span>, x, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;the    dx    num&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(N):
+</span></span><span style=display:flex><span>  fx_the <span style=color:#f92672>=</span> diff(x)
+</span></span><span style=display:flex><span>  fx_num <span style=color:#f92672>=</span> (trigo(x <span style=color:#f92672>+</span> dx) <span style=color:#f92672>-</span> trigo(x)) <span style=color:#f92672>/</span> dx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  print(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.3f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> fx_the, <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.0e</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> dx, <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%.8f</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> fx_num)
+</span></span><span style=display:flex><span>  dx <span style=color:#f92672>=</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>10</span>
+</span></span></code></pre></div><p>Program di atas akan memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0520-simple-num-diff-trigo.py ====
+</span></span><span style=display:flex><span>trigo(x) = 2 sin 3x
+</span></span><span style=display:flex><span>x = 1
+</span></span><span style=display:flex><span>the    dx    num
+</span></span><span style=display:flex><span>-5.940 1e+00 -0.84107101
+</span></span><span style=display:flex><span>-5.940 1e-01 -5.97731404
+</span></span><span style=display:flex><span>-5.940 1e-02 -5.95176387
+</span></span><span style=display:flex><span>-5.940 1e-03 -5.94121615
+</span></span><span style=display:flex><span>-5.940 1e-04 -5.94008190
+</span></span><span style=display:flex><span>-5.940 1e-05 -5.93996768
+</span></span><span style=display:flex><span>-5.940 1e-06 -5.93995625
+</span></span><span style=display:flex><span>-5.940 1e-07 -5.93995511
+</span></span><span style=display:flex><span>-5.940 1e-08 -5.93995496
+</span></span><span style=display:flex><span>-5.940 1e-09 -5.93995547
+</span></span><span style=display:flex><span>-5.940 1e-10 -5.93995519
+</span></span><span style=display:flex><span>-5.940 1e-11 -5.93995408
+</span></span><span style=display:flex><span>-5.940 1e-12 -5.94047034
+</span></span><span style=display:flex><span>-5.940 1e-13 -5.93525229
+</span></span><span style=display:flex><span>-5.940 1e-14 -5.97855099
+</span></span></code></pre></div><p>saat dijalankan yang menghitung $f&rsquo;(x)$ dari $f(x) = 2 \sin 3x$ untuk $x = 1$.</p><h2 id=exer>exer</h2><ol><li>Apakah program <code>0520-simple-num-diff-poly.py</code> dapat digunakan untuk menghitung turunan dari fungsi $f(x) = 1 + 2x + x^2 + 2x^3 + x^4$? Bila ya, bagaimana bentuk variabel <code>c</code> yang berbentuk list Python tersebut?</li><li>Secara umum apakah program <code>0520-simple-num-diff-trigo.py</code> dapat digunakan untuk meghitung turunan dari $f(x) = 5\cos (4x + 1)$?</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a></li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) ya, c = [1, 2, 1, 2, 1]; &nbsp;
+2) ya; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

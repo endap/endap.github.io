@@ -1,0 +1,86 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>simpson rule | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>simpson rule</h1><time datetime=2022-03-09T16:14:00+07:00>March 9, 2022</time><p>Salah satu metode integrasi numerik dengan partisi adalah aturan Simpson, yang membagi luas di bawah kurva dengan partisi-partisi berjumlah genap yang dibatasi kurva parabola dan sumbu mendatar [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Metode ini memerlukan jumlah titik $N \ge 2$ dan $N /2 = \lfloor N/2 \rfloor$. Dengan demikian bila digunakan jumlah partisi $N$ yang dianggap pasti bernilai genap diperoleh faktor pembagi pada lebar partisi yang berbeda [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], dibandingkan dengan memilih bahwa $N = 2M$ [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=formulation>formulation</h2><p>Suatu kurva dengan luas di bawahnya dibagi dalam setiap dua partisi yang dibatasi dengan kurva parabola dan sumbu mendatar diberikan pada gambar berikut ini.</p><p>![]({{ site.baseurl}}/assets/img/0/30/0303-a.png)<br>Gambar <a name=fig1>1</a>. Partisi pada integrasi numerik dengan aturan Simpson.</p><p>Terdapat fungsi $f(x)$ yang diintegralkan mulai dari $x = x_1$ sampai dengan $x = x_5$ menggunakan empat buah partisi atau $N = 4$ sehingga terdapat luas trapesium $A_1$, .., $A_4$ seperti diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Untuk dua partisi berurutan, yang dimulai dengan partisi berindeks ganjil, dapat dituliskan</p><p>\begin{equation}\label{eqn:simpson-rule-single-partition}
+A_i + A_{i+1} = \left[ f(x_i) + 4f(x_{i+1}) + f(x_{i+2}) \right] \frac{\Delta x}{3},
+\end{equation}</p><p>dengan $\Delta x = x_{i+1} - x_i$, untuk $i = 1, .., N$. Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>memberikan ilustrasi untuk $N = 4$.</p><p>Dengan demikian untuk $N$ partisi dapat dituliskan</p><p>\begin{equation}\label{eqn:simpson-rule}
+\int_{x_i}^{x_f} f(x) \ dx \approx \sum_{i = 1}^{2M}
+\left[ f(x_i) + 4f(x_{i+1}) + f(x_{i+2}) \right] \frac{\Delta x}{3},
+\end{equation}</p><p>dengan</p><p>\begin{equation}\label{eqn:simpson-rule-dx}
+\Delta x = \frac{x_f - x_i}{N},
+\end{equation}</p><p>di mana $N$ jumlah partisi, $x_i$ batas bawah integral, dan $x_f$ batas atas integral. Terdapat syarat tambahan bahwa $N$ harus merupakan bilangan genap dan bernilai lebih dari atau sama dengan dua sehingga penjumlahan pada ruas kanan Persamaan \eqref{eqn:simpson-rule} dilakukan untuk $N = 2M$ suku. Cara ini lebih mudah secara komputasi untuk memformulasikan suku-sukunya ke dalam $2M$ buah partisi ketimbang dalam $N$ buah partisi.</p><h2 id=a-code>a code</h2><p>Implementasi Persamaan \eqref{eqn:simpson-rule} dan \eqref{eqn:simpson-rule-dx} dalam bahasa pemrograman Python salah satunya adalah seperti berikut ini</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 0301-simpson.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Integration with simpson&#39;s rule</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sparisoma Viridi | https://github.com/dudung</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 20220223 Start this example</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define a function</span>
+</span></span><span style=display:flex><span>fxs <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;3x^2&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>f</span>(x):
+</span></span><span style=display:flex><span>  y <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span> <span style=color:#f92672>*</span> x <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define integral lower and upper bounds</span>
+</span></span><span style=display:flex><span>xbeg <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>xend <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># define number of half parabolic areas</span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (N <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>!=</span> int(N <span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>	N <span style=color:#f92672>=</span> N <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>dx <span style=color:#f92672>=</span> (xend <span style=color:#f92672>-</span> xbeg) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>M <span style=color:#f92672>=</span> int(N <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># calculate definite integral</span>
+</span></span><span style=display:flex><span>total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> xbeg
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(M):
+</span></span><span style=display:flex><span>  area <span style=color:#f92672>=</span> ( f(x) <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> f(x<span style=color:#f92672>+</span>dx) <span style=color:#f92672>+</span> f(x<span style=color:#f92672>+</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>dx) ) <span style=color:#f92672>*</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>  total <span style=color:#f92672>=</span> total <span style=color:#f92672>+</span> area
+</span></span><span style=display:flex><span>  x <span style=color:#f92672>=</span> x <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> dx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># display results</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Simpson&#39;s rule&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;f(x) = &#34;</span>, fxs)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;xbeg = &#34;</span>, xbeg)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;xend = &#34;</span>, xend)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;N = &#34;</span>, N)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;integral = &#34;</span>, total)
+</span></span></code></pre></div><p>yang akan memberikan hasil</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>==== RESTART: 0301-simpson.py ====
+</span></span><span style=display:flex><span>Simpson&#39;s rule
+</span></span><span style=display:flex><span>f(x) =  3x<span style=color:#ae81ff>^2</span>
+</span></span><span style=display:flex><span>xbeg =  1
+</span></span><span style=display:flex><span>xend =  2
+</span></span><span style=display:flex><span>N =  10
+</span></span><span style=display:flex><span>integral =  7.0
+</span></span></code></pre></div><p>bila dijalankan. Program di atas dapat pula dijalankan secara daring di OneCompiler
+<a href=https://onecompiler.com/python/3xu7gxycg target=_blank rel="nofollow noopener noreferrer"><span>3xu7gxycg <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h3 id=assure-n-even>assure n even</h3><p>Perhatikan pada program yang diberikan bahwa terdapat baris</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (N <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>) <span style=color:#f92672>!=</span> int(N <span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>	N <span style=color:#f92672>=</span> N <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>dx <span style=color:#f92672>=</span> (xend <span style=color:#f92672>-</span> xbeg) <span style=color:#f92672>/</span> N
+</span></span><span style=display:flex><span>M <span style=color:#f92672>=</span> int(N <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>)
+</span></span></code></pre></div><p>yang memaksa agar $N$ selalu bernilai genap, dengan menambahkannya dengan satu bila merupakan bilangan ganjil, yang kemudian diterapkan pada</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># calculate definite integral</span>
+</span></span><span style=display:flex><span>total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> xbeg
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(M):
+</span></span><span style=display:flex><span>  area <span style=color:#f92672>=</span> ( f(x) <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> f(x<span style=color:#f92672>+</span>dx) <span style=color:#f92672>+</span> f(x<span style=color:#f92672>+</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>dx) ) <span style=color:#f92672>*</span> dx <span style=color:#f92672>/</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>  total <span style=color:#f92672>=</span> total <span style=color:#f92672>+</span> area
+</span></span><span style=display:flex><span>  x <span style=color:#f92672>=</span> x <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> dx
+</span></span></code></pre></div><p>dengan asumsi bahwa $M = \frac12 N$ dengan $N$ bilangan genap.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Eric W. Weisstein, &ldquo;Simpson&rsquo;s Rule&rdquo;, from MathWorld&ndash;A Wolfram Web Resource, url
+<a href=https://mathworld.wolfram.com/SimpsonsRule.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/SimpsonsRule.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li><li><a name=r02></a>Wikipedia contributors, &ldquo;Simpson&rsquo;s rule&rdquo;, Wikipedia, The Free Encyclopedia, 6 March 2022, 19:03 UTC, url
+<a href="https://en.wikipedia.org/w/index.php?oldid=1075614881" target=_blank rel="nofollow noopener noreferrer"><span>https://en.wikipedia.org/w/index.php?oldid=1075614881 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220309].</li></ol><h3 id=comments>comments</h3><blockquote class=twitter-tweet data-width=390><p lang=und dir=ltr><a href="https://twitter.com/hashtag/bug0303?src=hash&amp;ref_src=twsrc%5Etfw">#bug0303</a></p>&mdash; Sparisoma Viridi (@6unpnp) <a href="https://twitter.com/6unpnp/status/1501486318102417410?ref_src=twsrc%5Etfw">March 9, 2022</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script>{% comment %} data-width="390" {% endcomment %}<h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

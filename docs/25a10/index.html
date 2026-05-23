@@ -1,0 +1,234 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>init rusn | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>init rusn</h1><time datetime=2025-01-05T16:10:52+07:00>January 5, 2025</time><p>Initialize a raw, unstructured, spontaneous note system.</p><ul><li>Create a GitHub repository with name <code>rusn</code>.<br>e.g.
+<a href=https://github.com/dudung/rusn target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rusn <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Clone it to local computer.<pre tabindex=0><code>$ git clone https://github.com/dudung/rusn
+Cloning into &#39;rusn&#39;...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (4/4), done.
+</code></pre></li><li>Create a new Hugo site.<pre tabindex=0><code>$ hugo new site rusn -f
+Congratulations! Your new Hugo site was created in M:\rusn.
+
+Just a few more steps...
+
+1. Change the current directory to M:\rusn.
+2. Create or install a theme:
+   - Create a new theme with the command &#34;hugo new theme &lt;THEMENAME&gt;&#34;
+   - Or, install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the &#34;theme&#34; property to the theme name.
+4. Create new content with the command &#34;hugo new content &lt;SECTIONNAME&gt;\&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+5. Start the embedded web server with the command &#34;hugo server --buildDrafts&#34;.
+
+See documentation at https://gohugo.io/.
+</code></pre></li><li>Create new Hugo theme with name <code>default</code>.<pre tabindex=0><code>$ hugo new theme default
+Creating new theme in M:\rusn\themes\default
+</code></pre></li><li>Change current directory to <code>rusn</code>.<pre tabindex=0><code>$ cd rusn
+</code></pre></li><li>Delete examples posts.<pre tabindex=0><code>$ rm -r themes/default/content/*
+</code></pre></li><li>Open <code>hugo.toml</code> with nano.<pre tabindex=0><code>$ nano hugo.toml
+</code></pre></li><li>Modify it to have following content.<pre tabindex=0><code>baseURL = &#39;https://dudung.github.io/rusn&#39;
+languageCode = &#39;en-us&#39;
+title = &#39;rusn&#39;
+theme = &#39;default&#39;
+
+enableEmoji = true
+
+[pagination]
+pagerSize = 20
+
+[taxonomies]
+  author = &#34;authors&#34;
+  tag = &#34;tags&#34;
+  category = &#34;categories&#34;
+
+[[menu.main]]
+  name = &#39;Home&#39;
+  weight = 2
+  identifier = &#39;home&#39;
+  url = &#39;/&#39;
+
+[[menu.main]]
+  name = &#39;Tags&#39;
+  weight = 1
+  identifier = &#39;tags&#39;
+  url = &#39;/tags&#39;
+
+[[menu.main]]
+  name = &#39;Cats&#39;
+  weight = 0
+  identifier = &#39;cats&#39;
+  url = &#39;/categories&#39;
+</code></pre></li><li>Add <code>_index.md</code> under <code>content/authors/auser</code>, where <code>auser</code> will be used in a post front matter as an author.</li><li>Copy <code>_default</code>, <code>partials</code>, <code>shortcodes</code> folders and their content from
+<a href=https://github.com/dudung/rust/tree/main/layouts target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/tree/main/layouts <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to <code>layouts</code> folder.</li><li>Copy <code>footer.css</code> and <code>header.css</code> from
+<a href=https://github.com/dudung/rust/tree/main/static/css target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/tree/main/static/css <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to <code>static/css</code> folder.</li><li>Modify <code>baseof.html</code> in <code>layouts/_default</code> to point top the previous CSS files.</li><li>Copy <code>index.html</code> from
+<a href=https://github.com/dudung/rust/tree/main/layouts target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/tree/main/layouts <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to <code>layouts</code>.</li><li>Copy <code>main.css</code> from
+<a href=https://github.com/dudung/rust/tree/main/assets/css target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rust/tree/main/assets/css <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>to <code>assets/css</code>.</li><li>Create notes in <code>content/notes</code> folder.</li><li>Test it and fix it as necessary.<pre tabindex=0><code>hugo server
+Watching for changes in M:\rusn\{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in M:\rusn\hugo.toml, M:\rusn\themes\default\hugo.toml
+Start building sites …
+hugo v0.139.3-2f6864387cd31b975914e8373d4bf38bddbd47bc+extended windows/amd64 BuildDate=2024-11-29T15:36:56Z VendorInfo=gohugoio
+
+
+                   | EN
+-------------------+-----
+  Pages            | 17
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  1
+  Processed images |  0
+  Aliases          |  0
+  Cleaned          |  0
+
+Built in 112 ms
+Environment: &#34;development&#34;
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/rusn/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site (#1).
+2025-01-05 16:35:33.754 +0700
+Template added /index.html
+Web Server is available at http://localhost:1313/rusn/ (bind address 127.0.0.1)
+Total in 64 ms
+</code></pre></li><li>Add files.<pre tabindex=0><code>$ git add .
+warning: in the working copy of &#39;archetypes/default.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/00-wed-010125.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/01-thu-020125.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/03-sat-040125.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/04-sun-050125.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/05-hugo-tips.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/06-hugo-intro.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/07-hugo-sites-key-features.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/08-hugo-perform-score.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/09-static-site.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;content/notes/25/a/10-init-rusn.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;hugo.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/LICENSE&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/README.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/archetypes/default.md&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/assets/css/main.css&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/assets/js/main.js&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/hugo.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/baseof.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/home.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/list.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/_default/single.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/footer.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head/css.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/head/js.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/header.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/menu.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/layouts/partials/terms.html&#39;, LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of &#39;themes/default/theme.toml&#39;, LF will be replaced by CRLF the next time Git touches it
+</code></pre></li><li>Commit changes.<pre tabindex=0><code>$ git commit -a -m &#34;new files and folder&#34;
+[main 4d7f56b] new files and folder
+ 58 files changed, 1067 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 archetypes/default.md
+ create mode 100644 content/_index.md
+ create mode 100644 content/authors/arimasen/_index.md
+ create mode 100644 content/authors/dasch/_index.md
+ create mode 100644 content/authors/renik/_index.md
+ create mode 100644 content/authors/viridi/_index.md
+ create mode 100644 content/notes/25/a/00-wed-010125.md
+ create mode 100644 content/notes/25/a/01-thu-020125.md
+ create mode 100644 content/notes/25/a/02-fri-030125.md
+ create mode 100644 content/notes/25/a/03-sat-040125.md
+ create mode 100644 content/notes/25/a/04-sun-050125.md
+ create mode 100644 content/notes/25/a/05-hugo-tips.md
+ create mode 100644 content/notes/25/a/06-hugo-intro.md
+ create mode 100644 content/notes/25/a/07-hugo-sites-key-features.md
+ create mode 100644 content/notes/25/a/08-hugo-perform-score.md
+ create mode 100644 content/notes/25/a/09-static-site.md
+ create mode 100644 content/notes/25/a/10-init-rusn.md
+ create mode 100644 hugo.toml
+ create mode 100644 layouts/_default/_markup/render-blockquote.html
+ create mode 100644 layouts/_default/_markup/render-codeblock-mermaid.html
+ create mode 100644 layouts/_default/_markup/render-link.html
+ create mode 100644 layouts/_default/all-regular-pages.html
+ create mode 100644 layouts/_default/baseof.html
+ create mode 100644 layouts/notes/single.html
+ create mode 100644 layouts/partials/footer.html
+ create mode 100644 layouts/partials/notes/math.html
+ create mode 100644 layouts/partials/reading-time.html
+ create mode 100644 layouts/partials/script/chartjs.html
+ create mode 100644 layouts/partials/script/inner.html
+ create mode 100644 layouts/shortcodes/3dmoljs.html
+ create mode 100644 layouts/shortcodes/abcjs.html
+ create mode 100644 layouts/shortcodes/mermaid.html
+ create mode 100644 layouts/shortcodes/ref.html
+ create mode 100644 layouts/shortcodes/scatter.html
+ create mode 100644 layouts/shortcodes/twocolumn.html
+ create mode 100644 layouts/shortcodes/url.html
+ create mode 100644 static/css/footer.css
+ create mode 100644 static/css/header.css
+ create mode 100644 themes/default/LICENSE
+ create mode 100644 themes/default/README.md
+ create mode 100644 themes/default/archetypes/default.md
+ create mode 100644 themes/default/assets/css/main.css
+ create mode 100644 themes/default/assets/js/main.js
+ create mode 100644 themes/default/hugo.toml
+ create mode 100644 themes/default/layouts/_default/baseof.html
+ create mode 100644 themes/default/layouts/_default/home.html
+ create mode 100644 themes/default/layouts/_default/list.html
+ create mode 100644 themes/default/layouts/_default/single.html
+ create mode 100644 themes/default/layouts/partials/footer.html
+ create mode 100644 themes/default/layouts/partials/head.html
+ create mode 100644 themes/default/layouts/partials/head/css.html
+ create mode 100644 themes/default/layouts/partials/head/js.html
+ create mode 100644 themes/default/layouts/partials/header.html
+ create mode 100644 themes/default/layouts/partials/menu.html
+ create mode 100644 themes/default/layouts/partials/terms.html
+ create mode 100644 themes/default/static/favicon.ico
+ create mode 100644 themes/default/theme.toml
+</code></pre></li><li>Push commits to GitHub.<pre tabindex=0><code>$ git push
+Enumerating objects: 92, done.
+Counting objects: 100% (92/92), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (73/73), done.
+Writing objects: 100% (91/91), 19.88 KiB | 496.00 KiB/s, done.
+Total 91 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/dudung/rusn
+   a9c055c..4d7f56b  main -&gt; main
+</code></pre></li><li>Visit
+<a href=https://github.com/dudung/rusn/settings/pages target=_blank rel="nofollow noopener noreferrer"><span>https://github.com/dudung/rusn/settings/pages <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Under Build and deployment change Source to GitHub Actions.</li><li>Choose browse all workflows.</li><li>Type <code>hugo</code> in the Search workflows field.</li><li>Click Configure.</li><li>Click Commit changes&mldr;, the green button on the right.</li><li>Click Commit changes, the green button on the bottom.</li><li>Wait a couple of minutes.</li><li>Visit
+<a href=https://dudung.github.io/rusn/ target=_blank rel="nofollow noopener noreferrer"><span>https://dudung.github.io/rusn/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li>Pull the last changes.<pre tabindex=0><code>$ git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 1.91 KiB | 139.00 KiB/s, done.
+From https://github.com/dudung/rusn
+   4d7f56b..36b0d2a  main       -&gt; origin/main
+Updating 4d7f56b..36b0d2a
+Fast-forward
+ .github/workflows/hugo.yml | 74 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 74 insertions(+)
+ create mode 100644 .github/workflows/hugo.yml
+</code></pre></li><li>Commit last changes if any and push it.<pre tabindex=0><code>$ git commit -a -m &#34;finish init rusn&#34;
+warning: in the working copy of &#39;content/notes/25/a/10-init-rusn.md&#39;, LF will be replaced by CRLF the next time Git touches it
+[main 15b0424] finish init rusn
+ 1 file changed, 141 insertions(+), 1 deletion(-)
+
+$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 2.89 KiB | 1.44 MiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/dudung/rusn
+   36b0d2a..15b0424  main -&gt; main
+</code></pre></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

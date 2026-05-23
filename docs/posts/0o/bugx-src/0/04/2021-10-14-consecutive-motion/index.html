@@ -1,0 +1,102 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>consecutive motion | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>consecutive motion</h1><time datetime=2021-10-14T20:22:00+07:00>October 14, 2021</time><p>Suatu GLB (gerak lurus beraturan) yang dilanjutkan oleh GLBB (gerak lurus berubah beraturan), dan kemudian diteruskan oleh GLB atau GLBB lainnya kadang tidak memiliki istilah yang tegas dan cukup dirujuk dengan kasus yang lebih rumit dalam pembahasan gerak lurus dengan perceptan tetap [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Akan tetapi terdapat pula penggunaan istilah gerak konsekutif [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=initial-condition>initial condition</h2><p>Pada suatu gerak konsekutif, umumnya syarat awal diberikan pada rentang waktu pertama. Untuk rentang waktu yang lain, syarat awalnya adalah nilai akhir dari rentang waktu sebelumnya. Sebagai ilustasi bila</p><p>$$
+a = \left{
+\begin{array}{rr}
+a_1, & t_0 \le t &lt; t_1, \newline
+a_2, & t_1 \le t &lt; t_2,
+\end{array}
+\right.
+$$</p><p>maka syarat awalnya adalah $v_{10} = v(t_0)$ untuk rentang waktu $t_0 \le t &lt; t_1$, sedangkan untuk untuk rentang waktu $t_1 \le t &lt; t_2$ syarat awalnya adalah $v_{20} = v(t_1)$ yang diperoleh dengan fungsi kecepatan pada rentang pertama yang telah diperoleh. Sebagai ilustrasi</p><p>$$
+a = \left{
+\begin{array}{rr}
+1, & 0 \le t &lt; 2, \newline
+0, & 2 \le t &lt; 3, \newline
+-1, & 3 \le t &lt; 5,
+\end{array}
+\right.
+$$</p><p>dengan syarat awal $v(0) = 1$. Pada rentang $0 \le t &lt; 2$ dapat diperoleh</p><p>$$
+\begin{array}{rcl}
+v - v(0) & = & \displaystyle \int_0^t 1 \ dt \newline
+& = & \left[ t \right]_0^t \newline
+& = & (t) - (0) \newline
+v - 1 & = & t \newline
+v & = & t + 1
+\end{array}
+$$</p><p>solusinya. Dengan solusi ini dapat ditentukan bahwa $v(2) = 3$ yang akan menjadi syarat awal pada rentang $2 \le t &lt; 3$. Pada rentang ini</p><p>$$
+\begin{array}{rcl}
+v - v(2) & = & \displaystyle \int_2^t 0 \ dt \newline
+& = & \left[ c \right]_2^t \newline
+& = & (c) - (c) \newline
+v - 3 & = & 0 \newline
+v & = & 3
+\end{array}
+$$</p><p>merupakan solusinya. Perhatikan bahwa $c$ merupakan suatu konstanta. Dengan solusi yang baru saja diperoleh akan didapatkan $v(3) = 3$. Untuk rentang $3 \le t &lt; 5$ dapat diperoleh solusinya.</p><p>$$
+\begin{array}{rcl}
+v - v(3) & = & \displaystyle \int_3^t -1 \ dt \newline
+& = & \left[ -t \right]_3^t \newline
+& = & (-t) - (-3) \newline
+v - 3 & = & -t + 3 \newline
+v & = & -t + 6.
+\end{array}
+$$</p><p>Dengan demikian dapat dituliskan untuk seluruh rentang waktunya</p><p>$$
+v = \left{
+\begin{array}{rr}
+t + 1, & 0 \le t &lt; 2, \newline
+3, & 2 \le t &lt; 3, \newline
+-t + 6, & 3 \le t &lt; 5,
+\end{array}
+\right.
+$$</p><p>fungsi kecepatan yang diperoleh. Perhatikan bagaimana syarat awal pada suatu rentang waktu digunakan untuk mendapatkan nilai fungsi di akhir rentang waktu tersebut yang kemudian menjadi syarat awal pada rentang waktu berikutnya. Konsekutif memang berarti mengikuti secara terus-menerus.</p><p>Untuk memperoleh fungsi posisi $x$ dari fungsi kecepatan $v$ yang baru saja diberikan, diperlukan syarat awal $x(0)$ dan kemudian langkah-langkah yang sama kembali dilakukan.</p><h2 id=some-cases>some cases</h2><p>Dengan menggunakan parameter $c_2$, $c_1$, dan $c_0$ untuk suatu fungsi waktu seperti</p><p>\begin{equation}\label{eqn-1}
+f(t) = c_2 t^2 + c_1 t + c_0,
+\end{equation}</p><p>dapat dilihat bahwa $a$ hanya memiliki $c_0$, $v$ memiliki $c_1$ dan $c_0$, sedangkan $x$ memiliki ketiganya, $c_2$, $c_1$, dan $c_0$. Terdapat parameter berikut</p><pre tabindex=0><code> a   v
+ 1   1  1
+ 0   0  3
+-1  -1  6
+</code></pre><p>yang merupakan parameter dari contoh pada bagian sebelumnya, hanya untuk $a$ dan $v$ karena $x$ belum dihitung. Representasi $c_2$, $c_1$, dan $c_0$ dalam bentuk ini yang akan digunakan pada bagian berikutnya.</p><h3 id=3-a>3 a</h3><p>Dengan menggunakan parameter berikut</p><pre tabindex=0><code> a   v		   x		
+ 1   1   0   0.5   0    0
+-1  -1  16  -0.5  16  -64
+ 0	 0   0   0     0   64
+</code></pre><p>dapat diperoleh Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/04/0044-a1.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-a2.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-a3.png)<br>Gambar <a name=fig1>1</a>. Grafik percepatan $a$ (atas), kecepatan $v$ (tengah), dan posisi $x$ (bawah) untuk kasus 3 a.</p><h3 id=4-a>4 a</h3><p>Dengan menggunakan parameter berikut</p><pre tabindex=0><code> a   v    x		
+-1  -1    0  -0.5    0    0
+ 0   0   -5   0     -5   12.5
+ 1   1  -15   0.5  -15   62.5
+ 2   2  -30   1    -30  175
+</code></pre><p>dapat diperoleh Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/04/0044-b1.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-b2.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-b3.png)<br>Gambar <a name=fig2>2</a>. Grafik percepatan $a$ (atas), kecepatan $v$ (tengah), dan posisi $x$ (bawah) untuk kasus 4 a.</p><h3 id=5-a>5 a</h3><p>Dengan menggunakan parameter berikut</p><pre tabindex=0><code> a   v        x		
+ 0   0    0   0      0     0
+-1  -1    4  -0.5    4    -8
+ 2   2  -20   1    -20    88
+-3  -3   40  -1.5   40  -272
+ 4   4  -72   2    -72   624
+</code></pre><p>dapat diperoleh Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>di bawah ini.</p><p>![]({{ site.baseurl }}/assets/img/0/04/0044-c1.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-c2.png)<br>![]({{ site.baseurl }}/assets/img/0/04/0044-c3.png)<br>Gambar <a name=fig3>3</a>. Grafik percepatan $a$ (atas), kecepatan $v$ (tengah), dan posisi $x$ (bawah) untuk kasus 5 a.</p><p>Kasus untuk tiga nilai percepatan (3 a), empat nilai percepatan (4 a), dan lima nilai percepatan (5 a) telah diberikan berturut-turut pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, dan
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Richard Fitzpatrick, &ldquo;Motion with constant acceleration&rdquo;, in Classical Mechanics: An Introductory Course, the University of Texas at Austin, 2 Feb 2006, url
+<a href=https://farside.ph.utexas.edu/teaching/301/lectures/node18.html target=_blank rel="nofollow noopener noreferrer"><span>https://farside.ph.utexas.edu/teaching/301/lectures/node18.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211014].</li><li><a name=r02></a>CONCEPTREE Learning, &ldquo;Motion in One Dimension-Connected Motion and Consecutive Motion&rdquo;, YouTube, 07.11.2020, url
+<a href="https://www.youtube.com/watch?v=UBNXLTxViDs" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=UBNXLTxViDs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211014].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>position velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity acceleration <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>kinematics graphs <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

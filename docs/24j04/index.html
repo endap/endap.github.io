@@ -1,0 +1,100 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>index.html hugo code 3 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>index.html hugo code 3</h1><time datetime=2024-10-06T20:25:00+07:00>October 6, 2024</time><p>List of modifications of <code>index.html</code> in a Hugo site</p><p>Landing page of a Hugo site is <code>layouts/index.html</code> and the page has been modified as follow</p><ul><li><code>06-Oct-2024</code> Show only posts contained in a list.</li><li><code>05-Oct-2024</code> Show posts only with index greater and equal to 282.</li><li><code>06-Jul-2024</code> Show all posts.</li></ul><p>Detailed content of the HTML page is given below.</p><p>Version 6 Oct 2024 is as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>{{ define <span style=color:#e6db74>&#34;main&#34;</span> }}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;</span>main aria<span style=color:#f92672>-</span>role<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>header class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-header&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span>h1<span style=color:#f92672>&gt;</span><span style=color:#f92672>from</span> codes to granular systems<span style=color:#f92672>&lt;/</span>h1<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      {{ <span style=color:#66d9ef>with</span> <span style=color:#f92672>.</span>Params<span style=color:#f92672>.</span>subtitle }}
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>span class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;subtitle&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span> }}<span style=color:#f92672>&lt;/</span>span<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      {{ end }}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/</span>header<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-content&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>!</span><span style=color:#f92672>--</span> Note that the content <span style=color:#66d9ef>for</span> index<span style=color:#f92672>.</span>html,
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>as</span> a sort of list page, will pull <span style=color:#f92672>from</span>
+</span></span><span style=display:flex><span>      content<span style=color:#f92672>/</span>_index<span style=color:#f92672>.</span>md <span style=color:#f92672>--&gt;</span>
+</span></span><span style=display:flex><span>      {{ <span style=color:#f92672>.</span>Content }}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/</span>div<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ <span style=color:#960050;background-color:#1e0010>$</span>max <span style=color:#f92672>:=</span> len <span style=color:#f92672>.</span>Site<span style=color:#f92672>.</span>RegularPages }}
+</span></span><span style=display:flex><span>    {{ <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>:=</span>  sub <span style=color:#960050;background-color:#1e0010>$</span>max <span style=color:#ae81ff>1</span> }}
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ <span style=color:#960050;background-color:#1e0010>$</span>urls <span style=color:#f92672>:=</span> slice <span style=color:#e6db74>&#34;2118&#34;</span> <span style=color:#e6db74>&#34;2127&#34;</span> <span style=color:#e6db74>&#34;2128&#34;</span> <span style=color:#e6db74>&#34;2129&#34;</span> }}
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ range where <span style=color:#f92672>.</span>Site<span style=color:#f92672>.</span>RegularPages <span style=color:#e6db74>&#34;.Params.url&#34;</span> <span style=color:#e6db74>&#34;in&#34;</span> <span style=color:#960050;background-color:#1e0010>$</span>urls }}
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span>code style<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;color: #7b7;&#34;</span><span style=color:#f92672>&gt;</span>{{ printf <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%04d</span><span style=color:#e6db74>&#34;</span> <span style=color:#960050;background-color:#1e0010>$</span>index }}<span style=color:#f92672>&lt;/</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>x style<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;color: #aaa;&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span>Params<span style=color:#f92672>.</span>url }}<span style=color:#f92672>&lt;/</span>x<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        {{<span style=color:#f92672>/*</span> <span style=color:#f92672>.</span>{{ printf <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%04d</span><span style=color:#e6db74>&#34;</span> <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>*/</span>}}
+</span></span><span style=display:flex><span>        {{ dateFormat <span style=color:#e6db74>&#34;02-Jan-2006&#34;</span> <span style=color:#f92672>.</span>Date }}
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span>a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span>LinkTitle }}<span style=color:#f92672>&lt;/</span>a<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      {{ <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>=</span> sub <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#ae81ff>1</span> }}
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div><p>Version 5 Oct 2024 is as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>{{ define <span style=color:#e6db74>&#34;main&#34;</span> }}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;</span>main aria<span style=color:#f92672>-</span>role<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>header class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-header&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span>h1<span style=color:#f92672>&gt;</span><span style=color:#f92672>from</span> codes to granular systems<span style=color:#f92672>&lt;/</span>h1<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      {{ <span style=color:#66d9ef>with</span> <span style=color:#f92672>.</span>Params<span style=color:#f92672>.</span>subtitle }}
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>span class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;subtitle&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span> }}<span style=color:#f92672>&lt;/</span>span<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      {{ end }}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/</span>header<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>div class<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-content&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>!</span><span style=color:#f92672>--</span> Note that the content <span style=color:#66d9ef>for</span> index<span style=color:#f92672>.</span>html,
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>as</span> a sort of list page, will pull <span style=color:#f92672>from</span>
+</span></span><span style=display:flex><span>      content<span style=color:#f92672>/</span>_index<span style=color:#f92672>.</span>md <span style=color:#f92672>--&gt;</span>
+</span></span><span style=display:flex><span>      {{ <span style=color:#f92672>.</span>Content }}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/</span>div<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ <span style=color:#960050;background-color:#1e0010>$</span>max <span style=color:#f92672>:=</span> len <span style=color:#f92672>.</span>Site<span style=color:#f92672>.</span>RegularPages }}
+</span></span><span style=display:flex><span>    {{ <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>:=</span>  sub <span style=color:#960050;background-color:#1e0010>$</span>max <span style=color:#ae81ff>1</span> }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    {{ range sort <span style=color:#f92672>.</span>Site<span style=color:#f92672>.</span>RegularPages <span style=color:#e6db74>&#34;.Params.url&#34;</span> <span style=color:#e6db74>&#34;desc&#34;</span> }}
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      {{ <span style=color:#66d9ef>if</span> ge <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#ae81ff>282</span> }}
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>code style<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;color: #7b7;&#34;</span><span style=color:#f92672>&gt;</span>{{ printf <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%04d</span><span style=color:#e6db74>&#34;</span> <span style=color:#960050;background-color:#1e0010>$</span>index }}<span style=color:#f92672>&lt;/</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>&lt;</span>x style<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;color: #aaa;&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span>Params<span style=color:#f92672>.</span>url }}<span style=color:#f92672>&lt;/</span>x<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>          {{<span style=color:#f92672>/*</span> <span style=color:#f92672>.</span>{{ printf <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%04d</span><span style=color:#e6db74>&#34;</span> <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>*/</span>}}
+</span></span><span style=display:flex><span>          {{ dateFormat <span style=color:#e6db74>&#34;02-Jan-2006&#34;</span> <span style=color:#f92672>.</span>Date }}
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/</span>code<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span>a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}&#34;</span><span style=color:#f92672>&gt;</span>{{ <span style=color:#f92672>.</span>LinkTitle }}<span style=color:#f92672>&lt;/</span>a<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        {{ <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#f92672>=</span> sub <span style=color:#960050;background-color:#1e0010>$</span>index <span style=color:#ae81ff>1</span> }}
+</span></span><span style=display:flex><span>      {{ end }}
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div><p>Version 6 Jul 2024 is as follow.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ define &#34;main&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>main</span> <span style=color:#a6e22e>aria-role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>header</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-header&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>h1</span>&gt;from codes to granular systems&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>      {{ with .Params.subtitle }}
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;subtitle&#34;</span>&gt;{{ . }}&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      {{ end }}
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>header</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;homepage-content&#34;</span>&gt;
+</span></span><span style=display:flex><span>      <span style=color:#75715e>&lt;!-- Note that the content for index.html,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>      as a sort of list page, will pull from
+</span></span></span><span style=display:flex><span><span style=color:#75715e>      content/_index.md --&gt;</span>
+</span></span><span style=display:flex><span>      {{ .Content }}
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ $max := len .Site.RegularPages }}
+</span></span><span style=display:flex><span>    {{ $index :=  sub $max 1 }}
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    {{ range sort .Site.RegularPages &#34;.Params.url&#34; &#34;desc&#34; }}
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>code</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>x</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;color: #aaa;&#34;</span>&gt;{{ .Params.url }}&lt;/<span style=color:#f92672>x</span>&gt;
+</span></span><span style=display:flex><span>          {{/* .{{ printf &#34;%04d&#34; $index */}}
+</span></span><span style=display:flex><span>          {{ dateFormat &#34;02-Jan-2006&#34; .Date }}
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>code</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .LinkTitle }}&lt;/<span style=color:#f92672>a</span>&gt;
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        {{ $index = sub $index 1 }}
+</span></span><span style=display:flex><span>    {{ end }}
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

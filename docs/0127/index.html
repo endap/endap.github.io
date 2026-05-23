@@ -1,0 +1,177 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>code of gillette 1983 | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>code of gillette 1983</h1><time datetime=2023-10-30T15:03:00+07:00>October 30, 2023</time><h2 id=notes>notes</h2><ul><li>Skim Gillette (1983) and still do not understand the matrix and spectra connection. Perhaps previous references therein should be read first.</li></ul><h2 id=matrices-c-d>matrices c, d</h2><ul><li>Mixture spectra matrix
+$$
+\mathbf{D} = \left(
+\begin{array}{ccc}
+0.26 & 0.22 & 0.14 \newline
+0.20 & 0.40 & 0.80 \newline
+1.60 & 1.20 & 0.40 \newline
+0.12 & 0.14 & 0.18
+\end{array}
+\right)
+$$</li><li>Covariance / correlation marix
+$$
+\mathbf{C} = \left(
+\begin{array}{ccc}
+2.682 & 2.074 & 0.858 \newline
+2.074 & 1.668 & 0.856 \newline
+0.858 & 0.856 & 0.852
+\end{array}
+\right)
+$$</li><li>Relation
+$$
+\mathbf{C} = \mathbf{D}^T \mathbf{D}.
+$$</li><li>Code
+<a href=https://onecompiler.com/python/3zrz763xa target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zrz763xa <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>D <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>  [
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.26</span>, <span style=color:#ae81ff>0.22</span>, <span style=color:#ae81ff>0.14</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.20</span>, <span style=color:#ae81ff>0.40</span>, <span style=color:#ae81ff>0.80</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>1.60</span>, <span style=color:#ae81ff>1.20</span>, <span style=color:#ae81ff>0.40</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.12</span>, <span style=color:#ae81ff>0.14</span>, <span style=color:#ae81ff>0.18</span>]
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>print(D)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>DT <span style=color:#f92672>=</span> D<span style=color:#f92672>.</span>T
+</span></span><span style=display:flex><span>print(DT)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>C <span style=color:#f92672>=</span> DT <span style=color:#f92672>@</span> D
+</span></span><span style=display:flex><span>print(C)
+</span></span></code></pre></div><ul><li>Result (confirmed)</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[[</span>0.26 0.22 0.14<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.2  0.4  0.8 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>1.6  1.2  0.4 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.12 0.14 0.18<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>0.26 0.2  1.6  0.12<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.22 0.4  1.2  0.14<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.14 0.8  0.4  0.18<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>2.682 2.074 0.858<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>2.074 1.668 0.856<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.858 0.856 0.852<span style=color:#f92672>]]</span>
+</span></span></code></pre></div><h2 id=matrices-c-e-l>matrices c, e, l</h2><ul><li>Using previous $\mathbf{C}$.</li><li>Relation $\mathbf{C}\mathbf{E} = \mathbf{E} \mathbf{L}$.</li><li>Result
+$$
+\mathbf{E} = \left(
+\begin{array}{ccc}
+0.745 & -0.400 & 0.000 \newline
+0.596 & 0.039 & 0.000 \newline
+0.300 & 0.916 & 0.000
+\end{array}
+\right)
+$$
+$$
+\mathbf{L} = \left(
+\begin{array}{ccc}
+4.688 & 0.000 & 0.000 \newline
+0.000 & 0.514 & 0.000 \newline
+0.000 & 0.000 & 0.000
+\end{array}
+\right)
+$$</li><li>Code
+<a href=https://onecompiler.com/python/3zrzg7yfj target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zrzg7yfj <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> numpy <span style=color:#f92672>import</span> linalg <span style=color:#66d9ef>as</span> la
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>C <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>    [
+</span></span><span style=display:flex><span>      [<span style=color:#ae81ff>2.682</span>, <span style=color:#ae81ff>2.074</span>, <span style=color:#ae81ff>0.858</span>],
+</span></span><span style=display:flex><span>      [<span style=color:#ae81ff>2.074</span>, <span style=color:#ae81ff>1.668</span>, <span style=color:#ae81ff>0.856</span>],
+</span></span><span style=display:flex><span>      [<span style=color:#ae81ff>0.858</span>, <span style=color:#ae81ff>0.856</span>, <span style=color:#ae81ff>0.852</span>],
+</span></span><span style=display:flex><span>      ]
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;C =&#34;</span>,)
+</span></span><span style=display:flex><span>print(C)
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;CE = EL&#34;</span>)
+</span></span><span style=display:flex><span>L, E <span style=color:#f92672>=</span> la<span style=color:#f92672>.</span>eig(C)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;E =&#34;</span>)
+</span></span><span style=display:flex><span>print(E<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;L =&#34;</span>)
+</span></span><span style=display:flex><span>print(np<span style=color:#f92672>.</span>diag(L)<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;C @ E =&#34;</span>)
+</span></span><span style=display:flex><span>print((C <span style=color:#f92672>@</span> E)<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>))
+</span></span><span style=display:flex><span>print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;E @ L =&#34;</span>)
+</span></span><span style=display:flex><span>print((E <span style=color:#f92672>@</span> np<span style=color:#f92672>.</span>diag(L))<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>))
+</span></span><span style=display:flex><span>print()
+</span></span></code></pre></div><ul><li>Result (not confirmed)</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>C <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>2.682 2.074 0.858<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>2.074 1.668 0.856<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.858 0.856 0.852<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>CE <span style=color:#f92672>=</span> EL
+</span></span><span style=display:flex><span>E <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>-0.745 -0.535 -0.4  <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-0.596  0.802  0.039<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-0.3   -0.267  0.916<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>L <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>4.688 0.    0.   <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.    0.    0.   <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.    0.    0.514<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>C @ E <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>-3.491  0.    -0.205<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-2.796  0.     0.02 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-1.405  0.     0.471<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>E @ L <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>-3.491 -0.    -0.205<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-2.796  0.     0.02 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>-1.405 -0.     0.471<span style=color:#f92672>]]</span>
+</span></span></code></pre></div><ul><li>Notice that eigenvalues are the same but not the eigenvectors.</li><li>Comparison<table><thead><tr><th style=text-align:center>E</th><th style=text-align:center>Gillette (1983)</th><th style=text-align:center>NumPy</th></tr></thead><tbody><tr><td style=text-align:center>1</td><td style=text-align:center><code>[0.745, 0.596, 0.300]</code></td><td style=text-align:center><code>[-0.745, -0.596, -0.300]</code></td></tr><tr><td style=text-align:center>2</td><td style=text-align:center><code>[−0.400, 0.039, 0.916]</code></td><td style=text-align:center><code>[-0.535, 0.802, -0.267]</code></td></tr><tr><td style=text-align:center>3</td><td style=text-align:center><code>[0.000, 0.000, 0.000]</code></td><td style=text-align:center><code>[-0.400, 0.039, 0.916]</code></td></tr></tbody></table></li><li>Explanation: N/A.</li></ul><h2 id=matrices-a-d-e>matrices a, d, e</h2><ul><li>Use previous $\mathbf{D}$ and $\mathbf{E}$ from Gillette (1983).</li><li>Code
+<a href=https://onecompiler.com/python/3zrznvmwg target=_blank rel="nofollow noopener noreferrer"><span>https://onecompiler.com/python/3zrznvmwg <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>D <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>  [
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.26</span>, <span style=color:#ae81ff>0.22</span>, <span style=color:#ae81ff>0.14</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.20</span>, <span style=color:#ae81ff>0.40</span>, <span style=color:#ae81ff>0.80</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>1.60</span>, <span style=color:#ae81ff>1.20</span>, <span style=color:#ae81ff>0.40</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.12</span>, <span style=color:#ae81ff>0.14</span>, <span style=color:#ae81ff>0.18</span>],
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>E <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array(
+</span></span><span style=display:flex><span>  [
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.745</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>0.400</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.596</span>, <span style=color:#ae81ff>0.039</span>],
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0.300</span>, <span style=color:#ae81ff>0.916</span>],
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>A <span style=color:#f92672>=</span> D <span style=color:#f92672>@</span> E
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;D =&#34;</span>); print(D); print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;E =&#34;</span>); print(E); print()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;A =&#34;</span>); print(A<span style=color:#f92672>.</span>round(<span style=color:#ae81ff>3</span>)); print()
+</span></span></code></pre></div><ul><li>Result (confirmed)</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>D <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span>0.26 0.22 0.14<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.2  0.4  0.8 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>1.6  1.2  0.4 <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>0.12 0.14 0.18<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>E <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span> 0.745 -0.4  <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span> 0.596  0.039<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span> 0.3    0.916<span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>A <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span> 0.367  0.033<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span> 0.627  0.668<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span> 2.027 -0.227<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span> 0.227  0.122<span style=color:#f92672>]]</span>
+</span></span></code></pre></div><h2 id=to-do>to-do</h2><ul><li><code>30-oct-2023</code> Matrices <code>c, d</code>, <code>c, e, l</code>, <code>a, d, e</code>, next last page of main ref.</li></ul><h2 id=refs>refs</h2><ul><li>Paul C. Gillette, Jerome B. Lando, Jack L. Koenig, &ldquo;Factor analysis for separation of pure component spectra from mixture spectra&rdquo;, Analytical Chemistry, vol 55, no 4, pp 630-633, Apr 1983, url
+<a href=https://doi.org/10.1021/ac00255a011 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1021/ac00255a011 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.
+<a href=https://osf.io/pr5ye target=_blank rel="nofollow noopener noreferrer"><span>pr5ye <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><h2 id=dicussion>dicussion</h2><ul><li><code>06-nov-2023</code> Value less that $10^{-8}$ is assumed to be $0$ is proposed by Aria.<ul><li>Results: All are confirmed
+<a href=https://github.com/ariawahyuw/simulasi-spectra/blob/7d9d71e/Simulasi%201/perhitungan.ipynb target=_blank rel="nofollow noopener noreferrer"><span>7d9d71e <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>How to get the mixture spectra matrix $\mathbf{D}$ from the mixture, e.g. Figs. 7 and 8 is still still unknown.</li></ul></li><li><code>30-oct-2023</code> A reference, Gillette (1983), is given.
+<a href=https://osf.io/pr5ye target=_blank rel="nofollow noopener noreferrer"><span>pr5ye <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li><code>26-oct-2023</code> Google drive links is given for current available data.
+<a href=https://osf.io/762au target=_blank rel="nofollow noopener noreferrer"><span>762au <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

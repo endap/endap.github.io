@@ -1,0 +1,88 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>speed | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>speed</h1><time datetime=2021-10-19T21:14:00+07:00>October 19, 2021</time><p>Istilah laju kerap digunakan untuk hanya menyatakan nilai skalar dari kecepatan [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], atau jarak yang ditempuh per satuan waktu yang sebetulnya lebih tepat sebagai laju rata [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>,
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Dan kadang tidak dijelaskan kecuali merupakan besaran skalar, akan tetapi langsung pada istilah laju sesaat dan laju rata-rata [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Di sini akan digunakan dengan arti sebagai besar dari kecepatan (atau kecepatan sesaat).</p><h2 id=magnitude-of-velocity>magnitude of velocity</h2><p>Kecepatan $\vec{v}$ diperoleh dari turunan posisi $\vec{r}$ terhadap waktu $t$</p><p>\begin{equation}\label{eqn-v-dxdt}
+\vec{v} = \frac{d\vec{r}}{dt},
+\end{equation}</p><p>dan laju adalah</p><p>\begin{equation}\label{eqn-s-magnitude-v}
+s = |\vec{v}|.
+\end{equation}</p><h2 id=function>function</h2><p>Dikarenakan bernilai sesaat Persamaan \eqref{eqn-v-dxdt} hanya dapat diperoleh bila terdapat fungsi $\vec{r} = \vec{r}(t)$. Bila hanya terdapat titik-titik data, mungkin dapat dipergunakan interpolasi untuk mendapatkan $\vec{r}(t)$ antar dua titik data bila diperbolehkan.</p><h2 id=uniform-linear-motion>uniform linear motion</h2><p>Sebagai ilustrasi untuk menghitung laju akan digunakan suatu GMB atau gerak melingkar beraturan [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang vektor posisinya dapat dituliskan dalam bentuk</p><p>\begin{equation}\label{eqn-uniform-circular-motion-r}
+\vec{r} = (x_C + R \cos \omega t) \ \hat{x} + (y_C + R \sin \omega t) \ \hat{y},
+\end{equation}</p><p>dengan $(x_C, y_C)$ merupakan koordinat pusat lintasan berbentuk lingkaran. Dengan Persamaan \eqref{eqn-v-dxdt} maka akan diperoleh</p><p>\begin{equation}\label{eqn-uniform-circular-motion-v}
+\vec{v} = -\omega R \sin \omega t \ \hat{x} + \omega R \cos \omega t \ \hat{y}.
+\end{equation}</p><p>Lalu dengan Persamaan \eqref{eqn-s-magnitude-v} dapat diperoleh dari Persamaan \eqref{eqn-uniform-circular-motion-v}</p><p>\begin{equation}\label{eqn-uniform-circular-motion-s}
+s \equiv |\vec{v}| = \omega R,
+\end{equation}</p><p>yang merupakan laju $s$ dari GMB yang dideskripsikan oleh Persamaan \eqref{eqn-uniform-circular-motion-r}.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0053-a.png)<br>Gambar <a name=fig1>1</a>. Sebuah gerak melingkar beraturan dengan lajunya $s$ yang selalu menyinggung lintasan dan tegak lurus dengan jari-jari.</p><p>Besaran $v$ yang umumnya dituliskan [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] sebenarnya adalah laju $s$ karena merupakan besaran skalar. Ilustrasi diberikan pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>, yang memiliki parameter posisi pusat lintasan $x_C = 3$, $y_C = 3$, jari-jari $R = 2$, dan periode $T = 20$. Frekuensi angular $\omega = 2\pi/T$.</p><h2 id=parabolic-motion>parabolic motion</h2><p>Contoh gerak dengan fungsi waktu yang umum telah dikenal adalah gerak parabola (GP) dengan fungsi posisinya</p><p>\begin{equation}\label{eqn-parabolic-motion-r}
+\vec{r} = (x_0 + v_{0x} t) \ \hat{x} + (y_0 + v_{0y} t - \tfrac12 g t^2) \ \hat{y},
+\end{equation}</p><p>yang akan memberikan fungsi kecepatannya</p><p>\begin{equation}\label{eqn-parabolic-motion-v}
+\vec{v} = v_{0x} \ \hat{x} + (v_{0y} - g t) \ \hat{y},
+\end{equation}</p><p>dengan menggunakan Persamaan \eqref{eqn-v-dxdt}. Dari Persamaan \eqref{eqn-parabolic-motion-v} dapat diperoleh laju</p><p>\begin{equation}\label{eqn-parabolic-motion-s}
+s \equiv |\vec{v}| = \sqrt{v_{0x}^2 + (v_{0y} - g t)^2},
+\end{equation}</p><p>dengan bantuan Persamaan \eqref{eqn-s-magnitude-v}.</p><p>![]({{ site.baseurl }}/assets/img/0/05/0053-b.png)<br>Gambar <a name=fig2>2</a>. Sebuah gerak parabola dengan lajunya $s$ yang selalu menyinggung lintasan.</p><p>Parameter posisi awal $x_0 = 5$, $y_0 = 5$, kecepatan awal $v_{0x} = 30$, $v_{0y} = 40$, dan percepatan graviasi $g = 10$ adalah parameter-parameter yang diperlukan untuk membuah Gambar
+<a href=#fig2><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>. Saat $t = 0$ Persaamaan \eqref{eqn-parabolic-motion-s} akan memberikan besar kecepatan awal dan saat $t = 4$, pada posisi maksimum, laju hanya memiliki komponen mendatar. Dua titik ini telah memberikan konfirmasi bahwa rumusan yang diberikan dapat digunakan.</p><h2 id=parametric-function>parametric function</h2><p>Dengan menggunakan fungsi parametrik [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], misalnya $x(t)$, $y(t)$, $z(t)$, dengan $t$ adalah parameternya, dapat dibuat</p><p>\begin{equation}\label{eqn-parametric-function-r}
+\vec{r} = x(t) \ \hat{x} + y(t) \ \hat{y} + z(t) \ \hat{z},
+\end{equation}</p><p>yang akan memiliki fungsi kecepatan</p><p>\begin{equation}\label{eqn-parametric-function-v}
+\vec{v} = \frac{dx}{dt} \ \hat{x} + \frac{dy}{dt} \ \hat{y} + \frac{dz}{dt} \ \hat{z},
+\end{equation}</p><p>sehingga dapat diperoleh</p><p>\begin{equation}\label{eqn-parametric-function-s}
+s = \sqrt{ \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2 }
+\end{equation}</p><p>yang merupakan lajunya.</p><p>Tabel <a name=tab1>1</a>. Beberapa jenis gerak dan fungsi parametriknya.</p><p>Gerak | $x$ | $y$ | $z$
+:-: | :-: | :-:
+GMB | $x_C + R \cos \omega t$ | $y_C + R \sin \omega t$ | -
+GP | $x_0 + v_{0x} t$ | $y_0 + v_{0y} t - \frac12 g t^2$ | -
+GH | $x_C + R \cos \omega t$ | $y_C + R \sin \omega t$ | $t$
+LC | $A_x \sin (\omega_x t + \delta)$ | $A_y \sin \omega_y t$ |</p><p>Pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>terdapat gerak 3d yaitu GH atau gerak heliks [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], yang lintasannya mirip seperti lilitan pada pegas atau solenoida. Gerak 2d yang menarik adalah gerak yang lintasannya membentuk kurva Lissajous (LC) [
+<a href=#r08><span>8 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><table><thead><tr><th style=text-align:center>$T_x / T_y$</th><th style=text-align:center>$\delta = 0$</th><th style=text-align:center>$\delta = \frac15 \pi$</th><th style=text-align:center>$\delta = \frac12 \pi$</th><th style=text-align:center>$\delta = \frac45 \pi$</th><th style=text-align:center>$\delta = \pi$</th></tr></thead><tbody><tr><td style=text-align:center>$1$</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c00-t11.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c02-t11.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c05-t11.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c08-t11.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c10-t11.png)</td></tr><tr><td style=text-align:center>$2$</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c00-t21.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c02-t21.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c05-t21.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c08-t21.png)</td><td style=text-align:center>![]({{ site.baseurl }}/assets/img/0/05/0053-c10-t21.png)</td></tr></tbody></table><p>Gambar <a name=fig3>3</a>. Beberapa contoh kurva Lissajous.</p><p>Bentuk kurva Lissajous pada Gambar
+<a href=#fig3><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>ditentukan oleh rasio periode $T_x/T_y$ (lebih lazim dalam $\omega_x/\omega_y$) dan beda fasa $\delta$. Laju untuk lintasan benda berbentuk kurva Lissajous dapat diperoleh dengan menggunakan Persamaan \eqref{eqn-parametric-function-s}.</p><h2 id=exer>exer</h2><ol><li>Carilah rumusan laju untuk lintasan berbentuk pola Lissajous dengan persamaan $x$ dan $y$ diberikan pada Tabel
+<a href=#tab1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li></ol><h2 id=note>note</h2><ol><li><a name=r01></a>J. Willard Gibbs, Edwin Bidwell Wilson, &ldquo;Vector Analysis&rdquo;, University Press, John Wilson and Son, Cambridge, Dec 1901, p. 125,
+url
+<a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015000962285&amp;view=1up&amp;seq=149" target=_blank rel="nofollow noopener noreferrer"><span>https://babel.hathitrust.org/cgi/pt?id=mdp.39015000962285&view=1up&seq=149 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r02></a>Andrew Zimmerman Jones, &ldquo;What Speed Actually Means in Physics&rdquo;, ThoughtCo, 12 Feb 2020, url
+<a href=https://www.thoughtco.com/x-2699009 target=_blank rel="nofollow noopener noreferrer"><span>https://www.thoughtco.com/x-2699009 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r03></a>Chris Deziel, &ldquo;What is Speed?&rdquo;, Sciencing, 13 Dec 2020, url &lt;> [20211019].</li><li><a name=r04></a>William Moebs, Samuel J. Ling, Jeff Sanny, &ldquo;Instantaneous Velocity and Speed&rdquo; in University Physics Volume 1, OpenStax, Texas, 19 Sep 2016, url
+<a href=https://openstax.org/books/university-physics-volume-1/pages/3-2-instantaneous-velocity-and-speed target=_blank rel="nofollow noopener noreferrer"><span>https://openstax.org/books/university-physics-volume-1/pages/3-2-instantaneous-velocity-and-speed <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r05></a>Paul Peter Urone, Roger Hinrichs, &ldquo;Uniform Circular Motion&rdquo; in Physics, OpenStax, Texas, 26 Mar 2020, url
+<a href=https://openstax.org/books/physics/pages/6-2-uniform-circular-motion target=_blank rel="nofollow noopener noreferrer"><span>https://openstax.org/books/physics/pages/6-2-uniform-circular-motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r06></a>&ldquo;Parametric functions, one parameter&rdquo;, Khan Academy, url
+<a href=https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/ways-to-represent-multivariable-functions/a/parametric-functions target=_blank rel="nofollow noopener noreferrer"><span>https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/ways-to-represent-multivariable-functions/a/parametric-functions <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r07></a>&ldquo;Motion of a Charged Particle in a Magnetic Field&rdquo; in Boundless Physics, Lumen Learning, url
+<a href=https://courses.lumenlearning.com/boundless-physics/chapter/motion-of-a-charged-particle-in-a-magnetic-field/ target=_blank rel="nofollow noopener noreferrer"><span>https://courses.lumenlearning.com/boundless-physics/chapter/motion-of-a-charged-particle-in-a-magnetic-field/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li><li><a name=r08></a>Eric W. Weisstein, &ldquo;Lissajous Curve&rdquo; from MathWorld&ndash;A Wolfram Web Resource, url
+<a href=https://mathworld.wolfram.com/LissajousCurve.html target=_blank rel="nofollow noopener noreferrer"><span>https://mathworld.wolfram.com/LissajousCurve.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211019].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 2d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>displacement 1d <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>average velocity <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span>average speed <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans>1) $\displaystyle s = \sqrt{ [A_x \sin (\omega_x t + \delta)]^2 + (A_y \sin \omega_y t)^2}$; &nbsp;</ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

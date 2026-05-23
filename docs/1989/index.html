@@ -1,0 +1,29 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>polynom coeff integ | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>polynom coeff integ</h1><time datetime=2024-03-25T16:37:00+07:00>March 25, 2024</time><p>Integration of polynomial: Coefficients operation</p><ul><li><a><span><i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul><h2 id=polynomial-as-list>polynomial as list</h2><p>A polynomial in the form of</p><p>$$\tag{1}
+y = \sum_{i=0}^n b_i t^i
+$$</p><p>can be presented in a column matrix</p><p>$$\tag{2}
+y \equiv [b_0 \ \ b_1 \ \ b_2 \ \ b_3 \ \ \dots \ \ b_{n-1} \ \ b_n]
+$$</p><p>or simply a list in Python.</p><h2 id=differential>differential</h2><p>Let us define other polynomial</p><p>$$\tag{3}
+x = \sum_{j=0}^m a_j t^j
+$$</p><p>and use it to represent differential of (1)</p><p>$$\tag{4}
+\frac{dy}{dt} = \sum_{i=1}^n ib_i t^{i-1}.
+$$</p><p>Equate (3) and (4) will give</p><p>$$\tag{5}
+a_j = (j+1) b_{j+1}
+$$</p><p>since</p><p>$$\tag{6}
+\begin{array}{rcl}
+x & = & [b_1 \ \ 2 b_2 \ \ 3b_3 \ \ \dots \ \ (n-1) b_{n-1} \ \ \ \ n b_n \ ] \newline
+& = & [a_0 \ \ \ a_1 \ \ \ a_2 \ \ \ \dots \ \ \ \ \ \ \ \ a_{n-2} \ \ \ \ \ \ \ \ \ a_{n-1}].
+\end{array}
+$$</p><p>Notice that in this case $m = n - 1$.</p><h2 id=integral>integral</h2><p>Again another polynomial</p><p>$$\tag{7}
+z = \sum_{j=0}^m c_j t^j
+$$</p><p>to represent integral of (1)</p><p>$$\tag{8}
+\int y \ dt = c_0 + \sum_{i=0}^n \frac{1}{i+1} b_i t^{i+1}.
+$$</p><p>Equate (7) and (8) will give</p><p>$$\tag{9}
+c_j = \frac{1}{j-1} b_{j-1}
+$$</p><p>since</p><p>$$\tag{10}
+\begin{array}{rcl}
+z & = & [c_0 \ \ b_0 \ \ \frac12 b_1 \ \ \frac13 b_2 \ \ \dots \ \ (n-1) b_{n-1} \ \ \ \ n b_n \ ] \newline
+& = & [c_0 \ \ \ c_1 \ \ \ c_2 \ \ \ \ c_3 \ \ \ \dots \ \ \ \ \ \ \ \ c_n \ \ \ \ \ \ \ \ \ c_{n+1}].
+\end{array}
+$$</p></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

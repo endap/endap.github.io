@@ -1,0 +1,89 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>futher intro perceptron | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>futher intro perceptron</h1><time datetime=2024-11-18T05:01:57+07:00>November 18, 2024</time><p>Feed forward and learning algorithms as further intro to single-layer perceptron.</p><p>Info:</p><ul><li>Further intro to perceptron: Datasets generation, classification, andlearning<ul><li>url
+<a href=https://osf.io/9vxfz target=_blank rel="nofollow noopener noreferrer"><span>https://osf.io/9vxfz <i class="fa fa-external-link" style=font-size:14px></i></span></a></li><li>version 20241119_v7</li></ul></li><li>Outline<ul><li>Intro 3</li><li>Linear separable dataset generation 6</li><li>Feed forward in single-layer perceptron 23</li><li>Binary classification ability 29</li><li>Decision boundary line 47</li><li>Learning process 60</li><li>Error estimation 76</li><li>Additional topic as intermezzo 91</li><li>Closing 98</li></ul></li></ul><p>Sketch:</p><p>$$\tag{1}
+f(x) = \left\{
+\begin{array}{lr}
+1, & x \ge 0, \newline
+0, & x &lt; 0.
+\end{array}
+\right.
+$$</p><p>$$\tag{2}
+ax + by + c = 0.
+$$</p><p>$$\tag{3}
+z_1 = w_{11} x_1 + w_{12} x_2 + b_1
+$$</p><p>$$\tag{4}
+y_1 = f_{\rm bs}(z_1)
+$$</p><p>$$\tag{5}
+y_1 = f\left(
+\left[
+\begin{array}{ccc}
+w_{11} & w_{12} & b_1
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+x_1 \newline
+x_2 \newline
+1
+\end{array}
+\right]
+\right)
+$$</p><p>$$\tag{6}
+x^{n+1}_i = y^{n}_i
+$$</p><p>$$\tag{7}
+x_i^{n+1} = f^n\left(
+\left[
+\begin{array}{ccc}
+w_{ij}^n & w_{ij}^n & b_i^n
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+x_j^n \newline
+x_j^n \newline
+1
+\end{array}
+\right]
+\right)
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>RL</span></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#a6e22e>n</span>[<span style=color:#e6db74>&#34; &#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>S1</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>A1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;11&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>S1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I2</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;12&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>S1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I0</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;b&lt;sub&gt;1&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>S1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>S1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>A1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>O1</span>((<span style=color:#a6e22e>y</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I1</span>((<span style=color:#a6e22e>x</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I2</span>((<span style=color:#a6e22e>x</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>2</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I0</span>((<span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span><span style=color:#a6e22e>A1</span>((<span style=color:#a6e22e>f</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#a6e22e>bs</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>S1</span>([<span style=color:#e6db74>&#34;&amp;Sigma; wx+b&#34;</span>])</span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style><p>$$\tag{8}
+w_{11} x_1 + w_{12} x_2 + b = 0.
+$$</p><p>$$\tag{9}
+x_2 = - \left(\frac{w_{11}}{w_{12}}\right) x_1 - \left(\frac{b}{w_{12}}\right).
+$$</p><p>$$\tag{10}
+{\rm SSE} = \sum_{i = 1}^n (y_i - \hat{y}_i)^2.
+$$</p><p>$$\tag{11}
+{\rm MCE} = \frac{1}{n} \sum_{i = 1}^n \delta(y_i,\hat{y}_i).
+$$</p><p>$$\tag{12}
+\delta(a, b) = \left\{
+\begin{array}{cc}
+1 & a = b, \newline
+0 & a \ne b.
+\end{array}
+\right.
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>RL</span></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;11&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I2</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;12&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;21&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H2</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I2</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w&lt;sub&gt;22&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>H2</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>H1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u&lt;sub&gt;11&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>H2</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u&lt;sub&gt;12&lt;/sub&gt;&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I1</span>((<span style=color:#a6e22e>x</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I2</span>((<span style=color:#a6e22e>x</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>sub</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>2</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/sub&gt;))</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>H1</span>([<span style=color:#e6db74>&#34;y&lt;sub&gt;1&lt;/sub&gt;|tanh&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#a6e22e>H2</span>([<span style=color:#e6db74>&#34;y&lt;sub&gt;2&lt;/sub&gt;|tanh&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#a6e22e>O1</span>([<span style=color:#e6db74>&#34;z&lt;sub&gt;1&lt;/sub&gt;|bstep&#34;</span>])</span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,74 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>initial condition xva | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>initial condition xva</h1><time datetime=2021-10-13T20:29:00+07:00>October 13, 2021</time><p>Dalam menerapkan hukum II Newton, yang umumnya merupakan persamaan diferensial, perlu dinyatakan syarat awal berupa kecepatan awal dan posisi awal, di mana permasalahan seperti ini termasuk suatu permasalan nilai awal [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=not-unique>not unique</h2><p>Pemilihan syarat awal atau IC (initial condition) tidak unik karena, bila sebelumnya telah diketahui fungsinya hanya akan menentukan konstant integrasi, misalnya</p><p>$$
+\int 2x \ dx = x^2 + C,
+$$</p><p>di mana IC akan menentukan nilai C ini. Misalkan terdapat fungsi posisi partikel setiap saat</p><p>$$
+x = t^2 - 4,
+$$</p><p>yang akan memberikan bahwa $x(0) = -4$, $x(1) = -3$, dan $x(2) = 0$. Ketiga nilai ini dapat digunakan sebagi syarat awal saat ingin memperoleh solusi fungsi posisi $x$ dari fungsi kecepatan</p><p>$$
+v = 2t.
+$$</p><p>Ketiga nilai tersebut akan digunakan dalam ketiga kasus di bawah ini.</p><h3 id=case-1>case 1</h3><p>Dalam kasus ini IC yang diberikan adalah $x(0) = -4$ dengan fungsi kecepatannya adalah $v = 2t$. Dengan demikian</p><p>$$
+\begin{array}{rcl}
+x - x(0) & = & \displaystyle \int_0^t 2t \ dt \newline
+& = & \displaystyle \left[ t^2 \right]_0^t \newline
+& = & (t^2) - (0^2) \newline
+x - x(0) & = & t^2 \newline
+x - (-4) & = & t^2 \newline
+x & = & t^2 - 4
+\end{array}
+$$</p><p>dapat diperoleh solusinya.</p><h3 id=case-2>case 2</h3><p>Dalam kasus ini IC yang diberikan adalah $x(1) = -3$ dengan fungsi kecepatannya adalah $v = 2t$. Dengan demikian</p><p>$$
+\begin{array}{rcl}
+x - x(1) & = & \displaystyle \int_1^t 2t \ dt \newline
+& = & \displaystyle \left[ t^2 \right]_1^t \newline
+& = & (t^2) - (1^2) \newline
+x - x(1) & = & t^2 - 1 \newline
+x - (-3) & = & t^2 - 1 \newline
+x & = & t^2 - 4
+\end{array}
+$$</p><p>dapat diperoleh solusinya.</p><h3 id=case-3>case 3</h3><p>Dalam kasus ini IC yang diberikan adalah $x(2) = 0$ dengan fungsi kecepatannya adalah $v = 2t$. Dengan demikian</p><p>$$
+\begin{array}{rcl}
+x - x(2) & = & \displaystyle \int_2^t 2t \ dt \newline
+& = & \displaystyle \left[ t^2 \right]_2^t \newline
+& = & (t^2) - (2^2) \newline
+x - x(2) & = & t^2 - 4 \newline
+x - 0 & = & t^2 - 4 \newline
+x & = & t^2 - 4
+\end{array}
+$$</p><p>dapat diperoleh solusinya.</p><p>Perhatikan bahwa asalkan IC yang diberikan tepat menggambarkan sistemnya, tetap akah diperoleh solusi yang benar. Pada contoh di atas IC ditentukan dari fungsi posisi $x$ yang telah diketahui lebih dulu sehingga hanya untuk memberikan gambaran.</p><h2 id=a--v--x>a → v → x</h2><p>Bila terdapat fungsi percepatan $a$ dan ingin ddiperoleh fungsi kecepatan $v$ dan kemudian fungsi posisi $x$ maka diperlukan dua IC yaitu nilai-nilai $v_0$ dan $x_0$ saat $t_0$. Sebagai contoh, misalkan terdapat</p><p>$$
+a = -10
+$$</p><p>dan $t_0 = 1$, $v_0 = v(t_0) = 2$, $x_0 = x(t_0) = 3$. Langkah pertama adalah memperoleh $v$ dari integrasi $a$ terhadap waktu $t$ dan dilanjutkan dengan mencari $x$ dari integral $v$ terhadap waktu $t$. Untuk langkah pertama</p><p>$$
+\begin{array}{rcl}
+v - v(t_0) & = & \displaystyle \int_{t_0}^t a \ dt \newline
+v - v(1) & = & \displaystyle \int_1^t (-10) \ dt \newline
+& = & \displaystyle (-10) \left[ t \right]_1^t \newline
+& = & \displaystyle (-10) \left[ (t) - (1) \right] \newline
+& = & -10t + 10 \newline
+v - 2 & = & -10t + 10 \newline
+v & = & -10t + 12
+\end{array}
+$$</p><p>akan diperoleh fungsi kecepatan. Selanjutnya adalah langkah kedua dengan memanfaatkan fungsi kecepatan yang baru saja diperoleh, yang akan memberikan</p><p>$$
+\begin{array}{rcl}
+x - x(t_0) & = & \displaystyle \int_{t_0}^t v \ dt \newline
+x - x(1) & = & \displaystyle \int_1^t (-10t + 12) \ dt \newline
+& = & \displaystyle \left[ -5t^2 + 12t \right]_1^t \newline
+& = & (-5t^2 + 12t) - (-5 \cdot 1^2 + 12 \cdot 1) \newline
+& = & (-5t^2 + 12t) - (-5 + 12) \newline
+& = & -5t^2 + 12t - 7 \newline
+x - 3 & = & -5t^2 + 12t - 7 \newline
+x & = & -5t^2 + 12t - 4
+\end{array}
+$$</p><p>yang merupakan fungsi posisi. Dengan demikian dapat diresumekan</p><p>$$
+\begin{array}{rcl}
+a & = & -10, \newline
+v & = & -10t + 12, \newline
+x & = & -5t^2 + 12t - 4,
+\end{array}
+$$</p><p>bila $v(1) = 2$ dan $x(1) = 3$. Dengan melakukan diferensial terhadap waktu $t$ pada $x$ akan diperoleh $v$, dan saat diterapkan pada $v$ akan diperoleh $a$. Langkah terakhir ini adalah hanya sekedar untuk memastikan bahwa solusi yang diperoleh sesuai dengan fungsi percepatan yang diberikan.</p><h2 id=note>note</h2><ol><li><a name=r01></a>Birne Binegar, &ldquo;Lecture 7: Constant of Integration and Initial Conditions&rdquo;, Math 2233 Differential Equations, Spring 1999, p. 29, url
+<a href=http://lie.math.okstate.edu/~binegar/2233/2233-l07.pdf target=_blank rel="nofollow noopener noreferrer"><span>http://lie.math.okstate.edu/~binegar/2233/2233-l07.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20211013].</li></ol><h2 id=heading> </h2><p><a><span>position <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

@@ -1,0 +1,76 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>boundary condition | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1779545760'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><h1>boundary condition</h1><time datetime=2022-03-16T11:00:00+07:00>March 16, 2022</time><p>Nilai batas merupakan kondisi yang mengikuti suatu persamaan diferensial dalam solusi dari suatu permasalahan fisis, hal ini karena masalah matematika yang muncul dari suatu situasi fisis perlu melibatkan dua pertimbangan saat mencari suatu solusi, yaitu solusi dan turunannya harus memenuhi persamaan diferensial (yang menggambarkan bagaimana kuantitas tersebut berlaku dalam suatu daerah) dan solusi dan turunannya harus memenuhi kondisi pendukung yang menjelaskan pengaruh dari luar daerah (nilai batas) atau memberikan informasi mengenai solusi pada suatu waktu tertentu (nilai awal), yang menggambarkan sejarah sistem yang akan mempengaruhi kelakuannya di masa depan [
+<a href=#r01><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Syarat batas (boundary condition, b.c.) yang merupakan kendala bagi solusi dari suatu masalah nilai batas [
+<a href=#r02><span>2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat kajian yang menarik bahwa nomenklatur penggunakan b.c. ini tidak standar sehingga cukup membingungkan dalam bidang air tanah [
+<a href=#r03><span>3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h2 id=symbols>symbols</h2><p>Domain atau daerah (region) tempat persamaan diferensial berlaku dapat disimbolkan dengan $D$ [
+<a href=#r04><span>4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>] ataupun $\Omega$ [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>], di mana batasnya dapat menggunakan $\Gamma$ ataupun $\partial\Omega$ [
+<a href=#r05><span>5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>]. Terdapat makna mengapa digunakan simbol $\partial$ yang terkait dengan turunan pada arah normal batas [
+<a href=#r06><span>6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><p>![]({{ site.baseurl }}/assets/img/0/53/0533-a.png)<br>Gambar <a name=fig1>1</a>. Domain $D$ dengan batasnya $\Gamma$ (kiri) atau doman $\Omega$ dengan batasnya $\partial\Omega$ (kiri).</p><p>Bila domain merupakan suatu luas, maka batasnya merupakan garis keliling, akan tetapi bila domain merupakan volume maka batasnya merupakan suatu permukaan tertutup. Pada Gambar
+<a href=#fig1><span>1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>domain diberi warna merah muda ($\color{#fee}{\blacksquare}$) dan batasnya berwarna biru ($\color{#07c}{\blacksquare}$).</p><h2 id=types-of-bc>types of b.c.</h2><p>Terdapat persamaan diferensial yang melibatkan $u$ dan turunannya $u&rsquo;$ pada titik-titik di dalam domain $\Omega$ dengan batasnya adalah $\partial\Omega$. Untuk memberikan ilustrasi yang lebih sederhana, misalnya persoalannya menjadi persoalan 1-D dengan persaamaan diferensialnya, sebagai contoh, adalah</p><p>\begin{equation}\label{eqn:ode-1st-order}
+\frac{du}{dx} + u = 0
+\end{equation}</p><p>yang berlaku dalam domain $x \in [a, b]$. Dengan menggunakan Persamaan \eqref{eqn:ode-1st-order} akan diilustrasikan kelima syarat batas (s.b.) yang meliputi Dirichlet, Neumann, Robin, mixed, dan Cauchy [
+<a href=#r07><span>7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>].</p><h3 id=dirichlet-bc>dirichlet b.c.</h3><p>Syarat batas Dirichlet berbentuk</p><p>\begin{equation}\label{eqn:bc-dirichlet}
+\begin{array}{c}
+u(a) = A, \newline
+u(b) = B
+\end{array}
+\end{equation}</p><p>yang membutuhkan nilai fungsi pada kedua batas.</p><h3 id=neumann-bc>neumann b.c.</h3><p>Syarat batas Neumann berbentuk</p><p>\begin{equation}\label{eqn:bc-neumann}
+\begin{array}{c}
+u&rsquo;(a) = \alpha, \newline
+u&rsquo;(b) = \beta
+\end{array}
+\end{equation}</p><p>yang membutuhkan nilai turunan fungsi pada kedua batas.</p><h3 id=robin-bc>robin b.c.</h3><p>Syarat batas Robin berbentuk</p><p>\begin{equation}\label{eqn:bc-robin}
+\begin{array}{c}
+u(a) = \chi_1 u(a) + \chi_2 u&rsquo;(a) = A_\alpha, \newline
+u(b) = \chi_1 u(b) + \chi_2 u&rsquo;(b) = B_\beta
+\end{array}
+\end{equation}</p><p>yang membutuhkan nilai fungsi dan turuannnya pada kedua batas, dengan masing-masing akan diberi bobot $\chi_1$ dan $\chi_2$.</p><h3 id=mixed-bc>mixed b.c.</h3><p>Syarat batas campuran dapat berbentuk</p><p>\begin{equation}\label{eqn:bc-mixed}
+\begin{array}{c}
+u(a) = A, \newline
+u&rsquo;(b) = \beta,
+\end{array}
+\end{equation}</p><p>atau</p><p>\begin{equation}\nonumber
+\begin{array}{c}
+u&rsquo;(a) = \alpha, \newline
+u(b) = B,
+\end{array}
+\end{equation}</p><p>yang merupakan syarat batas Dirichlet di satu sisi dan syarat batas Neuman di sisi lainnya.</p><h3 id=cauchy-bc>cauchy b.c.</h3><p>Syarat batas Cauchy berbentuk</p><p>\begin{equation}\label{eqn:bc-cauchy}
+\begin{array}{c}
+u(a) = A, \newline
+u&rsquo;(a) = \alpha,
+\end{array}
+\end{equation}</p><p>atau</p><p>\begin{equation}\nonumber
+\begin{array}{c}
+u(b) = B, \newline
+u&rsquo;(b) = \beta.
+\end{array}
+\end{equation}</p><p>Walaupun jarang, syarat batas ini digunakan pada persamaan diferensial orde kedua, yang menerapkan secara bersama-sama syarat batas Dirichlet dan Neumann pada satu titik.</p><h2 id=note>note</h2><ol><li><a name=r01></a>The Editors of Encyclopaedia Britannica, Swati Chopra, William L. Hosch, &ldquo;boundary value&rdquo;, Encyclopaedia Britannica, 24 Oct 2011, url
+<a href=https://www.britannica.com/science/boundary-value target=_blank rel="nofollow noopener noreferrer"><span>https://www.britannica.com/science/boundary-value <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r02></a>&ldquo;What Are Boundary Conditions?&rdquo;, SimScale, 3 Sep 2021, url
+<a href=https://www.simscale.com/docs/simwiki/numerics-background/what-are-boundary-conditions/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.simscale.com/docs/simwiki/numerics-background/what-are-boundary-conditions/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r03></a>Amir Jazayeri, Adrian D. Werner, &ldquo;Boundary Condition Nomenclature Confusion in Groundwater Flow Modeling&rdquo;, Groundwater [], vol 57, no 5, p 664-668, Sep-Oct 2019, url
+<a href=https://doi.org/10.1111/gwat.12893 target=_blank rel="nofollow noopener noreferrer"><span>https://doi.org/10.1111/gwat.12893 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>.</li><li><a name=r04></a>Fiaz Ur Rehman, Mathematics Lectures, &ldquo;Different Types of Boundary Conditions&rdquo;, YouTube, 06.04.2020, url
+<a href="https://www.youtube.com/watch?v=-n3jHwmNejg" target=_blank rel="nofollow noopener noreferrer"><span>https://www.youtube.com/watch?v=-n3jHwmNejg <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r05></a>Ian, &ldquo;Answer to &lsquo;Difference between Gamma and partial Omega to describe a domain boundary&rsquo;&rdquo;, Mathematics Stack Exchange, 20 Jan 2016, url
+<a href=https://math.stackexchange.com/a/1619820/645927 target=_blank rel="nofollow noopener noreferrer"><span>https://math.stackexchange.com/a/1619820/645927 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r06></a>Terry Tao, kjo, &ldquo;Answer to &lsquo;Is the boundary ∂S analogous to a derivative?&rsquo;&rdquo;, MathOverflow, 16 Nov 2010, 7 Apr 2014, url
+<a href=https://mathoverflow.net/a/46285 target=_blank rel="nofollow noopener noreferrer"><span>https://mathoverflow.net/a/46285 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li><li><a name=r07></a>Zhen (Leo) Liu, &ldquo;Boundary Conditions&rdquo;, 13 Jun 2018, url
+<a href=https://multiphysics.us/BC.html target=_blank rel="nofollow noopener noreferrer"><span>https://multiphysics.us/BC.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220316].</li></ol><h3 id=comments>comments</h3><p>{% comment %} data-width=&ldquo;390&rdquo; {% endcomment %}</p><h2 id=heading> </h2><p>{% comment %}
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>•
+<a><span><i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>{% endcomment %}</p><ans></ans></main><footer><link rel=stylesheet href='/css/footer.css?v=1779545760'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>
