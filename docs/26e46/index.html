@@ -1,0 +1,104 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>archive deploy script | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1780106907'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1780106907'></head><div class=note-container><h1 class=note-title>archive deploy script</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-05-23T21:24:57 07:00">23 May 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/e/46-archive-deploy-script.md>edit</a></div></div><div class=note-content><p>Current scripts are <code>dse</code> for macOS and <code>dswe</code> for Windows. Following are the old deploy scripts.</p><h2 id=ds>ds</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buid the Hugo site into public directory</span>
+</span></span><span style=display:flex><span>rm -rf public
+</span></span><span style=display:flex><span>hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Pull request when necessary</span>
+</span></span><span style=display:flex><span>cd ../butiran
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>cd ../butiran-src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Perform remote synchronization</span>
+</span></span><span style=display:flex><span>rsync -av --delete public/ ../butiran/docs/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Commit and push changes in the public repository</span>
+</span></span><span style=display:flex><span>cd ../butiran
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>git add docs
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;rsync from butiran-src&#34;</span>
+</span></span><span style=display:flex><span>git push
+</span></span><span style=display:flex><span>cd ../butiran-src
+</span></span></code></pre></div><h2 id=dsx>dsx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buid the Hugo site into public directory</span>
+</span></span><span style=display:flex><span>rm -rf public
+</span></span><span style=display:flex><span>hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Pull request when necessary</span>
+</span></span><span style=display:flex><span>cd ../butiran-x.github.io
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>cd ../butiran-src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Perform remote synchronization</span>
+</span></span><span style=display:flex><span>rsync -av --delete public/ ../butiran-x.github.io/docs/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Commit and push changes in the public repository</span>
+</span></span><span style=display:flex><span>cd ../butiran-x.github.io
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>git add docs
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;rsync from butiran-src&#34;</span>
+</span></span><span style=display:flex><span>git push
+</span></span><span style=display:flex><span>cd ../butiran-src
+</span></span></code></pre></div><h2 id=dsw>dsw</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>#!/bin/bash
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Buid the Hugo site into public directory
+</span></span><span style=display:flex><span>rm -rf public
+</span></span><span style=display:flex><span>hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>## Pull request when necessary
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Perform remote synchronization
+</span></span><span style=display:flex><span>robocopy public ../butiran/docs &#39;//MIR&#39; &#39;//COPY:DAT&#39; &#39;//R:2&#39; &#39;//W:2&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Commit and push changes in the public repository
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>git add docs
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;robocopy from butiran-src&#34;</span>
+</span></span><span style=display:flex><span>git push
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-src
+</span></span></code></pre></div><h2 id=dswx>dswx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>#!/bin/bash
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Buid the Hugo site into public directory
+</span></span><span style=display:flex><span>rm -rf public
+</span></span><span style=display:flex><span>hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>## Pull request when necessary
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-x.github.io
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Perform remote synchronization
+</span></span><span style=display:flex><span>robocopy public ../butiran-x.github.io/docs &#39;//MIR&#39; &#39;//COPY:DAT&#39; &#39;//R:2&#39; &#39;//W:2&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Commit and push changes in the public repository
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-x.github.io
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>git add docs
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;robocopy from butiran-src&#34;</span>
+</span></span><span style=display:flex><span>git push
+</span></span><span style=display:flex><span><span style=color:#66d9ef>cd</span> ../butiran-src
+</span></span></code></pre></div><h2 id=remove-files>remove files</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>% ls -1 s
+</span></span><span style=display:flex><span>ds
+</span></span><span style=display:flex><span>dse
+</span></span><span style=display:flex><span>dsw
+</span></span><span style=display:flex><span>dswe
+</span></span><span style=display:flex><span>dswx
+</span></span><span style=display:flex><span>dsx
+</span></span><span style=display:flex><span>np
+</span></span><span style=display:flex><span>% rm s/ds s/dsx s/dsw s/dswx
+</span></span><span style=display:flex><span>% ls -1 s                   
+</span></span><span style=display:flex><span>dse
+</span></span><span style=display:flex><span>dswe
+</span></span><span style=display:flex><span>np
+</span></span></code></pre></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1780106907'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

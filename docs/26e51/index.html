@@ -1,0 +1,713 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>intro ann-tf ipynb | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1780106907'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1780106907'></head><div class=note-container><h1 class=note-title>intro ann-tf ipynb</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-05-24T08:50:13 07:00">24 May 2026</time>
+&#183;
+16 mins read
+&#183;
+<a class=link href=npprel:///26/e/51-intro-ann-tf-ipynb.md>edit</a></div></div><div class=note-content><ul><li><code>25-may-2026</code>
+<a href="https://github.com/dudung/
+26e51/blob/main/05/
+README.md" target=_blank rel=noopener><code>26e51.05</code>
+</a>perceptron linear separable data</li><li><code>25-may-2026</code>
+<a href="https://github.com/dudung/
+26e51/blob/main/04/
+README.md" target=_blank rel=noopener><code>26e51.04</code>
+</a>perceptron scikit-learn tensorflow</li><li><code>25-may-2026</code>
+<a href="https://github.com/dudung/
+26e51/blob/main/03/
+README.md" target=_blank rel=noopener><code>26e51.03</code>
+</a>scikit-learn make-classification gen-viz</li><li><code>25-may-2026</code>
+<a href="https://github.com/dudung/
+26e51/blob/main/02/
+README.md" target=_blank rel=noopener><code>26e51.02</code>
+</a>dataset read-f, visualization</li><li><code>25-may-2026</code>
+<a href="https://github.com/dudung/
+26e51/blob/main/01/
+README.md" target=_blank rel=noopener><code>26e51.01</code>
+</a>dataset generation, visualization, write-f</li></ul><h2 id=notes>notes</h2><ul><li>Items 01-04 made at home on 24-may-2026, while 05 is on 25-may-2026 at work.</li><li>Hyperline
+$$\tag{1}
+z = w_1 x_1 + w_2 x_2 + b.
+$$</li></ul><h2 id=refs>refs</h2><ul><li>Edward Fitzgerald, &ldquo;An Introduction to using Artificial Neural Networks via TensorFlow to Predict AFL Football Game Results&rdquo;, 4CDA, 4 Feb 2021, url
+<a href=https://4cda.com/an-introduction-to-using-artificial-neural-networks-via-tensorflow-to-predict-afl-football-game-results/ target=_blank rel="nofollow noopener noreferrer"><span>https://4cda.com/an-introduction-to-using-artificial-neural-networks-via-tensorflow-to-predict-afl-football-game-results/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260524].</li><li>Lanka Ajay Dominic, &ldquo;Single Layer Perceptron in TensorFlow&rdquo;, GeeksforGeeks, 6 Apr 2026, url
+<a href=https://www.geeksforgeeks.org/python/single-layer-perceptron-in-tensorflow/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.geeksforgeeks.org/python/single-layer-perceptron-in-tensorflow/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260524].</li><li>Yashmeet Singh, &ldquo;How to Generate Datasets Using make_classification&rdquo;, Proclus Academy, 3 Jul 2022, url
+<a href=https://proclusacademy.com/blog/sklearn_make_classification/ target=_blank rel="nofollow noopener noreferrer"><span>https://proclusacademy.com/blog/sklearn_make_classification/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260524].</li></ul><h2 id=25-may-2026>25-may-2026</h2><ul><li>0720 Install Python 3.12.10 on Windows 11.<ul><li>url
+<a href=https://www.python.org/downloads/release/python-31210/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.python.org/downloads/release/python-31210/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260525].</li></ul></li><li>0723 Create virtual environment tf</li></ul><pre tabindex=0><code>py -m venv tf
+</code></pre><ul><li>0724 Install packages<ul><li>requirements.txt</li><li>url
+<a href=https://gist.github.com/dudung/aa870906ed9a1d5e4381244ed1f0d2ef target=_blank rel="nofollow noopener noreferrer"><span>https://gist.github.com/dudung/aa870906ed9a1d5e4381244ed1f0d2ef <i class="fa fa-external-link" style=font-size:14px></i></span></a></li></ul></li><li>Activate virtual environment and check python, pip.</li></ul><pre tabindex=0><code>D:\evns&gt;py -m venv tf
+
+D:\evns&gt;tf\Scripts\activate
+
+(tf) D:\evns&gt;python --version
+Python 3.12.10
+
+(tf) D:\evns&gt;pip --version
+pip 25.0.1 from D:\evns\tf\Lib\site-packages\pip (python 3.12)
+
+(tf) D:\evns&gt;pip list
+Package Version
+------- -------
+pip     25.0.1
+</code></pre><ul><li>Upgrade pip</li></ul><pre tabindex=0><code>(tf) D:\evns&gt;python -m pip install --upgrade pip
+Requirement already satisfied: pip in d:\evns\tf\lib\site-packages (25.0.1)
+Collecting pip
+  Downloading pip-26.1.1-py3-none-any.whl.metadata (4.6 kB)
+Downloading pip-26.1.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 6.2 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 25.0.1
+    Uninstalling pip-25.0.1:
+      Successfully uninstalled pip-25.0.1
+Successfully installed pip-26.1.1
+
+(tf) D:\evns&gt;pip list
+Package Version
+------- -------
+pip     26.1.1
+
+(tf) D:\evns&gt;
+</code></pre><ul><li>Install packages</li></ul><pre tabindex=0><code>(tf) D:\evns&gt;pip install -r requirements.txt
+Collecting absl-py==2.3.1 (from -r requirements.txt (line 1))
+  Downloading absl_py-2.3.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting anyio==4.11.0 (from -r requirements.txt (line 2))
+  Downloading anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting appnope==0.1.4 (from -r requirements.txt (line 3))
+  Downloading appnope-0.1.4-py2.py3-none-any.whl.metadata (908 bytes)
+Collecting argon2-cffi==25.1.0 (from -r requirements.txt (line 4))
+  Downloading argon2_cffi-25.1.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting argon2-cffi-bindings==25.1.0 (from -r requirements.txt (line 5))
+  Downloading argon2_cffi_bindings-25.1.0-cp39-abi3-win_amd64.whl.metadata (7.5 kB)
+Collecting arrow==1.4.0 (from -r requirements.txt (line 6))
+  Downloading arrow-1.4.0-py3-none-any.whl.metadata (7.7 kB)
+Collecting asttokens==3.0.0 (from -r requirements.txt (line 7))
+  Downloading asttokens-3.0.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting astunparse==1.6.3 (from -r requirements.txt (line 8))
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting async-lru==2.0.5 (from -r requirements.txt (line 9))
+  Downloading async_lru-2.0.5-py3-none-any.whl.metadata (4.5 kB)
+Collecting attrs==25.4.0 (from -r requirements.txt (line 10))
+  Downloading attrs-25.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting babel==2.17.0 (from -r requirements.txt (line 11))
+  Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting beautifulsoup4==4.14.2 (from -r requirements.txt (line 12))
+  Downloading beautifulsoup4-4.14.2-py3-none-any.whl.metadata (3.8 kB)
+Collecting bleach==6.2.0 (from -r requirements.txt (line 13))
+  Downloading bleach-6.2.0-py3-none-any.whl.metadata (30 kB)
+Collecting certifi==2025.10.5 (from -r requirements.txt (line 14))
+  Downloading certifi-2025.10.5-py3-none-any.whl.metadata (2.5 kB)
+Collecting cffi==2.0.0 (from -r requirements.txt (line 15))
+  Downloading cffi-2.0.0-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+Collecting charset-normalizer==3.4.4 (from -r requirements.txt (line 16))
+  Downloading charset_normalizer-3.4.4-cp312-cp312-win_amd64.whl.metadata (38 kB)
+Collecting comm==0.2.3 (from -r requirements.txt (line 17))
+  Downloading comm-0.2.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting contourpy==1.3.0 (from -r requirements.txt (line 18))
+  Downloading contourpy-1.3.0-cp312-cp312-win_amd64.whl.metadata (5.4 kB)
+Collecting cycler==0.12.1 (from -r requirements.txt (line 19))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting debugpy==1.8.17 (from -r requirements.txt (line 20))
+  Downloading debugpy-1.8.17-cp312-cp312-win_amd64.whl.metadata (1.5 kB)
+Collecting decorator==5.2.1 (from -r requirements.txt (line 21))
+  Downloading decorator-5.2.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting defusedxml==0.7.1 (from -r requirements.txt (line 22))
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting et_xmlfile==2.0.0 (from -r requirements.txt (line 23))
+  Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting exceptiongroup==1.3.0 (from -r requirements.txt (line 24))
+  Downloading exceptiongroup-1.3.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting executing==2.2.1 (from -r requirements.txt (line 25))
+  Downloading executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting fastjsonschema==2.21.2 (from -r requirements.txt (line 26))
+  Downloading fastjsonschema-2.21.2-py3-none-any.whl.metadata (2.3 kB)
+Collecting flatbuffers==25.9.23 (from -r requirements.txt (line 27))
+  Downloading flatbuffers-25.9.23-py2.py3-none-any.whl.metadata (875 bytes)
+Collecting fonttools==4.60.1 (from -r requirements.txt (line 28))
+  Downloading fonttools-4.60.1-cp312-cp312-win_amd64.whl.metadata (114 kB)
+Collecting fqdn==1.5.1 (from -r requirements.txt (line 29))
+  Downloading fqdn-1.5.1-py3-none-any.whl.metadata (1.4 kB)
+Collecting gast==0.6.0 (from -r requirements.txt (line 30))
+  Downloading gast-0.6.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting google-pasta==0.2.0 (from -r requirements.txt (line 31))
+  Downloading google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting grpcio==1.76.0 (from -r requirements.txt (line 32))
+  Downloading grpcio-1.76.0-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Collecting h11==0.16.0 (from -r requirements.txt (line 33))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting h5py==3.14.0 (from -r requirements.txt (line 34))
+  Downloading h5py-3.14.0-cp312-cp312-win_amd64.whl.metadata (2.7 kB)
+Collecting httpcore==1.0.9 (from -r requirements.txt (line 35))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting httpx==0.28.1 (from -r requirements.txt (line 36))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting idna==3.11 (from -r requirements.txt (line 37))
+  Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting importlib_metadata==8.7.0 (from -r requirements.txt (line 38))
+  Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting importlib_resources==6.5.2 (from -r requirements.txt (line 39))
+  Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
+Collecting ipykernel==6.31.0 (from -r requirements.txt (line 40))
+  Downloading ipykernel-6.31.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting ipython==8.18.1 (from -r requirements.txt (line 41))
+  Downloading ipython-8.18.1-py3-none-any.whl.metadata (6.0 kB)
+Collecting ipywidgets==8.1.7 (from -r requirements.txt (line 42))
+  Downloading ipywidgets-8.1.7-py3-none-any.whl.metadata (2.4 kB)
+Collecting isoduration==20.11.0 (from -r requirements.txt (line 43))
+  Downloading isoduration-20.11.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting jedi==0.19.2 (from -r requirements.txt (line 44))
+  Downloading jedi-0.19.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting Jinja2==3.1.6 (from -r requirements.txt (line 45))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting joblib==1.5.2 (from -r requirements.txt (line 46))
+  Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting json5==0.12.1 (from -r requirements.txt (line 47))
+  Downloading json5-0.12.1-py3-none-any.whl.metadata (36 kB)
+Collecting jsonpointer==3.0.0 (from -r requirements.txt (line 48))
+  Downloading jsonpointer-3.0.0-py2.py3-none-any.whl.metadata (2.3 kB)
+Collecting jsonschema==4.25.1 (from -r requirements.txt (line 49))
+  Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting jsonschema-specifications==2025.9.1 (from -r requirements.txt (line 50))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting jupyter==1.1.1 (from -r requirements.txt (line 51))
+  Downloading jupyter-1.1.1-py2.py3-none-any.whl.metadata (2.0 kB)
+Collecting jupyter-console==6.6.3 (from -r requirements.txt (line 52))
+  Downloading jupyter_console-6.6.3-py3-none-any.whl.metadata (5.8 kB)
+Collecting jupyter-events==0.12.0 (from -r requirements.txt (line 53))
+  Downloading jupyter_events-0.12.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting jupyter-lsp==2.3.0 (from -r requirements.txt (line 54))
+  Downloading jupyter_lsp-2.3.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting jupyter_client==8.6.3 (from -r requirements.txt (line 55))
+  Downloading jupyter_client-8.6.3-py3-none-any.whl.metadata (8.3 kB)
+Collecting jupyter_core==5.8.1 (from -r requirements.txt (line 56))
+  Downloading jupyter_core-5.8.1-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyter_server==2.17.0 (from -r requirements.txt (line 57))
+  Downloading jupyter_server-2.17.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting jupyter_server_terminals==0.5.3 (from -r requirements.txt (line 58))
+  Downloading jupyter_server_terminals-0.5.3-py3-none-any.whl.metadata (5.6 kB)
+Collecting jupyterlab==4.4.10 (from -r requirements.txt (line 59))
+  Downloading jupyterlab-4.4.10-py3-none-any.whl.metadata (16 kB)
+Collecting jupyterlab_pygments==0.3.0 (from -r requirements.txt (line 60))
+  Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting jupyterlab_server==2.28.0 (from -r requirements.txt (line 61))
+  Downloading jupyterlab_server-2.28.0-py3-none-any.whl.metadata (5.9 kB)
+Collecting jupyterlab_widgets==3.0.15 (from -r requirements.txt (line 62))
+  Downloading jupyterlab_widgets-3.0.15-py3-none-any.whl.metadata (20 kB)
+Collecting keras==3.10.0 (from -r requirements.txt (line 63))
+  Downloading keras-3.10.0-py3-none-any.whl.metadata (6.0 kB)
+Collecting kiwisolver==1.4.7 (from -r requirements.txt (line 64))
+  Downloading kiwisolver-1.4.7-cp312-cp312-win_amd64.whl.metadata (6.4 kB)
+Collecting lark==1.3.1 (from -r requirements.txt (line 65))
+  Downloading lark-1.3.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting libclang==18.1.1 (from -r requirements.txt (line 66))
+  Downloading libclang-18.1.1-py2.py3-none-win_amd64.whl.metadata (5.3 kB)
+Collecting Markdown==3.9 (from -r requirements.txt (line 67))
+  Downloading markdown-3.9-py3-none-any.whl.metadata (5.1 kB)
+Collecting markdown-it-py==3.0.0 (from -r requirements.txt (line 68))
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting MarkupSafe==3.0.3 (from -r requirements.txt (line 69))
+  Downloading markupsafe-3.0.3-cp312-cp312-win_amd64.whl.metadata (2.8 kB)
+Collecting matplotlib==3.9.4 (from -r requirements.txt (line 70))
+  Downloading matplotlib-3.9.4-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Collecting matplotlib-inline==0.2.1 (from -r requirements.txt (line 71))
+  Downloading matplotlib_inline-0.2.1-py3-none-any.whl.metadata (2.3 kB)
+Collecting mdurl==0.1.2 (from -r requirements.txt (line 72))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting mistune==3.1.4 (from -r requirements.txt (line 73))
+  Downloading mistune-3.1.4-py3-none-any.whl.metadata (1.8 kB)
+Collecting ml_dtypes==0.5.3 (from -r requirements.txt (line 74))
+  Downloading ml_dtypes-0.5.3-cp312-cp312-win_amd64.whl.metadata (9.2 kB)
+Collecting mpmath==1.3.0 (from -r requirements.txt (line 75))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting namex==0.1.0 (from -r requirements.txt (line 76))
+  Downloading namex-0.1.0-py3-none-any.whl.metadata (322 bytes)
+Collecting nbclient==0.10.2 (from -r requirements.txt (line 77))
+  Downloading nbclient-0.10.2-py3-none-any.whl.metadata (8.3 kB)
+Collecting nbconvert==7.16.6 (from -r requirements.txt (line 78))
+  Downloading nbconvert-7.16.6-py3-none-any.whl.metadata (8.5 kB)
+Collecting nbformat==5.10.4 (from -r requirements.txt (line 79))
+  Downloading nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
+Collecting nest-asyncio==1.6.0 (from -r requirements.txt (line 80))
+  Downloading nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting notebook==7.4.7 (from -r requirements.txt (line 81))
+  Downloading notebook-7.4.7-py3-none-any.whl.metadata (10 kB)
+Collecting notebook_shim==0.2.4 (from -r requirements.txt (line 82))
+  Downloading notebook_shim-0.2.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting numpy==2.0.2 (from -r requirements.txt (line 83))
+  Downloading numpy-2.0.2-cp312-cp312-win_amd64.whl.metadata (59 kB)
+Collecting openpyxl==3.1.5 (from -r requirements.txt (line 84))
+  Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting opt_einsum==3.4.0 (from -r requirements.txt (line 85))
+  Downloading opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting optree==0.17.0 (from -r requirements.txt (line 86))
+  Downloading optree-0.17.0-cp312-cp312-win_amd64.whl.metadata (34 kB)
+Collecting overrides==7.7.0 (from -r requirements.txt (line 87))
+  Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting packaging==25.0 (from -r requirements.txt (line 88))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pandas==2.3.3 (from -r requirements.txt (line 89))
+  Downloading pandas-2.3.3-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting pandocfilters==1.5.1 (from -r requirements.txt (line 90))
+  Downloading pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
+Collecting parso==0.8.5 (from -r requirements.txt (line 91))
+  Downloading parso-0.8.5-py2.py3-none-any.whl.metadata (8.3 kB)
+Collecting pexpect==4.9.0 (from -r requirements.txt (line 92))
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting pillow==11.3.0 (from -r requirements.txt (line 93))
+  Downloading pillow-11.3.0-cp312-cp312-win_amd64.whl.metadata (9.2 kB)
+Collecting platformdirs==4.4.0 (from -r requirements.txt (line 94))
+  Downloading platformdirs-4.4.0-py3-none-any.whl.metadata (12 kB)
+Collecting prometheus_client==0.23.1 (from -r requirements.txt (line 95))
+  Downloading prometheus_client-0.23.1-py3-none-any.whl.metadata (1.9 kB)
+Collecting prompt_toolkit==3.0.52 (from -r requirements.txt (line 96))
+  Downloading prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+Collecting protobuf==6.33.0 (from -r requirements.txt (line 97))
+  Downloading protobuf-6.33.0-cp310-abi3-win_amd64.whl.metadata (593 bytes)
+Collecting psutil==7.1.2 (from -r requirements.txt (line 98))
+  Downloading psutil-7.1.2-cp37-abi3-win_amd64.whl.metadata (23 kB)
+Collecting ptyprocess==0.7.0 (from -r requirements.txt (line 99))
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting pure_eval==0.2.3 (from -r requirements.txt (line 100))
+  Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Collecting pycparser==2.23 (from -r requirements.txt (line 101))
+  Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting Pygments==2.19.2 (from -r requirements.txt (line 102))
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting pyparsing==3.2.5 (from -r requirements.txt (line 103))
+  Downloading pyparsing-3.2.5-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r requirements.txt (line 104))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting python-json-logger==4.0.0 (from -r requirements.txt (line 105))
+  Downloading python_json_logger-4.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting pytz==2025.2 (from -r requirements.txt (line 106))
+  Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting PyYAML==6.0.3 (from -r requirements.txt (line 107))
+  Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting pyzmq==27.1.0 (from -r requirements.txt (line 108))
+  Downloading pyzmq-27.1.0-cp312-abi3-win_amd64.whl.metadata (6.0 kB)
+Collecting referencing==0.36.2 (from -r requirements.txt (line 109))
+  Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting requests==2.32.5 (from -r requirements.txt (line 110))
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting rfc3339-validator==0.1.4 (from -r requirements.txt (line 111))
+  Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting rfc3986-validator==0.1.1 (from -r requirements.txt (line 112))
+  Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting rfc3987-syntax==1.1.0 (from -r requirements.txt (line 113))
+  Downloading rfc3987_syntax-1.1.0-py3-none-any.whl.metadata (7.7 kB)
+Collecting rich==14.2.0 (from -r requirements.txt (line 114))
+  Downloading rich-14.2.0-py3-none-any.whl.metadata (18 kB)
+Collecting rpds-py==0.27.1 (from -r requirements.txt (line 115))
+  Downloading rpds_py-0.27.1-cp312-cp312-win_amd64.whl.metadata (4.3 kB)
+Collecting scikit-learn==1.6.1 (from -r requirements.txt (line 116))
+  Downloading scikit_learn-1.6.1-cp312-cp312-win_amd64.whl.metadata (15 kB)
+Collecting scipy==1.13.1 (from -r requirements.txt (line 117))
+  Downloading scipy-1.13.1-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting Send2Trash==1.8.3 (from -r requirements.txt (line 118))
+  Downloading Send2Trash-1.8.3-py3-none-any.whl.metadata (4.0 kB)
+Collecting six==1.17.0 (from -r requirements.txt (line 119))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting sniffio==1.3.1 (from -r requirements.txt (line 120))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting soupsieve==2.8 (from -r requirements.txt (line 121))
+  Downloading soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+Collecting stack-data==0.6.3 (from -r requirements.txt (line 122))
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting sympy==1.14.0 (from -r requirements.txt (line 123))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting tensorboard==2.20.0 (from -r requirements.txt (line 124))
+  Downloading tensorboard-2.20.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting tensorboard-data-server==0.7.2 (from -r requirements.txt (line 125))
+  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting tensorflow==2.20.0 (from -r requirements.txt (line 126))
+  Downloading tensorflow-2.20.0-cp312-cp312-win_amd64.whl.metadata (4.6 kB)
+Collecting termcolor==3.1.0 (from -r requirements.txt (line 127))
+  Downloading termcolor-3.1.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting terminado==0.18.1 (from -r requirements.txt (line 128))
+  Downloading terminado-0.18.1-py3-none-any.whl.metadata (5.8 kB)
+Collecting threadpoolctl==3.6.0 (from -r requirements.txt (line 129))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting tinycss2==1.4.0 (from -r requirements.txt (line 130))
+  Downloading tinycss2-1.4.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting tomli==2.3.0 (from -r requirements.txt (line 131))
+  Downloading tomli-2.3.0-cp312-cp312-win_amd64.whl.metadata (10 kB)
+Collecting tornado==6.5.2 (from -r requirements.txt (line 132))
+  Downloading tornado-6.5.2-cp39-abi3-win_amd64.whl.metadata (2.9 kB)
+Collecting traitlets==5.14.3 (from -r requirements.txt (line 133))
+  Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+Collecting typing_extensions==4.15.0 (from -r requirements.txt (line 134))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata==2025.2 (from -r requirements.txt (line 135))
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting uri-template==1.3.0 (from -r requirements.txt (line 136))
+  Downloading uri_template-1.3.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting urllib3==2.5.0 (from -r requirements.txt (line 137))
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting wcwidth==0.2.14 (from -r requirements.txt (line 138))
+  Downloading wcwidth-0.2.14-py2.py3-none-any.whl.metadata (15 kB)
+Collecting webcolors==24.11.1 (from -r requirements.txt (line 139))
+  Downloading webcolors-24.11.1-py3-none-any.whl.metadata (2.2 kB)
+Collecting webencodings==0.5.1 (from -r requirements.txt (line 140))
+  Downloading webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+Collecting websocket-client==1.9.0 (from -r requirements.txt (line 141))
+  Downloading websocket_client-1.9.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting Werkzeug==3.1.3 (from -r requirements.txt (line 142))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting widgetsnbextension==4.0.14 (from -r requirements.txt (line 143))
+  Downloading widgetsnbextension-4.0.14-py3-none-any.whl.metadata (1.6 kB)
+Collecting wrapt==2.0.0 (from -r requirements.txt (line 144))
+  Downloading wrapt-2.0.0-cp312-cp312-win_amd64.whl.metadata (9.0 kB)
+Collecting zipp==3.23.0 (from -r requirements.txt (line 145))
+  Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting wheel&lt;1.0,&gt;=0.23.0 (from astunparse==1.6.3-&gt;-r requirements.txt (line 8))
+  Downloading wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting colorama (from ipython==8.18.1-&gt;-r requirements.txt (line 41))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting pywin32&gt;=300 (from jupyter_core==5.8.1-&gt;-r requirements.txt (line 56))
+  Downloading pywin32-311-cp312-cp312-win_amd64.whl.metadata (10 kB)
+Collecting pywinpty&gt;=2.0.1 (from jupyter_server==2.17.0-&gt;-r requirements.txt (line 57))
+  Downloading pywinpty-3.0.3-cp312-cp312-win_amd64.whl.metadata (5.9 kB)
+Collecting setuptools&gt;=41.1.0 (from jupyterlab==4.4.10-&gt;-r requirements.txt (line 59))
+  Downloading setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+Downloading absl_py-2.3.1-py3-none-any.whl (135 kB)
+Downloading anyio-4.11.0-py3-none-any.whl (109 kB)
+Downloading appnope-0.1.4-py2.py3-none-any.whl (4.3 kB)
+Downloading argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+Downloading argon2_cffi_bindings-25.1.0-cp39-abi3-win_amd64.whl (31 kB)
+Downloading arrow-1.4.0-py3-none-any.whl (68 kB)
+Downloading asttokens-3.0.0-py3-none-any.whl (26 kB)
+Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading async_lru-2.0.5-py3-none-any.whl (6.1 kB)
+Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 5.9 MB/s  0:00:01
+Downloading beautifulsoup4-4.14.2-py3-none-any.whl (106 kB)
+Downloading bleach-6.2.0-py3-none-any.whl (163 kB)
+Downloading certifi-2025.10.5-py3-none-any.whl (163 kB)
+Downloading cffi-2.0.0-cp312-cp312-win_amd64.whl (183 kB)
+Downloading charset_normalizer-3.4.4-cp312-cp312-win_amd64.whl (107 kB)
+Downloading comm-0.2.3-py3-none-any.whl (7.3 kB)
+Downloading contourpy-1.3.0-cp312-cp312-win_amd64.whl (218 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading debugpy-1.8.17-cp312-cp312-win_amd64.whl (5.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 6.1 MB/s  0:00:00
+Downloading decorator-5.2.1-py3-none-any.whl (9.2 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
+Downloading executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Downloading fastjsonschema-2.21.2-py3-none-any.whl (24 kB)
+Downloading flatbuffers-25.9.23-py2.py3-none-any.whl (30 kB)
+Downloading fonttools-4.60.1-cp312-cp312-win_amd64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 5.6 MB/s  0:00:00
+Downloading fqdn-1.5.1-py3-none-any.whl (9.1 kB)
+Downloading gast-0.6.0-py3-none-any.whl (21 kB)
+Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Downloading grpcio-1.76.0-cp312-cp312-win_amd64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 5.9 MB/s  0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading h5py-3.14.0-cp312-cp312-win_amd64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 5.7 MB/s  0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading idna-3.11-py3-none-any.whl (71 kB)
+Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+Downloading ipykernel-6.31.0-py3-none-any.whl (117 kB)
+Downloading ipython-8.18.1-py3-none-any.whl (808 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.2/808.2 kB 5.0 MB/s  0:00:00
+Downloading prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+Downloading ipywidgets-8.1.7-py3-none-any.whl (139 kB)
+Downloading jupyterlab_widgets-3.0.15-py3-none-any.whl (216 kB)
+Downloading widgetsnbextension-4.0.14-py3-none-any.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 5.2 MB/s  0:00:00
+Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)
+Downloading jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 5.6 MB/s  0:00:00
+Downloading parso-0.8.5-py2.py3-none-any.whl (106 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+Downloading json5-0.12.1-py3-none-any.whl (36 kB)
+Downloading jsonpointer-3.0.0-py2.py3-none-any.whl (7.6 kB)
+Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading jupyter-1.1.1-py2.py3-none-any.whl (2.7 kB)
+Downloading jupyter_console-6.6.3-py3-none-any.whl (24 kB)
+Downloading jupyter_events-0.12.0-py3-none-any.whl (19 kB)
+Downloading jupyter_lsp-2.3.0-py3-none-any.whl (76 kB)
+Downloading jupyter_client-8.6.3-py3-none-any.whl (106 kB)
+Downloading jupyter_core-5.8.1-py3-none-any.whl (28 kB)
+Downloading jupyter_server-2.17.0-py3-none-any.whl (388 kB)
+Downloading jupyter_server_terminals-0.5.3-py3-none-any.whl (13 kB)
+Downloading jupyterlab-4.4.10-py3-none-any.whl (12.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 5.8 MB/s  0:00:02
+Downloading jupyterlab_server-2.28.0-py3-none-any.whl (59 kB)
+Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+Downloading keras-3.10.0-py3-none-any.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 5.5 MB/s  0:00:00
+Downloading kiwisolver-1.4.7-cp312-cp312-win_amd64.whl (55 kB)
+Downloading lark-1.3.1-py3-none-any.whl (113 kB)
+Downloading libclang-18.1.1-py2.py3-none-win_amd64.whl (26.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.4/26.4 MB 6.2 MB/s  0:00:04
+Downloading markdown-3.9-py3-none-any.whl (107 kB)
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading markupsafe-3.0.3-cp312-cp312-win_amd64.whl (15 kB)
+Downloading matplotlib-3.9.4-cp312-cp312-win_amd64.whl (7.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 6.0 MB/s  0:00:01
+Downloading matplotlib_inline-0.2.1-py3-none-any.whl (9.5 kB)
+Downloading mistune-3.1.4-py3-none-any.whl (53 kB)
+Downloading ml_dtypes-0.5.3-cp312-cp312-win_amd64.whl (208 kB)
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 4.4 MB/s  0:00:00
+Downloading namex-0.1.0-py3-none-any.whl (5.9 kB)
+Downloading nbclient-0.10.2-py3-none-any.whl (25 kB)
+Downloading nbconvert-7.16.6-py3-none-any.whl (258 kB)
+Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
+Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Downloading notebook-7.4.7-py3-none-any.whl (14.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.3/14.3 MB 5.8 MB/s  0:00:02
+Downloading notebook_shim-0.2.4-py3-none-any.whl (13 kB)
+Downloading numpy-2.0.2-cp312-cp312-win_amd64.whl (15.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 5.6 MB/s  0:00:02
+Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+Downloading optree-0.17.0-cp312-cp312-win_amd64.whl (314 kB)
+Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading pandas-2.3.3-cp312-cp312-win_amd64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 6.1 MB/s  0:00:01
+Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Downloading pillow-11.3.0-cp312-cp312-win_amd64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 5.7 MB/s  0:00:01
+Downloading platformdirs-4.4.0-py3-none-any.whl (18 kB)
+Downloading prometheus_client-0.23.1-py3-none-any.whl (61 kB)
+Downloading protobuf-6.33.0-cp310-abi3-win_amd64.whl (436 kB)
+Downloading psutil-7.1.2-cp37-abi3-win_amd64.whl (246 kB)
+Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 6.1 MB/s  0:00:00
+Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading python_json_logger-4.0.0-py3-none-any.whl (15 kB)
+Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Downloading pyzmq-27.1.0-cp312-abi3-win_amd64.whl (619 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 619.5/619.5 kB 4.6 MB/s  0:00:00
+Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+Downloading rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)
+Downloading rfc3987_syntax-1.1.0-py3-none-any.whl (8.0 kB)
+Downloading rich-14.2.0-py3-none-any.whl (243 kB)
+Downloading rpds_py-0.27.1-cp312-cp312-win_amd64.whl (232 kB)
+Downloading scikit_learn-1.6.1-cp312-cp312-win_amd64.whl (11.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 6.0 MB/s  0:00:01
+Downloading scipy-1.13.1-cp312-cp312-win_amd64.whl (45.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.9/45.9 MB 6.3 MB/s  0:00:07
+Downloading Send2Trash-1.8.3-py3-none-any.whl (18 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading soupsieve-2.8-py3-none-any.whl (36 kB)
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 6.2 MB/s  0:00:01
+Downloading tensorboard-2.20.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 6.5 MB/s  0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Downloading tensorflow-2.20.0-cp312-cp312-win_amd64.whl (331.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 331.9/331.9 MB 6.0 MB/s  0:00:54
+Downloading termcolor-3.1.0-py3-none-any.whl (7.7 kB)
+Downloading terminado-0.18.1-py3-none-any.whl (14 kB)
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading tinycss2-1.4.0-py3-none-any.whl (26 kB)
+Downloading tomli-2.3.0-cp312-cp312-win_amd64.whl (107 kB)
+Downloading tornado-6.5.2-cp39-abi3-win_amd64.whl (445 kB)
+Downloading traitlets-5.14.3-py3-none-any.whl (85 kB)
+Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)
+Downloading wcwidth-0.2.14-py2.py3-none-any.whl (37 kB)
+Downloading webcolors-24.11.1-py3-none-any.whl (14 kB)
+Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Downloading websocket_client-1.9.0-py3-none-any.whl (82 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Downloading wrapt-2.0.0-cp312-cp312-win_amd64.whl (60 kB)
+Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Downloading wheel-0.47.0-py3-none-any.whl (32 kB)
+Downloading pywin32-311-cp312-cp312-win_amd64.whl (9.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 5.6 MB/s  0:00:01
+Downloading pywinpty-3.0.3-cp312-cp312-win_amd64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 5.4 MB/s  0:00:00
+Downloading setuptools-82.0.1-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 3.7 MB/s  0:00:00
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Installing collected packages: webencodings, pywin32, pytz, pure_eval, ptyprocess, namex, mpmath, libclang, flatbuffers, fastjsonschema, zipp, wrapt, widgetsnbextension, websocket-client, webcolors, wcwidth, urllib3, uri-template, tzdata, typing_extensions, traitlets, tornado, tomli, tinycss2, threadpoolctl, termcolor, tensorboard-data-server, sympy, soupsieve, sniffio, six, setuptools, Send2Trash, rpds-py, rfc3986-validator, pyzmq, PyYAML, pywinpty, python-json-logger, pyparsing, Pygments, pycparser, psutil, protobuf, prometheus_client, platformdirs, pillow, pexpect, parso, pandocfilters, packaging, overrides, opt_einsum, numpy, nest-asyncio, mistune, mdurl, MarkupSafe, Markdown, lark, kiwisolver, jupyterlab_widgets, jupyterlab_pygments, jsonpointer, json5, joblib, importlib_resources, idna, h11, gast, fqdn, fonttools, executing, et_xmlfile, defusedxml, decorator, debugpy, cycler, comm, colorama, charset-normalizer, certifi, bleach, babel, attrs, async-lru, asttokens, appnope, absl-py, wheel, Werkzeug, terminado, stack-data, scipy, rfc3987-syntax, rfc3339-validator, requests, referencing, python-dateutil, prompt_toolkit, optree, openpyxl, ml_dtypes, matplotlib-inline, markdown-it-py, jupyter_core, Jinja2, jedi, importlib_metadata, httpcore, h5py, grpcio, google-pasta, exceptiongroup, contourpy, cffi, beautifulsoup4, anyio, tensorboard, scikit-learn, rich, pandas, matplotlib, jupyter_server_terminals, jupyter_client, jsonschema-specifications, ipython, httpx, astunparse, arrow, argon2-cffi-bindings, keras, jsonschema, isoduration, ipywidgets, ipykernel, argon2-cffi, tensorflow, nbformat, jupyter-console, nbclient, jupyter-events, nbconvert, jupyter_server, notebook_shim, jupyterlab_server, jupyter-lsp, jupyterlab, notebook, jupyter
+Successfully installed Jinja2-3.1.6 Markdown-3.9 MarkupSafe-3.0.3 PyYAML-6.0.3 Pygments-2.19.2 Send2Trash-1.8.3 Werkzeug-3.1.3 absl-py-2.3.1 anyio-4.11.0 appnope-0.1.4 argon2-cffi-25.1.0 argon2-cffi-bindings-25.1.0 arrow-1.4.0 asttokens-3.0.0 astunparse-1.6.3 async-lru-2.0.5 attrs-25.4.0 babel-2.17.0 beautifulsoup4-4.14.2 bleach-6.2.0 certifi-2025.10.5 cffi-2.0.0 charset-normalizer-3.4.4 colorama-0.4.6 comm-0.2.3 contourpy-1.3.0 cycler-0.12.1 debugpy-1.8.17 decorator-5.2.1 defusedxml-0.7.1 et_xmlfile-2.0.0 exceptiongroup-1.3.0 executing-2.2.1 fastjsonschema-2.21.2 flatbuffers-25.9.23 fonttools-4.60.1 fqdn-1.5.1 gast-0.6.0 google-pasta-0.2.0 grpcio-1.76.0 h11-0.16.0 h5py-3.14.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 importlib_metadata-8.7.0 importlib_resources-6.5.2 ipykernel-6.31.0 ipython-8.18.1 ipywidgets-8.1.7 isoduration-20.11.0 jedi-0.19.2 joblib-1.5.2 json5-0.12.1 jsonpointer-3.0.0 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 jupyter-1.1.1 jupyter-console-6.6.3 jupyter-events-0.12.0 jupyter-lsp-2.3.0 jupyter_client-8.6.3 jupyter_core-5.8.1 jupyter_server-2.17.0 jupyter_server_terminals-0.5.3 jupyterlab-4.4.10 jupyterlab_pygments-0.3.0 jupyterlab_server-2.28.0 jupyterlab_widgets-3.0.15 keras-3.10.0 kiwisolver-1.4.7 lark-1.3.1 libclang-18.1.1 markdown-it-py-3.0.0 matplotlib-3.9.4 matplotlib-inline-0.2.1 mdurl-0.1.2 mistune-3.1.4 ml_dtypes-0.5.3 mpmath-1.3.0 namex-0.1.0 nbclient-0.10.2 nbconvert-7.16.6 nbformat-5.10.4 nest-asyncio-1.6.0 notebook-7.4.7 notebook_shim-0.2.4 numpy-2.0.2 openpyxl-3.1.5 opt_einsum-3.4.0 optree-0.17.0 overrides-7.7.0 packaging-25.0 pandas-2.3.3 pandocfilters-1.5.1 parso-0.8.5 pexpect-4.9.0 pillow-11.3.0 platformdirs-4.4.0 prometheus_client-0.23.1 prompt_toolkit-3.0.52 protobuf-6.33.0 psutil-7.1.2 ptyprocess-0.7.0 pure_eval-0.2.3 pycparser-2.23 pyparsing-3.2.5 python-dateutil-2.9.0.post0 python-json-logger-4.0.0 pytz-2025.2 pywin32-311 pywinpty-3.0.3 pyzmq-27.1.0 referencing-0.36.2 requests-2.32.5 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rfc3987-syntax-1.1.0 rich-14.2.0 rpds-py-0.27.1 scikit-learn-1.6.1 scipy-1.13.1 setuptools-82.0.1 six-1.17.0 sniffio-1.3.1 soupsieve-2.8 stack-data-0.6.3 sympy-1.14.0 tensorboard-2.20.0 tensorboard-data-server-0.7.2 tensorflow-2.20.0 termcolor-3.1.0 terminado-0.18.1 threadpoolctl-3.6.0 tinycss2-1.4.0 tomli-2.3.0 tornado-6.5.2 traitlets-5.14.3 typing_extensions-4.15.0 tzdata-2025.2 uri-template-1.3.0 urllib3-2.5.0 wcwidth-0.2.14 webcolors-24.11.1 webencodings-0.5.1 websocket-client-1.9.0 wheel-0.47.0 widgetsnbextension-4.0.14 wrapt-2.0.0 zipp-3.23.0
+
+(tf) D:\evns&gt;
+</code></pre><ul><li>Check installed packages</li></ul><pre tabindex=0><code>(tf) D:\evns&gt;pip list
+Package                   Version
+------------------------- -----------
+absl-py                   2.3.1
+anyio                     4.11.0
+appnope                   0.1.4
+argon2-cffi               25.1.0
+argon2-cffi-bindings      25.1.0
+arrow                     1.4.0
+asttokens                 3.0.0
+astunparse                1.6.3
+async-lru                 2.0.5
+attrs                     25.4.0
+babel                     2.17.0
+beautifulsoup4            4.14.2
+bleach                    6.2.0
+certifi                   2025.10.5
+cffi                      2.0.0
+charset-normalizer        3.4.4
+colorama                  0.4.6
+comm                      0.2.3
+contourpy                 1.3.0
+cycler                    0.12.1
+debugpy                   1.8.17
+decorator                 5.2.1
+defusedxml                0.7.1
+et_xmlfile                2.0.0
+exceptiongroup            1.3.0
+executing                 2.2.1
+fastjsonschema            2.21.2
+flatbuffers               25.9.23
+fonttools                 4.60.1
+fqdn                      1.5.1
+gast                      0.6.0
+google-pasta              0.2.0
+grpcio                    1.76.0
+h11                       0.16.0
+h5py                      3.14.0
+httpcore                  1.0.9
+httpx                     0.28.1
+idna                      3.11
+importlib_metadata        8.7.0
+importlib_resources       6.5.2
+ipykernel                 6.31.0
+ipython                   8.18.1
+ipywidgets                8.1.7
+isoduration               20.11.0
+jedi                      0.19.2
+Jinja2                    3.1.6
+joblib                    1.5.2
+json5                     0.12.1
+jsonpointer               3.0.0
+jsonschema                4.25.1
+jsonschema-specifications 2025.9.1
+jupyter                   1.1.1
+jupyter_client            8.6.3
+jupyter-console           6.6.3
+jupyter_core              5.8.1
+jupyter-events            0.12.0
+jupyter-lsp               2.3.0
+jupyter_server            2.17.0
+jupyter_server_terminals  0.5.3
+jupyterlab                4.4.10
+jupyterlab_pygments       0.3.0
+jupyterlab_server         2.28.0
+jupyterlab_widgets        3.0.15
+keras                     3.10.0
+kiwisolver                1.4.7
+lark                      1.3.1
+libclang                  18.1.1
+Markdown                  3.9
+markdown-it-py            3.0.0
+MarkupSafe                3.0.3
+matplotlib                3.9.4
+matplotlib-inline         0.2.1
+mdurl                     0.1.2
+mistune                   3.1.4
+ml_dtypes                 0.5.3
+mpmath                    1.3.0
+namex                     0.1.0
+nbclient                  0.10.2
+nbconvert                 7.16.6
+nbformat                  5.10.4
+nest-asyncio              1.6.0
+notebook                  7.4.7
+notebook_shim             0.2.4
+numpy                     2.0.2
+openpyxl                  3.1.5
+opt_einsum                3.4.0
+optree                    0.17.0
+overrides                 7.7.0
+packaging                 25.0
+pandas                    2.3.3
+pandocfilters             1.5.1
+parso                     0.8.5
+pexpect                   4.9.0
+pillow                    11.3.0
+pip                       26.1.1
+platformdirs              4.4.0
+prometheus_client         0.23.1
+prompt_toolkit            3.0.52
+protobuf                  6.33.0
+psutil                    7.1.2
+ptyprocess                0.7.0
+pure_eval                 0.2.3
+pycparser                 2.23
+Pygments                  2.19.2
+pyparsing                 3.2.5
+python-dateutil           2.9.0.post0
+python-json-logger        4.0.0
+pytz                      2025.2
+pywin32                   311
+pywinpty                  3.0.3
+PyYAML                    6.0.3
+pyzmq                     27.1.0
+referencing               0.36.2
+requests                  2.32.5
+rfc3339-validator         0.1.4
+rfc3986-validator         0.1.1
+rfc3987-syntax            1.1.0
+rich                      14.2.0
+rpds-py                   0.27.1
+scikit-learn              1.6.1
+scipy                     1.13.1
+Send2Trash                1.8.3
+setuptools                82.0.1
+six                       1.17.0
+sniffio                   1.3.1
+soupsieve                 2.8
+stack-data                0.6.3
+sympy                     1.14.0
+tensorboard               2.20.0
+tensorboard-data-server   0.7.2
+tensorflow                2.20.0
+termcolor                 3.1.0
+terminado                 0.18.1
+threadpoolctl             3.6.0
+tinycss2                  1.4.0
+tomli                     2.3.0
+tornado                   6.5.2
+traitlets                 5.14.3
+typing_extensions         4.15.0
+tzdata                    2025.2
+uri-template              1.3.0
+urllib3                   2.5.0
+wcwidth                   0.2.14
+webcolors                 24.11.1
+webencodings              0.5.1
+websocket-client          1.9.0
+Werkzeug                  3.1.3
+wheel                     0.47.0
+widgetsnbextension        4.0.14
+wrapt                     2.0.0
+zipp                      3.23.0
+
+(tf) D:\evns&gt;
+</code></pre><ul><li>0741 Done.</li><li>Deactivate virtual environment</li></ul><pre tabindex=0><code>(tf) D:\evns&gt;deactivate
+D:\evns&gt;exit
+</code></pre></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></main><footer><link rel=stylesheet href='/css/footer.css?v=1780106907'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>
