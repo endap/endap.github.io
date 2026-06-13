@@ -1947,7 +1947,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;293&lt;/div&gt;
+ &lt;div class="count"&gt;296&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;notes&lt;/div&gt;
@@ -11256,8 +11256,279 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
  &lt;div class="beg"&gt;01&lt;/div&gt;
  &lt;div class="end"&gt;01&lt;/div&gt;
  &lt;/div&gt;
+&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx19/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx19/</guid><description>&lt;p&gt;&lt;strong&gt;idea refining&lt;/strong&gt; &amp;mdash; process of abstract realization&lt;/p&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f26/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;03&lt;/div&gt;
+ &lt;div class="url"&gt;26f26&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;matrix heatmap viewer&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;13&lt;/div&gt;
+ &lt;div class="end"&gt;13&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f25/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;02&lt;/div&gt;
+ &lt;div class="url"&gt;26f25&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;story-board for debug-ging&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;13&lt;/div&gt;
+ &lt;div class="end"&gt;13&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f21/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;01&lt;/div&gt;
+ &lt;div class="url"&gt;26f21&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;idea refining -- the name&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;11&lt;/div&gt;
+ &lt;div class="end"&gt;11&lt;/div&gt;
+ &lt;/div&gt;
 &lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 10-jun-2026&lt;/p&gt;
+&lt;p&gt;&amp;lt; 11-jun-2026&lt;/p&gt;
 &lt;style&gt;
 .category-card {
  display: inline-flex;
@@ -11323,131 +11594,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx16/"&gt;
- &lt;div class="top-row"&gt;
- 
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" viewBox="0 0 455 455" xml:space="preserve" width="512" height="512"&gt;
-&lt;g&gt;
-	&lt;path style="fill:#CC8073;" d="M251.5,382.5h91l15,10l15-10H390c35.9,0,65-29.1,65-65s-29.1-65-65-65h-37.5v30H390 c19.3,0,35,15.7,35,35s-15.7,35-35,35h-17.5l-15-10l-15,10h-91V382.5z M211.5,352.5H202.5l-15-20l-15,20H65c-19.3,0-35-15.7-35-35 s15.7-35,35-35h7.5l15,10l15-10h40l20-15l-20-15h-40l-15-10l-15,10H65c-35.9,0-65,29.1-65,65s29.1,65,65,65h107.5l15,20l15-20 h9.001l20-15L211.5,352.5z M312.5,252.5l-130,0v30h130l20-15L312.5,252.5z"/&gt;
-	&lt;rect x="142.5" y="252.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;rect x="312.5" y="252.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;rect x="211.5" y="352.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;path style="fill:#CC8073;" d="M251.5,212.5h91l15,10l15-10H390c35.9,0,65-29.1,65-65s-29.1-65-65-65l-37.5,0v30H390 c19.3,0,35,15.7,35,35s-15.7,35-35,35h-17.5l-15-10l-15,10h-91V212.5z M211.5,182.5H202.5l-15-20l-15,20H65c-19.3,0-35-15.7-35-35 s15.7-35,35-35h7.5l15,10l15-10h40l20-15l-20-15l-40,0l-15-10l-15,10H65c-35.9,0-65,29.1-65,65s29.1,65,65,65h107.5l15,20l15-20 h9.001l20-15L211.5,182.5z M312.5,82.5l-130,0v30h130l20-15L312.5,82.5z"/&gt;
-	&lt;rect x="142.5" y="82.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;rect x="312.5" y="82.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;rect x="211.5" y="182.5" style="fill:#B26156;" width="40" height="30"/&gt;
-	&lt;path style="fill:#FFC5BB;" d="M137.5,0c-35.9,0-65,29.1-65,65v17.5h30V65c0-19.3,15.7-35,35-35s35,15.7,35,35v117.5h30V65 C202.5,29.1,173.4,0,137.5,0z"/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="102.5,282.5 102.5,312.5 87.5,332.5 72.5,312.5 72.5,282.5 "/&gt;
-	&lt;path style="fill:#FFC5BB;" d="M172.5,382.5v7.5c0,19.3-15.7,35-35,35s-35-15.7-35-35v-77.5h-30V390c0,35.9,29.1,65,65,65 s65-29.1,65-65v-7.5H172.5z"/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="272.5,282.5 272.5,312.5 257.5,332.5 242.5,312.5 242.5,282.5 "/&gt;
-	&lt;path style="fill:#FFC5BB;" d="M342.5,382.5v7.5c0,19.3-15.7,35-35,35s-35-15.7-35-35v-77.5h-30V390c0,35.9,29.1,65,65,65 s65-29.1,65-65v-7.5H342.5z"/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="372.5,212.5 372.5,242.5 357.5,262.5 342.5,242.5 342.5,212.5 "/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="102.5,112.5 102.5,142.5 87.5,162.5 72.5,142.5 72.5,112.5 "/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="272.5,112.5 272.5,142.5 257.5,162.5 242.5,142.5 242.5,112.5 "/&gt;
-	&lt;rect x="72.5" y="142.5" style="fill:#FFC5BB;" width="30" height="110"/&gt;
-	&lt;rect x="242.5" y="142.5" style="fill:#FFC5BB;" width="30" height="110"/&gt;
-	&lt;path style="fill:#FFC5BB;" d="M307.5,0c-35.9,0-65,29.1-65,65v17.5h30V65c0-19.3,15.7-35,35-35s35,15.7,35,35v117.5h30V65 C372.5,29.1,343.4,0,307.5,0z"/&gt;
-	&lt;rect x="342.5" y="242.5" style="fill:#FFC5BB;" width="30" height="110"/&gt;
-	&lt;polygon style="fill:#FFA4A9;" points="202.5,212.5 202.5,242.5 187.5,262.5 172.5,242.5 172.5,212.5 "/&gt;
-	&lt;rect x="172.5" y="242.5" style="fill:#FFC5BB;" width="30" height="110"/&gt;
-&lt;/g&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;2&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;anyam&lt;/div&gt;
- &lt;/div&gt;
-&lt;/a&gt;
-
-
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
-
-
-
-&lt;a class="category-card" href="https://endap.github.io/idx15/"&gt;
+&lt;a class="category-card" href="https://endap.github.io/idx05/"&gt;
  &lt;div class="top-row"&gt;
  
  
@@ -11455,17 +11602,17 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
  &lt;div class="logo-container"&gt;
  &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --&gt;
-&lt;svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"&gt;
+&lt;svg width="256px" height="256px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;g id="SVGRepo_bgCarrier" stroke-width="0"/&gt;
 &lt;g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/&gt;
-&lt;g id="SVGRepo_iconCarrier"&gt; &lt;defs&gt; &lt;style&gt;.c{stroke:#008cb4;}.c,.d{fill:none;stroke-linecap:round;stroke-linejoin:round;}.d{stroke:#4eb8ff;}&lt;/style&gt; &lt;/defs&gt; &lt;g id="a"/&gt; &lt;g id="b"&gt; &lt;rect class="c" height="4" width="4" x="2.5" y="2.5"/&gt; &lt;rect class="c" height="4" width="4" x="10" y="2.5"/&gt; &lt;rect class="c" height="4" width="4" x="17.5" y="2.5"/&gt; &lt;rect class="c" height="4" width="4" x="2.5" y="10"/&gt; &lt;rect class="c" height="4" width="4" x="10" y="10"/&gt; &lt;rect class="c" height="4" width="4" x="17.5" y="10"/&gt; &lt;rect class="c" height="4" width="4" x="2.5" y="17.5"/&gt; &lt;rect class="c" height="4" width="4" x="10" y="17.5"/&gt; &lt;rect class="d" height="4" width="4" x="17.5" y="17.5"/&gt; &lt;/g&gt; &lt;/g&gt;
+&lt;g id="SVGRepo_iconCarrier"&gt; &lt;path d="M14.217 3.49965C12.796 2.83345 11.2035 2.83345 9.78252 3.49965L5.48919 5.51246C6.27114 5.59683 6.98602 6.0894 7.31789 6.86377C7.80739 8.00594 7.2783 9.32867 6.13613 9.81817L5.06046 10.2792C4.52594 10.5082 4.22261 10.6406 4.01782 10.7456C4.0167 10.7619 4.01564 10.7788 4.01465 10.7962L9.78261 13.5003C11.2036 14.1665 12.7961 14.1665 14.2171 13.5003L20.9082 10.3634C22.3637 9.68105 22.3637 7.31899 20.9082 6.63664L14.217 3.49965Z" fill="#0061ff"/&gt; &lt;path d="M5.54544 8.43955C5.92616 8.27638 6.10253 7.83547 5.93936 7.45475C5.7762 7.07403 5.33529 6.89767 4.95456 7.06083L3.84318 7.53714C3.28571 7.77603 2.81328 7.97849 2.44254 8.18705C2.04805 8.40898 1.70851 8.66944 1.45419 9.05513C1.19986 9.44083 1.09421 9.85551 1.04563 10.3055C0.999964 10.7284 0.999981 11.2424 1 11.8489V14.7502C1 15.1644 1.33579 15.5002 1.75 15.5002C2.16422 15.5002 2.5 15.1644 2.5 14.7502V11.8878C2.5 11.232 2.50101 10.7995 2.53696 10.4665C2.57095 10.1517 2.63046 9.99612 2.70645 9.88087C2.78244 9.76562 2.90202 9.64964 3.178 9.49438C3.46985 9.33019 3.867 9.15889 4.46976 8.90056L5.54544 8.43955Z" fill="#0061ff"/&gt; &lt;path opacity="0.5" d="M5 11.2582L9.78261 13.5004C11.2036 14.1666 12.7961 14.1666 14.2171 13.5004L19 11.2581V16.6253C19 17.6333 18.4965 18.5771 17.6147 19.0654C16.1463 19.8786 13.796 20.9999 12 20.9999C10.204 20.9999 7.8537 19.8786 6.38533 19.0654C5.5035 18.5771 5 17.6333 5 16.6253V11.2582Z" fill="#0061ff"/&gt; &lt;/g&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;5&lt;/div&gt;
+ &lt;div class="count"&gt;3&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;apps 2&lt;/div&gt;
+ &lt;div class="title"&gt;acads&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
@@ -11535,7 +11682,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx06"&gt;
+&lt;a class="category-card" href="https://endap.github.io/idx18"&gt;
  &lt;div class="top-row"&gt;
  
  
@@ -11543,117 +11690,34 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
  &lt;div class="logo-container"&gt;
  &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 511.6 511.6" xml:space="preserve"&gt;
-&lt;polygon style="fill:#FFCE54;" points="315.753,74.602 0,74.602 0,394.344 234.488,394.344 319.75,436.998 319.735,394.344 
-	383.699,394.344 383.699,138.552 "/&gt;
-&lt;polygon style="fill:#E6E9ED;" points="483.122,335.734 454.801,335.734 426.322,424.555 468.977,452.986 511.6,424.555 "/&gt;
+&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve"&gt;
+&lt;path style="fill:#BFE4F8;" d="M256,512c-56.944,0-110.151-27.31-149.822-76.899C67.722,387.033,46.545,323.429,46.545,256
+	s21.177-131.033,59.632-179.102C145.849,27.31,199.056,0,256,0s110.153,27.31,149.824,76.899
+	c38.454,48.066,59.631,111.672,59.631,179.101s-21.177,131.035-59.631,179.101C366.153,484.69,312.944,512,256,512z M256,46.545
+	c-89.828,0-162.909,93.961-162.909,209.455S166.172,465.455,256,465.455S418.909,371.493,418.909,256S345.83,46.545,256,46.545z"/&gt;
+&lt;path style="fill:#93C7EF;" d="M256,512v-46.545c89.83,0,162.909-93.961,162.909-209.455S345.83,46.545,256,46.545V0
+	c56.944,0,110.153,27.31,149.824,76.899c38.454,48.066,59.631,111.672,59.631,179.101s-21.177,131.035-59.631,179.101
+	C366.153,484.69,312.944,512,256,512z"/&gt;
 &lt;g&gt;
-	&lt;path style="fill:#656D78;" d="M468.977,58.614c-23.56,0-42.654,19.086-42.654,42.638v277.104H511.6V101.253
-		C511.6,77.701,492.522,58.614,468.977,58.614z"/&gt;
-	&lt;path style="fill:#656D78;" d="M319.75,310.378H63.95c-5.887,0-10.656-4.777-10.656-10.647c0-5.902,4.77-10.664,10.656-10.664
-		h255.8c5.886,0,10.647,4.762,10.647,10.664C330.398,305.601,325.636,310.378,319.75,310.378z"/&gt;
-	&lt;path style="fill:#656D78;" d="M319.75,246.436H63.95c-5.887,0-10.656-4.778-10.656-10.664s4.77-10.656,10.656-10.656h255.8
-		c5.886,0,10.647,4.77,10.647,10.656S325.636,246.436,319.75,246.436z"/&gt;
-	&lt;path style="fill:#656D78;" d="M202.506,182.487H63.95c-5.887,0-10.656-4.778-10.656-10.664s4.77-10.655,10.656-10.655h138.556
-		c5.886,0,10.663,4.77,10.663,10.655C213.169,177.709,208.392,182.487,202.506,182.487z"/&gt;
+	&lt;circle style="fill:#3C5D76;" cx="256" cy="23.273" r="23.273"/&gt;
+	&lt;circle style="fill:#3C5D76;" cx="256" cy="380.121" r="100.848"/&gt;
 &lt;/g&gt;
-&lt;polygon style="fill:#F6BB42;" points="315.753,74.602 315.753,138.552 383.699,138.552 "/&gt;
+&lt;path style="fill:#1E2E3B;" d="M256,279.273c55.698,0,100.848,45.152,100.848,100.848c0,55.696-45.151,100.849-100.848,100.849"/&gt;
+&lt;rect x="287.03" y="310.303" style="fill:#3C5D76;" width="62.061" height="46.545"/&gt;
+&lt;rect x="162.909" y="403.394" style="fill:#5A8BB0;" width="93.091" height="46.545"/&gt;
+&lt;path style="fill:#BFE4F8;" d="M256,294.788c47.053,0,85.333,38.281,85.333,85.333S303.053,465.455,256,465.455
+	s-85.333-38.281-85.333-85.333S208.947,294.788,256,294.788 M256,248.242c-72.834,0-131.879,59.044-131.879,131.879
+	S183.166,512,256,512s131.879-59.044,131.879-131.879S328.834,248.242,256,248.242L256,248.242z"/&gt;
+&lt;path style="fill:#93C7EF;" d="M256,248.242v46.545c47.053,0,85.333,38.281,85.333,85.333S303.053,465.455,256,465.455V512
+	c72.834,0,131.879-59.044,131.879-131.879S328.834,248.242,256,248.242z"/&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;5&lt;/div&gt;
+ &lt;div class="count"&gt;4&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;blogs&lt;/div&gt;
- &lt;/div&gt;
-&lt;/a&gt;
-
-
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
-
-
-
-&lt;a class="category-card" href="https://endap.github.io/idx03/"&gt;
- &lt;div class="top-row"&gt;
- 
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --&gt;
-&lt;svg width="256px" height="256px" viewBox="-51.2 -51.2 614.40 614.40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="scale(1.7)"&gt;
-&lt;g id="SVGRepo_bgCarrier" stroke-width="0"/&gt;
-&lt;g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/&gt;
-&lt;g id="SVGRepo_iconCarrier"&gt; &lt;title&gt;ai&lt;/title&gt; &lt;g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"&gt; &lt;g id="icon" fill="#0dba38" transform="translate(64.000000, 64.000000)"&gt; &lt;path d="M320,64 L320,320 L64,320 L64,64 L320,64 Z M171.749388,128 L146.817842,128 L99.4840387,256 L121.976629,256 L130.913039,230.977 L187.575039,230.977 L196.319607,256 L220.167172,256 L171.749388,128 Z M260.093778,128 L237.691519,128 L237.691519,256 L260.093778,256 L260.093778,128 Z M159.094727,149.47526 L181.409039,213.333 L137.135039,213.333 L159.094727,149.47526 Z M341.333333,256 L384,256 L384,298.666667 L341.333333,298.666667 L341.333333,256 Z M85.3333333,341.333333 L128,341.333333 L128,384 L85.3333333,384 L85.3333333,341.333333 Z M170.666667,341.333333 L213.333333,341.333333 L213.333333,384 L170.666667,384 L170.666667,341.333333 Z M85.3333333,0 L128,0 L128,42.6666667 L85.3333333,42.6666667 L85.3333333,0 Z M256,341.333333 L298.666667,341.333333 L298.666667,384 L256,384 L256,341.333333 Z M170.666667,0 L213.333333,0 L213.333333,42.6666667 L170.666667,42.6666667 L170.666667,0 Z M256,0 L298.666667,0 L298.666667,42.6666667 L256,42.6666667 L256,0 Z M341.333333,170.666667 L384,170.666667 L384,213.333333 L341.333333,213.333333 L341.333333,170.666667 Z M0,256 L42.6666667,256 L42.6666667,298.666667 L0,298.666667 L0,256 Z M341.333333,85.3333333 L384,85.3333333 L384,128 L341.333333,128 L341.333333,85.3333333 Z M0,170.666667 L42.6666667,170.666667 L42.6666667,213.333333 L0,213.333333 L0,170.666667 Z M0,85.3333333 L42.6666667,85.3333333 L42.6666667,128 L0,128 L0,85.3333333 Z" id="Combined-Shape"&gt; &lt;/path&gt; &lt;/g&gt; &lt;/g&gt; &lt;/g&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;8&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;chats&lt;/div&gt;
+ &lt;div class="title"&gt;ai-soul&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
@@ -11806,7 +11870,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx14/"&gt;
+&lt;a class="category-card" href="https://endap.github.io/idx19/"&gt;
  &lt;div class="top-row"&gt;
  
  
@@ -11816,43 +11880,151 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
 &lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 512 512" xml:space="preserve"&gt;
-&lt;path style="fill:#87868A;" d="M169.01,280.836c-0.839,1.28-20.949,31.324-54.592,31.324c-32.364,0-43.457-21.393-54.185-42.082
-	c-1.2-2.313-2.442-4.709-3.76-7.175c-7.986-14.95-17.745-24.518-27.185-33.769C14.89,215.017,0,200.424,0,172.53
-	c0-46.872,40.96-85.006,91.307-85.006c49.7,0,69.487,25.694,71.58,28.624L169.01,280.836z"/&gt;
-&lt;path style="fill:#D37B93;" d="M137.38,134.37c0,0,0.065,0.1,0.206,0.28c-0.507-0.644-12.805-15.777-46.279-15.777
-	c-16.496,0-31.845,5.901-43.222,16.615c-10.637,10.017-16.738,23.52-16.738,37.043c0,14.128,6.096,20.699,19.884,34.214
-	c10.085,9.887,22.638,22.189,32.892,41.387c1.379,2.583,2.68,5.092,3.937,7.513c10.912,21.043,14.117,25.166,26.359,25.166
-	c16.375,0,28.274-17.007,28.387-17.178L137.38,134.37z"/&gt;
-&lt;path style="fill:#646467;" d="M342.99,280.836c0.839,1.28,20.949,31.324,54.592,31.324c32.364,0,43.457-21.393,54.185-42.082
-	c1.2-2.313,2.442-4.709,3.76-7.175c7.986-14.95,17.745-24.518,27.185-33.769C497.11,215.019,512,200.425,512,172.533
-	c0-46.872-40.96-85.006-91.307-85.006c-49.7,0-69.487,25.694-71.58,28.624L342.99,280.836z"/&gt;
-&lt;path style="fill:#9D5B6E;" d="M374.62,134.37c0,0-0.065,0.1-0.206,0.28c0.507-0.644,12.805-15.777,46.279-15.777
-	c16.496,0,31.845,5.901,43.222,16.615c10.637,10.017,16.738,23.52,16.738,37.043c0,14.128-6.096,20.699-19.884,34.214
-	c-10.085,9.887-22.638,22.189-32.892,41.387c-1.379,2.583-2.68,5.092-3.937,7.513c-10.912,21.043-14.117,25.166-26.359,25.166
-	c-16.375,0-28.274-17.007-28.387-17.178L374.62,134.37z"/&gt;
-&lt;path style="fill:#87868A;" d="M213.899,442.819h-69.718v-86.904h15.673c20.455,0,33.814-1.558,40.843-4.765
-	c3.318-1.513,4.478-2.496,4.478-7.572c0-13.544-26.374-33.964-42.132-46.165c-3.986-3.087-7.752-6.002-11.147-8.776
-	c-22.107-18.066-42.563-40.944-42.563-85.618c0-50.817,17.999-88.041,53.497-110.641C187.01,76.986,218.356,69.181,256,69.181
-	s68.99,7.805,93.169,23.198c35.498,22.6,53.497,59.825,53.497,110.641c0,37.228-15.579,67.975-43.87,86.578
-	c-40.798,26.83-49.596,57.471-57.359,84.507C291.739,407.887,281.71,442.819,213.899,442.819z"/&gt;
-&lt;path style="fill:#646467;" d="M256,69.181c37.644,0,68.99,7.805,93.169,23.198c35.498,22.6,53.497,59.825,53.497,110.641
-	c0,37.228-15.579,67.975-43.87,86.578c-40.798,26.83-49.596,57.471-57.359,84.507c-7.184,25.021-14.548,50.672-45.436,62.295
-	C256.001,357.429,256,148.983,256,69.181z"/&gt;
 &lt;g&gt;
-	&lt;path style="fill:#333333;" d="M232.138,197.268c0-10.032-8.034-18.165-17.927-18.165c-9.905,0-17.94,8.132-17.94,18.165
-		c0,10.032,8.034,18.165,17.94,18.165C224.103,215.433,232.138,207.3,232.138,197.268z"/&gt;
-	&lt;path style="fill:#333333;" d="M315.729,197.268c0-10.032-8.034-18.165-17.927-18.165c-9.905,0-17.94,8.132-17.94,18.165
-		c0,10.032,8.034,18.165,17.94,18.165C307.695,215.433,315.729,207.3,315.729,197.268z"/&gt;
+	&lt;path style="fill:#2BA5F7;" d="M196.644,477.385L196.644,477.385c-27.102-27.102-32.404-69.12-12.885-102.105L256,253.202
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C282.575,510.167,229.426,510.167,196.644,477.385z"/&gt;
+	&lt;path style="fill:#2BA5F7;" d="M352.259,234.256L352.259,234.256c-27.102-27.102-32.404-69.12-12.885-102.105l72.24-122.077
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C438.189,267.037,385.041,267.037,352.259,234.256z"/&gt;
+	&lt;path style="fill:#2BA5F7;" d="M41.028,234.256L41.028,234.256c-27.102-27.102-32.404-69.12-12.885-102.105l72.24-122.077
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C126.96,267.037,73.81,267.037,41.028,234.256z"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#2197D8;" d="M100.387,258.842c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092L100.387,10.08L69.146,132.158c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C81.798,250.649,91.092,258.842,100.387,258.842z"/&gt;
+	&lt;path style="fill:#2197D8;" d="M411.622,258.842c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092L411.622,10.08l-31.241,122.077c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C393.033,250.649,402.328,258.842,411.622,258.842z"/&gt;
+	&lt;path style="fill:#2197D8;" d="M256.007,501.965c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092l72.247-122.077l-31.241,122.077c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C237.418,493.772,246.712,501.965,256.007,501.965z"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#FFFFFF;" d="M447.227,220.586c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008L431.1,128.715c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.787-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C452.383,219.602,449.806,220.586,447.227,220.586z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M291.613,463.716c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008l-15.188-25.666c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.788-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C296.768,462.733,294.19,463.716,291.613,463.716z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M135.997,220.586c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008l-15.188-25.665c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.79-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C141.154,219.602,138.576,220.586,135.997,220.586z"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="114.129" cy="99.224" r="10.074"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="425.236" cy="99.224" r="10.074"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="269.728" cy="342.338" r="10.074"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#333333;" d="M181.295,127.02L109.054,4.944C107.241,1.879,103.945,0,100.386,0c-3.559,0-6.855,1.879-8.67,4.944
+		L19.475,127.02c-21.873,36.963-15.939,83.989,14.432,114.358c17.756,17.758,41.366,27.537,66.478,27.537
+		s48.721-9.779,66.478-27.537C197.234,211.009,203.168,163.983,181.295,127.02z M48.151,227.132
+		c-23.861-23.862-28.524-60.81-11.337-89.852l63.572-107.427l63.572,107.427c17.185,29.043,12.523,65.991-11.339,89.852
+		c-13.952,13.952-32.503,21.635-52.233,21.635C80.654,248.769,62.105,241.085,48.151,227.132"/&gt;
+	&lt;path style="fill:#333333;" d="M492.526,127.02L420.285,4.943C418.471,1.879,415.176,0,411.615,0s-6.855,1.879-8.67,4.944
+		l-72.24,122.077c-21.873,36.963-15.939,83.989,14.432,114.358c18.328,18.328,42.404,27.493,66.478,27.493
+		c24.076,0,48.151-9.164,66.48-27.493C508.463,211.009,514.397,163.983,492.526,127.02z M463.848,227.132
+		c-13.952,13.952-32.501,21.635-52.233,21.635c-19.731,0-38.281-7.684-52.233-21.635c-23.862-23.862-28.524-60.81-11.339-89.852
+		l63.572-107.427l63.572,107.427C492.373,166.323,487.709,203.271,463.848,227.132z"/&gt;
+	&lt;path style="fill:#333333;" d="M264.67,248.073c-1.813-3.064-5.109-4.944-8.67-4.944s-6.855,1.879-8.67,4.944l-72.24,122.076
+		c-21.873,36.963-15.939,83.989,14.431,114.358C207.848,502.836,231.924,512,256,512c24.074,0,48.15-9.164,66.478-27.493
+		c30.37-30.37,36.304-77.397,14.431-114.358L264.67,248.073z M308.233,470.262c-28.802,28.799-75.665,28.801-104.466,0
+		c-23.862-23.862-28.524-60.81-11.337-89.852L256,272.984l63.572,107.427C336.757,409.452,332.095,446.4,308.233,470.262z"/&gt;
 &lt;/g&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;7&lt;/div&gt;
+ &lt;div class="count"&gt;1&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;zoos&lt;/div&gt;
+ &lt;div class="title"&gt;idea refining&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
 
-&lt;p&gt;&amp;lt; 19-may-2026&lt;/p&gt;</description></item></channel></rss>
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx99/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#3688FF" /&gt;&lt;path d="M640 682.7c-9.6 0-19.3-3.2-27.3-9.9l-128-106.7c-9.7-8.1-15.4-20.1-15.4-32.8V384c0-23.6 19.1-42.7 42.7-42.7s42.7 19.1 42.7 42.7v129.4l112.6 93.9c18.1 15.1 20.5 42 5.5 60.1-8.5 10-20.6 15.3-32.8 15.3z" fill="#5F6379" /&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;1&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;archive&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;&amp;lt; 10-jun-2026&lt;/p&gt;</description></item></channel></rss>
