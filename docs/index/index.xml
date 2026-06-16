@@ -1947,7 +1947,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;296&lt;/div&gt;
+ &lt;div class="count"&gt;299&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;notes&lt;/div&gt;
@@ -11527,7 +11527,2994 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
  &lt;div class="beg"&gt;11&lt;/div&gt;
  &lt;div class="end"&gt;11&lt;/div&gt;
  &lt;/div&gt;
-&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
+&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx20/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx20/</guid><description>&lt;p&gt;&lt;strong&gt;users&lt;/strong&gt; &amp;mdash; patners in learning&lt;/p&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f33/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26f33&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;irfan dwi aditya&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-x&lt;/div&gt;
+ &lt;div class="rel"&gt;sh&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f32/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26f32&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;fitria hairun-nisa&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-3&lt;/div&gt;
+ &lt;div class="rel"&gt;fz&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f30/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26f30&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;faiz aulia rahman&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;ds-2&lt;/div&gt;
+ &lt;div class="rel"&gt;als&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f23/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26f23&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;fourier dzar eljabbar latief&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-x&lt;/div&gt;
+ &lt;div class="rel"&gt;uf&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26e27/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26e27&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;ahmad royyan fatah&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;mk&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26e19/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26e19&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;nugroho dwi hananto&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;brin&lt;/div&gt;
+ &lt;div class="rel"&gt;tg-hg&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26d18/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26d18&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;suprijadi&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-x&lt;/div&gt;
+ &lt;div class="rel"&gt;st&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26c23/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26c23&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;feridiana katarina minda&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2p&lt;/div&gt;
+ &lt;div class="rel"&gt;x&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26b22/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26b22&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;moh faizal fajri al amin&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-3&lt;/div&gt;
+ &lt;div class="rel"&gt;ia&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26b04/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26b04&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;muham-mad zaky zulkar-nain&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2&lt;/div&gt;
+ &lt;div class="rel"&gt;rw&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a61/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a61&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;m isnaenda ikhsan&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;as-3&lt;/div&gt;
+ &lt;div class="rel"&gt;th&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a37/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a37&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;muha-mad ghani farhan&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2&lt;/div&gt;
+ &lt;div class="rel"&gt;ap&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a36/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a36&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;nita daniyati&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2p&lt;/div&gt;
+ &lt;div class="rel"&gt;id&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a35/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a35&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;ilma aprianti nur’hasanah&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2p&lt;/div&gt;
+ &lt;div class="rel"&gt;id&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a32/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a32&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;fajar ridwan&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;fd&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a23/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26a23&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;ayatullah ibrahim firas&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;id&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l65/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l65&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;mery cintia&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2p&lt;/div&gt;
+ &lt;div class="rel"&gt;sv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l76/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l76&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;sinta nurhia dewi&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;sv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l75/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l75&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;aufa dirham hafizh&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;ai&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l34/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l34&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;hilman nuha&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2p&lt;/div&gt;
+ &lt;div class="rel"&gt;nv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l54/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l54&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;winda aprianti&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;ma-3&lt;/div&gt;
+ &lt;div class="rel"&gt;usp&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l35/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l35&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;indriyati&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2&lt;/div&gt;
+ &lt;div class="rel"&gt;nh&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25l08/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25l08&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;roni stiawan&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2&lt;/div&gt;
+ &lt;div class="rel"&gt;sv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25k07/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25k07&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;valeno glenedias widodo&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;sk-2&lt;/div&gt;
+ &lt;div class="rel"&gt;sv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25k06/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25k06&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;radithya rizky syandana&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;sk-2&lt;/div&gt;
+ &lt;div class="rel"&gt;sv&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25j69/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25j69&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;nicholas manuel tjahjadi&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;eb-1&lt;/div&gt;
+ &lt;div class="rel"&gt;x&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25j13/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25j13&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;eliza putri hapsani&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;ai&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25j10/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25j10&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;efraim partogi nahotasi manurung&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-1&lt;/div&gt;
+ &lt;div class="rel"&gt;mb&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;!--
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="//"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;&lt;/div&gt;
+ &lt;div class="rel"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+--&gt;
+&lt;h2 id="notes"&gt;notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This list begins to function on 16-jun-2026.&lt;/li&gt;
+&lt;li&gt;Previous version is on 
+&lt;a
+
+	
+	
+		href = "/25h64/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		25h64
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ and there are others but undocumented nor trackable.&lt;/li&gt;
+&lt;li&gt;Listed interactions can not be considered as the first due to a lot undcoumented ones.&lt;/li&gt;
+&lt;li&gt;Shortcode is modified from &lt;code&gt;card/post&lt;/code&gt; with the help for height adjustment &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;, automatic id &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;, and descending order possibilities &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="refs"&gt;refs&lt;/h2&gt;
+&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;GPT-5.5, &amp;ldquo;Hugo shortcode height adjustment&amp;rdquo;, ChatGPT, 16 Jun 2026, url 
+&lt;a
+
+	
+	
+		href = "https://chatgpt.com/share/6a30b2fe-0968-83ec-a3b1-fcbba70baf8b"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		&gt;
+	
+	
+	&lt;span&gt;
+		https://chatgpt.com/share/6a30b2fe-0968-83ec-a3b1-fcbba70baf8b &lt;i class="fa fa-external-link" style="font-size:14px"&gt;&lt;/i&gt;
+	&lt;/span&gt;
+ 
+&lt;/a&gt;
+ [20260616].&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
 &lt;p&gt;&amp;lt; 11-jun-2026&lt;/p&gt;
 &lt;style&gt;
 .category-card {
