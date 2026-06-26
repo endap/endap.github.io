@@ -1947,7 +1947,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;303&lt;/div&gt;
+ &lt;div class="count"&gt;305&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;notes&lt;/div&gt;
@@ -11424,6 +11424,279 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 }
 &lt;/style&gt;
 
+&lt;a class="post-card" href="https://endap.github.io/26f47/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;07&lt;/div&gt;
+ &lt;div class="url"&gt;26f47&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;learning step&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;23&lt;/div&gt;
+ &lt;div class="end"&gt;23&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f42/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;06&lt;/div&gt;
+ &lt;div class="url"&gt;26f42&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;script-for-js shortcode&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;21&lt;/div&gt;
+ &lt;div class="end"&gt;21&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f40/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;05&lt;/div&gt;
+ &lt;div class="url"&gt;26f40&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;lab module naming conven-tion&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="beg"&gt;20&lt;/div&gt;
+ &lt;div class="end"&gt;20&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 120px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .beg {
+ font-size: 0.75em;
+ color:#c44;
+}
+.post-card .end {
+ font-size: 0.75em;
+ color:#4a4;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
 &lt;a class="post-card" href="https://endap.github.io/26f39/"&gt;
  &lt;div class="top-row"&gt;
  &lt;div class="id"&gt;04&lt;/div&gt;
@@ -14538,7 +14811,109 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
  el.textContent = String(arr.length - i).padStart(2, '0');
 });
 &lt;/script&gt;
-&lt;!--
+&lt;!-- undocumented users in gap --&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25e25/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;25e25&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;aditya arya-shakti putra rahmawan&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-2&lt;/div&gt;
+ &lt;div class="rel"&gt;ap-mm&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;!-- template
 &lt;style&gt;
 .post-card {
  display: inline-flex;
@@ -14641,6 +15016,107 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 });
 &lt;/script&gt;
 --&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26f43/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26f43&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;the departed&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;n/a&lt;/div&gt;
+ &lt;div class="rel"&gt;n/a&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
 &lt;h2 id="notes"&gt;notes&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;This list begins to function on 16-jun-2026.&lt;/li&gt;
@@ -14696,8 +15172,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 	&lt;/span&gt;
  
 &lt;/a&gt;
- [20260616].&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 11-jun-2026&lt;/p&gt;
+ [20260616].&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://endap.github.io/idx21/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx21/</guid><description>&lt;p&gt;&lt;strong&gt;a lab&lt;/strong&gt; &amp;mdash; where things no longer abstract&lt;/p&gt;</description></item><item><title/><link>https://endap.github.io/idx22/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx22/</guid><description>&lt;p&gt;&lt;strong&gt;days of learning&lt;/strong&gt; &amp;mdash; self-learning in steps&lt;/p&gt;
 &lt;style&gt;
 .category-card {
  display: inline-flex;
@@ -14763,95 +15238,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx05/"&gt;
- &lt;div class="top-row"&gt;
- 
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --&gt;
-&lt;svg width="256px" height="256px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;g id="SVGRepo_bgCarrier" stroke-width="0"/&gt;
-&lt;g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/&gt;
-&lt;g id="SVGRepo_iconCarrier"&gt; &lt;path d="M14.217 3.49965C12.796 2.83345 11.2035 2.83345 9.78252 3.49965L5.48919 5.51246C6.27114 5.59683 6.98602 6.0894 7.31789 6.86377C7.80739 8.00594 7.2783 9.32867 6.13613 9.81817L5.06046 10.2792C4.52594 10.5082 4.22261 10.6406 4.01782 10.7456C4.0167 10.7619 4.01564 10.7788 4.01465 10.7962L9.78261 13.5003C11.2036 14.1665 12.7961 14.1665 14.2171 13.5003L20.9082 10.3634C22.3637 9.68105 22.3637 7.31899 20.9082 6.63664L14.217 3.49965Z" fill="#0061ff"/&gt; &lt;path d="M5.54544 8.43955C5.92616 8.27638 6.10253 7.83547 5.93936 7.45475C5.7762 7.07403 5.33529 6.89767 4.95456 7.06083L3.84318 7.53714C3.28571 7.77603 2.81328 7.97849 2.44254 8.18705C2.04805 8.40898 1.70851 8.66944 1.45419 9.05513C1.19986 9.44083 1.09421 9.85551 1.04563 10.3055C0.999964 10.7284 0.999981 11.2424 1 11.8489V14.7502C1 15.1644 1.33579 15.5002 1.75 15.5002C2.16422 15.5002 2.5 15.1644 2.5 14.7502V11.8878C2.5 11.232 2.50101 10.7995 2.53696 10.4665C2.57095 10.1517 2.63046 9.99612 2.70645 9.88087C2.78244 9.76562 2.90202 9.64964 3.178 9.49438C3.46985 9.33019 3.867 9.15889 4.46976 8.90056L5.54544 8.43955Z" fill="#0061ff"/&gt; &lt;path opacity="0.5" d="M5 11.2582L9.78261 13.5004C11.2036 14.1666 12.7961 14.1666 14.2171 13.5004L19 11.2581V16.6253C19 17.6333 18.4965 18.5771 17.6147 19.0654C16.1463 19.8786 13.796 20.9999 12 20.9999C10.204 20.9999 7.8537 19.8786 6.38533 19.0654C5.5035 18.5771 5 17.6333 5 16.6253V11.2582Z" fill="#0061ff"/&gt; &lt;/g&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;3&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;acads&lt;/div&gt;
- &lt;/div&gt;
-&lt;/a&gt;
-
-
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
-
-
-
-&lt;a class="category-card" href="https://endap.github.io/idx18"&gt;
+&lt;a class="category-card" href="https://endap.github.io/26f46/"&gt;
  &lt;div class="top-row"&gt;
  
  
@@ -14859,34 +15246,168 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
  &lt;div class="logo-container"&gt;
  &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 512 512" xml:space="preserve"&gt;
-&lt;path style="fill:#BFE4F8;" d="M256,512c-56.944,0-110.151-27.31-149.822-76.899C67.722,387.033,46.545,323.429,46.545,256
-	s21.177-131.033,59.632-179.102C145.849,27.31,199.056,0,256,0s110.153,27.31,149.824,76.899
-	c38.454,48.066,59.631,111.672,59.631,179.101s-21.177,131.035-59.631,179.101C366.153,484.69,312.944,512,256,512z M256,46.545
-	c-89.828,0-162.909,93.961-162.909,209.455S166.172,465.455,256,465.455S418.909,371.493,418.909,256S345.83,46.545,256,46.545z"/&gt;
-&lt;path style="fill:#93C7EF;" d="M256,512v-46.545c89.83,0,162.909-93.961,162.909-209.455S345.83,46.545,256,46.545V0
-	c56.944,0,110.153,27.31,149.824,76.899c38.454,48.066,59.631,111.672,59.631,179.101s-21.177,131.035-59.631,179.101
-	C366.153,484.69,312.944,512,256,512z"/&gt;
-&lt;g&gt;
-	&lt;circle style="fill:#3C5D76;" cx="256" cy="23.273" r="23.273"/&gt;
-	&lt;circle style="fill:#3C5D76;" cx="256" cy="380.121" r="100.848"/&gt;
-&lt;/g&gt;
-&lt;path style="fill:#1E2E3B;" d="M256,279.273c55.698,0,100.848,45.152,100.848,100.848c0,55.696-45.151,100.849-100.848,100.849"/&gt;
-&lt;rect x="287.03" y="310.303" style="fill:#3C5D76;" width="62.061" height="46.545"/&gt;
-&lt;rect x="162.909" y="403.394" style="fill:#5A8BB0;" width="93.091" height="46.545"/&gt;
-&lt;path style="fill:#BFE4F8;" d="M256,294.788c47.053,0,85.333,38.281,85.333,85.333S303.053,465.455,256,465.455
-	s-85.333-38.281-85.333-85.333S208.947,294.788,256,294.788 M256,248.242c-72.834,0-131.879,59.044-131.879,131.879
-	S183.166,512,256,512s131.879-59.044,131.879-131.879S328.834,248.242,256,248.242L256,248.242z"/&gt;
-&lt;path style="fill:#93C7EF;" d="M256,248.242v46.545c47.053,0,85.333,38.281,85.333,85.333S303.053,465.455,256,465.455V512
-	c72.834,0,131.879-59.044,131.879-131.879S328.834,248.242,256,248.242z"/&gt;
+&lt;path style="fill:#4C213A;" d="M376.481,509.182c-8.239,0-16.474-2.12-23.821-6.362l-87.878-50.737
+	c-14.693-8.481-23.82-24.29-23.82-41.257V309.352c0-16.965,9.126-32.774,23.82-41.257l87.878-50.737
+	c14.695-8.484,32.95-8.484,47.641,0l87.878,50.737C502.872,276.579,512,292.386,512,309.352v8.803
+	c0,8.305-6.734,15.038-15.038,15.038c-8.304,0-15.038-6.732-15.038-15.038v-8.803c0-6.254-3.365-12.084-8.783-15.212l-87.878-50.737
+	c-5.417-3.128-12.146-3.128-17.565,0L279.82,294.14c-5.418,3.128-8.782,8.956-8.782,15.212v101.474
+	c0,6.256,3.364,12.084,8.782,15.211l87.878,50.738c5.42,3.128,12.146,3.128,17.565,0l87.878-50.737
+	c5.418-3.128,8.783-8.956,8.783-15.211v-13.97c0-8.305,6.734-15.038,15.038-15.038c8.304,0,15.038,6.732,15.038,15.038v13.97
+	c0,16.965-9.128,32.774-23.821,41.257l-87.878,50.737C392.955,507.062,384.717,509.182,376.481,509.182z"/&gt;
+&lt;path style="fill:#E7B3A8;" d="M239.699,281.119l-87.88-50.737c-10.087-5.824-22.514-5.824-32.602,0L31.34,281.119
+	c-10.087,5.823-16.302,16.586-16.302,28.233v101.474c0,11.648,6.214,22.41,16.301,28.235l87.878,50.737
+	c10.087,5.824,22.516,5.824,32.602,0l87.88-50.737c10.087-5.824,16.301-16.586,16.301-28.235V309.352
+	C256,297.705,249.786,286.941,239.699,281.119z M173.293,376.989c0,3.038-1.621,5.845-4.251,7.364l-29.269,16.899
+	c-2.632,1.519-5.872,1.519-8.504,0l-29.274-16.901c-2.632-1.519-4.251-4.326-4.251-7.364v-33.798c0-3.038,1.621-5.845,4.251-7.364
+	l29.271-16.899c2.632-1.519,5.872-1.519,8.504,0l29.271,16.899c2.632,1.519,4.251,4.326,4.251,7.364v33.8H173.293z"/&gt;
+&lt;path style="fill:#4C213A;" d="M135.52,509.203c-8.352,0-16.588-2.207-23.821-6.383l-87.878-50.737C9.126,443.6,0,427.791,0,410.827
+	V309.353c0-16.965,9.126-32.773,23.821-41.257l87.878-50.737c7.233-4.176,15.469-6.383,23.821-6.383
+	c8.35,0,16.586,2.208,23.82,6.383l87.878,50.737c14.693,8.484,23.82,24.293,23.82,41.257v101.474
+	c0,16.964-9.126,32.773-23.818,41.257l-87.88,50.737C152.107,506.996,143.871,509.203,135.52,509.203z M135.52,241.051
+	c-3.08,0-6.116,0.814-8.783,2.353l-87.878,50.737c-5.418,3.128-8.783,8.956-8.783,15.211v101.474c0,6.254,3.365,12.084,8.783,15.212
+	l87.878,50.737c5.332,3.078,12.23,3.08,17.565,0l87.878-50.737c5.417-3.128,8.782-8.956,8.782-15.212V309.352
+	c0-6.256-3.365-12.084-8.783-15.212l-87.877-50.735C141.636,241.865,138.598,241.051,135.52,241.051z M135.52,417.429
+	c-4.128,0-8.199-1.092-11.773-3.155l-29.271-16.899c-7.26-4.194-11.77-12.005-11.77-20.386v-33.798
+	c0-8.382,4.51-16.192,11.767-20.385l29.275-16.901c7.143-4.126,16.394-4.128,23.543,0.002l29.269,16.896
+	c7.26,4.192,11.77,12.003,11.77,20.388v33.8c0,8.382-4.51,16.192-11.767,20.385l-29.272,16.901
+	C143.714,416.34,139.645,417.429,135.52,417.429z M112.782,373.215l22.738,13.128l22.735-13.126v-26.254l-22.737-13.128
+	l-22.737,13.128V373.215z"/&gt;
+&lt;path style="fill:#E7B3A8;" d="M360.18,72.94l-87.88-50.737c-10.087-5.824-22.516-5.824-32.602,0L151.82,72.94
+	c-10.087,5.824-16.301,16.586-16.301,28.235v101.474c0,11.648,6.214,22.411,16.301,28.235l87.88,50.737
+	c10.087,5.824,22.516,5.824,32.601,0l87.88-50.737c10.087-5.824,16.301-16.586,16.301-28.235V101.174
+	C376.481,89.526,370.268,78.764,360.18,72.94z M293.774,168.811c0,3.038-1.621,5.845-4.251,7.364l-29.269,16.899
+	c-2.632,1.519-5.872,1.519-8.504,0l-29.274-16.901c-2.632-1.519-4.251-4.326-4.251-7.364v-33.797c0-3.038,1.621-5.845,4.251-7.364
+	l29.271-16.899c2.632-1.519,5.872-1.519,8.504,0l29.271,16.899c2.632,1.519,4.251,4.326,4.251,7.364v33.799H293.774z"/&gt;
+&lt;path style="fill:#4C213A;" d="M256,301.026c-8.352,0-16.588-2.208-23.821-6.383l-87.877-50.735
+	c-14.693-8.484-23.821-24.292-23.821-41.257V101.176c0-16.965,9.126-32.773,23.821-41.257L232.18,9.18
+	c7.232-4.176,15.468-6.383,23.82-6.383s16.588,2.208,23.821,6.383l87.877,50.735c14.693,8.483,23.821,24.29,23.821,41.257v101.474
+	c0,16.967-9.128,32.774-23.821,41.259l-87.878,50.735C272.588,298.818,264.352,301.026,256,301.026z M256,32.872
+	c-3.08,0-6.114,0.814-8.78,2.352l-87.88,50.737c-5.418,3.128-8.783,8.958-8.783,15.212v101.474c0,6.254,3.365,12.084,8.783,15.212
+	l87.878,50.737c5.334,3.08,12.232,3.078,17.562,0l87.88-50.737c5.418-3.128,8.783-8.956,8.783-15.212V101.173
+	c0-6.256-3.365-12.084-8.783-15.211l-87.878-50.737C262.116,33.686,259.08,32.872,256,32.872z M256.001,209.251
+	c-4.125,0-8.195-1.09-11.77-3.153l-29.274-16.901c-7.26-4.194-11.77-12.005-11.77-20.386v-33.798c0-8.382,4.51-16.192,11.767-20.385
+	l29.275-16.901c7.143-4.126,16.394-4.128,23.543,0.002l29.269,16.896c7.26,4.195,11.77,12.006,11.77,20.388v33.8
+	c0,8.383-4.51,16.195-11.77,20.386l-29.271,16.899C264.2,208.161,260.129,209.251,256.001,209.251z M233.263,165.038l22.738,13.128
+	l22.735-13.126v-26.256L256,125.657l-22.737,13.126L233.263,165.038L233.263,165.038z"/&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
  &lt;div class="count"&gt;4&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;ai-soul&lt;/div&gt;
+ &lt;div class="title"&gt;cellular automata&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
+&lt;p&gt;&amp;lt; 21-jun-2026&lt;/p&gt;
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx21/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 460 460" xml:space="preserve"&gt;
+&lt;g id="XMLID_3312_"&gt;
+	&lt;path id="XMLID_2658_" style="fill:#D0D9DD;" d="M350,25.714V30v4.286C350,48.487,336.569,60,320,60v220v120
+		c0,33.137-26.863,60-60,60h-30h-30c-33.137,0-60-26.863-60-60V280V60c-16.569,0-30-11.513-30-25.714V30v-4.286
+		C110,11.513,123.431,0,140,0h90h90C336.569,0,350,11.513,350,25.714z"/&gt;
+	&lt;path id="XMLID_2671_" style="fill:#E7EFF2;" d="M350,25.714V30H110v-4.286C110,11.513,123.431,0,140,0h90h90
+		C336.569,0,350,11.513,350,25.714z"/&gt;
+	&lt;path id="XMLID_921_" style="fill:#E7EFF2;" d="M140,60h90v267.667h-90V60z"/&gt;
+	&lt;path id="XMLID_2771_" style="fill:#C3CED1;" d="M300,60h20v270h-20V60z"/&gt;
+	&lt;path id="XMLID_2770_" style="fill:#F8FDFF;" d="M180,60v220v110c0,5.523-4.477,10-10,10s-10-4.477-10-10V280V60H180z"/&gt;
+	&lt;path id="XMLID_2772_" style="fill:#EA905E;" d="M320,280v120c0,33.137-26.863,60-60,60h-30h-30c-33.137,0-60-26.863-60-60V280h90
+		H320z"/&gt;
+	&lt;path id="XMLID_2780_" style="fill:#F4A37A;" d="M160,390V280h20v110c0,5.523-4.477,10-10,10l0,0C164.477,400,160,395.523,160,390z
+		"/&gt;
+	&lt;path id="XMLID_2773_" style="fill:#ED724C;" d="M320,280v120c0,33.137-26.863,60-60,60h-30V280H320z"/&gt;
+	&lt;path id="XMLID_2777_" style="fill:#E5503C;" d="M300,280h20v120c0,17.767-7.729,33.724-20,44.71V280z"/&gt;
+	&lt;path id="XMLID_2592_" style="fill:#9A989B;" d="M260,110c0,5.523-4.477,10-10,10h-20h-20c-5.523,0-10-4.477-10-10s4.477-10,10-10
+		h20h20C255.523,100,260,104.477,260,110z"/&gt;
+	&lt;path id="XMLID_2655_" style="fill:#9A989B;" d="M260,230c0,5.523-4.477,10-10,10h-20h-20c-5.523,0-10-4.477-10-10s4.477-10,10-10
+		h20h20C255.523,220,260,224.477,260,230z"/&gt;
+	&lt;path id="XMLID_2603_" style="fill:#9A989B;" d="M250,170c0,5.523-4.477,10-10,10h-10h-10c-5.523,0-10-4.477-10-10s4.477-10,10-10
+		h10h10C245.523,160,250,164.477,250,170z"/&gt;
+	&lt;path id="XMLID_1273_" style="fill:#B0ADB2;" d="M230,120h-20c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h20V120z"/&gt;
+	&lt;path id="XMLID_1470_" style="fill:#B0ADB2;" d="M230,240h-20c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h20V240z"/&gt;
+	&lt;path id="XMLID_1282_" style="fill:#B0ADB2;" d="M230,180h-10c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h10V180z"/&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;0&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;a lab&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
@@ -14966,7 +15487,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;svg fill="var(--fg)" width="800px" height="800px" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M 27.9266 43.8337 C 28.6400 43.8337 29.1436 43.4350 29.1436 42.7216 C 29.1436 42.4069 29.0597 42.2391 28.8289 41.7984 C 26.2691 37.8329 24.8213 33.2799 24.8213 28.3492 C 24.8213 23.5863 26.1852 18.8235 28.8289 14.8369 C 29.0597 14.3963 29.1436 14.2285 29.1436 13.9137 C 29.1436 13.2423 28.6400 12.8017 27.9266 12.8017 C 27.2343 12.8017 26.6677 13.1164 25.9963 14.0396 C 22.8491 18.0471 21.2545 23.0408 21.2545 28.3282 C 21.2545 33.6156 22.7861 38.4623 25.9963 42.5958 C 26.6677 43.5189 27.2343 43.8337 27.9266 43.8337 Z M 49.3490 43.8337 C 50.0413 43.8337 50.5870 43.5189 51.2582 42.5958 C 54.4685 38.4623 56 33.6156 56 28.3282 C 56 23.0408 54.4264 18.0471 51.2582 14.0396 C 50.5870 13.1164 50.0413 12.8017 49.3490 12.8017 C 48.6357 12.8017 48.1321 13.2423 48.1321 13.9137 C 48.1321 14.2285 48.1948 14.3963 48.4256 14.8369 C 51.0906 18.8235 52.4541 23.5863 52.4541 28.3492 C 52.4541 33.2799 50.9858 37.8329 48.4466 41.7984 C 48.1948 42.2391 48.1321 42.4069 48.1321 42.7216 C 48.1321 43.3931 48.6357 43.8337 49.3490 43.8337 Z M 2.8325 43.7917 C 6.9449 43.7917 8.8543 42.0292 9.8404 37.3084 L 12.2323 25.8314 L 16.0300 25.8314 C 17.2470 25.8314 18.0233 25.1809 18.0233 24.1318 C 18.0233 23.2296 17.4358 22.6631 16.4706 22.6631 L 12.9247 22.6631 L 13.5122 19.8096 C 14.0577 17.1449 14.8970 16.0539 17.2260 16.0539 C 17.5617 16.0539 17.8974 16.0329 18.1282 16.0119 C 19.1773 15.9070 19.6389 15.4244 19.6389 14.5222 C 19.6389 13.3472 18.6527 12.8227 16.6385 12.8227 C 12.6310 12.8227 10.5748 14.8160 9.6516 19.3060 L 8.9382 22.6631 L 6.3365 22.6631 C 5.1195 22.6631 4.3222 23.3136 4.3222 24.3626 C 4.3222 25.2648 4.9307 25.8314 5.8959 25.8314 L 8.2668 25.8314 L 5.9588 36.8048 C 5.3713 39.5534 4.5110 40.5605 2.2660 40.5605 C 1.9723 40.5605 1.6995 40.5815 1.4897 40.6025 C .5245 40.7284 0 41.2529 0 42.1342 C 0 43.2672 .9652 43.7917 2.8325 43.7917 Z M 32.3118 38.2735 C 33.0042 38.2735 33.4658 38.0427 33.9904 37.2874 L 38.5853 30.7411 L 38.6691 30.7411 L 43.3692 37.3923 C 43.8939 38.1267 44.3971 38.2735 44.9007 38.2735 C 45.9079 38.2735 46.5796 37.5601 46.5796 36.6999 C 46.5796 36.3012 46.4537 35.9236 46.1808 35.5669 L 40.8095 28.2652 L 46.1808 21.0685 C 46.4537 20.7118 46.5796 20.3341 46.5796 19.8935 C 46.5796 18.9913 45.8241 18.3619 44.9849 18.3619 C 44.2295 18.3619 43.7886 18.7396 43.3903 19.3480 L 38.9630 25.8314 L 38.8582 25.8314 L 34.4100 19.3270 C 34.0114 18.7185 33.5078 18.3619 32.7105 18.3619 C 31.7453 18.3619 31.0109 19.1382 31.0109 19.9774 C 31.0109 20.5859 31.1788 20.9636 31.4726 21.3203 L 36.5711 28.1603 L 31.1578 35.6508 C 30.8431 36.0495 30.7802 36.4062 30.7802 36.8258 C 30.7802 37.6441 31.4726 38.2735 32.3118 38.2735 Z"/&gt;&lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;4&lt;/div&gt;
+ &lt;div class="count"&gt;5&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;equations&lt;/div&gt;
@@ -15104,7 +15625,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;1&lt;/div&gt;
+ &lt;div class="count"&gt;5&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;idea refining&lt;/div&gt;
@@ -15188,12 +15709,164 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#3688FF" /&gt;&lt;path d="M640 682.7c-9.6 0-19.3-3.2-27.3-9.9l-128-106.7c-9.7-8.1-15.4-20.1-15.4-32.8V384c0-23.6 19.1-42.7 42.7-42.7s42.7 19.1 42.7 42.7v129.4l112.6 93.9c18.1 15.1 20.5 42 5.5 60.1-8.5 10-20.6 15.3-32.8 15.3z" fill="#5F6379" /&gt;&lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;1&lt;/div&gt;
+ &lt;div class="count"&gt;7&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;archive&lt;/div&gt;
+ &lt;div class="title"&gt;old home&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
 
-&lt;p&gt;&amp;lt; 10-jun-2026&lt;/p&gt;</description></item></channel></rss>
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx20/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve"&gt;
+&lt;circle style="fill:#84DCCF;" cx="255.997" cy="206.361" r="63.823"/&gt;
+&lt;path style="fill:#027EA8;" d="M256.001,142.534c-17.729,0-33.76,7.238-45.326,18.909c7.427-3.026,15.536-4.726,24.051-4.726
+	c35.25,0,63.825,28.575,63.825,63.824c0,17.52-7.069,33.382-18.498,44.915c23.32-9.501,39.773-32.364,39.773-59.099
+	C319.824,171.109,291.249,142.534,256.001,142.534z"/&gt;
+&lt;path style="fill:#84DCCF;" d="M326.916,475.839H185.085V362.374c0-39.166,31.75-70.916,70.916-70.916l0,0
+	c39.166,0,70.916,31.75,70.916,70.916V475.839z"/&gt;
+&lt;path style="fill:#027EA8;" d="M256.041,291.458c-11.08,0-23.216,2.614-32.558,7.144c38.678,0.565,68.179,32.051,68.179,70.863
+	v106.47h35.336V362.374C326.998,323.207,295.207,291.458,256.041,291.458z"/&gt;
+&lt;circle style="fill:#FFFFFF;" cx="433.29" cy="99.979" r="63.823"/&gt;
+&lt;path style="fill:#E6E6E6;" d="M433.29,36.161c-17.729,0-33.76,7.238-45.326,18.909c7.427-3.026,15.536-4.726,24.051-4.726
+	c35.25,0,63.824,28.575,63.824,63.824c0,17.52-7.069,33.382-18.498,44.916c23.32-9.501,39.773-32.364,39.773-59.099
+	C497.114,64.736,468.539,36.161,433.29,36.161z"/&gt;
+&lt;path style="fill:#FFFFFF;" d="M504.205,369.465H362.374V255.999c0-39.166,31.75-70.916,70.916-70.916l0,0
+	c39.166,0,70.916,31.75,70.916,70.916L504.205,369.465L504.205,369.465z"/&gt;
+&lt;path style="fill:#E6E6E6;" d="M433.026,185.084c-11.08,0-23.368,2.614-32.711,7.144c38.678,0.565,68.027,32.051,68.027,70.863
+	v106.837h35.336V255.999C503.677,216.834,472.191,185.084,433.026,185.084z"/&gt;
+&lt;circle style="fill:#FBB03B;" cx="78.705" cy="99.979" r="63.823"/&gt;
+&lt;path style="fill:#F15A24;" d="M78.71,36.161c-17.729,0-33.76,7.238-45.326,18.909c7.427-3.026,15.536-4.726,24.051-4.726
+	c35.25,0,63.824,28.575,63.824,63.824c0,17.52-7.069,33.382-18.498,44.916c23.32-9.501,39.772-32.364,39.772-59.099
+	C142.534,64.736,113.96,36.161,78.71,36.161z"/&gt;
+&lt;path style="fill:#FBB03B;" d="M149.626,369.465H7.795V255.999c0-39.166,31.75-70.916,70.916-70.916l0,0
+	c39.166,0,70.916,31.75,70.916,70.916V369.465z"/&gt;
+&lt;path style="fill:#F15A24;" d="M79.058,185.084c-11.08,0-23.582,2.614-32.925,7.144c38.678,0.565,67.813,32.051,67.813,70.863
+	v106.837h36.375V255.999C150.319,216.834,118.223,185.084,79.058,185.084z"/&gt;
+&lt;path d="M256.001,277.977c-39.491,0-71.619-32.129-71.619-71.619s32.129-71.618,71.619-71.618s71.618,32.129,71.618,71.618
+	C327.619,245.85,295.491,277.977,256.001,277.977z M256.001,150.329c-30.895,0-56.03,25.135-56.03,56.029
+	c0,30.895,25.135,56.03,56.03,56.03s56.029-25.135,56.029-56.03C312.03,175.464,286.894,150.329,256.001,150.329z"/&gt;
+&lt;path d="M334.71,483.634H177.289v-121.26c0-43.401,35.31-78.71,78.71-78.71s78.71,35.31,78.71,78.71V483.634z M192.878,468.044
+	h126.242V362.374c0-34.805-28.315-63.121-63.12-63.121c-34.806,0-63.121,28.316-63.121,63.121v105.671H192.878z"/&gt;
+&lt;path d="M512,377.26H354.579V255.999c0-43.401,35.31-78.71,78.709-78.71c43.402,0,78.71,35.31,78.71,78.71V377.26H512z
+	 M370.168,361.671h126.242V255.999c0-34.805-28.315-63.121-63.12-63.121s-63.121,28.316-63.121,63.121v105.672H370.168z"/&gt;
+&lt;path d="M157.421,377.26H0V255.999c0-43.401,35.31-78.71,78.71-78.71c43.402,0,78.71,35.31,78.71,78.71V377.26z M15.589,361.671
+	h126.242V255.999c0-34.805-28.316-63.121-63.121-63.121s-63.121,28.316-63.121,63.121V361.671z"/&gt;
+&lt;g&gt;
+	&lt;rect x="249.055" y="318.999" style="fill:#FFFFFF;" width="14.55" height="15.589"/&gt;
+	&lt;rect x="249.055" y="347.06" style="fill:#FFFFFF;" width="14.55" height="15.589"/&gt;
+	&lt;rect x="249.055" y="376.16" style="fill:#FFFFFF;" width="14.55" height="15.589"/&gt;
+&lt;/g&gt;
+&lt;rect x="426.773" y="212.992" width="13.511" height="15.589"/&gt;
+&lt;rect x="426.773" y="241.052" width="13.511" height="15.589"/&gt;
+&lt;rect x="426.773" y="269.113" width="13.511" height="15.589"/&gt;
+&lt;g&gt;
+	&lt;rect x="72.376" y="212.992" style="fill:#FFFFFF;" width="13.511" height="15.589"/&gt;
+	&lt;rect x="72.376" y="241.052" style="fill:#FFFFFF;" width="13.511" height="15.589"/&gt;
+	&lt;rect x="72.376" y="269.113" style="fill:#FFFFFF;" width="13.511" height="15.589"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M306.344,206.76h-15.589c0-19.746-15.72-35.156-34.427-35.156v-15.589
+		C283.348,156.015,306.344,178.699,306.344,206.76z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M289.565,243.881l-10.397-11.616c4.355-3.896,7.677-8.848,9.61-14.319l14.699,5.194
+		C300.673,231.072,295.863,238.244,289.565,243.881z"/&gt;
+&lt;/g&gt;
+&lt;path d="M78.71,171.604c-39.491,0-71.618-32.129-71.618-71.619c0-39.49,32.129-71.618,71.618-71.618
+	c39.491,0,71.619,32.129,71.619,71.618C150.329,139.476,118.201,171.604,78.71,171.604z M78.71,43.956
+	c-30.895,0-56.029,25.135-56.029,56.029c0,30.895,25.135,56.03,56.029,56.03c30.895,0,56.03-25.135,56.03-56.03
+	C134.74,69.091,109.605,43.956,78.71,43.956z"/&gt;
+&lt;g&gt;
+	&lt;path style="fill:#FFFFFF;" d="M129.055,99.713h-15.589c0-18.707-15.11-34.484-34.857-34.484V49.641
+		C106.669,49.641,129.055,72.692,129.055,99.713z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M112.275,137.508l-10.397-11.616c4.353-3.896,7.676-8.848,9.61-14.32l14.699,5.195
+		C123.384,124.698,118.573,131.87,112.275,137.508z"/&gt;
+&lt;/g&gt;
+&lt;path d="M433.29,171.604c-39.491,0-71.618-32.129-71.618-71.619c0-39.49,32.128-71.618,71.618-71.618s71.619,32.129,71.619,71.618
+	C504.909,139.476,472.78,171.604,433.29,171.604z M433.29,43.956c-30.895,0-56.029,25.135-56.029,56.029
+	c0,30.895,25.135,56.03,56.029,56.03c30.895,0,56.03-25.135,56.03-56.03C489.32,69.091,464.184,43.956,433.29,43.956z"/&gt;
+&lt;path d="M483.634,99.713h-15.589c0-18.707-15.292-34.484-35.039-34.484V49.641C461.067,49.641,483.634,72.692,483.634,99.713z"/&gt;
+&lt;path d="M466.855,137.507l-10.397-11.615c4.354-3.897,7.676-8.85,9.61-14.321l14.699,5.196
+	C477.962,124.699,473.152,131.87,466.855,137.507z"/&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;28&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;users&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;&amp;lt; 20-jun-2026&lt;/p&gt;</description></item></channel></rss>
