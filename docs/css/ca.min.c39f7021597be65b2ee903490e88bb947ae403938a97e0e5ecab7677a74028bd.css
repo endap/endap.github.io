@@ -1,0 +1,1 @@
+:root{--grid:#D0D0D0;--cell-x:var(--grid);--cell-e:#F5F5F5;--cell-b:#E6D3A3;--cell-t:#D97A7A;--cell-m:#4A90E2;--cell-o:#8E44AD}@media(prefers-color-scheme:dark){:root{--grid:#4A4A4A;--cell-x:var(--grid);--cell-e:#303030;--cell-b:#CBB27A;--cell-t:#C96B6B;--cell-m:#5DADE2;--cell-o:#A569BD}}
