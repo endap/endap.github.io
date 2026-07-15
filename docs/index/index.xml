@@ -1947,7 +1947,7 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;312&lt;/div&gt;
+ &lt;div class="count"&gt;313&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;notes&lt;/div&gt;
@@ -12065,6 +12065,107 @@ fill="#f7df1e"/&gt;&lt;path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16
 }
 &lt;/style&gt;
 
+&lt;a class="post-card" href="https://endap.github.io/26g09/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="id"&gt;&lt;/div&gt;
+ &lt;div class="url"&gt;26g09&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="name-wrapper"&gt;
+ &lt;div class="name"&gt;yeni pertiwi&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="org"&gt;fi-3&lt;/div&gt;
+ &lt;div class="rel"&gt;ia-fh-dh&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
+ el.textContent = String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 80px;
+ min-height: 40px; 
+ max-height: 100px; 
+ 
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 0 2px 2px;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .id {
+ font-size: 0.75em;
+ color:#fc4;
+}
+.post-card .url {
+ font-size: 0.75em;
+ color:#888;
+}
+.post-card .org {
+ font-size: 0.75em;
+ color:#48f;
+ font-family: monospace;
+}
+.post-card .rel {
+ font-size: 0.75em;
+ color:#4a4;
+ font-family: monospace;
+}
+.post-card .name-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .name {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
 &lt;a class="post-card" href="https://endap.github.io/26f68/"&gt;
  &lt;div class="top-row"&gt;
  &lt;div class="id"&gt;&lt;/div&gt;
@@ -15751,7 +15852,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;8&lt;/div&gt;
+ &lt;div class="count"&gt;14&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;cellular automata&lt;/div&gt;
