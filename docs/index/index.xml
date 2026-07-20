@@ -15541,6 +15541,198 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 
 
 
+&lt;a class="category-card" href="https://endap.github.io/26g24/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve"&gt;
+&lt;path style="fill:#25B6D2;" d="M0,260.908l174.648-81.136v38.568l-132.08,57.848v0.728l132.08,57.848v38.568L0,292.212V260.908z"/&gt;
+&lt;path style="fill:#415E72;" d="M201.6,387.9l77.864-263.8h36.752L238.4,387.9H201.6z"/&gt;
+&lt;path style="fill:#E04F5F;" d="M512,293.284L337.352,373.34v-38.568l134.992-57.848v-0.728L337.352,218.34v-38.568L512,259.828
+	V293.284z"/&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;4&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;js snippets&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/26g22/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve"&gt;
+&lt;polygon style="fill:#E0B76E;" points="350.45,258.595 256,512 78.524,411.932 78.524,211.778 "/&gt;
+&lt;polygon style="fill:#F2CA7F;" points="256,111.71 78.524,211.778 256,311.855 256,512 433.476,411.932 433.476,211.778 "/&gt;
+&lt;polygon style="fill:#F4CE8F;" points="256,311.855 433.476,211.778 256,111.71 78.524,211.778 "/&gt;
+&lt;g&gt;
+	&lt;polyline style="fill:#EDEBEB;" points="313.605,225.066 361.369,251.998 361.369,452.591 328.499,471.113 328.499,270.533 
+		328.499,270.521 280.734,243.588 	"/&gt;
+	&lt;polyline style="fill:#EDEBEB;" points="231.515,243.588 183.749,270.521 183.749,270.533 183.749,471.113 150.878,452.591 
+		150.878,251.998 198.644,225.066 	"/&gt;
+&lt;/g&gt;
+&lt;polygon style="fill:#79B1D6;" points="316.733,94.45 256,257.395 141.878,193.049 141.878,64.344 "/&gt;
+&lt;polygon style="fill:#8CC1EA;" points="370.122,64.346 370.122,193.051 330.034,215.651 297.164,234.185 256.006,257.398 
+	256.006,128.693 141.878,64.346 181.761,41.855 214.632,23.321 256.006,0 "/&gt;
+&lt;polygon style="fill:#9CD2F4;" points="370.122,64.346 328.747,87.679 295.889,106.202 256.006,128.693 141.878,64.346 
+	181.761,41.855 214.632,23.321 256.006,0 "/&gt;
+&lt;polygon style="fill:#79B1D6;" points="330.034,88.401 330.034,215.651 297.164,234.185 297.164,106.923 295.889,106.202 
+	181.761,41.855 214.632,23.321 328.747,87.679 "/&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;2&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;digital elevation model&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
 &lt;a class="category-card" href="https://endap.github.io/26f64/"&gt;
  &lt;div class="top-row"&gt;
  
@@ -15852,7 +16044,7 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;14&lt;/div&gt;
+ &lt;div class="count"&gt;17&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;cellular automata&lt;/div&gt;

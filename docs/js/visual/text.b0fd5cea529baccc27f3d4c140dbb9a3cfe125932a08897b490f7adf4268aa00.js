@@ -1,0 +1,1 @@
+(()=>{(function(r){"use strict";let t=Module.require("Element");function l(o="div"){let e=t.create(o),n={fontFamily:"monospace",overflow:"auto",scrollbarGuttere:"stable",whiteSpace:"pre-wrap"};return Object.assign(e.style,n),e}Module.define("Text",{create:l})})();})();
