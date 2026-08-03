@@ -16353,8 +16353,483 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;cellular automata&lt;/div&gt;
  &lt;/div&gt;
-&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 27-jul-2026&lt;/p&gt;
+&lt;/a&gt;</description></item><item><title/><link>https://endap.github.io/idx23/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx23/</guid><description>&lt;p&gt;&lt;strong&gt;panels&lt;/strong&gt; &amp;mdash; simply input &amp;ndash; process &amp;ndash; output&lt;/p&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26b56/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-02-23&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;textarea button canvas&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26b56&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/25e44/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2025-05-22&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;simple stats&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;25e44&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26h04/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-08-03&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;rand-int&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26h04&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26c10/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-03-03&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;ta-bu-ta read-line&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26c10&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26a57/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-01-11&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;keypad textarea js&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26a57&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
+&lt;p&gt;&amp;lt; 03-aug-2026&lt;/p&gt;
 &lt;style&gt;
 .category-card {
  display: inline-flex;
@@ -16441,94 +16916,10 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;5&lt;/div&gt;
+ &lt;div class="count"&gt;7&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
  &lt;div class="title"&gt;days of learning&lt;/div&gt;
- &lt;/div&gt;
-&lt;/a&gt;
-
-
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
-
-
-
-&lt;a class="category-card" href="https://endap.github.io/idx99/"&gt;
- &lt;div class="top-row"&gt;
- 
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#3688FF" /&gt;&lt;path d="M640 682.7c-9.6 0-19.3-3.2-27.3-9.9l-128-106.7c-9.7-8.1-15.4-20.1-15.4-32.8V384c0-23.6 19.1-42.7 42.7-42.7s42.7 19.1 42.7 42.7v129.4l112.6 93.9c18.1 15.1 20.5 42 5.5 60.1-8.5 10-20.6 15.3-32.8 15.3z" fill="#5F6379" /&gt;&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;8&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;old home&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
@@ -16639,9 +17030,9 @@ document.querySelectorAll('.post-card .id').forEach((el, i, arr) =&gt; {
  &lt;div class="count"&gt;0&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;a lab&lt;/div&gt;
+ &lt;div class="title"&gt;the lab&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
 
-&lt;p&gt;&amp;lt; 21-jun-2026&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&amp;lt; 27-jul-2026&lt;/p&gt;</description></item></channel></rss>
