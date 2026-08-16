@@ -18123,6 +18123,26 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 });
 &lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx24/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx24/</guid><description>&lt;p&gt;&lt;strong&gt;seeds&lt;/strong&gt; &amp;mdash; non-zero potential&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;13-aug-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/idx24/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;00x12&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;plts&lt;/code&gt; industrial region business expansion model to app&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;06-aug-2026&lt;/code&gt; 
 &lt;a
 
@@ -18715,6 +18735,101 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
  &lt;/div&gt;
  &lt;div class="bottom-row"&gt;
  &lt;div class="url"&gt;25i25&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx26/</guid><description>&lt;p&gt;&lt;strong&gt;endap js&lt;/strong&gt; &amp;mdash; developing understanding&lt;/p&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26h43/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-08-16&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;endap-js shortcode&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26h43&lt;/div&gt;
  &lt;div class="day"&gt;&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
