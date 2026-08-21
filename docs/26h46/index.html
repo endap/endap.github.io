@@ -1,0 +1,229 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>js bool for comment and info | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1787280980'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1787280980'></head><div class=note-container><h1 class=note-title>js bool for comment and info</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-08-17T12:23:06 07:00">17 Aug 2026</time>
+&#183;
+5 mins read
+&#183;
+<a class=link href=npprel:///26/h/46-js-bool-for-comment-and-info.md>edit</a></div></div><div class=note-content><p>JavaScript booleans are a primitive type that can be used directly without first explicitly created as an object <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. The booleans can only have value <code>true</code> or <code>false</code> or obtain value converted from string <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. There are six falsy value and everything else is truthy to use <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>, that can be converted to booleans <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>. A common use of this primitive type is as flag, that can be toggled in several ways <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>. In this post it is used as flag in showing or not showing comments.</p><script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js",
+    "endap.js": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js"
+  }
+}
+  </script><h2 id=sorting>sorting</h2><p>Bubble sort is an algorithm chosen when simplicity is favoured over efficiency <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>. It compares elements and swap values for a condition until all elements are processed <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>, so that elements tend to be in order at each step like bubble <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup> with available C++ example <sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup>.</p><p>A function represented bubble sort algorithm is written as follows.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>bubbleSort</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>clone</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>len</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>]) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>t</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>t</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Following is result of the given function.</p><div id=cnt></div><script type=module>
+  
+import { Tensor1D as T1D } from "endap";
+import { RandNum as RNU } from "endap";
+import { Console as CLI } from "endap";
+
+const consoles = CLI.create("60px");
+const cnt = document.getElementById("cnt");
+cnt.append(consoles.el);
+
+function bubbleSort(x, processInfo) {
+  const y = T1D.clone(x);
+  const n = T1D.len(y);
+  for(let i = 0; i < n - 1; i++) {
+    if(processInfo) {
+      consoles.log("\ncurrent state is ", "")
+      consoles.log(y);
+    }
+    
+    for(let j = i + 1; j < n; j++) {
+      let msg;
+      if(y[i] > y[j]) {
+        msg = "  swap element " + i + " with element " + j;
+        const t = y[i];
+        y[i] = y[j];
+        y[j] = t;
+      } else {
+        msg = "  no swap"
+      }
+      if(processInfo) {
+        consoles.log(msg);
+      }
+    }
+  }
+  return y;
+}
+
+let subProcessInfo = false;
+
+const min = 10;
+const max = 90
+const n = 10;
+const z1 = RNU.randIntN(min, max, n);
+consoles.log("Before sort: ", "");
+consoles.log(z1);
+
+const z2 = bubbleSort(z1, subProcessInfo);
+consoles.log();
+
+consoles.log("After sort: ", "");
+consoles.log(z2);
+
+</script><p>Notice the after sort the numbers are in ascending order.</p><h2 id=info>info</h2><p>In developing program sometime we need to display info at certain line to assure that a logic works. For example how to monitor whether at each step the algorithm work and the numbers order are rearranged until they are in ascending order? Previous output show the initial and final order of the numbers, which does not give any information above the sub-process in the function. Compare it with following output.</p><div id=cnt2></div><script type=module>
+  
+import { Tensor1D as T1D } from "endap";
+import { RandNum as RNU } from "endap";
+import { Console as CLI } from "endap";
+
+const consoles = CLI.create("200px");
+const cnt = document.getElementById("cnt2");
+cnt.append(consoles.el);
+
+function bubbleSort(x, processInfo) {
+  const y = T1D.clone(x);
+  const n = T1D.len(y);
+  for(let i = 0; i < n - 1; i++) {
+    if(processInfo) {
+      consoles.log("\ncurrent state is ", "")
+      consoles.log(y);
+    }
+    
+    for(let j = i + 1; j < n; j++) {
+      let msg;
+      if(y[i] > y[j]) {
+        msg = "  swap element " + i + " with element " + j;
+        const t = y[i];
+        y[i] = y[j];
+        y[j] = t;
+      } else {
+        msg = "  no swap"
+      }
+      if(processInfo) {
+        consoles.log(msg);
+      }
+    }
+  }
+  return y;
+}
+
+let subProcessInfo = true;
+
+const min = 10;
+const max = 90
+const n = 10;
+const z1 = RNU.randIntN(min, max, n);
+consoles.log("Before sort: ", "");
+consoles.log(z1);
+
+const z2 = bubbleSort(z1, subProcessInfo);
+consoles.log();
+
+consoles.log("After sort: ", "");
+consoles.log(z2);
+
+</script><p>Now you can see that at each outter iteration the state of numbers are shown and also whether the swap is required or not. You can trace from the messages elements position change.</p><h2 id=code>code</h2><p>To get previous results the code is as follows.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Tensor1D</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>T1D</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;endap&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>RandNum</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>RNU</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;endap&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Console</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>CLI</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;endap&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>consoles</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>CLI</span>.<span style=color:#a6e22e>create</span>(<span style=color:#e6db74>&#34;200px&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cnt</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;cnt2&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>append</span>(<span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>el</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>bubbleSort</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>clone</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>len</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;\ncurrent state is &#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>msg</span>;
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>]) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>msg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;  swap element &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; with element &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>j</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>t</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>t</span>;
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>msg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;  no swap&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>msg</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>subProcessInfo</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>min</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>max</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>90</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>z1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>RNU</span>.<span style=color:#a6e22e>randIntN</span>(<span style=color:#a6e22e>min</span>, <span style=color:#a6e22e>max</span>, <span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Before sort: &#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>z1</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>z2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>bubbleSort</span>(<span style=color:#a6e22e>z1</span>, <span style=color:#a6e22e>subProcessInfo</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;After sort: &#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>z2</span>);
+</span></span></code></pre></div><p>First output, that shows only initial and final numbers orders, is obtained with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>subProcessInfo</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span></code></pre></div><p>while the second output is using</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>subProcessInfo</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span></code></pre></div><p>where the flag <code>subProcessInfo</code> is passed to the <code>bubbleSort(x, processInfo)</code> function</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>bubbleSort</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>clone</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>len</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;\ncurrent state is &#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>msg</span>;
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>]) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>msg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;  swap element &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; with element &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>j</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>t</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>j</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>t</span>;
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>msg</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;  no swap&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>processInfo</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>msg</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>which is quite different compared to the formerly given one. Notice that it has now second argument <code>processInfo</code> for the flag to determine whether the info about sub-process should be display or not. This information is very usefull in debuging but can be very annoying while running the program. To avoid such messy output a flag <code>subProcessInfo</code> is defined. In the real project you can separate the development source code and the one for delivery. It is better to strip out those the make the code concise, but keep the main one for future maintenance. There are pros and cons about this approach <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup>.</p><h2 id=notes>notes</h2><ul><li>To-do: Flowchart using Mermaid in other post as illustration for this post.</li><li>The bubble analogy for the algorithm triggers the idea to simulate it in real physical system to investiage the sorting resolution based on physical properties, e.g. bubble density and size, where buoyant force is proportional to the first, but it is proportional to the cube of the second.</li><li>The time required to separate the bubbles in ascending (or descending order when use spheres instead) can be considered as computation time for the sorting algorithm.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Jessica Reuter Castrogiovanni, &ldquo;Javascript Booleans: True or False Values&rdquo;, Udacity, 27 Sep 2022, url
+<a href=https://www.udacity.com/blog/javascript-booleans/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.udacity.com/blog/javascript-booleans/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Joel Olawanle, &ldquo;JavaScript String to Boolean – How to Parse a Boolean in JS&rdquo;, freeCodeCamp, 30 Nov 2022, url
+<a href=https://www.freecodecamp.org/news/javascript-string-to-boolean/ target=_blank rel="nofollow noopener noreferrer"><span>https://www.freecodecamp.org/news/javascript-string-to-boolean/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20220817].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Nick Gard, &ldquo;Boolean Logic in JavaScript: Part 1: Boolean Operators & Truth Tables&rdquo;, Medium, 23 Jul 2018, url
+<a href=https://medium.com/p/3371af974f19 target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/3371af974f19 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Łukasz Holeczek, &ldquo;How to convert a string to boolean in JavaScript&rdquo;, CoreUI, 13 Nov 2024, url
+<a href=https://coreui.io/blog/how-to-convert-a-string-to-boolean-in-javascript/ target=_blank rel="nofollow noopener noreferrer"><span>https://coreui.io/blog/how-to-convert-a-string-to-boolean-in-javascript/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>John Kavanagh, &ldquo;Toggle a Boolean in JavaScript&rdquo;, 1 Aug 2019, url
+<a href=https://johnkavanagh.co.uk/articles/toggle-a-boolean-in-javascript/ target=_blank rel="nofollow noopener noreferrer"><span>https://johnkavanagh.co.uk/articles/toggle-a-boolean-in-javascript/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Maximilian Coghlan, &ldquo;The Bubble Sort Algorithm&rdquo;, DEV Community, 6 Mar 2024, url
+<a href=https://dev.to/kaxmoglan/the-bubble-sort-algorithm-2f47 target=_blank rel="nofollow noopener noreferrer"><span>https://dev.to/kaxmoglan/the-bubble-sort-algorithm-2f47 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7><p>William Hartanto, &ldquo;Implementasi Algoritma Bubble Sort dengan Bahasa Pemrograman Python&rdquo;, Binus University, 5 Oct 2023, url
+<a href=https://binus.ac.id/bandung/2023/10/implementasi-algoritma-bubble-sort-dengan-bahasa-pemrograman-python/ target=_blank rel="nofollow noopener noreferrer"><span>https://binus.ac.id/bandung/2023/10/implementasi-algoritma-bubble-sort-dengan-bahasa-pemrograman-python/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:8><p>Riswan Abidin, &ldquo;Belajar Algoritma Bubble Sort Untuk Pengurutan&rdquo;, Tekno Jurnal, 27 Jun 2016, url
+<a href=https://teknojurnal.com/pengertian-algoritma-bubble-sort/ target=_blank rel="nofollow noopener noreferrer"><span>https://teknojurnal.com/pengertian-algoritma-bubble-sort/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:9><p>Musliadi, &ldquo;Memahami Konsep Bubble Sort (Step by Step)&rdquo;, Medium, 5 May 2017, url
+<a href=https://medium.com/p/cab7fa85edbe target=_blank rel="nofollow noopener noreferrer"><span>https://medium.com/p/cab7fa85edbe <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:10><p>fernacolo, &ldquo;Should we compile and ship libraries with debug information whenever possible?&rdquo;, Software Engineering Stack Exchange, 9 Feb 2017, url
+<a href=https://softwareengineering.stackexchange.com/q/341946/412661 target=_blank rel="nofollow noopener noreferrer"><span>https://softwareengineering.stackexchange.com/q/341946/412661 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260817].&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div></main><footer><link rel=stylesheet href='/css/footer.css?v=1787280980'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>

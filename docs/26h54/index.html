@@ -1,0 +1,239 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>coffee-bean-drying n-stages | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1787280980'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1787280980'></head><div class=note-container><h1 class=note-title>coffee-bean-drying n-stages</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-08-21T07:25:57 07:00">21 Aug 2026</time>
+&#183;
+3 mins read
+&#183;
+<a class=link href=npprel:///26/h/54-coffee-bean-drying-n-stages.md>edit</a></div></div><div class=note-content><p>In a discussion group <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> some unconfirmed observations trigger the idea of n-stages for coffee bean drying process, i.e. sun drying followed by fan drying <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Even it sounds simple, in locations with limited natural airflow, using a fan to direct airflow onto a damp area is an effective way to speed up the drying process <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>, while sun drying is one of the oldest and most widely practised methods of preserving fruits and vegetables <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>. It is the mucilage to be consider as a factor in drying process.</p><h2 id=hypothesis>hypothesis</h2><p>Later, a hypothesis is built <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup> as follows</p><figure><blockquote><p>A two-stage drying process may be more efficient because each drying method is used when it is most effective: sun drying during the high-mucilage stage, followed by fan drying after the mucilage has dried.</p></blockquote></figure><p>which will be further elaborated.</p><h2 id=model>model</h2><p>A warm discussion transforms the initial 3-compartement model to a simply 2-compartemen model with the constants are function of mode (sun or wind) and the existence of mucilage <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>, which is</p><p>$$\tag{1}
+\frac{dC}{dt} = -kC
+$$</p><p>with $C(t)$ represents measurable total moisture of the bean + attached mucilage. The constants depends on drying mode ($m = 1$ for sun only, $m = 2$ for wind only, and $m = 3$ for sun-wind), which defined as follows</p><p>$$\tag{2}
+k = \left\{
+\begin{matrix}
+k_{\rm sun}, & m = 1, \newline
+k_{\rm wind}, & m = 2, \newline
+k_{\rm sun-wind}, & m = 3,
+\end{matrix}
+\right.
+$$</p><p>where the last constant is</p><p>$$\tag{3}
+k_{\rm sun-win} = \left\{
+\begin{matrix}
+k_{\rm sun}, & 0 \le t \lt t_s, \newline
+k_{\rm wind}, & t > t_s,
+\end{matrix}
+\right.
+$$</p><p>that depends on switching time $t_s$ when the sun mode change to win mode. Experiments in mode 1 and and 2 will give $k_{\rm sun}$ and $k_{\rm wind}$, respectively, while mode 3 confirm the value of $C$.</p><h2 id=unresult>unresult</h2><p>Follwing is only predicted result using current chart feature on endap <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>, while the real result will be later confirmed in experiments.</p><script src=/js/chartjs/4.5.1/chart.umd.min.js defer></script><script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js",
+    "endap.js": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js"
+  }
+}
+  </script><div id=cnt></div><script type=module>
+  
+import { Console as CLI } from "endap"
+const consoles = CLI.create("10px");
+
+const cnt = document.getElementById("cnt");
+cnt.append(consoles.el);
+
+import { Tensor1D as T1D } from "endap"
+
+
+const can = document.createElement("canvas");
+Object.assign(can.style, {
+  width: "100%",
+  border: "1px solid var(--muted-border)",
+});
+
+
+function getThemeColor(variableName) {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(variableName)
+    .trim();
+}
+
+
+function generateData() {
+  const n = 100;
+  const dt = 1;
+  const tbeg = 0;
+  
+  const ybeg = 50;
+  const ymin = 15;
+  const ksun = 0.0115;
+  const kwind = 0.02;
+  const knmu = 0.06;
+  const ts = 30;
+  
+  let y;
+  
+  y = 0;
+  const m1 = [];
+  for(let i = 0; i < n; i++) {
+    const x = tbeg + i * dt;
+    
+    if(i > 0) {
+      y += - ksun * y * dt;
+    } else {
+      y = ybeg;
+    }
+    
+    if(y < ymin) {
+      y = ymin;
+    }
+    
+    const p = {x: x, y: y};
+    m1.push(p);
+  }
+
+  y = 0;
+  const m2 = [];
+  for(let i = 0; i < n; i++) {
+    const x = tbeg + i * dt;
+    
+    if(i > 0) {
+      y += - kwind * y * dt;
+    } else {
+      y = ybeg;
+    }
+    
+    if(y < ymin) {
+      y = ymin;
+    }
+    
+    const p = {x: x, y: y};
+    m2.push(p);
+  }
+  
+  y = 0;
+  const m3 = [];
+  for(let i = 0; i < n; i++) {
+    const x = tbeg + i * dt;
+    
+    if(i > 0) {
+      if(x < ts) {
+        y += - ksun * y * dt;
+      } else {
+        y += - kwind * y * dt;
+      }
+    } else {
+      y = ybeg;
+    }
+    
+    if(y < ymin) {
+      y = ymin;
+    }
+    
+    const p = {x: x, y: y};
+    m3.push(p);
+  }
+  
+  y = 0;
+  const m4 = [];
+  for(let i = 0; i < n; i++) {
+    const x = tbeg + i * dt;
+    
+    if(i > 0) {
+      if(x < ts) {
+        y += - ksun * y * dt;
+      } else {
+        y += - knmu * y * dt;
+      }
+    } else {
+      y = ybeg;
+    }
+    
+    if(y < ymin) {
+      y = ymin;
+    }
+    
+    const p = {x: x, y: y};
+    m4.push(p);
+  }
+
+  
+  const data = {
+    datasets: [{
+      label: 'sun-wind (no-mucilage)',
+      data: m4,
+      backgroundColor: 'rgb(128, 128, 128)'
+    }, {
+      label: 'sun-wind',
+      data: m3,
+      backgroundColor: 'rgb(99, 255, 132)'
+    }, {
+      label: 'wind',
+      data: m2,
+      backgroundColor: 'rgb(99, 132, 255)'
+    }, {
+      label: 'sun',
+      data: m1,
+      backgroundColor: 'rgb(255, 99, 132)'
+    }],
+  };
+  
+  return data;
+}
+
+
+const config = {
+  type: 'scatter',
+  data: generateData(),
+  options: {
+    responsive: false,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'linear',
+        position: 'bottom',
+        grid: {
+          color: getThemeColor('--muted-border'),
+        },
+        title: {
+          display: true,
+          text: 't (time)',
+          color: '#888',
+          font: {
+            family: 'Times',
+            size: 14,
+            weight: 'normal',
+          },
+        },
+      },
+      y: {
+        type: 'linear',
+        position: 'left',
+        grid: {
+          color: getThemeColor('--muted-border'),
+        },
+        title: {
+          display: true,
+          text: 'moisture (%)',
+          color: '#888',
+          font: {
+            family: 'Times',
+            size: 14,
+            weight: 'normal',
+          },
+        },
+      },
+    },
+  },
+};
+
+cnt.append(can);
+new Chart(can, config);
+
+</script><p>Figure 1. Three mode (sun, win, sun-wind) and adjusted mode (sun-wind no-mucilage) curves.</p><p>Modification on Equation (3) is required to get the earlier time to get similiar moisture, since current scenarion can only produce that mode 3 is between mode 1 and 2.</p><h2 id=to-do>to-do</h2><ul><li>Today meeting will discuss the next step.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>-, &ldquo;Pengabdian di Karawang 2026&rdquo;, WhatsApp Group, 9 Jun 2026, url
+<a href=https://chat.whatsapp.com/HMwvTnnvT06FU5BSiWqNX3 target=_blank rel="nofollow noopener noreferrer"><span>https://chat.whatsapp.com/HMwvTnnvT06FU5BSiWqNX3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821]. &#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Mery Cintia, Muhammad Fathin Abdul Aziz, Feridiana Katarina Minda, Nurfirda, &ldquo;Kesiimpulan Hasil Percobaan Daun Lamtoro dan Pengeringan Biji Kopi&rdquo;, Progress Report for Fisika di Balik Kopi in Karawang, 14 Aug 2026, url (n/a).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Simon, &ldquo;Use Fan to Expedite Drying&rdquo;, Dampaï, 27 Jan 2025, url
+<a href=https://damp.ai/glossary/use-fan-to-expedite-drying-2/ target=_blank rel="nofollow noopener noreferrer"><span>https://damp.ai/glossary/use-fan-to-expedite-drying-2/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Prince Kumar, &ldquo;Sun Drying Fruits and Vegetables: Benefits and Limitations&rdquo;, Agriculture Notes, Agriculture.Institute, 14 Jun 2025, url
+<a href=https://agriculture.institute/horticulture-agro-forestry-systems/sun-drying-fruits-vegetables-benefits-limitations/ target=_blank rel="nofollow noopener noreferrer"><span>https://agriculture.institute/horticulture-agro-forestry-systems/sun-drying-fruits-vegetables-benefits-limitations/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>GPT-5.6 Luna, &ldquo;Clarify Drying Time Order&rdquo;, ChatGPT, 21 Aug 2026, url
+<a href=https://chatgpt.com/s/t_6a87a93011248191a613a9378848b44a target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/s/t_6a87a93011248191a613a9378848b44a <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>GPT-5.6 Luna, &ldquo;Container Model Comment&rdquo;, ChatGPT, 21 Aug 2026, url
+<a href=https://chatgpt.com/share/6a87afc8-9868-83ec-b562-d59aa33d8b08 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/6a87afc8-9868-83ec-b562-d59aa33d8b08 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:7><p>Sparisoma Viridi, &ldquo;fix loader-2 endap&rdquo;, endap, 16 Aug 2026, url
+<a href=/26h42/><span>https://endap.github.io/26h42/
+</span></a>[20260821].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></main><footer><link rel=stylesheet href='/css/footer.css?v=1787280980'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>
