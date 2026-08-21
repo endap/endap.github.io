@@ -1,0 +1,154 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><meta name=color-scheme content="light dark"><link rel=icon href=/favicon-32.png sizes=32x32 type=image/png><link rel=icon href=/favicon-16.png sizes=16x16 type=image/png><link rel=apple-touch-icon href=/icons/icon-192.png><link rel=manifest href=/manifest.json><meta name=theme-color content="#1a1a1a"><title>upper-lower limits 1st-ode | endap</title><link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous><link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous><script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css></head><body><header><link rel=stylesheet href='/css/header.css?v=1787305350'><h1>endap</h1><nav><ul><li><a href=/>Home</a></li></ul></nav></header><main><head><link rel=stylesheet href='/css/notes.css?v=1787305350'></head><div class=note-container><h1 class=note-title>upper-lower limits 1st-ode</h1><div class=info-after-title><ul class=authors-container><li class=author><a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a></li></ul><div class=date-reading-time-edit><time datetime="2026-08-21T14:18:27 07:00">21 Aug 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/h/55-upper-lower-limits-1st-ode.md>edit</a></div></div><div class=note-content><p>Continuing previous post about a use of ODE <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, which is linear <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>, ideas how to set upper and lower limits informed in a dicussion <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> is discussed here. The implementation is for moisture content of coffee bean covered partially with mucilage, where the model should be able to support observation showing two slopes <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, that can be achieved via parameterizing the constants <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p><h2 id=a-limit>a limit</h2><p>Previous equation <sup id=fnref1:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> is modified as follows</p><p>$$\tag{1}
+\frac{d(C - L)}{dt} = -k (C - L)
+$$</p><p>to cover a limit $L$. Equation (1) can be solved with following steps</p><p>$$
+\begin{align}
+\nonumber \frac{d(C - L)}{(C - L)} & = -k dt \newline
+\nonumber \ln (C - L) - \ln (C_0 - L) & = -k (t - t_0) \newline
+\nonumber \frac{C - L}{C_0 -L} & = e^{-k (t - t_0)} \newline
+\tag{2} C & = L + (C_0 - L) e^{-k (t - t_0)} \newline
+\end{align}
+$$</p><p>where at $t = t_0$ it gives $C = C_0$ and at $t = \infty$ it gives $C = L$ instead of $0$. Usually it is chosen that $t_0 = 0$.</p><p>The limit $L$ can act as upper limit or lower limit. When $C_0 &lt; L$ then $L$ is upper limit, but when $C_0 > L$ then $L$ is lower limit.</p><h2 id=illustrations>illustrations</h2><p>Following is illustrations of Equation (2) for various values of $C_0$ and $L$.</p><script src=/js/chartjs/4.5.1/chart.umd.min.js defer></script><script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js",
+    "endap.js": "/js/endap/index.53f25e47a4731c9e8872732c1bf4770c937f465ee99705383c2bded385506687.js"
+  }
+}
+  </script><div id=cnt></div><script type=module>
+  
+import { Console as CLI } from "endap"
+const consoles = CLI.create("10px");
+
+const cnt = document.getElementById("cnt");
+cnt.append(consoles.el);
+
+import { Tensor1D as T1D } from "endap"
+
+
+const can = document.createElement("canvas");
+Object.assign(can.style, {
+  width: "100%",
+  border: "1px solid var(--muted-border)",
+});
+
+
+function getThemeColor(variableName) {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(variableName)
+    .trim();
+}
+
+
+function generateData() {
+  const n = 100;
+  const tbeg = 0;
+  
+  const k = 0.08;
+
+  const C1 = 2;
+  const L1 = 7;
+
+  const C2 = 9;
+  const L2 = 3;
+  
+  let y;
+  
+  y = 0;
+  const m1 = [];
+  for(let i = 0; i < n; i++) {
+    const x = i;
+    const y = L1 + (C1 - L1) * Math.exp(-k * (x - tbeg));
+    const p = {x: x, y: y};
+    m1.push(p);
+  }
+
+  y = 0;
+  const m2 = [];
+  for(let i = 0; i < n; i++) {
+    const x = i;
+    const y = L2 + (C2 - L2) * Math.exp(-k * (x - tbeg));
+    const p = {x: x, y: y};
+    m2.push(p);
+  }
+
+  const data = {
+    datasets: [{
+      label: 'C2 = 9, L2 = 3',
+      data: m2,
+      backgroundColor: 'rgb(99, 132, 255)'
+    }, {
+      label: 'C1 = 2, L1 = 7',
+      data: m1,
+      backgroundColor: 'rgb(255, 99, 132)'
+    }],
+  };
+  
+  return data;
+}
+
+
+const config = {
+  type: 'scatter',
+  data: generateData(),
+  options: {
+    responsive: false,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'linear',
+        position: 'bottom',
+        grid: {
+          color: getThemeColor('--muted-border'),
+        },
+        title: {
+          display: true,
+          text: 't (time)',
+          color: '#888',
+          font: {
+            family: 'Times',
+            size: 14,
+            weight: 'normal',
+          },
+        },
+      },
+      y: {
+        type: 'linear',
+        position: 'left',
+        grid: {
+          color: getThemeColor('--muted-border'),
+        },
+        title: {
+          display: true,
+          text: 'moisture (%)',
+          color: '#888',
+          font: {
+            family: 'Times',
+            size: 14,
+            weight: 'normal',
+          },
+        },
+      },
+    },
+  },
+};
+
+cnt.append(can);
+new Chart(can, config);
+
+</script><p>Figure 1. Role of $L$ as upper limit when $L_1 = 7$ and initial value $C_1 = 2$; as lower limit when $L_2 = 3$ and initial value $C_2 = 9$.</p><p>For prevopis case <sup id=fnref2:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> this way can be used to set the lower limit.</p><h2 id=notes>notes</h2><ul><li>Next is to illustrate the piecewise first-order model <sup id=fnref1:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</li><li>It would be better when there is observation data to fit, e.g. the unconfirmed one <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>.</li></ul><h2 id=refs>refs</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Sparisoma Viridi, &ldquo;coffee-bean-drying n-stages&rdquo;, endap, 21 Aug 2026, url
+<a href=/26h54/><span>https://endap.github.io/26h54/
+</span></a>[20260821].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a>&#160;<a href=#fnref1:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a>&#160;<a href=#fnref2:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Paul Dawkins, &ldquo;Section 2.1 : Linear Differential Equations&rdquo;, Paul&rsquo;s Online Notes, 31 Jul 2026, url
+<a href=https://tutorial.math.lamar.edu/classes/de/Linear.aspx target=_blank rel="nofollow noopener noreferrer"><span>https://tutorial.math.lamar.edu/classes/de/Linear.aspx <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>GPT-5.6 Luna, &ldquo;Compare Limiting Procedures&rdquo;, ChatGPT, 21 Aug 2026, url
+<a href=https://chatgpt.com/share/6a87ffc4-1c70-83ec-8bb8-6cc7af63896b target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/6a87ffc4-1c70-83ec-8bb8-6cc7af63896b <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>GPT-5.6 Luna, &ldquo;Modeling Minimum Moisture ODE&rdquo;, ChatGPT, 21 Aug 2026, url
+<a href=https://chatgpt.com/share/6a880189-2a5c-83ec-a13c-efa4539a995a target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/6a880189-2a5c-83ec-a13c-efa4539a995a <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a>&#160;<a href=#fnref1:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>GPT-5.6 Luna, &ldquo;Parameterize ODE Constants&rdquo;, ChatGPT, 21 Aug 2026, url
+<a href=https://chatgpt.com/share/6a880200-03f8-83ec-9701-44d6dee8e199 target=_blank rel="nofollow noopener noreferrer"><span>https://chatgpt.com/share/6a880200-03f8-83ec-9701-44d6dee8e199 <i class="fa fa-external-link" style=font-size:14px></i>
+</span></a>[20260821].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:6><p>Mery Cintia, Muhammad Fathin Abdul Aziz, Feridiana Katarina Minda, Nurfirda, &ldquo;Kesimpulan Hasil Percobaan Daun Lamtoro dan Pengeringan Biji Kopi&rdquo;, Progress Report for Fisika di Balik Kopi in Karawang, 14 Aug 2026, url (n/a).&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></main><footer><link rel=stylesheet href='/css/footer.css?v=1787305350'><p>Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.</p></footer><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0,theme:"neutral",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px"}})</script></body></html>
