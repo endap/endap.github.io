@@ -19052,8 +19052,105 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
  el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
 });
-&lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 03-aug-2026&lt;/p&gt;
+&lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx27/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx27/</guid><description>&lt;p&gt;&lt;strong&gt;books&lt;/strong&gt; &amp;mdash; bundle of evolving understanding&lt;/p&gt;
+&lt;style&gt;
+.post-card {
+ display: inline-flex;
+ vertical-align: middle;
+ flex-direction: column;
+ justify-content: space-between; 
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.post-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
+}
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+ padding: 2px 2px 0;
+}
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
+}
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
+}
+.post-card .date {
+ font-size: 0.75em;
+ color: #dc4;
+ font-family: monospace;
+}
+.post-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.post-card .title {
+ font-weight: 600;
+ font-size: 0.9em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 5; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+&lt;a class="post-card" href="https://endap.github.io/26i33/"&gt;
+ &lt;div class="top-row"&gt;
+ &lt;div class="date"&gt;2026-09-15&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;python in brief&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26i33&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;
+&lt;h2 id="notes"&gt;notes&lt;/h2&gt;
+&lt;p&gt;The tagline might sound not really right but it is original and discussed &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
+&lt;p&gt;&amp;lt; 15-sep-2026&lt;/p&gt;
 &lt;style&gt;
 .category-card {
  display: inline-flex;
@@ -19119,31 +19216,33 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx22/"&gt;
+&lt;a class="category-card" href="https://endap.github.io/idx24/"&gt;
  &lt;div class="top-row"&gt;
  
  
  
  &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512.001 512.001" xml:space="preserve"&gt;
-&lt;path style="fill:#CCF8F3;" d="M370.603,400.56l61.284-35.383L266.796,79.23V0h-42.459v79.23L17.455,437.559
-	c-8.837,15.305-8.837,34.321-0.001,49.628c8.837,15.305,25.306,24.815,42.979,24.815H358.79v-70.765H97.045L245.566,183.99
-	L370.603,400.56z"/&gt;
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 246 471.1" enable-background="new 0 0 246 471.1" xml:space="preserve"&gt;
 &lt;g&gt;
-	&lt;rect x="245.559" y="441.236" style="fill:#00D7DF;" width="113.225" height="70.765"/&gt;
-	&lt;polygon style="fill:#00D7DF;" points="266.796,79.23 266.796,0 245.566,0 245.566,183.99 370.603,400.56 431.887,365.177 	"/&gt;
+	&lt;path fill="#929000" d="M168.1,279.8c63.1-56-7-95.6-69.5-127.9C12.9,107.7,14,38.8,86.2,26.4c53.4-9.2,25.3,35.7,42.3,71
+		c8,16.5,76,7.5,73-2.6c-2.5-8.3-32.6-6.5-42.3-18.6c-6.5-8-1.6-25.4-4.9-37.6C138.2-20.2,35.8-7,9.8,45.9
+		c-31.2,63.4,17.6,100.1,68.4,128.9C131.2,204.9,156.7,227.5,168.1,279.8z"/&gt;
+	&lt;path fill="#EEA700" d="M106,228.8c-22.8,12.9-44.8,35-62.2,77C2.1,406.7,64.5,468.9,128,471.1l-0.4-0.1l0.4-2
+		c3.2-16,13.7-72.6,14.1-130.5c0.4-53.4-8-85.5-24.2-100.6C114.4,234.6,110.4,231.6,106,228.8z"/&gt;
+	&lt;path fill="#EEA700" d="M214.7,244.1c5.1,6.5-13,51.7-41.7,67.2c-0.8,66.9-18.7,137.3-25.3,159.4c43.1-3.3,88.5-35.4,96.7-106.7
+		C250.7,308.9,238.1,269.3,214.7,244.1z"/&gt;
 &lt;/g&gt;
-&lt;rect x="344.633" y="77.545" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 449.4304 681.5145)" style="fill:#CCF8F3;" width="42.457" height="340.265"/&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;7&lt;/div&gt;
+ &lt;div class="count"&gt;10&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;days of learning&lt;/div&gt;
+ &lt;div class="title"&gt;seeds&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
@@ -19213,7 +19312,90 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;a class="category-card" href="https://endap.github.io/idx21/"&gt;
+&lt;a class="category-card" href="https://endap.github.io/idx17/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg fill="var(--fg)" width="800px" height="800px" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M 27.9266 43.8337 C 28.6400 43.8337 29.1436 43.4350 29.1436 42.7216 C 29.1436 42.4069 29.0597 42.2391 28.8289 41.7984 C 26.2691 37.8329 24.8213 33.2799 24.8213 28.3492 C 24.8213 23.5863 26.1852 18.8235 28.8289 14.8369 C 29.0597 14.3963 29.1436 14.2285 29.1436 13.9137 C 29.1436 13.2423 28.6400 12.8017 27.9266 12.8017 C 27.2343 12.8017 26.6677 13.1164 25.9963 14.0396 C 22.8491 18.0471 21.2545 23.0408 21.2545 28.3282 C 21.2545 33.6156 22.7861 38.4623 25.9963 42.5958 C 26.6677 43.5189 27.2343 43.8337 27.9266 43.8337 Z M 49.3490 43.8337 C 50.0413 43.8337 50.5870 43.5189 51.2582 42.5958 C 54.4685 38.4623 56 33.6156 56 28.3282 C 56 23.0408 54.4264 18.0471 51.2582 14.0396 C 50.5870 13.1164 50.0413 12.8017 49.3490 12.8017 C 48.6357 12.8017 48.1321 13.2423 48.1321 13.9137 C 48.1321 14.2285 48.1948 14.3963 48.4256 14.8369 C 51.0906 18.8235 52.4541 23.5863 52.4541 28.3492 C 52.4541 33.2799 50.9858 37.8329 48.4466 41.7984 C 48.1948 42.2391 48.1321 42.4069 48.1321 42.7216 C 48.1321 43.3931 48.6357 43.8337 49.3490 43.8337 Z M 2.8325 43.7917 C 6.9449 43.7917 8.8543 42.0292 9.8404 37.3084 L 12.2323 25.8314 L 16.0300 25.8314 C 17.2470 25.8314 18.0233 25.1809 18.0233 24.1318 C 18.0233 23.2296 17.4358 22.6631 16.4706 22.6631 L 12.9247 22.6631 L 13.5122 19.8096 C 14.0577 17.1449 14.8970 16.0539 17.2260 16.0539 C 17.5617 16.0539 17.8974 16.0329 18.1282 16.0119 C 19.1773 15.9070 19.6389 15.4244 19.6389 14.5222 C 19.6389 13.3472 18.6527 12.8227 16.6385 12.8227 C 12.6310 12.8227 10.5748 14.8160 9.6516 19.3060 L 8.9382 22.6631 L 6.3365 22.6631 C 5.1195 22.6631 4.3222 23.3136 4.3222 24.3626 C 4.3222 25.2648 4.9307 25.8314 5.8959 25.8314 L 8.2668 25.8314 L 5.9588 36.8048 C 5.3713 39.5534 4.5110 40.5605 2.2660 40.5605 C 1.9723 40.5605 1.6995 40.5815 1.4897 40.6025 C .5245 40.7284 0 41.2529 0 42.1342 C 0 43.2672 .9652 43.7917 2.8325 43.7917 Z M 32.3118 38.2735 C 33.0042 38.2735 33.4658 38.0427 33.9904 37.2874 L 38.5853 30.7411 L 38.6691 30.7411 L 43.3692 37.3923 C 43.8939 38.1267 44.3971 38.2735 44.9007 38.2735 C 45.9079 38.2735 46.5796 37.5601 46.5796 36.6999 C 46.5796 36.3012 46.4537 35.9236 46.1808 35.5669 L 40.8095 28.2652 L 46.1808 21.0685 C 46.4537 20.7118 46.5796 20.3341 46.5796 19.8935 C 46.5796 18.9913 45.8241 18.3619 44.9849 18.3619 C 44.2295 18.3619 43.7886 18.7396 43.3903 19.3480 L 38.9630 25.8314 L 38.8582 25.8314 L 34.4100 19.3270 C 34.0114 18.7185 33.5078 18.3619 32.7105 18.3619 C 31.7453 18.3619 31.0109 19.1382 31.0109 19.9774 C 31.0109 20.5859 31.1788 20.9636 31.4726 21.3203 L 36.5711 28.1603 L 31.1578 35.6508 C 30.8431 36.0495 30.7802 36.4062 30.7802 36.8258 C 30.7802 37.6441 31.4726 38.2735 32.3118 38.2735 Z"/&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;15&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;equations&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx19/"&gt;
  &lt;div class="top-row"&gt;
  
  
@@ -19222,41 +19404,343 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
  &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 &lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
 &lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 460 460" xml:space="preserve"&gt;
-&lt;g id="XMLID_3312_"&gt;
-	&lt;path id="XMLID_2658_" style="fill:#D0D9DD;" d="M350,25.714V30v4.286C350,48.487,336.569,60,320,60v220v120
-		c0,33.137-26.863,60-60,60h-30h-30c-33.137,0-60-26.863-60-60V280V60c-16.569,0-30-11.513-30-25.714V30v-4.286
-		C110,11.513,123.431,0,140,0h90h90C336.569,0,350,11.513,350,25.714z"/&gt;
-	&lt;path id="XMLID_2671_" style="fill:#E7EFF2;" d="M350,25.714V30H110v-4.286C110,11.513,123.431,0,140,0h90h90
-		C336.569,0,350,11.513,350,25.714z"/&gt;
-	&lt;path id="XMLID_921_" style="fill:#E7EFF2;" d="M140,60h90v267.667h-90V60z"/&gt;
-	&lt;path id="XMLID_2771_" style="fill:#C3CED1;" d="M300,60h20v270h-20V60z"/&gt;
-	&lt;path id="XMLID_2770_" style="fill:#F8FDFF;" d="M180,60v220v110c0,5.523-4.477,10-10,10s-10-4.477-10-10V280V60H180z"/&gt;
-	&lt;path id="XMLID_2772_" style="fill:#EA905E;" d="M320,280v120c0,33.137-26.863,60-60,60h-30h-30c-33.137,0-60-26.863-60-60V280h90
-		H320z"/&gt;
-	&lt;path id="XMLID_2780_" style="fill:#F4A37A;" d="M160,390V280h20v110c0,5.523-4.477,10-10,10l0,0C164.477,400,160,395.523,160,390z
-		"/&gt;
-	&lt;path id="XMLID_2773_" style="fill:#ED724C;" d="M320,280v120c0,33.137-26.863,60-60,60h-30V280H320z"/&gt;
-	&lt;path id="XMLID_2777_" style="fill:#E5503C;" d="M300,280h20v120c0,17.767-7.729,33.724-20,44.71V280z"/&gt;
-	&lt;path id="XMLID_2592_" style="fill:#9A989B;" d="M260,110c0,5.523-4.477,10-10,10h-20h-20c-5.523,0-10-4.477-10-10s4.477-10,10-10
-		h20h20C255.523,100,260,104.477,260,110z"/&gt;
-	&lt;path id="XMLID_2655_" style="fill:#9A989B;" d="M260,230c0,5.523-4.477,10-10,10h-20h-20c-5.523,0-10-4.477-10-10s4.477-10,10-10
-		h20h20C255.523,220,260,224.477,260,230z"/&gt;
-	&lt;path id="XMLID_2603_" style="fill:#9A989B;" d="M250,170c0,5.523-4.477,10-10,10h-10h-10c-5.523,0-10-4.477-10-10s4.477-10,10-10
-		h10h10C245.523,160,250,164.477,250,170z"/&gt;
-	&lt;path id="XMLID_1273_" style="fill:#B0ADB2;" d="M230,120h-20c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h20V120z"/&gt;
-	&lt;path id="XMLID_1470_" style="fill:#B0ADB2;" d="M230,240h-20c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h20V240z"/&gt;
-	&lt;path id="XMLID_1282_" style="fill:#B0ADB2;" d="M230,180h-10c-5.523,0-10-4.477-10-10l0,0c0-5.523,4.477-10,10-10h10V180z"/&gt;
+	 viewBox="0 0 512 512" xml:space="preserve"&gt;
+&lt;g&gt;
+	&lt;path style="fill:#2BA5F7;" d="M196.644,477.385L196.644,477.385c-27.102-27.102-32.404-69.12-12.885-102.105L256,253.202
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C282.575,510.167,229.426,510.167,196.644,477.385z"/&gt;
+	&lt;path style="fill:#2BA5F7;" d="M352.259,234.256L352.259,234.256c-27.102-27.102-32.404-69.12-12.885-102.105l72.24-122.077
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C438.189,267.037,385.041,267.037,352.259,234.256z"/&gt;
+	&lt;path style="fill:#2BA5F7;" d="M41.028,234.256L41.028,234.256c-27.102-27.102-32.404-69.12-12.885-102.105l72.24-122.077
+		l72.24,122.077c19.52,32.985,14.217,75.003-12.885,102.105l0,0C126.96,267.037,73.81,267.037,41.028,234.256z"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#2197D8;" d="M100.387,258.842c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092L100.387,10.08L69.146,132.158c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C81.798,250.649,91.092,258.842,100.387,258.842z"/&gt;
+	&lt;path style="fill:#2197D8;" d="M411.622,258.842c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092L411.622,10.08l-31.241,122.077c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C393.033,250.649,402.328,258.842,411.622,258.842z"/&gt;
+	&lt;path style="fill:#2197D8;" d="M256.007,501.965c-21.49,0-42.967-8.193-59.353-24.579v-0.013
+		c-27.104-27.091-32.41-69.118-12.894-102.092l72.247-122.077l-31.241,122.077c-8.435,32.974-6.138,75.001,5.574,102.092v0.013
+		C237.418,493.772,246.712,501.965,256.007,501.965z"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#FFFFFF;" d="M447.227,220.586c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008L431.1,128.715c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.787-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C452.383,219.602,449.806,220.586,447.227,220.586z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M291.613,463.716c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008l-15.188-25.666c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.788-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C296.768,462.733,294.19,463.716,291.613,463.716z"/&gt;
+	&lt;path style="fill:#FFFFFF;" d="M135.997,220.586c-2.577,0-5.155-0.983-7.123-2.95c-3.934-3.934-3.934-10.313,0-14.247
+		c13.015-13.015,15.558-33.169,6.184-49.008l-15.188-25.665c-2.833-4.788-1.249-10.967,3.539-13.799
+		c4.79-2.83,10.967-1.249,13.799,3.539l15.188,25.666c14.061,23.76,10.247,53.99-9.276,73.515
+		C141.154,219.602,138.576,220.586,135.997,220.586z"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="114.129" cy="99.224" r="10.074"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="425.236" cy="99.224" r="10.074"/&gt;
+	&lt;circle style="fill:#FFFFFF;" cx="269.728" cy="342.338" r="10.074"/&gt;
+&lt;/g&gt;
+&lt;g&gt;
+	&lt;path style="fill:#333333;" d="M181.295,127.02L109.054,4.944C107.241,1.879,103.945,0,100.386,0c-3.559,0-6.855,1.879-8.67,4.944
+		L19.475,127.02c-21.873,36.963-15.939,83.989,14.432,114.358c17.756,17.758,41.366,27.537,66.478,27.537
+		s48.721-9.779,66.478-27.537C197.234,211.009,203.168,163.983,181.295,127.02z M48.151,227.132
+		c-23.861-23.862-28.524-60.81-11.337-89.852l63.572-107.427l63.572,107.427c17.185,29.043,12.523,65.991-11.339,89.852
+		c-13.952,13.952-32.503,21.635-52.233,21.635C80.654,248.769,62.105,241.085,48.151,227.132"/&gt;
+	&lt;path style="fill:#333333;" d="M492.526,127.02L420.285,4.943C418.471,1.879,415.176,0,411.615,0s-6.855,1.879-8.67,4.944
+		l-72.24,122.077c-21.873,36.963-15.939,83.989,14.432,114.358c18.328,18.328,42.404,27.493,66.478,27.493
+		c24.076,0,48.151-9.164,66.48-27.493C508.463,211.009,514.397,163.983,492.526,127.02z M463.848,227.132
+		c-13.952,13.952-32.501,21.635-52.233,21.635c-19.731,0-38.281-7.684-52.233-21.635c-23.862-23.862-28.524-60.81-11.339-89.852
+		l63.572-107.427l63.572,107.427C492.373,166.323,487.709,203.271,463.848,227.132z"/&gt;
+	&lt;path style="fill:#333333;" d="M264.67,248.073c-1.813-3.064-5.109-4.944-8.67-4.944s-6.855,1.879-8.67,4.944l-72.24,122.076
+		c-21.873,36.963-15.939,83.989,14.431,114.358C207.848,502.836,231.924,512,256,512c24.074,0,48.15-9.164,66.478-27.493
+		c30.37-30.37,36.304-77.397,14.431-114.358L264.67,248.073z M308.233,470.262c-28.802,28.799-75.665,28.801-104.466,0
+		c-23.862-23.862-28.524-60.81-11.337-89.852L256,272.984l63.572,107.427C336.757,409.452,332.095,446.4,308.233,470.262z"/&gt;
 &lt;/g&gt;
 &lt;/svg&gt;
  &lt;/div&gt;
  
- &lt;div class="count"&gt;0&lt;/div&gt;
+ &lt;div class="count"&gt;8&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;the lab&lt;/div&gt;
+ &lt;div class="title"&gt;idea refining&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
 
-&lt;p&gt;&amp;lt; 27-jul-2026&lt;/p&gt;</description></item></channel></rss>
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx23/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="stroke-width: 0px;"&gt;&lt;path fill="#4285f4" d="M19.5,20.06h-.7v-1.5h.7a.76.76,0,0,0,.75-.75V13.5a.76.76,0,0,0-.75-.75H15.89v-1.5H19.5a2.25,2.25,0,0,1,2.25,2.25v4.31A2.25,2.25,0,0,1,19.5,20.06Z"/&gt;&lt;path fill="#4285f4" d="M11.55,20.06H6.65v-1.5h4.9Z"/&gt;&lt;path fill="#669df6" fill-rule="evenodd" d="M8.12,12.75H4.5A2.25,2.25,0,0,1,2.25,10.5V6.19A2.25,2.25,0,0,1,4.5,3.94h1v1.5h-1a.75.75,0,0,0-.75.75V10.5a.76.76,0,0,0,.75.75H8.12Z"/&gt;&lt;path fill="#4285f4" d="M17.3,5.44H11.82V3.94H17.3Z"/&gt;&lt;path fill="#aecbfa" d="M8.63,3.94V2.44h-3A1.13,1.13,0,0,0,4.5,3.56V5.81A1.13,1.13,0,0,0,5.63,6.94h3V5.44H6V3.94Z"/&gt;&lt;path fill="#669df6" fill-rule="evenodd" d="M12.75,3.56V5.81a1.13,1.13,0,0,1-1.12,1.13h-3V5.44h2.62V3.94H8.63V2.44h3A1.12,1.12,0,0,1,12.75,3.56Z"/&gt;&lt;path fill="#aecbfa" d="M19.31,7.13a2.44,2.44,0,1,1,2.44-2.44A2.45,2.45,0,0,1,19.31,7.13Zm0-3.38a.94.94,0,1,0,.94.94A.94.94,0,0,0,19.31,3.75Z"/&gt;&lt;path fill="#9aa0a6" d="M4.69,21.75a2.44,2.44,0,1,1,2.43-2.44A2.44,2.44,0,0,1,4.69,21.75Zm0-3.38a.94.94,0,1,0,.93.94A.94.94,0,0,0,4.69,18.37Z"/&gt;&lt;path fill="#aecbfa" d="M4.69,21.75a2.44,2.44,0,1,1,2.43-2.44A2.44,2.44,0,0,1,4.69,21.75Zm0-3.38a.94.94,0,1,0,.93.94A.94.94,0,0,0,4.69,18.37Z"/&gt;&lt;path fill="#aecbfa" d="M15.36,18.57v-1.5h-3a1.13,1.13,0,0,0-1.12,1.13v2.25a1.12,1.12,0,0,0,1.12,1.12h3v-1.5H12.74v-1.5Z"/&gt;&lt;path fill="#669df6" fill-rule="evenodd" d="M19.49,18.2v2.25a1.13,1.13,0,0,1-1.13,1.12h-3v-1.5H18v-1.5H15.36v-1.5h3A1.14,1.14,0,0,1,19.49,18.2Z"/&gt;&lt;path fill="#aecbfa" d="M12,11.25V9.75H9a1.13,1.13,0,0,0-1.13,1.12v2.25A1.13,1.13,0,0,0,9,14.25h3v-1.5H9.37v-1.5Z"/&gt;&lt;path fill="#669df6" fill-rule="evenodd" d="M16.12,10.87v2.25A1.13,1.13,0,0,1,15,14.25H12v-1.5h2.62v-1.5H12V9.75h3A1.12,1.12,0,0,1,16.12,10.87Z"/&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;7&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;panels&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx25/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg width="800px" height="800px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"&gt;&lt;title&gt;70 Basic icons by Xicons.co&lt;/title&gt;&lt;rect x="18" y="2" width="12" height="46" rx="2" ry="2" fill="#ec5044"/&gt;&lt;rect x="34" y="27.99" width="12" height="20.01" rx="2" ry="2" fill="#f6c253"/&gt;&lt;rect x="2" y="18" width="12" height="30" rx="2" ry="2" fill="#41c3f1"/&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;4&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;visuals&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx26/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+&lt;svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 387.481 387.481" xml:space="preserve"&gt;
+&lt;g&gt;
+	&lt;g id="XMLID_7_"&gt;
+		&lt;g&gt;
+			&lt;polygon style="fill:#E6E6E6;" points="314.734,261.389 320.944,301.239 267.194,311.989 283.324,252.859 			"/&gt;
+			&lt;polygon style="fill:#CCCCCC;" points="320.944,301.239 286.904,365.729 267.194,311.989 			"/&gt;
+			&lt;polygon style="fill:#F2F2F2;" points="299.444,163.279 314.734,261.389 283.324,252.859 252.864,233.159 270.773,186.569 			"/&gt;
+			&lt;polygon style="fill:#E6E6E6;" points="292.184,116.719 299.444,163.279 270.773,186.569 236.734,165.079 233.154,131.039 			"/&gt;
+			&lt;polygon style="fill:#F2F2F2;" points="282.664,55.609 292.184,116.719 233.154,131.039 256.444,84.449 			"/&gt;
+			&lt;polygon style="fill:#F2F2F2;" points="267.194,311.989 286.904,365.729 188.364,387.229 125.664,303.029 			"/&gt;
+			&lt;polygon style="fill:#CCCCCC;" points="283.324,252.859 267.194,311.989 125.664,303.029 138.204,98.789 224.194,57.579 
+				256.444,84.449 233.154,131.039 236.734,165.079 270.773,186.569 252.864,233.159 			"/&gt;
+			&lt;polygon style="fill:#E6E6E6;" points="277.944,25.329 282.664,55.609 256.444,84.449 224.194,57.579 			"/&gt;
+			&lt;polygon style="fill:#CCCCCC;" points="277.944,25.329 224.194,57.579 243.904,0.249 			"/&gt;
+			&lt;polygon style="fill:#F2F2F2;" points="243.904,0.249 224.194,57.579 138.204,98.789 174.034,18.169 			"/&gt;
+			&lt;polygon style="fill:#B3B3B3;" points="125.664,303.029 188.364,387.229 66.534,310.189 			"/&gt;
+			&lt;polygon style="fill:#B3B3B3;" points="174.034,18.169 138.204,98.789 86.244,91.619 			"/&gt;
+			&lt;polygon style="fill:#999999;" points="138.204,98.789 125.664,303.029 66.534,310.189 86.244,91.619 			"/&gt;
+		&lt;/g&gt;
+		&lt;g&gt;
+		&lt;/g&gt;
+	&lt;/g&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;3&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;endap js&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;&amp;lt; 03-aug-2026&lt;/p&gt;</description></item></channel></rss>
