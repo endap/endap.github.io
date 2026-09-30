@@ -2739,7 +2739,8 @@ Figure 1. Plot of $f(x)$ against $x$.&lt;/li&gt;
 &lt;h2 id="flowchart-9888"&gt;flowchart ⚠&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Following flowchart is only for illustration, where further description is given along with algorithm in next section.
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart TD
  B --&gt; I --&gt; P1 --&gt; o1a
  o1b --&gt; C1 --"Y"--&gt; O --&gt; o2a
@@ -2763,7 +2764,7 @@ flowchart TD
  class o1a,o1b,o1c,o2a,o2b style2
  linkStyle default stroke:#8a8
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 Figure 2. Flowchart for finding roots of $f(x)$.&lt;/li&gt;
 &lt;li&gt;Test whether $x$ is a root begins with $x = x_a$ and ends with $x = x_b$, where the increment of $x$ is $\Delta x$.&lt;/li&gt;
@@ -3470,7 +3471,8 @@ This code generates two types of data, in the form of
 &lt;h2 id="flowchart"&gt;flowchart&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Following flowchart shows how scanning method works. At the end it average two points, where the root lies, as the root.
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart TD
  B --&gt; I --&gt; P1 --&gt; P2 --&gt; o2a
  o1a --&gt; P2
@@ -3502,7 +3504,7 @@ flowchart TD
  class o1a,o1b,o1c,o2a,o2b,o3a,o3b,o4a,o4b,o5a,o5b style2
  linkStyle default stroke:#8a8
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 Figure 2. Flowchart for finding roots of $f(x)$.&lt;/li&gt;
 &lt;/ul&gt;
@@ -7370,7 +7372,8 @@ WARN The "comment" shortcode was deprecated in v0.143.0 and will be removed in a
 &lt;/ul&gt;</description></item><item><title>flowchart linkstyle</title><link>https://endap.github.io/0006/</link><pubDate>Wed, 13 Dec 2023 08:45:00 +0800</pubDate><guid>https://endap.github.io/0006/</guid><description>&lt;h2 id="intro"&gt;intro&lt;/h2&gt;
 &lt;p&gt;To create diagrams dynamically in an internet browser you can use Mermaid, which is a diagramming and charting tools based on JavaScript and inspired by Markdown text definitions (Woodward &amp;amp; Biagianti, 2022). It has default style, which should be sufficient. But if an adjustment is necessary, e.g. style of the link &amp;ndash; the line connecting two nodes, can be modified (Drago, 2023) and also the other features.&lt;/p&gt;
 &lt;h2 id="flowchart"&gt;flowchart&lt;/h2&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart LR
  B --&gt; I --&gt; P --&gt; O --&gt; E
  
@@ -7384,7 +7387,7 @@ flowchart LR
  linkStyle 1 stroke:blue
  linkStyle 3 stroke:green
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h2 id="code"&gt;code&lt;/h2&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;flowchart LR
@@ -7498,7 +7501,8 @@ flowchart LR
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart RL
  i1--"w11"--&gt;h1;i2--"w12"--&gt;h1;i3--"w13"--&gt;h1;
  i1--"w21"--&gt;h2;i2--"w22"--&gt;h2;i3--"w23"--&gt;h2;
@@ -7547,7 +7551,7 @@ flowchart RL
  
  linkStyle default stroke:#8a8
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h2 id="mermaid"&gt;mermaid&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;&lt;span class="mermaid-keyword"&gt;flowchart&lt;/span&gt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;&lt;span class="mermaid-value"&gt;RL&lt;/span&gt;&lt;/span&gt;
@@ -20676,7 +20680,8 @@ $\phi$.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>st &amp; sd for 3s</title><link>https://endap.github.io/0092/</link><pubDate>Thu, 12 Oct 2023 05:41:00 +0700</pubDate><guid>https://endap.github.io/0092/</guid><description>&lt;h2 id="idea"&gt;idea&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;How to use system thinking and system dynamics for 3S concept?
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
  flowchart LR
  SG &lt;--&gt; SF &lt;--&gt; SC &lt;--&gt; SG
  SF(("Safety"))
@@ -20686,7 +20691,7 @@ $\phi$.&lt;/li&gt;
  style SC color:#fff, fill:#229, stroke:#004, stroke-width:2px
  style SG color:#fff, fill:#922, stroke:#400, stroke-width:2px 
  
-&lt;/div&gt;
+&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;It can be considered that there functions
 $$\tag{1}
@@ -26988,7 +26993,8 @@ $$&lt;/li&gt;
 &lt;/a&gt;
 ).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart
  subgraph I["Individual"]
  direction LR
@@ -26999,7 +27005,7 @@ flowchart
  end
  style I rx:50, ry:50;
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h2 id="flowchart"&gt;flowchart&lt;/h2&gt;
 &lt;ul&gt;
@@ -27029,7 +27035,8 @@ flowchart
 &lt;/a&gt;
 )&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
+ 
 flowchart TB
  B --&gt; PI --&gt; FC --&gt; o1a
  o1b --&gt; SC
@@ -27070,7 +27077,7 @@ flowchart TB
  style GO rx:20, ry:20;
  style SR rx:20, ry:20;
 
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Operators are used in encoding-decoding, selection, crossover and mutation.&lt;/li&gt;

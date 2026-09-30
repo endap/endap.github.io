@@ -1,0 +1,376 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>mermaid diagram hands-on | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1790735451'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1790735451'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+mermaid diagram hands-on
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-09-30T05:24:22 07:00">30 Sep 2026</time>
+&#183;
+4 mins read
+&#183;
+<a class=link href=npprel:///26/i/75-mermaid-diagram-hands-on.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Mermaid diagram is a diagram described entirely in text, where engineers have used Mermaid for years to keep diagrams in their codebase, right next to the code they describe <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. This text-based diagram provides notation that is easly produced by an LLM product, e.g. ChatGPT 4, in summerizing an article <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Mermaid support flowcharts <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> and mind maps <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, but currently not concept maps <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>, where the last can be approached using the first with some limitation.</p>
+<h2 id=flowchart>flowchart</h2>
+<p>An example of flowchart with on-page connector is as follows <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>.</p>
+<pre class=mermaid>
+  
+flowchart
+  %% sg4
+  subgraph " "
+    direction TB
+    o3b --> O1 --> O2 --> E
+  end
+  
+  %% sg3
+  subgraph " "
+    direction TB
+    o2b --> C1
+    C1 --"Y"--> P3 --> o4a
+    C1 --"N"---> o3a
+  end
+  
+  %% sg2
+  subgraph " "
+    direction TB
+    o1b --> P1 --> P2 --> o2a
+    o4b ---> P2
+  end
+  
+  %% sg1
+  subgraph " "
+    direction TB
+    B --> I1 --> I2 --> o1a
+  end
+
+  %% elements
+  B(["Begin"])
+  I1[/"Input 1"/]
+  I2[/"Input 2"/]
+  P1["Process 1"]
+  P2["Process 2"]
+  P3["Process 3"]
+  C1{"i < n"}
+  O1[/"Output 1"/]
+  O2[/"Output 2"/]
+  E(["End"])
+  
+  %% connectors
+  o1a(("1")):::conn
+  o1b(("1")):::conn
+  o2a(("2")):::conn
+  o2b(("2")):::conn
+  o3a(("3")):::conn
+  o3b(("3")):::conn
+  o4a(("4")):::conn
+  o4b(("4")):::conn
+  
+  %% classes
+  classDef conn fill:#484, stroke:#040, color:#fff
+
+</pre>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>sg4</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#e6db74>&#34; &#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e><span class=mermaid-keyword>direction</span></span> <span style=color:#a6e22e><span class=mermaid-value>TB</span></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o3b</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>E</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>sg3</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#e6db74>&#34; &#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e><span class=mermaid-keyword>direction</span></span> <span style=color:#a6e22e><span class=mermaid-value>TB</span></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o2b</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>C1</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>C1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;Y&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P3</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o4a</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>C1</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;N&#34;</span><span style=color:#f92672>---&gt;</span> <span style=color:#a6e22e>o3a</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>sg2</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#e6db74>&#34; &#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e><span class=mermaid-keyword>direction</span></span> <span style=color:#a6e22e><span class=mermaid-value>TB</span></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o1b</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o2a</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o4b</span> <span style=color:#f92672>---&gt;</span> <span style=color:#a6e22e>P2</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>sg1</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#e6db74>&#34; &#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e><span class=mermaid-keyword>direction</span></span> <span style=color:#a6e22e><span class=mermaid-value>TB</span></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>B</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>I1</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>I2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>o1a</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>elements</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>B</span>([<span style=color:#e6db74>&#34;Begin&#34;</span>])
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>I1</span>[<span style=color:#e6db74>/&#34;Input 1&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>I2</span>[<span style=color:#e6db74>/&#34;Input 2&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P1</span>[<span style=color:#e6db74>&#34;Process 1&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P2</span>[<span style=color:#e6db74>&#34;Process 2&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P3</span>[<span style=color:#e6db74>&#34;Process 3&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>C1</span>{<span style=color:#e6db74>&#34;i &lt; n&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>O1</span>[<span style=color:#e6db74>/&#34;Output 1&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>O2</span>[<span style=color:#e6db74>/&#34;Output 2&#34;/</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>E</span>([<span style=color:#e6db74>&#34;End&#34;</span>])
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>connectors</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o1a</span>((<span style=color:#e6db74>&#34;1&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o1b</span>((<span style=color:#e6db74>&#34;1&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o2a</span>((<span style=color:#e6db74>&#34;2&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o2b</span>((<span style=color:#e6db74>&#34;2&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o3a</span>((<span style=color:#e6db74>&#34;3&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o3b</span>((<span style=color:#e6db74>&#34;3&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o4a</span>((<span style=color:#e6db74>&#34;4&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>o4b</span>((<span style=color:#e6db74>&#34;4&#34;</span>))<span style=color:#f92672>:::</span><span style=color:#a6e22e>conn</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>classes</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>classDef</span></span> <span style=color:#a6e22e>conn</span> <span style=color:#a6e22e>fill</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#ae81ff>484</span>, <span style=color:#a6e22e>stroke</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#ae81ff>040</span>, <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>fff</span></span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style>
+<h2 id=mind-map>mind map</h2>
+<p>An example of mind map is as follows.</p>
+<pre class=mermaid>
+  
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        British popular psychology author Tony Buzan
+    Research
+      On effectiveness<br>and features
+      On Automatic creation
+        Uses
+            Creative techniques
+            Strategic planning
+            Argument mapping
+    Tools
+      Pen and paper
+      ::icon(fa fa-paper-plane)
+      Mermaid
+
+</pre>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>mindmap</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>root</span>((<span style=color:#a6e22e>mindmap</span>))
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>Origins</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>Long</span> <span style=color:#a6e22e>history</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>::</span><span style=color:#a6e22e>icon</span>(<span style=color:#a6e22e>fa</span> <span style=color:#a6e22e>fa</span><span style=color:#f92672>-</span><span style=color:#a6e22e>book</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>Popularisation</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>British</span> <span style=color:#a6e22e>popular</span> <span style=color:#a6e22e>psychology</span> <span style=color:#a6e22e>author</span> <span style=color:#a6e22e>Tony</span> <span style=color:#a6e22e>Buzan</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>Research</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>On</span> <span style=color:#a6e22e>effectiveness</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span><span style=color:#f92672>/&gt;</span><span style=color:#a6e22e>and</span> <span style=color:#a6e22e>features</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>On</span> <span style=color:#a6e22e>Automatic</span> <span style=color:#a6e22e>creation</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>Uses</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>Creative</span> <span style=color:#a6e22e>techniques</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>Strategic</span> <span style=color:#a6e22e>planning</span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>Argument</span> <span style=color:#a6e22e>mapping</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>Tools</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>Pen</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>paper</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>::</span><span style=color:#a6e22e>icon</span>(<span style=color:#a6e22e>fa</span> <span style=color:#a6e22e>fa</span><span style=color:#f92672>-</span><span style=color:#a6e22e>paper</span><span style=color:#f92672>-</span><span style=color:#a6e22e>plane</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>Mermaid</span></span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style>
+<h2 id=concept-map>concept map</h2>
+<p>An example of concept map using flowchart is as follows.</p>
+<pre class=mermaid>
+  
+flowchart
+  %% maps
+  W --"required by"--> P & H
+  P --"produce"--> F
+  H --"need"--> F
+  F --"can contaminate" --> W
+
+  %% elements
+  W(("Water"))
+  P{"Plant"}
+  F["Food"]
+  H(["Human"])
+
+</pre>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>maps</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>W</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;required by&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P</span> <span style=color:#f92672>&amp;</span> <span style=color:#a6e22e>H</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;produce&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>F</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>H</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;need&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>F</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>F</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;can contaminate&#34;</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>W</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>%%</span> <span style=color:#a6e22e>elements</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>W</span>((<span style=color:#e6db74>&#34;Water&#34;</span>))
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>P</span>{<span style=color:#e6db74>&#34;Plant&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>F</span>[<span style=color:#e6db74>&#34;Food&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>H</span>([<span style=color:#e6db74>&#34;Human&#34;</span>])</span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style>
+<h2 id=notes>notes</h2>
+<ul>
+<li>There are some steps to correct <code>baseof.html</code> in Hugo to make Mermaid mindmap feature works <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>.</li>
+<li>To browse Font Awesome Icons for Mermaid, please visit
+<a href=https://mermaid.ai/docs/icons/font-awesome target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://mermaid.ai/docs/icons/font-awesome <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+. Use it as <code>::icon(fa fa-paper-plane)</code> after a node.</li>
+<li>The simplest way to create Mermaid diagram is to use GitHub Issues.
+<ul>
+<li>Create new repository of your own, e.g. mermaid-hands-on.</li>
+<li>Create new issue.
+<ul>
+<li>Example of flowchart is on
+<a href=https://github.com/dudung/26i75/issues/1 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://github.com/dudung/26i75/issues/1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+</li>
+<li>Example of mind map is on
+<a href=https://github.com/dudung/26i75/issues/2 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://github.com/dudung/26i75/issues/2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+</li>
+<li>Example of concept map is on
+<a href=https://github.com/dudung/26i75/issues/3 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://github.com/dudung/26i75/issues/3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Hannah Knight, &ldquo;Mermaid diagrams: How we built AI-native diagramming for engineers&rdquo;, Miro, 10 Sep 2026, url
+<a href=https://miro.com/diagramming/what-is-mermaid/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://miro.com/diagramming/what-is-mermaid/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[202060930].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>OmarEbnElKhattab Hosney, &ldquo;Creating Mind Map from an Article using ChatGPT and Mermaid’s Mindmap Notation&rdquo;, Medium, 27 Oct 2023, url
+<a href=https://medium.com/p/be800e7dba96 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/be800e7dba96 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Sparisoma Viridi, &ldquo;Flowchart and Mermaid&rdquo;, Medium, 6 Apr 2024, url
+<a href=https://medium.com/p/db045341c4c0 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/db045341c4c0 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Ashish Jain, &ldquo;From Chaos to Clarity: Exploring Mind Maps with Mermaid.js&rdquo;, Medium, 31 Mar 2023, url
+<a href=https://medium.com/p/5521a45c8f02 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/5521a45c8f02 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>James Trunk, &ldquo;A new concept map diagram type &ndash; reply to Concept Map (Mindmap connection lines)&rdquo;, mermaid Issues #5045, 29 Jul 2026, url
+<a href=https://github.com/mermaid-js/mermaid/issues/5045#issuecomment-5109647477 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://github.com/mermaid-js/mermaid/issues/5045#issuecomment-5109647477 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6>
+<p>Sparisoma Viridi, &ldquo;Simplify the look of Mermaid flowchart using on-page connector&rdquo;, Medium, 2 Jul 2023, url
+<a href=https://medium.com/p/b52facf244b3 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/b52facf244b3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:7>
+<p>GPT-5.6 Luna, &ldquo;Mermaid diagram hands-on for mind map and concept map&rdquo;, ChatGPT, 30 Sep 2026, url
+<a href=https://chatgpt.com/share/6abc6d11-c664-83ec-b362-bffc0d9e30f7 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6abc6d11-c664-83ec-b362-bffc0d9e30f7 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20260930].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1790735451'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+<script type=module>
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "neutral",
+      themeVariables: {
+        fontSize: "20px",
+        nodeFontSize: "18px",
+        labelFontSize: "14px"
+      }
+    });
+    
+    document.addEventListener("DOMContentLoaded", async () => {
+      await mermaid.run({
+        querySelector: ".mermaid"
+      });
+    });
+  </script>
+</body>
+</html>
