@@ -1,11 +1,759 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on endap</title><link>https://endap.github.io/posts/</link><description>Recent content in Posts on endap</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 30 Sep 2026 05:24:22 +0700</lastBuildDate><atom:link href="https://endap.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>mermaid diagram hands-on</title><link>https://endap.github.io/26i75/</link><pubDate>Wed, 30 Sep 2026 05:24:22 +0700</pubDate><guid>https://endap.github.io/26i75/</guid><description>&lt;!-- more --&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on endap</title><link>https://endap.github.io/posts/</link><description>Recent content in Posts on endap</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2026 06:56:09 +0700</lastBuildDate><atom:link href="https://endap.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>gh-issues latex mermaid code</title><link>https://endap.github.io/26j02/</link><pubDate>Thu, 01 Oct 2026 06:56:09 +0700</pubDate><guid>https://endap.github.io/26j02/</guid><description>&lt;!-- more --&gt;
+&lt;p&gt;It is an illustration of GitHub Issues features in rendering LaTeX equations, Mermaid flowchart, and code.&lt;/p&gt;
+&lt;h2 id="equation"&gt;equation&lt;/h2&gt;
+&lt;p&gt;$$
+y = ax^2 + bx + c
+$$&lt;/p&gt;
+&lt;p&gt;$$
+D = b^2 - 4ac
+$$&lt;/p&gt;
+&lt;p&gt;$$
+x_{1,2} = \frac{-b \pm \sqrt{D}}{2a}
+$$&lt;/p&gt;
+&lt;h2 id="flowchart"&gt;flowchart&lt;/h2&gt;
+&lt;pre class="mermaid"&gt;
+ 
+flowchart TD
+
+%% graph
+B --&gt; I --&gt; P1 --&gt; P2a &amp; P2b --&gt; O --&gt; E
+
+%% elements
+B(["begin"])
+I[/"a, b, c"/]
+P1["D = b^2 - 4ac"]
+P2a["x1 = (-b - D^½)/(2a)"]
+P2b["x2 = (-b + D^½)/(2a)"]
+O[/"x1, x2"/]
+E(["begin"])
+
+&lt;/pre&gt;
+
+&lt;h2 id="code"&gt;code&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;b&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;c&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;D&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;b&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;b&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;x1&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;b&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt; Math.&lt;span style="color:#a6e22e"&gt;sqrt&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;D&lt;/span&gt;)) &lt;span style="color:#f92672"&gt;/&lt;/span&gt; (&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;x2&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; (&lt;span style="color:#f92672"&gt;-&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;b&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; Math.&lt;span style="color:#a6e22e"&gt;sqrt&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;D&lt;/span&gt;)) &lt;span style="color:#f92672"&gt;/&lt;/span&gt; (&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;log&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;x1 =&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;x1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;log&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;x2 =&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;x2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="result"&gt;result&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;x1 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;x2 &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="notes"&gt;notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Example is on 
+&lt;a
+
+	
+	
+		href = "https://github.com/dudung/26i75/issues/4"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		&gt;
+	
+	
+	&lt;span&gt;
+		https://github.com/dudung/26i75/issues/4 &lt;i class="fa fa-external-link" style="font-size:14px"&gt;&lt;/i&gt;
+	&lt;/span&gt;
+ 
+&lt;/a&gt;
+.&lt;/li&gt;
+&lt;li&gt;Related note is 
+&lt;a
+
+	
+	
+		href = "/26i75/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i75
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>thu 01.10.26</title><link>https://endap.github.io/26j01/</link><pubDate>Thu, 01 Oct 2026 03:56:40 +0700</pubDate><guid>https://endap.github.io/26j01/</guid><description>&lt;!-- more --&gt;
+&lt;p&gt;It is a dano for 01-thu-011026.md.&lt;/p&gt;
+&lt;h2 id="appos"&gt;appos&lt;/h2&gt;
+
+
+
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812982"&gt;
+
+&lt;div class="table-0"&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;id&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;activity&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;status&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;link&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;beg&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;and&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;doc&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;01&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;beg daily note ( , ✓, ×) entry&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26j01/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26j01
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0356&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0367&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;02&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;new 2026-10 keeping&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26j00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26j00
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0349&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0356&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;03&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;hab shr-123 noodle etc e0414&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0358&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x0415&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;04&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;cok bath-wtr bett-machen etc&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;041x&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;05&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;trv home-tiga-work no-afm-yet&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0521&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0556&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;06&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;hab pug batman-pet etc&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0600&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0607&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;07&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;set i5 on git-pull hugo-server&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0609&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0613&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;08&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;trv bgr-oma 2kk&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0615&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0616&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;09&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;set i9 on deskflow ff yt-m etc&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0618&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0624&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;10&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;pre fi2151 mermaid - latex&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26h21/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26h21
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0626&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0654&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;11&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;new gh-issue latex mermaid code&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26j02/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26j02
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0656&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e0702&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;12&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;dep endap&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0702&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e07&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt; &lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id="notes"&gt;notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update 
+&lt;a
+
+	
+	
+		href = "/26h00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26h00
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ as toc of a month and motw will not explicitly be written after included.&lt;/li&gt;
+&lt;li&gt;Others will be also merged in the toc, e.g. 
+&lt;a
+
+	
+	
+		href = "/25g78/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		25g78
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+, 
+&lt;a
+
+	
+	
+		href = "/25f33/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		25f33
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+, 
+&lt;a
+
+	
+	
+		href = "/26a46/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26a46
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+[06:16, 10/1/2026] Sparisoma Viridi: Selamat pagi, Oma. Semoga sehat selalu. Aamiin.
+[06:16, 10/1/2026] Sparisoma Viridi: Sudah dikirimkan, ya. Terima kasih.
+--&gt;</description></item><item><title>2026-10 keeping</title><link>https://endap.github.io/26j00/</link><pubDate>Thu, 01 Oct 2026 03:49:45 +0700</pubDate><guid>https://endap.github.io/26j00/</guid><description>&lt;!-- more --&gt;
+&lt;p&gt;Collections of appointments, memo-on-the-way, daily-notes, and others in sep-2026.&lt;/p&gt;
+&lt;h2 id="intro"&gt;intro&lt;/h2&gt;
+&lt;p&gt;Today is continued creation of 26j00 repo for gitjournal.&lt;/p&gt;
+&lt;h2 id="appo"&gt;appo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;14-nov 00-23&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;es&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; sith site-visit closing 2-day&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;14-oct 08-15&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;iz&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; ftmd asu-visit rizal-hariadi&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10-oct 08-12&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;rm&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; fa-rm prof-oration west-hall&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10-oct 07-17&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;sv&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; sugt-2026 jak (if assigned)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;09-oct 07-17&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;sv&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; sugt-2026 jak (if assigned)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;02-oct 09-10&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;sv&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; danantara offline pitching&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;01-oct 16-17&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;sv&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; sk25 supervision candidate&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;01-oct 09-11&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i00/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;sv&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ &lt;code&gt;·&lt;/code&gt; fip25 current supervision&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="prev"&gt;prev&lt;/h2&gt;
+&lt;p&gt;..&lt;/p&gt;</description></item><item><title>get familiar with workbench 2026-r1</title><link>https://endap.github.io/26i78/</link><pubDate>Wed, 30 Sep 2026 14:18:49 +0700</pubDate><guid>https://endap.github.io/26i78/</guid><description>&lt;!-- more --&gt;
+&lt;p&gt;After installation name of the application to launch is Workbench 2026 R1 &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id="open-close"&gt;open-close&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Press Window key ⊞ and type workbench and press enter.&lt;/li&gt;
+&lt;li&gt;Wait until Ansys 2026 R1 fully run.&lt;/li&gt;
+&lt;li&gt;Notice that the window title is Unsaved Project - Workbench.&lt;/li&gt;
+&lt;li&gt;Press Ctrl+Q to close the window.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="geometri-apps"&gt;geometri apps&lt;/h2&gt;
+&lt;p&gt;Workbench 2026 R1 provides three geomtery editors, which are DesignModeler, SpaceClaim, and Discovery. There is suggestion to choose SpaceClaim over DesignModeler &lt;sup id="fnref1:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;, but the other suggest to use Discovery due to unavailabily of SpaceClaim for installation starting in 2007 &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt; and also because Discovery is beginner friendly &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description></item><item><title>khoiro amalia</title><link>https://endap.github.io/26i77/</link><pubDate>Wed, 30 Sep 2026 13:20:23 +0700</pubDate><guid>https://endap.github.io/26i77/</guid><description>&lt;!-- more --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;30-sep-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i77/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;01&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ initial communication and supervsion intention&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="notes"&gt;notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;It is realated to Computational Science Master Program for entry semester 2025-2.&lt;/li&gt;
+&lt;li&gt;There will be a lot of comments in the post source that will not be rendered.&lt;/li&gt;
+&lt;li&gt;Current info states that ABM and simulation are interested to study (30-sep-2026).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+## 30-sep-2026
++62-812-3468-8224
+Khoiro Amalia
+20925304@mahasiswa.itb.ac.id
+
+[13:09, 9/30/2026] SK25 Khoiro Amalia: Selamat siang, Bapak Dr. rer. nat. Sparisoma Viridi, S.Si.
+
+Mohon maaf mengganggu waktunya. Perkenalkan, saya Khoiro Amalia, mahasiswa S2 Sains Komputasi ITB yang saat ini sedang mencari pembimbing untuk tesis.
+
+Saya sudah mempelajari beberapa publikasi Bapak, khususnya yang berkaitan dengan agent-based model dan simulasi, dan saya sangat tertarik untuk menjadikan Bapak sebagai pembimbing tesis saya.
+
+Apakah Bapak berkenan membimbing tesis saya? Jika berkenan, mohon informasinya kira-kira kapan Bapak ada waktu luang agar saya bisa mendiskusikan topik penelitian saya.
+
+Terima kasih banyak atas waktu dan perhatian Bapak.
+[13:10, 9/30/2026] Sparisoma Viridi: Selamat siang, Khoiro. Terima kasih telah menghubungi.
+[13:10, 9/30/2026] Sparisoma Viridi: Alhamdulillah ada yang berminat untuk melanjutkan ABM dan simulasi secara umum.
+[13:11, 9/30/2026] Sparisoma Viridi: Saya bersedia untuk menjadi pembimbing tesis Khoiro.
+[13:11, 9/30/2026] Sparisoma Viridi: Khoiro angkatan berapa?
+[13:12, 9/30/2026] SK25 Khoiro Amalia: Terimakasih Pak atas kesediaannya membimbing saya 🙏
+[13:14, 9/30/2026] SK25 Khoiro Amalia: Saya dari angkatan 2026 genap dan sata ini sedang menempuh semester 2 Pak
+[13:14, 9/30/2026] Sparisoma Viridi: Terima kasih informasinya.
+[13:15, 9/30/2026] Sparisoma Viridi: Untuk sementara bisa besok jam 11 atau setelah jam 15. Silakan ke ruang saya di Fisika, ruang F10.
+[13:17, 9/30/2026] SK25 Khoiro Amalia: Mohon maaf pak untuk besok saya ada kelas di jam 11.00 - 16.00, jika saya menemui bapak di jam 16.00 apakah bapak berkenan?
+[13:17, 9/30/2026] Sparisoma Viridi: Boleh.
+[13:17, 9/30/2026] Sparisoma Viridi: Btw saya panggilnya Khoiro atau Amalia?
+[13:20, 9/30/2026] SK25 Khoiro Amalia: Biasanya saya dipanggil Amel atau Amalia Pak, mungkin bapak bisa memanggil diantara kedua panggilan tersebut
+[13:20, 9/30/2026] Sparisoma Viridi: Siap. Terima kasih atas infonya, Amel.
+[13:22, 9/30/2026] SK25 Khoiro Amalia: Terimakasih sudah meluangkan waktunya Pak 🙏
+[13:22, 9/30/2026] Sparisoma Viridi: Sama-sama, Amel. Semoga selalu sehat dan baik. Aamiin.
+[13:24, 9/30/2026] SK25 Khoiro Amalia: Aamiin, terima kasih banyak Pak. Semoga Bapak juga selalu sehat.
+[13:24, 9/30/2026] Sparisoma Viridi: Aamiin. Terima kasih.
+--&gt;</description></item><item><title>rubber marine fender</title><link>https://endap.github.io/26i76/</link><pubDate>Wed, 30 Sep 2026 12:14:46 +0700</pubDate><guid>https://endap.github.io/26i76/</guid><description>&lt;!-- more --&gt;
+&lt;p&gt;It is an autodidactic learning &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; about marine fender, which is a rubber device that absorbs vessel impact energy to protect docks and ships from damage &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;. Numerical study using finite element is common approach to observe the reaction force and strain energy versus displacement &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;30-sep-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i78/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26i78&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ get-famil-with workbench-r1&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;14-sep-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i30/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26i30&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ m-fender-images not-right&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;13-sep-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i28/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26i28&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ m-fender deflect-test-data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;11-sep-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26i25/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26i25&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ marine-fender fea-simulation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="refs"&gt;refs&lt;/h2&gt;
+&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Aletheia Luna, &amp;ldquo;7 Signs You’re an Autodidact (the Self-Taught Master)&amp;rdquo;, LonerWolf, 29 Aug 2026, url 
+&lt;a
+
+	
+	
+		href = "https://lonerwolf.com/autodidact/"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		&gt;
+	
+	
+	&lt;span&gt;
+		https://lonerwolf.com/autodidact/ &lt;i class="fa fa-external-link" style="font-size:14px"&gt;&lt;/i&gt;
+	&lt;/span&gt;
+ 
+&lt;/a&gt;
+ [20260930].&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>mermaid diagram hands-on</title><link>https://endap.github.io/26i75/</link><pubDate>Wed, 30 Sep 2026 05:24:22 +0700</pubDate><guid>https://endap.github.io/26i75/</guid><description>&lt;!-- more --&gt;
 &lt;p&gt;Mermaid diagram is a diagram described entirely in text, where engineers have used Mermaid for years to keep diagrams in their codebase, right next to the code they describe &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. This text-based diagram provides notation that is easly produced by an LLM product, e.g. ChatGPT 4, in summerizing an article &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;. Mermaid support flowcharts &lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt; and mind maps &lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt;, but currently not concept maps &lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;, where the last can be approached using the first with some limitation.&lt;/p&gt;</description></item><item><title>wed 30.09.26</title><link>https://endap.github.io/26i74/</link><pubDate>Wed, 30 Sep 2026 05:06:04 +0700</pubDate><guid>https://endap.github.io/26i74/</guid><description>&lt;!-- more --&gt;
 &lt;p&gt;It is a dano for 74-wed-300926.md.&lt;/p&gt;
 &lt;h2 id="appos"&gt;appos&lt;/h2&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -337,6 +1085,308 @@
  &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;17&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;del endap und pug&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1134&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1143&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;18&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ses 06 fi5005-01 2026-1 1204&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x1250&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;19&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;chk marine-fender fea-sim&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26i25/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i25
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1203&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1205&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;20&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;met off calvin km-itb eco-kajian&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1212&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;21&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;new rubber marine fender&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26i76/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i76
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1214&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1241&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;22&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;hab pug wdh dhr etc heavy-rain&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1242&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1259&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;23&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;com wa if-adi-mulyanto off-first&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;0953&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1301&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;24&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;ytd big-stan etc&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1306&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;25&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;new sk25 khoiro amalia&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26i77/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i77
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1320&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1331&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;26&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;hab pee talk-ob leackage rh-up&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1338&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;27&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;get late lunch loco ayam geprek&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1338&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x1345&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;28&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;get cold water in the bottle&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1351&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;29&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;eat the lunch photo to-d3 22k&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1352&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x1415&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;30&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;wsh chopstick hand etc&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1414&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;32&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;met offline kr share medium info&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1442&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;31&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;new get-famil workbench 2026-r1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26i78/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i78
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1418&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;u1544&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;32&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;off fi-ia suggest share medium&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1539&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;33&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;hab pug wdh asr-r etc hand-wash&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1545&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1603&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;34&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;con get-famil workbench 2026-r1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;
+&lt;a
+
+	
+	
+		href = "/26i78/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		26i78
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;u1636&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;35&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;pre home off all&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1637&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x1645&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;36&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;pow i5 on at 17%&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1733&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;37&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;get info ansys anydesk wa-ki-vs&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;e1752&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;38&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;chk pow at 27% 2h 38m&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;-&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;1746&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;x2024&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
  &lt;td style="text-align: center"&gt; &lt;/td&gt;
  &lt;td&gt;&lt;/td&gt;
  &lt;td&gt;&lt;/td&gt;
@@ -352,6 +1402,7 @@
 
 &lt;h2 id="notes"&gt;notes&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;Share to fi-kr about&lt;/li&gt;
 &lt;li&gt;Update 
 &lt;a
 
@@ -430,13 +1481,18 @@
  
 &lt;/a&gt;
 , etc.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>tue 29.09.26</title><link>https://endap.github.io/26i73/</link><pubDate>Tue, 29 Sep 2026 03:54:14 +0700</pubDate><guid>https://endap.github.io/26i73/</guid><description>&lt;!-- more --&gt;
+&lt;/ul&gt;
+&lt;!--
+## 30-sep-2026
+[14:29, 9/30/2026] Sparisoma Viridi: https://medium.com/@6unpnp
+[14:44, 9/30/2026] Sparisoma Viridi: Terima kasih, Pak Khairurrijal.
+--&gt;</description></item><item><title>tue 29.09.26</title><link>https://endap.github.io/26i73/</link><pubDate>Tue, 29 Sep 2026 03:54:14 +0700</pubDate><guid>https://endap.github.io/26i73/</guid><description>&lt;!-- more --&gt;
 &lt;p&gt;It is a dano for 73-tue-290926.md.&lt;/p&gt;
 &lt;h2 id="appos"&gt;appos&lt;/h2&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -1035,7 +2091,7 @@
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -1451,7 +2507,7 @@ Applications of Statistical Learning and Machine Learning in Multidisciplinary R
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -1742,7 +2798,7 @@ Applications of Statistical Learning and Machine Learning in Multidisciplinary R
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -2232,7 +3288,7 @@ Hasil analisis dari aspek sensor mencangkup perbandingan antara ketiga provider 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -2677,7 +3733,7 @@ Hasil analisis dari aspek sensor mencangkup perbandingan antara ketiga provider 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -3428,7 +4484,7 @@ Hasil analisis dari aspek sensor mencangkup perbandingan antara ketiga provider 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -4098,7 +5154,7 @@ Hasil analisis dari aspek sensor mencangkup perbandingan antara ketiga provider 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -4543,7 +5599,7 @@ Hasil analisis dari aspek sensor mencangkup perbandingan antara ketiga provider 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -5369,7 +6425,7 @@ Penentuan Latent Variable terbaik untuk PLS menggunakan LOOCV.pptx
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -5688,7 +6744,7 @@ Penentuan Latent Variable terbaik untuk PLS menggunakan LOOCV.pptx
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -6147,7 +7203,7 @@ Direktorat Persiapan Bersama ITB
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -6373,7 +7429,7 @@ Direktorat Persiapan Bersama ITB
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -7050,7 +8106,7 @@ for(let i = 0; i &lt;= n; i++) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -8176,7 +9232,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -9435,7 +10491,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -9681,7 +10737,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -10064,7 +11120,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -10395,7 +11451,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -11070,7 +12126,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -11949,7 +13005,7 @@ https://www.youtube.com/shorts/ySKoH5VmmgY
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -12422,7 +13478,7 @@ consoles.log("Hello, World!");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -13300,7 +14356,7 @@ url https://1drv.ms/f/c/ba9f170ccb831982/IgACgqwpOVf3SI0Lbb8R8QJaATZ2QePMEhdAC3L
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -13833,7 +14889,7 @@ url https://1drv.ms/f/c/ba9f170ccb831982/IgACgqwpOVf3SI0Lbb8R8QJaATZ2QePMEhdAC3L
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -15007,7 +16063,7 @@ com.apple.kec.corecrypto	14.0
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -15293,7 +16349,7 @@ com.apple.kec.corecrypto	14.0
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -16102,7 +17158,7 @@ Done 1654. Lulus = 6.73
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -17766,7 +18822,7 @@ body {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -18557,7 +19613,7 @@ url https://six.itb.ac.id/app/dosen:197312011999031002+2026-1/kelas/jadwal/dosen
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742886"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -23488,7 +24544,7 @@ url https://six.itb.ac.id/app/dosen:197312011999031002+2026-1/kelas/jadwal/dosen
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -23731,7 +24787,7 @@ url https://six.itb.ac.id/app/dosen:197312011999031002+2026-1/kelas/jadwal/dosen
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -24205,7 +25261,7 @@ A first experience with Git Bash&lt;/p&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -24925,7 +25981,7 @@ A first experience with Git Bash&lt;/p&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -25785,7 +26841,7 @@ A first experience with Git Bash&lt;/p&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -27417,7 +28473,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -28716,7 +29772,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -29451,7 +30507,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -29948,7 +31004,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -30400,7 +31456,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -31112,7 +32168,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -31311,7 +32367,7 @@ in two lines
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -32198,7 +33254,7 @@ link tertera dalam group description juga
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -32736,7 +33792,7 @@ link tertera dalam group description juga
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -33610,7 +34666,7 @@ consoles.log(len);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -34272,7 +35328,7 @@ consoles.log(len);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -34752,7 +35808,7 @@ consoles.log(len);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -35411,7 +36467,7 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -35850,7 +36906,7 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -39455,6 +40511,26 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 &lt;/ul&gt;</description></item><item><title>fi2151-01 2026-1</title><link>https://endap.github.io/26h21/</link><pubDate>Mon, 10 Aug 2026 15:11:51 +0700</pubDate><guid>https://endap.github.io/26h21/</guid><description>&lt;!-- more --&gt;
 &lt;h2 id="sesions"&gt;sesions&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;01-oct-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26h21/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;06&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ mermaid-latex hands-on with github issues&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;24-sep-2026&lt;/code&gt; 
 &lt;a
 
@@ -39981,7 +41057,7 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -41098,7 +42174,7 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -41285,7 +42361,7 @@ Rosen dan Becker sudah gunakan prediksi dengan AI tanpa perlu inspeksi ke pipeli
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -41666,7 +42742,7 @@ console.log("d =", d)
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -42372,7 +43448,7 @@ console.log("d =", d)
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -42643,7 +43719,7 @@ console.log("d =", d)
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -43229,7 +44305,7 @@ new Chart(can, config);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -44547,7 +45623,7 @@ cnt.append(divR);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -45845,7 +46921,7 @@ cnt.append(divR);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -46599,7 +47675,7 @@ cnt.append(divR);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -46805,7 +47881,7 @@ cnt.append(divR);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -50284,7 +51360,7 @@ Curing. Setelah itu tidak bisa diapa-apakan lagi.
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -50697,7 +51773,7 @@ Nanti pakai API untuk menghubungkannya.
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -51030,7 +52106,7 @@ Nanti pakai API untuk menghubungkannya.
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -51459,7 +52535,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -52361,7 +53437,7 @@ info
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -53072,7 +54148,7 @@ Rabu, 29 Juli 2026
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -53302,7 +54378,7 @@ Rabu, 29 Juli 2026
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -53492,7 +54568,7 @@ Rabu, 29 Juli 2026
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812983"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -53718,7 +54794,7 @@ Rabu, 29 Juli 2026
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -55090,7 +56166,7 @@ MEMBRANE 10 19 31 22
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -55883,7 +56959,7 @@ _26g37.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -56686,7 +57762,7 @@ _26g35.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -57209,7 +58285,7 @@ console.log(m1);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -57833,7 +58909,7 @@ console.log(m1);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742887"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -58378,7 +59454,7 @@ for(let i = 0; i &lt; n; i++) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -59516,7 +60592,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -60306,7 +61382,7 @@ _26g15.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -61319,7 +62395,7 @@ _26g15.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -61732,7 +62808,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -62291,7 +63367,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -62685,7 +63761,7 @@ _26g06.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -63187,7 +64263,7 @@ _26g06.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -63330,7 +64406,7 @@ _26g06.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -63608,7 +64684,7 @@ _26g06.app(el);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -64064,7 +65140,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -64770,7 +65846,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -65857,7 +66933,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -66901,7 +67977,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -67595,7 +68671,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -67998,7 +69074,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -68050,7 +69126,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -68102,7 +69178,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -68155,7 +69231,7 @@ genDiv = _26f58.update(ruleNum, genDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -68727,7 +69803,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -71328,7 +72404,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -71915,7 +72991,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -72575,7 +73651,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-departed.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-departed.css?v=1790812984"&gt;
 
 &lt;div class="table-departed"&gt;
 &lt;table&gt;
@@ -72729,7 +73805,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -73179,7 +74255,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -73842,7 +74918,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -74334,7 +75410,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -74525,7 +75601,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -75134,7 +76210,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -75916,7 +76992,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -76148,7 +77224,7 @@ cnt.append(can);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -77342,7 +78418,7 @@ url
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -78190,7 +79266,7 @@ url
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -78882,7 +79958,7 @@ url
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -79547,7 +80623,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -80058,7 +81134,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -80587,7 +81663,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -81433,7 +82509,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -81711,7 +82787,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -82143,7 +83219,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -82607,7 +83683,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -83315,7 +84391,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -83690,7 +84766,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -84395,7 +85471,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -84643,7 +85719,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -85214,7 +86290,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -85780,7 +86856,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -85997,7 +87073,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -86297,7 +87373,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -86870,7 +87946,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -87588,7 +88664,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -89121,7 +90197,7 @@ D:\evns&amp;gt;exit
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -90176,7 +91252,7 @@ D:\evns&amp;gt;exit
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -90670,7 +91746,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -91478,7 +92554,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -91778,7 +92854,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -92373,7 +93449,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -92987,7 +94063,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812984"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -93549,7 +94625,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -94211,7 +95287,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -95289,7 +96365,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -95571,7 +96647,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -95774,7 +96850,7 @@ _26e26.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -95928,7 +97004,7 @@ _26e26.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -96607,7 +97683,7 @@ _26e26.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -97400,7 +98476,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -98367,7 +99443,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -99224,7 +100300,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -99673,7 +100749,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -100143,7 +101219,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -100458,7 +101534,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -100619,7 +101695,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742899"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812994"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -101108,7 +102184,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -102041,7 +103117,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -102651,7 +103727,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -103045,7 +104121,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -103383,7 +104459,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -103535,7 +104611,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -104376,7 +105452,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -105337,7 +106413,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -106040,7 +107116,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -106230,7 +107306,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -106411,7 +107487,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742888"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -107169,7 +108245,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -107489,7 +108565,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -107764,7 +108840,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -108334,7 +109410,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -109026,7 +110102,7 @@ iframe {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -110187,7 +111263,7 @@ btn2.addEventListener("click", async () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -111544,7 +112620,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -112991,7 +114067,7 @@ number: 1,
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -113687,7 +114763,7 @@ number: 1,
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -114532,7 +115608,7 @@ number: 1,
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -115888,7 +116964,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -118001,7 +119077,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -118821,7 +119897,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -118936,7 +120012,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -119232,7 +120308,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -119654,7 +120730,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -120272,7 +121348,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -121949,7 +123025,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -122984,7 +124060,7 @@ _26d12.mount("cont-01", m1, m2);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -123366,7 +124442,7 @@ _26d07.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -123930,7 +125006,7 @@ _26d05.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -125255,7 +126331,7 @@ _26d05.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -125898,7 +126974,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -126731,7 +127807,7 @@ _26cb0.mount4("cnt4");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -127731,7 +128807,7 @@ _26ca5.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -128602,7 +129678,7 @@ _26ca1.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -129370,7 +130446,7 @@ _26c98.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -130051,7 +131127,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -130648,7 +131724,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812985"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -132638,7 +133714,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -136975,7 +138051,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -138047,7 +139123,7 @@ _26c89.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -138419,7 +139495,7 @@ _26c84.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -140846,7 +141922,7 @@ _26c72.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -142116,7 +143192,7 @@ _26c72.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -142927,7 +144003,7 @@ _26c68.mount("container");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -143553,7 +144629,7 @@ cnt.append(ioDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -143963,7 +145039,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -144286,7 +145362,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -145685,7 +146761,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -145906,7 +146982,7 @@ Biasanya sakit lengan atas saat kedua tangan dijadikan bantalan untuk tidur, kak
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -146392,7 +147468,7 @@ Biasanya sakit lengan atas saat kedua tangan dijadikan bantalan untuk tidur, kak
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -147563,7 +148639,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -148656,7 +149732,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -151102,7 +152178,7 @@ and misc info
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -154139,7 +155215,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -157502,7 +158578,7 @@ closing
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -160478,7 +161554,7 @@ url
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -161795,7 +162871,7 @@ E1["E1 = 3 V"]
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -163105,7 +164181,7 @@ README.md" target="_blank" rel="noopener"&gt;
 &lt;p&gt;
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -164298,7 +165374,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -166429,7 +167505,7 @@ rpBtn.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -186327,7 +187403,7 @@ z"/&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -188929,7 +190005,7 @@ svg g path {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -194699,7 +195775,7 @@ svg g path {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -195064,7 +196140,7 @@ svg g path {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -196641,7 +197717,7 @@ svg g path {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -198330,7 +199406,7 @@ $$&lt;/li&gt;
 &lt;p&gt;
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -199300,7 +200376,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -200731,7 +201807,7 @@ plBtn.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -201604,7 +202680,7 @@ plBtn.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -202445,7 +203521,7 @@ $$&lt;/p&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -203139,7 +204215,7 @@ flowchart LR
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -203905,7 +204981,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -204818,7 +205894,7 @@ ppBtn.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -206631,7 +207707,7 @@ consolex.log("😃");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -207834,7 +208910,7 @@ consolex.log("😃");
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -208487,7 +209563,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -209024,7 +210100,7 @@ Sudah cukup banyak salah-salah menulis, lupa kata-kata baik dalam bahasa Jerman 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -209490,7 +210566,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -210178,7 +211254,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -211297,7 +212373,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -214823,7 +215899,7 @@ Slide 04
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742889"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -215821,7 +216897,7 @@ Slide 04
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -216640,7 +217716,7 @@ Slide 04
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -217348,7 +218424,7 @@ Slide 04
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -217608,7 +218684,7 @@ Slide 04
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -218074,7 +219150,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -219053,7 +220129,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -219201,7 +220277,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -220220,7 +221296,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -226669,7 +227745,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -227706,7 +228782,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -228181,7 +229257,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -228588,7 +229664,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -229298,7 +230374,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -229662,7 +230738,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -229963,7 +231039,7 @@ cnt.append(v2, c2a, c2b, c2c, t2a, t2b, t2c, t2d);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -231112,7 +232188,7 @@ cnt.append(R1, C1a, C1b, C1c, T1a, T1b, T1c);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -232661,7 +233737,7 @@ cnt.append(R1, C1a, C1b, C1c, T1a, T1b, T1c);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -233631,7 +234707,7 @@ cnt.append(R1, C1a, C1b, C1c, T1a, T1b, T1c);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -233829,7 +234905,7 @@ cnt.append(R1, C1a, C1b, C1c, T1a, T1b, T1c);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -234254,7 +235330,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -235216,7 +236292,7 @@ cnt.append(can);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -236374,7 +237450,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -239368,7 +240444,7 @@ Hari ini adalah hari Minggu dan besok sudah kembali hari kerja. Libur pada hari 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -240023,7 +241099,7 @@ Two days ago or Thursday the cleaning process in office room was performed. Ther
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -240274,7 +241350,7 @@ Two days ago or Thursday the cleaning process in office room was performed. Ther
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -240817,7 +241893,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -241016,7 +242092,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -244034,7 +245110,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -245108,7 +246184,7 @@ cnt.append(btn5);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -247837,7 +248913,7 @@ cnt.append(btn);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -249574,7 +250650,7 @@ cnt.innerHTML = "Hello, World!";
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -250730,7 +251806,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -251659,7 +252735,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -252969,7 +254045,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -254351,7 +255427,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -255278,7 +256354,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -256930,7 +258006,7 @@ cnt4.append(inp);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -259075,7 +260151,7 @@ css	images	py
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -260849,7 +261925,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812986"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -262008,7 +263084,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -262392,7 +263468,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -263440,7 +264516,7 @@ Hari ini dimulai dengan pengukuran gravitasi, panggilan kecil alam, thjd, dan ca
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -264662,7 +265738,7 @@ Belum ada ide untuk menulis sebenarnya. Hanya membuat catatan untuk meneruskan k
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -265544,7 +266620,7 @@ Meneruskan kembali catatan sebelumnya pada
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -266035,7 +267111,7 @@ Dikarenakan judul yang sama, semacam captain-log ini, penomoran paragraf diterus
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -266800,7 +267876,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -267280,7 +268356,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -268333,7 +269409,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -269216,7 +270292,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -270035,7 +271111,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -271453,7 +272529,7 @@ jobs:
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -272192,7 +273268,7 @@ cnt.append(rightDiv);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -272647,7 +273723,7 @@ for(id of ids) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -273788,7 +274864,7 @@ for(id of ids) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -274220,7 +275296,7 @@ for(id of ids) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -274877,7 +275953,7 @@ for(id of ids) {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -275536,7 +276612,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -276240,7 +277316,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -276552,7 +277628,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -276780,7 +277856,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -277722,7 +278798,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -278249,7 +279325,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -278980,7 +280056,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -279292,7 +280368,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -279454,7 +280530,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -279589,7 +280665,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -279742,7 +280818,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -279841,7 +280917,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -280573,7 +281649,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -280625,7 +281701,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -280713,7 +281789,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -280885,7 +281961,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -281015,7 +282091,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -281157,7 +282233,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -281283,7 +282359,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -281559,7 +282635,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -281745,7 +282821,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -282280,7 +283356,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -283076,7 +284152,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -283758,7 +284834,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -284365,7 +285441,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -284934,7 +286010,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -285428,7 +286504,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -286388,7 +287464,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -287624,7 +288700,7 @@ Plotly.newPlot('cnt', data, layout, config);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -288808,7 +289884,7 @@ console.log("canvas css:", ce.getBoundingClientRect().width, ce.getBoundingClien
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -289462,7 +290538,7 @@ console.log("canvas css:", ce.getBoundingClientRect().width, ce.getBoundingClien
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -290056,7 +291132,7 @@ console.log("canvas css:", ce.getBoundingClientRect().width, ce.getBoundingClien
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -290662,7 +291738,7 @@ console.log("canvas css:", ce.getBoundingClientRect().width, ce.getBoundingClien
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -291762,7 +292838,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -292797,7 +293873,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -294076,7 +295152,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -294925,7 +296001,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -295364,7 +296440,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -295914,7 +296990,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -296454,7 +297530,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -297312,7 +298388,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -297836,7 +298912,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -298250,7 +299326,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -299040,7 +300116,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -299638,7 +300714,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -300364,7 +301440,7 @@ inSel.focus();
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -301373,7 +302449,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -302558,7 +303634,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -303018,7 +304094,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -303555,7 +304631,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -304425,7 +305501,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -305401,7 +306477,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -306382,7 +307458,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -307209,7 +308285,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -308997,7 +310073,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -309973,7 +311049,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -310584,7 +311660,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -311435,7 +312511,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -312217,7 +313293,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -312931,7 +314007,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -314138,7 +315214,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742890"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -315314,7 +316390,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -315746,7 +316822,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -316078,7 +317154,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -316494,7 +317570,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -316769,7 +317845,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -317481,7 +318557,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -318320,7 +319396,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -319844,7 +320920,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -320929,7 +322005,7 @@ else:
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -321670,7 +322746,7 @@ git push origin deploy-now -f
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -322075,7 +323151,7 @@ git push origin deploy-now -f
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -323007,7 +324083,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -324432,7 +325508,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -325105,7 +326181,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -325693,7 +326769,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -326446,7 +327522,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -326970,7 +328046,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -327233,7 +328309,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -327606,7 +328682,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -328589,7 +329665,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -329263,7 +330339,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -329730,7 +330806,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -330232,7 +331308,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -330561,7 +331637,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -331054,7 +332130,7 @@ instances, private subnet: EC2 instance for the database). Both are in a single 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -331270,7 +332346,7 @@ instances, private subnet: EC2 instance for the database). Both are in a single 
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -331590,7 +332666,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -332333,7 +333409,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -334824,7 +335900,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -335331,7 +336407,7 @@ First part of an URI, before the : character, is scheme, which indicates which p
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -336305,7 +337381,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -336708,7 +337784,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -337857,7 +338933,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -339106,7 +340182,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -340039,7 +341115,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -340899,7 +341975,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -341507,7 +342583,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -341761,7 +342837,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -342211,7 +343287,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -342866,7 +343942,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -343554,7 +344630,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -344374,7 +345450,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -344684,7 +345760,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -345512,7 +346588,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -346615,7 +347691,7 @@ flowchart
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -350501,7 +351577,7 @@ will update Eqns (4)-(10).&lt;/li&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -352290,7 +353366,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -353248,7 +354324,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -354309,7 +355385,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -355933,7 +357009,7 @@ Tidak memenuhi ketentuan perundang-undang beban kerja dosen mengenai Kewajiban K
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -356525,7 +357601,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -356786,7 +357862,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -357176,7 +358252,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -357553,7 +358629,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -358267,7 +359343,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -359727,7 +360803,7 @@ README.md" target="_blank" rel="noopener"&gt;
 &lt;p&gt;
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -359800,7 +360876,7 @@ Total is 12.5 credit hours.&lt;/p&gt;</description></item><item><title>tue 26.08
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -360406,7 +361482,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -360697,7 +361773,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -360829,7 +361905,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -361027,7 +362103,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -361554,7 +362630,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -362961,7 +364037,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -363648,7 +364724,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -364499,7 +365575,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -365026,7 +366102,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -366011,7 +367087,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -366088,7 +367164,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -366722,7 +367798,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -366851,7 +367927,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -368582,7 +369658,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -370142,7 +371218,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -371579,7 +372655,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -372839,7 +373915,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -374026,7 +375102,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -375361,7 +376437,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -376478,7 +377554,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -377540,7 +378616,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -378893,7 +379969,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -380374,7 +381450,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -381254,7 +382330,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -381902,7 +382978,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -382820,7 +383896,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -383595,7 +384671,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -384282,7 +385358,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -385046,7 +386122,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -385931,7 +387007,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -386994,7 +388070,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -387730,7 +388806,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -388273,7 +389349,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -388940,7 +390016,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -389931,7 +391007,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -390902,7 +391978,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -391557,7 +392633,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -392230,7 +393306,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -393297,7 +394373,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -394161,7 +395237,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812987"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -395685,7 +396761,7 @@ drawGrainsOnCanvas(grains, can);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -397044,7 +398120,7 @@ main_25g54();
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -398565,7 +399641,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -399745,7 +400821,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -400834,7 +401910,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -401869,7 +402945,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -403107,7 +404183,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -403998,7 +405074,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -405106,7 +406182,7 @@ $$&lt;/p&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -405827,7 +406903,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -406421,7 +407497,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -407015,7 +408091,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -407606,7 +408682,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -409169,7 +410245,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -410439,7 +411515,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -411345,7 +412421,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -412451,7 +413527,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -413314,7 +414390,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -415038,7 +416114,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -416217,7 +417293,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -416924,7 +418000,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -417429,7 +418505,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -418157,7 +419233,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -418651,7 +419727,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -418842,7 +419918,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -419547,7 +420623,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -420470,7 +421546,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -421143,7 +422219,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -422407,7 +423483,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -423157,7 +424233,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -423693,7 +424769,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -424122,7 +425198,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -424615,7 +425691,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -425206,7 +426282,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -426304,7 +427380,7 @@ btnRun.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -426973,7 +428049,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -427965,7 +429041,7 @@ txa.addEventListener("input", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -428923,7 +429999,7 @@ btn.addEventListener("click", () =&gt; {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -429599,7 +430675,7 @@ select option {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -437924,7 +439000,7 @@ oth:
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -439304,7 +440380,7 @@ addExampleToTextarea(inp);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -440605,7 +441681,7 @@ addExampleToTextarea(inp);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -441816,7 +442892,7 @@ flowchart LR
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -442829,7 +443905,7 @@ flowchart LR
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -443973,7 +445049,7 @@ flowchart LR
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -444888,7 +445964,7 @@ flowchart LR
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -446252,7 +447328,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -447033,7 +448109,7 @@ function calc() {
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -447766,7 +448842,7 @@ drawMatrixOnCanvas(can, m, getColor);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -448614,7 +449690,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -449377,7 +450453,7 @@ addTextToTextarea2(out, pst1, dist);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -450311,7 +451387,7 @@ addTextToTextarea2(out, pst1, dist);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -451025,7 +452101,7 @@ cnt.appendChild(img);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -451493,7 +452569,7 @@ cnt.appendChild(img);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -451954,7 +453030,7 @@ cnt.appendChild(img);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -452435,7 +453511,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -452744,7 +453820,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -452932,7 +454008,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -453134,7 +454210,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -453334,7 +454410,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -453460,7 +454536,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -453560,7 +454636,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -453613,7 +454689,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -454019,7 +455095,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742891"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -454956,7 +456032,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -455253,7 +456329,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -455424,7 +456500,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -455498,7 +456574,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -456258,7 +457334,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -456559,7 +457635,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -456711,7 +457787,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -456811,7 +457887,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -456911,7 +457987,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -457884,7 +458960,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -458422,7 +459498,7 @@ README.md" target="_blank" rel="noopener"&gt;
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -458725,7 +459801,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -458832,7 +459908,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -458965,7 +460041,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -459180,7 +460256,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -459304,7 +460380,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -459540,7 +460616,7 @@ U(["UI"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -459882,7 +460958,7 @@ cnt.append(ibx.div);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -460115,7 +461191,7 @@ cnt.append(cbx.div);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -460224,7 +461300,7 @@ cnt.append(cbx.div);
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
@@ -460584,7 +461660,7 @@ E(["End"])
 
 
 
-&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790742892"&gt;
+&lt;link rel="stylesheet" href="https://endap.github.io/css/table-0.css?v=1790812988"&gt;
 
 &lt;div class="table-0"&gt;
 &lt;table&gt;
