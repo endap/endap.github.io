@@ -1,0 +1,261 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>try runwb2-exe again | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1790863628'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1790863628'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+try runwb2-exe again
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-01T11:27:27 07:00">1 Oct 2026</time>
+&#183;
+4 mins read
+&#183;
+<a class=link href=npprel:///26/j/03-try-runwb2-exe-again.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Learning to run Workbench 2026 R1 again.</p>
+<h2 id=open-save-as>open-save as</h2>
+<ol>
+<li>Press Window key ⊞ and type workbench and press enter.</li>
+<li>Find in the menu bar File ⟶ Save As until the Open/Save Dialog Box opened.</li>
+<li>Navigate to target working folder.</li>
+<li>Provide filename e.g. <code>v500x2000.wbpj</code>, a Workbench Project File and click Save.</li>
+</ol>
+<h2 id=import-geometry>import geometry</h2>
+<ol>
+<li>Find in the Toolbox on the left Analysis Systems.</li>
+<li>Click + to expand it.</li>
+<li>Scroll down and find Static Structural.</li>
+<li>Drag it to the Project Schematic area.</li>
+<li>Right click on Geometry ⟶ Import Geometry ⟶ Browse.</li>
+<li>Navigate and choose the <code>.iges</code> file to import, e.g. <code>3d-fender-v-500x2000.iges</code>.</li>
+<li>Click Open.</li>
+</ol>
+<h2 id=fix-gemoetry>fix gemoetry</h2>
+<ol>
+<li>Skip this part for now.</li>
+</ol>
+<h2 id=material>material</h2>
+<ol>
+<li>Double click Engineering Data.</li>
+<li>In menu bar find View &amp;xarr; Reset Window Layout, if necessary or some windows are closed accidentally.</li>
+<li>Find Outline of Schematic A2: Engineering Data.</li>
+<li>Find Click here to add new material (usually below Sturctural Steel).</li>
+<li>Click it and type Rubber.</li>
+<li>Look on the left and the Toolbox should become active.</li>
+<li>Find and expand Hyperelastic.</li>
+<li>Find Neo-Hookean and double click it.</li>
+<li>Notice that there is new row in Properties of Outline Row 4: Rubber.</li>
+<li>Fill value of 1e+6 for Intial Shear Modulus Mu, then press enter, and keep the unit in Pa.</li>
+<li>Fill value of 2e-0 for Incompressibility Parameter D1, then press enter, and keep the unit in Pa^-1.</li>
+<li>Notice that previous two cells with yellow background are now having white background.</li>
+</ol>
+<h2 id=model>model</h2>
+<ol>
+<li>Back to Project tab and find Project Schematic.</li>
+<li>Double click Model.</li>
+<li>Wait until A: Static Structural - Mechanical [Ansys Mechanical Enterprise] is opened.</li>
+<li>Find Outline tree on the left.</li>
+<li>Find Geometry and expand it.</li>
+<li>Click Body, e.g. 3d-fender-v-500x2000, and notice that the model become green, where it was previously gray.</li>
+<li>Find on lower left window Material.</li>
+<li>If there is not any Rubber, then close Mechanical.</li>
+<li>Back to Workbench Project Schematic.</li>
+</ol>
+<h2 id=material-1>material</h2>
+<ol>
+<li>Double click Engineering Data.</li>
+<li>Confirm that Rubber exist.</li>
+<li>Close Engineering Data.</li>
+<li>Right click on Engineering Data &amp;xarr; Update.</li>
+</ol>
+<h2 id=model-1>model</h2>
+<ol>
+<li>Double click Model in Static Structural.</li>
+<li>Expand Geometry on Outline tree.</li>
+<li>Choose the Body, e.g. 3d-fender-v-500x2000.</li>
+<li>Find Material on the lower left.</li>
+<li>Click right part of Assignment and choose Rubber.</li>
+<li>Find Mesh on Outline tree.</li>
+<li>Right click and choose Generate Mesh.</li>
+</ol>
+<h2 id=analysis>analysis</h2>
+<ol>
+<li>Find Static Structural on the Outline tree.</li>
+<li>Click it and go to the lower left window.</li>
+<li>Find Solver Control and expand it.</li>
+<li>Set Large Deflection On.</li>
+</ol>
+<h2 id=support>support</h2>
+<ol>
+<li>Find Static Structural on the Outline tree.</li>
+<li>Right click Insert &amp;xarr; Fixed Support.</li>
+<li>Rotate model and until bottom plate visible.</li>
+<li>Left click on it and choose Apply Selection (double arrow left and righ).</li>
+</ol>
+<h2 id=load>load</h2>
+<ol>
+<li>Find Static Structural on the Outline tree.</li>
+<li>Right click Insert &amp;xarr; Displacement.</li>
+<li>Rotate model and until top part visible, where to apply displacement.</li>
+<li>Change Z Component to Constant.</li>
+<li>Fill in the table -1e-2</li>
+</ol>
+<h2 id=solve>solve</h2>
+<ol>
+<li>Find Solution on the Outline tree.</li>
+<li>Right click Solve.</li>
+<li>Wait the process.</li>
+</ol>
+<h2 id=reaction-force>reaction force</h2>
+<ol>
+<li>Find Solution in Outline tree.</li>
+<li>Right click Insert &amp;xarr; Proble &amp;xarr; Force Reaction.</li>
+<li>Find on lower left Definition and expand it.</li>
+<li>Change Location Method to Geometry Selection.</li>
+<li>Click on a face and choose Apply Selection.</li>
+<li>Back to Analysys Settings and find Output Controls.</li>
+<li>Set Nodal Forces to Yes.</li>
+</ol>
+<h2 id=solve-1>solve</h2>
+<ol>
+<li>Find Solution on the Outline tree.</li>
+<li>Right click Clear Generated Data.</li>
+<li>Right click Solve.</li>
+<li>Wait the process.</li>
+</ol>
+<h2 id=modification>modification</h2>
+<ol>
+<li>Change displacement from -0.01 to -0.l m.</li>
+<li>Repeat the required steps.</li>
+<li>Change Scoping Method to Geometri Selection.</li>
+<li>Click in the Model the face and choose Apply Selection.</li>
+<li>Set Orientation to Z.</li>
+</ol>
+<h2 id=displacement>displacement</h2>
+<ol>
+<li>Right on Solution.</li>
+<li>Insert Deformation &amp;xarr; Directional Deformation.</li>
+</ol>
+<h2 id=force---displacement-chart>force - displacement chart</h2>
+<ol>
+<li>Find Solution in menu bar.</li>
+<li>In solutin find Chart.</li>
+<li>Fill X-Axis with Deformation.</li>
+<li>Fill Y-Axis with Reaction Force.</li>
+<li>In Chart Controls X Axis to Directional Deformation (Min).</li>
+</ol>
+<h2 id=modification-1>modification</h2>
+<ol>
+<li>Change Z Component of Displacement to 0.225 m (45%).</li>
+<li>Analysis Setting &amp;xarr; Step Controls.</li>
+<li>Initiat Substeps 10, Min 10, Max 100.</li>
+<li>Solve.</li>
+</ol>
+<pre tabindex=0><code>Number of Steps                 1
+Step End Time                   1 s
+
+Auto Time Stepping              On
+Initial Substeps                50
+Minimum Substeps                10
+Maximum Substeps                500
+
+Maximum Iterations/Substep      50
+</code></pre><ul>
+<li>Change Z Component to -0.225 m (45%). x</li>
+<li>Change Z Component to -0.200 m (40%). x</li>
+<li>Change Z Component to -0.175 m (35%). x</li>
+<li>Change Z Component to -0.150 m (30%). x</li>
+<li>Change Z Component to -0.125 m (25%). x</li>
+<li>Change Z Component to -0.100 m (20%). x</li>
+<li>Change Z Component to -0.050 m (10%). x
+D1 is changed to 2E-6 from 2E-9.</li>
+</ul>
+<p>Not success.</p>
+<h2 id=notes>notes</h2>
+<ul>
+<li>Previous post is
+<a href=/26i78/>
+<span>
+26i78
+</span>
+</a>
+.</li>
+<li>This post is built from discussion with Luna <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>, <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>GPT-5.6 Luna, &ldquo;Calculate Fender Forces Energy&rdquo;, ChatGPT, 1 Oct 2026, url
+<a href=https://chatgpt.com/share/6abde93d-5a2c-83ec-af52-488e715ec4aa target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6abde93d-5a2c-83ec-af52-488e715ec4aa <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261001].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>GPT-5.6 Luna, &ldquo;Define Hyperelastic Rubber Models&rdquo;, ChatGPT, 1 Oct 2026, url
+<a href=https://chatgpt.com/share/6abdea05-cd28-83ec-9128-e628b54f13ce target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6abdea05-cd28-83ec-9128-e628b54f13ce <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261001].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>GPT-5.6 Luna, "&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1790863628'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
