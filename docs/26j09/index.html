@@ -1,0 +1,736 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>semi-circle segmented path generator | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1791187867'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1791187867'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+semi-circle segmented path generator
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-04T08:20:04 07:00">4 Oct 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/j/09-semi-circle-segmented-path-generator.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>This a demo for segmented paths visualization, where each path is made of straight line or semi-circle.</p>
+<script src=/js/butiran/0.0.29/butiran.min.js defer></script>
+<div id=cntx></div>
+<script type=module>
+  
+const cntx = document.getElementById("cntx");
+
+cntx.style.height = "450px";
+cntx.style.width = "662px";
+cntx.style.border = "0px solid var(--border)";
+
+/*
+  20261004 To endap
+  0824 Copy from https://github.com/dudung/butiran.js/blob/master/app/scspg/scspg.js
+  0833 Change with to element or element.style.
+  0834 Change document to cnt as parent element.
+  0838 Change background for div and canvas to var(--bg).
+  0839 Face Vect3 not found.
+  0842 Add butiran/0.0.29/butiran.min.js via script/load-plain shortcode.
+  0842 Fase can't variable ymax. Button Load ok.
+  0850 Find ymaz and rename it to ymax. Button Read ok.
+  0851 Find button Start not ok: Can't find variable: i
+  0902 Rename all var to let, add mising let in some fors.
+  0904 Comment all border (leftDiv, rightDiv, canOut).
+  0905 set lineWidth = 2 for line segment.
+  0910 Set radius to 3 and lineWidht to 1 for circle as marker.
+  0920 All work but not layout in the post.
+  0924 Fix with border 0 and right width / height.
+  0927 Change fontFamilty to monospace.
+*/
+
+/*
+	scspg.js
+	Semi-circle segmented path generator
+	
+	Sparisoma Viridi | https://github.com/dudung/butiran.js
+	
+	20120305 From arXiv article.
+	20190528
+	2037 Start recreating this app.
+	20190529
+	0824 Continue at campus.
+	0926 Test Path class and it works.
+	0944 Get good result for this stage.
+	1046 Finish making an example of 26 segmented paths.
+	1101 Finalize this app and update Github.
+	
+	References
+	1. Sparisoma Viridi, Siti Nurul Khotimah, "SCSPG (Semi-
+		 Circle Segmented Path Generator): How to Use and
+		 an Example in Calculating Work of Friction along Curved
+		 Path", arXiv:1203.0796v1 [physics.comp-ph] 5 Mar 2012,
+		 url https://arxiv.org/abs/1203.0796v1
+*/
+
+// Define global variables
+let params;
+let taIn, taOut, caOut;
+let btLoad, btRead, btStart, btInfo;
+let dvLeft, dvRight;
+let ds, paths;
+let digit;
+let xmin, ymin, zmin, xmax, ymax, zmax;
+let XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX;
+let proc, Tproc, iter, Niter;
+let x, y, sx, sy;
+
+// Execute main function
+main();
+
+
+// Define main function
+function main() {
+	initParams();
+	createVisualElements(cntx);
+}
+
+
+// Initialize parameters
+function initParams() {
+	let p = "";
+	p += "# Step\n";
+	p += "SSTP 0.0100\n";
+	p += "\n";
+	p += "# Iteration\n";
+	p += "TPRC 100\n";
+	p += "\n";
+	p += "# Coordinates\n";
+	p += "RORG 2 1 1\n";
+	p += "RMIN -1 -1 -1\n";
+	p += "RMAX 21 21 21\n";
+	p += "\n";
+	p += "# Segments\n";
+	p += "0.0000 0.0000 15.000 #f00\n";
+	p += "0.0000 0.2500 3.1416 #00f\n"; // R = 2
+	p += "0.2500 0.2500 9.0000 #f00\n";
+	p += "0.2500 0.3750 3.1416 #00f\n"; // R = 4
+	p += "0.3750 0.3750 4.0000 #f00\n";
+	p += "0.3750 0.5000 4.7124 #00f\n"; // R = 6
+	p += "0.5000 0.5000 2.0000 #f00\n";
+	p += "0.5000 0.7500 3.1416 #00f\n"; // R = 2
+	p += "0.7500 0.7500 7.0000 #f00\n";
+	p += "0.7500 1.0000 1.5708 #00f\n"; // R = 1
+	p += "0.0000 0.0000 4.0000 #f00\n";
+	p += "0.0000 -0.250 3.1416 #00f\n"; // R = 2
+	p += "-0.250 -0.250 4.0000 #f00\n";
+	p += "-0.250 -0.500 1.5708 #00f\n"; // R = 1
+	p += "-0.500 -0.500 8.0000 #f00\n";
+	p += "0.5000 0.0000 6.2832 #00f\n"; // R = 4
+	p += "0.0000 0.2500 1.5708 #f00\n"; // R = 1
+	p += "0.2500 0.2500 9.5000 #00f\n";
+	p += "0.2500 0.7500 7.5398 #f00\n"; // R = 2.4
+	p += "0.7500 0.7500 3.0000 #00f\n";
+	p += "0.7500 1.0000 1.5708 #f00\n"; // R = 1
+	p += "0.0000 -0.500 3.1416 #00f\n"; // R = 1
+	p += "0.5000 0.7500 1.5708 #f00\n"; // R = 1
+	p += "0.7500 0.7500 3.0000 #00f\n";
+	p += "0.7500 0.7500 4.9000 #f00\n";
+	p += "0.7500 1.0000 1.5708 #00f\n"; // R = 1
+	
+	params = p;
+	
+	digit = 4;
+}
+
+
+// Load parameters
+function loadParams() {
+	clearText(taIn);
+	addText(params).to(taIn);
+}
+
+
+// Read parameters
+function readParams() {
+	ds = getValue("SSTP").from(taIn);
+	
+	Tproc = getValue("TPRC").from(taIn);
+	
+	let rmin = getValue("RMIN").from(taIn);
+	let rmax = getValue("RMAX").from(taIn);
+	let rorg = getValue("RORG").from(taIn);
+	
+	xmin = rmin.x;
+	ymin = rmin.y;
+	zmin = rmin.z;
+	xmax = rmax.x;
+	ymax = rmax.y;
+	zmax = rmax.z;
+		
+	XMIN = 0;
+	XMAX = caOut.width;
+	YMIN = caOut.height;
+	YMAX = 0;
+	ZMIN = -1;
+	ZMAX = 1;
+	
+	paths = getBlockValue("# Segments").from(taIn);
+	iter = 0;
+	Niter = paths.length;
+	
+	x = rorg.x;
+	y = rorg.y;
+	
+	sx = [];
+	sy = [];
+}
+
+
+// Get block of value form a textarea
+function getBlockValue() {
+	let pattern = arguments[0];
+	let results = {
+		from: function() {
+			let ta = arguments[0];
+			let lines = ta.value.split("\n");
+			let Nl = lines.length;
+			
+			let lbeg = -1;
+			let lend = -1;
+			for(let l = 0; l < Nl; l++) {
+				if(lines[l].indexOf(pattern) == 0) {
+					lbeg = l + 1;
+				}
+				if(lines[l].length == 0 && l > lbeg) {
+					lend = l - 1;
+				}
+			}
+			
+			let block = [];
+			for(let l = lbeg; l <= lend; l++) {
+				let words = lines[l].split(" ");
+				let p = new Path(
+					parseFloat(words[0]),
+					parseFloat(words[1]),
+					parseFloat(words[2]),
+					words[3]
+				);
+				block.push(p);
+			}
+			
+			return block;
+		}
+	};
+	return results;
+}
+
+
+// Create visual elements
+function createVisualElements(el) {
+	// Create textarea for input
+	taIn = document.createElement("textarea");
+	/*
+	with(taIn.style) {
+		overflowY = "scroll";
+		width = "214px";
+		height = "200px";
+	}
+	*/
+	taIn.style.overflowY = "scroll";
+	taIn.style.width = "214px";
+	taIn.style.height = "200px";
+	taIn.style.fontFamily = "monospace";
+	
+	
+	// Create textarea for output
+	taOut = document.createElement("textarea");
+	/*
+	with(taOut.style) {
+		overflowY = "scroll";
+		width = "214px";
+		height = "200px";
+	}
+	*/
+	taOut.style.overflowY = "scroll";
+	taOut.style.width = "214px";
+	taOut.style.height = "200px";
+	taOut.style.fontFamily = "monospace";
+	
+	// Create button for loading default parameters
+	btLoad = document.createElement("button");
+	/*
+	with(btLoad) {
+		innerHTML = "Load";
+		id = "Load";
+		style.width = "55px";
+		disabled = false;
+		addEventListener("click", buttonClick);
+	}
+	*/
+	btLoad.innerHTML = "Load";
+	btLoad.id = "Load";
+	btLoad.style.width = "55px";
+	btLoad.disabled = false;
+	btLoad.addEventListener("click", buttonClick);
+  
+  // Create button for reading shown parameters
+	btRead = document.createElement("button");
+	/*
+	with(btRead) {
+		innerHTML = "Read";
+		id = "Read";
+		style.width = "55px";
+		disabled = true;
+		addEventListener("click", buttonClick);
+	}
+	*/
+	btRead.innerHTML = "Read";
+	btRead.id = "Read";
+	btRead.style.width = "55px";
+	btRead.disabled = true;
+	btRead.addEventListener("click", buttonClick);
+	
+	// Create button for starting simulation
+	btStart = document.createElement("button");
+	/*
+	with(btStart) {
+		innerHTML = "Start";
+		id = "Start";
+		style.width = "55px";
+		disabled = true;
+		addEventListener("click", buttonClick);
+	}
+	*/
+	btStart.innerHTML = "Start";
+	btStart.id = "Start";
+	btStart.style.width = "55px";
+	btStart.disabled = true;
+	btStart.addEventListener("click", buttonClick);
+	
+	// Create button for giving information
+	btInfo = document.createElement("button");
+	/*
+	with(btInfo) {
+		innerHTML = "Info";
+		id = "Info";
+		style.width = "55px";
+		disabled = false;
+		addEventListener("click", buttonClick);
+	}
+	*/
+	btInfo.innerHTML = "Info";
+	btInfo.id = "Info";
+	btInfo.style.width = "55px";
+	btInfo.disabled = false;
+	btInfo.addEventListener("click", buttonClick);
+	
+	
+	// Create canvas for output
+	caOut = document.createElement("canvas");
+	caOut.width = "439";
+	caOut.height = "439";
+	/*
+	with(caOut.style) {
+		width = caOut.width +  "px";
+		height = caOut.height +  "px";
+		border = "1px solid #aaa";
+		background = "#fff";
+	}
+	*/
+	caOut.style.width = caOut.width +  "px";
+	caOut.style.height = caOut.height +  "px";
+	/*
+	caOut.style.border = "1px solid #aaa";
+	caOut.style.background = "#fff";
+	*/
+	caOut.style.background = "var(--bg)";
+	
+	// Create div for left part
+	dvLeft = document.createElement("div");
+	/*
+	with(dvLeft.style) {
+		width = "220px";
+		height = "442px";
+		border = "1px solid #eee";
+		background = "#eee";
+		float = "left";
+	}
+	*/
+	dvLeft.style.width = "220px";
+	dvLeft.style.height = "442px";
+	/*
+	dvLeft.style.border = "1px solid #eee";
+	dvLeft.style.background = "#eee";
+	*/
+	dvLeft.style.background = "var(--bg)";
+	dvLeft.style.float = "left";
+	
+	// Create div for right part
+	dvRight = document.createElement("div");
+	/*
+	with(dvRight.style) {
+		width = "442px";
+		height = "442px";
+		border = "1px solid #eee";
+		background = "#eee";
+		float = "left";
+	}
+	*/
+	dvRight.style.width = "442px";
+	dvRight.style.height = "442px";
+	/*
+	dvRight.style.border = "1px solid #eee";
+	dvRight.style.background = "#eee";
+	*/
+	dvRight.style.background = "var(--bg)";
+	dvRight.style.float = "left";
+	
+	// Append element in structured order
+	/*
+	document.append(dvLeft);
+	*/
+	el.append(dvLeft);
+		dvLeft.append(taIn);
+		dvLeft.append(taOut);
+		dvLeft.append(btLoad);
+		dvLeft.append(btRead);
+		dvLeft.append(btStart);
+		dvLeft.append(btInfo);
+	/*
+	document.append(dvRight);
+	*/
+	el.append(dvRight);
+		dvRight.append(caOut);
+}
+
+
+// Handle event of button click
+function buttonClick() {
+	let id = event.target.id;
+	switch(id) {
+	case "Load":
+		btRead.disabled = false;
+		loadParams();
+	break;
+	case "Read":
+		btStart.disabled = false;
+		readParams();
+	break;
+	case "Start":
+		if(btStart.innerHTML == "Start") {
+			btLoad.disabled = true;
+			btRead.disabled = true;
+			btInfo.disabled = true;
+			btStart.innerHTML = "Stop";
+			proc = setInterval(simulate, Tproc);
+		} else {
+			btLoad.disabled = false;
+			btRead.disabled = false;
+			btInfo.disabled = false;
+			btStart.innerHTML = "Start";
+			clearInterval(proc);
+		}
+	break;
+	case "Info":
+		var info = "";
+		info += "scspg.js\n";
+		info += "Semi-circle segmented path generator\n";
+		info += "Sparisoma Viridi\n";
+		info += "https://github.com/dudung/butiran.js\n"
+		info += "Load  load parameters\n";
+		info += "Read  read parameters\n";
+		info += "Start start generation\n";
+		info += "Info  show this messages\n";
+		info += "\n";
+		addText(info).to(taOut);
+	break;
+	default:
+	}
+}
+
+
+// Perform simulation
+function simulate() {
+	
+	if(iter == 0) {
+	  clearCanvas(caOut);
+		addText("#s" + "\n").to(taOut);
+	}
+	addText(iter + " ").to(taOut);
+	
+	draw(paths[iter]).onCanvas(caOut);
+	
+	if(iter >= Niter - 1) {
+		btLoad.disabled = false;
+		btRead.disabled = false;
+		btStart.disabled = true;
+		btInfo.disabled = false;
+		btStart.innerHTML = "Start";
+		clearInterval(proc);
+		addText("\n\n").to(taOut);
+		
+		let N = sx.length;
+		addText("#x      y\n").to(taOut);
+		for(let i = 0; i < 2; i++) {
+		  let strxy = "";
+			strxy += sx[i].toFixed(digit) + " ";
+			strxy += sy[i].toFixed(digit) + "\n";
+			addText(strxy).to(taOut);
+		}
+		addText("..\n").to(taOut);
+		for(let i = N - 2; i < N; i++) {
+			let strxy = "";
+			strxy += sx[i].toFixed(digit) + " ";
+			strxy += sy[i].toFixed(digit) + "\n";
+			addText(strxy).to(taOut);
+		}
+		addText("Lines = " + N + "\n").to(taOut);
+		
+		addText("\n").to(taOut);
+	}
+	
+	iter++;
+}
+
+
+// Clear canvas
+function clearCanvas(caOut) {
+	let width = caOut.width;
+	let height = caOut.height;
+	let cx = caOut.getContext("2d");
+	cx.clearRect(0, 0, width, height);
+}
+
+
+// Draw grain on canvas
+function draw() {
+	let o = arguments[0];
+	let result = {
+		onCanvas: function() {
+			let ca = arguments[0];
+			let cx = ca.getContext("2d");
+			let lintrans = Transformation.linearTransform;
+			
+			if(o instanceof Grain) {
+				let xg = o.r.x;
+				let dx = xg + o.D;
+				let yg = o.r.y;
+				
+				let X = lintrans(xg, [xmin, xmax], [XMIN, XMAX]);
+				let DX = lintrans(dx, [xmin, xmax], [XMIN, XMAX]);
+				let D = DX - X;
+				let Y = lintrans(yg, [ymin, ymax], [YMIN, YMAX]);
+				
+				cx.beginPath();
+				cx.strokeStyle = o.c;
+				cx.arc(X, Y, D, 0, 2 * Math.PI);
+				cx.stroke();
+			} else if(o instanceof Path) {
+				let qi = o.qi * 2 * Math.PI;
+				let qf = o.qf * 2 * Math.PI;
+				let L = o.l;
+				let color = o.c;
+				
+				let N = Math.floor(L / ds);
+				let q = qi;
+				let dq = (qf - qi) / N;
+				
+				let xx = [];
+				let yy = [];
+				for(let i = 0; i < N; i++) {
+					let dx = ds * Math.cos(q);		
+					x += dx;
+					xx.push(x);
+					sx.push(x);
+					
+					let dy = ds * Math.sin(q);		
+					y += dy;
+					yy.push(y);
+					sy.push(y);
+					
+					q += dq;
+				}
+				
+				cx.beginPath();
+				cx.strokeStyle = color;
+				cx.lineWidth = "2";
+				for(let i = 0; i < N; i++) {
+					let X = lintrans(xx[i], [xmin, xmax], [XMIN, XMAX]);
+					let Y = lintrans(yy[i], [ymin, ymax], [YMIN, YMAX]);
+					if(i == 0) {
+						cx.moveTo(X, Y);
+					} else {
+						cx.lineTo(X, Y);
+					}
+				}
+				cx.stroke();
+				
+				cx.beginPath();
+				let X = lintrans(xx[0], [xmin, xmax], [XMIN, XMAX]);
+				let Y = lintrans(yy[0], [ymin, ymax], [YMIN, YMAX]);
+				cx.strokeStyle = "#888";
+				cx.lineWidth = "2";
+				cx.arc(X, Y, 3, 0, 2 * Math.PI);
+				cx.stroke();
+				
+			} else {
+			}
+		}
+	};
+	return result;
+}
+
+
+// Clear a Textarea
+function clearText() {
+	let ta = arguments[0];
+	ta.value = "";
+}
+
+
+// Add text to a textarea
+function addText() {
+	let text = arguments[0];
+	let result = {
+		to: function() {
+			let ta = arguments[0];
+			ta.value += text;
+			ta.scrollTop = ta.scrollHeight;
+		}
+	};
+	return result;
+}
+
+
+// Get parameter value from a Textarea
+function getValue() {
+	let key = arguments[0];
+	let result = {
+		from: function() {
+			let ta = arguments[0];
+			let lines = ta.value.split("\n");
+			let Nl = lines.length;
+			for(let l = 0; l < Nl; l++) {
+				let words = lines[l].split(" ");
+				let Nw = words.length;
+				let value;
+				if(words[0].indexOf(key) == 0) {
+					if(Nw == 2) {
+						value = parseFloat(words[1]);
+					} else if(Nw == 4) {
+						value = new Vect3(
+							parseFloat(words[1]),
+							parseFloat(words[2]),
+							parseFloat(words[3])
+						);
+					}
+					return value;
+				}
+			}
+		}
+	};
+	return result;	
+}
+
+</script>
+<h2 id=usage>usage</h2>
+<ul>
+<li>Click Load button to get the default input.</li>
+<li>Find the top right textarea, which acts as the input.</li>
+<li>Modify the input to meet your need.</li>
+<li>Click Start to perform the path generation according to the input.</li>
+<li>Fefresh the browser to get clear start.</li>
+<li>Repeat the initial step, when necessary.</li>
+</ul>
+<h2 id=notes>notes</h2>
+<ul>
+<li>There is a pre-print explaining the app and an example of it <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</li>
+<li>Original code is available on
+<a href=https://github.com/dudung/butiran.js/blob/master/app/scspg/scspg.js target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://github.com/dudung/butiran.js/blob/master/app/scspg/scspg.js <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261004].</li>
+<li>One of the modifications is to change all <code>var</code> to <code>let</code> and add missing <code>let</code> to asssure the scope <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> and change the implementation using <code>with()</code>, which is forbidden in in JS strict mode <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</li>
+<li>Since Clear button has not been implemented yet, browser refrech button ↻ is used instead.</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Sparisoma Viridi, Siti Nurul Khotimah, &ldquo;SCSPG (Semi-Circle Segmented Path Generator): How to Use and an Example in Calculating Work of Friction along Curved Path&rdquo;, arXiv:1203.0796 [physics.comp-ph] [v1] Mon, 5 Mar 2012 01:28:25 UTC, url
+<a href=https://doi.org/10.48550/arXiv.1203.0796 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://doi.org/10.48550/arXiv.1203.0796 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+, <br>
+Jurnal Pengajaran Fisika Sekolah Menengah 5 (1), 11-15 (2013) (discontinued).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>David Y., &ldquo;Difference between <code>let</code> and <code>var</code> in JavaScript&rdquo;, Sentry, 17 Sep 2026, url
+<a href=https://sentry.io/answers/difference-between-let-and-var-in-javascript/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://sentry.io/answers/difference-between-let-and-var-in-javascript/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261004].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Hector Lorenzo, &ldquo;What is strict mode in JavaScript?&rdquo;, Medium, 4 Dec 2017, url
+<a href=https://medium.com/p/aa633039bf9f target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/aa633039bf9f <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1791187867'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>country pop-data projection | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1791187867'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1791187867'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+country pop-data projection
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-05T13:20:07 07:00">5 Oct 2026</time>
+&#183;
+1 min read
+&#183;
+<a class=link href=npprel:///26/j/16-country-pop-data-projection.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Indonesian population is taken as example for population projection.</p>
+<script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js",
+    "endap.js": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js"
+  }
+}
+  </script>
+<h2 id=data>data</h2>
+<ul>
+<li><code>data1</code> Internal data is from <code>Proyeksi Baseline.xls</code>, url n/a [20260918].</li>
+</ul>
+<div id=cnt1></div>
+<script type=module>
+  
+import { Console as CLI } from "endap";
+const consoles = CLI.create("100px");
+
+const cnt = document.getElementById("cnt1");
+cnt.append(consoles.el);
+
+const year1 = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+const popu1 = [237641326, 241126900, 244663600, 248252100, 251893300, 255587900, 258496500, 261355500, 264161600, 266911900, 270203917, 272682500, 275773800, 278696200, 281603800, 284438800];
+
+const ny = year1.length;
+const np = popu1.length;
+const n = ny < np ? ny : np;
+for(let i = 0; i < n; i++) {
+  const y = year1[i];
+  const p = popu1[i];
+  consoles.log(y, "\t");
+  consoles.log(p);
+}
+
+</script>
+<ul>
+<li><code>data2</code> Mid year population data is from
+<a href=https://www.bps.go.id/en/statistics-table/2/MTk3NSMy/0 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.bps.go.id/en/statistics-table/2/MTk3NSMy/0 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261005].</li>
+</ul>
+<div id=cnt2></div>
+<script type=module>
+  
+import { Console as CLI } from "endap";
+const consoles = CLI.create("100px");
+
+const cnt = document.getElementById("cnt2");
+cnt.append(consoles.el);
+
+const year2 = [1960, 2010, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+const popu2 = [93928500, 238518800, 255587500, 258496500, 261355500, 264161600, 266911900, 270203900, 272682500, 275773800, 278696200, 281603800, 284438800, 287198383];
+
+const ny = year2.length;
+const np = popu2.length;
+const n = ny < np ? ny : np;
+for(let i = 0; i < n; i++) {
+  const y = year2[i];
+  const p = popu2[i];
+  consoles.log(y, "\t");
+  consoles.log(p);
+}
+
+</script>
+<ul>
+<li><code>data3</code> Population, total - Indonesia, data is from
+<a href="https://data.worldbank.org/indicator/SP.POP.TOTL?locations=ID" target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://data.worldbank.org/indicator/SP.POP.TOTL?locations=ID <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261005].</li>
+</ul>
+<div id=cnt3></div>
+<script type=module>
+  
+import { Console as CLI } from "endap";
+const consoles = CLI.create("100px");
+
+const cnt = document.getElementById("cnt3");
+cnt.append(consoles.el);
+
+const year3 = [1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+const popu3 = [88296070, 90791249, 93375850, 96051424, 98833749, 101365130, 103792754, 106526393, 109450006, 112517639, 115657495, 118833702, 122039841, 125288515, 128555045, 131843848, 135173655, 138533541, 141953163, 145434834, 148950540, 152485035, 156052152, 159651381, 163251124, 166776185, 170175065, 173511154, 176855065, 180201630, 183501098, 186778238, 190043744, 193305168, 196591828, 199888057, 203204348, 206536095, 209826788, 213004668, 216077790, 219097902, 222088495, 225048008, 227926649, 230871650, 233951652, 237062337, 240157903, 243220028, 246305322, 249470032, 252698525, 255852467, 258877399, 261799249, 264627418, 267346658, 269951846, 272489381, 274814866, 276758053, 278830529, 281190067, 283487931, 285721236];
+
+const ny = year3.length;
+const np = popu3.length;
+const n = ny < np ? ny : np;
+for(let i = 0; i < n; i++) {
+  const y = year3[i];
+  const p = popu3[i];
+  consoles.log(y, "\t");
+  consoles.log(p);
+}
+
+</script>
+<ul>
+<li><code>data4</code> Indonesia Population (1950-2026) is from
+<a href=https://www.macrotrends.net/global-metrics/countries/idn/indonesia/population target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.macrotrends.net/global-metrics/countries/idn/indonesia/population <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261005].</li>
+</ul>
+<div id=cnt4></div>
+<script type=module>
+  
+import { Console as CLI } from "endap";
+const consoles = CLI.create("100px");
+
+const cnt = document.getElementById("cnt4");
+cnt.append(consoles.el);
+
+const year4 = [1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+const popu4 = [69567619, 71019347, 72570827, 74207986, 75925325, 77741502, 79661837, 81690984, 83818754, 86047674, 88382881, 90816938, 93345489, 95962527, 98675061, 101157868, 103561105, 106260749, 109138723, 112149246, 115228394, 118347135, 121504145, 124709058, 127945196, 131213215, 134521025, 137861540, 141250964, 144693087, 148177096, 151686337, 155228658, 158790611, 162331962, 165791694, 169135273, 172421390, 175694647, 178949174, 182159874, 185361228, 188558416, 191737287, 194928533, 198140162, 201373791, 204628007, 207855486, 210996910, 214072421, 217112437, 220115092, 223080121, 225938595, 228805144, 231797427, 234858289, 237936543, 240981299, 244016173, 247099697, 250222695, 253275918, 256229761, 259091970, 261850182, 264498852, 267066843, 269582878, 271857970, 273753191, 275501339, 277534122, 279798049, 282004306, 284151182];
+
+const ny = year4.length;
+const np = popu4.length;
+const n = ny < np ? ny : np;
+for(let i = 0; i < n; i++) {
+  const y = year4[i];
+  const p = popu4[i];
+  consoles.log(y, "\t");
+  consoles.log(p);
+}
+
+</script>
+<p>The most complete data is <code>data4</code> but the value in 2025 is the lowest compare the others.</p>
+<h2 id=notes>notes</h2>
+<ul>
+<li>Related post is
+<a href=/26j15/>
+<span>
+26j14
+</span>
+</a>
+.</li>
+</ul>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1791187867'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>

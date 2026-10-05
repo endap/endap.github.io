@@ -1,0 +1,174 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>butiran-js to endap | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1791187867'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1791187867'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+butiran-js to endap
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-03T16:22:56 07:00">3 Oct 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/j/07-butiran-js-to-endap.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>This is about content migration <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> of butiran.js on a GitHub repo <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> to this
+<a href=/>
+<span>
+endap
+</span>
+</a>
+. Each app in butiran.js will have its own post describing its usage and purpose. While doing the migration I have not yet concerned about its madness <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> related to redundant-obsolete-trivial or rot <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, whose I already sensed it several years ago but do not understand it. There are some steps and rule to notice in doing the migration <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup> and also the use of AI to consider <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>.</p>
+<h2 id=apps>apps</h2>
+<p>Migrated apps are as follows, where the listed dates are the migration dates and not the creation ones.</p>
+<ul>
+<li><code>05-mar-2012</code>
+<a href=/26j09/>
+<span>
+<code>26j09</code>
+</span>
+</a>
+semi-circle segmented path generator</li>
+</ul>
+<h2 id=progress>progress</h2>
+<p>Details are available in danone at the day.</p>
+<ul>
+<li><code>04-oct-2025</code> curate
+<a href=/26j09/>
+<span>
+scspg
+</span>
+</a>
+, create
+<a href=/idx28/>
+<span>
+butiran-js
+</span>
+</a>
+index, include the item</li>
+<li><code>03-oct-2025</code> start this internal project</li>
+</ul>
+<h2 id=in-line>in-line</h2>
+<p>The fastest way to insert the code to endap post based on Hugo is using following shortcode</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>{{&lt; <span style=color:#a6e22e>script</span><span style=color:#f92672>/</span><span style=color:#a6e22e>runner2</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;cntx&#34;</span> &gt;}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cnt</span> = <span style=color:#a6e22e>document</span>.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;cntx&#34;</span>);
+</span></span><span style=display:flex><span>{{&lt; <span style=color:#f92672>/</span><span style=color:#a6e22e>script</span><span style=color:#f92672>/</span><span style=color:#a6e22e>runner2</span> &gt;}}
+</span></span></code></pre></div><p>where</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>{{ <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#a6e22e>id</span> <span style=color:#f92672>:=</span> .<span style=color:#a6e22e>Get</span> <span style=color:#e6db74>&#34;id&#34;</span> | <span style=color:#66d9ef>default</span> <span style=color:#e6db74>&#34;script-container&#34;</span> }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#a6e22e>div</span> <span style=color:#a6e22e>id</span>=<span style=color:#e6db74>&#34;{{ $id }}&#34;</span>&gt;&lt;<span style=color:#f92672>/</span><span style=color:#a6e22e>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#a6e22e>script</span> <span style=color:#66d9ef>type</span>=<span style=color:#e6db74>&#34;module&#34;</span>&gt;
+</span></span><span style=display:flex><span>  {{ .<span style=color:#a6e22e>Inner</span> | <span style=color:#a6e22e>safeJS</span> }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>/</span><span style=color:#a6e22e>script</span>&gt;
+</span></span></code></pre></div><p>is the implementation.</p>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>GPT-5.6 Luna, &ldquo;Content migration term&rdquo;, ChatGPT, 3 Oct 2026, url
+<a href=https://chatgpt.com/share/6ac0cccb-6d98-83ec-8fec-1c813ff1d129 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ac0cccb-6d98-83ec-8fec-1c813ff1d129 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Sparisoma Viridi, &ldquo;butiran.js, a simple JS-based simulator for agent-based model&rdquo;, Medium, 10 Jul 2023, url
+<a href=https://medium.com/p/cba0e3f597ed target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/cba0e3f597ed <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Paul Boag, &ldquo;How To Deal With Redundant, Out-Of-Date And Trivial Content ROT&rdquo;, Smashing Magazine, 11 Jun 2015, url
+<a href=https://www.smashingmagazine.com/2015/06/dealing-with-redundant-out-of-date-trivial-rot-content/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.smashingmagazine.com/2015/06/dealing-with-redundant-out-of-date-trivial-rot-content/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Paul Boag, &ldquo;Why say no to the madness of content migration&rdquo;, Boagworld, 29 Mar 2016, url
+<a href=https://boagworld.com/content-strategy/content-migration/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://boagworld.com/content-strategy/content-migration/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>Paula Land, &ldquo;Content Migration: When (and when not) to Automate&rdquo;, Strategic Content, 2 Oct 2014, url
+<a href=https://strategiccontent.com/blog/2014/10/2/content-migration-when-and-when-not-to-automate target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://strategiccontent.com/blog/2014/10/2/content-migration-when-and-when-not-to-automate <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6>
+<p>Martijn Dams, &ldquo;Smarter content migration with AI: from necessity to opportunity&rdquo;, iO, 12 Sep 2025, url
+<a href=https://www.iodigital.com/en-be/insights/blogs/smarter-content-migration-with-ai-from-necessity-to-opportunity target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.iodigital.com/en-be/insights/blogs/smarter-content-migration-with-ai-from-necessity-to-opportunity <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261003].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1791187867'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
