@@ -1,0 +1,373 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>2026-1 midterm-datasets | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1791924787'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1791924787'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+2026-1 midterm-datasets
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-13T20:07:55 07:00">13 Oct 2026</time>
+&#183;
+2 mins read
+&#183;
+<a class=link href=npprel:///26/j/76-2026-1-midterm-datasets.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Each student has unique combination of datasets.</p>
+<script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js",
+    "endap.js": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js"
+  }
+}
+  </script>
+<div id=cnt></div>
+<script type=module>
+  
+
+/* functions */
+
+function mulberry32(seed) {
+  return function() {
+  let t = (seed += 0x6D2B79F5);
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function seededRandIntArray(length, seed, min, max) {
+  const random = mulberry32(seed);
+  const result = [];
+  for(let i = 0; i < length; i++) {
+    const x = Math.floor(random() * (max - min + 1) + min);
+    result.push(x);
+  }
+  return result;
+}
+
+
+
+/* libraries */
+
+import { Tensor1D as T1D } from "endap"
+
+
+
+/* constants */
+
+const posts = {
+  g40: ["26j34", "26j35", "26j36", "26j37"],
+  g42: ["26j38", "26j39", "26j40", "26j41"],
+  g44: ["26j42", "26j43", "26j44", "26j45"],
+  g46: ["26j46", "26j47", "26j48", "26j49"],
+  g48: ["26j50", "26j51", "26j52", "26j53"],
+  g50: ["26j54", "26j55", "26j56", "26j57"],
+  g52: ["26j58", "26j59", "26j60", "26j61"],
+  g54: ["26j62", "26j63", "26j64", "26j65"],
+  g56: ["26j66", "26j67", "26j68", "26j69"],
+  g58: ["26j70", "26j71", "26j72", "26j73"],
+};
+const nPosts = Object.keys(posts).length;
+
+const rawdata =`
+10123026
+10220053
+10222015
+10222076
+10222098
+10223009
+10223014
+10223028
+10223041
+10223043
+10223049
+10223052
+10223059
+10223085
+10223090
+10223093
+10223096
+10224011
+10224013
+10224019
+10224036
+10224053
+10224083
+10224093
+10224094
+10224100
+10225001
+10225007
+10225012
+10225017
+10225018
+10225028
+10225029
+10225030
+10225035
+10225036
+10225037
+10225042
+10225046
+10225047
+10225048
+10225051
+10225052
+10225054
+10225056
+10225058
+10225059
+10225070
+10225071
+10225073
+10225074
+10225079
+10225081
+10225082
+10225084
+10225085
+10225089
+10225090
+10225091
+10225095
+10225097
+10225101
+10225102
+10225106
+10225107
+10225108
+10225111
+10225119
+10225122
+10225127
+10524003
+20226004
+20226008
+20226012
+20226013
+20226015
+20226018
+20925009
+20525004
+20525006
+28725301
+28725307
+28725308
+28725312
+28725314
+28726003
+28726006
+28726007
+28726008
+28726009
+28726012
+28726013
+28726014
+28726019
+28726023
+13322104
+32026008
+32126001
+32126005
+32225001
+32225005
+32225302
+`;
+const lines = rawdata.trim().split("\n");
+const n = lines.length;
+const studentId = T1D.create(n);
+for(let i = 0; i < n; i++) {
+  studentId[i] = lines[i];
+}
+
+
+
+/* ui */
+
+const panel = document.createElement("div");
+Object.assign(panel.style, {
+  border: "0px solid var(--muted-border)",
+  display: "flex",
+  flexDirection: "row",
+});
+
+const leftDiv = document.createElement("div");
+Object.assign(leftDiv.style, {
+  border: "1px solid var(--muted-border)",
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,
+  borderRadius: "4px",
+});
+
+const rightDiv = document.createElement("div");
+Object.assign(rightDiv.style, {
+  border: "1px solid var(--muted-border)",
+  flex: 6,
+  borderRadius: "4px",
+  marginLeft: "8px",
+  fontFamily: "monospace",
+  fontSize: "11px",
+  padding: "0.5em 1em",
+  lineHeight: "2em",
+});
+rightDiv.innerHTML = "data<br>link";
+
+const laSpan = document. createElement("span");
+Object.assign(laSpan.style, {
+  border: "0px solid var(--muted-border)",
+  flex: 1,
+  padding: "0.2em 0.6em",
+});
+laSpan.innerHTML = "seed";
+
+const idSel = document. createElement("select");
+Object.assign(idSel.style, {
+  border: "0px solid var(--muted-border)",
+  flex: 1,
+  fontFamily: "monospace",
+});
+let option = document.createElement("option");
+option.value = "none";
+option.selected = true;
+option.disabled = true;
+option.hidden = true;
+option.text = "select";
+idSel.add(option);
+
+for(let i = 0; i < n; i++) {
+  let option = document.createElement("option");
+  option.text = studentId[i];
+  idSel.add(option);
+}
+
+idSel.addEventListener("change", () => {
+  const length = 10;
+  const seed = parseInt(idSel.value);
+  const min = 1;
+  const max = 4;
+  const seq = seededRandIntArray(length, seed, min, max);  
+
+  const labels = [];
+  const links = [];
+  for(let i = 0; i < nPosts; i++) {
+    const key = "g" + (40 + i*2);
+    const rep = seq[i];
+    const label = key + "s" + rep;
+    const link = posts[key][rep-1];
+    
+    labels.push(label);
+    links.push(link);
+  }
+  
+  rightDiv.innerHTML = "data";
+  for(let i = 0; i < nPosts; i++) {
+    rightDiv.innerHTML += "&nbsp;" + labels[i];
+  }
+  
+  rightDiv.innerHTML += "<br>link";
+  for(let i = 0; i < nPosts; i++) {
+    const a = "<a href='/" + links[i] + "/'>" + links[i] + "</a>";    
+    rightDiv.innerHTML += "&nbsp;" + a;
+  }
+});
+
+
+
+/* layout */
+
+cnt.append(panel);
+  panel.append(leftDiv);
+    leftDiv.append(laSpan);
+    leftDiv.append(idSel);
+  panel.append(rightDiv);
+
+
+</script>
+<h2 id=usage>usage</h2>
+<ul>
+<li>Prepare a blank DOCX file as answer sheet.</li>
+<li>Use the student ID, a 8-digit number, as seed to get the datasets.</li>
+<li>Select seed according to the student ID.</li>
+<li>Notice that datasets name and link appear.</li>
+<li>Take screenshot of the app showing datasets name and link.</li>
+<li>Insert the screenshot to the answer sheet. (point 5)</li>
+<li>Click each link and open in a new browser tab.</li>
+<li>Confirm dataset name as post title in all tabs.</li>
+<li>Notice the meaning of dataset name, e.g. dataset <code>g82s9</code> means $g = 82$ and $s = 9$.</li>
+<li>Notice that each dataset consists of independent variable $x$ and dependent variable $y$.</li>
+<li>Change id of points to find the best peak, last, initial and final points linear regression.</li>
+<li>Notice the model used is $y = mx + b$.</li>
+<li>Calculate values of $m$ and $b$.</li>
+<li>Create table to summerize 10 values of peak, last, $m$, $b$ as function of $g$. (point 10)</li>
+<li>Create xy-scatter chart for the values as function of $g$. (point 5)</li>
+<li>Put table and chart in result and discussions part. (point 5)</li>
+<li>Make analysis and explain in general what $x$, $y$, and $g$ might be. (point 10)</li>
+<li>Discuss the process with your colleagues, if necessary.</li>
+<li>Assure that you process your datasets.</li>
+<li>Write references and AI chats that you use in creating the analysis. (point 10)</li>
+<li>Declare the use of AI in the answer sheet. (point 5)</li>
+<li>Assure that you include methodology, e.g. how to use the app, model, etc. (point 10)</li>
+<li>Include flowchart how you process and analyize the datasets. (point 10)</li>
+<li>Put your name, student ID, midterm date in the beginning of the answer sheet. (point 5)</li>
+<li>Save the answer sheet as PDF. (point 5)</li>
+<li>Upload the PDF file to assigned GitHub issue for the midterm. (point 5)</li>
+<li>Notice the submission deadline. (point 5)</li>
+<li>Create introduction part explaining what the datasets all about. (point 5)</li>
+<li>Create summaries or conclusions explaining your findings. (point 5)</li>
+</ul>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1791924787'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
