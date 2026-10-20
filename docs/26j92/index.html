@@ -1,0 +1,165 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>sim csv-endpoint vanilla-js | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1792506813'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1792506813'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+sim csv-endpoint vanilla-js
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-20T20:11:54 07:00">20 Oct 2026</time>
+&#183;
+1 min read
+&#183;
+<a class=link href=npprel:///26/j/92-js-data-to-json-in-textarea.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Event browser-executable code written in JS cannot be fully protected <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> but using Vanilla JS to create JSON endpoint is still interesting, since it can keep the JSON structure and JavaScript data-processing logic consistent between the two implementations <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>, the simulated API endpoint and the real server endpoint <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. But if the data originates in Excel, remains tabular, and the priority is easy maintenance, it is suggested to use CSV endpoint instead of JSON endpoint <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
+<h2 id=endpoint>endpoint</h2>
+<p>It is <code>/data/26j92.csv</code> with the content is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csv data-lang=csv><span style=display:flex><span><span style=color:#e6db74>x;x2;x3;x4;x5</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>0;0;0;0;0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>1;1;1;1;1</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>2;4;8;16;32</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>3;9;27;81;243</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>4;16;64;256;1024</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>5;25;125;625;3125</span>
+</span></span></code></pre></div><h2 id=result>result</h2>
+<p>Following is the result.</p>
+<script src=/js/chartjs/4.5.1/chart.umd.min.js defer></script>
+<script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js",
+    "endap.js": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js"
+  }
+}
+  </script>
+<div id=cnt></div>
+<script type=module>
+  
+import { Console as CLI } from "endap"
+const consoles = CLI.create("150px");
+const cnt = document.getElementById("cnt");
+const cli = consoles.el;
+cnt.append(cli);
+
+const response = await fetch('/data/26j92.csv');
+const csv = await response.text();
+consoles.log(csv);
+
+</script>
+<h2 id=code>code</h2>
+<p>Minimal code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>response</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#39;/data/26j92.csv&#39;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>csv</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>text</span>();
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>csv</span>);
+</span></span></code></pre></div><p>Notice that it uses Console from endap.</p>
+<h2 id=notes>notes</h2>
+<ul>
+<li>The endap Console is available on
+<a href=/26h17/>
+<span>
+26h17
+</span>
+</a>
+.</li>
+<li>Visit
+<a href=/data/26j92.csv>
+<span>
+<code>/data/26j92.csv</code>
+</span>
+</a>
+to see the CSV endpoint while with <code>localhost</code>.</li>
+<li>Visit</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>6 Instant, &ldquo;Protecting Browser JavaScript&rdquo;, ChatGPT, 20 Oct 2026, url
+<a href=https://chatgpt.com/share/6ad76946-75d8-83ec-bcbe-e3eeb3f19b29 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ad76946-75d8-83ec-bcbe-e3eeb3f19b29 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261020].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>6 Instant, &ldquo;Create JSON Endpoint&rdquo;, ChatGPT, 20 Oct 2026, url
+<a href=https://chatgpt.com/share/6ad76b65-e534-83ec-9bf1-f0161b34ce61 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ad76b65-e534-83ec-9bf1-f0161b34ce61 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261020].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>6 Instant, &ldquo;Simulate Hugo Endpoint&rdquo;, ChatGPT, 20 Oct 2026, url
+<a href=https://chatgpt.com/share/6ad76ba9-63b8-83ec-b76d-32b75bc6f17b target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ad76ba9-63b8-83ec-b76d-32b75bc6f17b <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261026].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>6 Instant, &ldquo;CVS vs JS Fetch&rdquo;, ChatGPT, 20 Oct 2026, url
+<a href=https://chatgpt.com/share/6ad77681-3220-83ec-be50-593251931ab1 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ad77681-3220-83ec-be50-593251931ab1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261026].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1792506813'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
