@@ -1,0 +1,334 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>uniform circular motion | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1792619936'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1792619936'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+uniform circular motion
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-21T16:02:28 07:00">21 Oct 2026</time>
+&#183;
+3 mins read
+&#183;
+<a class=link href=npprel:///26/j/96-uniform-circular-motion.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Motion of an object in a circle at a constant speed is known as uniform circular motion <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. During the motion distance of the object from a center is always the same, velocity is always perpendicular to the circular trajectory, and acceleration is always toward to the center <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Applying Newton&rsquo;s second law of motion to a charged particle moving perpendicular to a constant homogenous magnetic field gives the solution of a circular trajectory <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. Unfortunatey, acceleration sensor on Android-based smartphone attahed to a moving train toy in a circle can not give clear measurement of the centripetal force <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
+<h2 id=parametric-equations>parametric equations</h2>
+<p>A circle can be represented using parametric equations <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p>
+<p>$$\tag{1}
+x(t) = x_c + R \cos (\omega t + \phi_0)
+$$</p>
+<p>and</p>
+<p>$$\tag{2}
+y(t) = y_c + R \sin (\omega t + \phi_0),
+$$</p>
+<p>where center of the circle is $(x_c, y_c)$, circle radius is $R$, angular velocity of the circular motion is $\omega$, and initial phase of the motions is $\phi_0$. Eqns (1) and (2) show position of a particle moving in a circle.</p>
+<p>Velocities can be obtained by deriving Eqns (1) and (2) with respect to time $t$ that gives</p>
+<p>$$\tag{3}
+v_x(t) = -\omega R \sin (\omega t + \phi_0)
+$$</p>
+<p>and</p>
+<p>$$\tag{4}
+v_y(t) = \omega R \cos (\omega t + \phi_0).
+$$</p>
+<p>Further derivation will give the accelerations</p>
+<p>$$\tag{5}
+a_x(t) = -\omega^2 R \cos (\omega t + \phi_0) = -\omega^2 [ x(t) - x_c ]
+$$</p>
+<p>and</p>
+<p>$$\tag{6}
+a_y(t) = -\omega^2 R \sin (\omega t + \phi_0) = -\omega^2 [ y(t) - y_c ].
+$$</p>
+<p>Notice the relation between Eqns (5) and (6) with Eqns (1) and (2)</p>
+<h2 id=initial-conditions>initial conditions</h2>
+<p>At $t = 0$ initial positions are given by Eqns (1) and (2), which are</p>
+<p>$$\tag{7}
+x_0 = x_c + R \cos \phi_0
+$$</p>
+<p>and</p>
+<p>$$\tag{8}
+y_0 = y_c + R \sin \phi_0.
+$$</p>
+<p>Alternatively following relation</p>
+<p>$$\tag{9}
+\tan \phi_0 = \frac{y_0 - y_c}{x_0 - x_c}
+$$</p>
+<p>can be obtained.</p>
+<p>Initial velocities are given by Eqns (3) and (4), which are</p>
+<p>$$\tag{10}
+v_{0x} = -\omega R \sin \phi_0
+$$</p>
+<p>and</p>
+<p>$$\tag{11}
+v_{0y} = \omega R \cos \phi_0.
+$$</p>
+<p>Similar to Eqn (9) following relation</p>
+<p>$$\tag{12}
+\tan \phi_0 = - \frac{v_{0x}}{v_{0y}}
+$$</p>
+<p>can be obtained.</p>
+<h2 id=period>period</h2>
+<p>The time for one of a uniform circular motion is period $T$ <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>, which is related to anggular velocity $\omega$ via</p>
+<p>$$\tag{13}
+\omega = \frac{2\pi}{T}.
+$$</p>
+<h2 id=result>result</h2>
+<p>If the period is 2 s then the angular velocity is π rad/s. Circle center is $(2, 3)$, radius is $0.5$ m, and initial phase $\tfrac12 \pi$.</p>
+<script src=/js/chartjs/4.5.1/chart.umd.min.js defer></script>
+<script type=importmap>
+    {
+  "imports": {
+    "endap": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js",
+    "endap.js": "/js/endap/index.bdd0c64ffaf999660a328b95bc62adb7c375376edbc4baa9c3227e7f8e7894a1.js"
+  }
+}
+  </script>
+<div id=cnt></div>
+<script type=module>
+  
+/* console */
+
+import { Console as CLI } from "endap"
+const consoles = CLI.create("150px");
+const cnt = document.getElementById("cnt");
+const cli = consoles.el;
+cnt.append(cli);
+
+
+/* params */
+
+const T = 2;
+const tbeg = 0;
+const tend = 4;
+const dt = 0.001 * T;
+const Tobs = 0.01 * T;
+const digit = 3;
+const N = (tend - tbeg) / dt;
+
+const xc = 2;
+const yc = 3;
+const R = 0.5;
+const w = 2 * Math.PI / T;
+const phi0 = Math.PI / 2;
+
+/* datasets */
+
+const data = [];
+
+let tobs = 0;
+let t = 0;
+for(let n = 0; n <= N; n++) {
+  if(tobs >= Tobs || tobs == 0) {
+    
+    const x = xc + R * Math.cos(w * t + phi0);
+    const y = yc + R * Math.sin(w * t + phi0);
+    
+    const ts = t.toFixed(digit);
+    const xs = x.toFixed(digit);
+    const ys = y.toFixed(digit);
+    const p = {x: xs, y: ys};
+    data.push(p);
+    
+    consoles.log(ts, "\t");
+    consoles.log(xs, "\t");
+    consoles.log(ys);
+    tobs = 0;
+  }
+  
+  t += dt;
+  tobs += dt; 
+}
+
+
+/* chart */
+
+const can = document.createElement("canvas");
+Object.assign(can.style, {
+  width: "100%",
+  border: "1px solid var(--muted-border)",
+  marginTop: "10px",
+});
+
+const config = {
+  type: 'scatter',
+  
+  data: {
+    datasets: [
+      {
+        label: "data",
+        data: data,
+        radius: 4,
+        hoverRadius: 6,
+        showLine: true,
+      },
+      {
+        label: "center",
+        data: [
+          {
+            x: xc,
+            y: yc,
+          }
+        ],
+        radius: 4,
+        hoverRadius: 6,
+        showLine: true,
+      },
+    ],
+  },
+
+  options: {
+    
+    maintainAspectRatio: true,
+    aspectRatio: 1,
+    
+    scales: {
+      x: {
+        type: 'linear',
+        title: {
+          display: true,
+          text: 't',
+          font: { size: 14, },
+        },
+      },
+
+      y: {
+        type: 'linear',
+        title: {
+          display: true,
+          text: 'θ',
+          font: { size: 14, },
+        },
+      },
+
+    },
+  },
+
+};
+const chart = new Chart(can, config);
+cnt.append(can);
+
+</script>
+<h2 id=notes>notes</h2>
+<ul>
+<li>Size of scatter plot using Chart.js still does not right.</li>
+</ul>
+<h2 id=tasks>tasks</h2>
+<ul>
+<li>Give five examples of uniform circular motion.</li>
+<li>Explain force that acts as centripetal force in the five examples.</li>
+<li>Add images to explain the system (you are allowed to use AI).</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Tom Henderson, Trevor Fayas, Ben Baeb, Angie M., &ldquo;Uniform Circular Motion&rdquo;, Physics Classroom, 2026, url
+<a href=https://www.physicsclassroom.com/multimedia/circular-and-satellite-motion/uniform-circular-motion target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.physicsclassroom.com/multimedia/circular-and-satellite-motion/uniform-circular-motion <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261021].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Walter Fendt, &ldquo;Uniform Circular Motion&rdquo;, Apps on Physics, 26 Dec 2014, url
+<a href=https://www.walter-fendt.de/html5/phen/circularmotion_en.htm target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.walter-fendt.de/html5/phen/circularmotion_en.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261021].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Leni Indah Sri Fitri Yani, Siti Nurul Khotimah, Sparisoma Viridi, &ldquo;Merumuskan Gaya Sentripetal pada Gerak Melingkar Beraturan Menggunakan Hukum Kedua Newton dan Gaya Magnetik&rdquo;, Seminar Nasional Fisika 2010, 11-12 Mei 2010, Bandung, Indonesia, pp 453-461, url
+<a href=https://fmipa.itb.ac.id/tahun-2010/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://fmipa.itb.ac.id/tahun-2010/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261021].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Sparisoma Viridi, Tarex Moghrabi, Meldawati Nasri, &ldquo;An Observation of a Circular Motion using Ordinary Appliances: Train Toy, Digital Camera, and Android based Smartphone&rdquo;, arXiv:1307.2912v1 [physics.pop-ph] Tue, 9 Jul 2013 11:22:57 UTC, url
+<a href=https://doi.org/10.48550/arXiv.1307.2912 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://doi.org/10.48550/arXiv.1307.2912 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+.&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>Paul Dawkins, &ldquo;Section 9.1 : Parametric Equations And Curves&rdquo;, Paul&rsquo;s Notes, 12 Oct 2026, url
+<a href=https://tutorial.math.lamar.edu/classes/calcii/parametriceqn.aspx target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://tutorial.math.lamar.edu/classes/calcii/parametriceqn.aspx <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261021].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6>
+<p>Editorial Team, &ldquo;Uniform Circular Motion&rdquo;, Physics Tribune, 15 Oct 2026, url
+<a href=https://physicstribune.com/rotation/circular-motion/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://physicstribune.com/rotation/circular-motion/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261021].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1792619936'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
