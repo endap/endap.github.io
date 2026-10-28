@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1793226394'>
+<link rel=stylesheet href='/css/header.css?v=1793231782'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -28,7 +28,7 @@
 </header>
 <main>
 <head>
-<link rel=stylesheet href='/css/notes.css?v=1793226394'>
+<link rel=stylesheet href='/css/notes.css?v=1793231782'>
 </head>
 <div class=note-container>
 <h1 class=note-title>
@@ -43,7 +43,7 @@ diff-eqn and trajectory
 <div class=date-reading-time-edit>
 <time datetime="2026-10-29T05:22:05 07:00">29 Oct 2026</time>
 &#183;
-1 min read
+2 mins read
 &#183;
 <a class=link href=npprel:///26/j/b6-diff-eqn-and-trajectory.md>edit</a>
 </div>
@@ -51,16 +51,38 @@ diff-eqn and trajectory
 <div class=note-content>
 <p>Solving a differential equation representing a motion can produce system trajectory. Some examples are given in this post.</p>
 <h2 id=parabolic-motion>parabolic motion</h2>
-<p>..</p>
+<p>Trajectory of a parabolic motion can be obtained by solving following differential equation</p>
+<p>$$\tag{1}
+m \frac{d^2 \vec{r}}{dt^2} - \vec{w} = 0,
+$$</p>
+<p>where $\vec{w} = m \vec{g}$ is gravitational force near earth surface.</p>
 <h2 id=harmonic-motion>harmonic motion</h2>
-<p>..</p>
-<h2 id=cicular-motion>cicular motion</h2>
-<p>..</p>
+<p>Sinusiodal trajectory is solution of harmonic motion with following diferential equation</p>
+<p>$$\tag{2}
+m \frac{d^2 \vec{r}}{dt^2} - k\vec{r} = 0,
+$$</p>
+<p>where usually it simply that $\vec{r} = x \hat{x}$ or $\vec{r} = y \hat{y}$.</p>
+<h2 id=circular-motion>circular motion</h2>
+<p>To obtain solution in the form of a circular motion, the differential equation should consider vector cross product operation as follows</p>
+<p>$$\tag{3}
+m \frac{d^2 \vec{r}}{dt^2} + q\vec{B} \times \frac{d \vec{r}}{dt} = 0,
+$$</p>
+<p>where the case is a charge $q$ moves in plane perpendicular to external magnetic field $\vec{B}$.</p>
+<h2 id=tasks>tasks</h2>
+<ul>
+<li>Find the case where Eqn (1) can give linear motion instead of parabolic motion.</li>
+<li>Show that Eqn (2) can only give harmonic motion in 1-d if there is not any initial velocity in the direction other than the direction of restoring force. Otherwise it will give sort of circular motion with oscilating radial position.</li>
+<li>Show that Eqn (3) can only give circular motion if $\vec{v} \cdot \vec{B} = 0$. Otherwise it will give helical motion.</li>
+</ul>
 </div>
 </div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1793226394'>
+<link rel=stylesheet href='/css/footer.css?v=1793231782'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
