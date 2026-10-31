@@ -1,0 +1,302 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>learning llm prompt | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1793454421'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1793454421'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+learning llm prompt
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-29T13:23:39 07:00">29 Oct 2026</time>
+&#183;
+5 mins read
+&#183;
+<a class=link href=npprel:///26/j/b7-learning-llm-prompt.md>edit</a>
+</div>
+</div>
+<div class=note-content>
+<p>Large language models (LLMs) are deep learning models trained on massive text corpora to understand and generate human language and part of generative AI due to their ability in creating new content in the form of text <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. LLMs have made it possible for everyone to interact with an AI – codeless and requires only prompts in natural language <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Using LLMs well involves extracting value from what they are good at and avoiding wasting time at what they are bad at, since small variations in prompts can make a big difference in the LLM output <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. It is also very important to first acknowledge that LLMs lack genuine awareness or understanding of the tasks assigned to them, because they mimic human responses without truly grasping the underlying purpose of what they are doing <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
+<p>Then comes the term prompt engineering, which is simply the practice of designing and refining the inputs you give to an LLM to get the outputs you want <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>. The inputs or LLM prompts are set of instructions you give a language model to guide it to a desired response, and can be anything from a simple question to an input spanning multiple calls <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>. Giving contextual prompts will guide the model to focus on a particular area of interest, while constraining responses will limit response length or format that allows for better control over the output <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>.</p>
+<p>Is it necessary to learn LLM prompting? There is a report about the use of it in automated software engineering through two-phase empirical study covering analysis about 300 papers published at the top-3 SE conferences since 2022 and survey to the 105 program committee members from the conferences <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup>.</p>
+<p>I do use LLMs like Gemini, Claude, but mostly ChatGPT. However, I have never followed a structured learning approach and I have simply learned by doing. This post might the first documented text how I learn it in more structural way</p>
+<h2 id=components>components</h2>
+<p>The four components of prompt are instruction, context, input and output, whose details are
+as follows <sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup>.</p>
+<ul>
+<li>Instruction is a clear directive specifying what the model should or should not do;</li>
+<li>Context provides additional external information that helps the model generate a more accurate response.</li>
+<li>Input is the core of the prompt, representing the specific query, question, or data that the user wants the model to address.</li>
+<li>Output component guides the model on the expected format, style, or type of response, that ensures that the model’s response aligns with the user’s needs and expectations.</li>
+</ul>
+<pre class=mermaid>
+  
+flowchart TD
+  %% network
+  COP --"contains" --> INS
+  COP --"contains" --> CTX
+  COP --"contains" --> IND
+  COP --"contains" --> OUI
+  
+  %% elements
+  COP["Complete <br> Prompt"]
+  INS["Instruction <br> (what to to do)"]
+  CTX["Context <br> (background info, <br> constraints)"]
+  IND["Input Data <br> (information <br> to process)"]
+  OUI["Output Indicator <br> (desired format)"]
+
+</pre>
+<p>Fig 1. As guidance of the LLM a typical prompt structure combines instruction, context, input data, and an output indicator <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup>.</p>
+<h2 id=techniques>techniques</h2>
+<p>There are about 16 prompting techniques available <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup>, while other reduces them to seven as shown in Fig 2.</p>
+<p>
+<a href=https://miro.medium.com/v2/resize:fit:1400/format:webp/1*uS8KKHfzLcZlSrxggdVrMA.png target=_blank rel="nofollow noopener noreferrer">
+<span>
+Seven prompt engineering techniques (Mustafa, 2026) <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+</p>
+<p>Fig 2. Seven powerful prompt engineering techniques that transform LLM performance <sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup>.</p>
+<p>Overlapping with previously metioned a source consideres about 18 techniques as follows <sup id=fnref:13><a href=#fn:13 class=footnote-ref role=doc-noteref>13</a></sup></p>
+<ul>
+<li>Zero-shot Prompting,</li>
+<li>Few-shot Prompting,</li>
+<li>Chain-of-Thought Prompting,</li>
+<li>Meta Prompting,</li>
+<li>Self-Consistency,</li>
+<li>Generate Knowledge Prompting,</li>
+<li>Prompt Chaining,</li>
+<li>Tree of Thoughts,</li>
+<li>Retrieval Augmented Generation,</li>
+<li>Automatic Reasoning and Tool-use,</li>
+<li>Automatic Prompt Engineer,</li>
+<li>Active-Prompt,</li>
+<li>Directional Stimulus Prompting,</li>
+<li>Program-Aided Language Models,</li>
+<li>ReAct,</li>
+<li>Reflexion,</li>
+<li>Multimodal CoT,</li>
+<li>Graph Prompting.</li>
+</ul>
+<p>I am not going to argue about number of techniques available. This section in this post serves only as reference to the sources.</p>
+<h2 id=framework>framework</h2>
+<p>A framework known as CO-STAR prompt framework goes a step further than the techniques, which gives distinct and succinct five principles of a prompt guide <sup id=fnref:14><a href=#fn:14 class=footnote-ref role=doc-noteref>14</a></sup>, which are</p>
+<ul>
+<li>C: Context: Provide background and information on the task,</li>
+<li>O: Objective: Define the task that you want the LLM to perform,</li>
+<li>S: Style: Specify the writing style you want the LLM to use,</li>
+<li>T: Tone: Set the attitude and tone of the response,</li>
+<li>A: Audience: Identify who the response is for,</li>
+<li>R: Response: Provide the response format and style.</li>
+</ul>
+<h2 id=notes>notes</h2>
+<ul>
+<li>There is help for a grammar correction <sup id=fnref:15><a href=#fn:15 class=footnote-ref role=doc-noteref>15</a></sup>.</li>
+<li>Practical examples will be provided in other posts referred to this one.</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Aron Schuhmann, Sam Bhagwat (rev.), &ldquo;LLM vs generative AI: key differences and how to choose&rdquo;, Mastra, 16 Aug 2026, url
+<a href=https://mastra.ai/articles/llm-vs-generative-ai target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://mastra.ai/articles/llm-vs-generative-ai <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Isabelle Nguyen, &ldquo;<sup id=fnref1:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>&rdquo;, Haystack, 15 Jun 2023, url
+<a href=https://haystack.deepset.ai/blog/beginners-guide-to-llm-prompting target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://haystack.deepset.ai/blog/beginners-guide-to-llm-prompting <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a>&#160;<a href=#fnref1:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Sean Goedecke, &ldquo;Using LLMs effectively isn&rsquo;t about prompting&rdquo;, 21 Feb 2025, url
+<a href=https://www.seangoedecke.com/beyond-prompting/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.seangoedecke.com/beyond-prompting/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Csenge Kilián, Adam Covacs, &ldquo;Prompt Engineering Best Practices&rdquo;, Suparcharge, 8 Oct 2025, url
+<a href=https://www.supercharge.io/blog/ai-prompt-engineering-best-practices target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.supercharge.io/blog/ai-prompt-engineering-best-practices <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>Tahir Balarabe, &ldquo;What is LLM Prompt Engineering ?&rdquo;, Medium, 23 Mar 2025, url
+<a href=https://medium.com/p/e80c59bd522e target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/e80c59bd522e <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6>
+<p>William Bakst, &ldquo;LLM Prompt - Examples and Best Practices&rdquo;, Mirascope, 20 Sep 2024, url
+<a href=https://mirascope.com/blog/llm-prompt target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://mirascope.com/blog/llm-prompt <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:7>
+<p>Nathan Marlor, &ldquo;Asking better questions: the art of LLM prompting&rdquo;, Version 1, 3 Oct 2024, url
+<a href=https://www.version1.com/blog/asking-better-questions-the-art-of-llm-prompting/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.version1.com/blog/asking-better-questions-the-art-of-llm-prompting/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:8>
+<p>Alexander Korn, Lea Zaruchas, Chetan Arora, Andreas Metzger, Sven Smolka, Fanyu Wang, Andreas Vogelsang, &ldquo;Alexander Korn, Lea Zaruchas, Chetan Arora, Andreas Metzger, Sven Smolka, Fanyu Wang, Andreas Vogelsang&rdquo;, arXiv:2601.01954v1 [cs.SE] [v1] Mon, 5 Jan 2026 10:01:20 UTC, url
+<a href=https://doi.org/10.48550/arXiv.2601.01954 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://doi.org/10.48550/arXiv.2601.01954 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+.&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:9>
+<p>Ramachandran Murugan, &ldquo;Understanding the Basic Components of a Prompt in LLM Models&rdquo;, Linkedin, 15 Aug 2024, url
+<a href=https://www.linkedin.com/pulse/understanding-basic-components-prompt-llm-models-ramachandran-murugan-mrwjc target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.linkedin.com/pulse/understanding-basic-components-prompt-llm-models-ramachandran-murugan-mrwjc <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:10>
+<p>Wei-Ming Thor, &ldquo;Components of a Prompt&rdquo;, ApX Machine Learning, 2026, url
+<a href=https://apxml.com/courses/prompt-engineering-llm-application-development/chapter-1-foundations-prompt-engineering/components-of-a-prompt target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://apxml.com/courses/prompt-engineering-llm-application-development/chapter-1-foundations-prompt-engineering/components-of-a-prompt <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:11>
+<p>D. Vamsi Krishna, &ldquo;A Guide to Prompting Techniques for Large Language Models (LLMs)&rdquo;, Medium, 18 Dec 2025, url
+<a href=https://medium.com/p/68a632ce837d target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://medium.com/p/68a632ce837d <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:12>
+<p>Tanveer Mustafa, &ldquo;7 Powerful Prompt Engineering Techniques That Transform LLM Performance&rdquo;, Medium, 27 Jan 2026, url
+<a href=http://medium.com/p/0b663ef8f425 target=_blank rel="nofollow noopener noreferrer">
+<span>
+http://medium.com/p/0b663ef8f425 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:12 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:13>
+<p>Elvis Saravia, &ldquo;Prompting Techniques&rdquo;, Prompt Engineering Guide, DAIR.AI, Dec 2022, url
+<a href=https://www.promptingguide.ai/techniques target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.promptingguide.ai/techniques <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:13 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:14>
+<p>Jules S. Damji, &ldquo;Best Prompt Techniques for Best LLM Responses&rdquo;, The Modern Scientist &ndash; Medium, 12 Feb 2024, url
+<a href=http://medium.com/p/24d2ff4f6bca target=_blank rel="nofollow noopener noreferrer">
+<span>
+http://medium.com/p/24d2ff4f6bca <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:14 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:15>
+<p>6 Instant, &ldquo;Grammar correction&rdquo;, ChatGPT, 29 Oct 2026, url
+<a href=https://chatgpt.com/share/6ae2fade-b098-83ec-9cbb-df149ecaa736 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6ae2fade-b098-83ec-9cbb-df149ecaa736 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261029].&#160;<a href=#fnref:15 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1793454421'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+<script type=module>
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "neutral",
+      themeVariables: {
+        fontSize: "20px",
+        nodeFontSize: "18px",
+        labelFontSize: "14px"
+      }
+    });
+    
+    document.addEventListener("DOMContentLoaded", async () => {
+      await mermaid.run({
+        querySelector: ".mermaid"
+      });
+    });
+  </script>
+</body>
+</html>

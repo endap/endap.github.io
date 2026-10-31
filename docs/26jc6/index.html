@@ -1,0 +1,347 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>one-loop batt-rest-circ | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1793454421'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1793454421'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+one-loop batt-rest-circ
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-10-31T16:33:25 07:00">31 Oct 2026</time>
+&#183;
+4 mins read
+</div>
+</div>
+<div class=note-content>
+<p>Battery - resistor circuit problem will be solved analytically and also numerically using iterative method.</p>
+<h2 id=problem>problem</h2>
+<p>Suppose there is one-loop circuit of a battery $\varepsilon_1$ and resistor $R_1$ as shown in Fig 1.</p>
+<pre tabindex=0><code>     R1
++---/\/\/---+
+|           |
+|           | I
+|           | ↓
+|    +      |
++----|▮-----+
+     ε1
+</code></pre><p>Fig 1. One-loop circuit of a battery $\varepsilon_1$ and resistor $R_1$ with current $I$.</p>
+<p>According to Kirchhof&rsquo;s second law <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> it has relation</p>
+<p>$$\tag{1}
+\varepsilon_1 - V_1 = 0,
+$$</p>
+<p>where</p>
+<p>$$\tag{2}
+V_1 = R_1 I
+$$</p>
+<p>relates $V_1$ to $R_1$ using Ohm&rsquo;s law <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p>
+<p>Combine the two equations to have</p>
+<p>$$\tag{3}
+f(I) = \varepsilon_1 - R_1 I,
+$$</p>
+<p>which is the equation to solve for a root $I_r$, that makes $f(I_r) = 0$.</p>
+<h2 id=method>method</h2>
+<p>A method known as Newton-Raphson method in the form of</p>
+<p>$$\tag{4}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+$$</p>
+<p>will be used, where $x \equiv I$. It is a root-finding algorithm that uses the first few terms of the Taylor series of a function $f(x)$ <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.</p>
+<p>Notice that the term</p>
+<p>$$\tag{5}
+f'(x) = \frac{df(x)}{dx}
+$$</p>
+<p>is first derivative of $f(x)$ with respect to $x$.</p>
+<h2 id=formula>formula</h2>
+<p>Using the given equation following iterative formula can be obtained</p>
+<p>$$\tag{6}
+I_{n+1} = I_n + \frac{\varepsilon_1 - R_1 I_n}{R_1},
+$$</p>
+<p>where the root $I_r$ is found when condition $I_n \approx I_{n+1}$ is met.</p>
+<p>The analytical solution is simply</p>
+<p>$$\tag{7}
+I = \frac{\varepsilon_1}{R_1},
+$$</p>
+<p>that will be used as target to achieve.</p>
+<h2 id=flowchart>flowchart</h2>
+<p>The root finding process can be illustrated using following flowchart.</p>
+<pre class=mermaid>
+  
+flowchart
+%% network
+B --> I --> P1 --> o1a
+o1b --> P2 --> P3 --> P4 --> o2a
+o2b --> C
+C --"N"--> P5 --> o1c
+C --"Y"--> o3a
+o3b --> O --> E
+
+%% elements
+B(["begin"])
+E(["end"])
+
+I[/"&epsilon;<sub>1</sub>, R<sub>1</sub>, err, I<sub>0</sub>"/]
+O[/"I<sub>n+1</sub>, &delta;"/]
+
+P1["n = 0"]
+P2["&Delta;I =  (&epsilon;<sub>1</sub> &ndash; R<sub>1</sub>I<sub>n</sub>) / R<sub>1</sub> "]
+P3["I<sub>n+1</sub> = I<sub>n</sub> + &Delta;I"]
+P4["&delta; = |I<sub>n+1</sub> - I<sub>n</sub>|"]
+P5["n = n + 1"]
+
+C{"&delta; < err"}
+
+o1a(("1"))
+o1b(("1"))
+o1c(("1"))
+o2a(("2"))
+o2b(("2"))
+o3a(("3"))
+o3b(("3"))
+
+</pre>
+<p>Fig 2. Flowchart for finding current $I$ in a one-loop circuit of battery $\varepsilon_1$ and $R_1$ using Newton-Raphson method.</p>
+<p>Notice from Fig 1 that there is <code>err</code> which is a term for numerical error. The iteration stops when absolute difference between $I_{n+1}$ and $I_n$ less than this value.</p>
+<h2 id=code>code</h2>
+<p>Implemention of previous flowchart is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Console</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>CLI</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;endap&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>consoles</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>CLI</span>.<span style=color:#a6e22e>create</span>(<span style=color:#e6db74>&#34;180px&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cli</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>el</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>setTitle</span>(<span style=color:#e6db74>&#34;one-loop batt-rest-circ newton-raphson&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Tensor1D</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>T1D</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;endap&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>create</span>(<span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>T1D</span>.<span style=color:#a6e22e>create</span>(<span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>E1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>R1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>I0</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>I</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>E1</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>R1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>E1</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>R1</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>x</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>fx</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>R1</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>NR</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>) <span style=color:#f92672>/</span> <span style=color:#a6e22e>fx</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>I0</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>m</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dx</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span>]) <span style=color:#f92672>/</span> <span style=color:#a6e22e>fx</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span>] <span style=color:#f92672>+</span> <span style=color:#a6e22e>dx</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>delta</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>m</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>delta</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>err</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;n\tI\tf(I)&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>m</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>xs</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>i</span>].<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ys</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>i</span>].<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>i</span>, <span style=color:#e6db74>&#34;\t&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>xs</span>, <span style=color:#e6db74>&#34;\t&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>ys</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;numerical solution&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;I = &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>m</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;analytical solution&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>consoles</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;I = &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>I</span>);
+</span></span></code></pre></div><p>Notice that the code requires endap JS library.</p>
+<h2 id=result>result</h2>
+<p>Following is result from given code.</p>
+<script src=/js/chartjs/4.5.1/chart.umd.min.js defer></script>
+<script type=importmap>
+{"imports":{"endap":"/js/endap/0.0.5/endap.min.js"}}
+</script>
+<div id=cnt1></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt1");
+
+import { Console as CLI } from "endap"
+const consoles = CLI.create("180px");
+const cli = consoles.el;
+consoles.setTitle("one-loop batt-rest-circ newton-raphson");
+cnt.append(cli);
+
+import { Tensor1D as T1D } from "endap"
+const n = 100;
+const x = T1D.create(n);
+const y = T1D.create(n);
+
+const E1 = 10;
+const R1 = 20;
+const I0 = 1;
+const err = 1E-1;
+const I = E1 / R1;
+
+function f(x) {
+  return E1 - R1 * x;
+}
+
+function fx(x) {
+  return -R1;
+}
+
+function NR(x) {
+  return x - f(x) / fx(x);
+}
+
+x[0] = I0;
+y[0] = f(x[0]);
+
+let m = 0;
+for(let i = 0; i < n-1; i++) {
+  const dx = -f(x[i]) / fx(x[i]);
+  x[i+1] = x[i] + dx;
+  y[i+1] = f(x[i+1]);
+  const delta = Math.abs(x[i+1] - x[i]);
+  m += 1;
+  
+  if(delta < err) {
+    break;
+  }
+}
+
+consoles.log("n\tI\tf(I)");
+for(let i = 0; i < m; i++) {
+  const xs = x[i].toFixed(3);
+  const ys = y[i].toFixed(3);
+
+  consoles.log(i, "\t");
+  consoles.log(xs, "\t");
+  consoles.log(ys);
+}
+consoles.log();
+consoles.log("numerical solution");
+consoles.log("I = " + x[m]);
+
+consoles.log();
+
+consoles.log("analytical solution");
+consoles.log("I = " + I);
+
+</script>
+<p>It shows that only one iteration required or n = 1, where n = 0 is the initial condition.</p>
+<h2 id=closing>closing</h2>
+<p>One-loop battery-resistor-circuit problem has been solved analytically and also numerically. The first approach is straight forward, while the second requies only one iteration. This approach might be more interesting for number of loops more than one, that will be discussed in other post.</p>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Ashika, Caroline Carrol, &ldquo;Kirchhoff&rsquo;s Second Law (Cambridge (CIE) A Level Physics): Revision Note&rdquo;, Save My Exams, 2 Jul 2026, url
+<a href=https://www.savemyexams.com/a-level/physics/cie/25/revision-notes/10-d-c-circuits/10-2-kirchhoffs-laws/kirchhoffs-second-law/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.savemyexams.com/a-level/physics/cie/25/revision-notes/10-d-c-circuits/10-2-kirchhoffs-laws/kirchhoffs-second-law/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261031].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Kevin M. Tenny, Michael Keenaghan, &ldquo;Ohms Law&rdquo;, StatPearls, 22 Mar 2023, url
+<a href=https://www.ncbi.nlm.nih.gov/books/NBK441875/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.ncbi.nlm.nih.gov/books/NBK441875/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261031].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Eric W. Weisstein, &ldquo;Newton&rsquo;s Method&rdquo;, From MathWorld&ndash;A Wolfram Resource, 30 Oct 2026, url
+<a href=https://mathworld.wolfram.com/NewtonsMethod.html target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://mathworld.wolfram.com/NewtonsMethod.html <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261031].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1793454421'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+<script type=module>
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "neutral",
+      themeVariables: {
+        fontSize: "20px",
+        nodeFontSize: "18px",
+        labelFontSize: "14px"
+      }
+    });
+    
+    document.addEventListener("DOMContentLoaded", async () => {
+      await mermaid.run({
+        querySelector: ".mermaid"
+      });
+    });
+  </script>
+</body>
+</html>
