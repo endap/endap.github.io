@@ -21869,7 +21869,7 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 ## notes
 + There is a related post [26a90](/26a90/) and not yet integrated on 24-oct-2026.
 --&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 24-oct-2026&lt;/p&gt;
+&lt;p&gt;&amp;lt; 02-nov-2026&lt;/p&gt;
 &lt;style&gt;
 .category-card {
  display: inline-flex;
@@ -22282,4 +22282,100 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 &lt;/a&gt;
 
 
-&lt;p&gt;&amp;lt; 04-oct-2026&lt;/p&gt;</description></item></channel></rss>
+&lt;style&gt;
+.category-card {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: space-between; 
+ width: 80px;
+ height: 80px;
+ margin: 0.3em;
+ border: 1px solid var(--muted-border);
+ border-radius: 8px;
+ padding: 4px;
+ background: var(--box-bg);
+ box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-sizing: border-box;
+ text-decoration: none;
+ color: var(--fg);
+}
+.category-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+.category-card .top-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-shrink: 0;
+}
+.category-card .logo-container {
+ width: 20px;
+ height: 20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.category-card img, .category-card svg {
+ max-width: 100%;
+ max-height: 100%;
+}
+.category-card .count {
+ font-size: 0.75em;
+ color:#888;
+}
+.category-card .title-wrapper {
+ flex: 1;
+ display: flex;
+ align-items: center; 
+ justify-content: center;
+ text-align: center;
+ padding: 0 6px;
+}
+.category-card .title {
+ font-weight: 600;
+ font-size: 0.85em;
+ line-height: 1.1;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3; 
+ overflow: hidden;
+ word-break: break-word;
+}
+&lt;/style&gt;
+
+
+
+&lt;a class="category-card" href="https://endap.github.io/idx29/"&gt;
+ &lt;div class="top-row"&gt;
+ 
+ 
+ 
+ &lt;div class="logo-container"&gt;
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
+&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 370 391" xml:space="preserve"&gt;
+&lt;style type="text/css"&gt;
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FF4088;stroke:#C9177E;stroke-width:27;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+&lt;/style&gt;
+&lt;path class="st0" d="M207.5,22.4L321.9,89c13.5,7.9,21.9,22.4,21.9,38v136.4c0,17.3-9.3,33.3-24.5,41.8l-113.5,63.9
+	c-15.1,8.5-33.5,8.4-48.5-0.2L52.8,308.8c-16.4-9.5-26.6-27-26.6-45.9V133.4c0-19.1,9.9-36.8,26.1-46.8l102.8-63.5
+	C171.1,13.2,191.3,13,207.5,22.4z"/&gt;
+&lt;polygon class="st1" points="105.6,298.2 105.6,91 149,91 149,166.5 220.9,166.5 220.9,91 264.4,91 264.4,298.2 220.9,298.2 
+	220.9,207.6 149,207.6 149,298.2 "/&gt;
+&lt;/svg&gt;
+ &lt;/div&gt;
+ 
+ &lt;div class="count"&gt;1&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="title-wrapper"&gt;
+ &lt;div class="title"&gt;short-codes&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;&amp;lt; 24-oct-2026&lt;/p&gt;</description></item></channel></rss>

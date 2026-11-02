@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1793540627'>
+<link rel=stylesheet href='/css/header.css?v=1793586066'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -28,7 +28,7 @@
 </header>
 <main>
 <head>
-<link rel=stylesheet href='/css/notes.css?v=1793540627'>
+<link rel=stylesheet href='/css/notes.css?v=1793586066'>
 </head>
 <div class=note-container>
 <h1 class=note-title>
@@ -48,61 +48,62 @@ gran mix simul aor abm
 </div>
 <div class=note-content>
 <p>Simulation for angle of repose of granular materials mixture using abm.</p>
-<script src=/js/src/25e41.js defer></script><script src=/js/src/25e60.js defer></script><script src=/js/src/25f45.js defer></script><script src=/js/src/25f49.js defer></script><script src=/js/src/25f51.js defer></script><script src=/js/src/25f53.js defer></script><script src=/js/src/25f54.js defer></script>
+<script src=/js/exp/25e41.js defer></script><script src=/js/exp/25e60.js defer></script><script src=/js/exp/25f45.js defer></script><script src=/js/exp/25f49.js defer></script><script src=/js/exp/25f51.js defer></script><script src=/js/exp/25f53.js defer></script><script src=/js/exp/25f54.js defer></script>
 <div id=cnt1></div>
-<script>document.addEventListener("DOMContentLoaded",function(){const p=document.getElementById("cnt1"),g={display:"flex",border:"0px #aaf solid",background:"#fafaff",width:"800px",height:"400px"},d=createElement("div",g),m={flex:"1",overflowY:"scroll"},e=createElement("textarea",m),h={borderTop:"1px #888 solid",borderBottom:"1px #888 solid",background:"#fafafa",width:"80px"},o=createElement("div",h),f={width:"400px",border:"1px #888 solid",flexShrink:"0",boxSizing:"border-box",background:"#fff"},i=createElement("canvas",f);i.width="300",i.height="300",i.id="can-out";const a={width:"100%",display:"block"},r=createElement("button",a);r.innerHTML="Sample";const s=createElement("button",a);s.innerHTML="Read";const c=createElement("button",a);c.innerHTML="About";const n=createElement("button",a);n.innerHTML="Start";const l=createElement("button",a);l.innerHTML="Clear",s.disabled=!0,n.disabled=!0;const v={border:"1px solid #888",height:"100px",paddingLeft:"0.5em"},u=createElement("div",v);u.id="div-time",p.appendChild(d),d.append(e),d.append(o),o.append(c),o.append(r),o.append(l),o.append(s),o.append(n),o.append(u),d.append(i),c.addEventListener("click",()=>{let e="";e+=`
+<script>document.addEventListener("DOMContentLoaded",function(){function n(e,t){let n=document.createElement(e);return Object.assign(n.style,t),n}const b=document.getElementById("cnt1"),g={display:"flex",border:"0px #aaf solid",background:"#fafaff",width:"800px",height:"400px"},u=n("div",g),m={flex:"1",overflowY:"scroll"},e=n("textarea",m),p={borderTop:"1px #888 solid",borderBottom:"1px #888 solid",background:"#fafafa",width:"80px"},i=n("div",p),f={width:"400px",border:"1px #888 solid",flexShrink:"0",boxSizing:"border-box",background:"#fff"},c=n("canvas",f);c.width="300",c.height="300",c.id="can-out";const l={width:"100%",display:"block"},d=n("button",l);d.innerHTML="Sample";const s=n("button",l);s.innerHTML="Read";const r=n("button",l);r.innerHTML="About";const o=n("button",l);o.innerHTML="Start";const a=n("button",l);a.innerHTML="Clear",s.disabled=!0,o.disabled=!0;const v={border:"1px solid #888",height:"100px",paddingLeft:"0.5em"},h=n("div",v);h.id="div-time",b.appendChild(u),u.append(e),u.append(i),i.append(r),i.append(d),i.append(a),i.append(s),i.append(o),i.append(h),u.append(c),r.addEventListener("click",()=>{let e="";e+=`
 Project: abm-aor`,e+=`
 Author: Sparisoma Viridi`,e+=`
 Version: 0.1 (2025)`,e+=`
 Description: Simulation of granular material angle of repose in 2d using an agent-based model.`,e+=`
-GitHub: https://github.com/dudung`,alert(e)}),l.addEventListener("click",()=>{clearInput(e),s.disabled=!0,n.disabled=!0}),r.addEventListener("click",()=>{clearInput(e),addHeader(e),addBlankLine(e),addWorld2(e),addBlankLine(e),addEnclosedWall2(e),addBlankLine(e),addContainerWall2(e),addBlankLine(e),addMovementProbabilityMatrix2(e),addBlankLine(e),addAgents2(e),s.disabled=!1}),s.addEventListener("click",()=>{let s=getLineFromTextarea(e,"WORLD");if(s!=null){let n=getValueAfterKeyword("WORLD",s).map(Number);world=createZeroMatrix(n[1],n[0]);let o=getLinesFromTextarea(e,"WALL");for(let t of o){const e=getValueAfterKeyword("WALL",t).map(Number);drawWall(world,[e[0],e[1]],[e[2],e[3]],e[4])}agents=[];let a=getLinesFromTextarea(e,"AGENT");for(let t of a){const e=getValueAfterKeyword("AGENT",t).map(Number);drawAgent(world,[e[0],e[1]],e[2]),agents.push(e)}drawMatrixOnCanvas(i,world,getColor);let r=getBlocksFromTextarea(e,"MPMAT",3);mpm={};for(let e of r){const t=getValueAfterKeyword("MPMAT",e[0]),n=getMatrixAfterKeyWord("MPMAT "+t,e,[3,3]);mpm[t]=n}t=0}n.disabled=!1}),e.addEventListener("input",()=>{s.disabled=!1}),n.addEventListener("click",()=>{n.innerHTML=="Start"?(c.disabled=!0,r.disabled=!0,l.disabled=!0,s.disabled=!0,n.innerHTML="Stop",timer=setInterval(simulate,interval)):(c.disabled=!1,r.disabled=!1,l.disabled=!1,s.disabled=!1,n.innerHTML="Start",clearInterval(timer))})})</script>
+GitHub: https://github.com/dudung`,alert(e)}),a.addEventListener("click",()=>{clearInput(e),s.disabled=!0,o.disabled=!0}),d.addEventListener("click",()=>{clearInput(e),addHeader(e),addBlankLine(e),addWorld2(e),addBlankLine(e),addEnclosedWall2(e),addBlankLine(e),addContainerWall2(e),addBlankLine(e),addMovementProbabilityMatrix2(e),addBlankLine(e),addAgents2(e),s.disabled=!1}),s.addEventListener("click",()=>{let n=getLineFromTextarea(e,"WORLD");if(n!=null){let s=getValueAfterKeyword("WORLD",n).map(Number);world=createZeroMatrix(s[1],s[0]);let o=getLinesFromTextarea(e,"WALL");for(let t of o){const e=getValueAfterKeyword("WALL",t).map(Number);drawWall(world,[e[0],e[1]],[e[2],e[3]],e[4])}agents=[];let i=getLinesFromTextarea(e,"AGENT");for(let t of i){const e=getValueAfterKeyword("AGENT",t).map(Number);drawAgent(world,[e[0],e[1]],e[2]),agents.push(e)}drawMatrixOnCanvas(c,world,getColor);let a=getBlocksFromTextarea(e,"MPMAT",3);mpm={};for(let e of a){const t=getValueAfterKeyword("MPMAT",e[0]),n=getMatrixAfterKeyWord("MPMAT "+t,e,[3,3]);mpm[t]=n}t=0}o.disabled=!1}),e.addEventListener("input",()=>{s.disabled=!1}),o.addEventListener("click",()=>{o.innerHTML=="Start"?(r.disabled=!0,d.disabled=!0,a.disabled=!0,s.disabled=!0,o.innerHTML="Stop",timer=setInterval(simulate,interval)):(r.disabled=!1,d.disabled=!1,a.disabled=!1,s.disabled=!1,o.innerHTML="Start",clearInterval(timer))})})</script>
 <h2 id=notes>notes</h2>
 <ul>
 <li>This is a part of
-<a href=/butiran/25d66/>
+<a href=/25d66/>
 <span>
 25d66
 </span>
 </a>
 project in investigating aor using abm approach.</li>
 <li>Note
-<a href=/butiran/25f45/>
+<a href=/25f45/>
 <span>
 25f45
 </span>
 </a>
 ,
-<a href=/butiran/25f49/>
+<a href=/25f49/>
 <span>
 25f49
 </span>
 </a>
 ,
-<a href=/butiran/25f51/>
+<a href=/25f51/>
 <span>
 25f51
 </span>
 </a>
 , and
-<a href=/butiran/25f53/>
+<a href=/25f53/>
 <span>
 25f53
 </span>
 </a>
 are another input of this project, which is preceeded this.</li>
 <li>Agent types are available on
-<a href=/butiran/25e41/>
+<a href=/25e41/>
 <span>
 25e41
 </span>
 </a>
 in range of 40-49.</li>
+<li>Change <code>src</code> to <code>exp</code> and fix internal links on 02-nov-2026.</li>
 </ul>
 </div>
 </div>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1793540627'>
+<link rel=stylesheet href='/css/footer.css?v=1793586066'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
