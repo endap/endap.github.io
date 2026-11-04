@@ -1,0 +1,115 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>moving charge in perpendicular magnetic field | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1793828997'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1793828997'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+moving charge in perpendicular magnetic field
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-11-05T03:30:33 07:00">5 Nov 2026</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>A charged point mass particle moving in perpendicular magnetic field is an intereseting phenomenon to discuss, since it can perform a circular motion with simple force, i.e. the magnetic force. Under influence of the force the partice will have constant speed and move in circle as long as the initial velocity is perpendicular to a constant magnetic field.</p>
+<h2 id=equations>equations</h2>
+<p>Equation of motion for a point particle with mass $m$ and charge $q$ moving in constant magnetic field $\vec{B}$ can be written as</p>
+<p>$$\tag{1}
+m \frac{d\vec{r}}{dt^2} + q \vec{B} \times \frac{d\vec{v}}{dt} = 0,
+$$</p>
+<p>with initial velocity $\vec{v}(t_0) = \vec{v}_0$</p>
+<p>$$\tag{2}
+\vec{B} \cdot \vec{v}_0 = 0
+$$</p>
+<p>to get the uniform circular motion.</p>
+<h2 id=functions>functions</h2>
+<p>A circular path can be represented using parametric functions as folow</p>
+<p>$$\tag{3}
+x(t) = x_c + R \cos (\omega t + \phi_0)
+$$</p>
+<p>and</p>
+<p>$$\tag{4}
+y(t) = y_c + R \sin (\omega t + \phi_0),
+$$</p>
+<p>where center of the circle is $(x_c, y_c)$, circle radius is $R$, angular velocity of the circular motion is $\omega$, and initial phase of the motions is $\phi_0$.</p>
+<h2 id=kinematics>kinematics</h2>
+<p>Since it is a uniform circular motion, where angular acceleration is zero, then the relation of linear velocity $v$ and angular velocity $\omega$ is simply</p>
+<p>$$\tag{5}
+v = \omega R.
+$$</p>
+<p>Following relations also hold between the linear motion variables</p>
+<p>$$\tag{6}
+v_x(t) = \frac{dx(t)}{dt},
+$$</p>
+<p>$$\tag{7}
+v_y(t) = \frac{dy(t)}{dt},
+$$</p>
+<p>and</p>
+<p>$$\tag{8}
+a_x(t) = \frac{dv_x(t)}{dt},
+$$</p>
+<p>$$\tag{9}
+a_y(t) = \frac{dv_y(t)}{dt},
+$$</p>
+<h2 id=steps>steps</h2>
+<ul>
+<li>Find $v_x(t)$ and $v_y(t)$ from Eqns (3) and (4) using Eqns (6) and (7).</li>
+<li>Find $a_x(t)$ and $a_y(t)$ from previous result using Eqns (8) and (9).</li>
+<li>Find arbitrary initial velocity $\vec{v}_0$ that obeys Eqn (2) if $\vec{B} = B_0 \hat{z}$.</li>
+<li>Show graphically that Eqns (3) and (4) make the particle move in circle.</li>
+<li>Show mathematically that Eqns (3) and (4) can form circle equation.</li>
+<li>Show hat Eqns (3) and (4) are solution of Eqn (1) by subtituting the first two into the last one.</li>
+</ul>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1793828997'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
