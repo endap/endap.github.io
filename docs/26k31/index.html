@@ -1,0 +1,294 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>sdd 1div-vanilla-js | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794435079'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1794435079'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+sdd 1div-vanilla-js
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-11-12T04:33:58 07:00">12 Nov 2026</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>Some examples for 1-div pattern <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> with Vanilla JS <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> using SDD <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> are given here as illustrations.</p>
+<h2 id=example-1>example-1</h2>
+<p>The result is as follows.</p>
+<div id=cnt1></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt1");
+const style = {
+  /*
+  width: "250px",
+  height: "250px",
+  border: "1px #448 solid",
+  */
+};
+Object.assign(cnt.style, style);
+
+// Create canvas
+const canvas = document.createElement("canvas");
+canvas.width = 200;
+canvas.height = 200;
+canvas.style.border = "1px solid black";
+
+// Create button
+const button = document.createElement("button");
+button.textContent = "start";
+
+// Append elements to parent
+cnt.appendChild(canvas);
+cnt.appendChild(button);
+
+// Canvas context
+const ctx = canvas.getContext("2d");
+
+// Circle properties
+const circle = {
+    x: 100,
+    y: 50,
+    radius: 10,
+    dx: 2,
+    dy: 2
+};
+
+let running = false;
+let animationId;
+
+// Draw circle
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+}
+
+// Update circle position
+function update() {
+    circle.x += circle.dx;
+    circle.y += circle.dy;
+
+    // Bounce horizontally
+    if (
+        circle.x + circle.radius >= canvas.width ||
+        circle.x - circle.radius <= 0
+    ) {
+        circle.dx *= -1;
+    }
+
+    // Bounce vertically
+    if (
+        circle.y + circle.radius >= canvas.height ||
+        circle.y - circle.radius <= 0
+    ) {
+        circle.dy *= -1;
+    }
+}
+
+// Animation loop
+function animate() {
+    if (!running) return;
+
+    update();
+    draw();
+
+    animationId = requestAnimationFrame(animate);
+}
+
+// Toggle button
+button.addEventListener("click", () => {
+    running = !running;
+
+    if (running) {
+        button.textContent = "stop";
+        animate();
+    } else {
+        button.textContent = "start";
+        cancelAnimationFrame(animationId);
+    }
+});
+
+// Initial drawing
+draw();
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// Create canvas
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>canvas</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>200</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>200</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1px solid black&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Create button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>button</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Append elements to parent
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>canvas</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>button</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Canvas context
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Circle properties
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>circle</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>radius</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>10</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>dx</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>dy</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>animationId</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Draw circle
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clearRect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>radius</span>, <span style=color:#ae81ff>0</span>, Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;blue&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fill</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>closePath</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Update circle position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>update</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>dx</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>dy</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Bounce horizontally
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>radius</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>||</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>radius</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    ) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>dx</span> <span style=color:#f92672>*=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Bounce vertically
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>radius</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>||</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>radius</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    ) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>circle</span>.<span style=color:#a6e22e>dy</span> <span style=color:#f92672>*=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Animation loop
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>animate</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>update</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>draw</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>requestAnimationFrame</span>(<span style=color:#a6e22e>animate</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Toggle button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>running</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;stop&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>animate</span>();
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>cancelAnimationFrame</span>(<span style=color:#a6e22e>animationId</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Initial drawing
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>draw</span>();
+</span></span></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a canvas element and a button element. The button is toggle button showing &ldquo;start&rdquo; and &ldquo;stop&rdquo;. It triggers the motion of circle in the canvas. The circle should bounce when meet the canvas border. Size of canvas is 200px x 200px.</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure how to add it to a HTML page and make it works.</p>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>6 Instant, &ldquo;App Naming Suggestions to uApp&rdquo;, ChatGPT, 12 Nov 2026, url
+<a href=https://chatgpt.com/share/6af4e187-da94-83ec-bfdb-aaeb5e613cfe target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6af4e187-da94-83ec-bfdb-aaeb5e613cfe <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>-, &ldquo;Vanilla JS&rdquo;, url
+<a href=http://vanilla-js.com target=_blank rel="nofollow noopener noreferrer">
+<span>
+http://vanilla-js.com <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Anna Gutowska, &ldquo;What is spec-driven development?&rdquo;, IBM, 19 May 2026, url
+<a href=https://www.ibm.com/think/topics/spec-driven-development target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.ibm.com/think/topics/spec-driven-development <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794435079'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
