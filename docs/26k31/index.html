@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1794435079'>
+<link rel=stylesheet href='/css/header.css?v=1794440485'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -28,7 +28,7 @@
 </header>
 <main>
 <head>
-<link rel=stylesheet href='/css/notes.css?v=1794435079'>
+<link rel=stylesheet href='/css/notes.css?v=1794440485'>
 </head>
 <div class=note-container>
 <h1 class=note-title>
@@ -43,7 +43,7 @@ sdd 1div-vanilla-js
 <div class=date-reading-time-edit>
 <time datetime="2026-11-12T04:33:58 07:00">12 Nov 2026</time>
 &#183;
-2 mins read
+7 mins read
 </div>
 </div>
 <div class=note-content>
@@ -245,7 +245,694 @@ draw();
 <blockquote>
 <p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a canvas element and a button element. The button is toggle button showing &ldquo;start&rdquo; and &ldquo;stop&rdquo;. It triggers the motion of circle in the canvas. The circle should bounce when meet the canvas border. Size of canvas is 200px x 200px.</p>
 </blockquote>
-</figure><p>Notice that the code is not complete. Figure how to add it to a HTML page and make it works.</p>
+</figure><figure>
+<blockquote>
+<p>url
+<a href=https://chatgpt.com/c/6af4e5b7-59a8-83ec-b365-bda5281254ef target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/c/6af4e5b7-59a8-83ec-b365-bda5281254ef <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
+<h2 id=example-2>example-2</h2>
+<p>The result is as follows.</p>
+<div id=cnt2></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt2");
+
+
+// Create textarea
+const textarea = document.createElement("textarea");
+textarea.rows = 10;
+textarea.cols = 30;
+textarea.placeholder = "Generated numbers will appear here...";
+cnt.appendChild(textarea);
+
+// Create Generate button
+const generateBtn = document.createElement("button");
+generateBtn.textContent = "generate";
+cnt.appendChild(generateBtn);
+
+// Create Clear button
+const clearBtn = document.createElement("button");
+clearBtn.textContent = "clear";
+cnt.appendChild(clearBtn);
+
+// Generate 100 random two-digit numbers
+generateBtn.addEventListener("click", () => {
+    const numbers = [];
+
+    for (let i = 0; i < 100; i++) {
+        const randomNumber = Math.floor(Math.random() * 100);
+        numbers.push(String(randomNumber).padStart(2, "0"));
+    }
+
+    textarea.value = numbers.join(", ");
+});
+
+// Clear textarea
+clearBtn.addEventListener("click", () => {
+    textarea.value = "";
+});
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// Create textarea
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>textarea</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;textarea&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>rows</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>cols</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>placeholder</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Generated numbers will appear here...&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>textarea</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Create Generate button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>generateBtn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>generateBtn</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;generate&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>generateBtn</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Create Clear button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>clearBtn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>clearBtn</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;clear&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>clearBtn</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Generate 100 random two-digit numbers
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>generateBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>numbers</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>randomNumber</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>numbers</span>.<span style=color:#a6e22e>push</span>(String(<span style=color:#a6e22e>randomNumber</span>).<span style=color:#a6e22e>padStart</span>(<span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#34;0&#34;</span>));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>numbers</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;, &#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Clear textarea
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>clearBtn</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a textarea and two button element. The first button has text &ldquo;generate&rdquo;. When it is clicket, 100 random integer numbers from 0-99 are generated and reported in two-digit format, e.g. 09, 83, 05, 17, etc. The second button has text &ldquo;clear&rdquo;, whose function is to clear the textarea.</p>
+</blockquote>
+</figure><figure>
+<blockquote>
+<p>url
+<a href=https://chatgpt.com/c/6af4f878-2d5c-83ec-b9a2-b8677a9bf067 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/c/6af4f878-2d5c-83ec-b9a2-b8677a9bf067 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
+<h2 id=example-3>example-3</h2>
+<p>The result is as follows.</p>
+<div id=cnt3></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt3");
+
+function createWaveSimulator(cnt) {
+    // ============================
+    // 1. Create UI elements
+    // ============================
+
+    cnt.innerHTML = "";
+
+    cnt.style.display = "flex";
+    cnt.style.flexDirection = "column";
+    cnt.style.gap = "10px";
+    cnt.style.maxWidth = "800px";
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 700;
+    canvas.height = 300;
+    canvas.style.width = "100%";
+    canvas.style.border = "1px solid #ccc";
+    canvas.style.background = "#fff";
+
+    const textarea = document.createElement("textarea");
+    textarea.rows = 5;
+    textarea.style.width = "100%";
+    textarea.style.boxSizing = "border-box";
+    textarea.style.fontFamily = "monospace";
+
+    textarea.value =
+`amplitude = 50
+period = 4
+wavelength = 200
+phase = 0`;
+
+    const button = document.createElement("button");
+    button.textContent = "start";
+    button.style.width = "100px";
+    button.style.padding = "8px";
+
+    cnt.appendChild(canvas);
+    cnt.appendChild(textarea);
+    cnt.appendChild(button);
+
+    const ctx = canvas.getContext("2d");
+
+    // ============================
+    // 2. Wave parameters
+    // ============================
+
+    let params = {
+        amplitude: 50,
+        period: 4,
+        wavelength: 200,
+        phase: 0
+    };
+
+    let running = false;
+    let animationId = null;
+    let startTime = 0;
+
+    // ============================
+    // 3. Read parameters
+    // ============================
+
+    function readParameters() {
+        const lines = textarea.value.split("\n");
+
+        const newParams = {};
+
+        lines.forEach(line => {
+            const parts = line.split("=");
+
+            if (parts.length !== 2) return;
+
+            const key = parts[0].trim().toLowerCase();
+            const value = parseFloat(parts[1]);
+
+            if (!Number.isFinite(value)) return;
+
+            if (key === "amplitude")
+                newParams.amplitude = value;
+
+            if (key === "period")
+                newParams.period = value;
+
+            if (key === "wavelength")
+                newParams.wavelength = value;
+
+            if (key === "phase")
+                newParams.phase = value;
+        });
+
+        params = {
+            ...params,
+            ...newParams
+        };
+
+        // Avoid division by zero
+        params.period = Math.max(0.001, params.period);
+        params.wavelength = Math.max(0.001, params.wavelength);
+    }
+
+    // ============================
+    // 4. Draw coordinate system
+    // ============================
+
+    function drawAxes() {
+        const w = canvas.width;
+        const h = canvas.height;
+
+        const centerY = h / 2;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // Horizontal axis
+        ctx.beginPath();
+        ctx.strokeStyle = "#aaa";
+        ctx.lineWidth = 1;
+        ctx.moveTo(0, centerY);
+        ctx.lineTo(w, centerY);
+        ctx.stroke();
+
+        // Vertical axis
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, h);
+        ctx.stroke();
+
+        // Center line
+        ctx.fillStyle = "#555";
+        ctx.font = "12px Arial";
+        ctx.fillText("y = 0", 5, centerY - 8);
+    }
+
+    // ============================
+    // 5. Draw traveling wave
+    // ============================
+
+    function drawWave(time) {
+        readParameters();
+
+        drawAxes();
+
+        const w = canvas.width;
+        const h = canvas.height;
+
+        const centerY = h / 2;
+
+        const A = params.amplitude;
+        const T = params.period;
+        const lambda = params.wavelength;
+        const phase = params.phase;
+
+        const omega = 2 * Math.PI / T;
+        const k = 2 * Math.PI / lambda;
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#007bff";
+        ctx.lineWidth = 2.5;
+
+        for (let x = 0; x < w; x++) {
+
+            // Traveling sinusoidal wave:
+            // y(x,t) = A sin(kx - omega*t + phase)
+
+            const y = A * Math.sin(
+                k * x - omega * time + phase
+            );
+
+            const canvasY = centerY - y;
+
+            if (x === 0) {
+                ctx.moveTo(x, canvasY);
+            } else {
+                ctx.lineTo(x, canvasY);
+            }
+        }
+
+        ctx.stroke();
+
+        // Display information
+        ctx.fillStyle = "#333";
+        ctx.font = "13px Arial";
+
+        ctx.fillText(
+            `Amplitude: ${A} | Period: ${T} s | Wavelength: ${lambda} px`,
+            10,
+            20
+        );
+    }
+
+    // ============================
+    // 6. Animation loop
+    // ============================
+
+    function animate(timestamp) {
+        if (!running) return;
+
+        const elapsed = (timestamp - startTime) / 1000;
+
+        drawWave(elapsed);
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    // ============================
+    // 7. Start / Stop button
+    // ============================
+
+    button.addEventListener("click", () => {
+
+        if (!running) {
+
+            // START
+            running = true;
+            button.textContent = "stop";
+
+            readParameters();
+
+            startTime = performance.now();
+
+            animationId = requestAnimationFrame(animate);
+
+        } else {
+
+            // STOP
+            running = false;
+            button.textContent = "start";
+
+            cancelAnimationFrame(animationId);
+        }
+    });
+
+    // ============================
+    // 8. Update parameters
+    // ============================
+
+    textarea.addEventListener("input", () => {
+        if (!running) {
+            drawWave(0);
+        }
+    });
+
+    // Initial drawing
+    drawWave(0);
+
+    // Return public interface
+    return {
+        start: () => button.click(),
+        stop: () => {
+            if (running) button.click();
+        },
+        redraw: () => drawWave(0)
+    };
+}
+
+const simulator = createWaveSimulator(cnt);
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cnt</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;cnt3&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createWaveSimulator</span>(<span style=color:#a6e22e>cnt</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 1. Create UI elements
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;flex&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>flexDirection</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;column&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>gap</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;10px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>maxWidth</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;800px&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>canvas</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>700</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>300</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;100%&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1px solid #ccc&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#fff&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>textarea</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;textarea&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>rows</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;100%&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>boxSizing</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;border-box&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>fontFamily</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;monospace&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>`amplitude = 50
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>period = 4
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>wavelength = 200
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>phase = 0`</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>button</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;100px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>padding</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;8px&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>canvas</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>textarea</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>button</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 2. Wave parameters
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>params</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>amplitude</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>period</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>wavelength</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>phase</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 3. Read parameters
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>readParameters</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lines</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>value</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;\n&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>newParams</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>lines</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>line</span> =&gt; {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>parts</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>line</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;=&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>parts</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>!==</span> <span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>key</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>parts</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>toLowerCase</span>();
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> parseFloat(<span style=color:#a6e22e>parts</span>[<span style=color:#ae81ff>1</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>Number.isFinite(<span style=color:#a6e22e>value</span>)) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;amplitude&#34;</span>)
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>newParams</span>.<span style=color:#a6e22e>amplitude</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;period&#34;</span>)
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>newParams</span>.<span style=color:#a6e22e>period</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;wavelength&#34;</span>)
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>newParams</span>.<span style=color:#a6e22e>wavelength</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;phase&#34;</span>)
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>newParams</span>.<span style=color:#a6e22e>phase</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>params</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>            ...<span style=color:#a6e22e>params</span>,
+</span></span><span style=display:flex><span>            ...<span style=color:#a6e22e>newParams</span>
+</span></span><span style=display:flex><span>        };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Avoid division by zero
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>period</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>max</span>(<span style=color:#ae81ff>0.001</span>, <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>period</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>wavelength</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>max</span>(<span style=color:#ae81ff>0.001</span>, <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>wavelength</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 4. Draw coordinate system
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawAxes</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>w</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>h</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>centerY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>h</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clearRect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>w</span>, <span style=color:#a6e22e>h</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Horizontal axis
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#aaa&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>centerY</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>w</span>, <span style=color:#a6e22e>centerY</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Vertical axis
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>h</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Center line
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#555&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;12px Arial&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(<span style=color:#e6db74>&#34;y = 0&#34;</span>, <span style=color:#ae81ff>5</span>, <span style=color:#a6e22e>centerY</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 5. Draw traveling wave
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawWave</span>(<span style=color:#a6e22e>time</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>readParameters</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>drawAxes</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>w</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>h</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>centerY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>h</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>A</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>amplitude</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>T</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>period</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lambda</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>wavelength</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>phase</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>phase</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>omega</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>T</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>lambda</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#007bff&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.5</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>x</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>w</span>; <span style=color:#a6e22e>x</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Traveling sinusoidal wave:
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// y(x,t) = A sin(kx - omega*t + phase)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>A</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>sin</span>(
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>k</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>phase</span>
+</span></span><span style=display:flex><span>            );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>canvasY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>centerY</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>x</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>canvasY</span>);
+</span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>canvasY</span>);
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Display information
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#333&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;13px Arial&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`Amplitude: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>A</span><span style=color:#e6db74>}</span><span style=color:#e6db74> | Period: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>T</span><span style=color:#e6db74>}</span><span style=color:#e6db74> s | Wavelength: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>lambda</span><span style=color:#e6db74>}</span><span style=color:#e6db74> px`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>10</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 6. Animation loop
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>animate</span>(<span style=color:#a6e22e>timestamp</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>elapsed</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>timestamp</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>startTime</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>1000</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>drawWave</span>(<span style=color:#a6e22e>elapsed</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>requestAnimationFrame</span>(<span style=color:#a6e22e>animate</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 7. Start / Stop button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// START
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;stop&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>readParameters</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>performance</span>.<span style=color:#a6e22e>now</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>requestAnimationFrame</span>(<span style=color:#a6e22e>animate</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// STOP
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>cancelAnimationFrame</span>(<span style=color:#a6e22e>animationId</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 8. Update parameters
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// ============================
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>textarea</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;input&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>drawWave</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Initial drawing
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>drawWave</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Return public interface
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>start</span><span style=color:#f92672>:</span> () =&gt; <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>click</span>(),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>stop</span><span style=color:#f92672>:</span> () =&gt; {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>running</span>) <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>click</span>();
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>redraw</span><span style=color:#f92672>:</span> () =&gt; <span style=color:#a6e22e>drawWave</span>(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>simulator</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createWaveSimulator</span>(<span style=color:#a6e22e>cnt</span>);
+</span></span></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a canvas, a textarea, and a button elements. The button is a toggle button with text &ldquo;start&rdquo; and &ldquo;stop&rdquo; which simulate a traveling sinusoidal wave on the canvas. It makes the wave travel when &ldquo;start&rdquo; clicked and makes it stop otherwise. The textarea is for input parameter of the traveling wave, e.g. amplitudo, periode, wavelength, and intial phase.</p>
+</blockquote>
+</figure><figure>
+<blockquote>
+<p>url
+<a href=https://chatgpt.com/c/6af4fa3b-e0a0-83ec-b047-f7a5fc47a650 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/c/6af4fa3b-e0a0-83ec-b047-f7a5fc47a650 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
+<h2 id=example-4>example-4</h2>
+<p>The result is as follows.</p>
+<div id=cnt4></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt4");
+
+
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>url [20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
+<h2 id=example-5>example-5</h2>
+<p>The result is as follows.</p>
+<div id=cnt5></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt5");
+
+
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>url [20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
+<h2 id=example-x>example-x</h2>
+<p>The result is as follows.</p>
+<div id=cntx></div>
+<script type=module>
+  
+
+</script>
+<p>The code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
+<figure>
+<blockquote>
+<p>url [20261112].</p>
+</blockquote>
+</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
 <h2 id=refs>refs</h2>
 <div class=footnotes role=doc-endnotes>
 <hr>
@@ -283,7 +970,7 @@ https://www.ibm.com/think/topics/spec-driven-development <i class="fa fa-externa
 </div>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1794435079'>
+<link rel=stylesheet href='/css/footer.css?v=1794440485'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
