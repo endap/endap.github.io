@@ -1,0 +1,216 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>mermaid-12.3.0 setup | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794492563'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1794492563'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+mermaid-12.3.0 setup
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-11-12T17:47:26 07:00">12 Nov 2026</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>Presented here the change of mermaid setup from v10.9.8 using CDN <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> to v12.3.0 using local JS library as suggested <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> for a post generted using Hugo <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. The file named <code>basedof.html</code>, which is the base template <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, must be modified. Modified and original files are given here.</p>
+<h2 id=result>result</h2>
+<p>Rendered flowchart is as follows.
+<pre class=mermaid>
+  
+flowchart LR
+
+%% network
+B --> I --> C
+C --"Y"--> P1
+C --"N"--> P2
+P1 & P2 --> O --> E
+
+%% elements
+B(["begin"])
+I[/"input"/]
+C{"condition"}
+P1["process 1"]
+P2["process 2"]
+O[/"output"/]
+E(["end"])
+
+</pre>
+</p>
+<h2 id=code>code</h2>
+<p>Mermaid code is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>flowchart</span> <span style=color:#a6e22e>LR</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%%</span> <span style=color:#a6e22e>network</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>B</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>I</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>C</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>C</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;Y&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>C</span> <span style=color:#f92672>--</span><span style=color:#e6db74>&#34;N&#34;</span><span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>P2</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>P1</span> <span style=color:#f92672>&amp;</span> <span style=color:#a6e22e>P2</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>O</span> <span style=color:#f92672>--&gt;</span> <span style=color:#a6e22e>E</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%%</span> <span style=color:#a6e22e>elements</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>B</span>([<span style=color:#e6db74>&#34;begin&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#a6e22e>I</span>[<span style=color:#e6db74>/&#34;input&#34;/</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>C</span>{<span style=color:#e6db74>&#34;condition&#34;</span>}
+</span></span><span style=display:flex><span><span style=color:#a6e22e>P1</span>[<span style=color:#e6db74>&#34;process 1&#34;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>P2</span>[<span style=color:#e6db74>&#34;process 2&#34;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>O</span>[<span style=color:#e6db74>/&#34;onput&#34;/</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>E</span>([<span style=color:#e6db74>&#34;end&#34;</span>])
+</span></span></code></pre></div><h2 id=template>template</h2>
+<p>The file <code>baseof.html</code> that is stored in <code>layout/_default</code> folder, has following modifed part for Mermaid.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ if .HasShortcode &#34;mermaid&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/js/mermaid/12.3.0/mermaid.min.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dark</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>matchMedia</span>(<span style=color:#e6db74>&#39;(prefers-color-scheme: dark)&#39;</span>).<span style=color:#a6e22e>matches</span>;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>initialize</span>({
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>startOnLoad</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>theme</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>dark</span> <span style=color:#f92672>?</span> <span style=color:#e6db74>&#39;dark&#39;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;default&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>themeVariables</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>fontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;20px&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>nodeFontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;18px&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>labelFontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;14px&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>edgeLabelBackground</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;transparent&#39;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>lineColor</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>dark</span> <span style=color:#f92672>?</span> <span style=color:#e6db74>&#39;#aaa&#39;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;#333&#39;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>themeCSS</span><span style=color:#f92672>:</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      .edgeLabel, .edgeLabel p, .labelBkg { background-color: var(--bg) !important; }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      .edgeLabel rect { fill: transparent !important; opacity: 0 !important; }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      .flowchart-link, .edge-thickness-normal { stroke-width: 1px !important; }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    `</span>
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;DOMContentLoaded&#34;</span>, <span style=color:#66d9ef>async</span> () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>run</span>({
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>querySelector</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;.mermaid&#34;</span>
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div><p>There are also changes related to dark theme styling <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>. Original version of the base template has following part for Mermaid.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ if .HasShortcode &#34;mermaid&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;module&#34;</span>&gt;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>import</span> <span style=color:#a6e22e>mermaid</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>initialize</span>({
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>startOnLoad</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>theme</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;neutral&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>themeVariables</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>fontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;20px&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>nodeFontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;18px&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>labelFontSize</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;14px&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;DOMContentLoaded&#34;</span>, <span style=color:#66d9ef>async</span> () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>run</span>({
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>querySelector</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;.mermaid&#34;</span>
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div><p>Notice that the template that uses CDN requires internet connection, but other does not.</p>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Knut Sveidqvist, et al., &ldquo;Mermaid 10.9.8&rdquo;, 2026, url
+<a href=https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://cdn.jsdelivr.net/npm/mermaid@10.9.8/dist/mermaid.esm.min.mjs <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>GPT-6, &ldquo;Serve Mermaid Locally&rdquo;, ChatGPT, 12 Nov 2026, url
+<a href=https://chatgpt.com/share/6af59642-6fc0-83ec-9f5e-9993e3ecacd4 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6af59642-6fc0-83ec-9f5e-9993e3ecacd4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Zara Cooper, &ldquo;A Guide to Using Hugo in 2024 and 2025&rdquo;, Strapi, 15 Jun 2021, url
+<a href=https://strapi.io/blog/guide-to-using-hugo-site-generator target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://strapi.io/blog/guide-to-using-hugo-site-generator <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>3.5 Flast-Lite, &ldquo;Hugo Baseof File Identification&rdquo;, Gemini, 12 Nov 2026, url
+<a href=https://share.gemini.google/uvNfpbYxJ7rz target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://share.gemini.google/uvNfpbYxJ7rz <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>Sonnet 5.5 Medium, &ldquo;Mermaid dark theme styling&rdquo;, Claude, 12 Nov 2026, url
+<a href=https://claude.ai/share/c5f71c2f-1f90-4400-9142-fd76bd5e20c1 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://claude.ai/share/c5f71c2f-1f90-4400-9142-fd76bd5e20c1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794492563'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+<script src=/js/mermaid/12.3.0/mermaid.min.js></script>
+<script>const dark=window.matchMedia("(prefers-color-scheme: dark)").matches;mermaid.initialize({startOnLoad:!1,theme:dark?"dark":"default",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px",edgeLabelBackground:"transparent",lineColor:dark?"#aaa":"#333"},themeCSS:`
+        .edgeLabel, .edgeLabel p, .labelBkg { background-color: var(--bg) !important; }
+        .edgeLabel rect { fill: transparent !important; opacity: 0 !important; }
+        .flowchart-link, .edge-thickness-normal { stroke-width: 1px !important; }
+      `}),document.addEventListener("DOMContentLoaded",async()=>{await mermaid.run({querySelector:".mermaid"})})</script>
+</body>
+</html>
