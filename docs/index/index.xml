@@ -21868,16 +21868,19 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
 ## 21-oct-2024
 ## notes
 + There is a related post [26a90](/26a90/) and not yet integrated on 24-oct-2026.
---&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
-&lt;p&gt;&amp;lt; 02-nov-2026&lt;/p&gt;
+--&gt;</description></item><item><title/><link>https://endap.github.io/idx30/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx30/</guid><description>&lt;p&gt;&lt;strong&gt;flowcharts&lt;/strong&gt; &amp;mdash; visualizing processes&lt;/p&gt;
 &lt;style&gt;
-.category-card {
+.post-card {
  display: inline-flex;
+ vertical-align: middle;
  flex-direction: column;
  justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
+ 
+ width: 100px;
+ min-height: 60px; 
+ max-height: 140px; 
+ 
+ margin: 0.2em;
  border: 1px solid var(--muted-border);
  border-radius: 8px;
  padding: 4px;
@@ -21888,32 +21891,42 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
  text-decoration: none;
  color: var(--fg);
 }
-.category-card:hover {
+.post-card:hover {
  transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+ box-shadow: 3px 3px 8px color-mix(
+ in srgb,
+ var(--fg) 20%,
+ transparent
+ );
 }
-.category-card .top-row {
+.post-card .top-row {
+ display: inline-block;
+ text-align: center;
+ padding: 0 0 2px 0;
+}
+.post-card .bottom-row {
  display: flex;
  justify-content: space-between;
  align-items: center;
  flex-shrink: 0;
+ padding: 2px 2px 0;
 }
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
+.post-card .day {
+ font-size: 0.8em;
+ color: #2a2;
+ font-family: monospace;
 }
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
+.post-card .url {
+ font-size: 0.8em;
+ color: #888;
+ font-family: monospace;
 }
-.category-card .count {
+.post-card .date {
  font-size: 0.75em;
- color:#888;
+ color: #dc4;
+ font-family: monospace;
 }
-.category-card .title-wrapper {
+.post-card .title-wrapper {
  flex: 1;
  display: flex;
  align-items: center; 
@@ -21921,461 +21934,361 @@ document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
  text-align: center;
  padding: 0 6px;
 }
-.category-card .title {
+.post-card .title {
  font-weight: 600;
- font-size: 0.85em;
+ font-size: 0.9em;
  line-height: 1.1;
  display: -webkit-box;
  -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
+ -webkit-line-clamp: 5; 
  overflow: hidden;
  word-break: break-word;
 }
 &lt;/style&gt;
 
-
-
-&lt;a class="category-card" href="https://endap.github.io/idx28/"&gt;
+&lt;a class="post-card" href="https://endap.github.io/26k33/"&gt;
  &lt;div class="top-row"&gt;
- 
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
-&lt;svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 387.481 387.481" xml:space="preserve"&gt;
-&lt;g&gt;
-	&lt;g id="XMLID_7_"&gt;
-		&lt;g&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="314.734,261.389 320.944,301.239 267.194,311.989 283.324,252.859 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="320.944,301.239 286.904,365.729 267.194,311.989 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="299.444,163.279 314.734,261.389 283.324,252.859 252.864,233.159 270.773,186.569 			"/&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="292.184,116.719 299.444,163.279 270.773,186.569 236.734,165.079 233.154,131.039 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="282.664,55.609 292.184,116.719 233.154,131.039 256.444,84.449 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="267.194,311.989 286.904,365.729 188.364,387.229 125.664,303.029 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="283.324,252.859 267.194,311.989 125.664,303.029 138.204,98.789 224.194,57.579 
-				256.444,84.449 233.154,131.039 236.734,165.079 270.773,186.569 252.864,233.159 			"/&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="277.944,25.329 282.664,55.609 256.444,84.449 224.194,57.579 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="277.944,25.329 224.194,57.579 243.904,0.249 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="243.904,0.249 224.194,57.579 138.204,98.789 174.034,18.169 			"/&gt;
-			&lt;polygon style="fill:#B3B3B3;" points="125.664,303.029 188.364,387.229 66.534,310.189 			"/&gt;
-			&lt;polygon style="fill:#B3B3B3;" points="174.034,18.169 138.204,98.789 86.244,91.619 			"/&gt;
-			&lt;polygon style="fill:#999999;" points="138.204,98.789 125.664,303.029 66.534,310.189 86.244,91.619 			"/&gt;
-		&lt;/g&gt;
-		&lt;g&gt;
-		&lt;/g&gt;
-	&lt;/g&gt;
-&lt;/g&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;1&lt;/div&gt;
+ &lt;div class="date"&gt;2026-11-12&lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;butiran.js&lt;/div&gt;
+ &lt;div class="title"&gt;sign function flowchart&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="bottom-row"&gt;
+ &lt;div class="url"&gt;26k33&lt;/div&gt;
+ &lt;div class="day"&gt;&lt;/div&gt;
  &lt;/div&gt;
 &lt;/a&gt;
 
+&lt;script&gt;
+document.querySelectorAll('.post-card .day').forEach((el, i, arr) =&gt; {
+ el.textContent = "node-" + String(arr.length - i).padStart(2, '0');
+});
+&lt;/script&gt;</description></item><item><title/><link>https://endap.github.io/idx99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://endap.github.io/idx99/</guid><description>&lt;p&gt;&lt;strong&gt;archive&lt;/strong&gt; &amp;mdash; landing page history&lt;/p&gt;
+&lt;p&gt;&amp;lt; 13-nov-2026&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;12-nov-2026&lt;/code&gt; 
+&lt;a
 
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
+	
+	
+		href = "/26k31/"
 
+		
 
+	
 
-&lt;a class="category-card" href="https://endap.github.io/idx26/"&gt;
- &lt;div class="top-row"&gt;
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26k31&lt;/code&gt;
+	&lt;/span&gt; 
  
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
-&lt;svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 387.481 387.481" xml:space="preserve"&gt;
-&lt;g&gt;
-	&lt;g id="XMLID_7_"&gt;
-		&lt;g&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="314.734,261.389 320.944,301.239 267.194,311.989 283.324,252.859 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="320.944,301.239 286.904,365.729 267.194,311.989 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="299.444,163.279 314.734,261.389 283.324,252.859 252.864,233.159 270.773,186.569 			"/&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="292.184,116.719 299.444,163.279 270.773,186.569 236.734,165.079 233.154,131.039 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="282.664,55.609 292.184,116.719 233.154,131.039 256.444,84.449 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="267.194,311.989 286.904,365.729 188.364,387.229 125.664,303.029 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="283.324,252.859 267.194,311.989 125.664,303.029 138.204,98.789 224.194,57.579 
-				256.444,84.449 233.154,131.039 236.734,165.079 270.773,186.569 252.864,233.159 			"/&gt;
-			&lt;polygon style="fill:#E6E6E6;" points="277.944,25.329 282.664,55.609 256.444,84.449 224.194,57.579 			"/&gt;
-			&lt;polygon style="fill:#CCCCCC;" points="277.944,25.329 224.194,57.579 243.904,0.249 			"/&gt;
-			&lt;polygon style="fill:#F2F2F2;" points="243.904,0.249 224.194,57.579 138.204,98.789 174.034,18.169 			"/&gt;
-			&lt;polygon style="fill:#B3B3B3;" points="125.664,303.029 188.364,387.229 66.534,310.189 			"/&gt;
-			&lt;polygon style="fill:#B3B3B3;" points="174.034,18.169 138.204,98.789 86.244,91.619 			"/&gt;
-			&lt;polygon style="fill:#999999;" points="138.204,98.789 125.664,303.029 66.534,310.189 86.244,91.619 			"/&gt;
-		&lt;/g&gt;
-		&lt;g&gt;
-		&lt;/g&gt;
-	&lt;/g&gt;
-&lt;/g&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;10&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;endap.js&lt;/div&gt;
- &lt;/div&gt;
 &lt;/a&gt;
+ llm spec-driven-dev 1-div pattern simple-apps using vanilla-js&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;02-nov-2026&lt;/code&gt; 
+&lt;a
 
+	
+	
+		href = "/26k02/"
 
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
+		
 
+	
 
-
-&lt;a class="category-card" href="https://endap.github.io/idx24/"&gt;
- &lt;div class="top-row"&gt;
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26k02&lt;/code&gt;
+	&lt;/span&gt; 
  
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
-&lt;svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 246 471.1" enable-background="new 0 0 246 471.1" xml:space="preserve"&gt;
-&lt;g&gt;
-	&lt;path fill="#929000" d="M168.1,279.8c63.1-56-7-95.6-69.5-127.9C12.9,107.7,14,38.8,86.2,26.4c53.4-9.2,25.3,35.7,42.3,71
-		c8,16.5,76,7.5,73-2.6c-2.5-8.3-32.6-6.5-42.3-18.6c-6.5-8-1.6-25.4-4.9-37.6C138.2-20.2,35.8-7,9.8,45.9
-		c-31.2,63.4,17.6,100.1,68.4,128.9C131.2,204.9,156.7,227.5,168.1,279.8z"/&gt;
-	&lt;path fill="#EEA700" d="M106,228.8c-22.8,12.9-44.8,35-62.2,77C2.1,406.7,64.5,468.9,128,471.1l-0.4-0.1l0.4-2
-		c3.2-16,13.7-72.6,14.1-130.5c0.4-53.4-8-85.5-24.2-100.6C114.4,234.6,110.4,231.6,106,228.8z"/&gt;
-	&lt;path fill="#EEA700" d="M214.7,244.1c5.1,6.5-13,51.7-41.7,67.2c-0.8,66.9-18.7,137.3-25.3,159.4c43.1-3.3,88.5-35.4,96.7-106.7
-		C250.7,308.9,238.1,269.3,214.7,244.1z"/&gt;
-&lt;/g&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;22&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;seeds&lt;/div&gt;
- &lt;/div&gt;
 &lt;/a&gt;
+ indonesia population visualization using chart.js and fetched data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;31-oct-2026&lt;/code&gt; 
+&lt;a
 
+	
+	
+		href = "/26jc6/"
 
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
+		
 
+	
 
-
-&lt;a class="category-card" href="https://endap.github.io/idx27/"&gt;
- &lt;div class="top-row"&gt;
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26jc6&lt;/code&gt;
+	&lt;/span&gt; 
  
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512.016 512.016" xml:space="preserve"&gt;
-&lt;rect x="59.336" y="28.656" style="fill:#F2B851;" width="218.672" height="49.136"/&gt;
-&lt;path style="fill:#25B6D2;" d="M326.36,142.784V72.096H89.912c-11.008,0-19.952-8.992-19.952-20.048S78.92,32,89.912,32h225.744V0
-	H89.912C61.272,0,37.96,23.344,37.96,52.048v251.664c0,22.672,6.384,40.064,18.976,51.696c13.632,12.608,29.76,13.824,35.088,13.824
-	c0.992,0,1.616-0.048,1.76-0.064h91.856v-32"/&gt;
-&lt;rect x="209.288" y="169.504" style="fill:#F2B851;" width="218.672" height="49.136"/&gt;
-&lt;path style="fill:#25B6D2;" d="M286.856,98.72c-1.504-1.392-36.368-34.448-2.944-90.992l27.536,16.288
-	c-19.488,32.992-4.464,49.584-2.704,51.376L286.856,98.72z"/&gt;
-&lt;path style="fill:#E04F5F;" d="M453.944,214.864c-3.68-5.712-8.544-18.912,1.216-40.096h8.192v-32H326.36h-32h-56.752
-	c-28.64,0-51.952,23.344-51.952,52.048v142.368v32v77.312c0,22.672,6.384,40.064,18.992,51.696
-	c13.616,12.608,29.744,13.824,35.072,13.824c0.992,0,1.616-0.048,1.76-0.064h232.576V214.864H453.944z M237.608,214.864
-	c-11.008,0-19.952-8.992-19.952-20.048s8.96-20.048,19.952-20.048h183.216c-4.88,16.128-4.192,29.584-1.312,40.096L237.608,214.864
-	L237.608,214.864z"/&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;16&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;books&lt;/div&gt;
- &lt;/div&gt;
 &lt;/a&gt;
+ solving one-loop battery-resistor circuit with numerical method&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;21-oct-2026&lt;/code&gt; 
+&lt;a
 
+	
+	
+		href = "/26j96/"
 
-&lt;style&gt;
-.category-card {
- display: inline-flex;
- flex-direction: column;
- justify-content: space-between; 
- width: 80px;
- height: 80px;
- margin: 0.3em;
- border: 1px solid var(--muted-border);
- border-radius: 8px;
- padding: 4px;
- background: var(--box-bg);
- box-shadow: 0 1px 3px rgba(0,0,0,0.08);
- transition: transform 0.2s ease, box-shadow 0.2s ease;
- box-sizing: border-box;
- text-decoration: none;
- color: var(--fg);
-}
-.category-card:hover {
- transform: translateY(-2px);
- box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-.category-card .top-row {
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-shrink: 0;
-}
-.category-card .logo-container {
- width: 20px;
- height: 20px;
- display:flex;
- align-items:center;
- justify-content:center;
-}
-.category-card img, .category-card svg {
- max-width: 100%;
- max-height: 100%;
-}
-.category-card .count {
- font-size: 0.75em;
- color:#888;
-}
-.category-card .title-wrapper {
- flex: 1;
- display: flex;
- align-items: center; 
- justify-content: center;
- text-align: center;
- padding: 0 6px;
-}
-.category-card .title {
- font-weight: 600;
- font-size: 0.85em;
- line-height: 1.1;
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 3; 
- overflow: hidden;
- word-break: break-word;
-}
-&lt;/style&gt;
+		
 
+	
 
-
-&lt;a class="category-card" href="https://endap.github.io/idx29/"&gt;
- &lt;div class="top-row"&gt;
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26j96&lt;/code&gt;
+	&lt;/span&gt; 
  
- 
- 
- &lt;div class="logo-container"&gt;
- &lt;?xml version="1.0" encoding="utf-8"?&gt;
-
-&lt;!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --&gt;
-&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 370 391" xml:space="preserve"&gt;
-&lt;style type="text/css"&gt;
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FF4088;stroke:#C9177E;stroke-width:27;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-&lt;/style&gt;
-&lt;path class="st0" d="M207.5,22.4L321.9,89c13.5,7.9,21.9,22.4,21.9,38v136.4c0,17.3-9.3,33.3-24.5,41.8l-113.5,63.9
-	c-15.1,8.5-33.5,8.4-48.5-0.2L52.8,308.8c-16.4-9.5-26.6-27-26.6-45.9V133.4c0-19.1,9.9-36.8,26.1-46.8l102.8-63.5
-	C171.1,13.2,191.3,13,207.5,22.4z"/&gt;
-&lt;polygon class="st1" points="105.6,298.2 105.6,91 149,91 149,166.5 220.9,166.5 220.9,91 264.4,91 264.4,298.2 220.9,298.2 
-	220.9,207.6 149,207.6 149,298.2 "/&gt;
-&lt;/svg&gt;
- &lt;/div&gt;
- 
- &lt;div class="count"&gt;1&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="title-wrapper"&gt;
- &lt;div class="title"&gt;short-codes&lt;/div&gt;
- &lt;/div&gt;
 &lt;/a&gt;
+ visualizing uniform circular motion with parametric functions&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;21-aug-2026&lt;/code&gt; 
+&lt;a
 
+	
+	
+		href = "/26h55/"
 
-&lt;p&gt;&amp;lt; 24-oct-2026&lt;/p&gt;</description></item></channel></rss>
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26h55&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ upper and lower limits of first-order ode visualization&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10-aug-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26h31/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26h31&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ sum of n random dice formula and visualization&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;04-aug-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26h06/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26h06&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ generate n 3-digit hex colors&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;27-jun-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26f58/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26f58&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ 1-d cellular automata rules visualization&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;19-apr-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26d57/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26d57&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ displying tensorflow playground in-line with ifram&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;18-apr-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26d54/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26d54&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ text of sheet music display and play with abcjs&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;11-jan-2026&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/26a58/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;26a58&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ keypad emulation to draw line in cavas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;20-dec-2025&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/25l44/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;25l44&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ generate n random integers with rectangular distribution&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;10-dec-2025&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/25l23/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;25l23&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ free fall simulation and 1-d collision with various models&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;18-jun-2025&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/25f54/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;25f54&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ abm simulation for binary granular mixture angle of repose&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;22-may-2025&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/25e44/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;25e44&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ simple stats app using only vanilla js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;22-dec-2024&lt;/code&gt; 
+&lt;a
+
+	
+	
+		href = "/24l19/"
+
+		
+
+	
+
+	&gt;
+	
+	
+	&lt;span&gt;
+		&lt;code&gt;24l19&lt;/code&gt;
+	&lt;/span&gt; 
+ 
+&lt;/a&gt;
+ microcystin-lr molecule visualization using 3dmol.js library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt; 02-nov-2026&lt;/p&gt;</description></item></channel></rss>
