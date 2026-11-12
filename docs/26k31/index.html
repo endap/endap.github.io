@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1794440485'>
+<link rel=stylesheet href='/css/header.css?v=1794443188'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -28,7 +28,7 @@
 </header>
 <main>
 <head>
-<link rel=stylesheet href='/css/notes.css?v=1794440485'>
+<link rel=stylesheet href='/css/notes.css?v=1794443188'>
 </head>
 <div class=note-container>
 <h1 class=note-title>
@@ -43,7 +43,7 @@ sdd 1div-vanilla-js
 <div class=date-reading-time-edit>
 <time datetime="2026-11-12T04:33:58 07:00">12 Nov 2026</time>
 &#183;
-7 mins read
+12 mins read
 </div>
 </div>
 <div class=note-content>
@@ -892,14 +892,427 @@ https://chatgpt.com/c/6af4fa3b-e0a0-83ec-b047-f7a5fc47a650 <i class="fa fa-exter
   
 const cnt = document.getElementById("cnt4");
 
+// Parent container
+// Assumes cnt is an existing div element.
 
+cnt.innerHTML = "";
+
+// Canvas
+const canvas = document.createElement("canvas");
+canvas.width = 600;
+canvas.height = 400;
+canvas.style.display = "block";
+canvas.style.maxWidth = "100%";
+canvas.style.border = "1px solid #ccc";
+canvas.style.background = "#fafafa";
+
+const ctx = canvas.getContext("2d");
+
+// Toggle button
+const button = document.createElement("button");
+button.textContent = "start";
+button.style.marginTop = "10px";
+button.style.padding = "8px 24px";
+button.style.cursor = "pointer";
+
+// Add elements
+cnt.appendChild(canvas);
+cnt.appendChild(button);
+
+// Pendulum parameters
+const pivot = {
+    x: canvas.width / 2,
+    y: 50
+};
+
+const length = 220;
+const maxAngle = Math.PI / 4; // 45 degrees
+const gravity = 9.81;
+const omega = Math.sqrt(gravity / (length / 100));
+
+const bobRadius = 18;
+
+// Simulation state
+let running = false;
+let animationId = null;
+
+let startTime = null;
+let elapsedTime = 0;
+let periodCount = 0;
+
+let previousAngle = -maxAngle;
+let currentAngle = -maxAngle;
+
+let lastPeriodAngle = -maxAngle;
+let lastFrameTime = 0;
+
+// Pendulum animation
+function drawPendulum(angle, velocity) {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Pivot
+    ctx.beginPath();
+    ctx.arc(pivot.x, pivot.y, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "#333";
+    ctx.fill();
+
+    // Bob position
+    const bobX = pivot.x + length * Math.sin(angle);
+    const bobY = pivot.y + length * Math.cos(angle);
+
+    // String
+    ctx.beginPath();
+    ctx.moveTo(pivot.x, pivot.y);
+    ctx.lineTo(bobX, bobY);
+    ctx.strokeStyle = "#555";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Velocity-based color
+    const normalizedVelocity = Math.min(
+        1,
+        Math.abs(velocity) / (omega * maxAngle)
+    );
+
+    // Blue (0 velocity) -> Red (maximum velocity)
+    const red = Math.round(255 * normalizedVelocity);
+    const blue = Math.round(255 * (1 - normalizedVelocity));
+
+    const bobColor = `rgb(${red}, 40, ${blue})`;
+
+    // Bob
+    ctx.beginPath();
+    ctx.arc(bobX, bobY, bobRadius, 0, Math.PI * 2);
+    ctx.fillStyle = bobColor;
+    ctx.fill();
+
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Pivot label
+    ctx.fillStyle = "#333";
+    ctx.font = "14px Arial";
+    ctx.fillText("Pivot", pivot.x + 12, pivot.y - 8);
+
+    // Information
+    ctx.fillStyle = "#222";
+    ctx.font = "16px Arial";
+
+    ctx.fillText(
+        `Elapsed time: ${elapsedTime.toFixed(2)} s`,
+        15, 300
+    );
+
+    ctx.fillText(
+        `Completed periods: ${periodCount}`,
+        15, 325
+    );
+
+    ctx.fillText(
+        `Velocity: ${Math.abs(velocity).toFixed(2)} rad/s`,
+        15, 350
+    );
+}
+
+// Animation loop
+function animate(timestamp) {
+
+    if (!running) return;
+
+    if (startTime === null) {
+        startTime = timestamp;
+        lastFrameTime = timestamp;
+    }
+
+    const dt = (timestamp - startTime) / 1000;
+
+    // Small-angle harmonic oscillation
+    // Starts at the leftmost position.
+    currentAngle = maxAngle * Math.cos(omega * dt + Math.PI);
+
+    // Angular velocity
+    const velocity =
+        -maxAngle * omega * Math.sin(omega * dt + Math.PI);
+
+    // Elapsed time
+    elapsedTime = dt;
+
+    // Count complete periods
+    const currentPhase = omega * dt;
+
+    const newPeriodCount = Math.floor(
+        currentPhase / (2 * Math.PI)
+    );
+
+    periodCount = newPeriodCount;
+
+    drawPendulum(currentAngle, velocity);
+
+    lastFrameTime = timestamp;
+
+    animationId = requestAnimationFrame(animate);
+}
+
+// Start / Stop button
+button.addEventListener("click", () => {
+
+    if (!running) {
+
+        running = true;
+        button.textContent = "stop";
+
+        // Continue from the current elapsed time
+        startTime = null;
+
+        const savedElapsed = elapsedTime;
+
+        const originalAnimate = animate;
+
+        function resumeAnimation(timestamp) {
+
+            if (!running) return;
+
+            if (startTime === null) {
+                startTime = timestamp - savedElapsed * 1000;
+            }
+
+            originalAnimate(timestamp);
+        }
+
+        animationId = requestAnimationFrame(resumeAnimation);
+
+    } else {
+
+        running = false;
+        button.textContent = "start";
+
+        cancelAnimationFrame(animationId);
+    }
+});
+
+// Initial drawing
+drawPendulum(-maxAngle, 0);
 
 </script>
 <p>The code is as follows.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// Parent container
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// Assumes cnt is an existing div element.
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Canvas
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>canvas</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>400</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;block&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>maxWidth</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;100%&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>border</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1px solid #ccc&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#fafafa&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Toggle button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>button</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>marginTop</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;10px&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>padding</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;8px 24px&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>cursor</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;pointer&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Add elements
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>canvas</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>button</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Pendulum parameters
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pivot</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>length</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>220</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>maxAngle</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>4</span>; <span style=color:#75715e>// 45 degrees
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>gravity</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>9.81</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>omega</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>sqrt</span>(<span style=color:#a6e22e>gravity</span> <span style=color:#f92672>/</span> (<span style=color:#a6e22e>length</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>100</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bobRadius</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>18</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Simulation state
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>elapsedTime</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>periodCount</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>previousAngle</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>maxAngle</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>currentAngle</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>maxAngle</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>lastPeriodAngle</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>maxAngle</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>lastFrameTime</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Pendulum animation
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawPendulum</span>(<span style=color:#a6e22e>angle</span>, <span style=color:#a6e22e>velocity</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clearRect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Pivot
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>y</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>0</span>, Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#333&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fill</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Bob position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bobX</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>length</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>sin</span>(<span style=color:#a6e22e>angle</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bobY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>length</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>cos</span>(<span style=color:#a6e22e>angle</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// String
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>bobX</span>, <span style=color:#a6e22e>bobY</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#555&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Velocity-based color
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>normalizedVelocity</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>min</span>(
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>        Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>velocity</span>) <span style=color:#f92672>/</span> (<span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>maxAngle</span>)
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Blue (0 velocity) -&gt; Red (maximum velocity)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>red</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>round</span>(<span style=color:#ae81ff>255</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>normalizedVelocity</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>blue</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>round</span>(<span style=color:#ae81ff>255</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>normalizedVelocity</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bobColor</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`rgb(</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>red</span><span style=color:#e6db74>}</span><span style=color:#e6db74>, 40, </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>blue</span><span style=color:#e6db74>}</span><span style=color:#e6db74>)`</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Bob
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>arc</span>(<span style=color:#a6e22e>bobX</span>, <span style=color:#a6e22e>bobY</span>, <span style=color:#a6e22e>bobRadius</span>, <span style=color:#ae81ff>0</span>, Math.<span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>bobColor</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fill</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#333&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Pivot label
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#333&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;14px Arial&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(<span style=color:#e6db74>&#34;Pivot&#34;</span>, <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>12</span>, <span style=color:#a6e22e>pivot</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Information
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#222&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;16px Arial&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>`Elapsed time: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>elapsedTime</span>.<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>2</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74> s`</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>`Completed periods: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>periodCount</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>325</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>`Velocity: </span><span style=color:#e6db74>${</span>Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>velocity</span>).<span style=color:#a6e22e>toFixed</span>(<span style=color:#ae81ff>2</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74> rad/s`</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>350</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Animation loop
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>animate</span>(<span style=color:#a6e22e>timestamp</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>startTime</span> <span style=color:#f92672>===</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>timestamp</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>lastFrameTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>timestamp</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dt</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>timestamp</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>startTime</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>1000</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Small-angle harmonic oscillation
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// Starts at the leftmost position.
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>currentAngle</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>maxAngle</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>cos</span>(<span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>dt</span> <span style=color:#f92672>+</span> Math.<span style=color:#a6e22e>PI</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Angular velocity
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>velocity</span> <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>-</span><span style=color:#a6e22e>maxAngle</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>sin</span>(<span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>dt</span> <span style=color:#f92672>+</span> Math.<span style=color:#a6e22e>PI</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Elapsed time
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>elapsedTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>dt</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Count complete periods
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>currentPhase</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>omega</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>dt</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>newPeriodCount</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>currentPhase</span> <span style=color:#f92672>/</span> (<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> Math.<span style=color:#a6e22e>PI</span>)
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>periodCount</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>newPeriodCount</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>drawPendulum</span>(<span style=color:#a6e22e>currentAngle</span>, <span style=color:#a6e22e>velocity</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>lastFrameTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>timestamp</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>requestAnimationFrame</span>(<span style=color:#a6e22e>animate</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Start / Stop button
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;stop&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Continue from the current elapsed time
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>savedElapsed</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>elapsedTime</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>originalAnimate</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>animate</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>resumeAnimation</span>(<span style=color:#a6e22e>timestamp</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>running</span>) <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>startTime</span> <span style=color:#f92672>===</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>startTime</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>timestamp</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>savedElapsed</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>originalAnimate</span>(<span style=color:#a6e22e>timestamp</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>animationId</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>requestAnimationFrame</span>(<span style=color:#a6e22e>resumeAnimation</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>running</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>button</span>.<span style=color:#a6e22e>textContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;start&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>cancelAnimationFrame</span>(<span style=color:#a6e22e>animationId</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Initial drawing
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>drawPendulum</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>maxAngle</span>, <span style=color:#ae81ff>0</span>);
+</span></span></code></pre></div><p>The prompt is as follows.</p>
 <figure>
 <blockquote>
-<p>url [20261112].</p>
+<p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a canvas and a button elements. The button is a toggle button with text &ldquo;start&rdquo; and &ldquo;stop&rdquo; which simulate a swinging pendulum starts from and ends (can be far right or far left, but still counts for small angle oscillation). As the button with text &ldquo;start&rdquo; clicked the pendulum swings and the text is changed to &ldquo;stop&rdquo;. When the &ldquo;stop&rdquo; button clicked, then it stops the pendulum from swinging and change its text to &ldquo;start&rdquo;. The pendulum bob has shape of circle. Its color represent the velocity. When it is at its highest velocity at the lowest point it becomes red, but when it is at its lowest velocity (which is zero) at the highest position (at far right or left) it becomes blue. At also at the canvas text showing elapsed time and count of period travelled by the pendulum.</p>
+</blockquote>
+</figure><figure>
+<blockquote>
+<p>url
+<a href=https://chatgpt.com/c/6af50174-6508-83ec-857a-144909e21371 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/c/6af50174-6508-83ec-857a-144909e21371 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].</p>
 </blockquote>
 </figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
 <h2 id=example-5>example-5</h2>
@@ -909,28 +1322,339 @@ const cnt = document.getElementById("cnt4");
   
 const cnt = document.getElementById("cnt5");
 
+function createWaterApp(cnt) {
+    // Container styling
+    cnt.style.display = "flex";
+    cnt.style.alignItems = "center";
+    cnt.style.justifyContent = "center";
+    cnt.style.gap = "20px";
+    cnt.style.padding = "20px";
+    cnt.style.background = "#f1f5f9";
+    cnt.style.borderRadius = "12px";
 
+    // Canvas
+    const canvas = document.createElement("canvas");
+    canvas.width = 400;
+    canvas.height = 350;
+    canvas.style.maxWidth = "100%";
+
+    const ctx = canvas.getContext("2d");
+
+    // Vertical range slider
+    const slider = document.createElement("input");
+    slider.type = "range";
+    slider.min = "10";
+    slider.max = "90";
+    slider.value = "50";
+
+    slider.style.width = "180px";
+    slider.style.height = "20px";
+    slider.style.transform = "rotate(-90deg)";
+    slider.style.cursor = "pointer";
+    slider.style.accentColor = "#0284c7";
+
+    cnt.appendChild(canvas);
+    cnt.appendChild(slider);
+
+    // Water container dimensions
+    const container = {
+        x: 70,
+        y: 40,
+        width: 260,
+        height: 270
+    };
+
+    // Floating box dimensions
+    const box = {
+        width: 65,
+        height: 45
+    };
+
+    function draw() {
+        const waterLevel = Number(slider.value) / 100;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const { x, y, width, height } = container;
+
+        // Calculate water surface position
+        const waterY = y + height * (1 - waterLevel);
+
+        // Draw water
+        ctx.save();
+
+        ctx.beginPath();
+        ctx.rect(x, y, width, height);
+        ctx.clip();
+
+        // Water body
+        ctx.fillStyle = "#38bdf8";
+        ctx.fillRect(
+            x,
+            waterY,
+            width,
+            y + height - waterY
+        );
+
+        // Water surface
+        ctx.beginPath();
+        ctx.moveTo(x, waterY);
+        ctx.lineTo(x + width, waterY);
+        ctx.strokeStyle = "#0284c7";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Water surface highlight
+        ctx.beginPath();
+        ctx.moveTo(x + 10, waterY + 8);
+        ctx.lineTo(x + width - 10, waterY + 8);
+        ctx.strokeStyle = "rgba(255,255,255,0.35)";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.restore();
+
+        // Draw container outline
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x, y + height);
+        ctx.lineTo(x + width, y + height);
+        ctx.lineTo(x + width, y);
+        ctx.strokeStyle = "#334155";
+        ctx.lineWidth = 5;
+        ctx.lineJoin = "round";
+        ctx.stroke();
+
+        // Draw floating box
+        const boxX = x + (width - box.width) / 2;
+        const boxY = waterY - box.height;
+
+        ctx.fillStyle = "#f59e0b";
+        ctx.fillRect(
+            boxX,
+            boxY,
+            box.width,
+            box.height
+        );
+
+        // Box outline
+        ctx.strokeStyle = "#92400e";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(
+            boxX,
+            boxY,
+            box.width,
+            box.height
+        );
+
+        // Box label
+        ctx.fillStyle = "#451a03";
+        ctx.font = "bold 13px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        ctx.fillText(
+            "BOX",
+            boxX + box.width / 2,
+            boxY + box.height / 2
+        );
+
+        // Water level label
+        ctx.fillStyle = "#334155";
+        ctx.font = "14px Arial";
+        ctx.textAlign = "center";
+
+        ctx.fillText(
+            `Water Level: ${slider.value}%`,
+            canvas.width / 2,
+            330
+        );
+    }
+
+    // Update canvas whenever slider changes
+    slider.addEventListener("input", draw);
+
+    // Initial rendering
+    draw();
+}
+
+// Initialize app
+createWaterApp(cnt);
 
 </script>
 <p>The code is as follows.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createWaterApp</span>(<span style=color:#a6e22e>cnt</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Container styling
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;flex&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>alignItems</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;center&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>justifyContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;center&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>gap</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>padding</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>background</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#f1f5f9&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>borderRadius</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;12px&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Canvas
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>canvas</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;canvas&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>400</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>350</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>maxWidth</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;100%&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ctx</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>getContext</span>(<span style=color:#e6db74>&#34;2d&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Vertical range slider
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>slider</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;input&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>type</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;range&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>min</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;10&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>max</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;90&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;50&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;180px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;20px&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>transform</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;rotate(-90deg)&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>cursor</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;pointer&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>accentColor</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#0284c7&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>canvas</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cnt</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>slider</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Water container dimensions
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>container</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>70</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>40</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>260</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>270</span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Floating box dimensions
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>box</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>65</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>45</span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>waterLevel</span> <span style=color:#f92672>=</span> Number(<span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clearRect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>height</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>container</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Calculate water surface position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>waterY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>waterLevel</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Draw water
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>save</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>rect</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>clip</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Water body
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#38bdf8&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillRect</span>(
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>x</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>waterY</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>width</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>waterY</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Water surface
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>waterY</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>waterY</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#0284c7&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Water surface highlight
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>waterY</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>width</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>waterY</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;rgba(255,255,255,0.35)&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>restore</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Draw container outline
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>beginPath</span>();
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>moveTo</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>y</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineTo</span>(<span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#334155&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineJoin</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;round&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>stroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Draw floating box
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>boxX</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>+</span> (<span style=color:#a6e22e>width</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>width</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>boxY</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>waterY</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>height</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#f59e0b&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillRect</span>(
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxX</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxY</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>width</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>height</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Box outline
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#92400e&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>lineWidth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>strokeRect</span>(
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxX</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxY</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>width</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>height</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Box label
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#451a03&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bold 13px Arial&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>textAlign</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;center&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>textBaseline</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;middle&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;BOX&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxX</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>boxY</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>box</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Water level label
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillStyle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#334155&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>font</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;14px Arial&#34;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>textAlign</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;center&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>fillText</span>(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`Water Level: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span><span style=color:#e6db74>}</span><span style=color:#e6db74>%`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>width</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>330</span>
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Update canvas whenever slider changes
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;input&#34;</span>, <span style=color:#a6e22e>draw</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Initial rendering
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>draw</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Initialize app
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>createWaterApp</span>(<span style=color:#a6e22e>cnt</span>);
+</span></span></code></pre></div><p>The prompt is as follows.</p>
 <figure>
 <blockquote>
-<p>url [20261112].</p>
+<p>Create a simple app using Vanilla JS only. Its parent is a div element with variable name <code>cnt</code>. It should have a canvas and a range slider elements. The range slider is vertical and its function is to adjust water level drawn on canvas element. There is 2-d water container drawn in canvas whose water level is controlled by the vertical range slider. A box is floating near the water surface. As the slider change the water level, the box follow the water surface height.</p>
 </blockquote>
-</figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
-<h2 id=example-x>example-x</h2>
-<p>The result is as follows.</p>
-<div id=cntx></div>
-<script type=module>
-  
-
-</script>
-<p>The code is as follows.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js></code></pre></div><p>The prompt is as follows.</p>
-<figure>
+</figure><figure>
 <blockquote>
-<p>url [20261112].</p>
+<p>url
+<a href=https://chatgpt.com/c/6af50602-4650-83ec-8c10-1f5c29685843 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/c/6af50602-4650-83ec-8c10-1f5c29685843 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261112].</p>
 </blockquote>
 </figure><p>Notice that the code is not complete. Figure out how to add it to a HTML page and make it works.</p>
 <h2 id=refs>refs</h2>
@@ -970,7 +1694,7 @@ https://www.ibm.com/think/topics/spec-driven-development <i class="fa fa-externa
 </div>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1794440485'>
+<link rel=stylesheet href='/css/footer.css?v=1794443188'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
