@@ -1,0 +1,163 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>half-life with forward fd | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794552756'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1794552756'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+half-life with forward fd
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2024-08-30T21:47:00 07:00">30 Aug 2024</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>url
+<a href=https://dudung.github.io/bug2/2118/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://dudung.github.io/bug2/2118/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261113].</p>
+<p>Forward finite difference formula to obtain consistent half-life</p>
+<p>Half-life refers to time required for a given quantity to decrease from its initial value to half <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. This concept plays important role in understanding the decay or radioactive substances in nuclear physics and it is also used by scientists to measure age of ancient artifacts through carbon dating <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. In a first order reaction the half-life unrestrained by the concentration of the reactant, but the half-lives of reactions with other orders hang on the concentrations of the reactants at the same time <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. While solving the equation in discrete form, e.g. using Finite Difference (FD) method <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>, chosen time step $\Delta t$ will influence the quantity, which does not match the half-time. The indenpendence of half-life to time step is given here.</p>
+<p>A differential equation of decaying quantity $N$ is</p>
+<p>$$\tag{1}
+\frac{dN}{dt} = - \lambda N,
+$$</p>
+<p>where $\lambda$ stands for decay constant and $t$ for time. Using following Forward FD</p>
+<p>$$\tag{2}
+\frac{dN}{dt} \approx \frac{N(t + \Delta t) - N(t)}{\Delta t},
+$$</p>
+<p>Eqn (2) can be written as</p>
+<p>$$
+\frac{N(t + \Delta t) - N(t)}{\Delta t} = -\lambda N(t),
+$$</p>
+<p>that would be arranged further into</p>
+<p>$$\tag{3}
+N(t + \Delta t) = (1 - \lambda \Delta t) N(t),
+$$</p>
+<p>which is the iterable formula to find the quantity $N$ at any time $t$. Then relation between quantity $N$ at time $t$ and $t + \Delta t$ is given by</p>
+<p>$$
+\frac{N(t + \Delta t)}{N(t)} = (1 - \lambda \Delta t),
+$$</p>
+<p>which can be generalized as</p>
+<p>$$
+\frac{N(t + n \Delta t)}{N(t)} = (1 - \lambda \Delta t)^n.
+$$</p>
+<p>Suppose that $t = 0$ and $n\Delta t = T_\frac12$, the half-life, then</p>
+<p>$$
+\tfrac12 = (1 - \lambda \Delta t)^n.
+$$</p>
+<p>Further rearrangement of the terms will give</p>
+<p>$$
+\lambda = \frac{\sqrt[n]{2} - 1}{\Delta t \sqrt[n]{2}}.
+$$</p>
+<p>The
+<a>
+<span>
+half-life and decay constant <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+relation</p>
+<p>$$
+T_\frac12 = \frac{\ln 2}{\lambda}
+$$</p>
+<p>will turn into</p>
+<p>$$\tag{4}
+T_\frac12 = \left( \frac{\sqrt[n]{2} \ln 2}{\sqrt[n]{2} - 1} \right) \Delta t.
+$$</p>
+<p>Eqn (4) is showing the dependence of half-time $T_\frac12$ to time step $\Delta t$.</p>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>Jyoti Bashyal, &ldquo;Half-life Formula: Derivation, Application, Examples&rdquo;, Science Info, 13 Jun 2023, url
+<a href=https://scienceinfo.com/half-life-formula-derivation/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://scienceinfo.com/half-life-formula-derivation/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20240830].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Yara Simón, &ldquo;Half-Life Formula: Components and Applications&rdquo;, HowStuffWorks, 14 Feb 2024, url
+<a href=https://science.howstuffworks.com/half-life-formula.htm target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://science.howstuffworks.com/half-life-formula.htm <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20240830].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>Turito Team USA, &ldquo;Half-Life : Definition, Formula, Derivation (Zero & First-Order)&rdquo;, Turito, 5 Sep 2022, url
+<a href=https://www.turito.com/blog/chemistry/half-life target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.turito.com/blog/chemistry/half-life <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20240830].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Alice C. Yew, &ldquo;Numerical differentiation: finite differences&rdquo;, Applied Mathematics, Brown University, 22 Apr 2011, url
+<a href=https://www.dam.brown.edu/people/alcyew/handouts/numdiff.pdf target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.dam.brown.edu/people/alcyew/handouts/numdiff.pdf <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20240830].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794552756'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>

@@ -8,7 +8,7 @@
 <link rel=apple-touch-icon href=/icons/icon-192.png>
 <link rel=manifest href=/manifest.json>
 <meta name=theme-color content="#1a1a1a">
-<title>layers with nodes | endap</title>
+<title>rmse function matrix | endap</title>
 <link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
 <link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
 <script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1794522271'>
+<link rel=stylesheet href='/css/header.css?v=1794552754'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -27,153 +27,137 @@
 </nav>
 </header>
 <main>
-<h1>layers with nodes</h1>
-<time datetime=2023-12-12T21:04:00+08:00>December 12, 2023</time>
-<h2 id=intro>intro</h2>
-<p>We can use Mermaid, a simple Markdown-like script language for generating charts from text via JavaScript (Mallin, 2018), to draw layers with nodes, where the diagram element used is circle and the feature of subgraph. But this would not be the main purpose of Mermaid, but we can use for it.</p>
-<h2 id=model>model</h2>
-<ul>
-<li>From right to left it is a <code>2 &lt;-- 3 &lt;-- 4 &lt;-- 3</code> architecture.
-<ul>
-<li>Note: Usual notation is from left to right as <code>3-4-3-2</code>.</li>
-</ul>
-</li>
-</ul>
-<pre class=mermaid>
-  
-flowchart RL
-  i1--"w11"-->h1;i2--"w12"-->h1;i3--"w13"-->h1;
-  i1--"w21"-->h2;i2--"w22"-->h2;i3--"w23"-->h2;
-  i1--"w31"-->h3;i2--"w32"-->h3;i3--"w33"-->h3;
-  i1--"w41"-->h4;i2--"w42"-->h4;i3--"w43"-->h4;
-  
-  h1--"v11"-->g1;h2--"v12"-->g1;h3--"v13"-->g1;h4--"v14"-->g1;
-  h1--"v21"-->g2;h2--"v22"-->g2;h3--"v23"-->g2;h4--"v24"-->g2;
-  h1--"v31"-->g3;h2--"v32"-->g3;h3--"v33"-->g3;h4--"v34"-->g3;
-  
-  g1--"u11"-->o1;g2--"u12"-->o1;g3--"u13"-->o1;
-  g1--"u21"-->o2;g2--"u22"-->o2;g3--"u23"-->o2;
-  
-  subgraph I
-    i1(("1"))
-    i2(("2"))
-    i3(("3"));
-  end
-  
-  subgraph H
-    h1(("1"))
-    h2(("2"))
-    h3(("3"))
-    h4(("4"));
-  end
-  
-  subgraph G
-    g1(("1"))
-    g2(("2"))
-    g3(("3"))
-  end
-  
-  subgraph O
-    o1(("1"))
-    o2(("2"))
-  end
-  
-  classDef nodes fill:transparent, color:inherit
-  classDef layers fill:none, color:inherit
-  
-  class i1,i2,i3 nodes
-  class h1,h2,h3,h4 nodes
-  class g1,g2,g3 nodes
-  class o1,o2 nodes
-  class I,H,G,O layers
-  
-  linkStyle default stroke:#8a8
-
-</pre>
-<h2 id=mermaid>mermaid</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e><span class=mermaid-keyword>flowchart</span></span> <span style=color:#a6e22e><span class=mermaid-value>RL</span></span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>i1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w11&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h1</span>;<span style=color:#a6e22e>i2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w12&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h1</span>;<span style=color:#a6e22e>i3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w13&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h1</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>i1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w21&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h2</span>;<span style=color:#a6e22e>i2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w22&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h2</span>;<span style=color:#a6e22e>i3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w23&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h2</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>i1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w31&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h3</span>;<span style=color:#a6e22e>i2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w32&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h3</span>;<span style=color:#a6e22e>i3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w33&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h3</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>i1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w41&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h4</span>;<span style=color:#a6e22e>i2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w42&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h4</span>;<span style=color:#a6e22e>i3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;w43&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>h4</span>;
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>h1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v11&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g1</span>;<span style=color:#a6e22e>h2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v12&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g1</span>;<span style=color:#a6e22e>h3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v13&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g1</span>;<span style=color:#a6e22e>h4</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v14&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g1</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>h1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v21&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g2</span>;<span style=color:#a6e22e>h2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v22&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g2</span>;<span style=color:#a6e22e>h3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v23&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g2</span>;<span style=color:#a6e22e>h4</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v24&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g2</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>h1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v31&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g3</span>;<span style=color:#a6e22e>h2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v32&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g3</span>;<span style=color:#a6e22e>h3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v33&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g3</span>;<span style=color:#a6e22e>h4</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;v34&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>g3</span>;
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>g1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u11&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o1</span>;<span style=color:#a6e22e>g2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u12&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o1</span>;<span style=color:#a6e22e>g3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u13&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o1</span>;
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>g1</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u21&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o2</span>;<span style=color:#a6e22e>g2</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u22&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o2</span>;<span style=color:#a6e22e>g3</span><span style=color:#f92672>--</span><span style=color:#e6db74>&#34;u23&#34;</span><span style=color:#f92672>--&gt;</span><span style=color:#a6e22e>o2</span>;
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#a6e22e>I</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>i1</span>((<span style=color:#e6db74>&#34;1&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>i2</span>((<span style=color:#e6db74>&#34;2&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>i3</span>((<span style=color:#e6db74>&#34;3&#34;</span>));
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#a6e22e>H</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>h1</span>((<span style=color:#e6db74>&#34;1&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>h2</span>((<span style=color:#e6db74>&#34;2&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>h3</span>((<span style=color:#e6db74>&#34;3&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>h4</span>((<span style=color:#e6db74>&#34;4&#34;</span>));
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#a6e22e>G</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>g1</span>((<span style=color:#e6db74>&#34;1&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>g2</span>((<span style=color:#e6db74>&#34;2&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>g3</span>((<span style=color:#e6db74>&#34;3&#34;</span>))
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>subgraph</span></span> <span style=color:#a6e22e>O</span>
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o1</span>((<span style=color:#e6db74>&#34;1&#34;</span>))
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>o2</span>((<span style=color:#e6db74>&#34;2&#34;</span>))
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>end</span></span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>classDef</span></span> <span style=color:#a6e22e>nodes</span> <span style=color:#a6e22e>fill</span><span style=color:#f92672>:</span><span style=color:#a6e22e>transparent</span>, <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span><span style=color:#a6e22e>inherit</span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e><span class=mermaid-keyword>classDef</span></span> <span style=color:#a6e22e>layers</span> <span style=color:#a6e22e>fill</span><span style=color:#f92672>:</span><span style=color:#a6e22e>none</span>, <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span><span style=color:#a6e22e>inherit</span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>i1</span>,<span style=color:#a6e22e>i2</span>,<span style=color:#a6e22e>i3</span> <span style=color:#a6e22e>nodes</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>h1</span>,<span style=color:#a6e22e>h2</span>,<span style=color:#a6e22e>h3</span>,<span style=color:#a6e22e>h4</span> <span style=color:#a6e22e>nodes</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>g1</span>,<span style=color:#a6e22e>g2</span>,<span style=color:#a6e22e>g3</span> <span style=color:#a6e22e>nodes</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>o1</span>,<span style=color:#a6e22e>o2</span> <span style=color:#a6e22e>nodes</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>I</span>,<span style=color:#a6e22e>H</span>,<span style=color:#a6e22e>G</span>,<span style=color:#a6e22e>O</span> <span style=color:#a6e22e>layers</span>
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>linkStyle</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>stroke</span><span style=color:#f92672>:</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#ae81ff>8</span><span style=color:#a6e22e>a8</span></span></span></code></pre></div><style>.chroma.mermaid-code{background:#1e1e2f;color:#ddd;padding:1rem;border-radius:6px;overflow-x:auto;font-family:fira code,monospace;line-height:1.45}.chroma.mermaid-code .s{color:#a5d6ff}.chroma.mermaid-code .m{color:#ffa657}.chroma.mermaid-code .n{color:#8ae9c1}.chroma.mermaid-code .c{color:#7f7f7f;font-style:italic}.mermaid-keyword{color:#79c6ff;font-weight:700}.mermaid-value{color:#fa7bfa;font-weight:700}</style>
-<h2 id=notes>notes</h2>
-<ul>
-<li>Input, two hidden, and output layers, each is put in <code>subgraph</code>-<code>end</code> block.</li>
-<li>Nodes are named without name of layers containing them for simplicity.</li>
-<li>Weights <code>w</code>, <code>v</code>, <code>u</code> maps nodes and indicated with their sub-index.
-<ul>
-<li>e.g. <code>G2 &lt;-- w23 -- H3</code>, where this means better from right to left.</li>
-</ul>
-</li>
-<li>CSS class is defined using <code>classDef</code> and later used using <code>class</code>.</li>
-<li>For link or line connecting elements it style is modified via <code>linkStyle</code>.</li>
-</ul>
-<h2 id=refs>refs</h2>
-<ul>
-<li>Wallin M (2018) &ldquo;Generating documentation as code with mermaid and PlantUML&rdquo;, Rule of Tech, url
-<a href=https://ruleoftech.com/2018/generating-documentation-as-code-with-mermaid-and-plantuml target=_blank rel="nofollow noopener noreferrer">
-<span>
-https://ruleoftech.com/2018/generating-documentation-as-code-with-mermaid-and-plantuml <i class="fa fa-external-link" style=font-size:14px></i>
-</span>
-</a>
-.</li>
-</ul>
+<h1>rmse function matrix</h1>
+<time datetime=2023-07-26T11:35:00+07:00>July 26, 2023</time>
+<p>Kesalahan kuadrat rata-rata diakarkan, yang dalam bahasa Inggrisnya root mean square error atau RMSE dapat direpresentasikan dalam bentuk fungsi dan matriks. Di sini hanya fungsi linier yang diilustrasikan.</p>
+<h1 id=data>data</h1>
+<p>Terdapat pasangan nilai $(x_i, y_i)$ dengan $i = 1, 2, \dots, N$, di mana $N$ adalah jumlah data.</p>
+<p>Tabel 1. Contoh data dengan $N = 8$.</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>$i$</th>
+<th style=text-align:center>1</th>
+<th style=text-align:center>2</th>
+<th style=text-align:center>3</th>
+<th style=text-align:center>4</th>
+<th style=text-align:center>5</th>
+<th style=text-align:center>6</th>
+<th style=text-align:center>7</th>
+<th style=text-align:center>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>$x_i$</td>
+<td style=text-align:center>2.0</td>
+<td style=text-align:center>3.0</td>
+<td style=text-align:center>4.0</td>
+<td style=text-align:center>5.0</td>
+<td style=text-align:center>6.0</td>
+<td style=text-align:center>7.0</td>
+<td style=text-align:center>8.0</td>
+<td style=text-align:center>9.0</td>
+</tr>
+<tr>
+<td style=text-align:center>$y_i$</td>
+<td style=text-align:center>7.0</td>
+<td style=text-align:center>8.5</td>
+<td style=text-align:center>11.0</td>
+<td style=text-align:center>13.5</td>
+<td style=text-align:center>15.0</td>
+<td style=text-align:center>16.5</td>
+<td style=text-align:center>19.5</td>
+<td style=text-align:center>21.0</td>
+</tr>
+</tbody>
+</table>
+<h1 id=model>model</h1>
+<p>Suatu model linier yang memberikan hubungan antara variabel bebas $x_i$ dan variabel terikat $y_i$ memiliki bentuk</p>
+<p>$$\tag{1}
+y = c_0 + c_1 x,
+$$</p>
+<p>dengan dimensi dari $c_0$ dan $c_1$, berturut-turut, adalah sama dengan dimensi dari $y$ dan $y/x$. Dengan menggunakan suatu nilai observasi variabel bebas $x_i$ dapat diperoleh</p>
+<p>$$\tag{2}
+\hat{y}_i = c_0 + c_1 x_i,
+$$</p>
+<p>yang merupakan hasil prediksi menggunakan model.</p>
+<h2 id=error>error</h2>
+<p>Kesalahan diperoleh dari selisih antara nilai hasil perhitungan menggunakan model $\hat{y}_i$ dengan nilai observasi variabel terikat $y_i$ dalam bentuk</p>
+<p>$$\tag{3}
+\varepsilon_i = y_i - \hat{y}_i,
+$$</p>
+<p>sehingga kesalahan totalnya menjadi</p>
+<p>$$\tag{4}
+\varepsilon = \sum_{i = 1}^N \varepsilon_i.
+$$</p>
+<p>Persamaan (3) dapat menyebabkan hasil dari Persamaan (4) bernilai kecil karena terjadinya kompensasi kesalahan positif dan negatif. Untuk mencegah hal ini, Persamaan (3) diubah menjadi</p>
+<p>$$\tag{5}
+\varepsilon_i^2 = (y_i - \hat{y}_i)^2.
+$$</p>
+<p>Agar nilai kesalahan kuadrat ini agak bebas dari jumlah data, dapat dirumuskan</p>
+<p>$$\tag{6}
+&lt;\varepsilon^2> = \frac{1}{N} \sum_{i = 1}^N (y_i - \hat{y}_i)^2.
+$$</p>
+<p>yang merupakan rata-rata kuadrat kesalahan. Selanjutnya, untuk mendapatkan rumusan besaran kesalahan yang berdimensi sama dengan variabel yang diukur dilakukan pencarian akar dari Persamaan (6)</p>
+<p>$$\tag{7}
+\left( &lt;\varepsilon^2> \right)^{\frac12} = \left[ \frac{1}{N} \sum_{i = 1}^N (y_i - \hat{y}_i)^2 \right]^{\frac12}
+$$</p>
+<p>yang dikenal sebagai RMSE. Dengan menggunakan Persamaan (2) dapat diperoleh</p>
+<p>$$\tag{8}
+\left( &lt;\varepsilon^2> \right)^{\frac12} = \left[ \frac{1}{N} \sum_{i = 1}^N (y_i - c_0 - c_1 x_i)^2 \right]^{\frac12}
+$$</p>
+<p>yang merupakan bentuk khusus dari Persamaan (7), berlaku untuk model linier.</p>
+<h1 id=matrix-form>matrix form</h1>
+<p>Perumusan RMSE dalam Persamaan (8) dapat dikatakan merupakan perumusan dalam bentuk fungsi dengan adanya model pada Persamaan (1). Dalam pendekatan model yang lain, misalnya menggunakan metode elemen hingga, finite element method atau FEM, diperoleh nilai pada node-node yang umumnya disimpan dalam bentuk matriks. Bila terdapat matriks kolom</p>
+<p>$$\tag{9}
+\mathbf{Y} = \left[
+\begin{array}{c}
+y_1 \newline
+y_2 \newline
+\dots \newline
+y_{N-1} \newline
+y_N
+\end{array}
+\right]
+$$</p>
+<p>untuk nilai observasi dan</p>
+<p>$$\tag{10}
+\mathbf{\hat{Y}} = \left[
+\begin{array}{c}
+\hat{y}_1 \newline
+\hat{y}_2 \newline
+\dots \newline
+\hat{y} _{N-1} \newline
+\hat{y} _N
+\end{array}
+\right]
+$$</p>
+<p>untuk nilai hasil pemodelan, maka</p>
+<p>$$\tag{11}
+\mathbf{Z} = \mathbf{\hat{Y}} - \mathbf{Y}
+$$</p>
+<p>merupakan matriks yang menggambarkan kesalahan. Dengan menggunakan Persamaan (11) dapat dituliskan</p>
+<p>$$\tag{12}
+\left( &lt;\varepsilon^2> \right)^{\frac12} = \left[ \frac{1}{N} \sum_{i = 1}^N \mathbf{Z}^T \cdot \mathbf{Z} \right]^{\frac12}
+$$</p>
+<p>yang tak lain adalah bentuk matrix untuk Persamaan (7).</p>
+<h1 id=exercises>exercises</h1>
+<ol>
+<li>Gambarkan titik-titik data dari Tabel 1 dalam suatu grafik $y$ terhadap $x$.</li>
+<li>Buat suatu kurva linier terbaik yang melewati hampir semuat titik-titik data.</li>
+<li>Ilustrasikan Persamaan (3) dalam grafik yang telah dibuat dan tunjukkan bahwa Persamaan (4) dapat memberikan total nilai kecil walau masing-masing nilai mutlak per data dalam Persamaan (3) memiliki nilai besar.</li>
+<li>Jelaskan bagaimana perumusan dalam Persamaan (7) dapat mengatasi permasalahan dalam Persamaan (3) dan (4).</li>
+<li>Persamaan mana saja yang berlaku lebih umum, misalnya tidak bergantung model yang digunakan, dari Persamaan (7), (8), dan (12)? Jelaskan alasannya.</li>
+</ol>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1794522271'>
+<link rel=stylesheet href='/css/footer.css?v=1794552754'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
 Unless stated otherwise in a note.
 </p>
 </footer>
-<script src=/js/mermaid/12.3.0/mermaid.min.js></script>
-<script>const dark=window.matchMedia("(prefers-color-scheme: dark)").matches;mermaid.initialize({startOnLoad:!1,theme:dark?"dark":"default",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px",edgeLabelBackground:"transparent",lineColor:dark?"#aaa":"#333"},themeCSS:`
-        .edgeLabel, .edgeLabel p, .labelBkg { background-color: var(--bg) !important; }
-        .edgeLabel rect { fill: transparent !important; opacity: 0 !important; }
-        .flowchart-link, .edge-thickness-normal { stroke-width: 1px !important; }
-      `}),document.addEventListener("DOMContentLoaded",async()=>{await mermaid.run({querySelector:".mermaid"})})</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel=apple-touch-icon href=/icons/icon-192.png>
 <link rel=manifest href=/manifest.json>
 <meta name=theme-color content="#1a1a1a">
-<title>bisection method | endap</title>
+<title>uniform linear motion | endap</title>
 <link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
 <link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
 <script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-<link rel=stylesheet href='/css/header.css?v=1794522271'>
+<link rel=stylesheet href='/css/header.css?v=1794552754'>
 <h1>endap</h1>
 <nav>
 <ul>
@@ -27,261 +27,157 @@
 </nav>
 </header>
 <main>
-<h1>bisection method</h1>
-<time datetime=2023-12-12T09:07:00+08:00>December 12, 2023</time>
-<h2 id=intro>intro</h2>
-<p>Bisection method pops up quite often when we talk about root finding methods due its very easy and simple algorithm to implement (Luna, 2020). This method uses the intermediate value theorem iteratively to find roots (Kong et al., 2020). It is also known as the interval halving method, where it provides a systematic approach to finding the root of a function within a given interval (Collimator, 2023). A brief about this method and JavaScript code are given here.</p>
-<h2 id=root>root</h2>
-<ul>
-<li>Root $x = r_n$ of a function $f(x)$ is when it makes
-$$\tag{1}
-f(r_n) = 0.
-$$</li>
-<li>It can also be a root when
-$$\tag{2}
-g(r_n) = h(r_n),
-$$
-since it can be defined that
-$$\tag{3}
-f(x) = g(x) - h(x).
-$$</li>
-</ul>
-<h2 id=range>range</h2>
-<ul>
-<li>A single root $x = r_n$ exists for $x \in [x_1, x_2]$ if
-$$\tag{4}
-f(x_1) f(x_2) &lt; 0.
-$$</li>
-<li>It also holds for odd number of roots.</li>
-<li>If the requirement is not satisfied there might be even number of roots or there is not any root.</li>
-<li>From now on only case with one root is considered here.</li>
-<li>Even that $x_1 &lt; r_n &lt; x_2$, but the value of $r_n$ is still unknown.</li>
-</ul>
-<h2 id=method>method</h2>
-<ul>
-<li>Find the midpoint between $x_1$ and $x_2$ is a way to approach the $r_n$
-$$\tag{5}
-x_3 = \tfrac12 (x_1 + x_2),
-$$
-where the name comes from, bisection, divide the range into two equal parts.</li>
-<li>Next step is to find where the root exists with two possibilities, which are $x_1 &lt; r_n &lt; x_3$ or $x_3 &lt; r_n &lt; x_2$ by calculating which one from $f(x_1)f(x_3)$ and $f(x_2)f(x_3)$ is negative.</li>
-<li>If $x_1 &lt; r_n &lt; x_3$ then swap $x_2$ and $x_1$.</li>
-<li>Then calculate next midpoint using equation similar to the last one
-$$\tag{6}
-x_4 = \tfrac12 (x_2 + x_3).
-$$</li>
-<li>Repeat the step until $|f(x_n)| > \varepsilon$, where $\varepsilon$ is small value regarding as zero.</li>
-</ul>
-<h2 id=flowchart>flowchart</h2>
-<ul>
-<li>The method can be represented in a flowchart as follow.
-<pre class=mermaid>
-  
-flowchart TD
-  B --> I --> P1 --> O1a --> P2 --> O2a
-  O2b ---> P3 --> C1
-  C1 --"N"---> O3a
-  C1 --"Y"--> P4 --> O4a
-  C2 --"N"--> P6 ---> O1b
-  O3b & O4b --> P5 --> C2 --"Y"----> E
-  C2{"y < &epsilon;"}
-  C1{"s < 0"}
-  P6["n = n + 1"]
-  P5["y = f(x[n])"]
-  P4["x[n-2] &harr; x[n-1]"]
-  P3["s = f(x[n]) f(x[n-2])"]
-  P2["x[n] = &half; ( x[n-1] + x[n-2] )"]
-  P1["n = 3"]
-  I[/"f(x), &epsilon;, x[1], x[2]"/]
-  O4a(("4")); O4b(("4"));
-  O3a(("3")); O3b(("3"));
-  O2a(("2")); O2b(("2"));
-  O1a(("1")); O1b(("1"));
-  B(["Begin"])
-  E(["End"])
-  classDef style1 fill:none, color:inherit
-  classDef style2 fill:#888, color:#fff
-  class P1,P2,P3,P4,P5,P6 style1
-  class C1,C2,B,E,I style1
-  class O1a,O1b,O2a,O2b,O3a,O3b,O4a,O4b style2
-  linkStyle default stroke:#8a8
-
-</pre>
-</li>
-<li>The symbol a ↔ b means swapping a and b values.
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// define a and b
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// swap a and b via c
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>c</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>b</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>c</span>;
-</span></span></code></pre></div></li>
-</ul>
-<h2 id=example>example</h2>
-<ul>
-<li>
-<p>Suppose that there is a function
-$$\tag{7}
-f(x) = x - 3.45,
-$$
-whose root is to be find with $\varepsilon = 10^{-5}$, and initial values are $0$ and $20$.</p>
-</li>
-<li>
-<p>Following code is in JavaScript</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>3.45</span>;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>eps</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1E-5</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fxn</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> [];
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> [];
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;n&#39;</span>, <span style=color:#e6db74>&#39;xn&#39;</span>, <span style=color:#e6db74>&#39;f(xn)&#39;</span>);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>n</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>;
-</span></span><span style=display:flex><span><span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span>(Math.<span style=color:#a6e22e>abs</span>(<span style=color:#a6e22e>fxn</span>) <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>eps</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span> <span style=color:#f92672>*</span> (<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]);
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]) 
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fxn</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>];
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>]) <span style=color:#f92672>*</span> <span style=color:#a6e22e>f</span>(<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
-</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]] <span style=color:#f92672>=</span> [<span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>], <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]];
-</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]] <span style=color:#f92672>=</span> [<span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]];
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>x</span>[<span style=color:#a6e22e>n</span>], <span style=color:#a6e22e>y</span>[<span style=color:#a6e22e>n</span>]);
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>n</span><span style=color:#f92672>++</span>;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>url
-<a href=https://onecompiler.com/javascript/3zw6fwzav target=_blank rel="nofollow noopener noreferrer">
+<h1>uniform linear motion</h1>
+<time datetime=2023-07-25T20:44:00+07:00>July 25, 2023</time>
+<p>Sebagaimana dapat tergambarkan dari namanya, gerak lurus beraturan atau GLB adalah suatu gerak pada lintasan lurus dengan kecepatan tetap (
+<a href=https://www.yukimura-physics.com/en/uniform-linear-motion/ target=_blank rel="nofollow noopener noreferrer">
 <span>
-https://onecompiler.com/javascript/3zw6fwzav <i class="fa fa-external-link" style=font-size:14px></i>
+Yukimura, 2023 <i class="fa fa-external-link" style=font-size:14px></i>
 </span>
 </a>
-</p>
-</li>
-<li>
-<p>Result</p>
-<pre tabindex=0><code>n xn f(xn)
-0 0 -3.45
-1 20 16.55
-2 10 6.55
-3 5 1.5499999999999998
-4 2.5 -0.9500000000000002
-5 3.75 0.2999999999999998
-6 3.125 -0.3250000000000002
-7 3.4375 -0.012500000000000178
-8 3.59375 0.14374999999999982
-9 3.515625 0.06562499999999982
-10 3.4765625 0.026562499999999822
-11 3.45703125 0.007031249999999822
-12 3.447265625 -0.0027343750000001776
-13 3.4521484375 0.0021484374999998224
-14 3.44970703125 -0.00029296875000017764
-15 3.450927734375 0.0009277343749998224
-16 3.4503173828125 0.00031738281249982236
-17 3.45001220703125 0.000012207031249822364
-18 3.449859619140625 -0.00014038085937517764
-19 3.4499359130859375 -0.00006408691406267764
-20 3.4499740600585938 -0.000025939941406427636
-21 3.449993133544922 -0.000006866455078302636
-</code></pre></li>
-<li>
-<p>Discussion</p>
-<ul>
-<li>It finds $r_1 \approx 3.44999$ where $f(r_1) \approx -6.866\times10^{-6}$, whose absolute value is already smaller than $\varepsilon$.</li>
-<li>Further exploration with $\varepsilon = 10^{-20}$ requires more steps, $n = 56$, to obtain $r_1 = 3.45$.</li>
-</ul>
-</li>
-</ul>
-<h2 id=graphics>graphics</h2>
-<ul>
-<li>Previous data can be visualized for $r_1$ as follow.
-</li>
-<li>It can also visualized for $f(r_1)$ as follow.
-</li>
-<li>You may hover your mouse on a point to see its pair values.</li>
-<li>JS code to produce the data for Chart.js embeded here is available
-<a href=https://onecompiler.com/javascript/3zw6zv4x9 target=_blank rel="nofollow noopener noreferrer">
+), yang berarti bahwa kecepatan sesaat tidak berubah terhadap waktu (
+<a href=https://www.phyley.com/uniform-linear-motion target=_blank rel="nofollow noopener noreferrer">
 <span>
-https://onecompiler.com/javascript/3zw6zv4x9 <i class="fa fa-external-link" style=font-size:14px></i>
+Phyley, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
 </span>
 </a>
-.</li>
-</ul>
-<h2 id=challenges>challenges</h2>
-<ul>
-<li>Modify above given code to find the root with $\varepsilon = 10^{-20}$, display the last three lines, and show that it requires $n = 56$.</li>
-<li>Modify the code to calculate a root of
-$$\tag{8}
-f(x) = (x - 3.45)(x + 1).
-$$
-Explain whether the initial values $0$ and $20$ can be used or they must be changed.</li>
-<li>What if the function is
-$$\tag{9}
-f(x) = (x - 3.45)(x - 1),
-$$
-can the initial values still be used? If they must be changed, what are your suggestion?</li>
-</ul>
-<h2 id=refs>refs</h2>
-<ul>
-<li>Collimator (2023) &ldquo;Understanding the Basics of the Bisection Method&rdquo;, url
-<a href=https://www.collimator.ai/reference-guides/what-is-the-bisection-method target=_blank rel="nofollow noopener noreferrer">
+). Sistem pada keadaan ini dapat dicapai bila tidak ada gaya yang bekerja pada pada sistem sebagaimana menurut hukum pertama Newton dan kecepatan awal sistem tidak nol (
+<a href=https://www.britannica.com/science/linear-motion target=_blank rel="nofollow noopener noreferrer">
 <span>
-https://www.collimator.ai/reference-guides/what-is-the-bisection-method <i class="fa fa-external-link" style=font-size:14px></i>
+Britannica, 2017 <i class="fa fa-external-link" style=font-size:14px></i>
 </span>
 </a>
-.</li>
-<li>Kong Q, Siauw T, Bayen A (2020) &ldquo;Python Programming and Numerical Methods&rdquo;, Academic Press, 1st edition, isbn
-<a href=https://isbnsearch.org/isbn/9780128195499 target=_blank rel="nofollow noopener noreferrer">
+). GLB secara umum dapat teramati pada kegiatan sehari-hari seperti kendaraan bergerak, benda di atas ban berjalan, dan lain-lain.</p>
+<h1 id=linear-motion>linear motion</h1>
+<p>Gerak lurus adalah gerak yang menempuh lintasan berupa garis lurus. Dalam sistem 2-d, lintasannya dapat merupakan garis lurus dengan persamaan</p>
+<p>$$\tag{1}
+x = a,
+$$</p>
+<p>$$\tag{2}
+y = b,
+$$</p>
+<p>atau</p>
+<p>$$\tag{3}
+y = cx + d.
+$$</p>
+<p>Di sini, agar lebih sederhana, untuk sementara hanya dibahas gerak pada arah $x$, yang dapat diperluas pada sembarang lintasan lurus, baik dalam sistem 2-d ataupun 3-d.</p>
+<p>Gerak yang menempuh lintasan berupa garis lurus, tidak harus merupakan GLB, akan tetapi dapat pula merupakan gerak lurus berubah beraturan (GLBB), gerak osilasi, dan gerak-gerak lainnya.</p>
+<h1 id=equations>equations</h1>
+<p>Dari empat persamaan kinematika (
+<a href=https://www.albert.io/blog/kinematic-equations/ target=_blank rel="nofollow noopener noreferrer">
 <span>
-9780128195499 <i class="fa fa-external-link" style=font-size:14px></i>
+Albert, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
 </span>
 </a>
-, ch
-<a href=https://pythonnumericalmethods.berkeley.edu/notebooks/chapter19.03-Bisection-Method.html target=_blank rel="nofollow noopener noreferrer">
+;
+<a href=https://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations target=_blank rel="nofollow noopener noreferrer">
 <span>
-19.03 <i class="fa fa-external-link" style=font-size:14px></i>
+Henderson, 2022 <i class="fa fa-external-link" style=font-size:14px></i>
 </span>
 </a>
-.</li>
-<li>Luna C M (2020) &ldquo;Bisection Method&rdquo;, Medium,
-<a href=https://medium.com/@cmluna2913/32c8fb2e76a0 target=_blank rel="nofollow noopener noreferrer">
-<span>
-@cmluna2913/32c8fb2e76a0 <i class="fa fa-external-link" style=font-size:14px></i>
-</span>
-</a>
-.</li>
-</ul>
+), hanya terdapat satu persamaan untuk gerak lurus beraturan</p>
+<p>$$\tag{4}
+(x - x_0) = v \ (t - t_0),
+$$</p>
+<p>dikarenakan percepatan $a$ bernilai nol. Umumnya dipilih bahwa waktu awal $t_0$ bernilai nol, sehingga persaman sebelumnya menjadi lebih sederhana</p>
+<p>$$\tag{5}
+x = x_0 + vt,
+$$</p>
+<p>yang merupakan bentuk yang akrab dikenal.</p>
+<h1 id=graphs>graphs</h1>
+<p>Dapat digambarkan grafik percepatan $a$, kecepatan $v$, dan posisi $x$ setiap saat $t$ untuk benda yang melakukan GLB.</p>
+<p>
+Gambar 1. Percepatan $a = 0$.</p>
+<p>
+Gambar 2. Kecepatan $v = 2$.</p>
+<p>
+Gambar 3. Posisi $x = 2t + 1$.</p>
+<h1 id=derivative>derivative</h1>
+<p>Antara posisi dengan kecepatan dan kecepatan dengan percepatan $a$ dapat dihubungkan melalui turunan. Untuk posisi $x$ dan kecepatan $v$ diberikan oleh</p>
+<p>$$\tag{6}
+v = \frac{dx}{dt}
+$$</p>
+<p>dan untuk kecepatan $v$ dan percepatan $a$ diberikan oleh</p>
+<p>$$\tag{7}
+a = \frac{dv}{dt}.
+$$</p>
+<p>Dari Gambar 1 dapat diperoleh</p>
+<p>$$\tag{8}
+\begin{array}{rcl}
+x & = & 2t + 1 \newline
+v & = & \displaystyle \frac{d}{dt} \left(
+2t + 1 \right) \newline
+& = & 2 \newline
+a & = & \displaystyle \frac{d}{dt} \left(
+0 \right) \newline
+& = & 0,
+\end{array}
+$$</p>
+<p>yang memberikan Gambar 2 dan 1 menggunakan Persamaan (6) dan (7).</p>
+<h1 id=antiderivative>antiderivative</h1>
+<p>Sebagai proses berlawanan dari mencari turunan, terdapat anti-turunan yang melibatkan integral, yang mengaitkan antara kecepatan dengan percepatan dan posisi dengan kecepatan. Dapat diperoleh kecepatan $v$ dari percepatan $a$</p>
+<p>$$\tag{9}
+v = \int a \ dt
+$$</p>
+<p>dan posisi $x$ dari kecepatan $v$</p>
+<p>$$\tag{10}
+x = \int v \ dt,
+$$</p>
+<p>yang memerlukan syarat awal $v(t_0)$ untuk Persamaan (9) dan $x(t_0)$ untuk Persamaan (10), di mana umumnya dipilih $t_0 = 0$ untuk memudahkan.</p>
+<p>Implementasi Persamaan (9) dengan syarat awal $v(0) = 2$ akan diperoleh</p>
+<p>$$\tag{11}
+\begin{array}{rcl}
+v - v(0) & = & \displaystyle \int_0^t 0 \ dt \newline
+v - 2 & = & 0 \newline
+v & = & 2,
+\end{array}
+$$</p>
+<p>yang menjelaskan diperolehnya Gambar 2 dari Gambar 1.</p>
+<p>Selanjutnya adalah pemanfaatan Persamaan (10) dari hasil Persamaan (11) dengan syarat awal $x(0) = 1$ akan menghasilkan</p>
+<p>$$\tag{12}
+\begin{array}{rcl}
+x - x(0) & = & \displaystyle \int_0^t 2 \ dt \newline
+v - 1 & = & 2t \newline
+v & = & 2t + 1,
+\end{array}
+$$</p>
+<p>yang menjelaskan diperolehnya Gambar 3 dari Gambar 2.</p>
+<h1 id=more-general-formulation>more general formulation</h1>
+<p>Persamaan (9) dan (10) dapat dibuat menjadi lebih general, setelah dilengkapi syarat awalnya, menjadi</p>
+<p>$$\tag{13}
+v(t) - v(t_0) = \int_{t_0}^t a \ dt
+$$</p>
+<p>dan</p>
+<p>$$\tag{14}
+x(t) - x(t_0) = \int_{t_0}^t v \ dt.
+$$</p>
+<p>Penerapan kedua persamaan terakhir ini akan menghasilkan</p>
+<p>$$\tag{15}
+v(t) = v(t_0)
+$$</p>
+<p>dan</p>
+<p>$$\tag{16}
+x(t) = x(t_0) + v \ (t - t_0).
+$$</p>
+<p>Dengan $x = x(t)$ dan $x_0 = x(t_0)$ Persamaan (16) akan menjadi Persamaan (4).</p>
+<h2 id=exercises>exercises</h2>
+<ol>
+<li>Apakah waktu awal harus menggunakan simbol $t_0$? Dapatkah menggunakan simbol lain seperti $t_i$? Bagaimana dengan $t_n$, dengan $n = 1, 2, 3, \dots$? Bagaimana dengan $t_f$? Adakah arti khusus dari indeks bawah $i$ dan $f$?</li>
+<li>Sebuah benda titik bergerak dengan kecepatan konstan
+$5 \ \rm m/s$. Tentukan fungsi posisi setiap saatnya bila posisi awalnya, saat $t_1 = 0 \ \rm s$, adalah $10 \ \rm m$.</li>
+<li>Suatu benda berada pada posisi $20 \ \rm m$ saat $t_2 = 2 \ \rm s$. Bila benda tersebut bergerak dengan kecepatan tetap $5 \ \rm m/s$, tentukan posisi setiap saatnya.</li>
+<li>Tentukan posisi benda setiap saat bila benda tersebut bergerak dengan kecepatan tetap $5 \ \rm m/s$ dan posisinya saat $t_3 = 5 \ \rm s$ adalah $35 \ \rm m$.</li>
+<li>Bandingkan rumusan posisi benda setiap saat pada ketiga problem sebelumnya dan bahas pola yang diperoleh.</li>
+<li>Tentukan posisi benda $x(t_4)$ dan waktunya $t_4$ sehingga memberikan posisi benda setiap saat yang sama dengan problem sebelumnya.</li>
+</ol>
 </main>
 <footer>
-<link rel=stylesheet href='/css/footer.css?v=1794522271'>
+<link rel=stylesheet href='/css/footer.css?v=1794552754'>
 <p>
 Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
 All rights reserved.
 Unless stated otherwise in a note.
 </p>
 </footer>
-<script src=/js/mermaid/12.3.0/mermaid.min.js></script>
-<script>const dark=window.matchMedia("(prefers-color-scheme: dark)").matches;mermaid.initialize({startOnLoad:!1,theme:dark?"dark":"default",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px",edgeLabelBackground:"transparent",lineColor:dark?"#aaa":"#333"},themeCSS:`
-        .edgeLabel, .edgeLabel p, .labelBkg { background-color: var(--bg) !important; }
-        .edgeLabel rect { fill: transparent !important; opacity: 0 !important; }
-        .flowchart-link, .edge-thickness-normal { stroke-width: 1px !important; }
-      `}),document.addEventListener("DOMContentLoaded",async()=>{await mermaid.run({querySelector:".mermaid"})})</script>
 </body>
 </html>

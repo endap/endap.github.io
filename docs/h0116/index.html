@@ -1,0 +1,163 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>presentation-flowchart-data | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794552754'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>presentation-flowchart-data</h1>
+<time datetime=2022-07-14T17:24:00+07:00>July 14, 2022</time>
+<p>url
+<a href=https://dudung.github.io/bugx/0116/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://dudung.github.io/bugx/0116/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261113].</p>
+<p>Presetentasi kemajuan pengerjaan desertasi seorang PMDSU dilaksanakan secara daring [
+<a href=#r01>
+<span>
+1 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+], walaupun sempat salah baca dan sudah hadir di kampus. Topik yang digusung adalah mengenai konduktivitas termal pada fluida yang merupakan bahan PCM [
+<a href=#r02>
+<span>
+2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+].</p>
+<h2 id=technical-problem>technical problem</h2>
+<p>Saat akan menghadiri presentasi daring, terkendala dengan komputer yang digunakan. Sempat dua kali restart baru akhirnya komputer dapat bekerja, mendeteksi WiFi, kamera web, dan bergabung dengan tautan Zoom yang diberikan.</p>
+<p><img src=/bugx/img/idea/pcm/pc-problem.jpg alt></p>
+<p>Gambar <a name=fig1>1</a>. Tampilan layar komputer saat bermasalah dengan restart pertama kali (kiri) dan kedua kali (kanan).</p>
+<p>Kehadiran lewat Zoom dengan menggunakan komputer di ruang kerja di kampus berjalan lancar sampai akhirnya reset ketiga kalinya dan mulai menggunakan smartphon.</p>
+<h2 id=info>info</h2>
+<p>Terdapat beberpa variasi parameter seperti konsentrasi dopan, temperatur pengukuran, dan medan magnetik eksternal yang diberikan. Alur pengukuran yang telah mengakomodasi ketiga macam variasi tersebut diberikan di bawah ini. Di dalamnya juga telah disertakan jumlah pengulangan untuk setiap variasi parameter.</p>
+<p><img src=/bugx/img/idea/pcm/flowchart-to-be-fixed.jpg alt></p>
+<p>Gambar <a name=fig2>2</a>. Diagram alir proses pengukuran.</p>
+<p>Kemudian saat mengolah data untuk mementukan titik-titik penting, masih terdapat penentuan garis dan sebagainya yang dilakukan secara manual sehingga faktor subyektif penganalis masih besar dan ini perlu diperbaiki agar hasilnya konsisten. Terutama untuk memastikan bahwa kondisi crossover benar-benar terjadi dan bukan hanya karena proses analisis ataupun pra-processing. Data rata-rata terlibat baik akan tetapi data smoothing cukup membingungkan. Belum ditanyakan apakah smoothing berdasarkan model atau sekedar mencari titik tengahnya untuk sekian titik di sekitarnya.</p>
+<h2 id=data>data</h2>
+<ul>
+<li>Arsip data pertama yang diberikan berekstensi OPJ, di mana untuk jenis berkas ini terdapat format binary dan plain text yang digunakan oleh dua aplikasi berbeda [
+<a href=#r03>
+<span>
+3 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+]. Format binary digunakan oleh Origin Pro [
+<a href=#r04>
+<span>
+4 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+]. Untuk membuat data dari Python yang dapat dibaca oleh Origin diperlukan paket <code>originpro</code> [
+<a href=#r05>
+<span>
+5 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+], yang masih memerlukan instalasi dari Origin 2021 atau versi lebih baru [
+<a href=#r06>
+<span>
+6 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+]. Sampai saat ini belum ditemukan cara untuk membuka datanya secara mandiri tanpa perlu menginstal Origin terelebih dahulu.</li>
+<li>Terdapat dua bacth data mentah setidaknya, yang pertama diukur oleh tim dan yang kedua diukur sendiri. Batch pertama belum diperoleh mentahnya dan langsung diisikan ke Origin Pro sehingga sulit diolah lebih lanjut.</li>
+<li>Data dari alat ukur Applent dikeluarkan berbentuk CSV dengan pengulangan langsung ditambahkan bloknya tanpa adanya separasi berupa satu baris kosong. Kadan terdapat pula masalah teknis (perlu dikonfirmasi ulang) sehingga ada data yang tidak digunakan. Saat ini baru diberikan <code>5%CoFe2O4.zip</code> dan <code>5%Fe3O4.zip</code>.</li>
+<li>Terdapat pula berkas data <code>Fe3O4(2%)+LA.opj</code> yang belum dapat dibuka.</li>
+<li>Keseluruhan data belum terarsipkan dengan baik dan diminta untuk dicarikan dan sebaiknya dalam format mentah yang sama sehingga dapat disimpan secara terstruktur dan accessible.</li>
+</ul>
+<h2 id=todo>todo</h2>
+<ul>
+<li>Memberbaiki diagram alir pengukuran pada Gambar
+<a href=#fig2>
+<span>
+2 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+agar lebih sesuai dengan aturan baku di bidang komputasi.</li>
+<li>Meminta data-data mentah untuk diperiksa proses pengerjaannya sehingga yakin sebelum melakukan analisis lebih dalam.</li>
+<li>Mencoba untuk menstrukturkan data mentah yang ada dan disimpan sehingga bisa digunakan lebih lanjut.</li>
+<li>Merancang proses analisis yang lebih konsisten, otomatis, dan menggunakan parameter yang sama, sehingga dapat meminimumkan subyektivitas penganalis.</li>
+<li>Mencari alternatif membuka berkas OPJ dengan tanpa Origin, misalnya menggunakan piranti lunak sumber terbuka.</li>
+</ul>
+<h2 id=notes>notes</h2>
+<ol>
+<li><a name=r01></a>Yunita Anggraini, &ldquo;Grup meeting PCM-HTF&rdquo;, Zoom, 14 Jul 2022, 0900, url
+<a href=https://itb-ac-id.zoom.us/j/96553048602 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://itb-ac-id.zoom.us/j/96553048602 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220714].</li>
+<li><a name=r02></a>Linquip Team, &ldquo;What is Phase Change Material? Theory, Example and Applications&rdquo;, Linquip Technews, 10 Aug 2021, url
+<a href=https://www.linquip.com/blog/what-is-phase-change-material/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.linquip.com/blog/what-is-phase-change-material/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220714].</li>
+<li><a name=r02></a>-, &ldquo;.OPJ File Extension&rdquo;, FileInfo.com, Sharpened Productions, 31 Jan 2018, url
+<a href=https://fileinfo.com/extension/opj target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://fileinfo.com/extension/opj <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220715].</li>
+<li><a name=r04></a>-, &ldquo;Origin and OriginPro&rdquo;, OriginLab Corporation, url
+<a href="https://www.originlab.com/index.aspx?go=PRODUCTS/Origin" target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://www.originlab.com/index.aspx?go=PRODUCTS/Origin <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220715].</li>
+<li><a name=r05></a>lkb0221, &ldquo;Answer to &lsquo;&rsquo;&rdquo;, Stack Overflow, 30 Nov 2020, url
+<a href=https://stackoverflow.com/a/65076843/9475509 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://stackoverflow.com/a/65076843/9475509 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220715].</li>
+<li><a name=r06></a>OriginLab, &ldquo;originpro 1.1.1&rdquo;, PyPI, Python Software Foundation, 6 May 2022, url
+<a href=https://pypi.org/project/originpro/1.1.1/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://pypi.org/project/originpro/1.1.1/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20220715].</li>
+</ol>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794552754'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>

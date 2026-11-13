@@ -1,0 +1,124 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>root finding flowchart | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794552754'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>root finding flowchart</h1>
+<time datetime=2023-01-26T13:19:00+07:00>January 26, 2023</time>
+<p>url
+<a href=https://dudung.github.io/lecture-notes/0003/ target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://dudung.github.io/lecture-notes/0003/ <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261113].</p>
+<p>Secara umum rumusan pencarian akar secara iteratif melibatkan setidaknya dua nilai tebakan sebelumnya dan fungsinya atau satu tebakan sebelumnya dan fungsi serta turunannya. Generalisasi ini mencakup metode Newton-Raphson, secant, dan false position.</p>
+<h2 id=flowchart>flowchart</h2>
+<p>Untuk mencari akar suatu fungsi $f(x)$ dapat dirumuskan terdapatnya suatu fungsi $g(f(x), f&rsquo;(x), x)$ yang akan memberikan nilai tebakan berikutnya $x_n$, yang semakin mendekati nilai akar yang dicari dengan bergerak dari tebakan awal, misalnya $x_1$ (dan $x_2$), dengan menggunakan informasi $f(x)$ dan $f&rsquo;(s)$. Diagram alir pencarian akar ini diberikan pada Gambar 1.</p>
+<pre class=mermaid>
+  
+flowchart TD
+  B --> I --> N1 --> o1a
+  o1b --> P1 --> P2 --> o2a
+  o2b --> C --"N"--> N2 --> o1c
+  C --"Y"--> O --> o3a
+  o3b --> E
+  B(["Begin"])
+  I[/"x(1), x(2),<br>f(x), f'"/]
+  N1["n = 3"]
+  N2["n = n + 1"]
+  P1["x(n) = x(n-1) +<br>g(f, f', x(n-1), x(n-2))"]
+  P2["fn = f(x(n))"]
+  C{"|fn| < &epsilon;"}
+  O[/"x(n)"/]
+  o1a(("1"))
+  o1b(("1"))
+  o1c(("1"))
+  o2a(("2"))
+  o2b(("2"))
+  o3a(("3"))
+  o3b(("3"))
+  E(["End"])
+
+</pre>
+<p>Gambar 1. Diagram alir pencarian akar suatu persamaan $f(x)$.</p>
+<p>Dikarenakan keterbatasan dukungan Mermaid untuk MathJax, lambang-lambang pada Gambar 1 menggunakan simbol terdekat yang diharapkan tidak menimbulkan salah penafsiran, seperti misalnya <code>x(1)</code> untuk $x_1$ dan <code>fn</code> untuk $f_n$.</p>
+<h2 id=methods>methods</h2>
+<p>Setidaknya terdapat tiga metode pencarian akar yang dapat disampaikan, yang masing-masing dapat menggunakan diagram alir pada Gambar 1. Ketiga method yang dimaksud diberikan pada Tabel 1 berikut.</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>Method</th>
+<th style=text-align:center>$g$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>Newton-Raphson</td>
+<td style=text-align:center>$\displaystyle -\frac{f(x_{n-1})}{f&rsquo;(x_{n-1})}$</td>
+</tr>
+<tr>
+<td style=text-align:center>Secant</td>
+<td style=text-align:center>$\displaystyle - \frac{(x_{n-1} - x_{n-2}) f(x_{n-1})}{f(x_{n-1}) - f(x_{n-2})}$</td>
+</tr>
+<tr>
+<td style=text-align:center>False position</td>
+<td style=text-align:center>$\displaystyle - \frac{x_{n-2} f(x_{n-1}) - x_{n-1} f(x_{n-2})}{f(x_{n-1}) - f(x_{n-2})}$</td>
+</tr>
+</tbody>
+</table>
+<p>Perhatikan bahwa secara umum</p>
+<p>$$\tag{1}
+g = g(f, f&rsquo;, x_{n-1}, x_{n-2}),
+$$</p>
+<p>dengan $f$ dan $f&rsquo;$ dapat fungsi dari $x_{n-1}$ dan $x_{n-2}$.</p>
+<h1 id=questions>questions</h1>
+<ol>
+<li>Dari ketiga metode pada Tabel 1, berapakah jumlah syarat awal yang diperlukan? Metode mana yang paling sedikit memerlukan syarat awal.</li>
+<li>Kembali untuk ketiga metode pada Tabel 1, mana metode yang cukup menggunakan $f(x)$ dan tidak memerlukan $f&rsquo;(x)$?</li>
+<li>Bila kebutuhan akan jumlah syarat awal disetarakan dengan kebutuhan akan turunan fungsi, mana metode yang memerlukan informasi paling sedikit dan mana metode yang membutuhkan informasi paling banyak? Jelaskan dengan singkat.</li>
+<li>Buatlah program singkat untuk mencari nilai dari suatu fungsi, misalnya $f(x) = (x - 2.5)(x - 4.75)$ dengan terlebih dahulu menentukan syarat awalnya. Bandingkan jumlah langkah yang diperlukan dengan menggunakan masing-masing metode pada Tabel 1. Bahas mana yang lebih cepat mendapatkan hasil dan mana yang lebih mudah implementasinya, serta kebutuhan minimum informasinya.</li>
+<li>Bila hanya menggunakan diagram alir pada Gambar 1 dan metode-metode pada Tabel 1 dengan tanpa tambahan modifikasi, berapakah jumlah akar suatu fugnsi $f(x)$ yang dapat diperoleh? Mengapa?</li>
+<li>Coba cari akar dari fungsi $f(x) = \sin (x - 0.26 \pi) - 0.41$. Sampai berapa langkah diperlukan agar $|f(x_{root})| &lt; 10^{-5}$? Tunjukkan baris-baris hasilnya dengan kolom pertama adalah jumlah langkah dan kolom kedua adalah nilai $f(x_n)$-nya, di mana $n$ adalah jumlah langkah.</li>
+</ol>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794552754'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+<script src=/js/mermaid/12.3.0/mermaid.min.js></script>
+<script>const dark=window.matchMedia("(prefers-color-scheme: dark)").matches;mermaid.initialize({startOnLoad:!1,theme:dark?"dark":"default",themeVariables:{fontSize:"20px",nodeFontSize:"18px",labelFontSize:"14px",edgeLabelBackground:"transparent",lineColor:dark?"#aaa":"#333"},themeCSS:`
+        .edgeLabel, .edgeLabel p, .labelBkg { background-color: var(--bg) !important; }
+        .edgeLabel rect { fill: transparent !important; opacity: 0 !important; }
+        .flowchart-link, .edge-thickness-normal { stroke-width: 1px !important; }
+      `}),document.addEventListener("DOMContentLoaded",async()=>{await mermaid.run({querySelector:".mermaid"})})</script>
+</body>
+</html>
