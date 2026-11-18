@@ -1,0 +1,156 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>modeling-composite stat-phys spring-mass | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794964069'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1794964069'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+modeling-composite stat-phys spring-mass
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-11-16T22:33:14 07:00">16 Nov 2026</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>It is for res in sub-group of nuc-bio-phys, which is bf2 prop-groupd. There are more than two chats with ai today, but they will be archived tomorrow. The available about 40 samples can be modeled starting with composition-dependent linear or quadratic regression of Young&rsquo;s modulus <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, which is better to use a two-level modeling aprroach <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Demonstrating a relationship between compositional disorder, microstructural configurational entropy, and fluctuations in macroscopic mechanical properties might have potentially publishable novelty <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>. As viewer 3dmoljs is chosen, whose posts is given in a section of this post.</p>
+<h2 id=3dmoljs>3dmoljs</h2>
+<p>There are some posts related to the molecule viewer is as follows.</p>
+<ul>
+<li><code>22-dec-2024</code>
+<a href=/24l19/>
+<span>
+<code>24l19</code>
+</span>
+</a>
+<code>✓</code> microcystin-lr molecule</li>
+<li><code>17-dec-2024</code>
+<a href=/24l16/>
+<span>
+<code>24l16</code>
+</span>
+</a>
+<code>×</code> aspirin molecule</li>
+<li><code>13-jan-2024</code>
+<a href=/b1814/>
+<span>
+<code>b1814</code>
+</span>
+</a>
+<code>×</code> 3Dmol.js support</li>
+</ul>
+<p>Following is result of a working example</p>
+<div id=44f4edd8bcd6fa8cfc2c5d854cecbca1 class=mol-container></div>
+<script src=/js/3Dmol/2.5.5/3Dmol.min.js></script>
+<script>var element,config,viewer,text=`
+3
+binary-composite
+C    0.0000   0.0000   0.0000 
+C    2.0000   2.0000   0.0000 
+C    2.0000   3.0000   0.0000 `,lines=text.split(`
+`);lines.shift(),data=lines.join(`
+`),element=document.getElementById("44f4edd8bcd6fa8cfc2c5d854cecbca1"),config={backgroundColor:"none"},viewer=$3Dmol.createViewer(element,config),viewer.addModelsAsFrames(data,"xyz"),viewer.animate({loop:"forward",reps:1}),viewer.setStyle({sphere:{colorscheme:"grayCarbon",radius:.5},stick:{colorscheme:"grayCarbon"}}),viewer.zoomTo(),viewer.setCameraParameters({fov:20,z:300}),viewer.translate("0",2),viewer.rotate(1e-4,"z"),viewer.render()</script>
+<p>where</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>{{&lt; 3dmoljs ty=2 fov=20 ang=0.0001 ax=&#34;z&#34; &gt;}}
+</span></span><span style=display:flex><span>3
+</span></span><span style=display:flex><span>binary-composite
+</span></span><span style=display:flex><span>C    0.0000   0.0000   0.0000 
+</span></span><span style=display:flex><span>C    2.0000   2.0000   0.0000 
+</span></span><span style=display:flex><span>C    2.0000   3.0000   0.0000 
+</span></span><span style=display:flex><span>{{&lt; /3dmoljs &gt;}}
+</span></span></code></pre></div><p>is the input. Further discussion encourages still to use it but without using default bonds length <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>. For this another post
+<a href=/26k42/>
+<span>
+26k42
+</span>
+</a>
+is created.</p>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>6 Instant, &ldquo;Publication recommendation modeling elastic properties&rdquo;, ChatGPT, 16 Nov 2026, url
+<a href=https://chatgpt.com/share/6afba059-93d0-83ec-8d66-0dba15a43f7b target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6afba059-93d0-83ec-8d66-0dba15a43f7b <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>6 Instant, &ldquo;Model stress strain curves&rdquo;, ChatGPT, 16 Nov 2026, url
+<a href=https://chatgpt.com/share/6afba0e0-5310-83ec-b899-d72c298c0a68 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6afba0e0-5310-83ec-b899-d72c298c0a68 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>6 Instant, &ldquo;Publishability Of Variance Results&rdquo;, ChatGPT, 16 Nov 2026, url
+<a href=https://chatgpt.com/share/6afba154-a05c-83ec-9e90-f87e7b91b65b target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6afba154-a05c-83ec-9e90-f87e7b91b65b <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Sonnet 5.5. Medium, &ldquo;3D spring-mass model visualization&rdquo;, Claude, 17 Nov 2026, url
+<a href=https://claude.ai/share/2d0c95b2-92b0-4542-abfd-04f2597cad28 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://claude.ai/share/2d0c95b2-92b0-4542-abfd-04f2597cad28 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794964069'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>

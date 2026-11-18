@@ -1,0 +1,369 @@
+<!doctype html><html lang=en-us dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta name=color-scheme content="light dark">
+<link rel=icon href=/favicon-32.png sizes=32x32 type=image/png>
+<link rel=icon href=/favicon-16.png sizes=16x16 type=image/png>
+<link rel=apple-touch-icon href=/icons/icon-192.png>
+<link rel=manifest href=/manifest.json>
+<meta name=theme-color content="#1a1a1a">
+<title>viewing spring-mass-system using 3dmoljs | endap</title>
+<link rel=stylesheet href=/css/main.min.3edce66c97b8f383e9941a14e20ba8782512be3ccf00e02c7baae10aefc1d275.css integrity="sha256-PtzmbJe484PplBoU4guoeCUSvjzPAOAse6rhCu/B0nU=" crossorigin=anonymous>
+<link rel=stylesheet href=/css/ca.min.c39f7021597be65b2ee903490e88bb947ae403938a97e0e5ecab7677a74028bd.css integrity="sha256-w59wIVl75lsu6QNJDoi7lHrkA5OKl+Dl7Kt2d6dAKL0=" crossorigin=anonymous>
+<script src=/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js integrity="sha256-I80MfYNyY7nq65buLZzPopadqj+gD6HB/ocBqbhyUaE=" crossorigin=anonymous></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+</head>
+<body>
+<header>
+<link rel=stylesheet href='/css/header.css?v=1794964069'>
+<h1>endap</h1>
+<nav>
+<ul>
+<li>
+<a href=/>Home</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<head>
+<link rel=stylesheet href='/css/notes.css?v=1794964069'>
+</head>
+<div class=note-container>
+<h1 class=note-title>
+viewing spring-mass-system using 3dmoljs
+</h1>
+<div class=info-after-title>
+<ul class=authors-container>
+<li class=author>
+<a href=https://endap.github.io/authors/viridi/>Sparisoma Viridi</a>
+</li>
+</ul>
+<div class=date-reading-time-edit>
+<time datetime="2026-11-17T09:09:39 07:00">17 Nov 2026</time>
+&#183;
+2 mins read
+</div>
+</div>
+<div class=note-content>
+<p>For a CNT-like structure there are terms suggested <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. This structure will be visualized using 3Dmol.js via its API <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p>
+<h2 id=particles>particles</h2>
+<p>To form a HCP cylinderical structure some parameters are related <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p>
+<p>$$\tag{1}
+d_p = d_r \sin \left( \frac{\pi}{n_r} \right),
+$$</p>
+<p>where $d_p$, $d_r$, and $n_r$ are particle diameter, ring diameter, and number of particle per ring, respectively. If center of a ring $i$ is $(x_{ci}, y_{ci}, z_{ci})$ then position of particle $j$ the ring $i$ is</p>
+<p>$$\tag{2}
+x_{ij} = x_o + d_r \cos \theta_{ij},
+$$</p>
+<p>$$\tag{3}
+y_{ij} = x_o + d_r \sin \theta_{ij},
+$$</p>
+<p>$$\tag{4}
+z_{ij} = z_o + i d_p \cos \tfrac16 \pi
+$$</p>
+<p>$$\tag{5}
+\theta_{ij} = \tfrac12 (i-1) \Delta \theta + (j-1) \Delta \theta,
+$$</p>
+<p>$$\tag{6}
+\Delta \theta = \frac{2\pi}{n_j},
+$$</p>
+<p>with $j = 1, 2, .., n_j$ and $i = 1, 2, .., n_i$.</p>
+<script type=importmap>
+{"imports":{"endap":"/js/endap/0.0.5/endap.min.js"}}
+</script>
+<script src=/js/3Dmol/2.5.5/3Dmol.min.js defer></script>
+<div id=cnt></div>
+<script type=module>
+  
+const cnt = document.getElementById("cnt");
+
+const cnt1 = document.createElement("div");
+let style = {
+  width: "100%",
+  height: "200px",
+  position: "relative",
+};
+Object.assign(cnt1.style, style);
+cnt.append(cnt1);
+
+
+const ni = 10;
+const nj = 10;
+const nk = ni * nj;
+
+const xo = 0;
+const yo = 0;
+const zo = 0;
+
+const cx = 0.2;
+const ptype = [];
+const ntype = [0, 1];
+const colors = ["green", "blue"];
+for(let k = 0; k < nk; k++) {
+  const r = Math.random();
+  const t = (r < cx) ? ntype[0]: ntype[1];
+  ptype.push(t);
+}
+
+
+const dr = 100;
+const dp = dr * Math.sin(Math.PI / nj);
+const dtheta = 2 * Math.PI / nj;
+
+const x = [], y = [], z = [], d = [], c = [], a = [], zz = [];
+let k = 0;
+for(let i = 0; i < ni; i++) {
+  const xci = xo;
+  const yci = yo;
+  const zci = zo + i * dp * Math.cos(Math.PI/6);
+
+  for(let j = 0; j < nj; j++) {
+    const thetaij = 0.5 * (i-1) * dtheta + (j-1) * dtheta ;
+    const xij = xci + 0.5 * dr * Math.cos(thetaij);
+    const yij = yci + 0.5 * dr * Math.sin(thetaij);
+    const zij = zci;
+    x.push(xij);
+    y.push(yij);
+    z.push(zij);
+    zz.push(zij);
+    d.push(dp);
+    c.push(colors[ptype[k]]);
+    a.push(0.95);
+    k += 1;
+  }
+}
+
+
+function createSpheres(x, y, z, d, c, a) {
+  const spheres = [];
+  let shape = viewer.addSphere({ center: {x:xo, y:yo, z:zo}, radius: 10, color: 'red' });
+    
+  for(let k = 0; k < nk; k++) {
+    let shape = viewer.addSphere(
+      {
+        center: { x: x[k], y: y[k], z: z[k], },
+        radius: 0.5 * d[k],
+        color: c[k],
+        alpha: a[k],
+      }
+    );
+    spheres.push(shape);
+  }
+  
+  return spheres;
+}
+
+
+const config = {};
+const viewer = $3Dmol.createViewer(cnt1, config);
+
+let spheres = createSpheres(x, y, zz, d, c, a);
+
+viewer.setBackgroundColor("none", 0.0);
+viewer.zoomTo();
+viewer.render();
+viewer.setCameraParameters({ fov:20, z: 100 });
+viewer.translate(-100, 0);
+viewer.rotate(90);
+viewer.zoom(2);
+
+const cnt2 = document.createElement("div");
+style = {
+  marginTop: "10px",
+  width: "100%",
+  border: "0px solid red",
+  marginBottom: "10px",
+};
+Object.assign(cnt2.style, style);
+cnt.append(cnt2);
+
+const lab = document.createElement("label");
+lab.for = "range";
+lab.innerHTML = "Far right position";
+lab.style.marginRight = "10px";
+cnt2.append(lab);
+
+const inp = document.createElement("input");
+inp.type = "range";
+inp.id = "range";
+inp.min = "0";
+inp.max = "100";
+inp.value = "0";
+inp.style.marginTop = "0px";
+inp.style.width = "400px";
+inp.style.verticalAlign = "middle";
+cnt2.append(inp);
+
+const spn = document.createElement("span");
+spn.id = "value";
+spn.textContent = "0";
+spn.style.marginLeft = "10px";
+cnt2.append(spn);
+
+inp.addEventListener("input", () => {
+  spn.textContent = inp.value;
+  
+  spheres.forEach(shape => {
+    viewer.removeShape(shape);
+  });
+  
+  console.log();
+  
+  for(let k = 0; k < nk; k++) {
+    zz[k] = z[k] +  (zz[k] - 0) * (1.0 * inp.value / 100) * dp * 1E-2;
+  }
+  
+  spheres = createSpheres(x, y, zz, d, c, a);
+  viewer.render();
+});
+
+
+const cnt3 = document.createElement("div");
+style = {
+  display: "flex",
+  flexDirection: "row",
+  border: "0px solid red",
+  gap: "10px",
+};
+Object.assign(cnt3.style, style);
+cnt.append(cnt3);
+
+import { Console as CLI } from "endap"
+
+const consoles1 = CLI.create("200px");
+const cli1 = consoles1.el;
+consoles1.setTitle("spheres type");
+cli1.style.flex = "1";
+cnt3.append(cli1);
+
+const consoles2 = CLI.create("200px");
+const cli2 = consoles2.el;
+consoles2.setTitle("springs type");
+cli2.style.flex = "1";
+cnt3.append(cli2);
+
+const consoles3 = CLI.create("200px");
+const cli3 = consoles3.el;
+consoles3.setTitle("springs in parallel");
+cli3.style.flex = "1";
+cnt3.append(cli3);
+
+const consoles4 = CLI.create("200px");
+const cli4 = consoles4.el;
+consoles4.setTitle("springs in series");
+cli4.style.flex = "1";
+cnt3.append(cli4);
+
+const springs = [2, 4, 8]
+
+let k2 = 0;
+for(let i = 0; i < ni; i++) {
+  for(let j = 0; j < nj; j++) {
+    consoles1.log(ptype[k2], " ");
+    k2 += 1;
+  }
+  consoles1.log();
+}
+
+const pars = []
+for(let i = 1; i < ni; i++) {
+  let par = 0;
+  for(let j = 0; j < nj; j++) {
+    const ka = (i-1) * nj + j;
+    const kb = i * nj + j;
+    const typeab = ptype[ka] + ptype[kb];
+    consoles2.log(typeab, " ");
+    
+    par += springs[typeab];
+  }
+  pars.push(par);
+  consoles2.log();
+}
+
+let temp = 0;
+for(let i = 0; i < ni-1; i++) {
+  consoles3.log(pars[i]);
+  temp += 1 / pars[i];
+}
+let sers = 1 / temp;
+
+consoles4.log(sers);
+
+
+
+</script>
+<h2 id=notes>notes</h2>
+<ul>
+<li>Sphere transparency can be tuned using <code>alpha</code> property <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</li>
+<li>Slider is one type of input <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</li>
+</ul>
+<h2 id=refs>refs</h2>
+<div class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1>
+<p>GPT-6, &ldquo;Name CNT Dimensions&rdquo;, ChatGPT, 17 Nov 2026, url
+<a href=https://chatgpt.com/share/6afbdfe9-d4b4-83ec-9e7f-bb416cc7f133 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6afbdfe9-d4b4-83ec-9e7f-bb416cc7f133 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2>
+<p>Sonnet 5.5 Medium, &ldquo;3D spring-mass model visualization&rdquo;, Claude, 17 Nov 2026, url
+<a href=https://claude.ai/share/2d0c95b2-92b0-4542-abfd-04f2597cad28 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://claude.ai/share/2d0c95b2-92b0-4542-abfd-04f2597cad28 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3>
+<p>R. Sari, P. M. Widartiningsih, M. A. Martoprawiro, L. Hendrajaya, S. Viridi, &ldquo;Simulation of Semi-Autogenous Grinding (SAG) Mill using Circular-Disks-based Model&rdquo;, Journal of Physics: Conference Series, vol 1090, no 1, p 012009, Sep 2018, url
+<a href=https://doi.org/10.1088/1742-6596/1090/1/012009 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://doi.org/10.1088/1742-6596/1090/1/012009 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4>
+<p>Sonnet 5.5 Medium, &ldquo;Transparent spheres in 3Dmol.js&rdquo;, Claude, 17 Nov 2026, url
+<a href=https://claude.ai/share/da98400d-3468-4431-97cf-5cbeac54e5f0 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://claude.ai/share/da98400d-3468-4431-97cf-5cbeac54e5f0 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5>
+<p>GPT-6, &ldquo;Write JS range slider example&rdquo;, ChatGPT, 17 Nov 2026, url
+<a href=https://chatgpt.com/share/6afc0fff-16e8-83ec-9e2d-38641a78c025 target=_blank rel="nofollow noopener noreferrer">
+<span>
+https://chatgpt.com/share/6afc0fff-16e8-83ec-9e2d-38641a78c025 <i class="fa fa-external-link" style=font-size:14px></i>
+</span>
+</a>
+[20261117].&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js integrity=sha384-ifpG+NlgMq0kvOSGqGQxW1mJKpjjMDmZdpKGq3tbvD3WPhyshCEEYClriK/wRVU0 crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
+</main>
+<footer>
+<link rel=stylesheet href='/css/footer.css?v=1794964069'>
+<p>
+Copyright Sparisoma Viridi 2026<a href=/butiran/h2/ style=cursor:text>.</a>
+All rights reserved.
+Unless stated otherwise in a note.
+</p>
+</footer>
+</body>
+</html>
